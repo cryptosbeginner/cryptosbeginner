@@ -1,4 +1,8 @@
-export async function GET({ url }) {
+import type { APIRoute } from 'astro';
+
+export const prerender = false;   // Very important
+
+export const GET: APIRoute = async ({ url }) => {
   const code = url.searchParams.get('code');
 
   if (!code) {
@@ -34,4 +38,4 @@ export async function GET({ url }) {
       headers: { 'Content-Type': 'application/json' },
     });
   }
-}
+};
