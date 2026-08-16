@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: cryptosbeginner/cryptosbeginner   # ← change this
+  repo: cryptosbeginner/cryptosbeginner
   branch: main
   base_url: https://cryptosbeginner.vercel.app
-  auth_endpoint: auth
+  auth_endpoint: /api/auth
 
 media_folder: public/images
 public_folder: /images
