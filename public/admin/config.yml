@@ -1,0 +1,192 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+# Optional: Enable editorial workflow (draft → review → publish)
+# publish_mode: editorial_workflow
+
+collections:
+  # ========== EXCHANGES ==========
+  - name: "exchanges"
+    label: "Exchanges"
+    label_singular: "Exchange"
+    folder: "src/content/exchanges"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Overall Rating (1-10)", name: "rating", widget: "number", value_type: "float", min: 1, max: 10 }
+      - { label: "Security Rating", name: "securityRating", widget: "number", value_type: "float", min: 1, max: 10, required: false }
+      - { label: "Fees Rating", name: "feesRating", widget: "number", value_type: "float", min: 1, max: 10, required: false }
+      - { label: "Taker Fee %", name: "takerFee", widget: "number", value_type: "float", required: false }
+      - { label: "Maker Fee %", name: "makerFee", widget: "number", value_type: "float", required: false }
+      - { label: "KYC Required", name: "kycRequired", widget: "select", options: ["yes", "optional", "no"], required: false }
+      - { label: "Best For", name: "bestFor", widget: "list", allow_add: true, required: false }
+      - { label: "Pros", name: "pros", widget: "list", allow_add: true }
+      - { label: "Cons", name: "cons", widget: "list", allow_add: true }
+      - { label: "Affiliate Link", name: "affiliateLink", widget: "string", required: false }
+      - { label: "Bonus Text", name: "bonusText", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "FAQ", name: "faq", widget: "list", required: false, fields: [
+          { label: "Question", name: "question", widget: "string" },
+          { label: "Answer", name: "answer", widget: "text" }
+        ]}
+      - { label: "Last Updated", name: "lastUpdated", widget: "datetime", required: false }
+      - { label: "Author", name: "author", widget: "string", required: false }
+
+  # ========== WALLETS ==========
+  - name: "wallets"
+    label: "Wallets"
+    label_singular: "Wallet"
+    folder: "src/content/wallets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Type", name: "type", widget: "select", options: ["hardware", "software", "mobile", "browser"] }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Overall Rating", name: "rating", widget: "number", value_type: "float", min: 1, max: 10 }
+      - { label: "Supported Chains", name: "supportedChains", widget: "list", allow_add: true, required: false }
+      - { label: "Security Features", name: "securityFeatures", widget: "list", allow_add: true, required: false }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Pros", name: "pros", widget: "list", allow_add: true }
+      - { label: "Cons", name: "cons", widget: "list", allow_add: true }
+      - { label: "Affiliate Link", name: "affiliateLink", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "FAQ", name: "faq", widget: "list", required: false, fields: [
+          { label: "Question", name: "question", widget: "string" },
+          { label: "Answer", name: "answer", widget: "text" }
+        ]}
+      - { label: "Last Updated", name: "lastUpdated", widget: "datetime", required: false }
+
+  # ========== MEME TRADING PLATFORMS ==========
+  - name: "meme-platforms"
+    label: "Meme Trading Platforms"
+    label_singular: "Platform"
+    folder: "src/content/meme-platforms"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string" }
+      - { label: "Main Use Case", name: "mainUseCase", widget: "string", required: false } # Launchpad, Terminal, Sniper...
+      - { label: "Supported Chains", name: "chains", widget: "list", allow_add: true }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Overall Rating", name: "rating", widget: "number", value_type: "float", min: 1, max: 10 }
+      - { label: "Key Features", name: "keyFeatures", widget: "list", allow_add: true }
+      - { label: "Risk / Safety Tools", name: "riskTools", widget: "list", allow_add: true, required: false }
+      - { label: "Fees", name: "fees", widget: "text", required: false }
+      - { label: "Pros", name: "pros", widget: "list", allow_add: true }
+      - { label: "Cons", name: "cons", widget: "list", allow_add: true }
+      - { label: "Affiliate Link", name: "affiliateLink", widget: "string", required: false }
+      - { label: "Bonus Text", name: "bonusText", widget: "string", required: false }
+      - { label: "Tutorial Steps", name: "tutorialSteps", widget: "list", required: false, fields: [
+          { label: "Step Title", name: "title", widget: "string" },
+          { label: "Description", name: "description", widget: "text" }
+        ]}
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "FAQ", name: "faq", widget: "list", required: false, fields: [
+          { label: "Question", name: "question", widget: "string" },
+          { label: "Answer", name: "answer", widget: "text" }
+        ]}
+      - { label: "Last Updated", name: "lastUpdated", widget: "datetime", required: false }
+
+  # ========== NO-KYC / PRIVACY SERVICES ==========
+  - name: "no-kyc"
+    label: "No-KYC Services"
+    label_singular: "Service"
+    folder: "src/content/no-kyc"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Website URL", name: "url", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["exchange", "wallet", "swap", "vpn", "other"] }
+      - { label: "Privacy Score (0-100)", name: "privacyScore", widget: "number", min: 0, max: 100 }
+      - { label: "KYC Policy", name: "kycPolicy", widget: "select", options: ["never", "optional", "required-for-limits", "required"] }
+      - { label: "Verification Status", name: "verificationStatus", widget: "select", options: ["verified", "approved", "community", "unverified"] }
+      - { label: "Supported Assets", name: "supportedAssets", widget: "list", allow_add: true, required: false }
+      - { label: "Supported Chains", name: "supportedChains", widget: "list", allow_add: true, required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Pros", name: "pros", widget: "list", allow_add: true }
+      - { label: "Cons", name: "cons", widget: "list", allow_add: true }
+      - { label: "Warnings", name: "warnings", widget: "list", allow_add: true, required: false }
+      - { label: "Last Verified", name: "lastVerified", widget: "datetime", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ========== GUIDES / TUTORIALS ==========
+  - name: "guides"
+    label: "Guides & Tutorials"
+    label_singular: "Guide"
+    folder: "src/content/guides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Level", name: "level", widget: "select", options: ["beginner", "intermediate", "advanced", "all"] }
+      - { label: "Type", name: "type", widget: "select", options: ["guide", "tutorial", "comparison", "how-to", "explainer"] }
+      - { label: "Primary Keyword", name: "primaryKeyword", widget: "string", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "FAQ", name: "faq", widget: "list", required: false, fields: [
+          { label: "Question", name: "question", widget: "string" },
+          { label: "Answer", name: "answer", widget: "text" }
+        ]}
+      - { label: "Related Exchanges", name: "relatedExchanges", widget: "list", allow_add: true, required: false }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Published Date", name: "publishedAt", widget: "datetime", required: false }
+      - { label: "Last Updated", name: "updatedAt", widget: "datetime", required: false }
+
+  # ========== REGION GUIDES ==========
+  - name: "regions"
+    label: "Region Guides"
+    label_singular: "Region Guide"
+    folder: "src/content/regions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Country / Region Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Regulations Summary", name: "regulations", widget: "text", required: false }
+      - { label: "Recommended Exchanges", name: "recommendedExchanges", widget: "list", allow_add: true, required: false }
+      - { label: "Payment Methods", name: "paymentMethods", widget: "list", allow_add: true, required: false }
+      - { label: "Local Quirks / Notes", name: "quirks", widget: "list", allow_add: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "FAQ", name: "faq", widget: "list", required: false, fields: [
+          { label: "Question", name: "question", widget: "string" },
+          { label: "Answer", name: "answer", widget: "text" }
+        ]}
+      - { label: "Last Updated", name: "lastUpdated", widget: "datetime", required: false }
+      - { label: "Author", name: "author", widget: "string", required: false }
+
+  # ========== BLOG / NEWS ==========
+  - name: "blog"
+    label: "Blog & News"
+    label_singular: "Post"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Published Date", name: "publishedAt", widget: "datetime" }
