@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="font-semibold text-white mb-3">Explore</div>
           <ul className="space-y-2">
             <li><Link href="/exchanges/best-crypto-exchanges-2026">Best Exchanges</Link></li>
-            <li><Link href="/regions/pakistan">Pakistan Guide</Link></li>
+            <li><Link href="/regions">Regions</Link></li>
             <li><Link href="/tools/exchange-finder">Exchange Quiz</Link></li>
           </ul>
         </div>

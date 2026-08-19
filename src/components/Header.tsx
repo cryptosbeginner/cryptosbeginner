@@ -12,9 +12,9 @@ export default function Header() {
           <Link href="/exchanges/best-crypto-exchanges-2026" className="hover:text-indigo-600">
             Exchanges
           </Link>
-          <Link href="/regions/pakistan" className="hover:text-indigo-600">
-            Pakistan
-          </Link>
+          <Link href="/regions" className="hover:text-indigo-600">
+  Regions
+</Link>
           <Link href="/tools/exchange-finder" className="hover:text-indigo-600">
             Quiz
           </Link>
