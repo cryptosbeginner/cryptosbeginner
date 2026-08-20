@@ -7,17 +7,17 @@ export const metadata = {
   description:
     "Krypto-Börsen in Österreich vergleichen: MiCA, FMA, Bitpanda, Coinbase, Kraken, österreichische Krypto-Steuern, KESt und DAC8-Reporting.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/de/oesterreich",
+    canonical: "https://www.cryptosbeginner.com/de/regionen/oesterreich",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/austria",
-      de: "https://www.cryptosbeginner.com/de/oesterreich",
+      de: "https://www.cryptosbeginner.com/de/regionen/oesterreich",
       "x-default":
         "https://www.cryptosbeginner.com/regions/austria",
     },
   },
 };
 
-const UPDATED = "2026-08-21";
+const UPDATED = "2026-08-19";
 
 export default function AustriaGermanPage() {
   return (

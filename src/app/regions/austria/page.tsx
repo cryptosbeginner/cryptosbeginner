@@ -10,14 +10,14 @@ export const metadata = {
     canonical: "https://www.cryptosbeginner.com/regions/austria",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/austria",
-      de: "https://www.cryptosbeginner.com/de/oesterreich",
+      de: "https://www.cryptosbeginner.com/de/regionen/oesterreich",
       "x-default":
         "https://www.cryptosbeginner.com/regions/austria",
     },
   },
 };
 
-const UPDATED = "2026-08-21";
+const UPDATED = "2026-08-11";
 
 export default function AustriaPage() {
   return (
