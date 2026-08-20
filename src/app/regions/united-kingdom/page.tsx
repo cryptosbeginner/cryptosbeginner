@@ -30,14 +30,14 @@ const platforms = [
     bestFor: "Mobile users and wider product access",
     note:
       "Large app ecosystem and card-related features. Product availability, lending and rewards can differ for UK residents.",
-    href: "https://www.crypto.com",
+    href: "https://go.cryptosbeginner.com/CryptoCom",
   },
   {
     name: "Gemini",
     bestFor: "Simple custody and established-brand users",
     note:
       "A regulated-market-oriented platform, but registration and product permissions should still be checked on the FCA register.",
-    href: "https://go.cryptosbeginner.com/Gemini",
+    href: "https://www.Gemini.com",
   },
   {
     name: "Bitstamp",
@@ -727,7 +727,7 @@ export default function UnitedKingdomPage() {
               </a>
 
               <a
-                href="https://www.crypto.com"
+                href="https://go.cryptosbeginner.com/CryptoCom"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
