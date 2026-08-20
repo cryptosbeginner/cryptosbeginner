@@ -16,7 +16,7 @@ const platforms = [
     bestFor: "Beginners and simple GBP access",
     note:
       "Well-known interface and broad UK availability. Check the FCA register and the exact UK entity before relying on any regulatory assumption.",
-    href: "https://go.cryptosbeginner.com/coinbase",
+    href: "https://coinbase.com",
   },
   {
     name: "Kraken",
@@ -30,7 +30,7 @@ const platforms = [
     bestFor: "Mobile users and wider product access",
     note:
       "Large app ecosystem and card-related features. Product availability, lending and rewards can differ for UK residents.",
-    href: "https://go.cryptosbeginner.com/CryptoCom",
+    href: "https://www.crypto.com",
   },
   {
     name: "Gemini",
@@ -44,14 +44,14 @@ const platforms = [
     bestFor: "Straightforward spot trading",
     note:
       "Long-running exchange with a relatively simple product set. Check current GBP funding, fees and UK legal entity.",
-    href: "https://go.cryptosbeginner.com/Bitstamp",
+    href: "https://www.bitstamp.com/",
   },
   {
     name: "eToro",
     bestFor: "Users who want a multi-asset app",
     note:
       "Crypto is only one part of the platform. Confirm whether you receive actual crypto custody or only economic exposure for the product selected.",
-    href: "https://go.cryptosbeginner.com/eToro",
+    href: "https://www.etoro.com/",
   },
 ];
 
@@ -530,7 +530,7 @@ export default function UnitedKingdomPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/coinbase"
+                      href="https://coinbase.com"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
@@ -599,7 +599,7 @@ export default function UnitedKingdomPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/eToro"
+                      href="https://www.etoro.com/"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
@@ -709,7 +709,7 @@ export default function UnitedKingdomPage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/coinbase"
+                href="https://coinbase.com"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
@@ -718,7 +718,7 @@ export default function UnitedKingdomPage() {
               </a>
 
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://www.kraken.com"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
@@ -727,7 +727,7 @@ export default function UnitedKingdomPage() {
               </a>
 
               <a
-                href="https://go.cryptosbeginner.com/CryptoCom"
+                href="https://www.crypto.com"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
