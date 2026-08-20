@@ -84,7 +84,6 @@ function ProofOfReservesJsonLd() {
     })),
   };
 
-  // Scrub "<" for safety as per Next.js JSON-LD guidance
   const safeArticle = JSON.stringify(articleLd).replace(/</g, "\\u003c");
   const safeFaq = JSON.stringify(faqLd).replace(/</g, "\\u003c");
 
@@ -214,42 +213,49 @@ export default function ProofOfReservesPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-          <article className="prose prose-slate max-w-none">
-            <h2 id="definition">Simple definition</h2>
-            <p>
+          <article className="max-w-none text-slate-900 text-sm sm:text-base leading-relaxed">
+            <h2 id="definition" className="text-lg font-semibold text-slate-900">
+              Simple definition
+            </h2>
+            <p className="mt-2">
               In traditional finance, “reserves” are the assets a bank or
               custodian keeps to meet withdrawal requests and obligations. In
               crypto, Proof of Reserves is any method—usually a mix of
               on‑chain data, cryptography, and independent auditing—that
               lets you verify a platform currently holds enough crypto to
-              cover customer balances it is responsible for.[web:1][web:9]
+              cover customer balances it is responsible for.
             </p>
-            <p>
+            <p className="mt-2">
               A typical PoR report compares two things: the total customer
               liabilities (how much crypto users should have on the platform)
               and the assets in reserve wallets the platform controls. If the
               reserves equal or exceed the liabilities, the exchange can
-              claim it is fully backed at that snapshot in time.[web:5][web:8]
+              claim it is fully backed at that snapshot in time.
             </p>
 
-            <h2 id="why-matters">Why Proof of Reserves matters</h2>
-            <p>
+            <h2
+              id="why-matters"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
+              Why Proof of Reserves matters
+            </h2>
+            <p className="mt-2">
               Centralized exchanges and custodians sit between you and the
               blockchain: they take deposits, show balances in an app, and
               route trades internally. Without transparency, you are
               trusting that those numbers reflect real assets and not
-              accounting tricks or hidden holes.[web:1][web:37]
+              accounting tricks or hidden holes.
             </p>
-            <p>
+            <p className="mt-2">
               Proof of Reserves emerged after high‑profile exchange failures
               and insolvencies, where customers discovered too late that the
               platform did not hold enough assets to honor withdrawals. PoR
               does not fix every risk, but it raises the bar for
               transparency and makes it harder for custodians to hide a
-              shortfall for long.[web:1][web:36]
+              shortfall for long.
             </p>
 
-            <div className="rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+            <div className="mt-4 rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
               <p className="font-semibold">
                 Quick takeaway for beginners
               </p>
@@ -260,84 +266,97 @@ export default function ProofOfReservesPage() {
               </p>
             </div>
 
-            <h2 id="how-works">How PoR works technically (plain English)</h2>
-            <p>
+            <h2
+              id="how-works"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
+              How PoR works technically (plain English)
+            </h2>
+            <p className="mt-2">
               Many PoR implementations use a data structure called a Merkle
               tree. Imagine every customer balance is turned into a small
               chunk of data, then pairs of chunks are repeatedly combined
               and hashed together until you are left with one final “root”
-              hash that represents the entire set of balances.[web:31][web:39]
+              hash that represents the entire set of balances.
             </p>
-            <p>
+            <p className="mt-2">
               The exchange can then prove that a particular anonymized
               balance is included in the tree without revealing other
               customers’ data. Auditors or users compare this Merkle root
               and liability snapshot to on‑chain data from the
               platform’s reserve wallets, checking that the reserves match
-              or exceed the claimed liabilities at the time of the report.[web:31][web:32]
+              or exceed the claimed liabilities at the time of the report.
             </p>
-            <p>
+            <p className="mt-2">
               Some platforms also publish reserve wallet addresses and
               invite users to verify balances on public block explorers.
               Others commission third‑party firms to attest that the
               data was collected correctly and that the reserves matched the
-              reported liabilities at the audit date.[web:11][web:32][web:39]
+              reported liabilities at the audit date.
             </p>
 
-            <h2 id="limitations">Limitations & blind spots</h2>
-            <p>
+            <h2
+              id="limitations"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
+              Limitations & blind spots
+            </h2>
+            <p className="mt-2">
               Proof of Reserves is still just a snapshot. It shows that on a
               specific date, the exchange’s reserves matched its reported
               customer balances under the method used. It cannot guarantee
               future behavior, sudden losses, or hidden liabilities that
-              were not included in the report.[web:1][web:36]
+              were not included in the report.
             </p>
-            <p>
+            <p className="mt-2">
               Some PoR attempts only show “proof of assets”—that the platform
               controls certain wallets—without fully accounting for
               all liabilities. Others rely on opaque methodologies, infrequent
               updates, or auditors who do not specialize in crypto. A strong
               PoR implementation will clearly explain what is included, what
               is excluded, how often reports are refreshed, and what users
-              can verify themselves.[web:1][web:9][web:39]
+              can verify themselves.
             </p>
-            <p>
+            <p className="mt-2">
               That is why PoR should be treated as one piece of your
               security and trust assessment, alongside incident history,
               regulation, internal controls, and your own account‑level
               safety practices.
             </p>
 
-            <h2 id="how-exchanges-use">
+            <h2
+              id="how-exchanges-use"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
               How exchanges publish Proof of Reserves
             </h2>
-            <p>
+            <p className="mt-2">
               Most mainstream exchanges that support PoR publish a
               dedicated transparency or Proof of Reserves page, usually
               linked from the footer or help center. These pages often
               include reserve wallet information, PoR methodology, audit
               reports, and instructions for users to verify their own
-              balances against a Merkle tree or verification tool.[web:11][web:12][web:32]
+              balances against a Merkle tree or verification tool.
             </p>
-            <p>
+            <p className="mt-2">
               For example, you will often see:
             </p>
-            <ul>
+            <ul className="mt-2 list-disc pl-5">
               <li>
                 A list of on‑chain reserve wallets and links to block
-                explorers.[web:11][web:32]
+                explorers.
               </li>
               <li>
                 A recent audit or attestation letter from a third‑party firm
-                explaining scope and date.[web:1][web:39]
+                explaining scope and date.
               </li>
               <li>
                 A technical breakdown of how liabilities were collected,
-                anonymized, and aggregated.[web:31][web:37]
+                anonymized, and aggregated.
               </li>
               <li>
                 Optional tools that let you check whether your anonymized
-                balance was included in the latest PoR run.[web:31][web:32][web:33]
+                balance was included in the latest PoR run.
               </li>
             </ul>
 
@@ -392,24 +411,27 @@ export default function ProofOfReservesPage() {
                 We link to these pages as neutral transparency examples, not
                 as endorsements or investment advice. Always do your own
                 research and consider your local regulations and risk
-                tolerance.[web:9][web:36]
+                tolerance.
               </p>
             </div>
 
-            <h2 id="how-beginners-use">
+            <h2
+              id="how-beginners-use"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
               How beginners should use PoR when choosing an exchange
             </h2>
-            <p>
+            <p className="mt-2">
               As a beginner, your goal is not to become an auditor—it is to
               avoid platforms that hide basic facts about how they store
               customer assets. You can use PoR as a simple filter: prefer
               exchanges that offer clear, recent, and verifiable PoR reports
-              over ones that do not.[web:9][web:36]
+              over ones that do not.
             </p>
-            <p>
+            <p className="mt-2">
               Combine this with other checks:
             </p>
-            <ul>
+            <ul className="mt-2 list-disc pl-5">
               <li>
                 Read our{" "}
                 <Link
@@ -441,10 +463,10 @@ export default function ProofOfReservesPage() {
                   Fee Calculator
                 </Link>
                 , then consider whether those costs are fair given the
-                platform’s transparency and security.[web:29][web:30]
+                platform’s transparency and security.
               </li>
             </ul>
-            <p>
+            <p className="mt-2">
               For some countries, we also maintain{" "}
               <Link
                 href="/regions"
@@ -500,7 +522,12 @@ export default function ProofOfReservesPage() {
               </p>
             </div>
 
-            <h2 id="faq">FAQ: Proof of Reserves</h2>
+            <h2
+              id="faq"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
+              FAQ: Proof of Reserves
+            </h2>
             {faqs.map((faq) => (
               <details
                 key={faq.question}
