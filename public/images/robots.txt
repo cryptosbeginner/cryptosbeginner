@@ -1,0 +1,36 @@
+# Global default: allow crawling of public content
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Allow: /
+
+# Major search crawlers
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search and training crawlers (OpenAI, Anthropic, Perplexity, etc.)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap for better discovery
+Sitemap: https://cryptosbeginner.com/sitemap.xml
