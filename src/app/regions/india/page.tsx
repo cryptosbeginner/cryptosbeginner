@@ -3,17 +3,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Best Crypto Exchanges in India 2026 | Tax, FIU & Practical Options",
+  title: "Best Crypto Exchanges in India 2026 | FIU Registration, VDA Tax & Practical Guide",
   description:
-    "In-depth 2026 guide to crypto exchanges for Indian users. Covers tax treatment, FIU context, P2P vs direct funding, fees, security, and which platforms are actually usable.",
+    "In-depth 2026 India guide. FIU-IND registration, 30% VDA tax, 1% TDS, INR P2P reality, which global platforms returned after compliance, fees, risks and how to choose.",
 };
 
 export default function IndiaPage() {
-  const jsonLd = {
+  const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Best Crypto Exchanges in India 2026",
-    datePublished: "2026-07-22",
+    datePublished: "2026-02-18",
     dateModified: "2026-08-20",
     author: { "@type": "Person", name: "Hassan Malik" },
     publisher: { "@type": "Organization", name: "CryptosBeginner" },
@@ -24,7 +24,7 @@ export default function IndiaPage() {
       <Header />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
       />
 
       <main className="bg-white">
@@ -38,10 +38,11 @@ export default function IndiaPage() {
               Best Crypto Exchanges in India 2026
             </h1>
             <p className="mt-4 text-lg text-slate-700">
-              India is one of the largest grassroots crypto markets in the world. That does not
-              mean every global exchange works the same way here. Tax rules, FIU registration
-              requirements, banking friction, and product availability all shape what is
-              practical for Indian users in 2026.
+              India is one of the world’s largest grassroots crypto markets — and one of the most
+              tax-sensitive. Cryptocurrency is not banned, but it is not legal tender either. The
+              operating reality for users is a compliance-first environment: FIU-IND registration for
+              service providers, PMLA obligations, a flat tax on virtual digital asset gains, and
+              1% TDS on many transfers.
             </p>
           </div>
         </section>
@@ -51,10 +52,22 @@ export default function IndiaPage() {
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-emerald-900 mb-3">TL;DR</h2>
             <ul className="space-y-2 text-slate-800">
-              <li><strong>Most used global platforms:</strong> Binance, Bybit, Bitget, OKX, MEXC</li>
-              <li><strong>What usually decides the winner:</strong> liquidity, INR access routes, and reliability of withdrawals</li>
-              <li><strong>Biggest non-trading cost:</strong> Indian crypto tax treatment (plan for it before you size up)</li>
-              <li><strong>Best habit:</strong> keep long-term holdings off-exchange</li>
+              <li>
+                <strong>Legal posture:</strong> not banned, not legal tender; taxed and AML-supervised
+              </li>
+              <li>
+                <strong>Service-provider filter:</strong> platforms serving Indians are expected to
+                register with FIU-IND under PMLA
+              </li>
+              <li>
+                <strong>Tax reality:</strong> ~30% on VDA transfer gains + 1% TDS on many transactions
+              </li>
+              <li>
+                <strong>Commonly used globals after compliance cycles:</strong> Binance, Bybit, Bitget, and other FIU-registered names
+              </li>
+              <li>
+                <strong>Best habit:</strong> keep records, test INR rails, self-custody long-term holdings
+              </li>
             </ul>
           </div>
         </section>
@@ -64,66 +77,125 @@ export default function IndiaPage() {
           <div className="rounded-2xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-3">On this page</h2>
             <ol className="grid sm:grid-cols-2 gap-2 text-sm text-indigo-700">
-              <li><a href="#context" className="hover:underline">Market context</a></li>
-              <li><a href="#tax" className="hover:underline">Tax reality</a></li>
+              <li><a href="#legal" className="hover:underline">Legal status</a></li>
+              <li><a href="#fiu" className="hover:underline">FIU-IND registration</a></li>
+              <li><a href="#tax" className="hover:underline">VDA tax & TDS</a></li>
               <li><a href="#comparison" className="hover:underline">Exchange comparison</a></li>
-              <li><a href="#binance" className="hover:underline">Binance</a></li>
-              <li><a href="#bybit" className="hover:underline">Bybit</a></li>
-              <li><a href="#bitget" className="hover:underline">Bitget</a></li>
-              <li><a href="#others" className="hover:underline">OKX, MEXC & others</a></li>
+              <li><a href="#funding" className="hover:underline">INR funding</a></li>
+              <li><a href="#risks" className="hover:underline">Risks</a></li>
               <li><a href="#howto" className="hover:underline">How to choose</a></li>
               <li><a href="#faq" className="hover:underline">FAQ</a></li>
             </ol>
           </div>
         </section>
 
-        {/* Context */}
-        <section id="context" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Why India is different</h2>
+        {/* Legal */}
+        <section id="legal" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Legal status in 2026</h2>
           <p className="text-slate-700 mb-4">
-            India repeatedly ranks near the top of global crypto adoption indexes. Retail activity
-            is high, stablecoin usage is meaningful, and search demand is strong. At the same time,
-            banking rails and compliance requirements are tighter than in pure P2P-first markets.
+            India neither treats cryptocurrency as legal tender nor runs a simple nationwide ban on
+            private ownership and trading. After the Supreme Court set aside the RBI’s 2018 banking
+            circular in 2020, the policy centre of gravity moved toward taxation and anti-money-
+            laundering supervision rather than a product-level market licence for every token.
           </p>
           <p className="text-slate-700 mb-4">
-            Several large exchanges restricted or paused services for Indian users in previous
-            years, then returned after registration steps with the Financial Intelligence Unit
-            (FIU-IND). That history matters: availability can change, and “works today” is not
-            the same as “will always work the same way.”
+            That creates a distinctive Indian structure:
+          </p>
+          <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
+            <li>Users can generally trade, but must handle tax and reporting consequences</li>
+            <li>Virtual Digital Asset service providers fall under PMLA reporting expectations</li>
+            <li>FIU-IND registration became the practical gateway for platforms serving Indian users</li>
+            <li>RBI commentary has remained cautious even while the tax system collects VDA revenue</li>
+          </ul>
+          <p className="text-slate-700 mb-2">External references to verify:</p>
+          <ul className="list-disc pl-5 text-slate-700 space-y-2">
+            <li>
+              <a href="https://www.incometax.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
+                Income Tax Department
+              </a>{" "}
+              — VDA / ITR guidance and reporting updates
+            </li>
+            <li>
+              <a href="https://fiuindia.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
+                Financial Intelligence Unit — India (FIU-IND)
+              </a>{" "}
+              — reporting-entity framework under PMLA
+            </li>
+            <li>
+              Parliamentary / standing-committee reporting on VDA policy and compliance
+            </li>
+          </ul>
+        </section>
+
+        {/* FIU */}
+        <section id="fiu" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">FIU-IND registration: the real access filter</h2>
+          <p className="text-slate-700 mb-4">
+            Since VDA service providers were brought under the PMLA framework, platforms catering to
+            Indian users have been expected to register with FIU-IND as reporting entities, run KYC,
+            monitor transactions, and report suspicious activity.
+          </p>
+          <p className="text-slate-700 mb-4">
+            This is not the same as a full product regulator “licence to sell crypto” in the MAS or
+            MiCA sense. Official messaging has repeatedly stressed that FIU registration is about
+            AML/CFT compliance — not a seal of investment safety or a guarantee against hacks,
+            fraud, or losses.
+          </p>
+          <p className="text-slate-700 mb-4">
+            Enforcement pressure in prior years pushed several large offshore brands to pause,
+            pay penalties, register, and return. By 2026, public tallies of registered VDA service
+            providers were in the dozens, including both domestic platforms and major global names
+            that completed the process.
           </p>
           <p className="text-slate-700">
-            Practical takeaway: choose platforms with deep liquidity and clear account recovery
-            processes, then keep only trading capital on them.
+            Practical takeaway for users: prefer platforms that can demonstrate current FIU-related
+            compliance posture for India, and ignore “no-KYC offshore” marketing aimed at Indian residents.
           </p>
         </section>
 
         {/* Tax */}
         <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Tax reality you cannot ignore</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">VDA tax and 1% TDS — the cost that changes behaviour</h2>
           <p className="text-slate-700 mb-4">
-            Indian crypto tax rules are one of the biggest costs of trading here. Broadly,
-            virtual digital asset gains have been taxed at a flat high rate in recent years, with
-            TDS applied on transfers in many cases. Loss set-off rules have also been restrictive
-            compared with normal equity trading.
+            India’s Virtual Digital Asset tax framework, introduced via the Finance Act, 2022 and
+            carried forward in subsequent years, is one of the most important “all-in cost” factors
+            for Indian traders:
           </p>
+          <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
+            <li>
+              <strong>Flat tax on transfer gains:</strong> broadly 30% on income from transfer of VDAs
+              under the special regime (Section 115BBH framework / successor numbering)
+            </li>
+            <li>
+              <strong>1% TDS:</strong> Section 194S-style withholding on specified VDA transfers above
+              thresholds
+            </li>
+            <li>
+              <strong>Loss set-off limits:</strong> historically restrictive compared with ordinary equity trading
+            </li>
+            <li>
+              <strong>Reporting expansion:</strong> exchange/intermediary reporting obligations and tighter
+              matching against AIS / Form 26AS style data
+            </li>
+          </ul>
           <p className="text-slate-700 mb-4">
-            This page is not tax advice. Before you scale position size, read the current Income
-            Tax guidance and keep downloadable trade history from every exchange you use. Many
-            active traders underestimate how quickly tax and TDS change the real all-in cost.
+            Budget cycles through 2026 did not deliver the broad rate relief many traders hoped for.
+            The policy signal has been: tax and report first; product-market liberalisation later.
           </p>
           <p className="text-slate-700">
-            Useful starting points for official context: the Income Tax Department portal and
-            recent Union Budget notes on virtual digital assets. Cross-check the latest circulars
-            rather than relying on old blog posts.
+            This page is not tax advice. Before scaling size, read current CBDT / Income Tax guidance
+            and keep downloadable trade history from every venue you use. High-frequency strategies
+            that ignore TDS and gain computation often look profitable on the exchange screen and
+            weak after tax.
           </p>
         </section>
 
         {/* Comparison */}
         <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Exchange comparison for Indian users</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Exchanges Indian users evaluate in 2026</h2>
           <p className="text-slate-700 mb-5">
-            Rankings below are practical, not purely fee-based. Liquidity, INR access routes,
-            product range, and operational reliability matter more for most users.
+            Rankings below emphasise practical access after the FIU compliance cycle, not pure
+            global volume marketing.
           </p>
           <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
             <table className="w-full text-sm text-left">
@@ -131,23 +203,23 @@ export default function IndiaPage() {
                 <tr>
                   <th className="px-4 py-3 font-semibold text-slate-800">Exchange</th>
                   <th className="px-4 py-3 font-semibold text-slate-800">Best for</th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">Notes</th>
+                  <th className="px-4 py-3 font-semibold text-slate-800">India-specific note</th>
                   <th className="px-4 py-3 font-semibold text-slate-800">Action</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-slate-800">
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">Binance</td>
-                  <td className="px-4 py-3">Most users / liquidity</td>
-                  <td className="px-4 py-3">Deep books, broad products</td>
+                  <td className="px-4 py-3">Liquidity / broad products</td>
+                  <td className="px-4 py-3">Returned after FIU registration / penalty cycle</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">Bybit</td>
-                  <td className="px-4 py-3">Futures traders</td>
-                  <td className="px-4 py-3">Cleaner derivatives UX for many</td>
+                  <td className="px-4 py-3">Futures / active trading</td>
+                  <td className="px-4 py-3">Completed FIU path after enforcement pressure</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
@@ -155,23 +227,23 @@ export default function IndiaPage() {
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">Bitget</td>
                   <td className="px-4 py-3">Copy trading</td>
-                  <td className="px-4 py-3">Strong social/copy product</td>
+                  <td className="px-4 py-3">Evaluate access + lead-trader quality</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/Bitget-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">OKX</td>
-                  <td className="px-4 py-3">All-round trading + Web3</td>
-                  <td className="px-4 py-3">Competitive tools package</td>
+                  <td className="px-4 py-3">Trading tools</td>
+                  <td className="px-4 py-3">Confirm current India eligibility before funding</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">MEXC</td>
-                  <td className="px-4 py-3">Altcoins / lower headline fees</td>
-                  <td className="px-4 py-3">Useful secondary venue</td>
+                  <td className="px-4 py-3">Fees / altcoins</td>
+                  <td className="px-4 py-3">Secondary venue; verify access and liquidity</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/MEXC-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
@@ -179,90 +251,99 @@ export default function IndiaPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-3 text-sm text-slate-500">
+            FIU registration status and product availability change. Confirm on the platform and
+            against current compliance disclosures before depositing.
+          </p>
         </section>
 
-        {/* Detailed reviews */}
-        <section className="max-w-4xl mx-auto px-4 pb-16 space-y-14">
-          <article id="binance">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Binance — best default for many Indian users</h2>
-            <p className="text-slate-700 mb-4">
-              Binance remains the platform most people compare everything else against. Liquidity
-              on major pairs is hard to match, the product range is wide, and for many users it is
-              still the most complete single account.
-            </p>
-            <p className="text-slate-700 mb-4">
-              Standard spot fees are about 0.10% / 0.10%, with discounts via BNB and VIP tiers.
-              Futures fees are competitive once volume rises. The bigger decision is operational:
-              confirm current onboarding rules for Indian residents and test a small deposit and
-              withdrawal before moving serious size.
-            </p>
-            <ul className="list-disc pl-5 text-slate-700 space-y-1 mb-5">
-              <li><strong>Pros:</strong> deepest liquidity, broad coin list, mature app</li>
-              <li><strong>Cons:</strong> interface can feel heavy for complete beginners; policy changes have happened before</li>
-            </ul>
-            <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
-              Open Binance →
-            </a>
-          </article>
+        {/* Funding */}
+        <section id="funding" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">INR funding reality</h2>
+          <p className="text-slate-700 mb-4">
+            Indian users commonly fund through:
+          </p>
+          <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
+            <li>UPI / IMPS / bank transfer on domestic platforms</li>
+            <li>P2P INR markets on global platforms (UPI, bank transfer offers)</li>
+            <li>Card or third-party ramps where enabled</li>
+          </ul>
+          <p className="text-slate-700">
+            P2P remains important for many global accounts. Use only exchange escrow, prefer
+            high-completion merchants, and start with small tests. Bank flags still happen when
+            transfer notes or counterparties look risky.
+          </p>
+        </section>
 
-          <article id="bybit">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Bybit — stronger for derivatives</h2>
-            <p className="text-slate-700 mb-4">
-              If your main activity is perpetual futures, Bybit is often the cleaner specialist
-              choice. Many active traders prefer its order flow and interface for derivatives
-              even when they keep a Binance account for spot liquidity.
-            </p>
-            <p className="text-slate-700 mb-4">
-              Be honest about risk history. Bybit suffered a major security incident in February
-              2025. That does not automatically make it unusable, but it is a reason to limit
-              balances to trading capital and review recent security updates before depositing.
-            </p>
-            <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
-              Open Bybit →
-            </a>
-          </article>
+        {/* Risks */}
+        <section id="risks" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Risks specific to Indian users</h2>
+          <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
+            <li>
+              <strong>Tax drag:</strong> 30% gain tax + TDS can dominate strategy results
+            </li>
+            <li>
+              <strong>Reporting mismatch risk:</strong> exchange reports, TDS data, and ITR entries are
+              increasingly cross-checked
+            </li>
+            <li>
+              <strong>Platform disruption risk:</strong> non-compliant apps have been blocked before
+            </li>
+            <li>
+              <strong>Exchange-counterparty risk:</strong> hacks and freezes still happen globally
+            </li>
+            <li>
+              <strong>Scam risk:</strong> fake recovery agents, fake apps, guaranteed-return Telegram channels
+            </li>
+          </ul>
+          <p className="text-slate-700">
+            Bybit’s February 2025 security incident remains a reminder that even large FIU-registered
+            brands are not risk-free vaults. Keep long-term holdings in self-custody.
+          </p>
+        </section>
 
-          <article id="bitget">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Bitget — best when you want copy trading</h2>
-            <p className="text-slate-700 mb-4">
-              Bitget is the clearer pick if your goal is to follow other traders rather than
-              build every strategy yourself. Copy trading quality varies by lead trader, so treat
-              it as a tool, not a passive income product.
+        {/* How to choose */}
+        <section id="howto" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">How to choose in practice</h2>
+          <div className="space-y-3 text-slate-700 mb-5">
+            <p>
+              <strong>Most users / liquidity first:</strong> Binance after confirming current India access.
             </p>
-            <a href="https://go.cryptosbeginner.com/Bitget-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
-              Open Bitget →
-            </a>
-          </article>
-
-          <article id="others">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">OKX, MEXC and secondary venues</h2>
-            <p className="text-slate-700 mb-4">
-              <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-medium hover:underline">OKX</a>{" "}
-              is a strong all-rounder if you want competitive trading tools and Web3 features in
-              one place.{" "}
-              <a href="https://go.cryptosbeginner.com/MEXC-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-medium hover:underline">MEXC</a>{" "}
-              and{" "}
-              <a href="https://go.cryptosbeginner.com/WEEX-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-medium hover:underline">WEEX</a>{" "}
-              are more often used as secondary venues for lower headline fees or newer listings.
-              Use them carefully: thinner books on small coins can cost more than the fee table suggests.
+            <p>
+              <strong>Futures-focused:</strong> Bybit, then compare fees and margin rules carefully.
             </p>
-          </article>
+            <p>
+              <strong>Copy trading:</strong> Bitget, with strict lead-trader due diligence.
+            </p>
+            <p>
+              <strong>Anyone active:</strong> export trades regularly and plan for VDA tax computation
+              before year-end scrambling.
+            </p>
+          </div>
+          <p className="text-slate-700">
+            Tools:{" "}
+            <Link href="/tools/fee-calculator" className="text-indigo-600 font-medium hover:underline">
+              fee calculator
+            </Link>{" "}
+            ·{" "}
+            <Link href="/tools/exchange-finder" className="text-indigo-600 font-medium hover:underline">
+              exchange finder quiz
+            </Link>
+          </p>
+        </section>
 
-          <article id="howto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">How to choose in practice</h2>
-            <div className="space-y-3 text-slate-700">
-              <p>New to crypto and mainly buying BTC/ETH: start with <strong>Binance</strong>.</p>
-              <p>Active futures trader: evaluate <strong>Bybit</strong>, then Binance.</p>
-              <p>Want to follow other traders: <strong>Bitget</strong>.</p>
-              <p>Want a second account for alts: <strong>MEXC</strong> or OKX.</p>
+        {/* CTA mid */}
+        <section className="max-w-4xl mx-auto px-4 pb-12">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h2 className="text-xl font-bold text-slate-900 mb-3">Quick actions</h2>
+            <div className="flex flex-wrap gap-3">
+              <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">Binance</a>
+              <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">Bybit</a>
+              <a href="https://go.cryptosbeginner.com/Bitget-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">Bitget</a>
+              <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">OKX</a>
+              <a href="https://go.cryptosbeginner.com/LedgerWallet" target="_blank" rel="noopener noreferrer sponsored" className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800">Ledger</a>
             </div>
-            <p className="mt-5 text-slate-700">
-              Still unsure? Use the{" "}
-              <Link href="/tools/exchange-finder" className="text-indigo-600 font-medium hover:underline">exchange finder quiz</Link>{" "}
-              or the{" "}
-              <Link href="/tools/fee-calculator" className="text-indigo-600 font-medium hover:underline">fee calculator</Link>.
-            </p>
-          </article>
+          </div>
         </section>
 
         {/* FAQ */}
@@ -273,22 +354,30 @@ export default function IndiaPage() {
               <h3 className="font-bold text-slate-900">Is crypto legal in India?</h3>
               <p className="mt-2">
                 Trading and holding virtual digital assets is not banned, but it is taxed and
-                increasingly compliance-sensitive. Always follow current law and platform KYC rules.
+                compliance-sensitive. Crypto is not legal tender.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900">Which exchange is safest for Indian users?</h3>
+              <h3 className="font-bold text-slate-900">What is FIU registration?</h3>
               <p className="mt-2">
-                No centralized exchange is fully safe. Prefer platforms with clear operational
-                history, enable 2FA, and withdraw long-term holdings to a wallet you control.
+                FIU-IND registration under the PMLA framework is the AML reporting-entity pathway
+                for VDA service providers serving Indian users. It is compliance infrastructure, not
+                an investment guarantee.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-slate-900">Should I use only one exchange?</h3>
+              <h3 className="font-bold text-slate-900">Do I really need to worry about 1% TDS?</h3>
               <p className="mt-2">
-                One primary account is enough for most beginners. A second venue can make sense
-                for a specific product (copy trading or a particular market), not for spreading
-                tiny balances everywhere.
+                Yes if you are active. TDS is an advance collection mechanism that shows up in tax
+                records. Ignoring it is how people create year-end problems.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900">Should I use only Indian exchanges?</h3>
+              <p className="mt-2">
+                Domestic platforms can simplify INR on-ramps and some reporting workflows. Global
+                FIU-compliant platforms remain widely used for liquidity and product range. Many
+                users keep one primary account rather than spreading balances thinly.
               </p>
             </div>
           </div>
@@ -297,8 +386,10 @@ export default function IndiaPage() {
         {/* Bottom CTA */}
         <section className="bg-slate-900 text-white">
           <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-            <h2 className="text-2xl font-bold">Ready to choose a platform?</h2>
-            <p className="mt-3 text-slate-300">Start with the one that matches how you actually trade.</p>
+            <h2 className="text-2xl font-bold">Compliance first. Then product fit.</h2>
+            <p className="mt-3 text-slate-300">
+              Confirm FIU-era access, understand VDA tax, then test a small INR cycle.
+            </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-500 hover:bg-emerald-600 font-semibold px-5 py-3 rounded-lg">Binance</a>
               <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="bg-white/10 hover:bg-white/20 font-semibold px-5 py-3 rounded-lg">Bybit</a>
@@ -310,9 +401,10 @@ export default function IndiaPage() {
         <section className="bg-slate-50 border-t">
           <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
             <p>
-              <strong>Disclaimer:</strong> Educational content only. Not financial, tax, or legal advice.
-              Cryptocurrency trading can result in the loss of your capital. Some links are affiliate links.
-              Always verify current platform availability, fees, and Indian tax rules yourself.
+              <strong>Disclaimer:</strong> Educational content only. Not tax, legal, or financial advice.
+              VDA tax rules, FIU requirements, and platform access change. Some links are affiliate
+              links. Verify current Income Tax / FIU guidance and platform status yourself before
+              depositing funds.
             </p>
           </div>
         </section>
