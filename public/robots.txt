@@ -1,0 +1,55 @@
+# Default: allow public content, block obvious private paths
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Allow: /
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Baiduspider
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# AI crawlers & AI-related tokens
+
+# OpenAI (ChatGPT, AI search, training)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity (answer engine)
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews control token
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap for better discovery
+Sitemap: https://www.cryptosbeginner.com/sitemap.xml
