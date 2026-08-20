@@ -1,103 +1,546 @@
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export const metadata = {
-  title: "Best Crypto Exchanges in Germany 2026 | MiCA & EUR Access",
+  title: "Best Crypto Exchanges in Germany 2026",
   description:
-    "In-depth 2026 guide for Germany. Covers MiCA licensing reality, EUR rails, regulated options, fees, and which platforms make sense after the 2026 transition.",
+    "2026 Germany crypto exchange guide: MiCA, BaFin, German tax rules, Coinbase, Kraken, Bitpanda, Bitstamp and custody considerations for residents.",
 };
+
+const UPDATED = "2026-08-21";
+
+const platforms = [
+  {
+    name: "Coinbase",
+    bestFor: "Beginners and simple euro purchases",
+    note:
+      "Easy-to-use interface and broad European availability. Check the exact EU entity, MiCA authorisation and product permissions for Germany.",
+    href: "https://go.cryptosbeginner.com/coinbase",
+  },
+  {
+    name: "Kraken",
+    bestFor: "Experienced spot traders",
+    note:
+      "Strong trading interface and established market presence. Compare EUR funding, maker/taker fees, custody and current German product access.",
+    href: "https://go.cryptosbeginner.com/Kraken",
+  },
+  {
+    name: "Bitpanda",
+    bestFor: "German-speaking beginners",
+    note:
+      "A major DACH-region platform with euro funding and a broad retail app. Verify the applicable entity, custody model and asset availability.",
+    href: "https://go.cryptosbeginner.com/Bitpanda",
+  },
+  {
+    name: "Bitstamp",
+    bestFor: "Straightforward spot trading",
+    note:
+      "Long-running European exchange with a relatively simple product range. Check its current MiCA status and German availability.",
+    href: "https://go.cryptosbeginner.com/Bitstamp",
+  },
+  {
+    name: "Crypto.com",
+    bestFor: "Mobile users and wider products",
+    note:
+      "Large app ecosystem and multiple products. German availability, staking, rewards and other services can be restricted by regulation.",
+    href: "https://go.cryptosbeginner.com/CryptoCom",
+  },
+  {
+    name: "Börse Stuttgart Digital",
+    bestFor: "German-market infrastructure",
+    note:
+      "A Germany-focused digital-asset infrastructure provider. Retail access may be delivered through partner banks or brokers rather than one universal app.",
+    href: "https://www.boerse-stuttgart.de",
+  },
+];
 
 export default function GermanyPage() {
   return (
     <>
       <Header />
+
       <main className="bg-white">
         <section className="bg-slate-50 border-b">
           <div className="max-w-4xl mx-auto px-4 py-12">
-            <p className="text-sm font-medium text-indigo-600 mb-2">Updated August 2026 · By Alex Rivera</p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+            <p className="text-sm font-medium text-indigo-600 mb-2">
+              Updated <time dateTime={UPDATED}>August 2026</time> · By
+              Alex Rivera
+            </p>
+
+            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
               Best Crypto Exchanges in Germany 2026
             </h1>
+
             <p className="mt-4 text-lg text-slate-700">
-              After the MiCA transitional period, EU access became much more licence-driven.
-              This guide prioritises platforms with a clearer regulated footprint for German
-              residents, not just the largest global brands.
+              Germany is one of Europe&apos;s most established crypto
+              markets. MiCA now provides the main EU framework for
+              crypto-asset service providers, while BaFin continues to
+              supervise German financial firms and crypto custody.
+              Residents compare Coinbase, Kraken, Bitpanda, Bitstamp,
+              Crypto.com and German-market infrastructure providers—but
+              tax reporting and custody details matter as much as fees.
             </p>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto px-4 py-10">
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-emerald-900 mb-3">TL;DR</h2>
-            <ul className="space-y-2 text-slate-800">
-              <li><strong>Stronger regulated-leaning options:</strong> Kraken, OKX</li>
-              <li><strong>What changed in 2026:</strong> platforms without a clear EU authorisation path faced serious limits</li>
-              <li><strong>What matters most:</strong> EUR deposits, custody standards, and which products are actually enabled</li>
-              <li><strong>Avoid assuming:</strong> a global ranking automatically works the same in Germany</li>
+            <h2 className="text-xl font-bold text-emerald-900 mb-3">
+              TL;DR
+            </h2>
+
+            <ul className="space-y-2 text-slate-800 text-sm">
+              <li>
+                MiCA is the primary EU licensing framework for exchanges,
+                custody, trading and related crypto services. BaFin
+                supervises German firms and national financial activity.
+              </li>
+
+              <li>
+                Relevant platforms include Coinbase, Kraken, Bitpanda,
+                Bitstamp, Crypto.com and German-market infrastructure
+                providers such as Börse Stuttgart Digital.
+              </li>
+
+              <li>
+                For individuals, crypto disposals are generally treated
+                under private-sale rules. A gain can be tax-free after a
+                one-year holding period, subject to the facts and the
+                asset&apos;s use.
+              </li>
+
+              <li>
+                Staking rewards, mining, airdrops, lending and business
+                activity can create separate income-tax obligations.
+              </li>
+
+              <li>
+                MiCA authorisation is not a guarantee against volatility,
+                insolvency, smart-contract failure or loss of private keys.
+              </li>
             </ul>
           </div>
         </section>
 
         <section className="max-w-4xl mx-auto px-4 pb-10">
+          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
+            <h2 className="text-xl font-bold text-indigo-950 mb-3">
+              German or English content?
+            </h2>
+
+            <p className="text-sm leading-7 text-indigo-950">
+              This page is the English Germany guide. A German version
+              should live at{" "}
+              <code className="rounded bg-white px-1.5 py-0.5">
+                /de/regionen/deutschland
+              </code>
+              , with localised German headings, metadata, tax terms,
+              regulator links and exchange descriptions. Both URLs should
+              reference each other using hreflang.
+            </p>
+
+            <Link
+              href="/de/regionen/deutschland"
+              className="mt-3 inline-flex text-sm font-semibold text-indigo-700 hover:underline"
+            >
+              Deutsche Version öffnen →
+            </Link>
+          </div>
+        </section>
+
+        <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="rounded-2xl border border-slate-200 p-6">
-            <h2 className="text-lg font-bold text-slate-900 mb-3">On this page</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-3">
+              On this page
+            </h2>
+
             <ol className="grid sm:grid-cols-2 gap-2 text-sm text-indigo-700">
-              <li><a href="#mica" className="hover:underline">MiCA context</a></li>
-              <li><a href="#comparison" className="hover:underline">Comparison</a></li>
-              <li><a href="#kraken" className="hover:underline">Kraken</a></li>
-              <li><a href="#okx" className="hover:underline">OKX</a></li>
-              <li><a href="#howto" className="hover:underline">How to choose</a></li>
-              <li><a href="#faq" className="hover:underline">FAQ</a></li>
+              <li>
+                <a href="#framework" className="hover:underline">
+                  MiCA and BaFin
+                </a>
+              </li>
+
+              <li>
+                <a href="#platforms" className="hover:underline">
+                  Relevant platforms
+                </a>
+              </li>
+
+              <li>
+                <a href="#tax" className="hover:underline">
+                  German tax rules
+                </a>
+              </li>
+
+              <li>
+                <a href="#custody" className="hover:underline">
+                  Custody and investor risk
+                </a>
+              </li>
+
+              <li>
+                <a href="#comparison" className="hover:underline">
+                  Practical comparison
+                </a>
+              </li>
+
+              <li>
+                <a href="#checklist" className="hover:underline">
+                  Safety checklist
+                </a>
+              </li>
             </ol>
           </div>
         </section>
 
-        <section id="mica" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">MiCA reality for German users</h2>
+        <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            MiCA, BaFin and German crypto regulation
+          </h2>
+
           <p className="text-slate-700 mb-4">
-            From mid-2026, serving EU clients without proper Crypto-Asset Service Provider
-            authorisation became much harder. Some large global platforms reduced or suspended
-            EU services. Others continued through licensed EU entities.
+            Germany applies the EU Markets in Crypto-Assets Regulation,
+            commonly called MiCA, as the main framework for crypto-asset
+            service providers. MiCA covers areas such as operating
+            trading platforms, exchanging cryptoassets, execution,
+            reception and transmission of orders, advice, portfolio
+            management and custody.
           </p>
+
           <p className="text-slate-700 mb-4">
-            For German users this means: check which legal entity you are onboarding with,
-            which products are enabled (spot vs derivatives), and whether EUR SEPA rails work
-            cleanly for your bank.
+            BaFin remains the German financial supervisor. German
+            national rules continue to matter for financial institutions,
+            crypto custody, anti-money-laundering controls and activities
+            that fall outside the specific MiCA perimeter.
           </p>
-          <p className="text-slate-700">
-            Licensing status changes. Confirm on the exchange and, where relevant, against
-            public EU registers before depositing serious size.
+
+          <p className="text-slate-700 mb-4">
+            A platform may be authorised elsewhere in the European
+            Economic Area and passport services into Germany. That can
+            be legitimate, but users should identify the legal entity,
+            home regulator, custody arrangement and complaints process.
+          </p>
+
+          <p className="text-sm text-slate-700">
+            Official references:{" "}
+            <a
+              href="https://www.bafin.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-700 hover:underline"
+            >
+              BaFin
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://www.esma.europa.eu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-700 hover:underline"
+            >
+              ESMA MiCA information
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://eur-lex.europa.eu/eli/reg/2023/1114/oj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-700 hover:underline"
+            >
+              MiCA Regulation
+            </a>
           </p>
         </section>
 
+        <section id="platforms" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Relevant crypto platforms for Germany
+          </h2>
+
+          <p className="text-slate-700 mb-6">
+            These platforms are useful comparison points for German
+            residents because they support euro trading, serve the
+            European market or have significant DACH relevance. They
+            should not be treated as interchangeable: fees, custody,
+            staking, stablecoins and derivatives can vary by entity and
+            user location.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {platforms.map((platform) => (
+              <div
+                key={platform.name}
+                className="rounded-2xl border border-slate-200 bg-white p-5"
+              >
+                <p className="text-sm font-medium text-indigo-600">
+                  {platform.bestFor}
+                </p>
+
+                <h3 className="mt-1 text-lg font-semibold text-slate-900">
+                  {platform.name}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  {platform.note}
+                </p>
+
+                <a
+                  href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:underline"
+                >
+                  Visit {platform.name} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            German crypto tax basics
+          </h2>
+
+          <p className="text-slate-700 mb-4">
+            For private individuals, cryptocurrencies are generally
+            treated as private-sale assets rather than ordinary securities.
+            Selling, swapping or spending crypto can be a taxable disposal
+            when it occurs within the relevant holding period.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+            A private disposal gain may be tax-free after one year.
+            Disposals inside the period can be taxed at the individual&apos;s
+            progressive income-tax rate rather than the flat capital-gains
+            rate used for many traditional investments. Germany also has
+            an annual exemption threshold for private disposal gains,
+            subject to the current tax-year rules.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+            Staking rewards, mining income, airdrops, lending returns and
+            business-scale trading require separate analysis. Rewards can
+            be income when received and may acquire their own acquisition
+            date and cost basis. The tax result can change depending on
+            whether the activity is private or commercial.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+            German users should keep EUR values, timestamps, wallet
+            transfers, exchange statements, fees, staking records and
+            evidence of acquisition cost. A wallet transfer is normally
+            different from a disposal, but inadequate records can make
+            that distinction difficult to prove.
+          </p>
+
+          <p className="text-sm text-slate-700">
+            Tax reference:{" "}
+            <a
+              href="https://www.bundesfinanzministerium.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-700 hover:underline"
+            >
+              German Federal Ministry of Finance
+            </a>
+          </p>
+        </section>
+
+        <section id="custody" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Custody, stablecoins and consumer risk
+          </h2>
+
+          <p className="text-slate-700 mb-4">
+            MiCA creates a more consistent EU framework, but it does not
+            eliminate platform risk. Check whether assets are held in
+            custody, whether withdrawals are available, what happens if
+            the company becomes insolvent and whether a stablecoin is
+            authorised or restricted for European users.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+            Staking and yield products deserve extra caution. The product
+            may involve lending, rehypothecation, validator risk or a
+            separate legal entity. “Earn” is not the same as a protected
+            bank deposit.
+          </p>
+
+          <p className="text-slate-700">
+            Use Proof of Reserves as one transparency input, not proof
+            that liabilities are fully covered or that customer assets
+            are legally segregated.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/learn/what-is-proof-of-reserves"
+              className="text-indigo-700 hover:underline"
+            >
+              What is Proof of Reserves? →
+            </Link>
+
+            <Link
+              href="/learn/how-to-check-exchange-proof-of-reserves"
+              className="text-indigo-700 hover:underline"
+            >
+              Check exchange PoR →
+            </Link>
+
+            <Link
+              href="/learn/crypto-exchange-security-checklist"
+              className="text-indigo-700 hover:underline"
+            >
+              Exchange security checklist →
+            </Link>
+
+            <Link
+              href="/wallets"
+              className="text-indigo-700 hover:underline"
+            >
+              Wallets guide →
+            </Link>
+          </div>
+        </section>
+
         <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Comparison for Germany</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Practical comparison for Germany
+          </h2>
+
           <div className="overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full text-sm text-left">
               <thead className="bg-slate-100">
                 <tr>
-                  <th className="px-4 py-3 font-semibold text-slate-800">Exchange</th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">Best for</th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">Notes</th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">Action</th>
+                  <th className="px-4 py-3 font-semibold text-slate-800">
+                    Platform
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-slate-800">
+                    Best for
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-slate-800">
+                    Germany checks
+                  </th>
+                  <th className="px-4 py-3 font-semibold text-slate-800">
+                    Action
+                  </th>
                 </tr>
               </thead>
+
               <tbody className="divide-y divide-slate-100 text-slate-800">
-                <tr className="hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium text-slate-900">Kraken</td>
-                  <td className="px-4 py-3">Security / regulated access</td>
-                  <td className="px-4 py-3">Conservative default for many EU users</td>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    Coinbase
+                  </td>
                   <td className="px-4 py-3">
-                    <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
+                    Beginners and recurring EUR purchases.
+                  </td>
+                  <td className="px-4 py-3">
+                    Check EU entity, MiCA status, spread and custody
+                    terms.
+                  </td>
+                  <td className="px-4 py-3">
+                    <a
+                      href="https://go.cryptosbeginner.com/coinbase"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="text-emerald-700 font-medium hover:underline"
+                    >
+                      Coinbase →
+                    </a>
                   </td>
                 </tr>
-                <tr className="hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium text-slate-900">OKX</td>
-                  <td className="px-4 py-3">Trading tools + broader product set</td>
-                  <td className="px-4 py-3">Confirm enabled products for your account</td>
+
+                <tr>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    Kraken
+                  </td>
                   <td className="px-4 py-3">
-                    <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
+                    Active spot traders.
+                  </td>
+                  <td className="px-4 py-3">
+                    Compare EUR pairs, maker/taker fees and available
+                    German products.
+                  </td>
+                  <td className="px-4 py-3">
+                    <a
+                      href="https://go.cryptosbeginner.com/Kraken"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="text-emerald-700 font-medium hover:underline"
+                    >
+                      Kraken →
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    Bitpanda
+                  </td>
+                  <td className="px-4 py-3">
+                    DACH beginners and broad app access.
+                  </td>
+                  <td className="px-4 py-3">
+                    Review spreads, asset custody, staking and exact EU
+                    authorisation.
+                  </td>
+                  <td className="px-4 py-3">
+                    <a
+                      href="https://go.cryptosbeginner.com/Bitpanda"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="text-emerald-700 font-medium hover:underline"
+                    >
+                      Bitpanda →
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    Bitstamp / Crypto.com
+                  </td>
+                  <td className="px-4 py-3">
+                    Spot trading and mobile users.
+                  </td>
+                  <td className="px-4 py-3">
+                    Verify the EU entity, MiCA permission and product
+                    restrictions for German residents.
+                  </td>
+                  <td className="px-4 py-3">
+                    <a
+                      href="https://go.cryptosbeginner.com/Bitstamp"
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="text-emerald-700 font-medium hover:underline"
+                    >
+                      Bitstamp →
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="px-4 py-3 font-medium text-slate-900">
+                    Self-custody
+                  </td>
+                  <td className="px-4 py-3">
+                    Long-term ownership and on-chain use.
+                  </td>
+                  <td className="px-4 py-3">
+                    You control the keys, but tax records, phishing,
+                    backup and transaction risks remain your responsibility.
+                  </td>
+                  <td className="px-4 py-3">
+                    <Link
+                      href="/wallets"
+                      className="text-indigo-700 font-medium hover:underline"
+                    >
+                      Wallets guide →
+                    </Link>
                   </td>
                 </tr>
               </tbody>
@@ -105,72 +548,121 @@ export default function GermanyPage() {
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto px-4 pb-16 space-y-12">
-          <article id="kraken">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Kraken</h2>
-            <p className="text-slate-700 mb-4">
-              Kraken is often the more conservative pick for German users who prioritise
-              reputation and regulated access over the absolute lowest fees. Spot fees are
-              higher than some Asian venues, but the long-run security track record is one of
-              the cleaner ones among major platforms.
-            </p>
-            <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
-              Open Kraken →
-            </a>
-          </article>
+        <section id="checklist" className="max-w-4xl mx-auto px-4 pb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">
+            Germany crypto exchange checklist
+          </h2>
 
-          <article id="okx">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">OKX</h2>
-            <p className="text-slate-700 mb-4">
-              OKX is a stronger alternative if you want competitive trading tools and a broader
-              product set. Confirm which features are enabled for German / EU residency before
-              you plan a specific strategy around derivatives or advanced products.
-            </p>
-            <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
-              Open OKX →
-            </a>
-          </article>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
+            <li>
+              Identify the legal entity, home regulator and MiCA
+              authorisation before depositing.
+            </li>
 
-          <article id="howto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">How to choose</h2>
-            <div className="space-y-3 text-slate-700">
-              <p>Want the more conservative regulated path: start with <strong>Kraken</strong>.</p>
-              <p>Want broader trading tools and can verify product access: evaluate <strong>OKX</strong>.</p>
-              <p>Always test EUR deposit + small withdrawal before moving size.</p>
-            </div>
-          </article>
+            <li>
+              Check whether the platform provides actual custody and
+              withdrawals or only synthetic price exposure.
+            </li>
+
+            <li>
+              Compare EUR deposit fees, spreads, trading fees and
+              withdrawal costs.
+            </li>
+
+            <li>
+              Keep records for every purchase, sale, swap, staking reward,
+              airdrop, lending return and wallet transfer.
+            </li>
+
+            <li>
+              Do not assume that a one-year holding period solves staking,
+              lending or commercial-trading tax questions.
+            </li>
+
+            <li>
+              Use app-based 2FA or a hardware security key and keep
+              recovery phrases offline.
+            </li>
+
+            <li>
+              Read our{" "}
+              <Link
+                href="/learn/seed-phrase-security"
+                className="text-indigo-700"
+              >
+                seed phrase guide
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/security/exchange-incidents"
+                className="text-indigo-700"
+              >
+                exchange incidents timeline
+              </Link>{" "}
+              before committing long-term funds.
+            </li>
+          </ul>
         </section>
 
-        <section id="faq" className="max-w-4xl mx-auto px-4 pb-16">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">FAQ</h2>
-          <div className="space-y-6 text-slate-700">
-            <div>
-              <h3 className="font-bold text-slate-900">Can I still use global exchanges from Germany?</h3>
-              <p className="mt-2">Only where the platform has a legal path to serve EU residents and enables your account for the products you need. Do not assume global access equals EU access.</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900">Are derivatives available?</h3>
-              <p className="mt-2">Product availability depends on the entity and local rules. Check inside the account after KYC rather than relying on marketing pages.</p>
-            </div>
-          </div>
-        </section>
+        <section className="max-w-4xl mx-auto px-4 pb-12">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h2 className="text-xl font-semibold text-slate-900 mb-2">
+              How to choose as a German resident
+            </h2>
 
-        <section className="bg-slate-900 text-white">
-          <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-            <h2 className="text-2xl font-bold">Compare regulated-leaning options</h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-500 hover:bg-emerald-600 font-semibold px-5 py-3 rounded-lg">Kraken</a>
-              <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="bg-white/10 hover:bg-white/20 font-semibold px-5 py-3 rounded-lg">OKX</a>
+            <p className="text-sm text-slate-700 mb-3">
+              Start with a MiCA-authorised or clearly registered European
+              platform that supports EUR funding and provides usable
+              transaction records. Keep trading capital separate from
+              long-term holdings and obtain German tax advice if you stake,
+              lend, trade frequently or use DeFi.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://go.cryptosbeginner.com/coinbase"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
+              >
+                Coinbase
+              </a>
+
+              <a
+                href="https://go.cryptosbeginner.com/Kraken"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
+              >
+                Kraken
+              </a>
+
+              <a
+                href="https://go.cryptosbeginner.com/Bitpanda"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
+              >
+                Bitpanda
+              </a>
             </div>
           </div>
         </section>
 
         <section className="bg-slate-50 border-t">
           <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
-            <p><strong>Disclaimer:</strong> Educational only. Not financial advice. EU licensing and product availability change. Some links are affiliate links.</p>
+            <p>
+              <strong>Disclaimer:</strong> Educational only. Not
+              financial, legal or tax advice. Crypto regulation and tax
+              treatment in Germany can change through EU and national
+              measures. Verify current MiCA permissions, BaFin information
+              and German tax guidance before depositing funds or filing a
+              return. Some links are affiliate links.
+            </p>
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
