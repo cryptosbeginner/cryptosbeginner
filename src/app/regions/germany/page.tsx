@@ -6,6 +6,15 @@ export const metadata = {
   title: "Best Crypto Exchanges in Germany 2026",
   description:
     "2026 Germany crypto exchange guide: MiCA, BaFin, German tax rules, Coinbase, Kraken, Bitpanda, Bitstamp and custody considerations for residents.",
+  alternates: {
+    canonical: "https://www.cryptosbeginner.com/regions/germany",
+    languages: {
+      en: "https://www.cryptosbeginner.com/regions/germany",
+      de: "https://www.cryptosbeginner.com/de/deutschland",
+      "x-default":
+        "https://www.cryptosbeginner.com/regions/germany",
+    },
+  },
 };
 
 const UPDATED = "2026-08-21";
@@ -15,43 +24,49 @@ const platforms = [
     name: "Coinbase",
     bestFor: "Beginners and simple euro purchases",
     note:
-      "Easy-to-use interface and broad European availability. Check the exact EU entity, MiCA authorisation and product permissions for Germany.",
-    href: "https://go.cryptosbeginner.com/coinbase",
+      "A familiar interface and broad European availability. Check the German entity, current MiCA permissions, custody terms and total purchase cost.",
+    href: "https://www.coinbase.com/de",
+    affiliate: false,
   },
   {
     name: "Kraken",
     bestFor: "Experienced spot traders",
     note:
-      "Strong trading interface and established market presence. Compare EUR funding, maker/taker fees, custody and current German product access.",
+      "Useful trading tools and established European market access. Compare EUR funding, maker/taker fees, withdrawals and products available to German residents.",
     href: "https://go.cryptosbeginner.com/Kraken",
+    affiliate: true,
   },
   {
     name: "Bitpanda",
     bestFor: "German-speaking beginners",
     note:
-      "A major DACH-region platform with euro funding and a broad retail app. Verify the applicable entity, custody model and asset availability.",
-    href: "https://go.cryptosbeginner.com/Bitpanda",
+      "A major DACH-region platform with euro funding and a broad retail app. Review spreads, custody, staking, asset availability and the applicable European entity.",
+    href: "https://www.bitpanda.com/en",
+    affiliate: false,
   },
   {
     name: "Bitstamp",
     bestFor: "Straightforward spot trading",
     note:
-      "Long-running European exchange with a relatively simple product range. Check its current MiCA status and German availability.",
-    href: "https://go.cryptosbeginner.com/Bitstamp",
+      "A long-running European exchange with a comparatively focused product range. Check German availability, EUR funding, fees and the current regulatory position.",
+    href: "https://www.bitstamp.net",
+    affiliate: false,
   },
   {
     name: "Crypto.com",
     bestFor: "Mobile users and wider products",
     note:
-      "Large app ecosystem and multiple products. German availability, staking, rewards and other services can be restricted by regulation.",
+      "A broad mobile ecosystem with multiple products. Staking, rewards, cards and other services may have separate German restrictions or terms.",
     href: "https://go.cryptosbeginner.com/CryptoCom",
+    affiliate: true,
   },
   {
     name: "Börse Stuttgart Digital",
     bestFor: "German-market infrastructure",
     note:
-      "A Germany-focused digital-asset infrastructure provider. Retail access may be delivered through partner banks or brokers rather than one universal app.",
+      "Germany-focused digital-asset infrastructure that may be accessed through partner banks or brokers rather than one universal retail app.",
     href: "https://www.boerse-stuttgart.de",
+    affiliate: false,
   },
 ];
 
@@ -61,8 +76,20 @@ export default function GermanyPage() {
       <Header />
 
       <main className="bg-white">
+        {/* Hero */}
         <section className="bg-slate-50 border-b">
           <div className="max-w-4xl mx-auto px-4 py-12">
+            <div className="mb-4 flex flex-wrap gap-3 text-sm">
+              <span className="text-slate-600">English</span>
+              <span className="text-slate-400">·</span>
+              <Link
+                href="/de/deutschland"
+                className="text-indigo-700 hover:underline"
+              >
+                Deutsch
+              </Link>
+            </div>
+
             <p className="text-sm font-medium text-indigo-600 mb-2">
               Updated <time dateTime={UPDATED}>August 2026</time> · By
               Alex Rivera
@@ -84,6 +111,7 @@ export default function GermanyPage() {
           </div>
         </section>
 
+        {/* TL;DR */}
         <section className="max-w-4xl mx-auto px-4 py-10">
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-emerald-900 mb-3">
@@ -123,32 +151,7 @@ export default function GermanyPage() {
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
-            <h2 className="text-xl font-bold text-indigo-950 mb-3">
-              German or English content?
-            </h2>
-
-            <p className="text-sm leading-7 text-indigo-950">
-              This page is the English Germany guide. A German version
-              should live at{" "}
-              <code className="rounded bg-white px-1.5 py-0.5">
-                /de/regionen/deutschland
-              </code>
-              , with localised German headings, metadata, tax terms,
-              regulator links and exchange descriptions. Both URLs should
-              reference each other using hreflang.
-            </p>
-
-            <Link
-              href="/de/regionen/deutschland"
-              className="mt-3 inline-flex text-sm font-semibold text-indigo-700 hover:underline"
-            >
-              Deutsche Version öffnen →
-            </Link>
-          </div>
-        </section>
-
+        {/* Table of contents */}
         <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="rounded-2xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-3">
@@ -195,6 +198,7 @@ export default function GermanyPage() {
           </div>
         </section>
 
+        {/* Regulatory framework */}
         <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             MiCA, BaFin and German crypto regulation
@@ -254,6 +258,7 @@ export default function GermanyPage() {
           </p>
         </section>
 
+        {/* Platforms */}
         <section id="platforms" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Relevant crypto platforms for Germany
@@ -289,16 +294,27 @@ export default function GermanyPage() {
                 <a
                   href={platform.href}
                   target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:underline"
+                  rel={
+                    platform.affiliate
+                      ? "noopener noreferrer sponsored"
+                      : "noopener noreferrer"
+                  }
+                  className={`mt-4 inline-flex text-sm font-semibold hover:underline ${
+                    platform.affiliate
+                      ? "text-emerald-700"
+                      : "text-slate-700"
+                  }`}
                 >
-                  Visit {platform.name} →
+                  {platform.affiliate
+                    ? `Visit ${platform.name} →`
+                    : `Official ${platform.name} website →`}
                 </a>
               </div>
             ))}
           </div>
         </section>
 
+        {/* Tax */}
         <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             German crypto tax basics
@@ -349,6 +365,7 @@ export default function GermanyPage() {
           </p>
         </section>
 
+        {/* Custody */}
         <section id="custody" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Custody, stablecoins and consumer risk
@@ -406,6 +423,7 @@ export default function GermanyPage() {
           </div>
         </section>
 
+        {/* Comparison */}
         <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Practical comparison for Germany
@@ -444,12 +462,12 @@ export default function GermanyPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/coinbase"
+                      href="https://www.coinbase.com/de"
                       target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="text-emerald-700 font-medium hover:underline"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 font-medium hover:underline"
                     >
-                      Coinbase →
+                      Official website →
                     </a>
                   </td>
                 </tr>
@@ -472,7 +490,7 @@ export default function GermanyPage() {
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
                     >
-                      Kraken →
+                      Visit Kraken →
                     </a>
                   </td>
                 </tr>
@@ -490,35 +508,35 @@ export default function GermanyPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Bitpanda"
+                      href="https://www.bitpanda.com/en"
                       target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="text-emerald-700 font-medium hover:underline"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 font-medium hover:underline"
                     >
-                      Bitpanda →
+                      Official website →
                     </a>
                   </td>
                 </tr>
 
                 <tr>
                   <td className="px-4 py-3 font-medium text-slate-900">
-                    Bitstamp / Crypto.com
+                    Bitstamp
                   </td>
                   <td className="px-4 py-3">
-                    Spot trading and mobile users.
+                    Straightforward spot trading.
                   </td>
                   <td className="px-4 py-3">
-                    Verify the EU entity, MiCA permission and product
-                    restrictions for German residents.
+                    Verify the EU entity, current permission and German
+                    product restrictions.
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Bitstamp"
+                      href="https://www.bitstamp.net"
                       target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="text-emerald-700 font-medium hover:underline"
+                      rel="noopener noreferrer"
+                      className="text-slate-700 font-medium hover:underline"
                     >
-                      Bitstamp →
+                      Official website →
                     </a>
                   </td>
                 </tr>
@@ -548,6 +566,7 @@ export default function GermanyPage() {
           </div>
         </section>
 
+        {/* Checklist */}
         <section id="checklist" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Germany crypto exchange checklist
@@ -604,6 +623,7 @@ export default function GermanyPage() {
           </ul>
         </section>
 
+        {/* CTA */}
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <h2 className="text-xl font-semibold text-slate-900 mb-2">
@@ -611,21 +631,20 @@ export default function GermanyPage() {
             </h2>
 
             <p className="text-sm text-slate-700 mb-3">
-              Start with a MiCA-authorised or clearly registered European
-              platform that supports EUR funding and provides usable
-              transaction records. Keep trading capital separate from
-              long-term holdings and obtain German tax advice if you stake,
-              lend, trade frequently or use DeFi.
+              Start with a European platform that supports EUR funding
+              and provides usable transaction records. Keep trading
+              capital separate from long-term holdings and obtain German
+              tax advice if you stake, lend, trade frequently or use DeFi.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/coinbase"
+                href="https://www.coinbase.com/de"
                 target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
+                rel="noopener noreferrer"
+                className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Coinbase
+                Coinbase official
               </a>
 
               <a
@@ -638,17 +657,18 @@ export default function GermanyPage() {
               </a>
 
               <a
-                href="https://go.cryptosbeginner.com/Bitpanda"
+                href="https://www.bitpanda.com/en"
                 target="_blank"
-                rel="noopener noreferrer sponsored"
-                className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
+                rel="noopener noreferrer"
+                className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Bitpanda
+                Bitpanda official
               </a>
             </div>
           </div>
         </section>
 
+        {/* Disclaimer */}
         <section className="bg-slate-50 border-t">
           <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
             <p>
