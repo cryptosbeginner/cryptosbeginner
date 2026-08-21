@@ -9,11 +9,11 @@ const PUBLISHED = "2026-06-18";
 const UPDATED = "2026-08-21";
 
 export const metadata: Metadata = {
-  title: "How to Buy Bitcoin in Pakistan 2026: PKR, P2P and Safety",
+  title: "پاکستان میں Bitcoin کیسے خریدیں 2026: PKR، P2P اور سکیورٹی",
   description:
-    "A practical guide to buying Bitcoin in Pakistan with PKR: PVARA and SBP context, P2P escrow, JazzCash and Easypaisa risks, KYC, fees and wallet security.",
+    "پاکستان میں PKR کے ذریعے Bitcoin خریدنے کا عملی گائیڈ: PVARA اور SBP کا تناظر، P2P escrow، JazzCash اور Easypaisa کے خطرات، KYC، فیس اور wallet security۔",
   alternates: {
-    canonical: `${SITE_URL}/regions/pakistan/how-to-buy-bitcoin`,
+    canonical: `${SITE_URL}/ur/regions/pakistan/how-to-buy-bitcoin`,
     languages: {
       en: `${SITE_URL}/regions/pakistan/how-to-buy-bitcoin`,
       ur: `${SITE_URL}/ur/regions/pakistan/how-to-buy-bitcoin`,
@@ -21,38 +21,38 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "How to Buy Bitcoin in Pakistan 2026",
+    title: "پاکستان میں Bitcoin کیسے خریدیں 2026",
     description:
-      "PKR P2P, KYC, fees, scams and Bitcoin wallet safety for Pakistani beginners.",
-    url: `${SITE_URL}/regions/pakistan/how-to-buy-bitcoin`,
+      "PKR P2P، KYC، فیس، scams اور Bitcoin wallet security کا beginner guide۔",
+    url: `${SITE_URL}/ur/regions/pakistan/how-to-buy-bitcoin`,
     type: "article",
   },
 };
 
 const faqs = [
   {
-    q: "Is Bitcoin legal in Pakistan in 2026?",
-    a: "Bitcoin is not legal tender in Pakistan. Pakistan now has a statutory virtual-asset framework and PVARA licensing path for service providers, but an individual should not assume that every accessible global exchange has a completed Pakistani licence. Check current PVARA, SBP and other official guidance.",
+    q: "کیا 2026 میں پاکستان میں Bitcoin قانونی ہے؟",
+    a: "Bitcoin پاکستان میں قانونی کرنسی نہیں ہے۔ پاکستان میں اب ورچوئل اثاثوں کا قانونی فریم ورک اور سروس فراہم کنندگان کے لیے PVARA licensing path موجود ہے، مگر ہر accessible global exchange کو مکمل پاکستانی لائسنس یافتہ نہ سمجھیں۔ PVARA، SBP اور دیگر سرکاری ہدایات کی تازہ صورتحال چیک کریں۔",
   },
   {
-    q: "What is the easiest way to buy Bitcoin in Pakistan?",
-    a: "Many beginners use a verified global exchange, buy USDT with PKR through the platform's P2P escrow system and then convert USDT to BTC on the spot market. Availability, payment methods and legal status can change.",
+    q: "پاکستان میں Bitcoin خریدنے کا آسان طریقہ کیا ہے؟",
+    a: "بہت سے beginners verified global exchange پر PKR کے ذریعے platform کے P2P escrow میں USDT خریدتے ہیں، پھر spot market میں USDT کو BTC میں تبدیل کرتے ہیں۔ availability، payment methods اور قانونی صورتحال بدل سکتی ہے۔",
   },
   {
-    q: "Can I use JazzCash or Easypaisa?",
-    a: "Some P2P listings may offer JazzCash or Easypaisa. Use only the exchange's own escrow and chat, match the payment account name, pay the exact order amount and never use an off-platform broker.",
+    q: "کیا JazzCash یا Easypaisa استعمال کیا جا سکتا ہے؟",
+    a: "کچھ P2P listings میں JazzCash یا Easypaisa دکھائی دے سکتے ہیں۔ صرف exchange کے اپنے escrow اور chat استعمال کریں، payment account name ملائیں، order کی درست رقم ادا کریں اور کسی off-platform broker سے معاملہ نہ کریں۔",
   },
   {
-    q: "Do I need CNIC KYC?",
-    a: "Major platforms generally require identity verification for account features, withdrawals or higher limits. Use accurate information and submit a clear CNIC image and matching selfie through the official app or website only.",
+    q: "کیا CNIC KYC ضروری ہے؟",
+    a: "بڑی platforms عام طور پر account features، withdrawals یا زیادہ limits کے لیے identity verification مانگتی ہیں۔ درست معلومات دیں اور CNIC اور matching selfie صرف official app یا website کے ذریعے submit کریں۔",
   },
   {
-    q: "How much does a PKR 50,000 Bitcoin purchase cost?",
-    a: "The final cost depends on the P2P spread, payment charges, spot commission and any withdrawal fee. Treat any percentage as an example, not a fixed quote. Check the live order price and total amount before confirming.",
+    q: "PKR 50,000 کی Bitcoin خریداری پر کتنی لاگت آ سکتی ہے؟",
+    a: "حتمی لاگت P2P spread، payment charges، spot commission اور withdrawal fee پر منحصر ہے۔ کسی بھی percentage کو fixed quote نہ سمجھیں۔ order confirm کرنے سے پہلے live price اور total amount چیک کریں۔",
   },
   {
-    q: "Should I leave Bitcoin on an exchange?",
-    a: "Keep only an amount intended for active trading on an exchange. For larger or long-term holdings, consider self-custody only after learning how to secure and recover a wallet.",
+    q: "کیا Bitcoin کو exchange پر چھوڑنا چاہیے؟",
+    a: "Exchange پر صرف وہ رقم رکھیں جو active trading کے لیے ہو۔ بڑی یا طویل مدتی holding کے لیے self-custody پر غور کریں، مگر پہلے wallet security اور recovery phrase کا طریقہ اچھی طرح سمجھیں۔",
   },
 ];
 
@@ -75,29 +75,14 @@ function AffiliateButton({
   );
 }
 
-const sources = [
-  {
-    name: "PVARA licensing information",
-    href: "https://www.pvara.gov.pk/licensing",
-  },
-  {
-    name: "Pakistan Virtual Asset Services Regulations, 2026",
-    href: "https://pvara.gov.pk/documents/Pakistan%20Virtual%20Asset%20Services%20Regulations,%202026%20-%20Notified%2021%20August%202026.pdf",
-  },
-  {
-    name: "SBP circulars and notices",
-    href: "https://www.sbp.org.pk/circulars",
-  },
-];
-
-export default function HowToBuyBitcoinPakistanPage() {
+export default function HowToBuyBitcoinPakistanUrduPage() {
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: "How to Buy Bitcoin in Pakistan 2026",
+      headline: "پاکستان میں Bitcoin کیسے خریدیں 2026",
       description:
-        "A step-by-step guide to PKR P2P Bitcoin purchases, KYC, fees and wallet safety.",
+        "PKR P2P، KYC، فیس اور wallet security کے ذریعے پاکستان میں Bitcoin خریدنے کا step-by-step گائیڈ۔",
       datePublished: PUBLISHED,
       dateModified: UPDATED,
       author: {
@@ -108,8 +93,8 @@ export default function HowToBuyBitcoinPakistanPage() {
         "@type": "Organization",
         name: "CryptosBeginner",
       },
-      mainEntityOfPage: `${SITE_URL}/regions/pakistan/how-to-buy-bitcoin`,
-      inLanguage: "en",
+      mainEntityOfPage: `${SITE_URL}/ur/regions/pakistan/how-to-buy-bitcoin`,
+      inLanguage: "ur",
     },
     {
       "@context": "https://schema.org",
@@ -118,20 +103,20 @@ export default function HowToBuyBitcoinPakistanPage() {
         {
           "@type": "ListItem",
           position: 1,
-          name: "Home",
+          name: "ہوم",
           item: SITE_URL,
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Pakistan",
-          item: `${SITE_URL}/regions/pakistan`,
+          name: "پاکستان",
+          item: `${SITE_URL}/ur/regions/pakistan`,
         },
         {
           "@type": "ListItem",
           position: 3,
-          name: "How to buy Bitcoin",
-          item: `${SITE_URL}/regions/pakistan/how-to-buy-bitcoin`,
+          name: "Bitcoin کیسے خریدیں",
+          item: `${SITE_URL}/ur/regions/pakistan/how-to-buy-bitcoin`,
         },
       ],
     },
@@ -163,34 +148,34 @@ export default function HowToBuyBitcoinPakistanPage() {
         />
       ))}
 
-      <main className="bg-white">
+      <main dir="rtl" lang="ur" className="bg-white">
         <article>
           <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
             <div className="mx-auto max-w-5xl px-4 py-14">
               <div className="mb-5 flex flex-wrap gap-3 text-sm text-slate-300">
-                <span>English</span>
+                <span>اردو</span>
                 <span className="text-slate-500">·</span>
                 <Link
-                  href="/ur/regions/pakistan/how-to-buy-bitcoin"
+                  href="/regions/pakistan/how-to-buy-bitcoin"
                   className="text-white underline-offset-4 hover:underline"
                 >
-                  اردو
+                  English version
                 </Link>
               </div>
 
               <p className="mb-3 text-sm font-medium text-emerald-300">
-                Pakistan guide · Updated{" "}
-                <time dateTime={UPDATED}>August 21, 2026</time>
+                پاکستان گائیڈ · تازہ کاری:{" "}
+                <time dateTime={UPDATED}>21 اگست 2026</time>
               </p>
 
               <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-                How to buy Bitcoin in Pakistan with PKR
+                پاکستان میں PKR کے ذریعے Bitcoin کیسے خریدیں؟
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-                A beginner-friendly route through KYC, P2P escrow, JazzCash,
-                Easypaisa, fees and wallet security—updated for Pakistan&apos;s
-                new PVARA framework.
+                KYC، P2P escrow، JazzCash، Easypaisa، فیس اور wallet security
+                کے ذریعے beginners کے لیے عملی راستہ—پاکستان کے نئے PVARA
+                framework کے مطابق تازہ کاری شدہ۔
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -198,28 +183,28 @@ export default function HowToBuyBitcoinPakistanPage() {
                   href="#steps"
                   className="rounded-lg bg-white px-5 py-3 text-sm font-bold text-slate-900 hover:bg-slate-100"
                 >
-                  See the five steps
+                  پانچ steps دیکھیں
                 </a>
 
                 <a
                   href="#safety"
                   className="rounded-lg border border-white/30 px-5 py-3 text-sm font-bold text-white hover:bg-white/10"
                 >
-                  Read safety rules
+                  safety rules پڑھیں
                 </a>
               </div>
 
               <div className="mt-8 max-w-2xl rounded-xl border border-white/15 bg-white/10 p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">
-                  Editorial review
+                  اداریاتی جائزہ
                 </p>
 
                 <p className="mt-1 text-sm leading-6 text-slate-200">
-                  Written and reviewed for Pakistan context by{" "}
+                  پاکستان کے مقامی تناظر کے لیے یہ مواد{" "}
                   <span className="font-semibold text-white">
-                    Taimoor Chaudhry
-                  </span>
-                  .
+                    تیمور چوہدری
+                  </span>{" "}
+                  نے تحریر اور review کیا ہے۔
                 </p>
               </div>
             </div>
@@ -229,33 +214,33 @@ export default function HowToBuyBitcoinPakistanPage() {
             <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
                 <p className="text-sm font-bold text-emerald-800">
-                  Typical route
+                  عام طریقہ
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-emerald-950">
-                  PKR → USDT through exchange escrow → BTC on spot.
+                  PKR → exchange escrow کے ذریعے USDT → spot پر BTC۔
                 </p>
               </div>
 
               <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
                 <p className="text-sm font-bold text-amber-800">
-                  Main cost
+                  بنیادی لاگت
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-amber-950">
-                  P2P spread plus trading, payment and possible withdrawal
-                  fees.
+                  P2P spread کے ساتھ trading، payment اور ممکنہ withdrawal
+                  fees۔
                 </p>
               </div>
 
               <div className="rounded-2xl border border-rose-200 bg-rose-50 p-5">
                 <p className="text-sm font-bold text-rose-800">
-                  Main rule
+                  بنیادی اصول
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-rose-950">
-                  Never move payment or support conversations outside the
-                  platform.
+                  payment یا support conversation کو platform سے باہر منتقل
+                  نہ کریں۔
                 </p>
               </div>
             </div>
@@ -264,15 +249,15 @@ export default function HowToBuyBitcoinPakistanPage() {
           <section className="mx-auto max-w-5xl px-4 py-8">
             <div className="rounded-2xl border border-amber-300 bg-amber-50 p-6">
               <h2 className="text-xl font-bold text-amber-950">
-                Before you buy
+                خریدنے سے پہلے
               </h2>
 
               <p className="mt-3 max-w-4xl text-sm leading-7 text-amber-950">
-                Bitcoin is not legal tender in Pakistan. P2P availability does
-                not prove that a seller, exchange or payment route is locally
-                licensed. Use the official platform, follow KYC and payment
-                instructions, and verify current PVARA and SBP information
-                before depositing.
+                Bitcoin پاکستان میں قانونی کرنسی نہیں ہے۔ P2P کا دستیاب ہونا
+                seller، exchange یا payment route کے مقامی طور پر licensed
+                ہونے کا ثبوت نہیں ہے۔ Official platform استعمال کریں، KYC
+                اور payment instructions پر عمل کریں، اور deposit سے پہلے
+                PVARA اور SBP کی تازہ معلومات چیک کریں۔
               </p>
             </div>
           </section>
@@ -284,17 +269,17 @@ export default function HowToBuyBitcoinPakistanPage() {
               </p>
 
               <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                Five steps to buy Bitcoin
+                Bitcoin خریدنے کے پانچ steps
               </h2>
             </div>
 
             <div className="grid gap-5 md:grid-cols-5">
               {[
-                "Create and secure your account.",
-                "Complete CNIC identity verification.",
-                "Buy USDT through PKR P2P escrow.",
-                "Convert USDT to BTC on spot.",
-                "Withdraw or secure the holding.",
+                "اکاؤنٹ بنائیں اور secure کریں۔",
+                "CNIC identity verification مکمل کریں۔",
+                "PKR P2P escrow کے ذریعے USDT خریدیں۔",
+                "Spot پر USDT کو BTC میں تبدیل کریں۔",
+                "Holding کو withdraw یا secure کریں۔",
               ].map((step, index) => (
                 <div
                   key={step}
@@ -314,161 +299,168 @@ export default function HowToBuyBitcoinPakistanPage() {
             <div className="mt-8 space-y-8">
               <section>
                 <h3 className="text-2xl font-bold text-slate-900">
-                  1. Create and secure the account
+                  1۔ اکاؤنٹ بنائیں اور secure کریں
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">
-                  Register through the official exchange website or app. Use
-                  an authenticator app for two-factor authentication and never
-                  share a one-time code with support or a P2P seller.
+                  Official exchange website یا app کے ذریعے register کریں۔
+                  Two-factor authentication کے لیے authenticator app استعمال
+                  کریں اور support یا P2P seller کے ساتھ one-time code شیئر
+                  نہ کریں۔
                 </p>
 
                 <div className="mt-4">
                   <AffiliateButton href="https://go.cryptosbeginner.com/binance">
-                    Compare Binance
+                    Binance کا تقابل کریں
                   </AffiliateButton>
                 </div>
               </section>
 
               <section>
                 <h3 className="text-2xl font-bold text-slate-900">
-                  2. Complete CNIC KYC
+                  2۔ CNIC KYC مکمل کریں
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">
-                  Submit a clear CNIC image and matching selfie through the
-                  official platform. Details should be accurate and
-                  consistent with your account and payment information.
+                  Official platform کے ذریعے صاف CNIC image اور matching selfie
+                  submit کریں۔ معلومات درست اور account اور payment details
+                  کے ساتھ consistent ہونی چاہییں۔
                 </p>
               </section>
 
               <section>
                 <h3 className="text-2xl font-bold text-slate-900">
-                  3. Buy USDT through PKR P2P
+                  3۔ PKR P2P کے ذریعے USDT خریدیں
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">
-                  Open the platform&apos;s P2P market, choose Buy, select USDT
-                  and set PKR as the currency. Filter for the payment method
-                  you can legitimately use, review completion history and
-                  start with a small test order.
+                  Platform کے P2P market میں Buy منتخب کریں، USDT چنیں اور
+                  currency PKR رکھیں۔ وہ payment method منتخب کریں جسے آپ
+                  قانونی طور پر استعمال کر سکتے ہیں، completion history دیکھیں
+                  اور چھوٹی test order سے آغاز کریں۔
                 </p>
 
                 <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-700">
-                  <li>Pay only the exact amount shown in the order.</li>
-                  <li>Use the account name and payment method specified by the order.</li>
-                  <li>Describe transfers accurately and follow your bank&apos;s instructions.</li>
-                  <li>Mark payment only after the transaction succeeds.</li>
-                  <li>Use the exchange appeal system if the merchant stalls.</li>
+                  <li>صرف order میں دکھائی گئی درست رقم ادا کریں۔</li>
+                  <li>Order میں درج account name اور payment method استعمال کریں۔</li>
+                  <li>Transfer کی تفصیل درست لکھیں اور bank instructions پر عمل کریں۔</li>
+                  <li>Transaction کامیاب ہونے کے بعد ہی payment mark کریں۔</li>
+                  <li>Merchant مسئلہ کرے تو exchange کا appeal system استعمال کریں۔</li>
                 </ul>
 
                 <p className="mt-4 leading-7 text-slate-700">
-                  For more detail, read{" "}
+                  مزید وضاحت کے لیے{" "}
                   <Link
                     href="/learn/how-p2p-escrow-works"
                     className="font-semibold text-indigo-700 hover:underline"
                   >
-                    How P2P escrow works
-                  </Link>
-                  .
+                    P2P escrow کیسے کام کرتا ہے؟
+                  </Link>{" "}
+                  پڑھیں۔
                 </p>
               </section>
 
               <section>
                 <h3 className="text-2xl font-bold text-slate-900">
-                  4. Convert USDT to BTC
+                  4۔ USDT کو BTC میں تبدیل کریں
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">
-                  Open spot trading and select the BTC/USDT pair. A market
-                  order may be simpler for a first small transaction, while
-                  limit orders give more control over price.
+                  Spot trading کھولیں اور BTC/USDT pair منتخب کریں۔ پہلی چھوٹی
+                  transaction کے لیے market order آسان ہو سکتا ہے، جبکہ limit
+                  order قیمت پر زیادہ control دیتا ہے۔
                 </p>
               </section>
 
               <section>
                 <h3 className="text-2xl font-bold text-slate-900">
-                  5. Secure the account and holding
+                  5۔ اکاؤنٹ اور holding secure کریں
                 </h3>
 
                 <p className="mt-3 leading-7 text-slate-700">
-                  Enable withdrawal whitelisting, anti-phishing tools and
-                  login alerts. For long-term holdings, learn self-custody
-                  before moving funds to a hardware wallet.
+                  Withdrawal whitelist، anti-phishing tools اور login alerts
+                  فعال کریں۔ طویل مدتی holding کے لیے hardware wallet استعمال
+                  کرنے سے پہلے self-custody اور recovery phrase کی حفاظت اچھی
+                  طرح سیکھیں۔
                 </p>
 
                 <Link
                   href="/learn/crypto-exchange-security-checklist"
                   className="mt-4 inline-flex font-semibold text-indigo-700 hover:underline"
                 >
-                  Read the exchange security checklist →
+                  Exchange security checklist پڑھیں →
                 </Link>
               </section>
             </div>
           </section>
 
-          <section id="legal" className="mx-auto max-w-5xl px-4 py-10">
+          <section className="mx-auto max-w-5xl px-4 py-10">
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <p className="text-sm font-bold uppercase tracking-wider text-emerald-700">
-                  Legal context
+                  قانونی تناظر
                 </p>
 
                 <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                  What changed in Pakistan?
+                  پاکستان میں کیا بدلا ہے؟
                 </h2>
 
                 <p className="mt-4 leading-7 text-slate-700">
-                  Pakistan now has a Virtual Assets Act and PVARA, the
-                  dedicated regulator for VASPs. The Pakistan Virtual Asset
-                  Services Regulations, 2026 add operational detail to the
-                  licensing framework.
+                  پاکستان میں اب Virtual Assets Act اور PVARA موجود ہیں،
+                  جبکہ Pakistan Virtual Asset Services Regulations 2026
+                  licensing framework کی عملی تفصیلات فراہم کرتے ہیں۔
                 </p>
 
                 <p className="mt-4 leading-7 text-slate-700">
-                  An NOC is not automatically a full VASP licence. An
-                  international exchange can also be accessible to Pakistani
-                  users without holding completed local authorisation.
+                  NOC کو مکمل VASP licence نہ سمجھیں۔ اسی طرح کسی international
+                  exchange کا پاکستانی صارف کو accept کرنا بھی مکمل local
+                  authorisation کا ثبوت نہیں ہے۔
                 </p>
               </div>
 
               <aside className="rounded-2xl bg-slate-950 p-6 text-white">
                 <h3 className="text-lg font-bold">
-                  Check before relying on a claim
+                  دعویٰ ماننے سے پہلے چیک کریں
                 </h3>
 
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
-                  <li>Is the provider licensed, NOC-stage or offshore?</li>
-                  <li>Does the status cover exchange, custody or another service?</li>
-                  <li>Does the current status cover retail customers?</li>
-                  <li>Is the information from PVARA rather than an affiliate page?</li>
+                  <li>کیا provider licensed، NOC-stage یا offshore ہے؟</li>
+                  <li>کیا status exchange، custody یا کسی اور service پر لاگو ہے؟</li>
+                  <li>کیا status retail customers کو cover کرتا ہے؟</li>
+                  <li>کیا معلومات PVARA سے ہیں یا affiliate page سے؟</li>
                 </ul>
 
                 <div className="mt-5 flex flex-wrap gap-3 text-sm">
-                  {sources.map((source) => (
-                    <a
-                      key={source.name}
-                      href={source.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold text-emerald-300 hover:underline"
-                    >
-                      {source.name} →
-                    </a>
-                  ))}
+                  <a
+                    href="https://www.pvara.gov.pk/licensing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-emerald-300 hover:underline"
+                  >
+                    PVARA licensing →
+                  </a>
+
+                  <a
+                    href="https://www.sbp.org.pk/circulars"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-emerald-300 hover:underline"
+                  >
+                    SBP circulars →
+                  </a>
                 </div>
               </aside>
             </div>
           </section>
 
-          <section id="best-exchanges" className="mx-auto max-w-5xl px-4 py-10">
+          <section className="mx-auto max-w-5xl px-4 py-10">
             <div className="mb-6">
               <p className="text-sm font-bold uppercase tracking-wider text-emerald-700">
                 Exchange comparison
               </p>
 
               <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                Platforms commonly compared for PKR
+                PKR کے لیے عام تقابلی platforms
               </h2>
             </div>
 
@@ -476,26 +468,26 @@ export default function HowToBuyBitcoinPakistanPage() {
               {[
                 {
                   name: "Binance",
-                  best: "First account and broad P2P",
-                  rail: "PKR P2P may include bank transfer and mobile-wallet offers.",
+                  best: "پہلا account اور وسیع P2P",
+                  rail: "PKR P2P میں bank transfer اور mobile-wallet offers دکھائی دے سکتے ہیں۔",
                   href: "https://go.cryptosbeginner.com/binance",
                 },
                 {
                   name: "Bybit",
-                  best: "Backup exchange and active trading",
-                  rail: "Check current PKR P2P availability and derivatives restrictions.",
+                  best: "Backup exchange اور active trading",
+                  rail: "موجودہ PKR P2P availability اور derivatives restrictions چیک کریں۔",
                   href: "https://go.cryptosbeginner.com/Bybit",
                 },
                 {
                   name: "OKX",
-                  best: "Alternative P2P book and Web3 tools",
-                  rail: "Verify P2P offers, customer eligibility and withdrawal access.",
+                  best: "متبادل P2P book اور Web3 tools",
+                  rail: "P2P offers، customer eligibility اور withdrawal access verify کریں۔",
                   href: "https://go.cryptosbeginner.com/OKX",
                 },
                 {
                   name: "Bitget",
                   best: "Copy-trading comparison",
-                  rail: "Review lead traders, risk settings, fees and liquidity.",
+                  rail: "Lead traders، risk settings، fees اور liquidity کا جائزہ لیں۔",
                   href: "https://go.cryptosbeginner.com/Bitget-Bonus",
                 },
               ].map((exchange) => (
@@ -521,28 +513,28 @@ export default function HowToBuyBitcoinPakistanPage() {
                     rel="noopener noreferrer sponsored"
                     className="mt-5 inline-flex font-semibold text-emerald-700 hover:underline"
                   >
-                    Compare {exchange.name} →
+                    {exchange.name} کا تقابل کریں →
                   </a>
                 </article>
               ))}
             </div>
           </section>
 
-          <section id="fees" className="mx-auto max-w-5xl px-4 py-10">
+          <section className="mx-auto max-w-5xl px-4 py-10">
             <div className="rounded-2xl bg-slate-950 p-7 text-white">
               <p className="text-sm font-bold uppercase tracking-wider text-emerald-300">
                 Cost example
               </p>
 
               <h2 className="mt-1 text-3xl font-bold">
-                What can a PKR 50,000 purchase cost?
+                PKR 50,000 کی خریداری پر کیا لاگت ہو سکتی ہے؟
               </h2>
 
               <p className="mt-4 max-w-3xl leading-7 text-slate-300">
-                There is no fixed answer because the P2P spread, payment
-                charges, spot commission and withdrawal fee change over time.
-                Check the live order total rather than relying on a headline
-                percentage.
+                حتمی لاگت P2P spread، payment charges، spot commission اور
+                withdrawal fee پر منحصر ہے۔ کسی headline percentage پر
+                انحصار نہ کریں؛ order confirm کرنے سے پہلے live total چیک
+                کریں۔
               </p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -552,8 +544,7 @@ export default function HowToBuyBitcoinPakistanPage() {
                   </p>
 
                   <p className="mt-2 text-sm leading-6 text-slate-300">
-                    Difference between the quoted PKR price and the reference
-                    market price.
+                    Quoted PKR price اور reference market price کا فرق۔
                   </p>
                 </div>
 
@@ -563,7 +554,7 @@ export default function HowToBuyBitcoinPakistanPage() {
                   </p>
 
                   <p className="mt-2 text-sm leading-6 text-slate-300">
-                    Commission charged when USDT is converted to BTC.
+                    USDT کو BTC میں convert کرنے کی commission۔
                   </p>
                 </div>
 
@@ -573,7 +564,7 @@ export default function HowToBuyBitcoinPakistanPage() {
                   </p>
 
                   <p className="mt-2 text-sm leading-6 text-slate-300">
-                    Applies if you move BTC to an external wallet.
+                    External wallet میں BTC منتقل کرنے پر لاگو ہو سکتی ہے۔
                   </p>
                 </div>
               </div>
@@ -582,7 +573,7 @@ export default function HowToBuyBitcoinPakistanPage() {
                 href="/tools/fee-calculator"
                 className="mt-6 inline-flex font-semibold text-emerald-300 hover:underline"
               >
-                Use the fee calculator →
+                Fee calculator استعمال کریں →
               </Link>
             </div>
           </section>
@@ -595,57 +586,57 @@ export default function HowToBuyBitcoinPakistanPage() {
                 </p>
 
                 <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                  Scams, bank reviews and account security
+                  Scams، bank reviews اور account security
                 </h2>
 
                 <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
-                  <li>Do not use WhatsApp or Instagram “agents”.</li>
-                  <li>Do not pay outside exchange escrow.</li>
-                  <li>Never share a recovery phrase, password or one-time code.</li>
-                  <li>Use accurate payment details and follow bank instructions.</li>
-                  <li>Keep receipts and order records.</li>
-                  <li>Do not use leverage until you understand liquidation.</li>
+                  <li>WhatsApp یا Instagram کے “agents” استعمال نہ کریں۔</li>
+                  <li>Exchange escrow سے باہر ادائیگی نہ کریں۔</li>
+                  <li>Recovery phrase، password یا one-time code کبھی شیئر نہ کریں۔</li>
+                  <li>Payment details درست رکھیں اور bank instructions پر عمل کریں۔</li>
+                  <li>Receipts اور order records محفوظ رکھیں۔</li>
+                  <li>Liquidation سمجھے بغیر leverage استعمال نہ کریں۔</li>
                 </ul>
               </div>
 
               <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
                 <h3 className="text-lg font-bold text-rose-950">
-                  The most common failure
+                  سب سے عام غلطی
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-rose-950">
-                  A user pays a person outside platform escrow after being
-                  promised a better rate. The platform then has little ability
-                  to reverse or investigate the payment. A better price is not
-                  worth losing escrow protection.
+                  صارف بہتر rate کے وعدے پر platform escrow کے باہر کسی شخص
+                  کو payment کر دیتا ہے۔ اس کے بعد exchange کے لیے payment
+                  reverse یا investigate کرنا مشکل ہو جاتا ہے۔ بہتر price کے
+                  لیے escrow protection قربان نہ کریں۔
                 </p>
               </div>
             </div>
           </section>
 
-          <section id="store" className="mx-auto max-w-5xl px-4 py-10">
+          <section className="mx-auto max-w-5xl px-4 py-10">
             <div className="rounded-2xl border border-slate-200 p-7">
               <p className="text-sm font-bold uppercase tracking-wider text-emerald-700">
                 Storage
               </p>
 
               <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                Keep trading funds and long-term holdings separate
+                Trading funds اور long-term holdings الگ رکھیں
               </h2>
 
               <p className="mt-4 max-w-3xl leading-7 text-slate-700">
-                Keep only trading amounts on an exchange. For long-term
-                holdings, consider self-custody only after learning how to
-                protect the recovery phrase and verify every transaction.
+                Exchange پر صرف trading amount رکھیں۔ Long-term holdings کے
+                لیے self-custody پر غور کریں، مگر recovery phrase کی حفاظت اور
+                ہر transaction verify کرنے کا طریقہ پہلے سیکھیں۔
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <AffiliateButton href="https://go.cryptosbeginner.com/LedgerWallet">
-                  Compare Ledger
+                  Ledger کا تقابل کریں
                 </AffiliateButton>
 
                 <AffiliateButton href="https://go.cryptosbeginner.com/TrezorSafe">
-                  Compare Trezor
+                  Trezor کا تقابل کریں
                 </AffiliateButton>
 
                 <Link
@@ -661,11 +652,11 @@ export default function HowToBuyBitcoinPakistanPage() {
           <section id="faq" className="mx-auto max-w-5xl px-4 py-10">
             <div className="mb-6">
               <p className="text-sm font-bold uppercase tracking-wider text-emerald-700">
-                Direct answers
+                براہِ راست جوابات
               </p>
 
               <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                Buying Bitcoin in Pakistan: FAQ
+                پاکستان میں Bitcoin خریدنے کے سوالات
               </h2>
             </div>
 
@@ -690,25 +681,25 @@ export default function HowToBuyBitcoinPakistanPage() {
           <section className="mx-auto max-w-5xl px-4 pb-14">
             <div className="rounded-2xl bg-emerald-50 p-7">
               <h2 className="text-2xl font-bold text-slate-900">
-                Your first transaction
+                پہلی transaction
               </h2>
 
               <p className="mt-3 leading-7 text-slate-700">
-                Open one account, complete KYC and make a small P2P test
-                before considering a larger purchase. Keep records and do
-                not leave long-term holdings on an exchange.
+                ایک account کھولیں، KYC مکمل کریں اور بڑی خریداری سے پہلے
+                چھوٹی P2P test transaction کریں۔ Records محفوظ رکھیں اور
+                long-term holdings exchange پر نہ چھوڑیں۔
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <AffiliateButton href="https://go.cryptosbeginner.com/binance">
-                  Compare Binance
+                  Binance کا تقابل کریں
                 </AffiliateButton>
 
                 <Link
-                  href="/regions/pakistan"
+                  href="/ur/regions/pakistan"
                   className="inline-flex items-center justify-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-white"
                 >
-                  Pakistan exchanges guide
+                  پاکستان exchanges guide
                 </Link>
               </div>
             </div>
@@ -717,12 +708,12 @@ export default function HowToBuyBitcoinPakistanPage() {
           <section className="border-t bg-slate-50">
             <div className="mx-auto max-w-5xl px-4 py-8 text-sm leading-6 text-slate-600">
               <p>
-                <strong>Disclaimer:</strong> Educational content only. Not
-                legal, tax or financial advice. Pakistan&apos;s virtual-asset
-                framework, PVARA licensing, SBP rules, payment policies and
-                exchange availability can change. Verify current official
-                guidance before depositing funds. Some links may be affiliate
-                links.
+                <strong>ڈسکلیمر:</strong> یہ مواد صرف تعلیمی مقصد کے لیے ہے۔
+                یہ قانونی، ٹیکس یا مالی مشورہ نہیں ہے۔ پاکستان کا
+                virtual-asset framework، PVARA licensing، SBP rules، payment
+                policies اور exchange availability تبدیل ہو سکتے ہیں۔ رقم
+                جمع کرنے سے پہلے سرکاری تازہ guidance verify کریں۔ کچھ links
+                affiliate links ہو سکتے ہیں۔
               </p>
             </div>
           </section>
