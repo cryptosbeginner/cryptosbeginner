@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Best Crypto Exchanges in France 2026",
+  title: "Meilleures plateformes crypto en France en 2026",
   description:
-    "2026 France crypto exchange guide: AMF, ACPR, MiCA CASP authorisation, French crypto tax, Coinbase, Kraken, Coinhouse and safer exchange selection.",
+    "Comparatif 2026 des plateformes crypto en France : AMF, ACPR, agrément MiCA, fiscalité française, Coinhouse, Coinbase, Kraken et sécurité.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/regions/france",
+    canonical: "https://www.cryptosbeginner.com/fr/regions/france",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/france",
       fr: "https://www.cryptosbeginner.com/fr/regions/france",
@@ -19,7 +19,7 @@ export const metadata = {
 
 const UPDATED = "2026-08-10";
 
-export default function FrancePage() {
+export default function FranceFrenchPage() {
   return (
     <>
       <Header />
@@ -29,34 +29,55 @@ export default function FrancePage() {
         <section className="bg-slate-50 border-b">
           <div className="max-w-4xl mx-auto px-4 py-12">
             <div className="mb-4 flex flex-wrap gap-3 text-sm">
-              <span className="text-slate-600">English</span>
+              <span className="text-slate-600">Français</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/fr/regions/france"
+                href="/regions/france"
                 className="text-indigo-700 hover:underline"
               >
-                Français
+                English version
               </Link>
             </div>
 
             <p className="text-sm font-medium text-indigo-600 mb-2">
-              Updated <time dateTime={UPDATED}>August 10, 2026</time> · By
-              Alex Rivera
+              Mis à jour le{" "}
+              <time dateTime={UPDATED}>10 août 2026</time>
             </p>
 
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Best Crypto Exchanges in France 2026
+              Meilleures plateformes crypto en France en 2026
             </h1>
 
             <p className="mt-4 text-lg text-slate-700">
-              France has completed its transition from the national PSAN
-              regime to the European MiCA framework. The AMF supervises
-              French crypto-asset providers, the ACPR remains relevant for
-              prudential and financial-sector matters, and French users
-              must consider both exchange authorisation and tax reporting.
-              This guide compares the most relevant platforms and explains
-              what French residents should check before depositing euros.
+              La France a terminé la transition entre son ancien régime
+              national PSAN et le cadre européen MiCA. L&apos;AMF
+              supervise les prestataires de services sur crypto-actifs,
+              tandis que l&apos;ACPR reste importante pour les aspects
+              prudentiels et les acteurs financiers. Ce guide compare les
+              plateformes pertinentes pour les résidents français,
+              explique la fiscalité et présente les principaux contrôles
+              à effectuer avant un dépôt en euros.
             </p>
+
+            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Co-auteur francophone
+              </p>
+
+              <p className="mt-1 text-sm text-slate-700">
+                Coécrit et relu en français par{" "}
+                <span className="font-semibold text-slate-900">
+                  Antoine Rousseau
+                </span>
+                , auteur éditorial francophone spécialisé dans les actifs
+                numériques et les sujets financiers.
+              </p>
+
+              <p className="mt-2 text-xs text-slate-500">
+                Cet article est un contenu pédagogique et ne constitue pas
+                un conseil financier, juridique ou fiscal personnalisé.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -64,43 +85,45 @@ export default function FrancePage() {
         <section className="max-w-4xl mx-auto px-4 py-10">
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-emerald-900 mb-3">
-              TL;DR
+              L&apos;essentiel en bref
             </h2>
 
             <ul className="space-y-2 text-slate-800 text-sm">
               <li>
-                France is inside the EU MiCA framework. The AMF is the
-                main French authority for crypto-asset service provider
-                authorisation and supervision.
+                La France applique le règlement européen MiCA. L&apos;AMF
+                est l&apos;autorité française principale pour
+                l&apos;agrément et la supervision des prestataires crypto.
               </li>
 
               <li>
-                The old PSAN transition ended on 1 July 2026. Providers
-                now need MiCA CASP authorisation or an eligible EU
-                notification route to continue serving French clients.
+                La période de transition du régime PSAN s&apos;est terminée
+                le 1er juillet 2026. Les prestataires doivent désormais
+                disposer d&apos;un agrément MiCA ou d&apos;une procédure
+                européenne valable.
               </li>
 
               <li>
-                Relevant platforms include Coinhouse, Coinbase, Kraken,
-                Bitpanda, Bitstamp and Crypto.com. Check the exact legal
-                entity and current AMF or EU authorisation.
+                Coinhouse est une plateforme particulièrement pertinente
+                pour la France. Coinbase, Kraken, Bitpanda, Bitstamp et
+                Crypto.com sont d&apos;autres points de comparaison.
               </li>
 
               <li>
-                French individuals generally calculate crypto gains using
-                the portfolio-based formula and report disposals on Form
-                2086 when applicable.
+                Les plus-values crypto des particuliers sont généralement
+                calculées avec la formule française fondée sur la valeur
+                globale du portefeuille.
               </li>
 
               <li>
-                The 2026 flat-tax rate is generally 31.4% for taxable
-                private crypto gains, subject to the applicable rules,
-                thresholds and personal circumstances.
+                En 2026, la flat tax applicable à de nombreuses plus-values
+                crypto est généralement de 31,4 %, selon les conditions
+                fiscales concernées.
               </li>
 
               <li>
-                Staking, mining, airdrops, lending, DeFi and professional
-                trading may have different tax treatment.
+                Le staking, le mining, les airdrops, le lending, la DeFi
+                et le trading professionnel peuvent être traités
+                différemment.
               </li>
             </ul>
           </div>
@@ -110,25 +133,23 @@ export default function FrancePage() {
         <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
             <h2 className="text-xl font-bold text-indigo-950 mb-3">
-              Which exchange is best in France?
+              Quelle plateforme crypto choisir en France ?
             </h2>
 
             <p className="text-sm leading-7 text-indigo-950">
-              Coinhouse is an important France-focused comparison for
-              users who value a local brand and French support. Coinbase
-              and Kraken are strong international comparison points for
-              euro funding and spot trading. Bitpanda, Bitstamp and
-              Crypto.com may also be relevant depending on fees, products,
-              custody and authorisation. The best choice depends on your
-              preferred payment method, trading frequency, tax-reporting
-              needs and whether you want self-custody.
+              Coinhouse constitue un point de comparaison naturel pour les
+              utilisateurs qui recherchent une présence française et un
+              accompagnement en français. Coinbase et Kraken sont des
+              références internationales pour les achats en euros et le
+              trading au comptant. Bitpanda, Bitstamp et Crypto.com peuvent
+              aussi être étudiés selon les frais, la conservation, les
+              produits et les autorisations applicables.
             </p>
 
             <p className="mt-3 text-sm leading-7 text-indigo-950">
-              No platform should be treated as automatically safe because
-              it is familiar or appears in a search result. Verify the
-              provider&apos;s current authorisation and the exact product
-              you intend to use.
+              Vérifie toujours l&apos;entité juridique, l&apos;agrément
+              MiCA ou la notification européenne et le produit précis que
+              tu souhaites utiliser.
             </p>
           </div>
         </section>
@@ -137,132 +158,135 @@ export default function FrancePage() {
         <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="rounded-2xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-3">
-              On this page
+              Sommaire
             </h2>
 
             <ol className="grid sm:grid-cols-2 gap-2 text-sm text-indigo-700">
               <li>
-                <a href="#framework" className="hover:underline">
-                  AMF, ACPR and MiCA
+                <a href="#reglementation" className="hover:underline">
+                  AMF, ACPR et MiCA
                 </a>
               </li>
 
               <li>
-                <a href="#platforms" className="hover:underline">
-                  Relevant exchanges
+                <a href="#plateformes" className="hover:underline">
+                  Plateformes pertinentes
                 </a>
               </li>
 
               <li>
-                <a href="#tax" className="hover:underline">
-                  French crypto tax
+                <a href="#fiscalite" className="hover:underline">
+                  Fiscalité crypto française
                 </a>
               </li>
 
               <li>
-                <a href="#funding" className="hover:underline">
-                  EUR funding and withdrawals
+                <a href="#financement" className="hover:underline">
+                  Dépôts et retraits en euros
                 </a>
               </li>
 
               <li>
-                <a href="#comparison" className="hover:underline">
-                  Practical comparison
+                <a href="#comparatif" className="hover:underline">
+                  Comparatif pratique
                 </a>
               </li>
 
               <li>
                 <a href="#faq" className="hover:underline">
-                  Frequently asked questions
+                  Questions fréquentes
                 </a>
               </li>
             </ol>
           </div>
         </section>
 
-        {/* Framework */}
-        <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
+        {/* Regulation */}
+        <section
+          id="reglementation"
+          className="max-w-4xl mx-auto px-4 pb-12"
+        >
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            France, the AMF and the MiCA transition
+            AMF, ACPR et règlement MiCA
           </h2>
 
           <p className="text-slate-700 mb-4">
-            France created its national PSAN regime under the 2019 PACTE
-            law. The regime required registration for certain crypto
-            services and offered an optional form of authorisation before
-            the EU-wide MiCA framework became fully operational.
+            La France avait instauré le régime PSAN avec la loi PACTE de
+            2019. Ce régime national a encadré certains prestataires de
+            services sur actifs numériques avant l&apos;entrée en
+            application complète du règlement européen MiCA.
           </p>
 
           <p className="text-slate-700 mb-4">
-            MiCA now provides the main European framework for many
-            crypto-asset services, including custody, operating a trading
-            platform, exchanging cryptoassets, executing orders,
-            transferring assets, providing advice and managing portfolios.
+            MiCA constitue désormais le cadre européen principal pour
+            plusieurs services crypto : conservation, exploitation d&apos;une
+            plateforme de négociation, échange de crypto-actifs, exécution
+            d&apos;ordres, transfert, conseil et gestion de portefeuille.
           </p>
 
           <p className="text-slate-700 mb-4">
-            The AMF is the competent authority for French CASP
-            authorisations. The ACPR remains relevant where the activity
-            involves prudentially supervised financial institutions,
-            payment services or other financial-sector responsibilities.
+            L&apos;AMF est l&apos;autorité compétente pour les agréments
+            français de prestataires de services sur crypto-actifs. 
+            L&apos;ACPR peut intervenir lorsque l&apos;activité concerne
+            des établissements financiers, des services de paiement ou
+            d&apos;autres aspects prudentiels.
           </p>
 
           <p className="text-slate-700 mb-4">
-            The French transitional period ended on 1 July 2026. A legacy
-            PSAN registration is therefore not the same as a current MiCA
-            CASP authorisation. Providers that did not obtain the required
-            authorisation must cease the relevant French activity.
+            La période transitoire française a pris fin le 1er juillet
+            2026. Une ancienne inscription PSAN ne doit donc pas être
+            confondue avec un agrément CASP obtenu au titre de MiCA.
           </p>
 
           <p className="text-sm text-slate-700">
-            Official references:{" "}
+            Sources officielles :{" "}
             <a
-              href="https://www.amf-france.org/en"
+              href="https://www.amf-france.org/fr"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              AMF
+              AMF France
             </a>{" "}
             ·{" "}
             <a
-              href="https://www.amf-france.org/en/news-publications/news-releases/crypto-assets-end-pacte-law-and-european-mica-regulation-transitional-period-establishes-new-role"
+              href="https://www.amf-france.org/fr/actualites-publications/actualites/lamf-rappelle-que-la-periode-transitoire-pour-les-psan"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              AMF MiCA transition notice
+              Transition PSAN et MiCA
             </a>{" "}
             ·{" "}
             <a
-              href="https://www.esma.europa.eu"
+              href="https://eur-lex.europa.eu/eli/reg/2023/1114/oj"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              ESMA
+              Règlement MiCA
             </a>
           </p>
         </section>
 
         {/* Platforms */}
-        <section id="platforms" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="plateformes" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Relevant crypto exchanges for France
+            Plateformes crypto pertinentes en France
           </h2>
 
           <p className="text-slate-700 mb-6">
-            These platforms are relevant comparison points because they
-            serve European users, support euro funding, have a France
-            presence or are commonly considered by French residents.
-            Their products, fees, custody arrangements and permissions
-            may differ by legal entity.
+            Ces plateformes sont présentées comme des points de
+            comparaison pour les résidents français. Les frais, la
+            conservation, les retraits, le staking et les actifs
+            disponibles peuvent varier selon l&apos;entité juridique et
+            la résidence du client.
           </p>
 
           <div className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <p className="text-sm font-medium text-indigo-600">
-                France-focused platform
+                Plateforme orientée France
               </p>
 
               <h3 className="mt-1 text-lg font-semibold text-slate-900">
@@ -270,10 +294,10 @@ export default function FrancePage() {
               </h3>
 
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                A France-focused crypto provider and natural comparison
-                for users seeking French-language support and a local
-                market presence. Check current MiCA status, fees, custody
-                and available assets.
+                Un acteur français pertinent pour les utilisateurs qui
+                recherchent un service en français et une présence locale.
+                Vérifie l&apos;agrément MiCA, les frais, la conservation et
+                les actifs pris en charge.
               </p>
 
               <a
@@ -282,13 +306,13 @@ export default function FrancePage() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex text-sm font-semibold text-slate-700 hover:underline"
               >
-                Official Coinhouse website →
+                Site officiel de Coinhouse →
               </a>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <p className="text-sm font-medium text-indigo-600">
-                Beginners and euro purchases
+                Débutants et achats en euros
               </p>
 
               <h3 className="mt-1 text-lg font-semibold text-slate-900">
@@ -296,9 +320,9 @@ export default function FrancePage() {
               </h3>
 
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                A familiar international platform for euro purchases and
-                basic spot use. Compare spreads, Advanced fees, custody,
-                withdrawals and the relevant EU entity.
+                Une plateforme internationale accessible pour les achats
+                en euros et le trading au comptant. Compare les spreads,
+                les frais, la conservation et l&apos;entité européenne.
               </p>
 
               <a
@@ -307,13 +331,13 @@ export default function FrancePage() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex text-sm font-semibold text-slate-700 hover:underline"
               >
-                Official Coinbase website →
+                Site officiel de Coinbase →
               </a>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <p className="text-sm font-medium text-indigo-600">
-                Active spot traders
+                Trading au comptant actif
               </p>
 
               <h3 className="mt-1 text-lg font-semibold text-slate-900">
@@ -321,9 +345,10 @@ export default function FrancePage() {
               </h3>
 
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Useful trading tools and broad spot-market access.
-                Compare EUR pairs, maker/taker fees, staking and products
-                available to French residents.
+                Des outils de trading complets et une liquidité
+                internationale. Vérifie les paires en euros, les frais
+                maker/taker, le staking et les restrictions applicables en
+                France.
               </p>
 
               <a
@@ -332,24 +357,24 @@ export default function FrancePage() {
                 rel="noopener noreferrer sponsored"
                 className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:underline"
               >
-                Visit Kraken →
+                Découvrir Kraken →
               </a>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <p className="text-sm font-medium text-indigo-600">
-                European comparison
+                Comparaison européenne
               </p>
 
               <h3 className="mt-1 text-lg font-semibold text-slate-900">
-                Bitpanda and Bitstamp
+                Bitpanda et Bitstamp
               </h3>
 
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Both are useful European comparison points for spot
-                trading and euro funding. Use the official websites to
-                verify current France availability, MiCA status, fees
-                and custody.
+                Deux références européennes utiles pour comparer le
+                trading au comptant et les dépôts en euros. Utilise leurs
+                sites officiels pour vérifier l&apos;accès depuis la
+                France, les frais et la conservation.
               </p>
 
               <div className="mt-4 flex flex-wrap gap-3">
@@ -359,7 +384,7 @@ export default function FrancePage() {
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-slate-700 hover:underline"
                 >
-                  Bitpanda official →
+                  Bitpanda officiel →
                 </a>
 
                 <a
@@ -368,7 +393,7 @@ export default function FrancePage() {
                   rel="noopener noreferrer"
                   className="text-sm font-semibold text-slate-700 hover:underline"
                 >
-                  Bitstamp official →
+                  Bitstamp officiel →
                 </a>
               </div>
             </div>
@@ -376,50 +401,51 @@ export default function FrancePage() {
         </section>
 
         {/* Tax */}
-        <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="fiscalite" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            French crypto tax basics
+            Fiscalité des crypto-actifs en France
           </h2>
 
           <p className="text-slate-700 mb-4">
-            French tax residents generally calculate private crypto
-            gains under the digital-asset rules in the General Tax Code.
-            A taxable event can occur when crypto is sold for fiat, used
-            to buy goods or services, or transferred in another taxable
-            disposal.
+            Les résidents fiscaux français calculent généralement leurs
+            plus-values crypto privées selon les règles prévues par le
+            Code général des impôts. Une cession contre des euros,
+            l&apos;utilisation de crypto pour acheter un bien ou un service
+            et certaines autres opérations peuvent constituer un fait
+            imposable.
           </p>
 
           <p className="text-slate-700 mb-4">
-            The French calculation uses a portfolio-based formula rather
-            than simply matching each sale to one individual purchase.
-            The taxable gain generally compares the disposal price with
-            the proportional acquisition cost of the overall portfolio.
+            Le calcul français tient compte de la valeur globale du
+            portefeuille. La plus-value imposable est généralement
+            déterminée en comparant le prix de cession au coût
+            d&apos;acquisition proportionnel du portefeuille total.
           </p>
 
           <p className="text-slate-700 mb-4">
-            For 2026, the flat tax, or PFU, is generally 31.4% on
-            applicable private crypto gains: 12.8% income tax plus
-            18.6% social levies. The annual disposal threshold is
-            generally €305, subject to the detailed conditions and
-            applicable tax rules.
+            En 2026, la flat tax applicable à de nombreuses plus-values
+            privées est généralement de 31,4 %, soit 12,8 % d&apos;impôt
+            sur le revenu et 18,6 % de prélèvements sociaux. Le seuil
+            annuel de cessions de 305 € doit être apprécié selon les
+            conditions fiscales applicables.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Private investors generally use Form 2086 to calculate
-            digital-asset gains and may need Form 3916-bis to declare
-            certain foreign digital-asset accounts. Professional or
-            habitual traders may fall under a different business-income
-            regime.
+            Le formulaire 2086 sert généralement à calculer les plus-values
+            sur actifs numériques. Le formulaire 3916-bis peut être
+            nécessaire pour certains comptes d&apos;actifs numériques
+            ouverts à l&apos;étranger.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Staking, mining, airdrops, lending, DeFi and employment paid
-            in crypto require separate analysis. Do not assume that every
-            receipt is treated like a private capital gain.
+            Le staking, le mining, les airdrops, le lending, la DeFi et
+            les revenus professionnels en crypto nécessitent une analyse
+            distincte. Ne suppose pas qu&apos;un revenu crypto sera toujours
+            traité comme une plus-value privée.
           </p>
 
           <p className="text-sm text-slate-700">
-            Official tax information:{" "}
+            Source fiscale officielle :{" "}
             <a
               href="https://www.impots.gouv.fr"
               target="_blank"
@@ -432,37 +458,39 @@ export default function FrancePage() {
         </section>
 
         {/* Funding */}
-        <section id="funding" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="financement" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            EUR funding and withdrawals
+            Dépôts et retraits en euros
           </h2>
 
           <p className="text-slate-700 mb-4">
-            French residents commonly use SEPA transfers, cards or
-            platform-specific payment methods to fund exchanges. Actual
-            availability depends on the provider, bank, account history
-            and compliance review.
+            Les résidents français utilisent généralement les virements
+            SEPA, les cartes ou les moyens de paiement proposés par
+            chaque plateforme. La disponibilité dépend de l&apos;exchange,
+            de la banque, du profil du compte et des contrôles de
+            conformité.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Compare the complete route: deposit fee, spread, trading
-            commission, withdrawal charge and network fee. A low
-            advertised trading fee does not necessarily mean the lowest
-            cost for a small euro purchase.
+            Compare le coût total : frais de dépôt, spread, commission de
+            trading, frais de retrait et frais réseau. Une commission de
+            trading faible ne signifie pas forcément que l&apos;achat final
+            est le moins cher.
           </p>
 
           <p className="text-slate-700">
-            Use payment accounts in your own name, keep transfer
-            confirmations and do not misrepresent the purpose of a
-            transaction. Exchanges and banks may request source-of-funds
-            information, particularly for large or unusual transfers.
+            Utilise un compte de paiement à ton nom, conserve les
+            confirmations et ne donne pas une fausse description à une
+            transaction. Une banque ou une plateforme peut demander
+            l&apos;origine des fonds pour des opérations importantes ou
+            inhabituelles.
           </p>
         </section>
 
         {/* Comparison */}
-        <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="comparatif" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Practical comparison for France
+            Comparatif pratique pour la France
           </h2>
 
           <div className="overflow-x-auto rounded-xl border border-slate-200">
@@ -470,15 +498,15 @@ export default function FrancePage() {
               <thead className="bg-slate-100">
                 <tr>
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Platform
+                    Plateforme
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Best for
+                    Pour quel profil ?
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    France checks
+                    Vérifications France
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
@@ -494,12 +522,12 @@ export default function FrancePage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    France-focused service and French-language support.
+                    Service orienté France et accompagnement en français.
                   </td>
 
                   <td className="px-4 py-3">
-                    Confirm current MiCA authorisation, fees, custody and
-                    supported assets.
+                    Agrément MiCA actuel, frais, conservation et actifs
+                    disponibles.
                   </td>
 
                   <td className="px-4 py-3">
@@ -509,7 +537,7 @@ export default function FrancePage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official website →
+                      Site officiel →
                     </a>
                   </td>
                 </tr>
@@ -520,12 +548,12 @@ export default function FrancePage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    Beginners and recurring euro purchases.
+                    Débutants et achats récurrents en euros.
                   </td>
 
                   <td className="px-4 py-3">
-                    Check EU entity, spread, custody and Form 2086-ready
-                    records.
+                    Entité européenne, spread, conservation et historique
+                    exploitable pour la fiscalité.
                   </td>
 
                   <td className="px-4 py-3">
@@ -535,7 +563,7 @@ export default function FrancePage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official website →
+                      Site officiel →
                     </a>
                   </td>
                 </tr>
@@ -546,11 +574,11 @@ export default function FrancePage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    Active spot traders.
+                    Traders actifs au comptant.
                   </td>
 
                   <td className="px-4 py-3">
-                    EUR pairs, fees, staking and current MiCA status.
+                    Paires en euros, frais, staking et statut MiCA.
                   </td>
 
                   <td className="px-4 py-3">
@@ -560,7 +588,7 @@ export default function FrancePage() {
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
                     >
-                      Visit Kraken →
+                      Découvrir Kraken →
                     </a>
                   </td>
                 </tr>
@@ -571,12 +599,12 @@ export default function FrancePage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    European spot-market comparison.
+                    Comparaison européenne du trading au comptant.
                   </td>
 
                   <td className="px-4 py-3">
-                    Use official websites to verify France access,
-                    custody, fees and authorisation.
+                    Accès France, conservation, frais et autorisation
+                    actuelle.
                   </td>
 
                   <td className="px-4 py-3">
@@ -586,23 +614,22 @@ export default function FrancePage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official websites →
+                      Sites officiels →
                     </a>
                   </td>
                 </tr>
 
                 <tr>
                   <td className="px-4 py-3 font-medium text-slate-900">
-                    Self-custody wallet
+                    Portefeuille personnel
                   </td>
 
                   <td className="px-4 py-3">
-                    Long-term holdings and on-chain use.
+                    Conservation à long terme et usage on-chain.
                   </td>
 
                   <td className="px-4 py-3">
-                    You control the keys, but tax records and security
-                    remain your responsibility.
+                    Sécurité des clés, sauvegardes et documentation fiscale.
                   </td>
 
                   <td className="px-4 py-3">
@@ -610,7 +637,7 @@ export default function FrancePage() {
                       href="/wallets"
                       className="text-indigo-700 font-medium hover:underline"
                     >
-                      Wallets guide →
+                      Guide wallets →
                     </Link>
                   </td>
                 </tr>
@@ -622,84 +649,86 @@ export default function FrancePage() {
         {/* FAQ */}
         <section id="faq" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Frequently asked questions about crypto in France
+            Questions fréquentes sur les crypto-actifs en France
           </h2>
 
           <div className="space-y-4">
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is cryptocurrency legal in France?
+                Les cryptomonnaies sont-elles légales en France ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Yes. Holding and trading cryptoassets is generally legal,
-                but providers serving French clients must follow the
-                applicable MiCA authorisation or notification requirements.
-                The old PSAN transition ended on 1 July 2026.
+                Oui. La détention et le trading de crypto-actifs sont
+                généralement possibles. Les prestataires qui servent des
+                clients français doivent toutefois respecter les
+                obligations MiCA applicables. La période transitoire PSAN
+                a pris fin le 1er juillet 2026.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                What is the French crypto tax rate?
+                Quel est le taux d&apos;imposition des cryptos en France ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                The applicable flat-tax rate for many private crypto
-                gains in 2026 is generally 31.4%, made up of income tax
-                and social levies. The exact result depends on the
-                transaction and taxpayer&apos;s circumstances.
+                Pour de nombreuses plus-values crypto privées, la flat tax
+                applicable en 2026 est généralement de 31,4 %. Le calcul
+                exact dépend de l&apos;opération et de la situation fiscale
+                du contribuable.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is a crypto-to-crypto swap taxable in France?
+                Un échange crypto-crypto est-il imposable ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Certain exchanges between cryptoassets can receive
-                different treatment from sales for fiat or purchases of
-                goods and services. Keep records for every swap and
-                consult the current French tax rules before filing.
+                Certains échanges entre crypto-actifs peuvent recevoir un
+                traitement différent d&apos;une vente contre des euros ou
+                d&apos;un achat de biens et services. Conserve les données de
+                chaque opération et vérifie les règles fiscales actuelles.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                What is Form 2086 used for?
+                À quoi sert le formulaire 2086 ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Form 2086 is used to calculate taxable gains from digital
-                assets for French tax reporting. Additional forms may be
-                required for foreign digital-asset accounts.
+                Le formulaire 2086 sert généralement à calculer les
+                plus-values réalisées sur les actifs numériques. Certains
+                comptes ouverts à l&apos;étranger peuvent nécessiter une
+                déclaration complémentaire.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is Coinhouse relevant for French residents?
+                Coinhouse est-elle pertinente pour les résidents français ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Coinhouse is a France-focused comparison point with
-                French-language market relevance. Users should still
-                verify current MiCA status, fees, custody and supported
-                products.
+                Coinhouse est un point de comparaison pertinent grâce à
+                son orientation française et son service en français.
+                Vérifie néanmoins son agrément MiCA actuel, ses frais, sa
+                conservation et les actifs disponibles.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Does MiCA guarantee crypto safety?
+                MiCA garantit-il la sécurité des investisseurs ?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                No. MiCA regulates specified activities and imposes
-                conduct and compliance requirements, but it cannot
-                eliminate volatility, insolvency, hacks, phishing,
-                smart-contract failures or private-key loss.
+                Non. MiCA encadre certaines activités et impose des
+                obligations aux prestataires, mais ne supprime ni la
+                volatilité, ni les faillites, ni les piratages, ni le
+                phishing, ni la perte des clés privées.
               </p>
             </details>
           </div>
@@ -708,51 +737,51 @@ export default function FrancePage() {
         {/* Checklist */}
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            France crypto exchange checklist
+            Check-list avant de choisir une plateforme
           </h2>
 
           <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
             <li>
-              Verify the provider&apos;s MiCA authorisation or eligible EU
-              notification route.
+              Vérifie l&apos;agrément MiCA ou la procédure européenne
+              applicable.
             </li>
 
             <li>
-              Do not treat an old PSAN listing as equivalent to current
-              CASP authorisation.
+              Ne confonds pas une ancienne inscription PSAN avec un
+              agrément CASP actuel.
             </li>
 
             <li>
-              Compare EUR deposit fees, spread, trading fees, withdrawal
-              costs and network fees.
+              Compare les frais de dépôt, le spread, la commission de
+              trading, les retraits et les frais réseau.
             </li>
 
             <li>
-              Keep records for every purchase, disposal, swap, staking
-              reward, airdrop, lending return and wallet transfer.
+              Conserve les données de chaque achat, vente, échange,
+              reward, airdrop, opération de lending et transfert de wallet.
             </li>
 
             <li>
-              Learn the French Form 2086 and foreign-account reporting
-              requirements before filing.
+              Familiarise-toi avec le formulaire 2086 et les éventuelles
+              déclarations de comptes étrangers.
             </li>
 
             <li>
-              Use unique passwords, 2FA and offline recovery-phrase
-              backups.
+              Active la double authentification et conserve la phrase de
+              récupération hors ligne.
             </li>
 
             <li>
-              Read our{" "}
+              Consulte notre{" "}
               <Link
                 href="/learn/crypto-exchange-security-checklist"
                 className="text-indigo-700"
               >
-                exchange security checklist
+                check-list de sécurité
               </Link>{" "}
-              and{" "}
+              et notre{" "}
               <Link href="/methodology" className="text-indigo-700">
-                methodology
+                méthodologie
               </Link>
               .
             </li>
@@ -763,15 +792,15 @@ export default function FrancePage() {
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <h2 className="text-xl font-semibold text-slate-900 mb-2">
-              How to choose as a French resident
+              Comment choisir depuis la France ?
             </h2>
 
             <p className="text-sm text-slate-700 mb-3">
-              Start with an authorised or clearly eligible European
-              provider that supports euro funding and gives you complete
-              transaction records. Keep long-term holdings separate from
-              trading balances and plan tax reporting before you sell or
-              swap.
+              Commence par un prestataire européen autorisé ou clairement
+              éligible, avec des dépôts en euros et un historique complet
+              des transactions. Sépare les fonds de trading des avoirs
+              conservés à long terme et prépare ta documentation fiscale
+              avant toute vente importante.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -781,7 +810,7 @@ export default function FrancePage() {
                 rel="noopener noreferrer"
                 className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Coinhouse official
+                Coinhouse officiel
               </a>
 
               <a
@@ -790,7 +819,7 @@ export default function FrancePage() {
                 rel="noopener noreferrer"
                 className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Coinbase official
+                Coinbase officiel
               </a>
 
               <a
@@ -809,11 +838,13 @@ export default function FrancePage() {
         <section className="bg-slate-50 border-t">
           <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
             <p>
-              <strong>Disclaimer:</strong> Educational only. Not
-              financial, legal or tax advice. French crypto regulation and
-              tax treatment can change. Verify current AMF, ACPR, MiCA and
-              French tax guidance before depositing funds, trading or
-              filing a return. Some links are affiliate links.
+              <strong>Avertissement :</strong> contenu informatif
+              uniquement, sans conseil financier, juridique ou fiscal
+              personnalisé. La réglementation française et la fiscalité
+              des crypto-actifs peuvent évoluer. Vérifie les informations
+              actuelles auprès de l&apos;AMF, de l&apos;ACPR et de
+              l&apos;administration fiscale avant d&apos;agir. Certains liens
+              peuvent être affiliés.
             </p>
           </div>
         </section>
