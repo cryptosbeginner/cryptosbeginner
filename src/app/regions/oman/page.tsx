@@ -2,370 +2,751 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
+const SITE_URL = "https://www.cryptosbeginner.com";
+const UPDATED = "2026-08-05";
+
 export const metadata = {
-  title: "Best Crypto Exchanges in Oman 2026",
+  title: "Crypto Exchanges in Oman 2026: OMR Access, Rules and Risks",
   description:
-    "2026 Oman guide: registration regime, FSA and Central Bank roles, tax notes, and how residents actually use global exchanges, DEXes and P2P.",
+    "Oman crypto guide for 2026: Central Bank warnings, FSA virtual-asset rules, OMR funding, Rain, Binance, BitOasis, custody and tax context.",
+  alternates: {
+    canonical: `${SITE_URL}/regions/oman`,
+    languages: {
+      en: `${SITE_URL}/regions/oman`,
+      ar: `${SITE_URL}/ar/regions/oman`,
+      "x-default": `${SITE_URL}/regions/oman`,
+    },
+  },
+  openGraph: {
+    title: "Crypto Exchanges in Oman 2026",
+    description:
+      "Compare crypto platforms for Oman by OMR funding, regulatory status, custody and practical access.",
+    url: `${SITE_URL}/regions/oman`,
+    type: "article",
+  },
 };
 
-const UPDATED = "2026-08-21";
+const platforms = [
+  {
+    name: "Rain",
+    fit: "GCC and regional comparison",
+    detail:
+      "A regional platform often compared by Gulf users. Verify whether Omani residents are currently accepted, whether OMR funding is available and which entity provides the service.",
+    check:
+      "Confirm the applicable licence, OMR payment route, custody terms, spread and withdrawal process.",
+    href: "https://go.cryptosbeginner.com/Rain",
+    affiliate: true,
+  },
+  {
+    name: "Binance",
+    fit: "Liquidity and P2P comparison",
+    detail:
+      "A global platform with broad markets and P2P activity. Oman access, banking routes, product eligibility and payment methods can change.",
+    check:
+      "Check the legal entity, current Oman availability, P2P counterparty protections and OMR conversion cost.",
+    href: "https://go.cryptosbeginner.com/binance",
+    affiliate: true,
+  },
+  {
+    name: "OKX",
+    fit: "Advanced trading tools",
+    detail:
+      "A global exchange commonly considered for spot, derivatives and Web3 tools. It is not automatically locally authorised merely because it accepts an Omani user.",
+    check:
+      "Confirm retail product access, derivatives restrictions, OMR route, custody and withdrawals.",
+    href: "https://go.cryptosbeginner.com/OKX",
+    affiliate: true,
+  },
+  {
+    name: "BitOasis",
+    fit: "MENA regional comparison",
+    detail:
+      "A Gulf-oriented platform worth comparing for regional onboarding and simple spot access. Direct OMR support should be verified before registration.",
+    check:
+      "Check Oman eligibility, AED or OMR conversion, fees, custody and the relevant legal entity.",
+    href: "https://bitoasis.net",
+    affiliate: false,
+  },
+];
+
+const decisionRows = [
+  {
+    question: "Do you need OMR funding?",
+    answer:
+      "Confirm the live bank, card or conversion route. Many platforms use USD, AED or a third-party processor rather than a direct OMR market.",
+  },
+  {
+    question: "Are you using an Omani bank?",
+    answer:
+      "Ask the bank about its current policy. A successful transfer does not prove that the exchange or payment route is licensed in Oman.",
+  },
+  {
+    question: "Are you trading derivatives?",
+    answer:
+      "Check whether the product is available to Omani retail customers and understand liquidation, leverage and counterparty risk.",
+  },
+  {
+    question: "Are you operating a business?",
+    answer:
+      "Registration, AML, licensing, tax, VAT and commercial-activity rules may apply differently from personal holding.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is cryptocurrency legal in Oman?",
+    answer:
+      "Cryptocurrency is not legal tender in Oman and is not protected under ordinary banking-law protections. Personal access and ownership are discussed differently from the licensing of a business that provides exchange, custody or other virtual-asset services.",
+  },
+  {
+    question: "Does Oman have a crypto exchange licence?",
+    answer:
+      "Oman has been developing a virtual-asset framework and registration or AML requirements for service providers. Users should distinguish registration or compliance obligations from a fully operational retail exchange licence.",
+  },
+  {
+    question: "Can I buy crypto with Omani rials?",
+    answer:
+      "Some services may support OMR deposits, cards, bank transfers or conversion through another currency. Verify the live route, fees, limits and bank policy before sending funds.",
+  },
+  {
+    question: "Is crypto taxed in Oman?",
+    answer:
+      "Oman does not generally impose personal income tax on individuals under the current system. Business activity, corporate structures, VAT, future tax changes and the user's tax residence can produce different consequences.",
+  },
+  {
+    question: "Can Omani residents use Binance, OKX or Rain?",
+    answer:
+      "Availability can change by platform, product and customer type. Check onboarding, OMR funding, the legal entity, restricted products and withdrawal access directly before depositing.",
+  },
+];
 
 export default function OmanPage() {
+  const itemList = platforms.map((platform, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: platform.name,
+    url: platform.href,
+  }));
+
+  const faqSchema = faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  }));
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Regions",
+          item: `${SITE_URL}/regions`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Oman",
+          item: `${SITE_URL}/regions/oman`,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Crypto platforms compared for Oman",
+      itemListElement: itemList,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqSchema,
+    },
+  ];
+
   return (
     <>
       <Header />
+
+      {structuredData.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
+
       <main className="bg-white">
-        {/* Hero */}
-        <section className="bg-slate-50 border-b">
-          <div className="max-w-4xl mx-auto px-4 py-12">
-            <p className="text-sm font-medium text-indigo-600 mb-2">
-              Updated <time dateTime={UPDATED}>August 2026</time> · By
-              Alex Rivera
+        <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 text-white">
+          <div className="mx-auto max-w-5xl px-4 py-14">
+            <div className="mb-5 flex flex-wrap gap-3 text-sm text-slate-300">
+              <span>English</span>
+              <span className="text-slate-500">·</span>
+              <Link
+                href="/ar/regions/oman"
+                className="text-white underline-offset-4 hover:underline"
+              >
+                العربية
+              </Link>
+            </div>
+
+            <p className="mb-3 text-sm font-medium text-amber-300">
+              Published and reviewed{" "}
+              <time dateTime={UPDATED}>August 5, 2026</time>
             </p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Best Crypto Exchanges in Oman 2026
+
+            <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+              Crypto exchanges in Oman: what users need to check first
             </h1>
-            <p className="mt-4 text-lg text-slate-700">
-              Oman sits between caution and gradual regulation. The
-              Financial Services Authority (FSA) runs a registration
-              regime for virtual asset service providers, while the
-              Central Bank of Oman still warns that crypto is not legal
-              tender. This guide explains that framework, tax notes and
-              how residents actually use global exchanges, DEXes and P2P
-              in 2026.
+
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+              Oman is not a fully open, locally protected retail crypto
+              market. Crypto is not legal tender, the Central Bank of Oman
+              does not guarantee it, and the rules for service providers are
+              still developing. This guide focuses on practical access,
+              OMR funding and the risks of relying on offshore platforms.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#start-here"
+                className="rounded-lg bg-white px-5 py-3 text-sm font-bold text-slate-900 hover:bg-slate-100"
+              >
+                Start here
+              </a>
+
+              <a
+                href="#platforms"
+                className="rounded-lg border border-white/30 px-5 py-3 text-sm font-bold text-white hover:bg-white/10"
+              >
+                Compare platforms
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-8">
+          <div className="rounded-2xl border border-amber-300 bg-amber-50 p-6">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-800">
+              Before you deposit
+            </p>
+
+            <h2 className="mt-2 text-2xl font-bold text-amber-950">
+              Technical access is not the same as local authorisation
+            </h2>
+
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-amber-950">
+              An exchange may load, accept an identity document or display
+              an OMR option without being licensed as an Omani financial
+              institution. Confirm the current position with the Financial
+              Services Authority, the Central Bank of Oman and your bank.
             </p>
           </div>
         </section>
 
-        {/* TL;DR */}
-        <section className="max-w-4xl mx-auto px-4 py-10">
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-emerald-900 mb-3">
-              TL;DR
+        <section id="start-here" className="mx-auto max-w-5xl px-4 py-10">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+                The short answer
+              </p>
+
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+                There is no single “best” Oman exchange
+              </h2>
+
+              <p className="mt-4 leading-7 text-slate-700">
+                The practical choice depends on whether you need direct OMR
+                funding, simple spot purchases, P2P access or advanced
+                trading. The more important question is whether the route
+                is transparent and available to you—not which platform has
+                the largest marketing budget.
+              </p>
+
+              <p className="mt-4 leading-7 text-slate-700">
+                Rain, Binance, OKX and BitOasis can be comparison points, but
+                the exact entity, product restrictions, payment route and
+                withdrawal rights need to be checked at the time of use.
+              </p>
+            </div>
+
+            <aside className="rounded-2xl bg-slate-950 p-6 text-white">
+              <h3 className="text-lg font-bold">
+                Oman in four checks
+              </h3>
+
+              <ol className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+                <li>
+                  <span className="font-semibold text-white">1.</span>{" "}
+                  Is crypto or the service recognised by the relevant Omani
+                  authority?
+                </li>
+
+                <li>
+                  <span className="font-semibold text-white">2.</span>{" "}
+                  How will OMR enter and leave the platform?
+                </li>
+
+                <li>
+                  <span className="font-semibold text-white">3.</span>{" "}
+                  Can you withdraw the asset to your own wallet?
+                </li>
+
+                <li>
+                  <span className="font-semibold text-white">4.</span>{" "}
+                  What happens if the account or bank transfer is reviewed?
+                </li>
+              </ol>
+            </aside>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="overflow-hidden rounded-2xl border border-slate-200">
+            <div className="border-b bg-slate-50 px-6 py-5">
+              <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+                Oman regulatory picture
+              </p>
+
+              <h2 className="mt-1 text-2xl font-bold text-slate-900">
+                Three authorities and three different questions
+              </h2>
+            </div>
+
+            <div className="divide-y divide-slate-200">
+              <div className="grid gap-3 px-6 py-5 md:grid-cols-[180px_1fr]">
+                <a
+                  href="https://cbo.gov.om"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-indigo-700 hover:underline"
+                >
+                  Central Bank of Oman
+                </a>
+
+                <p className="text-sm leading-6 text-slate-700">
+                  The CBO has cautioned that cryptocurrencies are not legal
+                  tender and are not guaranteed or protected like ordinary
+                  banking products.
+                </p>
+              </div>
+
+              <div className="grid gap-3 px-6 py-5 md:grid-cols-[180px_1fr]">
+                <a
+                  href="https://fsa.gov.om"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-indigo-700 hover:underline"
+                >
+                  Financial Services Authority
+                </a>
+
+                <p className="text-sm leading-6 text-slate-700">
+                  The FSA is the relevant capital-markets authority for
+                  virtual-asset service-provider registration and the
+                  developing virtual-asset framework.
+                </p>
+              </div>
+
+              <div className="grid gap-3 px-6 py-5 md:grid-cols-[180px_1fr]">
+                <span className="font-bold text-slate-900">
+                  Tax authority
+                </span>
+
+                <p className="text-sm leading-6 text-slate-700">
+                  Individual and business tax treatment should be considered
+                  separately, especially for companies, professional activity
+                  and future tax changes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            Oman&apos;s framework has been described as developing rather than
+            equivalent to a mature, comprehensive retail exchange regime.
+            Treat registration, AML compliance and a future framework as
+            separate concepts.
+          </p>
+        </section>
+
+        <section id="platforms" className="mx-auto max-w-5xl px-4 py-10">
+          <div className="mb-6 flex flex-col justify-between gap-3 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+                Platform guide
+              </p>
+
+              <h2 className="mt-1 text-3xl font-bold tracking-tight text-slate-900">
+                Platforms Omani users may compare
+              </h2>
+            </div>
+
+            <p className="max-w-md text-sm leading-6 text-slate-600">
+              Availability changes. Treat each entry as a starting point for
+              verification, not a recommendation that the platform is locally
+              licensed.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {platforms.map((platform, index) => (
+              <article
+                key={platform.name}
+                className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-amber-300 hover:shadow-lg"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      0{index + 1}
+                    </p>
+
+                    <h3 className="mt-1 text-xl font-bold text-slate-900">
+                      {platform.name}
+                    </h3>
+                  </div>
+
+                  <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800">
+                    {platform.fit}
+                  </span>
+                </div>
+
+                <p className="mt-5 text-sm leading-6 text-slate-700">
+                  {platform.detail}
+                </p>
+
+                <div className="mt-5 border-t border-slate-100 pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    Check before use
+                  </p>
+
+                  <p className="mt-1 text-sm leading-6 text-slate-700">
+                    {platform.check}
+                  </p>
+                </div>
+
+                <a
+                  href={platform.href}
+                  target="_blank"
+                  rel={
+                    platform.affiliate
+                      ? "noopener noreferrer sponsored"
+                      : "noopener noreferrer"
+                  }
+                  className={`mt-5 inline-flex text-sm font-bold hover:underline ${
+                    platform.affiliate
+                      ? "text-emerald-700"
+                      : "text-slate-700"
+                  }`}
+                >
+                  {platform.affiliate
+                    ? `Visit ${platform.name} →`
+                    : `Official ${platform.name} website →`}
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+                OMR funding
+              </p>
+
+              <h2 className="mt-1 text-3xl font-bold text-slate-900">
+                The payment route matters more than the logo
+              </h2>
+
+              <p className="mt-4 leading-7 text-slate-700">
+                Some platforms may advertise bank transfers, cards or
+                conversion through USD, AED or another currency. Direct OMR
+                support is not universal. Confirm who receives the money,
+                what fees apply and whether the transfer is consistent with
+                your bank&apos;s current policy.
+              </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl bg-slate-50 p-4">
+                  <p className="font-semibold text-slate-900">
+                    Compare the final amount
+                  </p>
+
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                    Include conversion spread, card fees, deposit charges,
+                    trading costs and withdrawal fees.
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-slate-50 p-4">
+                  <p className="font-semibold text-slate-900">
+                    Keep a clean record
+                  </p>
+
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                    Save confirmations, wallet addresses, transaction IDs and
+                    source-of-funds evidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <aside className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
+              <h3 className="text-lg font-bold text-rose-950">
+                Avoid off-platform payment arrangements
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-rose-950">
+                Do not use another person&apos;s bank account, misdescribe a
+                transfer or move a P2P transaction to WhatsApp or cash.
+                These arrangements make fraud, reversal and account-review
+                problems harder to resolve.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="rounded-2xl border border-slate-200 bg-slate-950 p-7 text-white">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-300">
+              Tax context
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold">
+              Do not confuse no personal income tax with no business duties
             </h2>
-            <ul className="space-y-2 text-slate-800 text-sm">
-              <li>
-                Oman permits crypto under an FSA registration regime for
-                virtual asset service providers. A full licensing
-                framework is still pending.
-              </li>
-              <li>
-                Crypto is not legal tender. The Central Bank of Oman has
-                issued public cautions and does not guarantee digital
-                assets.
-              </li>
-              <li>
-                Residents typically use offshore exchanges, DEXes and P2P
-                markets at their own risk, alongside any future
-                FSA-registered platforms.
-              </li>
-              <li>
-                Individuals pay 0% personal income and capital gains tax
-                through 2027. A 5% personal income tax above OMR 42,000
-                takes effect from 2028.
-              </li>
-            </ul>
+
+            <div className="mt-5 grid gap-6 md:grid-cols-2">
+              <div>
+                <h3 className="font-semibold text-white">
+                  Individual user
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  Oman does not generally impose personal income tax under
+                  the current system. The result for an individual can still
+                  depend on tax residence, business status and future reforms.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-white">
+                  Company or professional activity
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  A company, mining operation, exchange, professional trader
+                  or service provider may face different corporate, VAT,
+                  accounting, registration and reporting questions.
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-xs leading-5 text-slate-400">
+              This is general information, not an Oman tax opinion. Check
+              current Tax Authority guidance before filing or structuring a
+              business.
+            </p>
           </div>
         </section>
 
-        {/* TOC */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <div className="rounded-2xl border border-slate-200 p-6">
-            <h2 className="text-lg font-bold text-slate-900 mb-3">
-              On this page
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="mb-6">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+              Before you choose
+            </p>
+
+            <h2 className="mt-1 text-3xl font-bold text-slate-900">
+              Four questions that change the answer
             </h2>
-            <ol className="grid sm:grid-cols-2 gap-2 text-sm text-indigo-700">
-              <li>
-                <a href="#framework" className="hover:underline">
-                  Regulatory framework in Oman
-                </a>
-              </li>
-              <li>
-                <a href="#reality" className="hover:underline">
-                  How residents actually use exchanges
-                </a>
-              </li>
-              <li>
-                <a href="#tax" className="hover:underline">
-                  Tax and reporting notes
-                </a>
-              </li>
-              <li>
-                <a href="#funding" className="hover:underline">
-                  Funding methods from Oman
-                </a>
-              </li>
-              <li>
-                <a href="#comparison" className="hover:underline">
-                  Practical comparison
-                </a>
-              </li>
-              <li>
-                <a href="#checklist" className="hover:underline">
-                  Safety checklist
-                </a>
-              </li>
-            </ol>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-slate-200">
+            <div className="divide-y divide-slate-200">
+              {decisionRows.map((row) => (
+                <div
+                  key={row.question}
+                  className="grid gap-3 px-6 py-5 md:grid-cols-[250px_1fr]"
+                >
+                  <p className="font-bold text-slate-900">
+                    {row.question}
+                  </p>
+
+                  <p className="text-sm leading-6 text-slate-700">
+                    {row.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Regulatory framework */}
-        <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Regulatory framework: FSA, CBO and the registration regime
-          </h2>
-          <p className="text-slate-700 mb-4">
-            Oman’s virtual asset rules centre on Decision No. E/35/2023,
-            issued by what is now the Financial Services Authority (FSA,
-            formerly the Capital Market Authority). The decision creates
-            a registration regime for Virtual Asset Service Providers
-            (VASPs), covering exchange between virtual assets and fiat,
-            transfers, safekeeping and related services. Any business
-            offering these services to Oman residents is expected to
-            register with the FSA and comply with anti–money laundering
-            and counter–terrorism financing instructions.
-          </p>
-          <p className="text-slate-700 mb-4">
-            At the same time, the Central Bank of Oman (CBO) has issued
-            cautionary notices stating that cryptocurrencies are not legal
-            tender, are outside the protection of banking law and are not
-            guaranteed by the central bank. Public statements emphasise
-            that users and traders deal in crypto at their own risk and
-            may be exposed to financial, operational and security-related
-            risks. This dual structure leaves crypto in a managed grey
-            zone: permitted under strict conditions for VASPs, but not
-            endorsed as money.
-          </p>
-          <p className="text-slate-700 text-sm">
-            External references:{" "}
-            <a
-              href="https://www.cbo.gov.om"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-700 hover:underline"
-            >
-              Central Bank of Oman
-            </a>{" "}
-            ·{" "}
-            <a
-              href="https://www.fsa.gov.om"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-700 hover:underline"
-            >
-              Financial Services Authority (FSA)
-            </a>
-          </p>
-        </section>
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+                Custody
+              </p>
 
-        {/* Reality on the ground */}
-        <section id="reality" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Reality on the ground: offshore exchanges, DEXes and P2P
-          </h2>
-          <p className="text-slate-700 mb-4">
-            In practice, Oman does not yet have a mature roster of
-            fully-licensed retail crypto exchanges. Residents who trade
-            often use a mix of offshore platforms, decentralised exchanges
-            and peer-to-peer markets. Some global exchanges allow Omani
-            residents to open accounts and trade under their general
-            international terms, but these relationships sit outside
-            Omani banking law and direct CBO protections.
-          </p>
-          <p className="text-slate-700 mb-4">
-            On-chain activity via DEXes and self-custody wallets is
-            technically available to anyone who can connect a wallet and
-            pay network fees. Regulation in Oman focuses on service
-            providers, not individual holders, so personal ownership of
-            crypto is not explicitly outlawed. However, warnings from the
-            central bank make clear that individuals deal at their own
-            risk and should expect no recourse if something goes wrong.
-          </p>
-          <p className="text-slate-700 text-sm">
-            For most residents, a careful approach is essential: treat
-            offshore accounts, DEXes and P2P tools as high-risk
-            complements to traditional finance, not as a replacement for
-            the regulated system.
-          </p>
-        </section>
+              <h2 className="mt-1 text-3xl font-bold text-slate-900">
+                Offshore access creates offshore risk
+              </h2>
 
-        {/* Tax notes */}
-        <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Tax notes for Oman residents (2026–2028)
-          </h2>
-          <p className="text-slate-700 mb-4">
-            As of 2026, Oman does not levy personal income tax or capital
-            gains tax on individuals. Salaries, business income, rental
-            income and investment gains, including crypto, are received
-            tax‑free at the personal level. This position remains in
-            place through the end of 2027.
-          </p>
-          <p className="text-slate-700 mb-4">
-            From 1 January 2028, Royal Decree 56/2025 introduces a 5%
-            personal income tax on annual income exceeding OMR 42,000
-            (around USD 109,000). All income types, including employment,
-            self‑employment and capital gains, are aggregated within this
-            framework. Below the threshold, income remains untaxed.
-            Corporate profits are taxed separately at around 15%, and VAT
-            applies at 5% on many goods and services.
-          </p>
-          <p className="text-slate-700 text-sm">
-            For 2026–2027, most individual crypto trading and investing
-            occurs with 0% personal tax in Oman. From 2028 onward, high
-            earners should factor the 5% levy into their planning.
-          </p>
-        </section>
+              <p className="mt-4 leading-7 text-slate-700">
+                An international exchange may accept Omani customers without
+                being supervised by an Omani authority. Account restrictions,
+                withdrawal pauses, insolvency and hacking remain possible.
+              </p>
 
-        {/* Funding */}
-        <section id="funding" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Funding exchanges from Oman
-          </h2>
-          <p className="text-slate-700 mb-4">
-            Because crypto is not recognised as legal tender, Omani banks
-            and payment institutions are cautious. Many residents fund
-            offshore exchanges via international cards, multi‑currency
-            accounts, or by moving crypto from other jurisdictions where
-            on‑ramps are easier. Peer‑to‑peer markets and OTC desks are
-            used by some traders, but they come with higher counterparty
-            risk and often rely on trust and reputation.
-          </p>
-          <p className="text-slate-700 mb-4">
-            Whatever route you choose, always test with small amounts
-            first, avoid putting explicit “crypto” references in transfer
-            notes, and be prepared for bank policies to tighten as Oman’s
-            virtual asset framework evolves. Expect FSA registration and
-            AML expectations to increase over time for any service doing
-            measurable volume with Omani customers.
-          </p>
-        </section>
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-700">
+                <li>Can you withdraw to a wallet you control?</li>
+                <li>Are customer assets segregated?</li>
+                <li>Does the provider lend or reuse customer assets?</li>
+                <li>How are complaints and account freezes handled?</li>
+              </ul>
+            </div>
 
-        {/* Comparison */}
-        <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Practical comparison for Oman residents
-          </h2>
-          <div className="overflow-x-auto rounded-xl border border-slate-200">
-            <table className="w-full text-sm text-left">
-              <thead className="bg-slate-100">
-                <tr>
-                  <th className="px-4 py-3 font-semibold text-slate-800">
-                    Option
-                  </th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">
-                    Best for
-                  </th>
-                  <th className="px-4 py-3 font-semibold text-slate-800">
-                    Oman notes
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 text-slate-800">
-                <tr>
-                  <td className="px-4 py-3 font-medium text-slate-900">
-                    Offshore centralised exchanges
-                  </td>
-                  <td className="px-4 py-3">
-                    Deep liquidity, derivatives, broad token access.
-                  </td>
-                  <td className="px-4 py-3">
-                    Accessible at user&apos;s own risk. Not licensed as
-                    Omani banks or MENA exchanges, and outside CBO
-                    guarantees.
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-slate-900">
-                    Decentralised exchanges (DEXes)
-                  </td>
-                  <td className="px-4 py-3">
-                    On‑chain swaps from self‑custody wallets.
-                  </td>
-                  <td className="px-4 py-3">
-                    No accounts or KYC, but smart contract and liquidity
-                    risks. Regulation targets service providers, not
-                    individual users.
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-medium text-slate-900">
-                    P2P and OTC desks
-                  </td>
-                  <td className="px-4 py-3">
-                    Fiat–crypto trades via escrow or direct settlement.
-                  </td>
-                  <td className="px-4 py-3">
-                    Higher counterparty risk and premiums. Only suitable
-                    for users who understand disputes and escrow flows.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="rounded-2xl bg-amber-50 p-6">
+              <h3 className="text-lg font-bold text-amber-950">
+                Consider self-custody carefully
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-amber-950">
+                A self-custody wallet reduces dependence on an exchange but
+                makes you responsible for the recovery phrase, device
+                security and every transaction you sign.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-3 text-sm">
+                <Link
+                  href="/wallets"
+                  className="font-bold text-indigo-700 hover:underline"
+                >
+                  Wallets guide →
+                </Link>
+
+                <Link
+                  href="/learn/what-is-proof-of-reserves"
+                  className="font-bold text-indigo-700 hover:underline"
+                >
+                  Proof of Reserves →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Safety checklist */}
-        <section id="checklist" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Safety checklist for Oman crypto users
-          </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
-            <li>
-              Understand that crypto is not legal tender and not covered
-              by Omani banking protections.
-            </li>
-            <li>
-              If you run a business or service, check whether you need to
-              register as a VASP with the FSA and comply with its AML/CTF
-              instructions.
-            </li>
-            <li>
-              Keep long‑term holdings in reputable hardware wallets and
-              avoid leaving savings on offshore exchanges.
-            </li>
-            <li>
-              Treat P2P and DEX activity as high risk and size positions
-              accordingly.
-            </li>
-            <li>
-              Track upcoming tax changes for 2028 if your income could
-              exceed the OMR 42,000 threshold.
-            </li>
-          </ul>
-          <p className="mt-4 text-sm leading-7 text-slate-700">
-            Combine this region guide with our{" "}
-            <Link
-              href="/learn/crypto-exchange-security-checklist"
-              className="text-indigo-700"
-            >
-              exchange security checklist
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="/security/exchange-incidents"
-              className="text-indigo-700"
-            >
-              incidents timeline
-            </Link>{" "}
-            to build your own risk plan.
-          </p>
+        <section id="faq" className="mx-auto max-w-5xl px-4 py-10">
+          <div className="mb-6">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
+              Direct answers
+            </p>
+
+            <h2 className="mt-1 text-3xl font-bold text-slate-900">
+              Oman crypto questions
+            </h2>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="rounded-2xl border border-slate-200 p-5"
+              >
+                <summary className="cursor-pointer font-bold text-slate-900">
+                  {faq.question}
+                </summary>
+
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
         </section>
 
-        {/* Disclaimer */}
-        <section className="bg-slate-50 border-t">
-          <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
+        <section className="mx-auto max-w-5xl px-4 pb-14">
+          <div className="rounded-2xl bg-slate-50 p-7">
+            <h2 className="text-2xl font-bold text-slate-900">
+              Oman exchange checklist
+            </h2>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                "Check current CBO and FSA information.",
+                "Verify whether the service is registered, licensed or offshore.",
+                "Confirm the OMR deposit and withdrawal route.",
+                "Compare spread, card fees, conversion and trading fees.",
+                "Keep transaction, wallet and source-of-funds records.",
+                "Use 2FA and secure offline backups.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-xl bg-white p-4 text-sm leading-6 text-slate-700"
+                >
+                  ✓ {item}
+                </p>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="https://go.cryptosbeginner.com/Rain"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"
+              >
+                Compare Rain
+              </a>
+
+              <a
+                href="https://go.cryptosbeginner.com/binance"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"
+              >
+                Compare Binance
+              </a>
+
+              <Link
+                href="/methodology"
+                className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
+              >
+                Read our methodology
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t bg-slate-50">
+          <div className="mx-auto max-w-5xl px-4 py-8 text-sm leading-6 text-slate-600">
             <p>
-              <strong>Disclaimer:</strong> Educational only. Not financial,
-              legal or tax advice. Crypto-asset activity in Oman is
-              subject to evolving regulation by the Financial Services
-              Authority and the Central Bank of Oman. Always seek local
-              professional advice before depositing funds, operating a
-              service or relying on any position described here.
+              <strong>Disclaimer:</strong> Educational content only. Not
+              financial, legal or tax advice. Oman's crypto rules,
+              payment policies, registration framework, tax treatment and
+              platform availability may change. Verify current information
+              with the Central Bank of Oman, the Financial Services Authority,
+              the Tax Authority and your bank before depositing or trading.
+              Some links may be affiliate links.
             </p>
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
