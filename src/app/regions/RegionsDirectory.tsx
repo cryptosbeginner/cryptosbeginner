@@ -9,7 +9,7 @@ type Country = {
   href: string;
   note: string;
   topics: string[];
-  status?: "live" | "restricted";
+  restricted?: boolean;
   updated?: string;
 };
 
@@ -31,7 +31,6 @@ const regions: RegionGroup[] = [
         note:
           "Top global adoption market with large retail demand, local exchanges and detailed tax considerations.",
         topics: ["INR", "Tax", "Local exchanges"],
-        status: "live",
       },
       {
         name: "Pakistan",
@@ -39,7 +38,6 @@ const regions: RegionGroup[] = [
         note:
           "P2P-heavy market where payment methods, stablecoins and exchange safety are central concerns.",
         topics: ["P2P", "PKR", "Payment methods"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -48,7 +46,6 @@ const regions: RegionGroup[] = [
         note:
           "Growing retail interest with local restrictions and a need for careful legal and payment research.",
         topics: ["Restrictions", "P2P", "Risk"],
-        status: "live",
       },
     ],
   },
@@ -63,7 +60,6 @@ const regions: RegionGroup[] = [
         note:
           "Large retail base and active exchange market under local regulatory oversight.",
         topics: ["IDR", "Retail", "Local exchanges"],
-        status: "live",
       },
       {
         name: "Vietnam",
@@ -71,7 +67,6 @@ const regions: RegionGroup[] = [
         note:
           "High grassroots adoption and an active trader base, with changing regulatory conditions.",
         topics: ["Adoption", "P2P", "Retail"],
-        status: "live",
       },
       {
         name: "Philippines",
@@ -79,7 +74,6 @@ const regions: RegionGroup[] = [
         note:
           "Remittances, mobile payments and retail trading drive demand for local and global platforms.",
         topics: ["Remittances", "PHP", "Mobile"],
-        status: "live",
       },
       {
         name: "Malaysia",
@@ -87,7 +81,6 @@ const regions: RegionGroup[] = [
         note:
           "A regulated market with local exchanges and global-platform comparisons.",
         topics: ["MYR", "Regulation", "Retail"],
-        status: "live",
       },
       {
         name: "Thailand",
@@ -95,7 +88,6 @@ const regions: RegionGroup[] = [
         note:
           "Established retail market with regulated domestic venues and an active crypto community.",
         topics: ["THB", "Regulation", "Retail"],
-        status: "live",
       },
       {
         name: "Singapore",
@@ -103,7 +95,6 @@ const regions: RegionGroup[] = [
         note:
           "High purchasing power, a major fintech hub and a tightly supervised crypto market.",
         topics: ["MAS", "SGD", "Fintech"],
-        status: "live",
       },
     ],
   },
@@ -118,7 +109,6 @@ const regions: RegionGroup[] = [
         note:
           "Dubai and Abu Dhabi are major crypto hubs, with VARA, ADGM and strong international demand.",
         topics: ["VARA", "AED", "Dubai"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -128,7 +118,6 @@ const regions: RegionGroup[] = [
         note:
           "Large regional market with rising interest and a cautious official stance on crypto activity.",
         topics: ["SAR", "Gulf", "Regulation"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -137,7 +126,6 @@ const regions: RegionGroup[] = [
         note:
           "Structured CBB licensing framework, regional providers and practical GCC funding routes.",
         topics: ["CBB", "BHD", "Rain"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -146,7 +134,6 @@ const regions: RegionGroup[] = [
         note:
           "FSA registration framework, Central Bank cautions and a developing virtual-asset market.",
         topics: ["FSA", "OMR", "VASP"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -156,7 +143,6 @@ const regions: RegionGroup[] = [
         note:
           "High retail activity, local TRY exchanges, SPK oversight and MASAK compliance requirements.",
         topics: ["SPK", "MASAK", "TRY"],
-        status: "live",
         updated: "2026",
       },
     ],
@@ -172,7 +158,6 @@ const regions: RegionGroup[] = [
         note:
           "Large P2P market with evolving SEC, CBN and NRS rules, tax reporting and local payment constraints.",
         topics: ["P2P", "NGN", "SEC"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -181,7 +166,6 @@ const regions: RegionGroup[] = [
         note:
           "FSCA CASP licensing, SARS reporting, rand on-ramps and a more formal crypto market.",
         topics: ["FSCA", "SARS", "ZAR"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -190,7 +174,6 @@ const regions: RegionGroup[] = [
         note:
           "VASP rules, M-Pesa context, KRA reporting, mobile payments and changing local exchange access.",
         topics: ["VASP", "M-Pesa", "KRA"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -199,7 +182,6 @@ const regions: RegionGroup[] = [
         note:
           "Act 1154, Bank of Ghana and SEC rules, mobile-money usage and P2P safety.",
         topics: ["BoG", "SEC", "GHS"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -208,7 +190,7 @@ const regions: RegionGroup[] = [
         note:
           "Restricted market: CBE approval is required for crypto activity, with material legal and banking risk.",
         topics: ["CBE", "Article 206", "Risk"],
-        status: "restricted",
+        restricted: true,
         updated: "2026",
       },
       {
@@ -217,7 +199,7 @@ const regions: RegionGroup[] = [
         note:
           "Restricted market: NBE warnings, Birr P2P restrictions and separate rules for mining activity.",
         topics: ["NBE", "Birr", "Restricted"],
-        status: "restricted",
+        restricted: true,
         updated: "2026",
       },
     ],
@@ -233,7 +215,6 @@ const regions: RegionGroup[] = [
         note:
           "FCA framework, HMRC reporting, GBP funding and a major English-speaking crypto market.",
         topics: ["FCA", "HMRC", "GBP"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -243,7 +224,6 @@ const regions: RegionGroup[] = [
         note:
           "MiCA, BaFin, EUR access and German private-sale tax rules for many individual holders.",
         topics: ["BaFin", "MiCA", "EUR"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -253,7 +233,6 @@ const regions: RegionGroup[] = [
         note:
           "FMA oversight, Bitpanda, 27.5% tax treatment and DAC8 reporting.",
         topics: ["FMA", "KESt", "DAC8"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -263,7 +242,6 @@ const regions: RegionGroup[] = [
         note:
           "FINMA, Swiss DLT rules, CHF access, wealth tax and private-investor tax considerations.",
         topics: ["FINMA", "CHF", "Wealth tax"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -272,7 +250,6 @@ const regions: RegionGroup[] = [
         note:
           "AMF, MiCA CASP rules, Form 2086, euro funding and French crypto tax.",
         topics: ["AMF", "PSCA", "Form 2086"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -281,7 +258,6 @@ const regions: RegionGroup[] = [
         note:
           "AFM, DNB, Box 3 wealth tax, Bitvavo and iDEAL payment context.",
         topics: ["AFM", "Box 3", "iDEAL"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -290,7 +266,6 @@ const regions: RegionGroup[] = [
         note:
           "Central Bank of Ireland, MiCA, Revenue tax, 33% CGT and euro access.",
         topics: ["CBI", "Revenue", "CGT"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -300,7 +275,6 @@ const regions: RegionGroup[] = [
         note:
           "Finansinspektionen, Safello, K4 tax records, SEK funding and MiCA rules.",
         topics: ["FI", "Safello", "K4"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -309,8 +283,7 @@ const regions: RegionGroup[] = [
         note:
           "Finanstilsynet, Coinify, DKK funding, FIFO records and Danish crypto tax.",
         topics: ["Finanstilsynet", "Coinify", "FIFO"],
-        status: "live",
-        updated: "2026,
+        updated: "2026",
       },
       {
         name: "Norway",
@@ -319,7 +292,6 @@ const regions: RegionGroup[] = [
         note:
           "Finanstilsynet, EEA implementation, Firi, NBX, NOK funding and wealth reporting.",
         topics: ["Finanstilsynet", "Firi", "NOK"],
-        status: "live",
         updated: "2026",
       },
       {
@@ -328,7 +300,7 @@ const regions: RegionGroup[] = [
         note:
           "Large retail base, euro funding and EU MiCA platform access.",
         topics: ["EUR", "MiCA", "Retail"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Italy",
@@ -336,7 +308,7 @@ const regions: RegionGroup[] = [
         note:
           "Growing retail interest, euro access and an evolving MiCA market.",
         topics: ["EUR", "MiCA", "Retail"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Poland",
@@ -344,7 +316,7 @@ const regions: RegionGroup[] = [
         note:
           "Active Central European market with local-currency and EU platform considerations.",
         topics: ["PLN", "MiCA", "Retail"],
-        status: "live",
+        updated: "2026",
       },
     ],
   },
@@ -359,7 +331,7 @@ const regions: RegionGroup[] = [
         note:
           "Largest absolute market, but availability varies heavily by state, product and federal regulatory status.",
         topics: ["State rules", "USD", "Regulation"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Canada",
@@ -367,7 +339,7 @@ const regions: RegionGroup[] = [
         note:
           "Regulated platforms, strong retail demand and province-specific requirements.",
         topics: ["CAD", "Provincial rules", "Retail"],
-        status: "live",
+        updated: "2026",
       },
     ],
   },
@@ -382,7 +354,7 @@ const regions: RegionGroup[] = [
         note:
           "One of Latin America’s largest markets, with local exchanges and BRL funding options.",
         topics: ["BRL", "Stablecoins", "Retail"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Argentina",
@@ -390,7 +362,7 @@ const regions: RegionGroup[] = [
         note:
           "High stablecoin demand driven by currency pressure and a strong local crypto culture.",
         topics: ["ARS", "Stablecoins", "Inflation"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Mexico",
@@ -398,7 +370,7 @@ const regions: RegionGroup[] = [
         note:
           "Growing market shaped by remittances, retail access and cross-border use cases.",
         topics: ["MXN", "Remittances", "Retail"],
-        status: "live",
+        updated: "2026",
       },
     ],
   },
@@ -413,7 +385,7 @@ const regions: RegionGroup[] = [
         note:
           "Highly active trading culture and strict local exchange regulation.",
         topics: ["KRW", "Local exchanges", "Volume"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Japan",
@@ -421,7 +393,7 @@ const regions: RegionGroup[] = [
         note:
           "Established regulated market with domestic exchange licensing and JPY access.",
         topics: ["JPY", "FSA", "Regulation"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Hong Kong",
@@ -429,7 +401,7 @@ const regions: RegionGroup[] = [
         note:
           "Regional trading hub with a licensing framework for retail virtual-asset venues.",
         topics: ["HKD", "SFC", "Licensed venues"],
-        status: "live",
+        updated: "2026",
       },
       {
         name: "Australia",
@@ -437,7 +409,7 @@ const regions: RegionGroup[] = [
         note:
           "High purchasing power, AUD access and evolving crypto regulation.",
         topics: ["AUD", "Regulation", "Retail"],
-        status: "live",
+        updated: "2026",
       },
     ],
   },
@@ -485,7 +457,7 @@ export default function RegionsDirectory() {
             searchText.includes(normalizedQuery);
 
           const matchesAvailability =
-            !showAvailableOnly || country.status === "live";
+            !showAvailableOnly || !country.restricted;
 
           return matchesSearch && matchesAvailability;
         }),
@@ -678,7 +650,7 @@ export default function RegionsDirectory() {
                 }
                 className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
               />
-              Show live guides only
+              Hide restricted markets
             </label>
           </div>
 
@@ -731,7 +703,7 @@ export default function RegionsDirectory() {
                     key={country.href}
                     href={country.href}
                     className={`group flex min-h-[275px] flex-col rounded-2xl border bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md ${
-                      country.status === "restricted"
+                      country.restricted
                         ? "border-amber-300 hover:border-amber-400"
                         : "border-slate-200 hover:border-indigo-300"
                     }`}
@@ -751,10 +723,10 @@ export default function RegionsDirectory() {
 
                       <span
                         className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
-                          statusStyles[country.status ?? "live"]
+                          statusStyles[country.restricted ? "restricted" : "live"]
                         }`}
                       >
-                        {statusLabels[country.status ?? "live"]}
+                        {statusLabels[country.restricted ? "restricted" : "live"]}
                       </span>
                     </div>
 
