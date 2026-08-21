@@ -3,11 +3,11 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Best Crypto Exchanges in Sweden 2026",
+  title: "Bästa kryptobörserna i Sverige 2026",
   description:
-    "2026 Sweden crypto exchange guide: Finansinspektionen, MiCA, Safello, Coinbase, Kraken, Swedish crypto tax, K4 reporting and safe SEK funding.",
+    "Jämför kryptobörser i Sverige 2026: Finansinspektionen, MiCA, Safello, Coinbase, Kraken, svensk kryptoskatt, K4 och säker handel.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/regions/sweden",
+    canonical: "https://www.cryptosbeginner.com/sv/regioner/sverige",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/sweden",
       sv: "https://www.cryptosbeginner.com/sv/regioner/sverige",
@@ -22,47 +22,47 @@ const UPDATED = "2026-08-14";
 const platforms = [
   {
     name: "Safello",
-    bestFor: "Swedish users and local market access",
+    bestFor: "Svenska användare och lokal marknad",
     note:
-      "A Sweden-focused crypto platform with local market relevance. Check its current MiCA permissions, SEK funding, fees, spreads, custody and available assets.",
+      "En svensk kryptoplattform med lokal marknadsinriktning. Kontrollera aktuell MiCA-behörighet, SEK-betalningar, avgifter, spread, förvaring och tillgängliga tillgångar.",
     href: "https://www.safello.com",
     affiliate: false,
   },
   {
     name: "Coinbase",
-    bestFor: "Beginners and recurring purchases",
+    bestFor: "Nybörjare och regelbundna köp",
     note:
-      "A familiar international exchange for simple spot purchases. Compare euro funding, card costs, spread, custody and the EEA entity serving Sweden.",
+      "En internationell plattform för enklare köp och spot-handel. Jämför euroinsättningar, kortavgifter, spread, förvaring och den EES-enhet som betjänar Sverige.",
     href: "https://www.coinbase.com",
     affiliate: false,
   },
   {
     name: "Kraken",
-    bestFor: "Experienced spot traders",
+    bestFor: "Erfarna spot-traders",
     note:
-      "Useful trading tools and international liquidity. Review euro funding, maker/taker fees, staking and products available to Swedish residents.",
+      "Handelsverktyg och internationell likviditet. Kontrollera euroinsättningar, maker/taker-avgifter, staking och vilka produkter som är tillgängliga i Sverige.",
     href: "https://go.cryptosbeginner.com/Kraken",
     affiliate: true,
   },
   {
     name: "Bitpanda",
-    bestFor: "European retail investors",
+    bestFor: "Europeiska småsparare",
     note:
-      "A broad European retail platform. Verify Swedish availability, SEK or euro funding, spreads, custody and current EEA authorisation.",
+      "En bred europeisk investeringsplattform. Kontrollera tillgänglighet i Sverige, SEK- eller eurofinansiering, spread, förvaring och aktuell EES-behörighet.",
     href: "https://www.bitpanda.com/en",
     affiliate: false,
   },
   {
     name: "Bitstamp",
-    bestFor: "Focused European spot trading",
+    bestFor: "Enkel europeisk spot-handel",
     note:
-      "A long-running European exchange useful for comparison. Check Swedish availability, euro funding, fees and current MiCA status.",
+      "En etablerad europeisk börs med ett relativt fokuserat utbud. Kontrollera svensk tillgänglighet, euroinsättningar, avgifter och aktuell MiCA-status.",
     href: "https://www.bitstamp.net",
     affiliate: false,
   },
 ];
 
-export default function SwedenPage() {
+export default function SwedenSwedishPage() {
   return (
     <>
       <Header />
@@ -72,35 +72,55 @@ export default function SwedenPage() {
         <section className="bg-slate-50 border-b">
           <div className="max-w-4xl mx-auto px-4 py-12">
             <div className="mb-4 flex flex-wrap gap-3 text-sm">
-              <span className="text-slate-600">English</span>
+              <span className="text-slate-600">Svenska</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/sv/regioner/sverige"
+                href="/regions/sweden"
                 className="text-indigo-700 hover:underline"
               >
-                Svenska
+                English version
               </Link>
             </div>
 
             <p className="text-sm font-medium text-indigo-600 mb-2">
-              Updated <time dateTime={UPDATED}>August 21, 2026</time> · By
+              Uppdaterad{" "}
+              <time dateTime={UPDATED}>21 augusti 2026</time> · Av
               Elise Morgan
             </p>
 
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Best Crypto Exchanges in Sweden 2026
+              Bästa kryptobörserna i Sverige 2026
             </h1>
 
             <p className="mt-4 text-lg text-slate-700">
-              Sweden is an EU crypto market operating under MiCA, with
-              Finansinspektionen as the national competent authority.
-              Swedish residents compare local providers such as Safello
-              with international platforms such as Coinbase and Kraken.
-              The practical questions are whether SEK funding is
-              available, how Swedish tax rules apply, who holds the
-              assets and whether the provider is authorised to serve
-              Swedish customers.
+              Sverige är en EU-marknad för kryptotillgångar som omfattas
+              av MiCA. Finansinspektionen är den svenska behöriga
+              myndigheten för relevanta kryptotjänster. Svenska användare
+              jämför lokala aktörer som Safello med internationella
+              plattformar som Coinbase och Kraken. SEK-betalningar,
+              svensk deklaration, förvaring och aktuell MiCA-behörighet är
+              minst lika viktiga som handelsavgiften.
             </p>
+
+            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Svensk språkgranskning
+              </p>
+
+              <p className="mt-1 text-sm text-slate-700">
+                Språkgranskad och lokalt anpassad av{" "}
+                <span className="font-semibold text-slate-900">
+                  Erik Berg
+                </span>
+                , svensk redaktör med fokus på digitala tillgångar och
+                privatekonomi.
+              </p>
+
+              <p className="mt-2 text-xs text-slate-500">
+                Innehållet är pedagogiskt och utgör inte finansiell,
+                juridisk eller skattemässig rådgivning.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -108,24 +128,25 @@ export default function SwedenPage() {
         <section className="max-w-4xl mx-auto px-4 py-10">
           <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
             <h2 className="text-xl font-bold text-indigo-950 mb-3">
-              Quick answer: which exchange is best?
+              Snabbt svar: vilken kryptobörs är bäst?
             </h2>
 
             <p className="text-sm leading-7 text-indigo-950">
-              Safello is the most natural local comparison for Swedish
-              users who want Sweden-focused support and payment options.
-              Coinbase is often easier for beginners, Kraken suits active
-              spot traders, and Bitpanda or Bitstamp offer additional
-              European comparisons. Your choice should depend on SEK or
-              euro funding, total cost, tax records, custody, withdrawals
-              and the exact product you want to use.
+              Safello är den naturliga lokala jämförelsen för svenska
+              användare som vill ha svensk marknadsnärvaro och lokala
+              betalningsalternativ. Coinbase passar ofta nybörjare,
+              Kraken passar aktiva spot-traders och Bitpanda eller
+              Bitstamp kan fungera som europeiska alternativ. Det bästa
+              valet beror på SEK- eller eurofinansiering, totalkostnad,
+              skattedokumentation, förvaring och vilka produkter du
+              behöver.
             </p>
 
             <p className="mt-3 text-sm leading-7 text-indigo-950">
-              Verify the legal entity and current MiCA status before
-              depositing. A platform being accessible from Sweden does
-              not automatically mean every product is authorised or
-              available to Swedish residents.
+              Kontrollera alltid den juridiska enheten och aktuell
+              MiCA-behörighet innan du sätter in pengar. Att en webbplats
+              går att använda från Sverige betyder inte automatiskt att
+              alla produkter är godkända eller tillgängliga.
             </p>
           </div>
         </section>
@@ -134,41 +155,40 @@ export default function SwedenPage() {
         <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-emerald-900 mb-3">
-              TL;DR
+              Sammanfattning
             </h2>
 
             <ul className="space-y-2 text-slate-800 text-sm">
               <li>
-                Crypto is legal to own and trade in Sweden, but it is
-                not legal tender or a guaranteed bank deposit.
+                Det är i regel tillåtet att äga och handla med
+                kryptotillgångar i Sverige, men krypto är inte lagligt
+                betalningsmedel eller en garanterad bankinsättning.
               </li>
 
               <li>
-                Finansinspektionen, commonly called FI, supervises
-                relevant MiCA crypto-asset service providers in Sweden.
+                Finansinspektionen, FI, ansvarar för tillsynen över
+                relevanta MiCA-reglerade kryptotjänster i Sverige.
               </li>
 
               <li>
-                Safello became the first Swedish company to receive a
-                MiCA crypto-asset service-provider authorisation.
+                Safello blev det första svenska företaget att få
+                MiCA-behörighet som leverantör av kryptotillgångstjänster.
               </li>
 
               <li>
-                Coinbase, Kraken, Bitpanda and Bitstamp are useful
-                international comparison points, subject to current
-                Swedish availability.
+                Coinbase, Kraken, Bitpanda och Bitstamp är relevanta
+                internationella jämförelser, men kontrollera alltid
+                aktuell svensk tillgänglighet.
               </li>
 
               <li>
-                Private crypto disposals are generally taxed at 30%.
-                Swedish rules commonly allow only 70% of a crypto loss as
-                a deduction.
+                Privata kryptovinster beskattas normalt med 30 %. Som
+                huvudregel får bara 70 % av en kryptoförlust dras av.
               </li>
 
               <li>
-                Individual disposals are generally reported through the
-                K4 form. Staking, mining and business activity may need
-                separate treatment.
+                Försäljningar och byten redovisas normalt med K4-bilagan.
+                Staking, mining och verksamhet kan beskattas på annat sätt.
               </li>
             </ul>
           </div>
@@ -178,43 +198,43 @@ export default function SwedenPage() {
         <section className="max-w-4xl mx-auto px-4 pb-10">
           <div className="rounded-2xl border border-slate-200 p-6">
             <h2 className="text-lg font-bold text-slate-900 mb-3">
-              On this page
+              På den här sidan
             </h2>
 
             <ol className="grid sm:grid-cols-2 gap-2 text-sm text-indigo-700">
               <li>
-                <a href="#framework" className="hover:underline">
-                  MiCA and Finansinspektionen
+                <a href="#regelverk" className="hover:underline">
+                  MiCA och Finansinspektionen
                 </a>
               </li>
 
               <li>
-                <a href="#platforms" className="hover:underline">
-                  Relevant Swedish exchanges
+                <a href="#plattformar" className="hover:underline">
+                  Relevanta kryptobörser
                 </a>
               </li>
 
               <li>
-                <a href="#tax" className="hover:underline">
-                  Swedish crypto tax
+                <a href="#skatt" className="hover:underline">
+                  Svensk kryptoskatt
                 </a>
               </li>
 
               <li>
-                <a href="#reporting" className="hover:underline">
-                  DAC8 reporting
+                <a href="#rapportering" className="hover:underline">
+                  DAC8 och rapportering
                 </a>
               </li>
 
               <li>
-                <a href="#funding" className="hover:underline">
-                  SEK, euro and payment methods
+                <a href="#finansiering" className="hover:underline">
+                  SEK, euro och betalningar
                 </a>
               </li>
 
               <li>
                 <a href="#faq" className="hover:underline">
-                  Frequently asked questions
+                  Vanliga frågor
                 </a>
               </li>
             </ol>
@@ -222,52 +242,51 @@ export default function SwedenPage() {
         </section>
 
         {/* Framework */}
-        <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="regelverk" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            MiCA and Finansinspektionen
+            MiCA och Finansinspektionen
           </h2>
 
           <p className="text-slate-700 mb-4">
-            Sweden applies the EU Markets in Crypto-Assets Regulation,
-            or MiCA. The framework covers services such as custody,
-            operating a trading platform, exchanging cryptoassets,
-            executing orders, transferring assets, providing advice and
-            managing portfolios.
+            Sverige tillämpar EU:s förordning om marknader för
+            kryptotillgångar, MiCA. Regelverket omfattar bland annat
+            förvaring, drift av handelsplattformar, växling av
+            kryptotillgångar, orderutförande, överföringar, rådgivning
+            och portföljförvaltning.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Finansinspektionen, Sweden&apos;s Financial Supervisory
-            Authority, is the national competent authority for relevant
-            MiCA authorisations and supervision. Its role includes
-            oversight of regulated crypto services, conduct, governance
-            and applicable anti-money-laundering requirements.
+            Finansinspektionen är Sveriges behöriga myndighet för
+            relevanta MiCA-tillstånd och tillsyn. Myndighetens arbete
+            omfattar bland annat reglerade kryptotjänster, kundskydd,
+            styrning och tillämpliga krav på penningtvättskontroll.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Sweden used a relatively short transition route from earlier
-            national arrangements to MiCA. From 1 July 2026, providers
-            generally need MiCA authorisation or a valid EEA passporting
-            route to continue offering regulated crypto services in
-            Sweden.
+            Sverige hade en relativt kort övergång från tidigare nationella
+            regler till MiCA. Från den 1 juli 2026 behöver leverantörer i
+            regel ha MiCA-tillstånd eller giltig gränsöverskridande
+            EES-anmälan för att fortsätta erbjuda reglerade tjänster i
+            Sverige.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Safello received authorisation from Finansinspektionen for
-            services including trading, custody and transfer of
-            cryptoassets. Other platforms may serve Swedish users from
-            another EEA country, so the home regulator and legal entity
-            should always be checked.
+            Safello har fått tillstånd från Finansinspektionen för bland
+            annat handel, förvaring och överföring av kryptotillgångar.
+            Andra plattformar kan betjäna svenska kunder från ett annat
+            EES-land. Kontrollera därför alltid hemlandets tillsynsmyndighet
+            och vilken juridisk enhet du faktiskt ingår avtal med.
           </p>
 
           <p className="text-sm text-slate-700">
-            Official references:{" "}
+            Officiella källor:{" "}
             <a
-              href="https://www.fi.se/en/payments/apply-for-authorisation/crypto-assets-and-crypto-asset-services/"
+              href="https://www.fi.se/sv/betalningar/sok-tillstand/kryptotillgangar-och-kryptotillgangstjanster/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              Finansinspektionen crypto assets
+              Finansinspektionen
             </a>{" "}
             ·{" "}
             <a
@@ -285,22 +304,22 @@ export default function SwedenPage() {
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              MiCA Regulation
+              MiCA-förordningen
             </a>
           </p>
         </section>
 
         {/* Platforms */}
-        <section id="platforms" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="plattformar" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Relevant crypto exchanges for Sweden
+            Relevanta kryptobörser för svenska användare
           </h2>
 
           <p className="text-slate-700 mb-6">
-            Swedish users often prioritise SEK access, Swish or local
-            banking convenience. International exchanges may instead use
-            euro funding through SEPA. Compare payment availability,
-            conversion costs, custody and the entity serving Sweden.
+            Svenska användare prioriterar ofta SEK, Swish eller lokala
+            banklösningar. Internationella börser använder i stället ofta
+            euro och SEPA. Jämför betalningsalternativ, växlingskostnad,
+            förvaring och den juridiska enhet som betjänar Sverige.
           </p>
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -336,8 +355,8 @@ export default function SwedenPage() {
                   }`}
                 >
                   {platform.affiliate
-                    ? `Visit ${platform.name} →`
-                    : `Official ${platform.name} website →`}
+                    ? `Besök ${platform.name} →`
+                    : `Officiell webbplats för ${platform.name} →`}
                 </a>
               </div>
             ))}
@@ -345,137 +364,137 @@ export default function SwedenPage() {
         </section>
 
         {/* Tax */}
-        <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="skatt" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Swedish crypto tax and K4 reporting
+            Svensk kryptoskatt och K4
           </h2>
 
           <p className="text-slate-700 mb-4">
-            Skatteverket generally treats cryptocurrency as an “other
-            asset” rather than ordinary currency. Selling crypto,
-            exchanging one token for another or using crypto to pay for
-            goods and services can create a taxable disposal.
+            Skatteverket behandlar normalt kryptovaluta som en annan
+            tillgång, inte som vanlig valuta. Försäljning, byte mellan
+            tokens eller betalning med krypto kan innebära en skattepliktig
+            avyttring.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Capital gains are generally taxed at 30%. Swedish rules
-            commonly allow only 70% of a crypto loss as a deduction,
-            subject to the applicable calculation rules. There is no
-            general one-year holding exemption.
+            Kapitalvinster beskattas normalt med 30 %. Som huvudregel får
+            endast 70 % av en förlust på kryptovaluta dras av, enligt de
+            regler som gäller för övriga tillgångar.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Individual disposals are generally reported using the K4
-            form, section D for other assets. The calculation can be
-            complicated when you use multiple exchanges, wallets,
-            stablecoins or decentralised applications.
+            Privata användare redovisar normalt avyttringar i K4-bilagan,
+            avsnitt D för övriga tillgångar. Beräkningen blir svårare om
+            du använder flera börser, plånböcker, stablecoins eller
+            decentraliserade tjänster.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Swedish taxpayers generally need to calculate the cost basis
-            for each cryptocurrency using the applicable average-cost
-            method. Do not assume that a platform&apos;s own profit figure
-            is enough for your tax return.
+            Genomsnittsmetoden är central vid beräkning av omkostnadsbelopp
+            för varje kryptovaluta. Spara därför köp, försäljningar,
+            byten, avgifter och överföringar i stället för att enbart
+            lita på börsens årsrapport.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Staking, mining, airdrops, lending, liquidity provision and
-            crypto received as salary or payment may be taxed differently.
-            Frequent or organised activity can also raise questions about
-            business taxation.
+            Staking, mining, airdrops, utlåning, likviditets-providing och
+            krypto som ersättning kan beskattas på ett annat sätt.
+            Omfattande och organiserad handel kan också bedömas som
+            näringsverksamhet.
           </p>
 
           <p className="text-sm text-slate-700">
-            Official tax reference:{" "}
+            Officiell skatteinformation:{" "}
             <a
               href="https://www.skatteverket.se/privat/skatter/vardepapperkryptovalutaochandrainvesteringar/kryptovaluta.4.233f91de16a57d9b90d2b.html"
               target="_blank"
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              Skatteverket cryptocurrency guidance
+              Skatteverket om kryptovaluta
             </a>
           </p>
         </section>
 
         {/* DAC8 */}
-        <section id="reporting" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="rapportering" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            DAC8 and Swedish crypto reporting
+            DAC8 och svensk rapportering
           </h2>
 
           <p className="text-slate-700 mb-4">
-            Sweden has implemented European reporting and information-
-            exchange rules for cryptoassets. Relevant crypto-asset
-            service providers must collect and report specified customer
-            and transaction information.
+            Sverige har infört europeiska regler om rapportering och
+            informationsutbyte för kryptotillgångar. Berörda
+            kryptotjänsteleverantörer ska samla in och rapportera vissa
+            kund- och transaktionsuppgifter.
           </p>
 
           <p className="text-slate-700 mb-4">
-            The first reporting period covers calendar year 2026, with
-            the first reports to Skatteverket expected under the Swedish
-            timetable in 2027. This does not create a separate DAC8 tax
-            return for individuals; the reporting obligation sits with
-            the provider.
+            Den första rapporteringsperioden gäller kalenderåret 2026.
+            De första uppgifterna ska enligt den svenska tidsplanen
+            lämnas till Skatteverket under 2027. Privatpersoner lämnar
+            ingen separat DAC8-deklaration; rapporteringsskyldigheten
+            ligger på tjänsteleverantören.
           </p>
 
           <p className="text-slate-700">
-            Your own declaration obligation remains. Save exchange
-            exports, wallet history, SEK or euro values, fees, cost basis
-            and disposal dates throughout the year.
+            Din egen deklarationsskyldighet kvarstår. Spara
+            börsexporter, plånbokshistorik, SEK- eller eurovärden, avgifter,
+            omkostnadsbelopp och avyttringsdatum under hela året.
           </p>
         </section>
 
         {/* Funding */}
-        <section id="funding" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="finansiering" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            SEK, euro, Swish and payment methods
+            SEK, euro, Swish och betalningsmetoder
           </h2>
 
           <p className="text-slate-700 mb-4">
-            Sweden-focused platforms may offer SEK or Swish-related
-            payment options, while international exchanges commonly rely
-            on euros through SEPA. Availability changes by platform,
-            bank, account history and compliance checks.
+            Sverigeinriktade plattformar kan erbjuda SEK- eller
+            Swishrelaterade betalningsalternativ. Internationella börser
+            använder ofta euro via SEPA. Tillgängligheten beror på
+            plattform, bank, konto och kontroll av kundprofilen.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Compare the full conversion route. A low trading fee can be
-            offset by a wide SEK-to-euro conversion spread, card fee,
-            instant-buy spread or withdrawal charge.
+            Jämför hela växlingskedjan. En låg handelsavgift kan ätas upp
+            av en hög SEK-till-euro-spread, kortavgift, instant-buy-spread
+            eller uttagsavgift.
           </p>
 
           <p className="text-slate-700">
-            Use payment accounts in your own name, keep confirmations and
-            answer source-of-funds questions accurately. Banks and
-            exchanges can delay unusual transactions for fraud or
-            anti-money-laundering reviews.
+            Använd ett betalningskonto i ditt eget namn, spara
+            betalningsbekräftelser och svara korrekt på frågor om
+            pengarnas ursprung. Banker och börser kan fördröja ovanliga
+            transaktioner vid bedrägeri- eller AML-kontroller.
           </p>
         </section>
 
         {/* Custody */}
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Custody and consumer risk
+            Förvaring och konsumentrisk
           </h2>
 
           <p className="text-slate-700 mb-4">
-            MiCA introduces standards for authorised providers, but it
-            does not make crypto a guaranteed bank deposit. Prices can
-            fall, withdrawals can be interrupted and a platform can
-            experience insolvency, hacking or operational failure.
+            MiCA skapar tydligare krav på auktoriserade leverantörer, men
+            gör inte krypto till en garanterad bankinsättning. Kurser kan
+            falla, uttag kan stoppas och en plattform kan drabbas av
+            konkurs, hackning eller tekniska problem.
           </p>
 
           <p className="text-slate-700 mb-4">
-            Ask whether you own actual crypto, whether withdrawals are
-            available, whether customer assets are segregated and whether
-            the provider lends or rehypothecates assets.
+            Kontrollera om du äger riktiga kryptotillgångar, om uttag
+            till extern plånbok är möjliga, om kundtillgångar hålls
+            åtskilda och om leverantören lånar ut eller återanvänder
+            tillgångarna.
           </p>
 
           <p className="text-slate-700">
-            Proof of Reserves is one transparency signal. It does not
-            automatically prove that every liability is covered or that
-            customers receive priority in an insolvency.
+            Proof of Reserves kan vara en transparenssignal, men bevisar
+            inte automatiskt att alla skulder är täckta eller att kunder
+            har företräde vid en konkurs.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
@@ -483,29 +502,26 @@ export default function SwedenPage() {
               href="/learn/what-is-proof-of-reserves"
               className="text-indigo-700 hover:underline"
             >
-              What is Proof of Reserves? →
+              Vad är Proof of Reserves? →
             </Link>
 
             <Link
               href="/learn/crypto-exchange-security-checklist"
               className="text-indigo-700 hover:underline"
             >
-              Exchange security checklist →
+              Säkerhetschecklista för börser →
             </Link>
 
-            <Link
-              href="/wallets"
-              className="text-indigo-700 hover:underline"
-            >
-              Wallets guide →
+            <Link href="/wallets" className="text-indigo-700 hover:underline">
+              Plånboksguide →
             </Link>
           </div>
         </section>
 
         {/* Comparison */}
-        <section id="comparison" className="max-w-4xl mx-auto px-4 pb-12">
+        <section id="jämförelse" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Practical comparison for Sweden
+            Praktisk jämförelse för Sverige
           </h2>
 
           <div className="overflow-x-auto rounded-xl border border-slate-200">
@@ -513,19 +529,19 @@ export default function SwedenPage() {
               <thead className="bg-slate-100">
                 <tr>
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Platform
+                    Plattform
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Best for
+                    Passar bäst för
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Swedish checks
+                    Svenska kontroller
                   </th>
 
                   <th className="px-4 py-3 font-semibold text-slate-800">
-                    Action
+                    Åtgärd
                   </th>
                 </tr>
               </thead>
@@ -537,12 +553,12 @@ export default function SwedenPage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    Swedish users and local payment access.
+                    Svenska användare och lokal betalning.
                   </td>
 
                   <td className="px-4 py-3">
-                    Check FI authorisation, SEK/Swish support, fees,
-                    spreads and custody.
+                    Kontrollera FI-tillstånd, SEK/Swish, avgifter,
+                    spread och förvaring.
                   </td>
 
                   <td className="px-4 py-3">
@@ -552,7 +568,7 @@ export default function SwedenPage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official website →
+                      Officiell webbplats →
                     </a>
                   </td>
                 </tr>
@@ -563,12 +579,12 @@ export default function SwedenPage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    Beginners and recurring purchases.
+                    Nybörjare och regelbundna köp.
                   </td>
 
                   <td className="px-4 py-3">
-                    Euro funding, spread, EEA entity, custody and tax
-                    records.
+                    Eurofinansiering, spread, EES-enhet, förvaring och
+                    skattedata.
                   </td>
 
                   <td className="px-4 py-3">
@@ -578,7 +594,7 @@ export default function SwedenPage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official website →
+                      Officiell webbplats →
                     </a>
                   </td>
                 </tr>
@@ -589,11 +605,11 @@ export default function SwedenPage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    Active spot traders.
+                    Aktiva spot-traders.
                   </td>
 
                   <td className="px-4 py-3">
-                    Euro pairs, fees, staking and current EEA permission.
+                    Europapar, avgifter, staking och aktuell EES-behörighet.
                   </td>
 
                   <td className="px-4 py-3">
@@ -603,7 +619,7 @@ export default function SwedenPage() {
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
                     >
-                      Visit Kraken →
+                      Besök Kraken →
                     </a>
                   </td>
                 </tr>
@@ -614,12 +630,12 @@ export default function SwedenPage() {
                   </td>
 
                   <td className="px-4 py-3">
-                    European spot alternatives.
+                    Europeiska spot-alternativ.
                   </td>
 
                   <td className="px-4 py-3">
-                    Verify Sweden access, custody, fees and current EEA
-                    authorisation.
+                    Kontrollera svensk tillgång, förvaring, avgifter och
+                    aktuell EES-behörighet.
                   </td>
 
                   <td className="px-4 py-3">
@@ -629,23 +645,23 @@ export default function SwedenPage() {
                       rel="noopener noreferrer"
                       className="text-slate-700 font-medium hover:underline"
                     >
-                      Official websites →
+                      Officiella webbplatser →
                     </a>
                   </td>
                 </tr>
 
                 <tr>
                   <td className="px-4 py-3 font-medium text-slate-900">
-                    Self-custody
+                    Egen förvaring
                   </td>
 
                   <td className="px-4 py-3">
-                    Long-term holdings and on-chain use.
+                    Långsiktigt innehav och on-chain-användning.
                   </td>
 
                   <td className="px-4 py-3">
-                    K4 records, SEK valuation and recovery-phrase
-                    security.
+                    K4-underlag, SEK-värdering och säker hantering av
+                    återställningsfrasen.
                   </td>
 
                   <td className="px-4 py-3">
@@ -653,7 +669,7 @@ export default function SwedenPage() {
                       href="/wallets"
                       className="text-indigo-700 font-medium hover:underline"
                     >
-                      Wallets guide →
+                      Plånböcker →
                     </Link>
                   </td>
                 </tr>
@@ -665,83 +681,83 @@ export default function SwedenPage() {
         {/* FAQ */}
         <section id="faq" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Frequently asked questions about crypto in Sweden
+            Vanliga frågor om krypto i Sverige
           </h2>
 
           <div className="space-y-4">
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is cryptocurrency legal in Sweden?
+                Är kryptovaluta lagligt i Sverige?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Yes. Owning and trading cryptoassets is generally
-                possible. Crypto is not legal tender, and providers must
-                comply with applicable MiCA, AML and conduct requirements.
+                Ja, det är i regel möjligt att äga och handla med
+                kryptotillgångar. Krypto är inte lagligt betalningsmedel,
+                och leverantörer måste följa tillämpliga MiCA-, AML- och
+                uppförandekrav.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                How is crypto taxed in Sweden?
+                Hur beskattas krypto i Sverige?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Private crypto gains are generally taxed at 30%. Selling,
-                swapping or spending crypto can create a taxable disposal.
-                Swedish rules commonly allow only 70% of a crypto loss as a
-                deduction.
+                Privata kryptovinster beskattas normalt med 30 %. Försäljning,
+                byte eller betalning med krypto kan vara en skattepliktig
+                avyttring. Som huvudregel får endast 70 % av en kryptoförlust
+                dras av.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                What is the Swedish K4 form?
+                Vad är K4-bilagan?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                K4 is used to report certain disposals of other assets,
-                including crypto-related disposals. The correct
-                calculation depends on the transaction and taxpayer&apos;s
-                circumstances.
+                K4 används för att redovisa vissa avyttringar av övriga
+                tillgångar, däribland kryptorelaterade avyttringar.
+                Beräkningen beror på transaktionen och din situation.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is crypto tax-free after one year in Sweden?
+                Är krypto skattefritt efter ett år?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                No general one-year exemption applies. Swedish residents
-                should calculate disposals under the applicable Skatteverket
-                rules regardless of how long the crypto was held.
+                Nej, det finns ingen generell svensk ettårsregel som gör
+                krypto skattefritt. Avyttringar ska beräknas enligt
+                Skatteverkets regler oavsett hur länge tillgången hållits.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Is Safello relevant for Swedish users?
+                Är Safello relevant för svenska användare?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                Safello is a natural Swedish-market comparison because it
-                focuses on local users and holds Swedish MiCA
-                authorisation according to current public information.
-                Check its current product scope, fees, custody and payment
-                methods before using it.
+                Safello är en naturlig svensk jämförelse eftersom
+                plattformen riktar sig till svenska användare och har
+                svensk MiCA-behörighet enligt aktuell offentlig
+                information. Kontrollera ändå produktutbud, avgifter,
+                förvaring och betalningsalternativ.
               </p>
             </details>
 
             <details className="rounded-xl border border-slate-200 p-5">
               <summary className="cursor-pointer font-semibold text-slate-900">
-                Does MiCA guarantee crypto safety?
+                Garanterar MiCA att krypto är säkert?
               </summary>
 
               <p className="mt-3 text-sm leading-7 text-slate-700">
-                No. MiCA regulates specified services but cannot eliminate
-                volatility, insolvency, hacks, phishing, smart-contract
-                failures or loss of private keys.
+                Nej. MiCA reglerar vissa tjänster men eliminerar inte
+                volatilitet, konkurs, hackning, phishing, smarta
+                kontraktsfel eller förlust av privata nycklar.
               </p>
             </details>
           </div>
@@ -750,56 +766,56 @@ export default function SwedenPage() {
         {/* Checklist */}
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            Sweden crypto exchange checklist
+            Checklista för svenska kryptoanvändare
           </h2>
 
           <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
             <li>
-              Verify the provider&apos;s FI authorisation or valid EEA
-              passporting status.
+              Kontrollera leverantörens FI-tillstånd eller giltiga
+              EES-passportering.
             </li>
 
             <li>
-              Check the exact entity responsible for custody and customer
-              complaints.
+              Ta reda på vilken juridisk enhet som ansvarar för
+              förvaring och kundklagomål.
             </li>
 
             <li>
-              Compare SEK conversion, euro funding, spread, trading fees
-              and withdrawal charges.
+              Jämför SEK-växling, eurofinansiering, spread,
+              handelsavgifter och uttagskostnader.
             </li>
 
             <li>
-              Keep records for every purchase, sale, swap, reward and
-              wallet transfer.
+              Spara uppgifter om alla köp, försäljningar, byten, rewards
+              och överföringar mellan plånböcker.
             </li>
 
             <li>
-              Prepare K4 information instead of relying only on an
-              exchange&apos;s annual summary.
+              Förbered K4-underlaget och lita inte enbart på börsens
+              årsrapport.
             </li>
 
             <li>
-              Treat staking, mining, airdrops and DeFi as potentially
-              different tax events.
+              Behandla staking, mining, airdrops och DeFi som möjliga
+              separata skattehändelser.
             </li>
 
             <li>
-              Use 2FA, unique passwords and offline recovery-phrase
-              backups.
+              Använd 2FA, unika lösenord och offline-backup av
+              återställningsfrasen.
             </li>
 
             <li>
-              Read our{" "}
+              Läs vår{" "}
               <Link
                 href="/learn/crypto-exchange-security-checklist"
                 className="text-indigo-700"
               >
-                exchange security checklist
+                säkerhetschecklista för kryptobörser
               </Link>{" "}
-              and{" "}
+              och vår{" "}
               <Link href="/methodology" className="text-indigo-700">
-                methodology
+                metodik
               </Link>
               .
             </li>
@@ -810,15 +826,15 @@ export default function SwedenPage() {
         <section className="max-w-4xl mx-auto px-4 pb-12">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <h2 className="text-xl font-semibold text-slate-900 mb-2">
-              How to choose as a Swedish resident
+              Så väljer du som svensk användare
             </h2>
 
             <p className="text-sm text-slate-700 mb-3">
-              Start with a provider that supports your preferred SEK or
-              euro funding route, provides complete transaction records and
-              has a verifiable MiCA or EEA authorisation. Keep long-term
-              holdings separate from trading funds and organise K4 records
-              throughout the year.
+              Börja med en plattform som stöder din föredragna SEK- eller
+              eurobetalning, ger dig fullständiga transaktionsunderlag
+              och har verifierbar MiCA- eller EES-behörighet. Håll
+              långsiktiga innehav åtskilda från tradingmedel och bygg
+              K4-underlaget löpande.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -828,7 +844,7 @@ export default function SwedenPage() {
                 rel="noopener noreferrer"
                 className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Safello official
+                Safello officiellt
               </a>
 
               <a
@@ -837,7 +853,7 @@ export default function SwedenPage() {
                 rel="noopener noreferrer"
                 className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800"
               >
-                Coinbase official
+                Coinbase officiellt
               </a>
 
               <a
@@ -856,12 +872,13 @@ export default function SwedenPage() {
         <section className="bg-slate-50 border-t">
           <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
             <p>
-              <strong>Disclaimer:</strong> Educational only. Not
-              financial, legal or tax advice. Swedish crypto regulation
-              and tax treatment can change. Verify current
-              Finansinspektionen and Skatteverket guidance before
-              depositing funds, trading or filing a K4 return. Some links
-              are affiliate links.
+              <strong>Ansvarsfriskrivning:</strong> Innehållet är endast
+              utbildande och utgör inte finansiell, juridisk eller
+              skattemässig rådgivning. Svensk kryptoreglering och
+              skattebehandling kan ändras. Kontrollera aktuell information
+              från Finansinspektionen och Skatteverket innan du sätter in
+              pengar, handlar eller lämnar in K4. Vissa länkar kan vara
+              affiliatelänkar.
             </p>
           </div>
         </section>
