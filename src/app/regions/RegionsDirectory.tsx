@@ -3,15 +3,13 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
-type MarketStatus = "live" | "restricted" | "coming-soon";
-
 type Country = {
   name: string;
   localName?: string;
-  href?: string;
+  href: string;
   note: string;
   topics: string[];
-  status: MarketStatus;
+  status?: "live" | "restricted";
   updated?: string;
 };
 
@@ -29,10 +27,11 @@ const regions: RegionGroup[] = [
     countries: [
       {
         name: "India",
+        href: "/regions/india",
         note:
           "Top global adoption market with large retail demand, local exchanges and detailed tax considerations.",
         topics: ["INR", "Tax", "Local exchanges"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Pakistan",
@@ -45,10 +44,11 @@ const regions: RegionGroup[] = [
       },
       {
         name: "Bangladesh",
+        href: "/regions/bangladesh",
         note:
-          "Growing retail interest but a restrictive local environment that requires careful legal research.",
+          "Growing retail interest with local restrictions and a need for careful legal and payment research.",
         topics: ["Restrictions", "P2P", "Risk"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -59,45 +59,51 @@ const regions: RegionGroup[] = [
     countries: [
       {
         name: "Indonesia",
+        href: "/regions/indonesia",
         note:
           "Large retail base and active exchange market under local regulatory oversight.",
         topics: ["IDR", "Retail", "Local exchanges"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Vietnam",
+        href: "/regions/vietnam",
         note:
           "High grassroots adoption and an active trader base, with changing regulatory conditions.",
         topics: ["Adoption", "P2P", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Philippines",
+        href: "/regions/philippines",
         note:
           "Remittances, mobile payments and retail trading drive demand for local and global platforms.",
         topics: ["Remittances", "PHP", "Mobile"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Malaysia",
+        href: "/regions/malaysia",
         note:
           "A regulated market with local exchanges and global-platform comparisons.",
         topics: ["MYR", "Regulation", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Thailand",
+        href: "/regions/thailand",
         note:
           "Established retail market with regulated domestic venues and an active crypto community.",
         topics: ["THB", "Regulation", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Singapore",
+        href: "/regions/singapore",
         note:
           "High purchasing power, a major fintech hub and a tightly supervised crypto market.",
         topics: ["MAS", "SGD", "Fintech"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -304,7 +310,7 @@ const regions: RegionGroup[] = [
           "Finanstilsynet, Coinify, DKK funding, FIFO records and Danish crypto tax.",
         topics: ["Finanstilsynet", "Coinify", "FIFO"],
         status: "live",
-        updated: "2026",
+        updated: "2026,
       },
       {
         name: "Norway",
@@ -318,24 +324,27 @@ const regions: RegionGroup[] = [
       },
       {
         name: "Spain",
+        href: "/regions/spain",
         note:
           "Large retail base, euro funding and EU MiCA platform access.",
         topics: ["EUR", "MiCA", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Italy",
+        href: "/regions/italy",
         note:
           "Growing retail interest, euro access and an evolving MiCA market.",
         topics: ["EUR", "MiCA", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Poland",
+        href: "/regions/poland",
         note:
           "Active Central European market with local-currency and EU platform considerations.",
         topics: ["PLN", "MiCA", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -346,17 +355,19 @@ const regions: RegionGroup[] = [
     countries: [
       {
         name: "United States",
+        href: "/regions/united-states",
         note:
           "Largest absolute market, but availability varies heavily by state, product and federal regulatory status.",
         topics: ["State rules", "USD", "Regulation"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Canada",
+        href: "/regions/canada",
         note:
           "Regulated platforms, strong retail demand and province-specific requirements.",
         topics: ["CAD", "Provincial rules", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -367,24 +378,27 @@ const regions: RegionGroup[] = [
     countries: [
       {
         name: "Brazil",
+        href: "/regions/brazil",
         note:
           "One of Latin America’s largest markets, with local exchanges and BRL funding options.",
         topics: ["BRL", "Stablecoins", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Argentina",
+        href: "/regions/argentina",
         note:
           "High stablecoin demand driven by currency pressure and a strong local crypto culture.",
         topics: ["ARS", "Stablecoins", "Inflation"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Mexico",
+        href: "/regions/mexico",
         note:
           "Growing market shaped by remittances, retail access and cross-border use cases.",
         topics: ["MXN", "Remittances", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -395,31 +409,35 @@ const regions: RegionGroup[] = [
     countries: [
       {
         name: "South Korea",
+        href: "/regions/south-korea",
         note:
           "Highly active trading culture and strict local exchange regulation.",
         topics: ["KRW", "Local exchanges", "Volume"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Japan",
+        href: "/regions/japan",
         note:
           "Established regulated market with domestic exchange licensing and JPY access.",
         topics: ["JPY", "FSA", "Regulation"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Hong Kong",
+        href: "/regions/hong-kong",
         note:
           "Regional trading hub with a licensing framework for retail virtual-asset venues.",
         topics: ["HKD", "SFC", "Licensed venues"],
-        status: "coming-soon",
+        status: "live",
       },
       {
         name: "Australia",
+        href: "/regions/australia",
         note:
           "High purchasing power, AUD access and evolving crypto regulation.",
         topics: ["AUD", "Regulation", "Retail"],
-        status: "coming-soon",
+        status: "live",
       },
     ],
   },
@@ -427,16 +445,14 @@ const regions: RegionGroup[] = [
 
 const REGION_FILTERS = ["All", ...regions.map((region) => region.region)];
 
-const statusStyles: Record<MarketStatus, string> = {
+const statusStyles: Record<"live" | "restricted", string> = {
   live: "bg-emerald-100 text-emerald-800",
   restricted: "bg-amber-100 text-amber-800",
-  "coming-soon": "bg-slate-100 text-slate-600",
 };
 
-const statusLabels: Record<MarketStatus, string> = {
+const statusLabels: Record<"live" | "restricted", string> = {
   live: "Guide available",
   restricted: "Restricted market",
-  "coming-soon": "Coming soon",
 };
 
 export default function RegionsDirectory() {
@@ -469,7 +485,7 @@ export default function RegionsDirectory() {
             searchText.includes(normalizedQuery);
 
           const matchesAvailability =
-            !showAvailableOnly || country.status !== "coming-soon";
+            !showAvailableOnly || country.status === "live";
 
           return matchesSearch && matchesAvailability;
         }),
@@ -477,9 +493,7 @@ export default function RegionsDirectory() {
       .filter((region) => region.countries.length > 0);
   }, [query, selectedRegion, showAvailableOnly]);
 
-  const liveGuideCount = regions.flatMap((region) =>
-    region.countries.filter((country) => country.status !== "coming-soon"),
-  ).length;
+  const guideCount = regions.flatMap((region) => region.countries).length;
 
   return (
     <main className="min-h-screen bg-white">
@@ -621,10 +635,9 @@ export default function RegionsDirectory() {
             </h2>
 
             <p className="mt-3 max-w-3xl text-slate-600">
-              Browse {liveGuideCount} live country guides, or explore the
-              markets we are researching next. Every live guide includes
-              local regulation, tax notes, payment context, exchange
-              comparisons and safety checks.
+              Browse all {guideCount} country pages. Each page is currently
+              live and will continue to be expanded with more local detail,
+              sources, platform comparisons and safety information.
             </p>
           </div>
 
@@ -665,7 +678,7 @@ export default function RegionsDirectory() {
                 }
                 className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
               />
-              Show available guides only
+              Show live guides only
             </label>
           </div>
 
@@ -694,115 +707,81 @@ export default function RegionsDirectory() {
 
       {/* Regions */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        {filteredRegions.length === 0 ? (
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center">
-            <h2 className="text-xl font-bold text-slate-900">
-              No matching country guide found
-            </h2>
+        <div className="space-y-12">
+          {filteredRegions.map((group) => (
+            <section key={group.region}>
+              <div className="mb-5 flex flex-wrap items-center gap-3">
+                <h2 className="text-2xl font-bold text-slate-900">
+                  {group.region}
+                </h2>
 
-            <p className="mt-2 text-sm text-slate-600">
-              Try a broader search, browse another region or use the
-              exchange finder for a general starting point.
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-12">
-            {filteredRegions.map((group) => (
-              <section key={group.region}>
-                <div className="mb-5 flex flex-wrap items-center gap-3">
-                  <h2 className="text-2xl font-bold text-slate-900">
-                    {group.region}
-                  </h2>
+                <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                  {group.countries.length} market
+                  {group.countries.length === 1 ? "" : "s"}
+                </span>
+              </div>
 
-                  <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
-                    {group.countries.length} market
-                    {group.countries.length === 1 ? "" : "s"}
-                  </span>
-                </div>
+              <p className="mb-5 max-w-3xl text-slate-600">
+                {group.intro}
+              </p>
 
-                <p className="mb-5 max-w-3xl text-slate-600">
-                  {group.intro}
-                </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {group.countries.map((country) => (
+                  <Link
+                    key={country.href}
+                    href={country.href}
+                    className={`group flex min-h-[275px] flex-col rounded-2xl border bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md ${
+                      country.status === "restricted"
+                        ? "border-amber-300 hover:border-amber-400"
+                        : "border-slate-200 hover:border-indigo-300"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900">
+                          {country.name}
+                        </h3>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {group.countries.map((country) => {
-                    const content = (
-                      <>
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <h3 className="text-lg font-bold text-slate-900">
-                              {country.name}
-                            </h3>
+                        {country.localName && (
+                          <p className="mt-0.5 text-sm text-slate-500">
+                            {country.localName}
+                          </p>
+                        )}
+                      </div>
 
-                            {country.localName && (
-                              <p className="mt-0.5 text-sm text-slate-500">
-                                {country.localName}
-                              </p>
-                            )}
-                          </div>
-
-                          <span
-                            className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
-                              statusStyles[country.status]
-                            }`}
-                          >
-                            {statusLabels[country.status]}
-                          </span>
-                        </div>
-
-                        <p className="mt-4 flex-1 text-sm leading-6 text-slate-600">
-                          {country.note}
-                        </p>
-
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {country.topics.map((topic) => (
-                            <span
-                              key={topic}
-                              className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"
-                            >
-                              {topic}
-                            </span>
-                          ))}
-                        </div>
-
-                        <div className="mt-5 text-sm font-semibold text-indigo-700">
-                          {country.status === "coming-soon"
-                            ? "Research in progress"
-                            : "Read country guide →"}
-                        </div>
-                      </>
-                    );
-
-                    if (!country.href || country.status === "coming-soon") {
-                      return (
-                        <div
-                          key={country.name}
-                          className="flex min-h-[275px] flex-col rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5"
-                        >
-                          {content}
-                        </div>
-                      );
-                    }
-
-                    return (
-                      <Link
-                        key={country.href}
-                        href={country.href}
-                        className={`group flex min-h-[275px] flex-col rounded-2xl border bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md ${
-                          country.status === "restricted"
-                            ? "border-amber-300 hover:border-amber-400"
-                            : "border-slate-200 hover:border-indigo-300"
+                      <span
+                        className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                          statusStyles[country.status ?? "live"]
                         }`}
                       >
-                        {content}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
-            ))}
-          </div>
-        )}
+                        {statusLabels[country.status ?? "live"]}
+                      </span>
+                    </div>
+
+                    <p className="mt-4 flex-1 text-sm leading-6 text-slate-600">
+                      {country.note}
+                    </p>
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {country.topics.map((topic) => (
+                        <span
+                          key={topic}
+                          className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 text-sm font-semibold text-indigo-700">
+                      Read country guide →
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       </section>
 
       {/* Workflow */}
