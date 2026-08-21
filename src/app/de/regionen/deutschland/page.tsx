@@ -10,7 +10,7 @@ export const metadata = {
     canonical: "https://www.cryptosbeginner.com/de/deutschland",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/germany",
-      de: "https://www.cryptosbeginner.com/de/deutschland",
+      de: "https://www.cryptosbeginner.com/de/regionen/deutschland",
       "x-default":
         "https://www.cryptosbeginner.com/regions/germany",
     },

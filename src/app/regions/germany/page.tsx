@@ -10,14 +10,14 @@ export const metadata = {
     canonical: "https://www.cryptosbeginner.com/regions/germany",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/germany",
-      de: "https://www.cryptosbeginner.com/de/deutschland",
+      de: "https://www.cryptosbeginner.com/de/regionen/deutschland",
       "x-default":
         "https://www.cryptosbeginner.com/regions/germany",
     },
   },
 };
 
-const UPDATED = "2026-08-21";
+const UPDATED = "2026-08-19";
 
 const platforms = [
   {
@@ -83,7 +83,7 @@ export default function GermanyPage() {
               <span className="text-slate-600">English</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/de/deutschland"
+                href="/de/regionen/deutschland"
                 className="text-indigo-700 hover:underline"
               >
                 Deutsch

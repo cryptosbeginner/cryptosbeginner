@@ -83,7 +83,7 @@ export default function SwitzerlandPage() {
               <span className="text-slate-600">English</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/de/schweiz"
+                href="/de/regionen/schweiz"
                 className="text-indigo-700 hover:underline"
               >
                 Deutsch

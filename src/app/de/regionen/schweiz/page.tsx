@@ -10,7 +10,7 @@ export const metadata = {
     canonical: "https://www.cryptosbeginner.com/de/schweiz",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/switzerland",
-      de: "https://www.cryptosbeginner.com/de/schweiz",
+      de: "https://www.cryptosbeginner.com/de/regionen/schweiz",
       "x-default":
         "https://www.cryptosbeginner.com/regions/switzerland",
     },

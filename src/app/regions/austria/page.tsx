@@ -32,7 +32,7 @@ export default function AustriaPage() {
               <span className="text-slate-600">English</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/de/oesterreich"
+                href="/de/regionen/oesterreich"
                 className="text-indigo-700 hover:underline"
               >
                 Deutsch
