@@ -104,16 +104,16 @@ const sources = [
     href: "https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments",
   },
   {
-    label: "ATO crypto transaction and residency guidance",
-    href: "https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/crypto-asset-transactions-and-tax-residency",
+    label: "ATO record keeping",
+    href: "https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records",
   },
   {
-    label: "ASIC",
-    href: "https://asic.gov.au",
+    label: "ASIC digital assets",
+    href: "https://asic.gov.au/regulatory-resources/digital-transformation/digital-assets-financial-products-and-services/",
   },
   {
-    label: "AUSTRAC",
-    href: "https://www.austrac.gov.au",
+    label: "AUSTRAC virtual assets",
+    href: "https://www.austrac.gov.au/industry-and-business/your-industry/virtual-asset-service-providers/virtual-asset-service-providers-overview",
   },
 ];
 
@@ -206,7 +206,7 @@ export default function AustraliaPage() {
         <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 text-white">
           <div className="mx-auto max-w-5xl px-4 py-14">
             <p className="mb-3 text-sm font-medium text-amber-300">
-              Australia guide · Updated{" "}
+              Australia guide · Published and updated{" "}
               <time dateTime={UPDATED}>July 29, 2026</time>
             </p>
 
@@ -235,6 +235,13 @@ export default function AustraliaPage() {
               >
                 Compare platforms
               </a>
+
+              <Link
+                href="/regions/australia/how-to-buy-bitcoin"
+                className="rounded-lg border border-amber-300 px-5 py-3 text-sm font-bold text-amber-200 hover:bg-amber-400/10"
+              >
+                How to buy Bitcoin →
+              </Link>
             </div>
 
             <div className="mt-8 max-w-2xl rounded-xl border border-white/15 bg-white/10 p-4">
@@ -243,9 +250,10 @@ export default function AustraliaPage() {
               </p>
 
               <p className="mt-1 text-sm leading-6 text-slate-200">
-                This page is backdated to July 29, 2026. Australia&apos;s
-                crypto framework is changing, so verify current ASIC, AUSTRAC,
-                ATO and platform information before acting.
+                This page was published and reviewed on July 29, 2026.
+                Australia&apos;s crypto framework is changing, so verify
+                current ASIC, AUSTRAC, ATO and platform information before
+                acting.
               </p>
             </div>
           </div>
@@ -367,9 +375,9 @@ export default function AustraliaPage() {
 
                 <p className="text-sm leading-6 text-slate-700">
                   AUSTRAC supervises AML/CTF obligations for covered digital
-                  currency exchange and virtual-asset designated services.
-                  Registration is not a guarantee that an exchange is safe or
-                  that every product is approved.
+                  currency exchange and virtual-asset services. Registration
+                  is not a guarantee that an exchange is safe or that every
+                  product is approved.
                 </p>
               </div>
 
@@ -506,6 +514,31 @@ export default function AustraliaPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-7">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-800">
+              Beginner route
+            </p>
+
+            <h2 className="mt-1 text-3xl font-bold text-slate-900">
+              New to Bitcoin? Use the separate buying guide
+            </h2>
+
+            <p className="mt-4 max-w-3xl leading-7 text-slate-700">
+              The companion tutorial covers AUD deposits, PayID, Osko, KYC,
+              buying Bitcoin, ATO record keeping, scams and wallet security
+              step by step.
+            </p>
+
+            <Link
+              href="/regions/australia/how-to-buy-bitcoin"
+              className="mt-5 inline-flex rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-slate-800"
+            >
+              How to buy Bitcoin in Australia →
+            </Link>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-10">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <p className="text-sm font-bold uppercase tracking-wider text-amber-700">
@@ -601,23 +634,22 @@ export default function AustraliaPage() {
 
               <div className="rounded-xl bg-white/10 p-4">
                 <p className="font-semibold text-amber-300">
-                  Tax residence
+                  Wallet history
                 </p>
 
                 <p className="mt-2 text-sm leading-6 text-slate-300">
-                  Australian tax residence affects the income and gains
-                  you may need to report.
+                  Save addresses, transaction IDs and transfer purposes.
                 </p>
               </div>
             </div>
 
             <a
-              href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/crypto-asset-transactions-and-tax-residency"
+              href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/keeping-crypto-records"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex font-semibold text-amber-300 hover:underline"
             >
-              Review ATO crypto guidance →
+              Review ATO record-keeping guidance →
             </a>
           </div>
         </section>
@@ -752,10 +784,10 @@ export default function AustraliaPage() {
               </a>
 
               <Link
-                href="/regions"
+                href="/regions/australia/how-to-buy-bitcoin"
                 className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
               >
-                Browse regions
+                Buying guide
               </Link>
 
               <Link
