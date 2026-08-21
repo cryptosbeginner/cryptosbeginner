@@ -7,10 +7,10 @@ export const metadata = {
   description:
     "Confronto 2026 degli exchange crypto in Italia: MiCA, CONSOB, Banca d’Italia, transizione OAM, Young Platform, Coinbase, Kraken, tassazione e Quadro RW.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/it/regini/italia",
+    canonical: "https://www.cryptosbeginner.com/it/regioni/italia",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/italy",
-      it: "https://www.cryptosbeginner.com/it/regini/italia",
+      it: "https://www.cryptosbeginner.com/it/regioni/italia",
       "x-default":
         "https://www.cryptosbeginner.com/regions/italy",
     },

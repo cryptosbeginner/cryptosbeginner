@@ -10,7 +10,7 @@ export const metadata = {
     canonical: "https://www.cryptosbeginner.com/regions/italy",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/italy",
-      it: "https://www.cryptosbeginner.com/it/regini/italia",
+      it: "https://www.cryptosbeginner.com/it/regioni/italia",
       "x-default":
         "https://www.cryptosbeginner.com/regions/italy",
     },
@@ -82,7 +82,7 @@ export default function ItalyPage() {
               <span className="text-slate-600">English</span>
               <span className="text-slate-400">·</span>
               <Link
-                href="/it/regini/italia"
+                href="/it/regioni/italia"
                 className="text-indigo-700 hover:underline"
               >
                 Italiano
