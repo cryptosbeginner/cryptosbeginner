@@ -115,7 +115,7 @@ export default function HomePage() {
                 and privacy utilities with clear risk and custody notes.
               </p>
               <Link
-                href="/privacy-directory"
+                href="/crypto-privacy-directory"
                 className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
               >
                 Explore privacy tools →
@@ -129,7 +129,7 @@ export default function HomePage() {
                 funding assets, fees and reward conditions.
               </p>
               <Link
-                href="/cards"
+                href="/crypto-cards"
                 className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
               >
                 Browse crypto cards →

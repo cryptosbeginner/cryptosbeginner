@@ -44,10 +44,10 @@ export default function Footer() {
               <Link href="/dexes">DEXes</Link>
             </li>
             <li>
-              <Link href="/cards">Crypto cards</Link>
+              <Link href="/crypto-cards">Crypto cards</Link>
             </li>
             <li>
-              <Link href="/privacy-directory">Privacy directory</Link>
+              <Link href="/crypto-privacy-directory">Privacy directory</Link>
             </li>
             <li>
               <Link href="/exchanges/no-kyc">No KYC guide</Link>
