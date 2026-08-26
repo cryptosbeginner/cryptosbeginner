@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/public-wallets",
     "/wallet-alerts",
     "/meme-coin-research",
+    "/learn/bitcoin-forks",
+    "/learn/bitcoin-classic-hard-fork",
     "/crypto-prices/coin/bitcoin",
     "/crypto-prices/coin/ethereum",
     "/crypto-prices/coin/solana",
@@ -34,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => {
     const isCardDetail = route.startsWith("/crypto-cards/");
     const isCoinDetail = route.startsWith("/crypto-prices/coin/");
-    const isResearchTool = ["/crypto-screener", "/wallet-tracker", "/public-wallets", "/wallet-alerts", "/meme-coin-research", "/bitcoin-halving"].includes(route);
+    const isResearchTool = ["/crypto-screener", "/wallet-tracker", "/public-wallets", "/wallet-alerts", "/meme-coin-research", "/bitcoin-halving", "/learn/bitcoin-forks", "/learn/bitcoin-classic-hard-fork"].includes(route);
     return {
       url: `${SITE_URL}${route}`,
       lastModified: new Date("2026-08-26"),

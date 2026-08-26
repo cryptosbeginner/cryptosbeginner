@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HalvingCountdown from "./HalvingCountdown";
 import { getBitcoinTipHeight } from "./halving-data";
+import { getMiningSnapshot } from "./mining-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/bitcoin-halving`;
@@ -14,4 +15,4 @@ const faq = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: 
   { "@type": "Question", name: "Does the Bitcoin halving guarantee a price increase?", acceptedAnswer: { "@type": "Answer", text: "No. The halving changes scheduled new issuance. It does not guarantee a price outcome, demand response, miner profitability, or trading result." } },
   { "@type": "Question", name: "How is this countdown calculated?", acceptedAnswer: { "@type": "Answer", text: "The page reads the current Bitcoin tip height, subtracts it from block 1,050,000, and estimates time using a 600-second average block interval. The block target is more precise than the calendar projection." } },
 ] };
-export default async function BitcoinHalvingPage() { const snapshot = await getBitcoinTipHeight(); return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", url: PAGE_URL, name: metadata.title, description: metadata.description }) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} /><Header /><HalvingCountdown initialHeight={snapshot.height} initialCheckedAt={snapshot.checkedAt} /><Footer /></>; }
+export default async function BitcoinHalvingPage() { const [snapshot, mining] = await Promise.all([getBitcoinTipHeight(), getMiningSnapshot()]); return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", url: PAGE_URL, name: metadata.title, description: metadata.description }) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} /><Header /><HalvingCountdown initialHeight={snapshot.height} initialCheckedAt={snapshot.checkedAt} initialMining={mining} /><Footer /></>; }
