@@ -17,6 +17,7 @@ type PrivacyService = {
   caution: string;
   tags: string[];
   href: string;
+  status?: string;
 };
 
 const categories: DirectoryCategory[] = [
@@ -105,6 +106,33 @@ const services: PrivacyService[] = [
       "Buy through official channels, verify the device, and protect the recovery phrase from cameras, cloud storage, and other people.",
     tags: ["Hardware", "Wallet", "Self-custody"],
     href: "https://trezor.io/",
+  },
+  {
+    name: "Trocador",
+    category: "Privacy tools",
+    description:
+      "An exchange aggregator that compares routes across third-party services, with privacy information shown at the aggregator layer.",
+    posture: "Privacy-oriented routing layer",
+    custody: "Non-custodial at the aggregator layer",
+    bestFor: "Comparing swap routes and supported assets",
+    caution:
+      "The underlying exchange determines custody, KYC, limits, rates, and data handling. Verify each route and never assume an aggregator makes a transaction private.",
+    tags: ["Aggregator", "Monero", "Lightning"],
+    href: "https://trocador.app/",
+  },
+  {
+    name: "JoinMarket",
+    category: "Privacy tools",
+    description:
+      "Open-source Bitcoin CoinJoin software designed to improve transaction confidentiality through collaborative transactions.",
+    posture: "Transaction-privacy software",
+    custody: "Self-custody software",
+    bestFor: "Advanced Bitcoin privacy research",
+    caution:
+      "The official repository is archived and explicitly says it is not recommended for use. Treat this as a historical research entry, not a current product recommendation.",
+    tags: ["Bitcoin", "CoinJoin", "Archived"],
+    href: "https://github.com/joinmarket-org/joinmarket-clientserver",
+    status: "Archived research entry",
   },
 ];
 
@@ -274,12 +302,20 @@ export default function PrivacyDirectory() {
                 and security can change by product and jurisdiction.
               </p>
             </div>
-            <Link
-              href="/exchanges/no-kyc"
-              className="inline-flex w-fit rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-            >
-              Read the No-KYC guide →
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/exchanges/no-kyc"
+                className="inline-flex w-fit rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+              >
+                Read the No-KYC guide →
+              </Link>
+              <a
+                href="mailto:admin@cryptosbeginner.com?subject=Suggest%20a%20privacy%20directory%20listing"
+                className="inline-flex w-fit rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+              >
+                Suggest a listing
+              </a>
+            </div>
           </div>
 
           <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4 md:p-5">
@@ -350,8 +386,8 @@ export default function PrivacyDirectory() {
                       {service.name}
                     </h3>
                   </div>
-                  <span className="shrink-0 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">
-                    Starter listing
+                  <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${service.status ? "bg-amber-100 text-amber-900" : "bg-emerald-100 text-emerald-800"}`}>
+                    {service.status ?? "Starter listing"}
                   </span>
                 </div>
 

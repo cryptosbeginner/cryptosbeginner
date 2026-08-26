@@ -11,6 +11,7 @@ export default function Header() {
     { label: "Security", href: "/security/exchange-incidents" },
     { label: "Wallets", href: "/wallets/best-crypto-wallets-2026" },
     { label: "DEXes", href: "/dexes" },
+    { label: "Cards", href: "/cards" },
     { label: "Privacy Directory", href: "/privacy-directory" },
     { label: "Meme Coins", href: "/meme-coins" },
     { label: "Exchanges", href: "/exchanges/best-crypto-exchanges-2026" },

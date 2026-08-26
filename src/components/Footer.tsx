@@ -44,6 +44,9 @@ export default function Footer() {
               <Link href="/dexes">DEXes</Link>
             </li>
             <li>
+              <Link href="/cards">Crypto cards</Link>
+            </li>
+            <li>
               <Link href="/privacy-directory">Privacy directory</Link>
             </li>
             <li>
