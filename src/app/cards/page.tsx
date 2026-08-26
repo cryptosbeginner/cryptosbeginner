@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CardsDirectory from "./CardsDirectory";
-import { cardFaqs, cryptoCards } from "./card-data";
+import { allCryptoCards, cardFaqs } from "./card-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/cards`;
@@ -59,8 +59,8 @@ export default function CardsPage() {
       "@context": "https://schema.org",
       "@type": "ItemList",
       name: "Crypto card directory",
-      numberOfItems: cryptoCards.length,
-      itemListElement: cryptoCards.map((card, index) => ({
+      numberOfItems: allCryptoCards.length,
+      itemListElement: allCryptoCards.map((card, index) => ({
         "@type": "ListItem",
         position: index + 1,
         name: card.name,

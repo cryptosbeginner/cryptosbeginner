@@ -9,7 +9,7 @@ import {
   cardCategories,
   cardFaqs,
   custodyFilters,
-  cryptoCards,
+  allCryptoCards,
   kycFilters,
   type CardCategory,
   type CustodyModel,
@@ -23,12 +23,58 @@ type CardVisualProps = {
   card: CryptoCard;
 };
 
+function BrandMark({ card, small = false }: { card: CryptoCard; small?: boolean }) {
+  const initials = card.issuer
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  if (small) {
+    return (
+      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15 text-[9px] font-black text-white" aria-label={`${card.issuer} brand mark`}>
+        {initials}
+      </span>
+    );
+  }
+
+  return (
+    <span className="flex items-center gap-2">
+      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15 text-[9px] font-black text-white" aria-hidden="true">
+        {initials}
+      </span>
+      <span>{card.issuer}</span>
+    </span>
+  );
+}
+
+function BrandLogo({ card }: { card: CryptoCard }) {
+  const [logoFailed, setLogoFailed] = useState(false);
+
+  if (!card.logoUrl || logoFailed) return <BrandMark card={card} />;
+
+  return (
+    <Image
+      src={card.logoUrl}
+      alt={`${card.issuer} logo`}
+      width={28}
+      height={28}
+      className="h-6 w-6 rounded-md bg-white/10 p-1"
+      loading="lazy"
+      onError={() => setLogoFailed(true)}
+    />
+  );
+}
+
 function CardVisual({ card }: CardVisualProps) {
+  const [imageFailed, setImageFailed] = useState(false);
+
   return (
     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-800 p-4 shadow-inner">
       <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-indigo-400/20 blur-2xl" />
       <div className="absolute -bottom-16 -left-10 h-36 w-36 rounded-full bg-emerald-400/20 blur-2xl" />
-      {card.imageUrl ? (
+      {card.imageUrl && !imageFailed ? (
         <Image
           src={card.imageUrl}
           alt={`${card.name} card visual`}
@@ -36,6 +82,7 @@ function CardVisual({ card }: CardVisualProps) {
           height={500}
           className="relative h-36 w-full rounded-xl object-contain"
           loading="lazy"
+          onError={() => setImageFailed(true)}
         />
       ) : (
         <div className="relative flex h-36 items-center justify-center">
@@ -43,20 +90,7 @@ function CardVisual({ card }: CardVisualProps) {
             <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full border border-white/20" />
             <div className="absolute -bottom-10 -left-6 h-28 w-28 rounded-full border border-emerald-200/20" />
             <div className="relative flex items-start justify-between gap-2">
-              {card.logoUrl ? (
-                <Image
-                  src={card.logoUrl}
-                  alt={`${card.issuer} logo`}
-                  width={32}
-                  height={32}
-                  className="h-6 w-6 rounded-md bg-white/10 p-1"
-                  loading="lazy"
-                />
-              ) : (
-                <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white/15 text-[9px] font-black text-white">
-                  {card.issuer.slice(0, 2).toUpperCase()}
-                </span>
-              )}
+              <BrandMark card={card} small />
               <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/70">
                 {card.network.split(" ")[0]}
               </span>
@@ -69,7 +103,10 @@ function CardVisual({ card }: CardVisualProps) {
         </div>
       )}
       <div className="relative mt-3 flex items-center justify-between text-[11px] font-medium text-white/70">
-        <span>{card.issuer}</span>
+        <span className="flex items-center gap-2">
+          <BrandLogo card={card} />
+          <span>{card.issuer}</span>
+        </span>
         <span>{card.visualCredit ?? "Original directory card visual"}</span>
       </div>
     </div>
@@ -120,7 +157,7 @@ export default function CardsDirectory() {
   const [sortMode, setSortMode] = useState<SortMode>("featured");
 
   const filteredCards = useMemo(() => {
-    const result = cryptoCards.filter((card) => {
+    const result = allCryptoCards.filter((card) => {
       const categoryMatches = selectedCategory === "All" || card.category === selectedCategory;
       const kycMatches = selectedKyc === "All" || card.kyc === selectedKyc;
       const custodyMatches = selectedCustody === "All" || card.custody === selectedCustody;
@@ -135,7 +172,7 @@ export default function CardsDirectory() {
     return result.sort((a, b) => {
       if (sortMode === "name") return a.name.localeCompare(b.name);
       if (sortMode === "reviewed") return b.lastReviewed.localeCompare(a.lastReviewed);
-      return cryptoCards.indexOf(a) - cryptoCards.indexOf(b);
+      return allCryptoCards.indexOf(a) - allCryptoCards.indexOf(b);
     });
   }, [country, query, selectedCategory, selectedCustody, selectedKyc, sortMode]);
 
@@ -174,8 +211,8 @@ export default function CardsDirectory() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">{cryptoCards.length}</p>
-                <p className="mt-1 text-sm text-slate-300">starter listings with named sources</p>
+                <p className="text-3xl font-black text-white">{allCryptoCards.length}</p>
+                <p className="mt-1 text-sm text-slate-300">catalog entries from named sources</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
                 <p className="text-3xl font-black text-white">5</p>
@@ -186,9 +223,7 @@ export default function CardsDirectory() {
                   What this page does
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
-                  It organizes issuer information and tells you what to verify. It
-                  does not approve applications, guarantee rewards, or rank every
-                  product in every country.
+                                It combines independently reviewed profiles with a broader reference index. Reference entries are discovery records, not full reviews, until issuer terms are verified.
                 </p>
               </div>
             </div>
@@ -394,7 +429,7 @@ export default function CardsDirectory() {
             </div>
 
             <p className="mt-5 text-sm text-slate-600" aria-live="polite">
-              Showing <strong className="text-slate-900">{filteredCards.length}</strong> of {cryptoCards.length} starter listings.
+              Showing <strong className="text-slate-900">{filteredCards.length}</strong> of {allCryptoCards.length} catalog entries.
             </p>
           </div>
 
@@ -412,7 +447,7 @@ export default function CardsDirectory() {
                     <h3 className="mt-1 text-xl font-black text-slate-900">{card.name}</h3>
                     <p className="mt-1 text-sm font-medium text-slate-500">{card.issuer}</p>
                   </div>
-                  <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold text-emerald-800">Starter</span>
+                  <span className={`rounded-full px-2.5 py-1 text-[11px] font-bold ${card.status === "Reference profile" ? "bg-slate-100 text-slate-700" : "bg-emerald-100 text-emerald-800"}`}>{card.status === "Reference profile" ? "Reference" : "Reviewed profile"}</span>
                 </div>
 
                 <p className="mt-4 text-sm font-semibold leading-6 text-slate-800">{card.headline}</p>
@@ -440,6 +475,18 @@ export default function CardsDirectory() {
                     <dt className="font-bold text-slate-800">Standout to verify</dt>
                     <dd className="mt-1 text-slate-600">{card.standout}</dd>
                   </div>
+                  <div>
+                    <dt className="font-bold text-slate-800">Fee summary</dt>
+                    <dd className="mt-1 text-slate-600">{card.feeSummary ?? "See official terms; not independently profiled."}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-bold text-slate-800">Rewards</dt>
+                    <dd className="mt-1 text-slate-600">{card.rewardSummary ?? "See official terms; reward conditions may change."}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-bold text-slate-800">Limits and eligibility</dt>
+                    <dd className="mt-1 text-slate-600">{card.limitsSummary ?? "Confirm current country, transaction, ATM, and account limits."}</dd>
+                  </div>
                 </dl>
 
                 <details className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-950">
@@ -465,7 +512,7 @@ export default function CardsDirectory() {
                     Source &amp; terms
                   </a>
                 </div>
-                <p className="mt-3 text-xs text-slate-400">Last reviewed {card.lastReviewed}</p>
+                <p className="mt-3 text-xs text-slate-400">{card.sourceLabel ?? "Issuer source"} · Last reviewed {card.lastReviewed}</p>
               </article>
             ))}
           </div>
