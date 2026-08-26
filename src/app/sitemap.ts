@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/crypto-cards",
     "/crypto-prices",
+    "/bitcoin-halving",
     "/crypto-screener",
     "/wallet-tracker",
     "/public-wallets",
@@ -33,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => {
     const isCardDetail = route.startsWith("/crypto-cards/");
     const isCoinDetail = route.startsWith("/crypto-prices/coin/");
-    const isResearchTool = ["/crypto-screener", "/wallet-tracker", "/public-wallets", "/wallet-alerts", "/meme-coin-research"].includes(route);
+    const isResearchTool = ["/crypto-screener", "/wallet-tracker", "/public-wallets", "/wallet-alerts", "/meme-coin-research", "/bitcoin-halving"].includes(route);
     return {
       url: `${SITE_URL}${route}`,
       lastModified: new Date("2026-08-26"),

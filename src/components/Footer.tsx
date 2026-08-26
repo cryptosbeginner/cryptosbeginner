@@ -50,6 +50,9 @@ export default function Footer() {
               <Link href="/crypto-prices">Live prices</Link>
             </li>
             <li>
+              <Link href="/bitcoin-halving">Bitcoin halving</Link>
+            </li>
+            <li>
               <Link href="/crypto-screener">Market screener</Link>
             </li>
             <li>
