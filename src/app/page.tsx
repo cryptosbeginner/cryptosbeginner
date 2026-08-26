@@ -150,6 +150,18 @@ export default function HomePage() {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Market Research Tools</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Screen live market data, inspect public wallet snapshots, and build browser-local alert rules without handing over private keys.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2 text-sm text-indigo-700">
+                <Link href="/crypto-screener" className="hover:underline">Market screener →</Link>
+                <Link href="/wallet-tracker" className="hover:underline">Wallet tracker →</Link>
+                <Link href="/public-wallets" className="hover:underline">Public wallets →</Link>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
               <h3 className="font-semibold text-slate-900">Regions</h3>
               <p className="mt-1 text-sm text-slate-600">
                 Country-by-country reality checks. Legal grey zones,

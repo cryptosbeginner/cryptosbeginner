@@ -50,6 +50,18 @@ export default function Footer() {
               <Link href="/crypto-prices">Live prices</Link>
             </li>
             <li>
+              <Link href="/crypto-screener">Market screener</Link>
+            </li>
+            <li>
+              <Link href="/wallet-tracker">Wallet tracker</Link>
+            </li>
+            <li>
+              <Link href="/public-wallets">Public-wallet research</Link>
+            </li>
+            <li>
+              <Link href="/wallet-alerts">Local alerts</Link>
+            </li>
+            <li>
               <Link href="/crypto-privacy-directory">Privacy directory</Link>
             </li>
             <li>
@@ -57,6 +69,9 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/meme-coins">Meme coins</Link>
+            </li>
+            <li>
+              <Link href="/meme-coin-research">Meme-token research</Link>
             </li>
           </ul>
         </div>
