@@ -261,7 +261,7 @@ export const referenceOnlyCards: CryptoCard[] = referenceCardIndex
     regionLabel: "Not independently profiled; check the issuer",
     funding: "See the issuer’s current terms",
     headline: "Listed in a public card directory; verify the live program",
-    summary: `This reference entry appears in ${card.source}. It is included for discovery, not presented as a full CryptosBeginner review.`,
+    summary: "This reference entry is included for discovery, not presented as a full CryptosBeginner review. Verify the provider and live program before relying on it.",
     standout: "No fee, rewards, or availability claim is repeated here without an issuer source.",
     feeSummary: "Not independently profiled; see the issuer’s current fee schedule.",
     rewardSummary: "Not independently profiled; do not infer rewards from the reference directory label.",
@@ -269,11 +269,11 @@ export const referenceOnlyCards: CryptoCard[] = referenceCardIndex
     checkFirst: "Find the legal issuer and official product page, then verify country access, KYC, custody, fees, limits, rewards, and whether the program is still live.",
     officialUrl: card.sourceUrl,
     sourceUrl: card.sourceUrl,
-    sourceLabel: `${card.source} reference index`,
+    sourceLabel: "Public directory reference",
     lastReviewed: "2026-08-26",
-    tags: [card.source, card.network, "Needs issuer verification"],
+    tags: [card.network, "Reference listing", "Needs issuer verification"],
     imageUrl: card.imageUrl,
-    visualCredit: card.imageUrl ? "Todey directory visual; verify reuse rights" : undefined,
+    visualCredit: card.imageUrl ? "Directory visual; verify reuse rights" : undefined,
     status: "Reference profile",
   }));
 

@@ -104,8 +104,15 @@ export default function CardDetail({ card, relatedCards }: CardDetailProps) {
                   ))}
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <a href={card.officialUrl} target="_blank" rel="noreferrer" className="rounded-xl bg-emerald-400 px-4 py-3 text-sm font-black text-slate-950 transition hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-300">{referenceOnly ? "View source page ↗" : "Visit official site ↗"}</a>
-                  <a href={card.sourceUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-white/20 px-4 py-3 text-sm font-bold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">Read source &amp; terms ↗</a>
+                  {referenceOnly ? (
+                    <Link href="/crypto-cards" className="rounded-xl border border-white/20 px-4 py-3 text-sm font-bold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">
+                      Back to directory
+                    </Link>
+                  ) : (
+                    <a href={card.officialUrl} target="_blank" rel="noreferrer" className="rounded-xl bg-emerald-400 px-4 py-3 text-sm font-black text-slate-950 transition hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-300">
+                      Visit official site ↗
+                    </a>
+                  )}
                 </div>
               </div>
               <ProductVisual card={card} />
@@ -131,7 +138,7 @@ export default function CardDetail({ card, relatedCards }: CardDetailProps) {
           </div>
           {referenceOnly && (
             <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-              This is a **reference profile** included for discovery from a public directory. CryptosBeginner has not independently verified a complete fee sheet, reward schedule, legal issuer, or current availability for this entry.
+              This is a reference profile included for discovery. CryptosBeginner has not independently verified a complete fee sheet, reward schedule, legal issuer, or current availability for this entry.
             </div>
           )}
           <dl className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

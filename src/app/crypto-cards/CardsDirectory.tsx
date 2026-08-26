@@ -501,22 +501,20 @@ export default function CardsDirectory() {
                   >
                     Read profile →
                   </Link>
-                  <a
-                    href={card.officialUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-lg bg-slate-900 px-3.5 py-2.5 text-sm font-bold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                  >
-                    {card.status === "Reference profile" ? "View source page ↗" : "Visit official site ↗"}
-                  </a>
-                  <a
-                    href={card.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-bold text-indigo-700 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                  >
-                    Source &amp; terms
-                  </a>
+                  {card.status === "Reference profile" ? (
+                    <span className="rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm font-bold text-slate-600">
+                      Provider link pending verification
+                    </span>
+                  ) : (
+                    <a
+                      href={card.officialUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg bg-slate-900 px-3.5 py-2.5 text-sm font-bold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                    >
+                      Visit official site ↗
+                    </a>
+                  )}
                 </div>
                 <p className="mt-3 text-xs text-slate-400">{card.sourceLabel ?? "Issuer source"} · Last reviewed {card.lastReviewed}</p>
               </article>
