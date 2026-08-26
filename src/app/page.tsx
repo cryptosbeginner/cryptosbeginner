@@ -137,6 +137,19 @@ export default function HomePage() {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Live Crypto Prices</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Track time-stamped prices, market cap, volume and recent changes with a local watchlist.
+              </p>
+              <Link
+                href="/crypto-prices"
+                className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
+              >
+                Track live prices →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
               <h3 className="font-semibold text-slate-900">Regions</h3>
               <p className="mt-1 text-sm text-slate-600">
                 Country-by-country reality checks. Legal grey zones,

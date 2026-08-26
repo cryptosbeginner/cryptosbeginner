@@ -47,6 +47,9 @@ export default function Footer() {
               <Link href="/crypto-cards">Crypto cards</Link>
             </li>
             <li>
+              <Link href="/crypto-prices">Live prices</Link>
+            </li>
+            <li>
               <Link href="/crypto-privacy-directory">Privacy directory</Link>
             </li>
             <li>
