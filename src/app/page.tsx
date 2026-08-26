@@ -109,6 +109,69 @@ export default function HomePage() {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Privacy Directory</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Browse privacy-focused P2P markets, DEXes, self-custody wallets
+                and privacy utilities with clear risk and custody notes.
+              </p>
+              <Link
+                href="/crypto-privacy-directory"
+                className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
+              >
+                Explore privacy tools →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Crypto Cards</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Compare crypto cards by country, KYC level, custody model, network,
+                funding assets, fees and reward conditions.
+              </p>
+              <Link
+                href="/crypto-cards"
+                className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
+              >
+                Browse crypto cards →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Live Crypto Prices</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Track time-stamped prices, market cap, volume and recent changes with a local watchlist.
+              </p>
+              <Link
+                href="/crypto-prices"
+                className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
+              >
+                Track live prices →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Bitcoin Halving</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Follow the next subsidy cut by block height, understand the reward change, and see why the calendar date is only an estimate.
+              </p>
+              <Link href="/tools/bitcoin-halving" className="mt-3 inline-flex text-sm text-indigo-700 hover:underline">
+                Open halving countdown →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Market Research Tools</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Screen live market data, inspect public wallet snapshots, and build browser-local alert rules without handing over private keys.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2 text-sm text-indigo-700">
+                <Link href="/crypto-screener" className="hover:underline">Market screener →</Link>
+                <Link href="/wallet-tracker" className="hover:underline">Wallet tracker →</Link>
+                <Link href="/public-wallets" className="hover:underline">Public wallets →</Link>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
               <h3 className="font-semibold text-slate-900">Regions</h3>
               <p className="mt-1 text-sm text-slate-600">
                 Country-by-country reality checks. Legal grey zones,
