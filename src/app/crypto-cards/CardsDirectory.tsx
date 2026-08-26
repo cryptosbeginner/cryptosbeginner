@@ -495,13 +495,19 @@ export default function CardsDirectory() {
                 </details>
 
                 <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
+                  <Link
+                    href={`/crypto-cards/${card.slug}`}
+                    className="rounded-lg border border-indigo-200 bg-indigo-50 px-3.5 py-2.5 text-sm font-bold text-indigo-800 transition hover:border-indigo-300 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  >
+                    Read profile →
+                  </Link>
                   <a
                     href={card.officialUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-lg bg-slate-900 px-3.5 py-2.5 text-sm font-bold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                   >
-                    Visit official site ↗
+                    {card.status === "Reference profile" ? "View source page ↗" : "Visit official site ↗"}
                   </a>
                   <a
                     href={card.sourceUrl}

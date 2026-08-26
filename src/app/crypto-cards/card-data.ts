@@ -272,6 +272,8 @@ export const referenceOnlyCards: CryptoCard[] = referenceCardIndex
     sourceLabel: `${card.source} reference index`,
     lastReviewed: "2026-08-26",
     tags: [card.source, card.network, "Needs issuer verification"],
+    imageUrl: card.imageUrl,
+    visualCredit: card.imageUrl ? "Todey directory visual; verify reuse rights" : undefined,
     status: "Reference profile",
   }));
 

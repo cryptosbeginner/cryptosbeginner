@@ -6,6 +6,7 @@ export type ReferenceCard = {
   network: string;
   source: ReferenceSource;
   sourceUrl: string;
+  imageUrl?: string;
 };
 
 const sourceUrls: Record<ReferenceSource, string> = {
@@ -178,10 +179,11 @@ Firma Card|Not stated
 `;
 
 function slugify(name: string, source: ReferenceSource) {
-  return `${source.toLowerCase()}-${name
+  const cleanName = name
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")}`;
+    .replace(/^-|-$/g, "");
+  return source === "Todey" ? cleanName : `directory-${cleanName}`;
 }
 
 function parseRows(raw: string, source: ReferenceSource): ReferenceCard[] {
@@ -196,7 +198,14 @@ function parseRows(raw: string, source: ReferenceSource): ReferenceCard[] {
         name,
         network,
         source,
-        sourceUrl: sourceUrls[source],
+        sourceUrl:
+          source === "Todey"
+            ? `https://www.todey.xyz/card/${slugify(name, source)}/`
+            : sourceUrls[source],
+        imageUrl:
+          source === "Todey"
+            ? `/images/cards/todey/${slugify(name, source)}.webp`
+            : undefined,
       };
     });
 }
