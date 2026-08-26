@@ -154,7 +154,7 @@ export default function HomePage() {
               <p className="mt-1 text-sm text-slate-600">
                 Follow the next subsidy cut by block height, understand the reward change, and see why the calendar date is only an estimate.
               </p>
-              <Link href="/bitcoin-halving" className="mt-3 inline-flex text-sm text-indigo-700 hover:underline">
+              <Link href="/tools/bitcoin-halving" className="mt-3 inline-flex text-sm text-indigo-700 hover:underline">
                 Open halving countdown →
               </Link>
             </div>

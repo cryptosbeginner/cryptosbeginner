@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getBitcoinTipHeight, NEXT_HALVING_BLOCK, blocksRemaining } from "@/app/bitcoin-halving/halving-data";
+import { getBitcoinTipHeight, NEXT_HALVING_BLOCK, blocksRemaining } from "@/app/tools/bitcoin-halving/halving-data";
 
 export const dynamic = "force-dynamic";
 

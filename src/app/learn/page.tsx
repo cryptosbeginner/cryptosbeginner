@@ -108,11 +108,11 @@ export default function LearnIndexPage() {
                   <span className="mt-1 block text-slate-600">Countdown, issuance math and mining scenarios.</span>
                 </Link>
                 <Link href="/learn/bitcoin-forks" className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-indigo-700 hover:border-indigo-300 hover:bg-indigo-50">
-                  <strong className="block text-slate-900">Bitcoin forks</strong>
-                  <span className="mt-1 block text-slate-600">Soft forks, hard forks and the Bitcoin family tree.</span>
+                  <strong className="block text-slate-900">What are Bitcoin forks?</strong>
+                  <span className="mt-1 block text-slate-600">Soft forks, hard forks, chain splits and the Bitcoin family tree.</span>
                 </Link>
                 <Link href="/learn/bitcoin-classic-hard-fork" className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-indigo-700 hover:border-indigo-300 hover:bg-indigo-50">
-                  <strong className="block text-slate-900">Bitcoin Classic</strong>
+                  <strong className="block text-slate-900">Bitcoin Classic & hard forks</strong>
                   <span className="mt-1 block text-slate-600">Block-size debate, history and fork-safety checks.</span>
                 </Link>
               </div>

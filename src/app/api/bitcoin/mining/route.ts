@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getMiningSnapshot } from "@/app/bitcoin-halving/mining-data";
+import { getMiningSnapshot } from "@/app/tools/bitcoin-halving/mining-data";
 
 export const dynamic = "force-dynamic";
 
