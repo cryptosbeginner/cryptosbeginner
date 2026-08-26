@@ -109,6 +109,20 @@ export default function HomePage() {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <h3 className="font-semibold text-slate-900">Privacy Directory</h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Browse privacy-focused P2P markets, DEXes, self-custody wallets
+                and privacy utilities with clear risk and custody notes.
+              </p>
+              <Link
+                href="/privacy-directory"
+                className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
+              >
+                Explore privacy tools →
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
               <h3 className="font-semibold text-slate-900">Regions</h3>
               <p className="mt-1 text-sm text-slate-600">
                 Country-by-country reality checks. Legal grey zones,

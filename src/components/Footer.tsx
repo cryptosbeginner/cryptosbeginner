@@ -44,7 +44,10 @@ export default function Footer() {
               <Link href="/dexes">DEXes</Link>
             </li>
             <li>
-              <Link href="/exchanges/no-kyc">No KYC exchanges</Link>
+              <Link href="/privacy-directory">Privacy directory</Link>
+            </li>
+            <li>
+              <Link href="/exchanges/no-kyc">No KYC guide</Link>
             </li>
             <li>
               <Link href="/meme-coins">Meme coins</Link>
