@@ -95,6 +95,29 @@ export default function LearnIndexPage() {
               </ul>
             </div>
 
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 md:col-span-2">
+              <h2 className="text-lg font-semibold text-slate-900">
+                Bitcoin mechanics and history
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Understand the protocol events behind the headlines: supply reductions, block-height estimates, chain splits and the difference between a software proposal and a lasting network.
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                <Link href="/bitcoin-halving" className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-indigo-700 hover:border-indigo-300 hover:bg-indigo-50">
+                  <strong className="block text-slate-900">Bitcoin halving</strong>
+                  <span className="mt-1 block text-slate-600">Countdown, issuance math and mining scenarios.</span>
+                </Link>
+                <Link href="/learn/bitcoin-forks" className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-indigo-700 hover:border-indigo-300 hover:bg-indigo-50">
+                  <strong className="block text-slate-900">What are Bitcoin forks?</strong>
+                  <span className="mt-1 block text-slate-600">Soft forks, hard forks, chain splits and the Bitcoin family tree.</span>
+                </Link>
+                <Link href="/learn/bitcoin-classic-hard-fork" className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-indigo-700 hover:border-indigo-300 hover:bg-indigo-50">
+                  <strong className="block text-slate-900">Bitcoin Classic & hard forks</strong>
+                  <span className="mt-1 block text-slate-600">Block-size debate, history and fork-safety checks.</span>
+                </Link>
+              </div>
+            </div>
+
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
               <h2 className="text-lg font-semibold text-slate-900">
                 Country and region guides
