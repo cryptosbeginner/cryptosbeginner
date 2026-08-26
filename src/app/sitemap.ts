@@ -11,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/bitcoin-halving",
     "/tools/exchange-finder",
     "/tools/fee-calculator",
+    "/crypto-research",
+    "/crypto-prices",
+    "/crypto-screener",
+    "/wallet-tracker",
+    "/public-wallets",
+    "/wallet-alerts",
+    "/meme-coin-research",
     "/learn/bitcoin-forks",
     "/learn/bitcoin-classic-hard-fork",
     "/learn/seed-phrase-security",
@@ -30,6 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}${route}`,
     lastModified: new Date("2026-08-27"),
     changeFrequency: route.includes("crypto-glossary") ? "monthly" : "weekly",
-    priority: route === "/learn/crypto-glossary" ? 0.8 : route.startsWith("/learn/crypto-glossary/") ? 0.6 : 0.7,
+    priority: route === "/learn/crypto-glossary" || route === "/crypto-research" ? 0.8 : route.startsWith("/learn/crypto-glossary/") ? 0.6 : ["/crypto-prices", "/crypto-screener", "/wallet-tracker"].includes(route) ? 0.75 : 0.7,
   }));
 }

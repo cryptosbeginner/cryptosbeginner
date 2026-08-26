@@ -194,6 +194,9 @@ export default function HomePage() {
                 >
                   Exchange finder
                 </Link>
+                <Link href="/crypto-research" className="hover:underline">
+                  Research desk
+                </Link>
               </div>
             </div>
           </div>

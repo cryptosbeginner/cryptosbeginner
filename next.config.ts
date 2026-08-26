@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["3001-is60l8ekj6odhitz6s66u-f0417240.us4.manus.computer"],
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "files.manuscdn.com" },
+      { protocol: "https", hostname: "cdn.simpleicons.org" },
+    ],
+  },
 };
 
 export default nextConfig;
