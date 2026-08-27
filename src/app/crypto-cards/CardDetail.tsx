@@ -8,7 +8,7 @@ function Glyph({ name, size = 18, className = "" }: { name: GlyphName; size?: nu
   const paths: Record<GlyphName, string> = { check: "M20 6 9 17l-5-5m12-6 4 4", money: "M12 2v20m5-16.5c-.9-.9-2.4-1.5-4.1-1.5C10.2 4 8 5.4 8 7.2c0 4.4 9 2.2 9 6.6 0 1.8-2.1 3.2-4.8 3.2-1.8 0-3.5-.6-4.5-1.7", globe: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-18c2.1 2.2 3.2 5.2 3.2 9S14.1 18.8 12 21c-2.1-2.2-3.2-5.2-3.2-9S9.9 5.2 12 3Zm-8.5 9h17", shield: "M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Z", down: "m6 9 6 6 6-6", up: "m6 15 6-6 6 6", wallet: "M3 6h18v13H3zM16 10h5v5h-5a2.5 2.5 0 0 1 0-5Z" };
   return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d={paths[name]} /></svg>;
 }
-import type { CardListing } from "./cards-data";
+import { getCardFaqs, type CardListing } from "./cards-data";
 
 function DetailArtwork({ card }: { card: CardListing }) {
   const [broken, setBroken] = useState(false);
@@ -37,16 +37,7 @@ export default function CardDetail({ card }: { card: CardListing }) {
     "Current terms should be checked before funding or applying",
   ];
   const featureTags = card.featureTags ?? [card.network, ...card.cardFormats.slice(0, 2), card.categories[0]];
-  const featuredQuestion = card.referralUrl ? `Why is ${card.name} featured in this directory?` : `What should I verify before choosing ${card.name}?`;
-  const featuredAnswer = card.referralUrl
-    ? `${card.name} is featured because its published product model and current provider information give readers a useful starting point for assessing its stated audience, fees, funding route, and eligibility. This page also includes a clearly disclosed referral link; using it is optional and does not guarantee approval, pricing, rewards, security, availability, or suitability.`
-    : `Check the provider’s current country eligibility, issuer, verification process, funding route, complete fee schedule, limits, and tax treatment before making your own decision. This profile is educational comparison content, not a personal recommendation.`;
-  const faqs = [
-    { question: `What does ${card.name} cost?`, answer: `${card.pricing} Provider fees and regional terms can change, so use the linked fee details before applying.` },
-    { question: `How is ${card.name} funded?`, answer: card.funding },
-    { question: `Where is ${card.name} available?`, answer: card.availability },
-    { question: featuredQuestion, answer: featuredAnswer },
-  ];
+  const faqs = getCardFaqs(card);
   return (
     <main className="min-h-screen bg-[#f7f7fb] text-slate-950">
       <section className="relative overflow-hidden bg-[#0b0820] text-white"><div className="pointer-events-none absolute -left-16 top-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl" /><div className="pointer-events-none absolute right-0 top-10 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl" /><div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"><Link href="/crypto-cards" className="text-sm font-black text-cyan-200 hover:text-white">← Back to Crypto Cards directory</Link><div className="mt-10 grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><DetailArtwork card={card} /><div><p className="text-xs font-black uppercase tracking-[0.2em] text-fuchsia-200">{card.provider} · {card.network}</p><h1 className="mt-4 text-5xl font-black leading-[.96] tracking-[-0.06em] sm:text-7xl">{card.name}</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">{card.editorialSummary}</p><div className="mt-7 flex flex-wrap gap-3"><a href={card.sourceUrl} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-5 py-3 text-sm font-black text-slate-950 hover:bg-cyan-100">View official source ↗</a>{card.referralUrl && <a href={card.referralUrl} target="_blank" rel="sponsored nofollow noreferrer" className="rounded-xl bg-fuchsia-400 px-5 py-3 text-sm font-black text-slate-950 hover:bg-fuchsia-300">{card.referralLabel ?? "Check card"} ↗</a>}<Link href="#facts" className="rounded-xl border border-white/20 bg-white/[.08] px-5 py-3 text-sm font-black text-white hover:bg-white/15">Jump to facts</Link></div><p className="mt-5 text-xs font-semibold text-slate-400">Published 25 August 2026 · facts checked {card.reviewedAt}. Image: {card.imageSourceNote}. Terms can change.</p><p className="mt-3 text-xs leading-5 text-slate-400"><strong className="text-slate-200">Affiliate disclosure:</strong> The highlighted check-card button may be a referral link. It does not change the editorial facts, guarantee approval, or make this a personal recommendation.</p></div></div></div></section>

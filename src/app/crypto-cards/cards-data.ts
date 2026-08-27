@@ -37,6 +37,19 @@ export type CardListing = {
   noKycStatus?: "not-verified" | "provider-claims-no-credit-check" | "provider-states-no-kyc";
 };
 
+export function getCardFaqs(card: CardListing) {
+  const question = card.referralUrl ? `Why is ${card.name} featured in this directory?` : `What should I verify before choosing ${card.name}?`;
+  const answer = card.referralUrl
+    ? `${card.name} is featured because its published product model and current provider information give readers a useful starting point for assessing its stated audience, fees, funding route, and eligibility. This page also includes a clearly disclosed referral link; using it is optional and does not guarantee approval, pricing, rewards, security, availability, or suitability.`
+    : `Check the provider’s current country eligibility, issuer, verification process, funding route, complete fee schedule, limits, and tax treatment before making your own decision. This profile is educational comparison content, not a personal recommendation.`;
+  return [
+    { question: `What does ${card.name} cost?`, answer: `${card.pricing} Provider fees and regional terms can change, so use the linked fee details before applying.` },
+    { question: `How is ${card.name} funded?`, answer: card.funding },
+    { question: `Where is ${card.name} available?`, answer: card.availability },
+    { question, answer },
+  ];
+}
+
 export const cardListings: CardListing[] = [
   {
     slug: "coinbase-card",

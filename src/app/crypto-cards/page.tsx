@@ -5,17 +5,26 @@ import CardsDirectory from "./CardsDirectory";
 import { cardListings } from "./cards-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
+const HUB_TITLE = "Crypto Cards: Fees, Regions & Card Types";
+const HUB_DESCRIPTION = "Compare crypto debit, prepaid, self-custody, and dual-mode cards by funding model, fees, rewards, regions, and official provider terms.";
+const HUB_URL = `${SITE_URL}/crypto-cards`;
 
 export const metadata: Metadata = {
-  title: "Crypto Cards Directory: Fees, Regions & Card Types | CryptosBeginner",
-  description: "Compare crypto debit, prepaid, self-custody, and dual-mode cards by funding model, fees, rewards, regions, and official provider terms.",
-  alternates: { canonical: `${SITE_URL}/crypto-cards` },
+  title: { absolute: `${HUB_TITLE} | CryptosBeginner` },
+  description: HUB_DESCRIPTION,
+  alternates: { canonical: HUB_URL },
   openGraph: {
     title: "Crypto Cards Directory | CryptosBeginner",
     description: "A source-backed directory for comparing crypto card types, region limits, fees, rewards, and provider relationships.",
-    url: `${SITE_URL}/crypto-cards`,
+    url: HUB_URL,
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crypto Cards Directory | CryptosBeginner",
+    description: "Compare crypto card types, fees, funding models, regions, and provider terms.",
+  },
+  robots: { index: true, follow: true },
 };
 
 const faq = [
@@ -29,5 +38,5 @@ const faq = [
 ];
 
 export default function CryptoCardsPage() {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "CollectionPage", name: "Crypto Cards Directory", url: `${SITE_URL}/crypto-cards`, description: metadata.description, datePublished: "2026-08-25", dateModified: "2026-08-27", mainEntity: { "@type": "ItemList", numberOfItems: cardListings.length, itemListElement: cardListings.map((card, index) => ({ "@type": "ListItem", position: index + 1, name: card.name, url: `${SITE_URL}/crypto-cards/${card.slug}` })) } }) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }) }} /><Header /><CardsDirectory /><section className="border-t border-slate-200 bg-white"><div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.18em] text-fuchsia-700">Crypto Cards FAQ</p><h2 className="mt-3 text-3xl font-black tracking-[-0.04em]">The short answers before the long terms</h2><div className="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200">{faq.map((item) => <details key={item.question} className="group p-5"><summary className="cursor-pointer list-none pr-6 text-base font-black text-slate-950 marker:hidden">{item.question}<span className="float-right text-fuchsia-700 transition group-open:rotate-45">+</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{item.answer}</p></details>)}</div></div></section><Footer /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "CollectionPage", "@id": `${HUB_URL}#webpage`, name: "Crypto Cards Directory", url: HUB_URL, description: HUB_DESCRIPTION, datePublished: "2026-08-25", dateModified: "2026-08-27", mainEntity: { "@id": `${HUB_URL}#itemlist` }, breadcrumb: { "@id": `${HUB_URL}#breadcrumb` } }, { "@type": "ItemList", "@id": `${HUB_URL}#itemlist`, numberOfItems: cardListings.length, itemListOrder: "https://schema.org/ItemListOrderAscending", itemListElement: cardListings.map((card, index) => ({ "@type": "ListItem", position: index + 1, name: card.name, url: `${SITE_URL}/crypto-cards/${card.slug}` })) }, { "@type": "BreadcrumbList", "@id": `${HUB_URL}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Crypto Cards", item: HUB_URL }] }] }) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "@id": `${HUB_URL}#faq`, url: HUB_URL, mainEntity: faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) }) }} /><Header /><CardsDirectory /><section className="border-t border-slate-200 bg-white"><div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.18em] text-fuchsia-700">Crypto Cards FAQ</p><h2 className="mt-3 text-3xl font-black tracking-[-0.04em]">The short answers before the long terms</h2><div className="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200">{faq.map((item) => <details key={item.question} className="group p-5"><summary className="cursor-pointer list-none pr-6 text-base font-black text-slate-950 marker:hidden">{item.question}<span className="float-right text-fuchsia-700 transition group-open:rotate-45">+</span></summary><p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{item.answer}</p></details>)}</div></div></section><Footer /></>;
 }
