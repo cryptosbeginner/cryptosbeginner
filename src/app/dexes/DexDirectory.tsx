@@ -110,21 +110,21 @@ export default function DexDirectory({
         <aside className="h-fit rounded-3xl border border-slate-200 bg-white p-5 shadow-sm lg:sticky lg:top-24">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900"><Glyph name="search" /> Refine the directory</div>
           <label className="mt-5 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="service-search">Search</label>
-          <input id="service-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Name, network, model" className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-indigo-500 focus:ring-2" />
+          <input id="service-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Name, network, model" className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500 outline-none ring-indigo-500 focus:ring-2" />
           <label className="mt-5 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="service-category">Category</label>
-          <select id="service-category" value={category} onChange={(event) => setCategory(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
+          <select id="service-category" value={category} onChange={(event) => setCategory(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900">
             <option value="all">All categories</option>
             {categories.map((item) => <option key={item} value={item}>{item}</option>)}
           </select>
           <label className="mt-5 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="service-access">Access model</label>
-          <select id="service-access" value={access} onChange={(event) => setAccess(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
+          <select id="service-access" value={access} onChange={(event) => setAccess(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900">
             <option value="all">Any access model</option>
             <option value="wallet">Wallet-first</option>
             <option value="no-account">No account flow</option>
             <option value="conditional">KYC may apply</option>
           </select>
           <label className="mt-5 block text-xs font-semibold uppercase tracking-wide text-slate-500" htmlFor="service-sort">Sort</label>
-          <select id="service-sort" value={sort} onChange={(event) => setSort(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
+          <select id="service-sort" value={sort} onChange={(event) => setSort(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900">
             <option value="relevance">Research order</option>
             <option value="name">Name A–Z</option>
             <option value="fee">Fee notes</option>
