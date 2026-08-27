@@ -150,5 +150,9 @@ export async function fetchCFOAssets(
     })
   );
 
-  return results.filter((r): r is AssetCFO => r !== null);
+  const validResults: AssetCFO[] = [];
+  for (const result of results) {
+    if (result !== null) validResults.push(result);
+  }
+  return validResults;
 }
