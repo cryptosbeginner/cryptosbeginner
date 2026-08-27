@@ -22,6 +22,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
       { label: "Crypto Screener", href: "/crypto-screener" },
       { label: "Wallet Tracker", href: "/wallet-tracker" },
       { label: "Wallet Alerts", href: "/wallet-alerts" },
+      { label: "Meme Coins", href: "/meme-coins" },
       { label: "Meme Coin Research", href: "/meme-coin-research" },
     ],
   },
