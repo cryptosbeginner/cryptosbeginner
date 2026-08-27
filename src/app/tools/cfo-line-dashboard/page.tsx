@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import { getCfoLineDashboardData, type AssetCFO } from "@/lib/anny-cfo-line";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
@@ -215,12 +214,24 @@ export default async function CFOLineDashboardPage() {
                   <tr key={asset.symbol} className="hover:bg-slate-50">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <Image
+                        <img
                           src={asset.logoUrl}
                           alt={`${asset.name} logo`}
                           width={28}
                           height={28}
                           className="h-7 w-7"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
+                            const wrapper = target.parentElement;
+                            if (wrapper && !wrapper.querySelector(".logo-fallback")) {
+                              const fallback = document.createElement("div");
+                              fallback.className =
+                                "logo-fallback flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[10px] font-black text-slate-700";
+                              fallback.textContent = asset.symbol.slice(0, 3);
+                              wrapper.insertBefore(fallback, target.nextSibling);
+                            }
+                          }}
                         />
                         <div>
                           <p className="text-sm font-bold text-slate-900">
