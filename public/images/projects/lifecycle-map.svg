@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">How CryptosBeginner labels failed crypto projects</title>
+  <desc id="desc">Five research labels: enforcement, insolvency, protocol failure, abandoned and obsolete.</desc>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <text x="60" y="70" fill="#0f172a" font-family="Georgia, serif" font-size="36" font-weight="700">How we label a project</text>
+  <text x="60" y="112" fill="#475569" font-family="Arial, sans-serif" font-size="20">The word dead is not enough. These labels follow the public record.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="160" width="340" height="230" rx="24" fill="#fff1f2" stroke="#fecdd3"/>
+    <text x="84" y="208" fill="#9f1239" font-size="24" font-weight="700">Enforcement</text>
+    <text x="84" y="248" fill="#334155" font-size="18">A court, regulator or</text>
+    <text x="84" y="276" fill="#334155" font-size="18">prosecutor has acted.</text>
+    <text x="84" y="316" fill="#64748b" font-size="16">Example: OneCoin, BitConnect</text>
+    <rect x="430" y="160" width="340" height="230" rx="24" fill="#fff7ed" stroke="#fed7aa"/>
+    <text x="454" y="208" fill="#9a3412" font-size="24" font-weight="700">Insolvency</text>
+    <text x="454" y="248" fill="#334155" font-size="18">The company or fund cannot</text>
+    <text x="454" y="276" fill="#334155" font-size="18">meet withdrawals or debts.</text>
+    <text x="454" y="316" fill="#64748b" font-size="16">Example: FTX, Celsius, Voyager</text>
+    <rect x="800" y="160" width="340" height="230" rx="24" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="824" y="208" fill="#92400e" font-size="24" font-weight="700">Protocol failure</text>
+    <text x="824" y="248" fill="#334155" font-size="18">The mechanism broke even if</text>
+    <text x="824" y="276" fill="#334155" font-size="18">code kept running.</text>
+    <text x="824" y="316" fill="#64748b" font-size="16">Example: Terra UST, TITAN</text>
+    <rect x="245" y="430" width="340" height="230" rx="24" fill="#eef2ff" stroke="#c7d2fe"/>
+    <text x="269" y="478" fill="#3730a3" font-size="24" font-weight="700">Abandoned</text>
+    <text x="269" y="518" fill="#334155" font-size="18">Work stopped, team left, or</text>
+    <text x="269" y="546" fill="#334155" font-size="18">the product never launched.</text>
+    <text x="269" y="586" fill="#64748b" font-size="16">Example: Diem / Libra</text>
+    <rect x="615" y="430" width="340" height="230" rx="24" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="639" y="478" fill="#115e59" font-size="24" font-weight="700">Obsolete / sunset</text>
+    <text x="639" y="518" fill="#334155" font-size="18">An official wind-down after</text>
+    <text x="639" y="546" fill="#334155" font-size="18">the product lost its role.</text>
+    <text x="639" y="586" fill="#64748b" font-size="16">Example: Loopring DEX, Goldfinch</text>
+  </g>
+</svg>

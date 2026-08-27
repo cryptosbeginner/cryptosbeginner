@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Dead, abandoned and obsolete crypto projects</title>
+  <desc id="desc">Research map showing enforcement cases, insolvencies, protocol failures, abandoned products and official sunsets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#4c0519"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="72" y="92" fill="#fda4af" font-family="Georgia, serif" font-size="22" letter-spacing="3">CRYPTOSBEGINNER RESEARCH</text>
+  <text x="72" y="168" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="700">Dead, abandoned and obsolete</text>
+  <text x="72" y="230" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="700">crypto projects</text>
+  <text x="72" y="292" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="24">Evidence-based case files. Neutral labels. Primary sources.</text>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <rect x="72" y="360" width="190" height="64" rx="16" fill="#ffe4e6"/>
+    <text x="167" y="400" text-anchor="middle" fill="#9f1239">Enforcement</text>
+    <rect x="282" y="360" width="190" height="64" rx="16" fill="#ffedd5"/>
+    <text x="377" y="400" text-anchor="middle" fill="#9a3412">Insolvency</text>
+    <rect x="492" y="360" width="210" height="64" rx="16" fill="#fef3c7"/>
+    <text x="597" y="400" text-anchor="middle" fill="#92400e">Protocol failure</text>
+    <rect x="722" y="360" width="190" height="64" rx="16" fill="#e0e7ff"/>
+    <text x="817" y="400" text-anchor="middle" fill="#3730a3">Abandoned</text>
+    <rect x="932" y="360" width="190" height="64" rx="16" fill="#ccfbf1"/>
+    <text x="1027" y="400" text-anchor="middle" fill="#115e59">Obsolete</text>
+  </g>
+  <text x="72" y="500" fill="#94a3b8" font-family="Arial, sans-serif" font-size="18">A leftover ticker is not proof that the original product still works.</text>
+  <text x="72" y="560" fill="#64748b" font-family="Arial, sans-serif" font-size="16">Educational research only. Not financial, legal or tax advice.</text>
+</svg>
