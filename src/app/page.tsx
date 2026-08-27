@@ -197,6 +197,9 @@ export default function HomePage() {
                 <Link href="/crypto-research" className="hover:underline">
                   Research desk
                 </Link>
+                <Link href="/crypto-cards" className="hover:underline">
+                  Crypto Cards
+                </Link>
               </div>
             </div>
           </div>

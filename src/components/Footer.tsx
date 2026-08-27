@@ -16,6 +16,7 @@ export default function Footer() {
             <li><Link href="/regions">Regions</Link></li>
             <li><Link href="/tools/exchange-finder">Exchange Quiz</Link></li>
             <li><Link href="/crypto-research">Research Desk</Link></li>
+            <li><Link href="/crypto-cards">Crypto Cards</Link></li>
             <li><Link href="/crypto-prices">Live crypto prices</Link></li>
             <li><Link href="/wallet-tracker">Wallet tracker</Link></li>
             <li><Link href="/learn">Learn hub</Link></li>
