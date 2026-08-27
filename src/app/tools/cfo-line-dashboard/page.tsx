@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { fetchCFOAssets, type AssetCFO } from "@/lib/anny-api";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
-const UPDATED = "2026-08-27";
+const UPDATED = "2026-08-28";
 
 export const metadata: Metadata = {
   title:
@@ -43,57 +44,6 @@ export const metadata: Metadata = {
 
 type AssetState = "Accumulate" | "Wait" | "Distribute";
 
-type AssetCFO = {
-  symbol: string;
-  name: string;
-  state: AssetState;
-  since: string;
-  flips: { from: AssetState; to: AssetState; date: string }[];
-  confidence: "Low" | "Medium" | "High" | "Very High";
-  logoUrl: string; // e.g. CoinGecko logo URL
-};
-
-// Demo data with logos. Replace with real Anny API data in a follow-up.
-const demoAssets: AssetCFO[] = [
-  {
-    symbol: "BTC",
-    name: "Bitcoin",
-    state: "Accumulate",
-    since: "2026-08-10",
-    flips: [
-      { from: "Wait", to: "Accumulate", date: "2026-08-10" },
-      { from: "Distribute", to: "Wait", date: "2026-07-22" },
-    ],
-    confidence: "High",
-    logoUrl: "https://assets.coingecko.com/coins/images/1/small/bitcoin.png",
-  },
-  {
-    symbol: "ETH",
-    name: "Ethereum",
-    state: "Wait",
-    since: "2026-08-18",
-    flips: [
-      { from: "Accumulate", to: "Wait", date: "2026-08-18" },
-      { from: "Wait", to: "Accumulate", date: "2026-07-30" },
-    ],
-    confidence: "Medium",
-    logoUrl: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
-  },
-  {
-    symbol: "SOL",
-    name: "Solana",
-    state: "Distribute",
-    since: "2026-08-20",
-    flips: [
-      { from: "Wait", to: "Distribute", date: "2026-08-20" },
-      { from: "Accumulate", to: "Wait", date: "2026-08-05" },
-    ],
-    confidence: "Low",
-    logoUrl:
-      "https://assets.coingecko.com/coins/images/4128/small/solana.png",
-  },
-];
-
 function stateColor(state: AssetState) {
   if (state === "Accumulate") return "bg-emerald-100 text-emerald-800";
   if (state === "Wait") return "bg-amber-100 text-amber-800";
@@ -106,7 +56,14 @@ function stateLabel(state: AssetState) {
   return "Weakness";
 }
 
-export default function CFOLineDashboardPage() {
+export default async function CFOLineDashboardPage() {
+  let assets: AssetCFO[] = [];
+  try {
+    assets = await fetchCFOAssets(["BTC", "ETH", "SOL"]);
+  } catch (err) {
+    console.error("Failed to load CFO assets", err);
+  }
+
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -196,8 +153,8 @@ export default function CFOLineDashboardPage() {
               Accumulate, Wait or Distribute based on trend and momentum.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-300">
-              This is a demo layout with mock data. When live, it will pull
-              real CFO Line states and flips from the Anny Trade API.
+              Live data from the Anny Trade API. Guest endpoints are used, so
+              no login is required.
             </p>
           </div>
         </section>
@@ -235,81 +192,92 @@ export default function CFOLineDashboardPage() {
             CFO Line states for major assets
           </h2>
           <p className="mt-3 max-w-3xl leading-7 text-slate-700">
-            Demo data only. In the live version, each row will show the current
-            state, how long it has been active, recent flips and a confidence
-            score.
+            Current CFO Line state, how long it has been active, recent flips
+            and a confidence score.
           </p>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-            <table className="min-w-full divide-y divide-slate-200">
-              <thead className="bg-slate-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Asset
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
-                    CFO Line state
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Since
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Recent flips
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Confidence
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200 bg-white">
-                {demoAssets.map((asset) => (
-                  <tr key={asset.symbol} className="hover:bg-slate-50">
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <Image
-                          src={asset.logoUrl}
-                          alt={`${asset.name} logo`}
-                          width={28}
-                          height={28}
-                          className="h-7 w-7"
-                        />
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">
-                            {asset.symbol}
-                          </p>
-                          <p className="text-xs text-slate-500">{asset.name}</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span
-                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${stateColor(
-                          asset.state
-                        )}`}
-                      >
-                        {asset.state} · {stateLabel(asset.state)}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
-                      {asset.since}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
-                      <ul className="space-y-1">
-                        {asset.flips.map((f, i) => (
-                          <li key={i}>
-                            {f.date}: {f.from} → {f.to}
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
-                      {asset.confidence}
-                    </td>
+          {assets.length === 0 ? (
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700">
+              No data available right now. Try again in a few moments.
+            </div>
+          ) : (
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+              <table className="min-w-full divide-y divide-slate-200">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Asset
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                      CFO Line state
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Since
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Recent flips
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Confidence
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody className="divide-y divide-slate-200 bg-white">
+                  {assets.map((asset) => (
+                    <tr key={asset.symbol} className="hover:bg-slate-50">
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          <Image
+                            src={asset.logoUrl}
+                            alt={`${asset.name} logo`}
+                            width={28}
+                            height={28}
+                            className="h-7 w-7"
+                          />
+                          <div>
+                            <p className="text-sm font-bold text-slate-900">
+                              {asset.symbol}
+                            </p>
+                            <p className="text-xs text-slate-500">
+                              {asset.name}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span
+                          className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${stateColor(
+                            asset.state
+                          )}`}
+                        >
+                          {asset.state} · {stateLabel(asset.state)}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-slate-700">
+                        {asset.since}
+                      </td>
+                      <td className="px-6 py-4 text-sm text-slate-700">
+                        <ul className="space-y-1">
+                          {asset.flips.length === 0 ? (
+                            <li className="text-slate-400">No recent flips</li>
+                          ) : (
+                            asset.flips.map((f, i) => (
+                              <li key={i}>
+                                {f.date}: {f.from} → {f.to}
+                              </li>
+                            ))
+                          )}
+                        </ul>
+                      </td>
+                      <td className="px-6 py-4 text-sm text-slate-700">
+                        {asset.confidence}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </section>
 
         <section className="mx-auto max-w-6xl px-4 py-10">
@@ -336,9 +304,8 @@ export default function CFOLineDashboardPage() {
               </li>
             </ul>
             <p className="mt-6 text-sm leading-6 text-slate-600">
-              In the live version, each asset row will link to a detail view
-              with a chart, flip history and a short “why it flipped” summary
-              from the Anny API.
+              Data is provided by the Anny Trade API. This page uses guest
+              endpoints, so no API key is required.
             </p>
           </div>
         </section>
