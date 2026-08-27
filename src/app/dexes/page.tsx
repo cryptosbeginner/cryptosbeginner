@@ -1,210 +1,50 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DexDirectory from "./DexDirectory";
+import { dexDirectoryServices } from "./dex-data";
+import { getDexStats } from "./dex-stats";
 
-export const metadata = {
-  title: "What Are DEXes? On-Chain Trading Basics for 2026",
-  description:
-    "Detailed beginner guide to decentralised exchanges. How DEXes work, AMMs vs order books, risks, meme coin launchpads and safety tips.",
+const siteUrl = "https://www.cryptosbeginner.com";
+
+export const metadata: Metadata = {
+  title: { absolute: "DEX Directory: Fees, Networks & Risks | CryptosBeginner" },
+  description: "Compare decentralized exchanges, aggregators, and atomic-swap services by networks, access model, fees, verification, pros, cons, and official sources, with adjacent prediction-market products labeled separately.",
+  alternates: { canonical: `${siteUrl}/dexes` },
+  openGraph: { title: "DEX Directory: Fees, Networks & Risks | CryptosBeginner", description: "A source-backed DEX directory with comparison filters, fee context, network coverage, risks, and official provider links, plus clearly labeled adjacent market products.", url: `${siteUrl}/dexes`, type: "website" },
 };
 
-export default function DexesPage() {
-  return (
-    <>
-      <Header />
-      <main className="bg-white">
-        {/* Hero */}
-        <section className="bg-slate-50 border-b">
-          <div className="max-w-4xl mx-auto px-4 py-12">
-            <p className="text-sm font-medium text-indigo-600 mb-2">
-              On-chain trading · Updated 2026
-            </p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-              Decentralised Exchanges (DEXes) Explained
-            </h1>
-            <p className="mt-4 text-lg text-slate-700">
-              A decentralised exchange lets you trade directly from your
-              wallet using smart contracts, not a centralised account.
-              Understanding how DEXes work is key to using meme coins,
-              yield strategies and on-chain tools safely.
-            </p>
-          </div>
-        </section>
+const faqs = [
+  { question: "What is a DEX?", answer: "A decentralized exchange is an interface or protocol that lets users trade through blockchain transactions, smart contracts, liquidity pools, order books, or peer-to-peer settlement instead of an internal custodial ledger." },
+  { question: "Are DEXes always no-KYC?", answer: "Many wallet-first DEX flows do not use a conventional exchange account, but a DEX interface, bridge, fiat provider, wallet, token issuer, or jurisdiction can impose separate checks. No account flow is not a promise of legal anonymity." },
+  { question: "What fees should I compare?", answer: "Compare the quoted receive amount, pool or protocol fee, routing or solver economics, network gas, price impact, slippage, and any wallet or bridge costs. A headline fee rarely describes the full execution cost." },
+  { question: "Are DEXes safer than centralized exchanges?", answer: "Neither label is a universal safety rating. DEX users retain wallet-control responsibilities but face smart-contract, token, oracle, liquidity, MEV, bridge, and transaction-signing risks. Centralized platforms introduce custody and account risks." },
+];
 
-        {/* Hero image */}
-        <section className="max-w-4xl mx-auto px-4 pt-6">
-          <Image
-            src="/images/dexes-hero.png"
-            alt="Illustration of a user trading through a decentralised exchange from their wallet"
-            width={1200}
-            height={630}
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 object-cover"
-            priority
-          />
-        </section>
+export const revalidate = 120;
 
-        {/* What is a DEX */}
-        <section className="max-w-4xl mx-auto px-4 py-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            What is a decentralised exchange?
-          </h2>
-          <p className="mt-4 leading-7 text-slate-700">
-            A decentralised exchange is a protocol that lets people swap
-            crypto assets directly from their own wallets. Instead of
-            sending funds to a company and trading inside its internal
-            ledger, you interact with smart contracts that hold pooled
-            liquidity or on-chain order books. You stay in self custody
-            while trades are settled on the underlying blockchain.
-          </p>
-          <p className="mt-4 leading-7 text-slate-700">
-            The two main designs are automated market maker DEXes, which
-            use formulas to price swaps from token pools, and order book
-            DEXes, which store limit orders and match them on-chain.
-            Both types rely on other users or market makers supplying
-            liquidity for you to trade against.
-          </p>
-        </section>
+export default async function DexesPage() {
+  const serviceModelCount = new Set(dexDirectoryServices.map((item) => item.kind)).size;
+  const stats = await getDexStats(dexDirectoryServices);
+  const jsonLd = { "@context": "https://schema.org", "@graph": [
+    { "@type": "CollectionPage", "@id": `${siteUrl}/dexes#webpage`, url: `${siteUrl}/dexes`, name: "DEX Directory: Fees, Networks & Risks", description: metadata.description, isPartOf: { "@id": `${siteUrl}/#website` } },
+    { "@type": "ItemList", "@id": `${siteUrl}/dexes#list`, name: "Decentralized exchange, swap, and adjacent market directory", numberOfItems: dexDirectoryServices.length, itemListElement: dexDirectoryServices.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}/dexes/${item.slug}` })) },
+    { "@type": "BreadcrumbList", "@id": `${siteUrl}/dexes#breadcrumbs`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "DEXes", item: `${siteUrl}/dexes` }] },
+    { "@type": "FAQPage", "@id": `${siteUrl}/dexes#faq`, mainEntity: faqs.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) },
+  ] };
 
-        {/* How DEXes work */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            How a DEX works step by step
-          </h2>
-          <div className="mt-4 grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Liquidity pools and AMMs
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                On an AMM DEX, pairs like ETH/USDC live in liquidity
-                pools. Liquidity providers deposit both tokens and earn
-                fees when traders swap. A pricing formula adjusts the
-                pool price as trades change each token’s balance.
-              </p>
-              <p className="mt-3 leading-7 text-slate-700">
-                You connect your wallet, choose a pair, enter the amount
-                and sign a transaction. The contract pulls your input
-                token, returns the output token and updates the pool.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Order books and on-chain matching
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                Some DEXes use on-chain order books. You place a limit
-                order specifying price and size, and the protocol matches
-                you with other orders. This feels closer to a
-                centralised exchange experience but relies on on-chain
-                matching engines instead of internal databases.
-              </p>
-            </div>
-          </div>
+  return <><Header /><main className="bg-white">
+    <section className="overflow-hidden bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">On-chain trading · source-backed directory</p><h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">Compare DEXes without comparing apples to order books.</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">Explore wallet-first DEXes, route aggregators, and peer-to-peer atomic-swap services. One explicitly labeled prediction-market profile is included for adjacent research; it is not presented as a token-swap DEX. Compare networks, fee mechanics, access model, and trade-offs before connecting a wallet or signing a transaction.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#directory" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-lime-200">Browse {dexDirectoryServices.length} listings</a><Link href="/exchanges/no-kyc" className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-lime-300 hover:text-lime-300">Open no-KYC guide</Link></div></div><div className="mt-12 grid max-w-4xl gap-4 sm:grid-cols-3"><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">{dexDirectoryServices.length}</p><p className="mt-1 text-sm text-slate-300">directory listings</p></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">{serviceModelCount}</p><p className="mt-1 text-sm text-slate-300">service models</p></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">0</p><p className="mt-1 text-sm text-slate-300">personal recommendations</p></div></div></div></section>
 
-          {/* Diagram image */}
-          <div className="mt-8">
-            <Image
-              src="/images/dexes-flow-diagram.png"
-              alt="Diagram showing the flow of a swap on a decentralised exchange from wallet to smart contract and liquidity pool"
-              width={1200}
-              height={800}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 object-cover"
-            />
-          </div>
-        </section>
+    <section id="directory" className="scroll-mt-20"><DexDirectory services={dexDirectoryServices} mode="dex" stats={stats} /></section>
 
-        {/* Why use DEXes */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Why traders use DEXes
-          </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
-            <li>
-              Self custody. You keep control of your keys and funds at
-              all times.
-            </li>
-            <li>
-              Permissionless listings. New tokens can trade as soon as a
-              pool exists, without a central listing process.
-            </li>
-            <li>
-              Composability. DEXes plug into wallets, aggregators,
-              launchpads and yield protocols.
-            </li>
-            <li>
-              Global access. If you can connect a wallet, you can
-              usually trade, regardless of local exchange access.
-            </li>
-          </ul>
-        </section>
+    <section className="border-y border-slate-200 bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-700">How to read a DEX listing</p><h2 className="mt-3 text-3xl font-black text-slate-950">The cheapest-looking route is not always the cheapest execution.</h2><p className="mt-4 text-base leading-8 text-slate-600">A DEX comparison needs more than a protocol name. The route can combine a pool fee, aggregator or solver economics, network gas, price impact, slippage, wallet approvals, and sometimes a bridge or fiat provider. We keep those layers visible instead of presenting one universal “trading fee.”</p></div><div className="mt-8 grid gap-5 md:grid-cols-3"><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">Wallet-first DEXes</h3><p className="mt-3 text-sm leading-7 text-slate-600">A wallet signs the transaction and the selected contract executes it. You keep custody, but you also own the responsibility for approvals, network choice, token contracts, and settlement.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">Aggregators</h3><p className="mt-3 text-sm leading-7 text-slate-600">Aggregators search across venues or liquidity sources. They can make route discovery easier, yet a better route still depends on the quote, gas, slippage, and asset risk.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">P2P and atomic swaps</h3><p className="mt-3 text-sm leading-7 text-slate-600">These services coordinate users, escrow, or cryptographic settlement rather than a familiar AMM screen. Offers, payment rails, counterparties, and software setup affect the result.</p></article></div></div></section>
 
-        {/* Risks */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Risks and what can go wrong
-          </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
-            <li>
-              Smart contract bugs and exploits that drain pools or lock
-              funds.
-            </li>
-            <li>
-              Liquidity manipulation, thin pools and slippage on large
-              orders.
-            </li>
-            <li>
-              Sandwich attacks and other MEV behaviour that worsen fill
-              prices.
-            </li>
-            <li>
-              Rug pulls, where creators yank liquidity from meme coin
-              pools and leave buyers unable to sell.
-            </li>
-          </ul>
-        </section>
+    <section className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-700">Risk checklist</p><h2 className="mt-3 text-3xl font-black text-slate-950">Before you connect a wallet</h2><div className="mt-6 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl border border-slate-200 p-5"><h3 className="font-black text-slate-950">Verify the transaction</h3><p className="mt-2 text-sm leading-6 text-slate-600">Check the domain, contract, recipient, network, token address, allowance, slippage, and final receive amount.</p></div><div className="rounded-2xl border border-slate-200 p-5"><h3 className="font-black text-slate-950">Start with a test</h3><p className="mt-2 text-sm leading-6 text-slate-600">Use a small amount first, especially with a new pool, bridge, token, P2P counterparty, or unfamiliar signing prompt.</p></div><div className="rounded-2xl border border-slate-200 p-5"><h3 className="font-black text-slate-950">Separate custody from protocol risk</h3><p className="mt-2 text-sm leading-6 text-slate-600">Self-custody can reduce custodial exposure but does not remove smart-contract, liquidity, oracle, bridge, or operational risk.</p></div><div className="rounded-2xl border border-slate-200 p-5"><h3 className="font-black text-slate-950">Keep records</h3><p className="mt-2 text-sm leading-6 text-slate-600">Save transaction hashes, quotes, fees, and local tax records. KYC status does not remove reporting or legal obligations.</p></div></div></section>
 
-        {/* Meme launchpads and terminals */}
-        <section className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            DEXes, meme coin launchpads and trading terminals
-          </h2>
-          <p className="mt-4 leading-7 text-slate-700">
-            Modern meme ecosystems tie launchpads, DEXes and trading
-            terminals together. Pump.fun is a Solana memecoin launchpad
-            where tokens start on a bonding curve and graduate to DEX
-            trading once they hit a threshold, which moves liquidity to
-            pools on platforms like Raydium.
-          </p>
-          <p className="mt-4 leading-7 text-slate-700">
-            Padre, now branded Terminal after its acquisition by
-            Pump.fun, offers a multi-chain trading terminal that routes
-            orders across Solana, Ethereum, Base and BNB Chain, giving
-            meme traders a faster interface over DEX liquidity.
-          </p>
-          <p className="mt-4 leading-7 text-slate-700">
-            Tools such as GMGN.ai scan launchpads including Pump.fun and
-            other platforms, track smart wallets and provide one-click
-            trading across DEXes and new listings.
-          </p>
-          <p className="mt-4 leading-7 text-slate-700">
-            Use this page together with our meme coins, wallets and
-            incidents guides before connecting a wallet to any new
-            protocol.
-          </p>
-        </section>
+    <section className="bg-slate-950 text-white"><div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.2em] text-lime-300">FAQ</p><h2 className="mt-3 text-3xl font-black">DEX questions, answered plainly</h2><div className="mt-6 divide-y divide-white/10 rounded-3xl border border-white/10 bg-white/5">{faqs.map((item) => <details key={item.question} className="group p-5"><summary className="cursor-pointer list-none pr-8 font-bold text-white">{item.question}<span className="float-right text-lime-300 transition group-open:rotate-45">＋</span></summary><p className="mt-3 text-sm leading-7 text-slate-300">{item.answer}</p></details>)}</div></div></section>
 
-        <section className="bg-slate-50 border-t">
-          <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
-            <p>
-              Educational content only. Not financial advice. Test small
-              trades first and treat new DEXes and meme coin pools as
-              high risk until you understand them fully.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+    <section className="border-t border-slate-200 bg-slate-50"><div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-600 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"><p>Educational comparison only. Provider terms, fees, availability, and token lists can change.</p><div className="flex flex-wrap gap-4"><Link href="/exchanges/no-kyc" className="font-bold text-indigo-700">No-KYC exchanges</Link><Link href="/crypto-cards" className="font-bold text-indigo-700">Prepaid crypto cards</Link></div></div></section>
+  </main><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><Footer /></>;
 }
