@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 import { getCfoLineDashboardData, type AssetCFO } from "@/lib/anny-cfo-line";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
@@ -52,15 +51,6 @@ function stateLabel(state: AssetCFO["state"]) {
   if (state === "Accumulate") return "Strength";
   if (state === "Wait") return "Neutral";
   return "Weakness";
-}
-
-function CryptoLogo({ symbol }: { symbol: string }) {
-  // Simple text fallback if image fails
-  return (
-    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[10px] font-black text-slate-700">
-      {symbol.slice(0, 3)}
-    </div>
-  );
 }
 
 export default async function CFOLineDashboardPage() {
@@ -224,14 +214,13 @@ export default async function CFOLineDashboardPage() {
                   <tr key={asset.symbol} className="hover:bg-slate-50">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <Image
+                        <img
                           src={asset.logoUrl}
                           alt={`${asset.name} logo`}
                           width={28}
                           height={28}
                           className="h-7 w-7"
                           onError={(e) => {
-                            // Fallback to text logo if image fails
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
                             const wrapper = target.parentElement;
