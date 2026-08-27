@@ -54,6 +54,15 @@ function stateLabel(state: AssetCFO["state"]) {
   return "Weakness";
 }
 
+function CryptoLogo({ symbol }: { symbol: string }) {
+  // Simple text fallback if image fails
+  return (
+    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[10px] font-black text-slate-700">
+      {symbol.slice(0, 3)}
+    </div>
+  );
+}
+
 export default async function CFOLineDashboardPage() {
   const assets = await getCfoLineDashboardData();
 
@@ -221,6 +230,19 @@ export default async function CFOLineDashboardPage() {
                           width={28}
                           height={28}
                           className="h-7 w-7"
+                          onError={(e) => {
+                            // Fallback to text logo if image fails
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
+                            const wrapper = target.parentElement;
+                            if (wrapper && !wrapper.querySelector(".logo-fallback")) {
+                              const fallback = document.createElement("div");
+                              fallback.className =
+                                "logo-fallback flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-[10px] font-black text-slate-700";
+                              fallback.textContent = asset.symbol.slice(0, 3);
+                              wrapper.insertBefore(fallback, target.nextSibling);
+                            }
+                          }}
                         />
                         <div>
                           <p className="text-sm font-bold text-slate-900">
