@@ -37,11 +37,15 @@ export default function CardDetail({ card }: { card: CardListing }) {
     "Current terms should be checked before funding or applying",
   ];
   const featureTags = card.featureTags ?? [card.network, ...card.cardFormats.slice(0, 2), card.categories[0]];
+  const featuredQuestion = card.referralUrl ? `Why is ${card.name} featured in this directory?` : `What should I verify before choosing ${card.name}?`;
+  const featuredAnswer = card.referralUrl
+    ? `${card.name} is featured because its published product model and current provider information give readers a useful starting point for researching ${card.bestFor.toLowerCase()}. This page also includes a clearly disclosed referral link; using it is optional and does not guarantee approval, pricing, rewards, security, availability, or suitability.`
+    : `Check the provider’s current country eligibility, issuer, verification process, funding route, complete fee schedule, limits, and tax treatment before making your own decision. This profile is educational comparison content, not a personal recommendation.`;
   const faqs = [
     { question: `What does ${card.name} cost?`, answer: `${card.pricing} Provider fees and regional terms can change, so use the linked fee details before applying.` },
     { question: `How is ${card.name} funded?`, answer: card.funding },
     { question: `Where is ${card.name} available?`, answer: card.availability },
-    { question: `Does CryptosBeginner recommend ${card.name}?`, answer: "No. This is a source-backed comparison profile, not a personalized financial recommendation or guarantee of approval, rewards, security, or suitability." },
+    { question: featuredQuestion, answer: featuredAnswer },
   ];
   return (
     <main className="min-h-screen bg-[#f7f7fb] text-slate-950">
