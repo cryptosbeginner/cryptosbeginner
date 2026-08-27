@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Seed phrase safety rules</title>
+  <desc id="desc">Write the phrase offline, never share it, never type it into a website, and test a restore.</desc>
+  <rect width="1200" height="420" fill="#f8fafc"/>
+  <text x="48" y="58" fill="#0f172a" font-family="Georgia, serif" font-size="32" font-weight="700">Seed phrase rules that actually matter</text>
+  <g font-family="Arial, sans-serif" font-size="18">
+    <rect x="48" y="100" width="260" height="250" rx="20" fill="#dcfce7"/>
+    <text x="72" y="150" fill="#166534" font-size="22" font-weight="700">Write it offline</text>
+    <text x="72" y="190" fill="#14532d">Paper or metal.</text>
+    <text x="72" y="216" fill="#14532d">Never a screenshot.</text>
+    <rect x="328" y="100" width="260" height="250" rx="20" fill="#fee2e2"/>
+    <text x="352" y="150" fill="#991b1b" font-size="22" font-weight="700">Never share</text>
+    <text x="352" y="190" fill="#7f1d1d">Support will not ask</text>
+    <text x="352" y="216" fill="#7f1d1d">for your 12 words.</text>
+    <rect x="608" y="100" width="260" height="250" rx="20" fill="#ffedd5"/>
+    <text x="632" y="150" fill="#9a3412" font-size="22" font-weight="700">No websites</text>
+    <text x="632" y="190" fill="#7c2d12">Do not type it into</text>
+    <text x="632" y="216" fill="#7c2d12">a form or chat.</text>
+    <rect x="888" y="100" width="260" height="250" rx="20" fill="#e0e7ff"/>
+    <text x="912" y="150" fill="#3730a3" font-size="22" font-weight="700">Test restore</text>
+    <text x="912" y="190" fill="#312e81">A backup you never</text>
+    <text x="912" y="216" fill="#312e81">tested is a hope.</text>
+  </g>
+</svg>
