@@ -10,6 +10,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
       { label: "Exchange Finder", href: "/tools/exchange-finder" },
       { label: "Crypto Cards", href: "/crypto-cards" },
       { label: "No-KYC Exchanges", href: "/exchanges/no-kyc" },
+      { label: "Prediction Markets", href: "/prediction-markets" },
       { label: "Regions", href: "/regions" },
     ],
   },

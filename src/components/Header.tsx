@@ -15,6 +15,7 @@ const navGroups: NavGroup[] = [
       { label: "Exchange Finder", href: "/tools/exchange-finder", note: "Answer a few questions" },
       { label: "Crypto Cards", href: "/crypto-cards", note: "31 cards, fees and regions" },
       { label: "No-KYC Exchanges", href: "/exchanges/no-kyc", note: "Verification and limitations" },
+      { label: "Prediction Markets", href: "/prediction-markets", note: "Outcome shares and rules" },
     ],
   },
   {

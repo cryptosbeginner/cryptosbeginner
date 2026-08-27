@@ -834,9 +834,9 @@ export const dexServices: DexService[] = [
 for (const item of dexServices) item.faqs = faq(item);
 
 export const dexServicesBySlug = new Map(dexServices.map((item) => [item.slug, item]));
-export const dexDirectoryServices = dexServices.filter((item) => item.isDex || item.kind === "aggregator" || item.kind === "prediction-market");
+export const dexDirectoryServices = dexServices.filter((item) => item.isDex || item.kind === "aggregator");
 export const noKycDirectoryServices = dexServices.filter((item) => item.isNoKycCandidate || (item.isKycConditional && !item.isDex));
-export const dexDetailSlugs = dexServices.filter((item) => item.isDex || item.kind === "prediction-market").map((item) => item.slug);
+export const dexDetailSlugs = dexServices.filter((item) => item.isDex).map((item) => item.slug);
 export const noKycDetailSlugs = noKycDirectoryServices.map((item) => item.slug);
 
 export function getDexService(slug: string) {

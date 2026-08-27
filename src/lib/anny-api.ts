@@ -123,7 +123,7 @@ export async function fetchCFOAssets(
   assets: string[] = DEFAULT_ASSETS
 ): Promise<AssetCFO[]> {
   const results = await Promise.all(
-    assets.map(async (asset) => {
+    assets.map(async (asset): Promise<AssetCFO | null> => {
       try {
         const [cfo, flips] = await Promise.all([
           fetchCFOLineForAsset({ asset }),
@@ -150,5 +150,9 @@ export async function fetchCFOAssets(
     })
   );
 
-  return results.filter((r): r is AssetCFO => r !== null);
+  const validResults: AssetCFO[] = [];
+  for (const result of results) {
+    if (result !== null) validResults.push(result);
+  }
+  return validResults;
 }

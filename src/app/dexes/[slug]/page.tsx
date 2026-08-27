@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DexDetail from "../DexDetail";
@@ -11,7 +11,7 @@ const siteUrl = "https://www.cryptosbeginner.com";
 export const revalidate = 120;
 
 export function generateStaticParams() {
-  return dexServices.filter((service) => service.isDex || service.kind === "prediction-market").map((service) => ({ slug: service.slug }));
+  return dexServices.filter((service) => service.isDex).map((service) => ({ slug: service.slug }));
 }
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -34,8 +34,9 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
 
 export default async function DexDetailRoute({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "limitless") redirect("/prediction-markets/limitless");
   const service = getDexService(slug);
-  if (!service || (!service.isDex && service.kind !== "prediction-market")) notFound();
+  if (!service || !service.isDex) notFound();
   const canonical = `${siteUrl}/dexes/${service.slug}`;
   const stats = await getDexStatsForService(service);
   const jsonLd = {
