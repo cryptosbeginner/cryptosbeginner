@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import {
   wallets,
   categoryLabels,
@@ -69,15 +70,13 @@ export default function WalletExplorer() {
                   >
                     {wallet.mark}
                   </div>
-                  <img
+                  <Image
                     src={wallet.image}
                     alt={`${wallet.name} logo`}
-                    width={48}
-                    height={48}
-                    className="absolute inset-0 h-12 w-12 object-contain p-1 bg-white"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
+                    fill
+                    sizes="48px"
+                    className="object-contain p-1"
+                    unoptimized
                   />
                 </div>
                 <div>
