@@ -1,229 +1,46 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import DexDirectory from "@/app/dexes/DexDirectory";
+import { noKycDirectoryServices } from "@/app/dexes/dex-data";
 
-export const metadata = {
-  title: "No-KYC Crypto Exchanges 2026: Privacy, Options and Risks",
-  description:
-    "Beginner guide to No-KYC crypto exchanges in 2026. DEXes, P2P and limited no-KYC tiers on CEXes, with pros, cons and safety tips.",
+const siteUrl = "https://www.cryptosbeginner.com";
+const faqs = [
+  { question: "What does no-KYC mean here?", answer: "It describes a provider-stated or observed access path that does not start with the conventional identity-document workflow. It does not guarantee anonymity, permanent access, zero monitoring, or exemption from local law." },
+  { question: "Are DEXes and no-KYC exchanges the same?", answer: "No. A DEX usually uses a wallet and smart contracts, while a no-KYC exchange can also mean a P2P market, an instant-swap service, or a limited account tier. Their custody, settlement, liquidity, and counterparty risks differ." },
+  { question: "Can a no-KYC service ask for documents later?", answer: "Yes. A provider, payment counterparty, asset route, jurisdiction, volume threshold, refund, or AML review can trigger additional information requests. Check the current terms before depositing or sending funds." },
+  { question: "Do no-KYC services remove tax or legal obligations?", answer: "No. KYC status does not determine whether a transaction is taxable, lawful, reportable, or suitable for your situation. Keep records and follow the rules that apply where you live." },
+];
+
+export const metadata: Metadata = {
+  title: { absolute: "No-KYC Exchange Directory: Access, Fees & Risks | CryptosBeginner" },
+  description: "Compare DEXes, P2P markets, instant swaps, and KYC-conditional services by access model, fees, networks, verification, trade-offs, and official sources.",
+  alternates: { canonical: `${siteUrl}/exchanges/no-kyc` },
+  openGraph: { title: "No-KYC Exchange Directory: Access, Fees & Risks | CryptosBeginner", description: "A source-backed no-KYC exchange directory with transparent access labels, fee context, risk notes, and official provider links.", url: `${siteUrl}/exchanges/no-kyc`, type: "website" },
 };
 
 export default function NoKycExchangesPage() {
-  return (
-    <>
-      <Header />
-      <main className="bg-white">
-        {/* Hero */}
-        <section className="bg-slate-50 border-b">
-          <div className="max-w-4xl mx-auto px-4 py-12">
-            <p className="text-sm font-medium text-indigo-600 mb-2">
-              Exchanges · No-KYC · Updated 2026
-            </p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-              No-KYC Crypto Exchanges: What They Are and How to Use Them
-            </h1>
-            <p className="mt-4 text-lg text-slate-700">
-              No-KYC exchanges let you trade without uploading ID. That can
-              mean more privacy and faster access, but also higher legal and
-              platform risk. This page explains the main options and what to
-              watch for before you trust them.
-            </p>
-          </div>
-        </section>
+  const jsonLd = { "@context": "https://schema.org", "@graph": [
+    { "@type": "CollectionPage", "@id": `${siteUrl}/exchanges/no-kyc#webpage`, url: `${siteUrl}/exchanges/no-kyc`, name: "No-KYC Exchange Directory: Access, Fees & Risks", description: metadata.description, isPartOf: { "@id": `${siteUrl}/#website` } },
+    { "@type": "ItemList", "@id": `${siteUrl}/exchanges/no-kyc#list`, name: "No-KYC exchange and service directory", numberOfItems: noKycDirectoryServices.length, itemListElement: noKycDirectoryServices.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}/${item.isDex ? "dexes" : "exchanges/no-kyc"}/${item.slug}` })) },
+    { "@type": "BreadcrumbList", "@id": `${siteUrl}/exchanges/no-kyc#breadcrumbs`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: siteUrl }, { "@type": "ListItem", position: 2, name: "No-KYC Exchanges", item: `${siteUrl}/exchanges/no-kyc` }] },
+    { "@type": "FAQPage", "@id": `${siteUrl}/exchanges/no-kyc#faq`, mainEntity: faqs.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) },
+  ] };
 
-        {/* TL;DR */}
-        <section className="max-w-4xl mx-auto px-4 py-10">
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
-            <h2 className="text-xl font-bold text-emerald-900 mb-3">TL;DR</h2>
-            <ul className="space-y-2 text-slate-800 text-sm">
-              <li>
-                No-KYC options include DEXes, instant swap services, P2P
-                platforms and limited no-KYC tiers on some centralised
-                exchanges.
-              </li>
-              <li>
-                Pros: more privacy, less data stored, faster onboarding.
-                Cons: higher scam risk, limited fiat rails, unstable limits.
-              </li>
-              <li>
-                Use No-KYC exchanges for specific tasks, not as your main
-                home for large savings.
-              </li>
-              <li>
-                Combine regulated exchanges for fiat with DEXes and P2P for
-                on-chain flexibility.
-              </li>
-            </ul>
-          </div>
-        </section>
+  return <><Header /><main className="bg-white">
+    <section className="bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">Privacy-aware comparison · source-backed directory</p><h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">No-KYC does not mean no questions.</h1><p className="mt-5 text-lg leading-8 text-slate-300">Compare wallet-first DEXes, P2P markets, atomic-swap protocols, and instant-swap services by what their public information actually says about access, verification, fees, and settlement.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#directory" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-lime-200">Browse {noKycDirectoryServices.length} services</a><Link href="/crypto-cards" className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-lime-300 hover:text-lime-300">Compare prepaid cards</Link></div></div></div></section>
 
-        {/* What No-KYC means */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            What does “No-KYC” actually mean?
-          </h2>
-          <p className="mt-4 leading-7 text-slate-700">
-            KYC stands for “Know Your Customer”. Regulated exchanges collect
-            ID documents, addresses and other personal details before letting
-            you trade or withdraw. No-KYC exchanges skip that step. You can
-            trade or swap without submitting ID.
-          </p>
-          <p className="mt-4 leading-7 text-slate-700">
-            In practice, some platforms never ask for registration at all,
-            some allow a small tier of trading and withdrawals without KYC,
-            and decentralised exchanges simply connect to your wallet and
-            have no concept of identity checks.
-          </p>
-        </section>
+    <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8"><div className="rounded-3xl border border-amber-200 bg-amber-50 p-6"><p className="text-xs font-black uppercase tracking-[0.2em] text-amber-800">Important boundary</p><p className="mt-3 text-base leading-8 text-amber-950">This directory does not certify anonymity, legality, safety, or permanent no-KYC access. “No account,” “no ID in the reviewed flow,” “provider-stated no verification,” and “KYC may apply” are different labels. Providers can change policies or respond to transaction-specific risks.</p></div></section>
 
-        {/* Types */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Main types of No-KYC exchanges
-          </h2>
-          <div className="mt-4 grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Decentralised exchanges (DEXes)
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                DEXes such as Uniswap or PancakeSwap let you swap tokens
-                directly from self-custody wallets. There is no account and
-                no ID collection. You sign transactions in your wallet, pay
-                network fees and stay in control of keys.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Instant swap services
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                Swap services accept one coin at a deposit address and send
-                another coin to the address you specify. Many let you swap
-                without creating an account, though large volumes may trigger
-                checks or limits.
-              </p>
-            </div>
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Peer-to-peer platforms
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                P2P platforms let users post offers and trade directly under
-                escrow. The platform itself may not require ID, but specific
-                merchants can ask for documents. These services favour
-                privacy but are slower and often have higher premiums.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Limited No-KYC tiers on CEXes
-              </h3>
-              <p className="mt-3 leading-7 text-slate-700">
-                Some centralised exchanges allow small deposits and
-                withdrawals without ID, then require full KYC above certain
-                limits or for fiat access. They feel private but still log
-                device and network data and can change limits quickly.
-              </p>
-            </div>
-          </div>
-        </section>
+    <section className="border-y border-slate-200 bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-700">How to compare</p><h2 className="mt-3 text-3xl font-black text-slate-950">Four access models, four different risk profiles.</h2></div><div className="mt-8 grid gap-5 md:grid-cols-4"><article className="rounded-3xl border border-slate-200 bg-white p-5"><h3 className="font-black text-slate-950">Wallet-first DEX</h3><p className="mt-3 text-sm leading-7 text-slate-600">Smart contracts and a connected wallet replace a standard account, but you control approvals and transaction signing.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-5"><h3 className="font-black text-slate-950">P2P market</h3><p className="mt-3 text-sm leading-7 text-slate-600">Offers, payment methods, escrow, and counterparties determine the practical experience.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-5"><h3 className="font-black text-slate-950">Instant swap</h3><p className="mt-3 text-sm leading-7 text-slate-600">A deposit address and quote simplify the flow; the provider can still run policy or AML checks.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-5"><h3 className="font-black text-slate-950">Conditional access</h3><p className="mt-3 text-sm leading-7 text-slate-600">Some routes begin without documents but can require information for limits, refunds, or compliance review.</p></article></div></div></section>
 
-        {/* Pros and cons */}
-        <section className="max-w-4xl mx-auto px-4 pb-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            Pros and cons of No-KYC exchanges
-          </h2>
-          <div className="mt-4 grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">Pros</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
-                <li>More privacy and less personal data stored.</li>
-                <li>Faster onboarding and fewer support delays.</li>
-                <li>
-                  Useful when sharing ID with offshore platforms is hard or
-                  risky.
-                </li>
-                <li>
-                  Straightforward crypto-to-crypto trades for people who
-                  already hold coins.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">Cons</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-700">
-                <li>Limited or no fiat on-ramps.</li>
-                <li>Higher scam and operational risk.</li>
-                <li>Withdrawal caps and policy changes can appear suddenly.</li>
-                <li>
-                  Unclear legal recourse if funds are frozen or lost.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+    <section id="directory" className="scroll-mt-20"><DexDirectory services={noKycDirectoryServices} mode="no-kyc" /></section>
 
-        {/* Practical use */}
-        <section className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-semibold text-slate-900">
-            How to use No-KYC exchanges wisely
-          </h2>
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-700">
-            <li>
-              Treat No-KYC platforms as tools for specific tasks, not as your
-              main long-term home for funds.
-            </li>
-            <li>
-              Use DEXes for on-chain swaps when you already hold coins and
-              understand fees and slippage.
-            </li>
-            <li>
-              Use reputable P2P markets only after reading guides and starting
-              with tiny test trades.
-            </li>
-            <li>
-              Check withdrawal limits and terms before depositing on any
-              centralised No-KYC tier.
-            </li>
-            <li>
-              Keep savings on hardware wallets and follow local tax rules
-              regardless of KYC status.
-            </li>
-          </ol>
-          <p className="mt-4 text-sm leading-7 text-slate-700">
-            For more context, combine this page with our{" "}
-            <Link
-              href="/learn/crypto-exchange-security-checklist"
-              className="text-indigo-700"
-            >
-              security checklist
-            </Link>{" "}
-            and{" "}
-            <Link
-              href="/security/exchange-incidents"
-              className="text-indigo-700"
-            >
-              incidents timeline
-            </Link>
-            .
-          </p>
-        </section>
+    <section className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-700">Before using one</p><h2 className="mt-3 text-3xl font-black text-slate-950">A practical pre-trade checklist</h2><ol className="mt-6 grid gap-4 sm:grid-cols-2"><li className="rounded-2xl border border-slate-200 p-5 text-sm leading-7 text-slate-600"><b className="text-slate-950">1. Check the real domain.</b> Use the provider’s official link and verify the network before connecting a wallet.</li><li className="rounded-2xl border border-slate-200 p-5 text-sm leading-7 text-slate-600"><b className="text-slate-950">2. Compare the final amount.</b> Include service, pool, route, spread, gas, slippage, and payment-rail costs.</li><li className="rounded-2xl border border-slate-200 p-5 text-sm leading-7 text-slate-600"><b className="text-slate-950">3. Understand custody.</b> Determine whether you sign from your own wallet, fund escrow, or send to a provider-controlled address.</li><li className="rounded-2xl border border-slate-200 p-5 text-sm leading-7 text-slate-600"><b className="text-slate-950">4. Keep records.</b> Save quotes, transaction hashes, counterparties, and the provider terms in force at the time.</li></ol></section>
 
-        {/* Disclaimer */}
-        <section className="bg-slate-50 border-t">
-          <div className="max-w-4xl mx-auto px-4 py-8 text-sm text-slate-600">
-            <p>
-              Educational content only. Not legal or financial advice. No-KYC
-              exchanges can be useful but also carry extra risk. Understand
-              your local rules and your own risk tolerance before using them.
-            </p>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+    <section className="bg-slate-950 text-white"><div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8"><p className="text-xs font-black uppercase tracking-[0.2em] text-lime-300">FAQ</p><h2 className="mt-3 text-3xl font-black">No-KYC questions, answered carefully</h2><div className="mt-6 divide-y divide-white/10 rounded-3xl border border-white/10 bg-white/5">{faqs.map((item) => <details key={item.question} className="group p-5"><summary className="cursor-pointer list-none pr-8 font-bold text-white">{item.question}<span className="float-right text-lime-300 transition group-open:rotate-45">＋</span></summary><p className="mt-3 text-sm leading-7 text-slate-300">{item.answer}</p></details>)}</div></div></section>
+
+    <section className="border-t border-slate-200 bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"><p className="text-sm leading-6 text-slate-600">Educational comparison only. KYC, AML, limits, fees, availability, taxes, and legal obligations vary by provider, asset, transaction, and jurisdiction.</p></div></section>
+  </main><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><Footer /></>;
 }
