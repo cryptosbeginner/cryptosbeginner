@@ -24,5 +24,5 @@ export default async function CryptoCardDetailPage({ params }: Props) {
   const card = getCardBySlug(decodeURIComponent(slug));
   if (!card) notFound();
   const pageUrl = `${SITE_URL}/crypto-cards/${encodeURIComponent(card.slug)}`;
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", url: pageUrl, name: `${card.name}: Fees, Regions & Card Details`, description: `Source-backed educational profile for ${card.name}.`, dateModified: card.reviewedAt, isPartOf: { "@type": "CollectionPage", name: "Crypto Cards Directory", url: `${SITE_URL}/crypto-cards` }, about: { "@type": "Thing", name: card.name } }) }} /><Header /><CardDetail card={card} /><Footer /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", url: pageUrl, name: `${card.name}: Fees, Regions & Card Details`, description: `Source-backed educational profile for ${card.name}.`, datePublished: "2026-08-25", dateModified: card.reviewedAt, isPartOf: { "@type": "CollectionPage", name: "Crypto Cards Directory", url: `${SITE_URL}/crypto-cards` }, about: { "@type": "Thing", name: card.name } }) }} /><Header /><CardDetail card={card} /><Footer /></>;
 }

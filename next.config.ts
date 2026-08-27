@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "static.wixstatic.com" },
       { protocol: "https", hostname: "content.nexo.com" },
       { protocol: "https", hostname: "ledger.com" },
+      { protocol: "https", hostname: "staticsource1.redotpay.com" },
+      { protocol: "https", hostname: "cdn.prod.website-files.com" },
+      { protocol: "https", hostname: "kardpay.app" },
+      { protocol: "https", hostname: "web3.bitget.com" },
+      { protocol: "https", hostname: "www.bybit.com" },
     ],
   },
 };
