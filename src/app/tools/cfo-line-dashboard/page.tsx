@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const UPDATED = "2026-08-27";
 
 export const metadata: Metadata = {
-  title: "CFO Line Dashboard | Crypto Regime Map",
+  title:
+    "CFO Line Dashboard – Crypto Regime Map (Accumulate, Wait, Distribute)",
   description:
-    "See which major crypto assets are in Accumulate, Wait or Distribute according to the CFO Line indicator. Educational, not financial advice.",
+    "See which crypto assets are in Accumulate, Wait or Distribute according to the CFO Line indicator. Educational, not financial advice.",
+  keywords:
+    "CFO Line, crypto regime map, Accumulate Wait Distribute, crypto indicator, Bitcoin, Ethereum, Solana, crypto signals",
+  authors: [{ name: "Crypto's Beginner" }],
   alternates: {
     canonical: `${SITE_URL}/tools/cfo-line-dashboard`,
   },
   openGraph: {
-    title: "CFO Line Dashboard",
+    title: "CFO Line Dashboard – Crypto Regime Map",
     description:
       "Crypto regime map: Accumulate, Wait and Distribute states for BTC, ETH, SOL and more.",
     url: `${SITE_URL}/tools/cfo-line-dashboard`,
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/og-cfo-line-dashboard.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "CFO Line Dashboard preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CFO Line Dashboard – Crypto Regime Map",
+    description:
+      "Crypto regime map: Accumulate, Wait and Distribute states for BTC, ETH, SOL and more.",
+    images: [`${SITE_URL}/og-cfo-line-dashboard.jpg`],
   },
 };
 
@@ -30,8 +50,10 @@ type AssetCFO = {
   since: string;
   flips: { from: AssetState; to: AssetState; date: string }[];
   confidence: "Low" | "Medium" | "High" | "Very High";
+  logo: string; // e.g. "/logos/btc.svg"
 };
 
+// Demo data with logos. Replace with real Anny API data in a follow-up.
 const demoAssets: AssetCFO[] = [
   {
     symbol: "BTC",
@@ -43,6 +65,7 @@ const demoAssets: AssetCFO[] = [
       { from: "Distribute", to: "Wait", date: "2026-07-22" },
     ],
     confidence: "High",
+    logo: "/logos/btc.svg",
   },
   {
     symbol: "ETH",
@@ -54,6 +77,7 @@ const demoAssets: AssetCFO[] = [
       { from: "Wait", to: "Accumulate", date: "2026-07-30" },
     ],
     confidence: "Medium",
+    logo: "/logos/eth.svg",
   },
   {
     symbol: "SOL",
@@ -65,6 +89,7 @@ const demoAssets: AssetCFO[] = [
       { from: "Accumulate", to: "Wait", date: "2026-08-05" },
     ],
     confidence: "Low",
+    logo: "/logos/sol.svg",
   },
 ];
 
@@ -111,6 +136,39 @@ export default function CFOLineDashboardPage() {
       inLanguage: "en",
       dateModified: UPDATED,
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the CFO Line?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "The CFO Line is a trend and momentum indicator that labels each asset as Accumulate, Wait or Distribute.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Accumulate mean buy?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "No. Accumulate means the indicator sees strength. It is not a direct buy signal.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is this financial advice?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "No. This dashboard is educational only and not financial, legal or tax advice.",
+          },
+        },
+      ],
+    },
   ];
 
   return (
@@ -127,7 +185,7 @@ export default function CFOLineDashboardPage() {
         <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
           <div className="mx-auto max-w-6xl px-4 py-12">
             <p className="text-sm font-medium uppercase tracking-wider text-indigo-300">
-              Tools · Demo
+              Tools · Dashboard
             </p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
               CFO Line Dashboard
@@ -206,10 +264,21 @@ export default function CFOLineDashboardPage() {
                 {demoAssets.map((asset) => (
                   <tr key={asset.symbol} className="hover:bg-slate-50">
                     <td className="px-6 py-4">
-                      <p className="text-sm font-bold text-slate-900">
-                        {asset.symbol}
-                      </p>
-                      <p className="text-xs text-slate-500">{asset.name}</p>
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={asset.logo}
+                          alt={`${asset.name} logo`}
+                          width={28}
+                          height={28}
+                          className="h-7 w-7"
+                        />
+                        <div>
+                          <p className="text-sm font-bold text-slate-900">
+                            {asset.symbol}
+                          </p>
+                          <p className="text-xs text-slate-500">{asset.name}</p>
+                        </div>
+                      </div>
                     </td>
                     <td className="px-6 py-4">
                       <span
