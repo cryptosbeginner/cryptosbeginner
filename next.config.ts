@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "web3.bitget.com" },
       { protocol: "https", hostname: "www.bybit.com" },
       { protocol: "https", hostname: "www.bingcard.com" },
+      { protocol: "https", hostname: "home.kripicard.com" },
     ],
   },
 };
