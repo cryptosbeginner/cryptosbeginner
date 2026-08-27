@@ -18,6 +18,7 @@ export type PredictionPlatform = {
   sourceUrl: string;
   sourceLabel: string;
   imageUrl: string;
+  logoUrl?: string;
   imageAlt: string;
   imageSourceNote: string;
   galleryImages?: { url: string; alt: string; source: string }[];
@@ -55,6 +56,7 @@ export const predictionPlatforms: PredictionPlatform[] = [
     sourceUrl: "https://polymarket.com/",
     sourceLabel: "Polymarket official site",
     imageUrl: "https://mintcdn.com/polymarket-292d1b1b/FOMte3ewbG-LVy3k/images/banner.png?fit=max&auto=format&n=FOMte3ewbG-LVy3k&q=85&s=d83f2f21e8474e998d8ba0f45810d978",
+    logoUrl: "https://polymarket.com/favicon.ico",
     imageAlt: "Polymarket documentation banner showing the platform’s prediction-market developer tools",
     imageSourceNote: "Official Polymarket documentation banner reviewed 27 August 2026; provider visual, not independent evidence of market performance.",
     galleryImages: [{ url: "https://mintcdn.com/polymarket-292d1b1b/FOMte3ewbG-LVy3k/images/core-concepts/resolution-lifecycle.png?fit=max&auto=format&n=FOMte3ewbG-LVy3k&q=85&s=6726569af3efd6f4fda54528c8eb0d0a", alt: "Polymarket resolution lifecycle diagram showing proposal, challenge, dispute, and redemption stages", source: "Official Polymarket documentation diagram reviewed 27 August 2026; it explains the provider’s documented resolution flow." }],

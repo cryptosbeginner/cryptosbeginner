@@ -17,7 +17,9 @@ function Mark({ kind }: { kind: "search" | "arrow" | "check" | "warning" }) {
 
 function Logo({ platform }: { platform: PredictionPlatform }) {
   const [failed, setFailed] = useState(false);
-  return failed ? <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-slate-100 text-sm font-black text-slate-700" aria-label={`${platform.name} logo fallback`}>{platform.name.slice(0, 2).toUpperCase()}</div> : <Image src={platform.imageUrl} alt={platform.imageAlt} width={44} height={44} unoptimized onError={() => setFailed(true)} className="h-11 w-11 shrink-0 rounded-xl border border-slate-200 bg-white object-contain p-1.5" />;
+  const fallback = <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-slate-100 text-sm font-black text-slate-700" aria-label={`${platform.name} logo fallback`}>{platform.name.slice(0, 2).toUpperCase()}</div>;
+  if (!platform.logoUrl || failed) return fallback;
+  return <Image src={platform.logoUrl} alt={`${platform.name} logo`} width={44} height={44} unoptimized onError={() => setFailed(true)} className="h-11 w-11 shrink-0 rounded-xl border border-slate-200 bg-white object-contain p-1.5" />;
 }
 
 const formatCategory = (value: string) => value.replace("CLOB", "order book");
