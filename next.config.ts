@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "kardpay.app" },
       { protocol: "https", hostname: "web3.bitget.com" },
       { protocol: "https", hostname: "www.bybit.com" },
+      { protocol: "https", hostname: "www.bingcard.com" },
     ],
   },
 };
