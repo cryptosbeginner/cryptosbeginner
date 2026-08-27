@@ -31,6 +31,7 @@ function ProviderLogo({ service }: { service: DexService }) {
       width={44}
       height={44}
       className="h-11 w-11 rounded-xl border border-slate-200 bg-white object-contain p-1.5"
+      unoptimized
       onError={() => setFailed(true)}
     />
   );
@@ -50,6 +51,7 @@ function ProviderVisual({ service }: { service: DexService }) {
       height={360}
       className="h-36 w-full object-cover"
       loading="lazy"
+      unoptimized
       onError={() => setFailed(true)}
     />
   );
@@ -60,7 +62,12 @@ const kindLabel: Record<DexService["kind"], string> = {
   aggregator: "Aggregator",
   p2p: "P2P",
   "instant-swap": "Instant swap",
+  "prediction-market": "Prediction market",
 };
+
+const profileHref = (item: DexService) => item.isDex || item.kind === "prediction-market" ? `/dexes/${item.slug}` : `/exchanges/no-kyc/${item.slug}`;
+const verificationLabel = (item: DexService) => item.kind === "prediction-market" ? "Market rules; resolution varies" : item.access === "Wallet-first" ? "Wallet-first; checks vary" : item.isKycConditional ? "May apply" : item.access === "No account flow" ? "No standard account observed" : "Review provider terms";
+const verificationTile = (item: DexService) => item.kind === "prediction-market" ? "Settlement" : "Verification";
 
 export default function DexDirectory({
   services,
@@ -122,7 +129,7 @@ export default function DexDirectory({
           {compared.length > 0 && (
             <div className="mb-6 rounded-3xl border border-indigo-200 bg-indigo-50 p-5" aria-live="polite">
               <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-700">Side-by-side view</p><h2 className="mt-1 text-xl font-black text-slate-950">Compare {compared.length} selected {mode === "dex" ? "platforms" : "services"}</h2></div><button type="button" onClick={() => setCompare([])} className="text-sm font-bold text-indigo-700">Clear</button></div>
-              <div className="mt-4 overflow-x-auto"><table className="min-w-full text-left text-sm"><thead><tr className="text-xs uppercase tracking-wide text-slate-500"><th className="pb-2 pr-5">Field</th>{compared.map((item) => <th key={item.slug} className="pb-2 pr-5">{item.name}</th>)}</tr></thead><tbody className="divide-y divide-indigo-100"><tr><th className="py-2 pr-5 font-semibold text-slate-600">Model</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{kindLabel[item.kind]}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Access</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{item.access}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Fees</th>{compared.map((item) => <td key={item.slug} className="max-w-xs py-2 pr-5">{item.fees}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Networks</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{item.chains.join(", ")}</td>)}</tr></tbody></table></div>
+              <div className="mt-4 overflow-x-auto"><table className="min-w-full text-left text-sm"><thead><tr className="text-xs uppercase tracking-wide text-slate-500"><th className="pb-2 pr-5">Field</th>{compared.map((item) => <th key={item.slug} className="pb-2 pr-5">{item.name}</th>)}</tr></thead><tbody className="divide-y divide-indigo-100"><tr><th className="py-2 pr-5 font-semibold text-slate-600">Model</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{kindLabel[item.kind]}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Access</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{item.access}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Fees</th>{compared.map((item) => <td key={item.slug} className="max-w-xs py-2 pr-5">{item.fees}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Networks</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{item.chains.join(", ")}</td>)}</tr><tr><th className="py-2 pr-5 font-semibold text-slate-600">Risk focus</th>{compared.map((item) => <td key={item.slug} className="py-2 pr-5">{item.kind === "prediction-market" ? "Resolution and collateral" : item.kind === "dex" && item.categories.includes("perpetuals") ? "Margin and liquidation" : "Contract, route, and liquidity"}</td>)}</tr></tbody></table></div>
             </div>
           )}
 
@@ -134,9 +141,9 @@ export default function DexDirectory({
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-3"><div className="flex items-center gap-3"><ProviderLogo service={item} /><div><div className="flex flex-wrap items-center gap-2"><h3 className="font-black text-slate-950">{item.name}</h3><span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-600">{kindLabel[item.kind]}</span></div><p className="mt-0.5 text-xs text-slate-500">{item.provider}</p></div></div><button type="button" onClick={() => toggleCompare(item.slug)} aria-pressed={compare.includes(item.slug)} className={`rounded-full border px-3 py-1 text-xs font-bold transition ${compare.includes(item.slug) ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-200 text-slate-600 hover:border-indigo-400"}`}>{compare.includes(item.slug) ? "Selected" : "Compare"}</button></div>
                   <p className="mt-4 text-sm leading-6 text-slate-600">{item.shortDescription}</p>
-                  <div className="mt-4 grid gap-2 text-xs text-slate-600 sm:grid-cols-2"><span className="flex items-start gap-2"><Glyph name="wallet" /><span><b className="text-slate-800">Access:</b> {item.access}</span></span><span className="flex items-start gap-2"><Glyph name="fee" /><span><b className="text-slate-800">Fees:</b> {item.fees}</span></span><span className="flex items-start gap-2"><Glyph name="network" /><span><b className="text-slate-800">Networks:</b> {item.chains.slice(0, 2).join(", ")}{item.chains.length > 2 ? " + more" : ""}</span></span><span className="flex items-start gap-2"><Glyph name="shield" /><span><b className="text-slate-800">Verification:</b> {item.isNoKycCandidate && !item.isKycConditional ? "Provider-stated no-ID flow" : item.isKycConditional ? "May apply" : "Wallet/product terms"}</span></span></div>
+                  <div className="mt-4 grid gap-2 text-xs text-slate-600 sm:grid-cols-2"><span className="flex items-start gap-2"><Glyph name="wallet" /><span><b className="text-slate-800">Access:</b> {item.access}</span></span><span className="flex items-start gap-2"><Glyph name="fee" /><span><b className="text-slate-800">Fees:</b> {item.fees}</span></span><span className="flex items-start gap-2"><Glyph name="network" /><span><b className="text-slate-800">Networks:</b> {item.chains.slice(0, 2).join(", ")}{item.chains.length > 2 ? " + more" : ""}</span></span><span className="flex items-start gap-2"><Glyph name="shield" /><span><b className="text-slate-800">{verificationTile(item)}:</b> {verificationLabel(item)}</span></span></div>
                   <div className="mt-5 flex flex-wrap gap-2">{item.categories.slice(0, 3).map((tag) => <span key={tag} className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold text-indigo-700">{tag}</span>)}</div>
-                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3"><Link href={`${item.isDex ? "/dexes" : "/exchanges/no-kyc"}/${item.slug}`} className="inline-flex items-center gap-2 text-sm font-black text-indigo-700 hover:text-indigo-900">Read profile <Glyph name="arrow" /></Link><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 hover:text-slate-800">Official source ↗</a></div>
+                  <div className="mt-5 flex flex-wrap items-center justify-between gap-3"><Link href={profileHref(item)} className="inline-flex items-center gap-2 text-sm font-black text-indigo-700 hover:text-indigo-900">Read profile <Glyph name="arrow" /></Link><div className="flex flex-wrap items-center gap-3"><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 hover:text-slate-800">Official source ↗</a>{item.partnerUrl && <a href={item.partnerUrl} target="_blank" rel="sponsored nofollow noreferrer" className="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-black text-amber-900 hover:bg-amber-200">{item.partnerLabel ?? "Partner link"} ↗</a>}</div></div>{item.partnerUrl && <p className="mt-3 text-[11px] leading-5 text-slate-500">Affiliate disclosure: CryptosBeginner may earn a commission if you use this partner link. It does not affect listing order, editorial inclusion, fees, or safety.</p>}
                 </div>
               </article>
             ))}

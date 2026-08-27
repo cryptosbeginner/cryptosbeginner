@@ -1,9 +1,10 @@
-export type ServiceKind = "dex" | "p2p" | "instant-swap" | "aggregator";
+export type ServiceKind = "dex" | "p2p" | "instant-swap" | "aggregator" | "prediction-market";
 export type AccessLabel =
   | "Wallet-first"
   | "No account flow"
   | "Email account"
-  | "KYC may apply";
+  | "KYC may apply"
+  | "Research profile";
 
 export type DexService = {
   slug: string;
@@ -18,9 +19,12 @@ export type DexService = {
   assets: string;
   access: AccessLabel;
   verification: string;
+  verificationLabel?: string;
   availability: string;
   fees: string;
   feeSourceUrl?: string;
+  partnerUrl?: string;
+  partnerLabel?: string;
   sourceUrl: string;
   sourceLabel: string;
   imageUrl: string;
@@ -37,24 +41,31 @@ export type DexService = {
   faqs: { question: string; answer: string }[];
 };
 
-const faq = (service: DexService): DexService["faqs"] => [
-  {
-    question: `How does ${service.name} charge users?`,
-    answer: service.fees,
-  },
-  {
-    question: `Does ${service.name} require KYC?`,
-    answer: service.verification,
-  },
-  {
-    question: `Which networks or assets does ${service.name} support?`,
-    answer: `${service.name} describes support for ${service.chains.join(", ")}. The current network and token list can change, so confirm the live interface before signing a transaction.`,
-  },
-  {
-    question: `What should I check before using ${service.name}?`,
-    answer: `${service.caution} Compare the route, slippage, network fee, contract address, and local obligations before using the service. This profile is educational comparison content, not a personal recommendation.`,
-  },
-];
+const faq = (service: DexService): DexService["faqs"] => service.kind === "prediction-market"
+  ? [
+      { question: `How does ${service.name} charge users?`, answer: service.fees },
+      { question: `How are ${service.name} markets resolved?`, answer: service.verification },
+      { question: `What does a ${service.name} position represent?`, answer: `${service.name} uses outcome-based markets rather than a conventional token-swap pair. Read the market wording, resolution source, close time, and settlement terms before taking a position.` },
+      { question: `What should I check before using ${service.name}?`, answer: `${service.caution} Consider market-resolution, collateral, smart-contract, liquidity, and loss risks. This profile is educational comparison content, not a personal recommendation.` },
+    ]
+  : [
+      {
+        question: `How does ${service.name} charge users?`,
+        answer: service.fees,
+      },
+      {
+        question: `Does ${service.name} require KYC?`,
+        answer: service.verification,
+      },
+      {
+        question: `Which networks or assets does ${service.name} support?`,
+        answer: `${service.name} describes support for ${service.chains.join(", ")}. The current network and token list can change, so confirm the live interface before signing a transaction.`,
+      },
+      {
+        question: `What should I check before using ${service.name}?`,
+        answer: `${service.caution} Compare the route, slippage, network fee, contract address, and local obligations before using the service. This profile is educational comparison content, not a personal recommendation.`,
+      },
+    ];
 
 const service = (entry: Omit<DexService, "faqs">): DexService => ({
   ...entry,
@@ -550,14 +561,263 @@ export const dexServices: DexService[] = [
     pros: ["Transaction-first comparison", "Separate prepaid-card category", "Rate and policy filters"],
     cons: ["Listed-provider quality varies", "Rates can include hidden route economics", "Individual providers may request checks"],
   }),
+  service({
+    slug: "hyperliquid",
+    name: "Hyperliquid",
+    provider: "Hyperliquid protocol / app",
+    kind: "dex",
+    categories: ["perpetuals", "spot", "on-chain order book", "derivatives"],
+    shortDescription: "A fully on-chain trading venue for crypto spot markets and perpetual contracts, with additional outcome-style products visible in the app.",
+    editorialSummary: "Hyperliquid puts an order-book trading experience on its own high-throughput chain rather than presenting a simple AMM swap screen. The reviewed app describes spot and perpetual markets and also exposes other outcome-oriented products, so readers should identify the exact instrument before trading. Its public interface can show jurisdictional restrictions and product-specific eligibility.",
+    bestFor: "Experienced users comparing an on-chain order book for spot or perpetual markets who understand margin, funding, liquidation, and chain-specific settlement.",
+    chains: ["Hyperliquid L1", "HyperEVM where supported"],
+    assets: "Crypto spot assets and perpetual contracts listed in the selected market; the app also displays additional market types.",
+    access: "Wallet-first",
+    verification: "The reviewed app uses wallet connection and showed a restricted-jurisdiction warning; no conventional custodial account flow was relied on for this profile. Eligibility, region, product, and legal checks can still apply.",
+    availability: "Market, jurisdiction, wallet, and product eligibility dependent.",
+    fees: "Hyperliquid's official schedule separates spot and perpetual fees into 14-day volume tiers. The reviewed perpetual base tier is listed at 0.045% taker and 0.015% maker; funding, spread, liquidation, and any applicable product costs are separate.",
+    feeSourceUrl: "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+    sourceUrl: "https://hyperliquid.xyz/",
+    sourceLabel: "Hyperliquid official site",
+    imageUrl: "https://app.hyperliquid.xyz/apple-touch-icon.png",
+    imageAlt: "Hyperliquid official app icon used as the provider visual",
+    logoUrl: "https://app.hyperliquid.xyz/favicon-32x32.png",
+    imageSourceNote: "Official Hyperliquid app-hosted icon; the reviewed app did not expose a separate public hero image.",
+    reviewedAt: "2026-08-27",
+    caution: "Perpetuals and other leveraged or outcome-based products can lose collateral quickly. Check the instrument, margin rules, funding, liquidation price, oracle/index mechanics, jurisdiction notice, and signing domain before proceeding.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: true,
+    pros: ["On-chain order-book design", "Spot and perpetual market coverage", "Clear separation of fee schedules in official docs"],
+    cons: ["Leverage and liquidation risk", "Restricted jurisdictions and product eligibility", "The app includes more than simple spot swaps"],
+  }),
+  service({
+    slug: "orca",
+    name: "Orca",
+    provider: "Orca Protocol",
+    kind: "dex",
+    categories: ["AMM", "Solana", "concentrated liquidity", "LP pools"],
+    shortDescription: "A Solana-native AMM and liquidity protocol built around Whirlpools with concentrated and full-range liquidity positions.",
+    editorialSummary: "Orca is best understood as a Solana liquidity protocol rather than a single universal-price exchange. Its Whirlpools can use different configurations, and liquidity providers earn trading fees according to the selected pool. A swap comparison therefore needs the live quote, pool setting, price impact, and Solana transaction cost—not a single directory-wide fee number.",
+    bestFor: "Solana users comparing pool-based swaps or researching concentrated-liquidity positions and their associated management risks.",
+    chains: ["Solana"],
+    assets: "SPL tokens available in the selected Whirlpool or route.",
+    access: "Wallet-first",
+    verification: "The reviewed public product is a wallet-connected protocol interface with no conventional account requirement observed. That does not establish anonymity or remove wallet, provider, jurisdiction, or legal obligations.",
+    availability: "Pool, token, wallet, route, and network dependent.",
+    fees: "Orca does not have one universal swap fee for every pool. Trading fees are configured at the pool level and distributed to liquidity providers under the protocol design; network fees, price impact, and any route economics are additional.",
+    feeSourceUrl: "https://docs.orca.so/reference/fees",
+    sourceUrl: "https://www.orca.so/",
+    sourceLabel: "Orca official site",
+    imageUrl: "https://orca.so/og.png",
+    imageAlt: "Orca official brand artwork",
+    logoUrl: "https://www.orca.so/images/favicon.png",
+    imageSourceNote: "Official Orca-hosted OG image and favicon",
+    reviewedAt: "2026-08-27",
+    caution: "AMM users face smart-contract, token, pool, impermanent-loss, price-impact, slippage, and Solana transaction risks. Concentrated liquidity can require active range management and is not a passive-return guarantee.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: false,
+    pros: ["Solana-native liquidity infrastructure", "Concentrated and full-range pool designs", "Wallet-first swap flow"],
+    cons: ["Pool-specific fees and liquidity", "LP range and impermanent-loss exposure", "SPL token and smart-contract risk"],
+  }),
+  service({
+    slug: "apex",
+    name: "ApeX Omni",
+    provider: "ApeX Protocol",
+    kind: "dex",
+    categories: ["perpetuals", "multichain", "order book", "derivatives"],
+    shortDescription: "A decentralized perpetuals platform with cross-chain deposits, an order-book trading model, and additional product modules.",
+    editorialSummary: "ApeX Omni is a derivatives-focused venue rather than a general-purpose token-swap AMM. Official materials describe more than 100 perpetual contracts, cross-chain deposit support, and leverage marketing up to 100x. Its current product and API documentation also describe margin, funding, liquidation, and wallet-signature flows, so the useful comparison is about instrument design and risk controls as much as headline access.",
+    bestFor: "Experienced derivatives users who want to compare an on-chain perpetuals venue and are prepared to evaluate margin, funding, liquidation, and cross-chain transfer details.",
+    chains: ["Ethereum", "BNB Chain", "Base", "Mantle", "Arbitrum"],
+    assets: "USDT-settled perpetual contracts plus supported collateral and product-specific markets.",
+    access: "Wallet-first",
+    verification: "The public product is built around wallet-based onboarding and account signatures, but eligibility and product-specific checks can change. A wallet-first flow is not a promise of no KYC, unrestricted access, or legal anonymity.",
+    availability: "Jurisdiction, wallet onboarding, market, collateral, and product dependent.",
+    fees: "ApeX's official Omni materials use 0.02% maker and 0.05% taker as a standard perpetuals reference, while VIP, volume, campaign, and product terms can change the rate. Funding, liquidation, withdrawal, and cross-chain costs are separate.",
+    feeSourceUrl: "https://apex-pro.gitbook.io/apex-pro/apex-omni-live-now/trading-perpetual-contracts/trading-fees",
+    partnerUrl: "https://join.omni.apex.exchange/AFF-741",
+    partnerLabel: "ApeX referral link",
+    sourceUrl: "https://www.apex.exchange/",
+    sourceLabel: "ApeX official site",
+    imageUrl: "https://static-pro.apex.exchange/icon/apex-exchange.jpeg",
+    imageAlt: "ApeX Omni official brand artwork",
+    logoUrl: "https://www.apex.exchange/_next/static/media/logo_header.0n90rs_w_ixm7.svg",
+    imageSourceNote: "Official ApeX-hosted brand asset",
+    reviewedAt: "2026-08-27",
+    caution: "Perpetual contracts and leverage can amplify losses and trigger liquidation. Verify the market, oracle/index price, margin mode, funding interval, collateral, cross-chain route, and exact order details before signing.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: true,
+    pros: ["Derivatives-first product focus", "Cross-chain deposit documentation", "Official API and market-data documentation"],
+    cons: ["Leverage, funding, and liquidation exposure", "Product and fee programs can change", "Cross-chain transfer and collateral complexity"],
+  }),
+  service({
+    slug: "aster",
+    name: "Aster",
+    provider: "Aster DEX",
+    kind: "dex",
+    categories: ["perpetuals", "multichain", "derivatives", "yield features"],
+    shortDescription: "A multichain perpetuals venue with Simple and Pro interfaces, multiple contract fee schedules, and wallet-based access.",
+    editorialSummary: "Aster presents a derivatives interface with separate Simple and Pro modes and more than one contract family. Its official fee documentation distinguishes USDT perpetuals, USD1 perpetuals, and stock perpetuals rather than offering one blended rate. That separation matters: contract type, funding, margin, liquidation, and any token-based discount can change the actual cost and risk profile.",
+    bestFor: "Experienced users comparing perpetual-contract interfaces and reading the contract-specific fee and risk terms before using leverage.",
+    chains: ["Multiple supported networks; confirm the live network selector"],
+    assets: "USDT, USD1, and stock-perpetual markets listed in the selected product mode.",
+    access: "Wallet-first",
+    verification: "The public interface is wallet-oriented, but the reviewed product is a derivatives venue where market, regional, account, and compliance policies may apply. This profile does not make a no-KYC or unrestricted-access claim.",
+    availability: "Market, chain, jurisdiction, account, and product mode dependent.",
+    fees: "Aster's official schedule lists USDT perps at 0% maker / 0.04% taker, USD1 perps at 0% maker / 0.005% taker, and stock perps at 0% maker / 0.009% taker. Paying fees in $ASTER is documented with a 5% discount; funding and other costs remain separate.",
+    feeSourceUrl: "https://docs.asterdex.com/trading/perpetuals/fees-and-specs/fees",
+    partnerUrl: "https://www.asterdex.com/en/referral/A022fd",
+    partnerLabel: "Aster referral link",
+    sourceUrl: "https://www.asterdex.com/en",
+    sourceLabel: "Aster official site",
+    imageUrl: "https://static.asterdexfx.com/cloud-futures/static/images/dex/aster/og_image.png",
+    imageAlt: "Aster official brand artwork",
+    logoUrl: "https://static.asterdexfx.com/cloud-futures/static/images/aster/logo.svg",
+    imageSourceNote: "Official Aster-hosted brand asset",
+    reviewedAt: "2026-08-27",
+    caution: "Perpetuals and stock-perpetual products carry leverage, liquidation, funding, oracle, counterparty, and market-structure risks. Read the exact contract specification and regional eligibility notice before connecting a wallet.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: true,
+    pros: ["Contract-specific published fee schedule", "Simple and Pro interface modes", "Multichain product positioning"],
+    cons: ["Leveraged derivatives risk", "Different products have different fees", "Token discounts and live terms require verification"],
+  }),
+  service({
+    slug: "kuru",
+    name: "Kuru",
+    provider: "Kuru Exchange",
+    kind: "dex",
+    categories: ["on-chain order book", "smart aggregator", "Monad", "spot trading"],
+    shortDescription: "A fully on-chain order-book DEX and smart aggregator on Monad with trade, swap, discovery, liquidity, and vault features.",
+    editorialSummary: "Kuru combines an on-chain order book with aggregation and a broader set of portfolio, liquidity, and vault surfaces. That makes it different from a single-pool AMM: the quote can reflect order-book depth, route selection, market liquidity, and Monad transaction costs. Readers should distinguish a spot order from a vault or liquidity action because each has a different risk and fee lens.",
+    bestFor: "Monad users comparing an on-chain order-book experience with smart-aggregation and liquidity tools.",
+    chains: ["Monad"],
+    assets: "Assets and markets listed by Kuru on Monad; confirm the live market and token contracts.",
+    access: "Wallet-first",
+    verification: "Kuru's public documentation describes a wallet-connected, fully on-chain product. No conventional account flow was relied on for this profile, but that is not a statement about legal identity requirements, eligibility, or anonymity.",
+    availability: "Monad network, market, wallet, and product surface dependent.",
+    fees: "Kuru's official fee documentation is the source of truth for its current order-book, swap, aggregation, and related product charges. The fee can depend on the product and route; Monad gas, spread, slippage, and liquidity costs are separate.",
+    feeSourceUrl: "https://docs.kuru.io/liquidity/how-fees-work",
+    sourceUrl: "https://www.kuru.io/",
+    sourceLabel: "Kuru official site",
+    imageUrl: "https://www.kuru.io/img/og.png",
+    imageAlt: "Kuru official brand artwork",
+    logoUrl: "https://www.kuru.io/favicon-96x96.png",
+    imageSourceNote: "Official Kuru-hosted OG image and favicon",
+    reviewedAt: "2026-08-27",
+    caution: "On-chain order books and vault features carry smart-contract, liquidity, token, signing, and market-depth risks. Confirm the Monad network, contract addresses, order type, spread, gas, and any vault terms before proceeding.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: false,
+    pros: ["Fully on-chain order-book model", "Monad-native product scope", "Aggregation and liquidity surfaces"],
+    cons: ["Newer network and market-liquidity considerations", "Fee details vary by product and route", "Vault and liquidity features add separate risks"],
+  }),
+  service({
+    slug: "pump-fun-pumpswap",
+    name: "PumpSwap",
+    provider: "Pump.fun ecosystem",
+    kind: "dex",
+    categories: ["AMM", "Solana", "meme-coin markets", "launch ecosystem"],
+    shortDescription: "A Solana decentralized exchange for Pump.fun tokens, designed around fast-moving meme-coin markets and token-launch activity.",
+    editorialSummary: "PumpSwap is the swap venue linked from the Pump.fun ecosystem, not a general-purpose exchange with a curated asset list. The official description emphasizes Pump.fun tokens and instant meme-coin swaps. That focus can mean rapidly changing pools, thin or uneven liquidity, volatile pricing, and heightened token-contract risk; the live pool and quote matter more than a static directory label.",
+    bestFor: "Users researching the Pump.fun token ecosystem who understand Solana swaps, meme-coin volatility, pool mechanics, and contract risk.",
+    chains: ["Solana"],
+    assets: "Pump.fun ecosystem tokens and other assets available through the selected PumpSwap pool or route.",
+    access: "Wallet-first",
+    verification: "The reviewed PumpSwap interface is wallet-oriented and does not rely on a conventional exchange account for the swap screen. That does not establish no-KYC status, token legitimacy, unrestricted access, or legal anonymity.",
+    availability: "Pool, token, wallet, network, and jurisdiction dependent.",
+    fees: "Pump.fun's fee page (last updated 20 May 2026) lists PumpSwap canonical-pool total fees that vary by market-cap band from 1.25% down to 0.30%; other PumpSwap pools are listed at 0.30%. Creator, protocol, LP, wallet, and Solana network charges can be separate or change.",
+    feeSourceUrl: "https://pump.fun/docs/fees",
+    partnerUrl: "https://join.pump.fun/HSag/kjs0qp0n",
+    partnerLabel: "Pump.fun referral link",
+    sourceUrl: "https://swap.pump.fun/",
+    sourceLabel: "PumpSwap official app",
+    imageUrl: "https://pump.fun/OpenGraphRetail_v4.png",
+    imageAlt: "Pump.fun official brand artwork for the PumpSwap ecosystem",
+    logoUrl: "https://pump.fun/logo.png",
+    imageSourceNote: "Official Pump.fun-hosted brand assets",
+    reviewedAt: "2026-08-27",
+    caution: "Meme-coin markets can move sharply and may include malicious, illiquid, or highly concentrated tokens. Verify the token mint, pool, slippage, holder distribution, signing prompt, and final receive amount; a swap interface is not a token-quality endorsement.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: false,
+    pros: ["Direct Solana ecosystem access", "Purpose-built Pump.fun token venue", "Wallet-first swap flow"],
+    cons: ["Extreme meme-coin and token risk", "Pool liquidity and fees vary", "A live token listing is not due diligence"],
+  }),
+  service({
+    slug: "meteora",
+    name: "Meteora",
+    provider: "Meteora Protocol",
+    kind: "dex",
+    categories: ["liquidity pools", "Solana", "DLMM", "DAMM"],
+    shortDescription: "A Solana liquidity protocol offering dynamic and concentrated pool designs, including DLMM and DAMM products.",
+    editorialSummary: "Meteora is a liquidity-pool protocol with multiple pool designs rather than one flat exchange fee. Its DLMM and DAMM products expose different liquidity and position mechanics, while the live app surfaces pool-specific rates and statistics. We use generalized fee language here so a changing pool quote is not mistaken for an evergreen protocol-wide rate.",
+    bestFor: "Solana users comparing pool-based swaps or studying liquidity-position mechanics across Meteora products.",
+    chains: ["Solana"],
+    assets: "SPL tokens available in the selected Meteora pool, vault, or route.",
+    access: "Wallet-first",
+    verification: "The public app is wallet-oriented and no conventional account flow was relied on for this profile. That is not a claim of no KYC, anonymity, safety, or universal access.",
+    availability: "Pool, token, wallet, network, and product dependent.",
+    fees: "Meteora fees are pool- and product-specific. The live quote can include swap or dynamic-pool fees, Solana network cost, price impact, and route economics; protocol-revenue documentation should be checked alongside the selected pool.",
+    feeSourceUrl: "https://docs.meteora.ag/protocol/protocol-revenues",
+    sourceUrl: "https://app.meteora.ag/",
+    sourceLabel: "Meteora official app",
+    imageUrl: "https://app.meteora.ag/seo/og_image.png",
+    imageAlt: "Meteora official brand artwork",
+    logoUrl: "https://app.meteora.ag/apple/apple-icon-57x57.png",
+    imageSourceNote: "Official Meteora-hosted OG image and app icon",
+    reviewedAt: "2026-08-27",
+    caution: "Liquidity providers and traders face smart-contract, token, pool, impermanent-loss, price-impact, slippage, and Solana transaction risks. Do not infer future yield from a live APY, volume, or pool statistic.",
+    isDex: true,
+    isNoKycCandidate: false,
+    isKycConditional: false,
+    pros: ["Multiple Solana pool designs", "DLMM and DAMM liquidity tooling", "Wallet-first app experience"],
+    cons: ["Pool-specific mechanics and fees", "LP and impermanent-loss exposure", "Live statistics are not durable forecasts"],
+  }),
+  service({
+    slug: "limitless",
+    name: "Limitless",
+    provider: "Limitless Exchange",
+    kind: "prediction-market",
+    categories: ["prediction market", "Base", "CLOB", "outcome shares"],
+    shortDescription: "A decentralized prediction market on Base where users trade outcome shares on crypto, sports, politics, and other events—not a conventional token-swap DEX.",
+    editorialSummary: "Limitless should be read as a prediction-market profile, not as a token-exchange recommendation. Its official documentation describes YES/NO outcome shares, USDC collateral, market resolution, and a central-limit-order-book model. The key research questions are the market wording, close time, resolution source, settlement rules, spread, collateral, and fee—not only whether a wallet can connect.",
+    bestFor: "Readers researching decentralized event markets who are prepared to understand outcome pricing, resolution rules, collateral loss, and Base transactions.",
+    chains: ["Base"],
+    assets: "USDC collateral and market-specific YES/NO outcome shares described in the selected market.",
+    access: "Wallet-first",
+    verification: "Markets resolve under the provider's published market rules and designated resolution sources. Official documentation describes automatic resolution for many markets and different oracle or manual paths by market type; read the specific market page before taking a position.",
+    verificationLabel: "Resolution rules",
+    availability: "Market, collateral, wallet, jurisdiction, resolution, and event timing dependent.",
+    fees: "Limitless' official documentation describes dynamic taker fees for CLOB markets: buy fees of 0.40%–3.00% and sell fees of 0.42%–1.50%, while resting maker limit orders are fee-free. AMM markets use a 0.40% flat fee, with possible market-specific or promotional changes; Base gas and collateral still matter.",
+    feeSourceUrl: "https://docs.limitless.exchange/user-guide/fees",
+    partnerUrl: "https://limitless.exchange?r=JDDJ4LOQ9T",
+    partnerLabel: "Limitless referral link",
+    sourceUrl: "https://limitless.exchange/",
+    sourceLabel: "Limitless official site",
+    imageUrl: "https://limitless.exchange/api/og",
+    imageAlt: "Limitless official prediction-market artwork",
+    logoUrl: "https://limitless.exchange/favicon.svg",
+    imageSourceNote: "Official Limitless-hosted OG endpoint and favicon",
+    reviewedAt: "2026-08-27",
+    caution: "This is a prediction market, not a token-swap DEX. A position can lose collateral if the outcome is wrong or a resolution rule is misunderstood; review the market definition, oracle or resolution source, close time, liquidity, smart-contract terms, and local obligations.",
+    isDex: false,
+    isNoKycCandidate: false,
+    isKycConditional: false,
+    pros: ["Explicit outcome-market product", "Published resolution and security documentation", "Base-native USDC market design"],
+    cons: ["Not a conventional token-swap DEX", "Resolution and event-definition risk", "Outcome pricing, liquidity, and collateral can change"],
+  }),
 ];
 
 for (const item of dexServices) item.faqs = faq(item);
 
 export const dexServicesBySlug = new Map(dexServices.map((item) => [item.slug, item]));
-export const dexDirectoryServices = dexServices.filter((item) => item.isDex || item.kind === "aggregator");
-export const noKycDirectoryServices = dexServices.filter((item) => item.isNoKycCandidate || item.isKycConditional);
-export const dexDetailSlugs = dexServices.filter((item) => item.isDex).map((item) => item.slug);
+export const dexDirectoryServices = dexServices.filter((item) => item.isDex || item.kind === "aggregator" || item.kind === "prediction-market");
+export const noKycDirectoryServices = dexServices.filter((item) => item.isNoKycCandidate || (item.isKycConditional && !item.isDex));
+export const dexDetailSlugs = dexServices.filter((item) => item.isDex || item.kind === "prediction-market").map((item) => item.slug);
 export const noKycDetailSlugs = noKycDirectoryServices.map((item) => item.slug);
 
 export function getDexService(slug: string) {

@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...coreRoutes,
     ...cardListings.map((card) => `/crypto-cards/${card.slug}`),
     ...editorialPages.map((page) => `/crypto-cards/${page.slug}`),
-    ...dexServices.filter((service) => service.isDex).map((service) => `/dexes/${service.slug}`),
+    ...dexServices.filter((service) => service.isDex || service.kind === "prediction-market").map((service) => `/dexes/${service.slug}`),
     ...dexServices.filter((service) => !service.isDex && (service.isNoKycCandidate || service.isKycConditional)).map((service) => `/exchanges/no-kyc/${service.slug}`),
     ...glossaryTerms.map((term) => `/learn/crypto-glossary/${term.slug}`),
   ];
