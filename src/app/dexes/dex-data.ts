@@ -31,6 +31,11 @@ export type DexService = {
   imageAlt: string;
   logoUrl: string;
   imageSourceNote: string;
+  galleryImages?: { url: string; alt: string; source: string }[];
+  stats?: {
+    coinGeckoExchangeId?: string;
+    geckoTerminal?: { network: string; dexId: string };
+  };
   reviewedAt: string;
   caution: string;
   isDex: boolean;
@@ -379,8 +384,8 @@ export const dexServices: DexService[] = [
     sourceLabel: "Bisq official site",
     imageUrl: "https://bisq.network/images/bisq-og.jpg",
     imageAlt: "Bisq official brand artwork",
-    logoUrl: "https://bisq.network/images/bisq-fav.png",
-    imageSourceNote: "Official Bisq-hosted brand asset",
+    logoUrl: "/images/dexes/bisq-logo.svg",
+    imageSourceNote: "Official Bisq logo copied from bisq.network for reliable local rendering",
     reviewedAt: "2026-08-27",
     caution: "No registration is not the same as legal anonymity or zero risk. Read the offer, payment method, escrow, dispute, and fee documentation first.",
     isDex: false,
@@ -583,6 +588,8 @@ export const dexServices: DexService[] = [
     imageAlt: "Hyperliquid official app icon used as the provider visual",
     logoUrl: "https://app.hyperliquid.xyz/favicon-32x32.png",
     imageSourceNote: "Official Hyperliquid app-hosted icon; the reviewed app did not expose a separate public hero image.",
+    galleryImages: [{ url: "/images/dexes/hyperliquid-homepage.webp", alt: "Hyperliquid official homepage hero captured from the public site", source: "Captured from the Hyperliquid official homepage on 27 August 2026" }],
+    stats: { coinGeckoExchangeId: "hyperliquid", geckoTerminal: { network: "hyperliquid", dexId: "hyperliquid" } },
     reviewedAt: "2026-08-27",
     caution: "Perpetuals and other leveraged or outcome-based products can lose collateral quickly. Check the instrument, margin rules, funding, liquidation price, oracle/index mechanics, jurisdiction notice, and signing domain before proceeding.",
     isDex: true,
@@ -613,6 +620,8 @@ export const dexServices: DexService[] = [
     imageAlt: "Orca official brand artwork",
     logoUrl: "https://www.orca.so/images/favicon.png",
     imageSourceNote: "Official Orca-hosted OG image and favicon",
+    galleryImages: [{ url: "/images/dexes/orca-interface.webp", alt: "Orca official desktop and mobile liquidity interface", source: "Captured from the Orca official homepage on 27 August 2026" }],
+    stats: { coinGeckoExchangeId: "orca", geckoTerminal: { network: "solana", dexId: "orca" } },
     reviewedAt: "2026-08-27",
     caution: "AMM users face smart-contract, token, pool, impermanent-loss, price-impact, slippage, and Solana transaction risks. Concentrated liquidity can require active range management and is not a passive-return guarantee.",
     isDex: true,
@@ -645,6 +654,8 @@ export const dexServices: DexService[] = [
     imageAlt: "ApeX Omni official brand artwork",
     logoUrl: "https://www.apex.exchange/_next/static/media/logo_header.0n90rs_w_ixm7.svg",
     imageSourceNote: "Official ApeX-hosted brand asset",
+    galleryImages: [{ url: "/images/dexes/apex-interface.png", alt: "ApeX official desktop and mobile perpetual trading interface", source: "Official ApeX-hosted interface artwork from the public homepage" }],
+    stats: { coinGeckoExchangeId: "apex-omni" },
     reviewedAt: "2026-08-27",
     caution: "Perpetual contracts and leverage can amplify losses and trigger liquidation. Verify the market, oracle/index price, margin mode, funding interval, collateral, cross-chain route, and exact order details before signing.",
     isDex: true,
@@ -677,6 +688,11 @@ export const dexServices: DexService[] = [
     imageAlt: "Aster official brand artwork",
     logoUrl: "https://static.asterdexfx.com/cloud-futures/static/images/aster/logo.svg",
     imageSourceNote: "Official Aster-hosted brand asset",
+    galleryImages: [
+      { url: "/images/dexes/aster-mobile.png", alt: "Aster official mobile app preview", source: "Official Aster-hosted mobile app preview from the public homepage" },
+      { url: "/images/dexes/aster-frame.jpg", alt: "Aster official mobile app interface frame", source: "Official Aster-hosted interface frame from the public homepage" },
+    ],
+    stats: { coinGeckoExchangeId: "aster" },
     reviewedAt: "2026-08-27",
     caution: "Perpetuals and stock-perpetual products carry leverage, liquidation, funding, oracle, counterparty, and market-structure risks. Read the exact contract specification and regional eligibility notice before connecting a wallet.",
     isDex: true,
@@ -701,6 +717,7 @@ export const dexServices: DexService[] = [
     availability: "Monad network, market, wallet, and product surface dependent.",
     fees: "Kuru's official fee documentation is the source of truth for its current order-book, swap, aggregation, and related product charges. The fee can depend on the product and route; Monad gas, spread, slippage, and liquidity costs are separate.",
     feeSourceUrl: "https://docs.kuru.io/liquidity/how-fees-work",
+    stats: { coinGeckoExchangeId: "kuru" },
     sourceUrl: "https://www.kuru.io/",
     sourceLabel: "Kuru official site",
     imageUrl: "https://www.kuru.io/img/og.png",
@@ -731,6 +748,7 @@ export const dexServices: DexService[] = [
     availability: "Pool, token, wallet, network, and jurisdiction dependent.",
     fees: "Pump.fun's fee page (last updated 20 May 2026) lists PumpSwap canonical-pool total fees that vary by market-cap band from 1.25% down to 0.30%; other PumpSwap pools are listed at 0.30%. Creator, protocol, LP, wallet, and Solana network charges can be separate or change.",
     feeSourceUrl: "https://pump.fun/docs/fees",
+    stats: { coinGeckoExchangeId: "pumpswap", geckoTerminal: { network: "solana", dexId: "pumpswap" } },
     partnerUrl: "https://join.pump.fun/HSag/kjs0qp0n",
     partnerLabel: "Pump.fun referral link",
     sourceUrl: "https://swap.pump.fun/",
@@ -763,6 +781,7 @@ export const dexServices: DexService[] = [
     availability: "Pool, token, wallet, network, and product dependent.",
     fees: "Meteora fees are pool- and product-specific. The live quote can include swap or dynamic-pool fees, Solana network cost, price impact, and route economics; protocol-revenue documentation should be checked alongside the selected pool.",
     feeSourceUrl: "https://docs.meteora.ag/protocol/protocol-revenues",
+    stats: { coinGeckoExchangeId: "meteora", geckoTerminal: { network: "solana", dexId: "meteora" } },
     sourceUrl: "https://app.meteora.ag/",
     sourceLabel: "Meteora official app",
     imageUrl: "https://app.meteora.ag/seo/og_image.png",

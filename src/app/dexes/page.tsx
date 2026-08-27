@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DexDirectory from "./DexDirectory";
 import { dexDirectoryServices } from "./dex-data";
+import { getDexStats } from "./dex-stats";
 
 const siteUrl = "https://www.cryptosbeginner.com";
 
@@ -21,8 +22,11 @@ const faqs = [
   { question: "Are DEXes safer than centralized exchanges?", answer: "Neither label is a universal safety rating. DEX users retain wallet-control responsibilities but face smart-contract, token, oracle, liquidity, MEV, bridge, and transaction-signing risks. Centralized platforms introduce custody and account risks." },
 ];
 
-export default function DexesPage() {
+export const revalidate = 120;
+
+export default async function DexesPage() {
   const serviceModelCount = new Set(dexDirectoryServices.map((item) => item.kind)).size;
+  const stats = await getDexStats(dexDirectoryServices);
   const jsonLd = { "@context": "https://schema.org", "@graph": [
     { "@type": "CollectionPage", "@id": `${siteUrl}/dexes#webpage`, url: `${siteUrl}/dexes`, name: "DEX Directory: Fees, Networks & Risks", description: metadata.description, isPartOf: { "@id": `${siteUrl}/#website` } },
     { "@type": "ItemList", "@id": `${siteUrl}/dexes#list`, name: "Decentralized exchange, swap, and adjacent market directory", numberOfItems: dexDirectoryServices.length, itemListElement: dexDirectoryServices.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, url: `${siteUrl}/dexes/${item.slug}` })) },
@@ -33,7 +37,7 @@ export default function DexesPage() {
   return <><Header /><main className="bg-white">
     <section className="overflow-hidden bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">On-chain trading · source-backed directory</p><h1 className="mt-4 text-4xl font-black tracking-tight sm:text-6xl">Compare DEXes without comparing apples to order books.</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">Explore wallet-first DEXes, route aggregators, and peer-to-peer atomic-swap services. One explicitly labeled prediction-market profile is included for adjacent research; it is not presented as a token-swap DEX. Compare networks, fee mechanics, access model, and trade-offs before connecting a wallet or signing a transaction.</p><div className="mt-8 flex flex-wrap gap-3"><a href="#directory" className="rounded-full bg-lime-300 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-lime-200">Browse {dexDirectoryServices.length} listings</a><Link href="/exchanges/no-kyc" className="rounded-full border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-lime-300 hover:text-lime-300">Open no-KYC guide</Link></div></div><div className="mt-12 grid max-w-4xl gap-4 sm:grid-cols-3"><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">{dexDirectoryServices.length}</p><p className="mt-1 text-sm text-slate-300">directory listings</p></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">{serviceModelCount}</p><p className="mt-1 text-sm text-slate-300">service models</p></div><div className="rounded-2xl border border-white/10 bg-white/5 p-5"><p className="text-3xl font-black text-lime-300">0</p><p className="mt-1 text-sm text-slate-300">personal recommendations</p></div></div></div></section>
 
-    <section id="directory" className="scroll-mt-20"><DexDirectory services={dexDirectoryServices} mode="dex" /></section>
+    <section id="directory" className="scroll-mt-20"><DexDirectory services={dexDirectoryServices} mode="dex" stats={stats} /></section>
 
     <section className="border-y border-slate-200 bg-slate-50"><div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8"><div className="max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-700">How to read a DEX listing</p><h2 className="mt-3 text-3xl font-black text-slate-950">The cheapest-looking route is not always the cheapest execution.</h2><p className="mt-4 text-base leading-8 text-slate-600">A DEX comparison needs more than a protocol name. The route can combine a pool fee, aggregator or solver economics, network gas, price impact, slippage, wallet approvals, and sometimes a bridge or fiat provider. We keep those layers visible instead of presenting one universal “trading fee.”</p></div><div className="mt-8 grid gap-5 md:grid-cols-3"><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">Wallet-first DEXes</h3><p className="mt-3 text-sm leading-7 text-slate-600">A wallet signs the transaction and the selected contract executes it. You keep custody, but you also own the responsibility for approvals, network choice, token contracts, and settlement.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">Aggregators</h3><p className="mt-3 text-sm leading-7 text-slate-600">Aggregators search across venues or liquidity sources. They can make route discovery easier, yet a better route still depends on the quote, gas, slippage, and asset risk.</p></article><article className="rounded-3xl border border-slate-200 bg-white p-6"><h3 className="text-lg font-black text-slate-950">P2P and atomic swaps</h3><p className="mt-3 text-sm leading-7 text-slate-600">These services coordinate users, escrow, or cryptographic settlement rather than a familiar AMM screen. Offers, payment rails, counterparties, and software setup affect the result.</p></article></div></div></section>
 

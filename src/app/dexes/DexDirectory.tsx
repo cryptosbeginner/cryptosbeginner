@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { DexService } from "./dex-data";
+import { summarizeDexStats, type DexStatsMap } from "./dex-stats";
 
 function Glyph({ name }: { name: "search" | "shield" | "wallet" | "fee" | "network" | "arrow" | "card" }) {
   const paths = {
@@ -68,13 +69,18 @@ const kindLabel: Record<DexService["kind"], string> = {
 const profileHref = (item: DexService) => item.isDex || item.kind === "prediction-market" ? `/dexes/${item.slug}` : `/exchanges/no-kyc/${item.slug}`;
 const verificationLabel = (item: DexService) => item.kind === "prediction-market" ? "Market rules; resolution varies" : item.access === "Wallet-first" ? "Wallet-first; checks vary" : item.isKycConditional ? "May apply" : item.access === "No account flow" ? "No standard account observed" : "Review provider terms";
 const verificationTile = (item: DexService) => item.kind === "prediction-market" ? "Settlement" : "Verification";
+const formatUsd = (value: number | null) => value === null ? "Not available" : new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", notation: "compact", maximumFractionDigits: 2 }).format(value);
+const formatCount = (value: number | null) => value === null ? "Not available" : new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 }).format(value);
+const formatCheckedAt = (value: string) => `${new Intl.DateTimeFormat("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }).format(new Date(value))} UTC`;
 
 export default function DexDirectory({
   services,
   mode,
+  stats = {},
 }: {
   services: DexService[];
   mode: "dex" | "no-kyc";
+  stats?: DexStatsMap;
 }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
@@ -96,6 +102,7 @@ export default function DexDirectory({
 
   const compared = services.filter((item) => compare.includes(item.slug));
   const toggleCompare = (slug: string) => setCompare((current) => current.includes(slug) ? current.filter((item) => item !== slug) : current.length < 3 ? [...current, slug] : current);
+  const directoryStats = mode === "dex" ? summarizeDexStats(services, stats) : null;
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -126,6 +133,13 @@ export default function DexDirectory({
         </aside>
 
         <div>
+          {directoryStats && (
+            <section className="mb-6 rounded-3xl border border-indigo-100 bg-indigo-50/70 p-5" aria-labelledby="market-snapshot-heading">
+              <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-black uppercase tracking-[0.18em] text-indigo-700">Live market snapshot</p><h2 id="market-snapshot-heading" className="mt-1 text-2xl font-black text-slate-950">Tracked DEX activity, not a universal ranking</h2></div><p className="text-xs font-semibold text-slate-500">Checked {formatCheckedAt(directoryStats.checkedAt)}</p></div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><div className="rounded-2xl border border-indigo-100 bg-white p-4"><p className="text-[10px] font-black uppercase tracking-wide text-slate-500">Tracked venues</p><p className="mt-2 text-2xl font-black text-slate-950">{directoryStats.trackedVenues || "—"}</p></div><div className="rounded-2xl border border-indigo-100 bg-white p-4"><p className="text-[10px] font-black uppercase tracking-wide text-slate-500">24h volume</p><p className="mt-2 text-2xl font-black text-slate-950">{formatUsd(directoryStats.volume24hUsd)}</p></div><div className="rounded-2xl border border-indigo-100 bg-white p-4"><p className="text-[10px] font-black uppercase tracking-wide text-slate-500">24h trades</p><p className="mt-2 text-2xl font-black text-slate-950">{formatCount(directoryStats.trades24h)}</p>{directoryStats.tradesReportedBy > 0 && <p className="mt-1 text-[11px] text-slate-500">Reported by {directoryStats.tradesReportedBy} venue{directoryStats.tradesReportedBy === 1 ? "" : "s"}</p>}</div><div className="rounded-2xl border border-indigo-100 bg-white p-4"><p className="text-[10px] font-black uppercase tracking-wide text-slate-500">Tracked pairs</p><p className="mt-2 text-2xl font-black text-slate-950">{formatCount(directoryStats.pairs)}</p>{directoryStats.pairsReportedBy > 0 && <p className="mt-1 text-[11px] text-slate-500">Reported by {directoryStats.pairsReportedBy} venue{directoryStats.pairsReportedBy === 1 ? "" : "s"}</p>}</div></div>
+              <p className="mt-4 text-xs leading-5 text-slate-600">Stats are shown only where third-party coverage is available. The totals combine returned venue snapshots and may omit unsupported products, pool classes, or non-comparable market types; they are informational, not a liquidity, safety, or performance score.</p>
+            </section>
+          )}
           {compared.length > 0 && (
             <div className="mb-6 rounded-3xl border border-indigo-200 bg-indigo-50 p-5" aria-live="polite">
               <div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-700">Side-by-side view</p><h2 className="mt-1 text-xl font-black text-slate-950">Compare {compared.length} selected {mode === "dex" ? "platforms" : "services"}</h2></div><button type="button" onClick={() => setCompare([])} className="text-sm font-bold text-indigo-700">Clear</button></div>
@@ -142,6 +156,7 @@ export default function DexDirectory({
                   <div className="flex items-start justify-between gap-3"><div className="flex items-center gap-3"><ProviderLogo service={item} /><div><div className="flex flex-wrap items-center gap-2"><h3 className="font-black text-slate-950">{item.name}</h3><span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-600">{kindLabel[item.kind]}</span></div><p className="mt-0.5 text-xs text-slate-500">{item.provider}</p></div></div><button type="button" onClick={() => toggleCompare(item.slug)} aria-pressed={compare.includes(item.slug)} className={`rounded-full border px-3 py-1 text-xs font-bold transition ${compare.includes(item.slug) ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-200 text-slate-600 hover:border-indigo-400"}`}>{compare.includes(item.slug) ? "Selected" : "Compare"}</button></div>
                   <p className="mt-4 text-sm leading-6 text-slate-600">{item.shortDescription}</p>
                   <div className="mt-4 grid gap-2 text-xs text-slate-600 sm:grid-cols-2"><span className="flex items-start gap-2"><Glyph name="wallet" /><span><b className="text-slate-800">Access:</b> {item.access}</span></span><span className="flex items-start gap-2"><Glyph name="fee" /><span><b className="text-slate-800">Fees:</b> {item.fees}</span></span><span className="flex items-start gap-2"><Glyph name="network" /><span><b className="text-slate-800">Networks:</b> {item.chains.slice(0, 2).join(", ")}{item.chains.length > 2 ? " + more" : ""}</span></span><span className="flex items-start gap-2"><Glyph name="shield" /><span><b className="text-slate-800">{verificationTile(item)}:</b> {verificationLabel(item)}</span></span></div>
+                  {stats[item.slug] && stats[item.slug].provider !== "unavailable" && <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-600"><div className="flex flex-wrap items-center justify-between gap-2"><span className="font-black uppercase tracking-wide text-slate-500">Market snapshot</span><span className="font-semibold text-slate-500">{stats[item.slug].provider}</span></div><div className="mt-2 flex flex-wrap gap-x-4 gap-y-1"><span><b className="text-slate-800">24h volume:</b> {formatUsd(stats[item.slug].volume24hUsd)}</span>{stats[item.slug].pairs !== null && <span><b className="text-slate-800">Pairs:</b> {formatCount(stats[item.slug].pairs)}</span>}{stats[item.slug].trades24h !== null && <span><b className="text-slate-800">Trades:</b> {formatCount(stats[item.slug].trades24h)}</span>}</div></div>}
                   <div className="mt-5 flex flex-wrap gap-2">{item.categories.slice(0, 3).map((tag) => <span key={tag} className="rounded-full bg-indigo-50 px-2.5 py-1 text-[11px] font-semibold text-indigo-700">{tag}</span>)}</div>
                   <div className="mt-5 flex flex-wrap items-center justify-between gap-3"><Link href={profileHref(item)} className="inline-flex items-center gap-2 text-sm font-black text-indigo-700 hover:text-indigo-900">Read profile <Glyph name="arrow" /></Link><div className="flex flex-wrap items-center gap-3"><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-slate-500 hover:text-slate-800">Official source ↗</a>{item.partnerUrl && <a href={item.partnerUrl} target="_blank" rel="sponsored nofollow noreferrer" className="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-black text-amber-900 hover:bg-amber-200">{item.partnerLabel ?? "Partner link"} ↗</a>}</div></div>{item.partnerUrl && <p className="mt-3 text-[11px] leading-5 text-slate-500">Affiliate disclosure: CryptosBeginner may earn a commission if you use this partner link. It does not affect listing order, editorial inclusion, fees, or safety.</p>}
                 </div>

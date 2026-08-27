@@ -4,8 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DexDetail from "../DexDetail";
 import { dexServices, getDexService } from "../dex-data";
+import { getDexStatsForService } from "../dex-stats";
 
 const siteUrl = "https://www.cryptosbeginner.com";
+
+export const revalidate = 120;
 
 export function generateStaticParams() {
   return dexServices.filter((service) => service.isDex || service.kind === "prediction-market").map((service) => ({ slug: service.slug }));
@@ -34,6 +37,7 @@ export default async function DexDetailRoute({ params }: { params: Promise<{ slu
   const service = getDexService(slug);
   if (!service || (!service.isDex && service.kind !== "prediction-market")) notFound();
   const canonical = `${siteUrl}/dexes/${service.slug}`;
+  const stats = await getDexStatsForService(service);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -43,5 +47,5 @@ export default async function DexDetailRoute({ params }: { params: Promise<{ slu
       { "@type": "FAQPage", "@id": `${canonical}#faq`, mainEntity: service.faqs.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) },
     ],
   };
-  return <><Header /><DexDetail service={service} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><Footer /></>;
+  return <><Header /><DexDetail service={service} stats={stats} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><Footer /></>;
 }
