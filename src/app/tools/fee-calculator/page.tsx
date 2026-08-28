@@ -8,12 +8,12 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/tools/fee-calculator`;
 
 export const metadata: Metadata = {
-  title: "Crypto Trading Fee Calculator: Compare BTC & ETH Costs",
-  description: "Estimate the real cost of buying BTC or ETH across crypto exchanges, including trading fees, spread assumptions, deposit charges, and withdrawal costs.",
+  title: "Crypto Trading Fee Calculator: Compare BTC, ETH, SOL, BNB, XRP, ZEC, XMR & TRX Costs",
+  description: "Estimate the cost of buying BTC, ETH, SOL, BNB, XRP, ZEC, XMR, or TRX across crypto exchanges, including trading fees, spread assumptions, deposit charges, and withdrawal costs.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Crypto Trading Fee Calculator: Compare BTC & ETH Costs",
-    description: "Compare estimated trading, spread, funding, and withdrawal costs across affiliated and non-affiliate reference exchanges.",
+    title: "Crypto Trading Fee Calculator: Compare BTC, ETH, SOL, BNB, XRP, ZEC, XMR & TRX Costs",
+    description: "Compare estimated trading, spread, funding, and withdrawal costs for eight popular crypto assets across affiliated and non-affiliate reference exchanges.",
     url: PAGE_URL,
     type: "website",
   },
