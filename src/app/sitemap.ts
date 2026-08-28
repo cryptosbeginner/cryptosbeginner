@@ -36,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/dexes",
     "/prediction-markets",
     "/meme-coins",
+    "/meme-coins/platforms",
+    "/meme-coins/guides",
+    "/meme-coins/tutorials",
     "/regions",
   ];
   const routes = [
@@ -44,6 +47,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...editorialPages.map((page) => `/crypto-cards/${page.slug}`),
     ...dexServices.filter((service) => service.isDex).map((service) => `/dexes/${service.slug}`),
     ...predictionPlatforms.map((platform) => `/prediction-markets/${platform.slug}`),
+    "/meme-coins/reviews/axiom-trade",
+    "/meme-coins/reviews/gmgn-ai",
+    "/meme-coins/reviews/pump-fun",
+    "/meme-coins/reviews/padre-terminal",
+    "/meme-coins/reviews/fomo-photon",
+    "/meme-coins/guides/token-verification",
+    "/meme-coins/guides/slippage-mev",
+    "/meme-coins/guides/presets",
+    "/meme-coins/tutorials/gmgn-beginners",
+    "/meme-coins/tutorials/fomo-beginners",
     ...dexServices.filter((service) => !service.isDex && (service.isNoKycCandidate || service.isKycConditional)).map((service) => `/exchanges/no-kyc/${service.slug}`),
     ...glossaryTerms.map((term) => `/learn/crypto-glossary/${term.slug}`),
   ];

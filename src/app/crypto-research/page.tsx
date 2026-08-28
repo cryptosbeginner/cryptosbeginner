@@ -24,6 +24,7 @@ const tools = [
   { eyebrow: "Read-only", title: "Wallet tracker", description: "Review a public address on one selected network without submitting keys or connecting a wallet.", href: "/wallet-tracker", accent: "from-fuchsia-500 to-rose-500", tag: "Explicit lookup" },
   { eyebrow: "Observation", title: "Public-wallet board", description: "Save neutral address labels locally and move into a deliberate read-only lookup when you are ready.", href: "/public-wallets", accent: "from-amber-400 to-orange-500", tag: "Local only" },
   { eyebrow: "Research guide", title: "Meme-token context", description: "Work through liquidity, holder concentration, contract permissions, and timeline questions before treating a chart as a story.", href: "/meme-coin-research", accent: "from-emerald-400 to-teal-500", tag: "Risk checklist" },
+  { eyebrow: "Meme coin hub", title: "Meme Coins directory", description: "Compare launchpads, trading terminals, social discovery tools, fee layers, screenshots, and beginner workflows.", href: "/meme-coins", accent: "from-fuchsia-500 to-violet-600", tag: "Platform directory" },
   { eyebrow: "Browser demo", title: "Wallet alerts", description: "Draft local price and wallet rules. Production notifications require authenticated background jobs and durable storage.", href: "/wallet-alerts", accent: "from-slate-500 to-slate-800", tag: "Prototype" },
 ];
 
