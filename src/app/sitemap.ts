@@ -4,6 +4,7 @@ import { cardListings } from "./crypto-cards/cards-data";
 import { editorialPages } from "./crypto-cards/editorial-data";
 import { dexServices } from "./dexes/dex-data";
 import { predictionPlatforms } from "./prediction-markets/prediction-data";
+import { popularWallets } from "./wallets/popular/wallet-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/crypto-screener",
     "/wallet-tracker",
     "/public-wallets",
+    "/wallets/popular",
     "/wallet-alerts",
     "/meme-coin-research",
     "/crypto-cards",
@@ -60,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/meme-coins/guides/presets",
     "/meme-coins/tutorials/gmgn-beginners",
     "/meme-coins/tutorials/fomo-beginners",
+    ...popularWallets.map((wallet) => `/wallets/popular/${wallet.slug}`),
     ...dexServices.filter((service) => !service.isDex && (service.isNoKycCandidate || service.isKycConditional)).map((service) => `/exchanges/no-kyc/${service.slug}`),
     ...glossaryTerms.map((term) => `/learn/crypto-glossary/${term.slug}`),
   ];
