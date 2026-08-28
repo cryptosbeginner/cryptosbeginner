@@ -4,6 +4,7 @@ export type Platform = {
   slug: string;
   name: string;
   role: string;
+  category: "terminal" | "launchpad" | "comparison";
   summary: string;
   fee: string;
   caution: string;
@@ -17,6 +18,7 @@ export const platforms: Platform[] = [
     slug: "axiom-trade",
     name: "Axiom",
     role: "Solana-focused discovery and trading workspace",
+    category: "terminal",
     summary: "Axiom places charts, wallet and token tracking, holders, execution controls, and saved presets in one dense workspace.",
     fee: "The fee stack can include venue fees, Solana gas, priority fees, bribes or tips, slippage, and price impact.",
     caution: "Controls can make an untested thesis execute faster; a bundle signal or MEV mode is not a safety guarantee.",
@@ -34,6 +36,7 @@ export const platforms: Platform[] = [
     slug: "gmgn-ai",
     name: "GMGN.ai",
     role: "Multi-chain meme-coin research, monitoring, and trading toolkit",
+    category: "terminal",
     summary: "GMGN combines token discovery, wallet analytics, holder and developer signals, monitoring, presets, and copy-style workflows.",
     fee: "GMGN’s official documentation states a 1% handling fee per single transaction; gas, priority fees, tips, venue charges, slippage, and price impact remain separate.",
     caution: "Wallet P&L, insider labels, bundles, and security badges are signals to investigate—not proof of safety or future performance.",
@@ -54,6 +57,7 @@ export const platforms: Platform[] = [
     slug: "pump-fun",
     name: "pump.fun",
     role: "Solana token launchpad and market interface",
+    category: "launchpad",
     summary: "pump.fun lowers the technical barrier to creating and trading tokens through a bonding-curve launch flow, with graduated coins associated with PumpSwap pools.",
     fee: "The official fee page lists free coin creation, a 0.015 SOL graduation fee, and separate creator, protocol, and LP fee layers that vary by market type and band.",
     caution: "Permissionless creation, a launch list, or visible activity does not validate a token’s identity, liquidity, team, or exit prospects.",
@@ -70,6 +74,7 @@ export const platforms: Platform[] = [
     slug: "padre-terminal",
     name: "Padre / Terminal",
     role: "Trading terminal with claims requiring current verification",
+    category: "terminal",
     summary: "The public product page presents a trading terminal with execution and cashback messaging; the review separates observable product positioning from claims that require terms-level verification.",
     fee: "Do not publish an all-in fee until the current fee schedule, route charges, and cashback conditions are verified.",
     caution: "The public landing page advertises ‘up to 35% cashback’ and ‘fastest execution’; these are not guarantees of eligibility, speed, cost, or results.",
@@ -86,6 +91,7 @@ export const platforms: Platform[] = [
     slug: "fomo-photon",
     name: "FOMO vs Photon Comparison",
     role: "Social-first and Solana token-discovery comparison",
+    category: "comparison",
     summary: "FOMO emphasizes feeds, trader profiles, alerts, and social discovery, while Photon emphasizes Solana token discovery, monitoring, and quick buy and sell.",
     fee: "FOMO’s visible 0% label must not be treated as an all-in cost; Photon’s current fee schedule should be checked against its official documentation before publication.",
     caution: "Leaderboards, social posts, displayed gains, and speed are historical or promotional signals—not suitability, safety, or future performance evidence.",
@@ -102,6 +108,39 @@ export const platforms: Platform[] = [
       { src: "/images/meme-coins/platforms/photon-settings.png", alt: "Photon settings screen showing configurable trading controls", caption: "Photon settings screen; use exact visible controls and verify current defaults." },
       { src: "/images/meme-coins/platforms/photon-xtracker.png", alt: "Photon XTracker surface showing wallet or social activity tracking", caption: "Photon XTracker surface; wallet activity is historical context, not a forecast." },
     ],
+  },
+  {
+    slug: "bags-fm",
+    name: "Bags.fm",
+    role: "Solana-native token launchpad with creator fee sharing",
+    category: "launchpad",
+    summary: "Bags.fm lets creators launch Solana tokens and configure fee sharing with creators, apps, or wallets; its launch workflow requires a wallet, token metadata, and on-chain transactions.",
+    fee: "Bags’ public launch materials describe creator royalties and the launch documentation requires SOL for transactions. Exact network, partner, and fee-share costs depend on the launch configuration and current terms.",
+    caution: "Creator royalties and a polished launch flow do not validate a token, its team, its liquidity, or its future trading demand. Treat fee-sharing claims as platform mechanics, not investment returns.",
+    sources: [{ label: "Bags.fm official site", href: "https://bags.fm/" }, { label: "Bags token-launch documentation", href: "https://docs.bags.fm/how-to-guides/launch-token" }],
+    images: [],
+  },
+  {
+    slug: "four-meme",
+    name: "Four.meme",
+    role: "BNB Chain no-code meme-token launchpad",
+    category: "launchpad",
+    summary: "Four.meme is a BNB Chain launchpad built around no-code token creation, launch discovery, and a bonding-curve-style path before broader liquidity or trading venues.",
+    fee: "Public third-party coverage commonly cites a small creator launch charge and BNB Chain gas, but fee schedules and graduation mechanics should be verified on the live product before publication or use.",
+    caution: "A low launch cost reduces friction for creators; it does not reduce contract, liquidity, concentration, or exit risk for buyers. Verify the chain, contract, deployer, and post-launch liquidity independently.",
+    sources: [{ label: "Four.meme official site", href: "https://four.meme/" }, { label: "BNB Chain official documentation", href: "https://docs.bnbchain.org/" }],
+    images: [],
+  },
+  {
+    slug: "sunpump",
+    name: "SunPump",
+    role: "TRON token launchpad and discovery market",
+    category: "launchpad",
+    summary: "SunPump is a TRON-based meme-token launchpad with launch, ranking, campaign, explorer, and trading-discovery surfaces; its public site warns users to check the sunpump.meme domain carefully.",
+    fee: "The current public interface presents TRX-denominated activity and launch markets. Creator charges, transaction fees, and any burn or graduation rules should be confirmed in the live product and linked Sun documentation before use.",
+    caution: "Permissionless launches and visible TRX volume do not establish token authenticity, holder quality, liquidity, or sellability. Use the official domain and verify the contract before signing.",
+    sources: [{ label: "SunPump official site", href: "https://sunpump.meme/" }, { label: "SunPump overview in Sun Protocol documentation", href: "https://docs.sun.io/protocols/sunpump/overview/" }],
+    images: [],
   },
 ];
 
