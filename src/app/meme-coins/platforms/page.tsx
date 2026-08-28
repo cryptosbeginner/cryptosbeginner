@@ -5,7 +5,7 @@ import { platforms, reviewedDate } from "../content";
 import { CollectionJsonLd } from "../SeoJsonLd";
 
 export const metadata = {
-  title: "Meme Coin Platforms: Trading Terminals vs Launchpads | CryptosBeginner",
+  title: "Meme Coin Platforms: Trading Terminals vs Launchpads",
   description: "Compare meme-coin trading terminals, social discovery tools, and token launchpads by workflow, fees, chain, custody, and risk checks.",
   alternates: { canonical: "https://www.cryptosbeginner.com/meme-coins/platforms" },
   openGraph: {
