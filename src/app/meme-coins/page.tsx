@@ -119,12 +119,17 @@ const faqItems = [
 function Section({
   children,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }) {
   return (
-    <section className={`px-5 py-16 sm:px-8 lg:px-12 lg:py-24 ${className}`}>
+    <section
+      id={id}
+      className={`px-5 py-16 sm:px-8 lg:px-12 lg:py-24 ${className}`}
+    >
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -406,9 +411,16 @@ export default function MemeCoinsPage() {
             <ul className="mt-5 space-y-4 text-base leading-7 text-slate-200">
               <li>Confirm you are on the intended network.</li>
               <li>Verify the token contract, not only the ticker or logo.</li>
-              <li>Read token approval requests and avoid unlimited approvals when unnecessary.</li>
-              <li>Check the transaction destination, amount, route, and fees.</li>
-              <li>Use a separate wallet for experimentation where appropriate.</li>
+              <li>
+                Read token approval requests and avoid unlimited approvals when
+                unnecessary.
+              </li>
+              <li>
+                Check the transaction destination, amount, route, and fees.
+              </li>
+              <li>
+                Use a separate wallet for experimentation where appropriate.
+              </li>
               <li>Never share a seed phrase, private key, or API secret.</li>
             </ul>
           </div>
@@ -417,7 +429,9 @@ export default function MemeCoinsPage() {
 
       <Section className="bg-white">
         <div className="mx-auto max-w-4xl">
-          <SectionLabel className="text-indigo-700">Common questions</SectionLabel>
+          <SectionLabel className="text-indigo-700">
+            Common questions
+          </SectionLabel>
 
           <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
             Meme-coin research FAQ
@@ -427,15 +441,11 @@ export default function MemeCoinsPage() {
             {faqItems.map((item) => (
               <details
                 key={item.question}
-                className="group rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5"
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-5"
               >
-                <summary className="cursor-pointer list-none pr-8 text-xl font-black text-slate-950">
-                  <span className="relative block">
-                    {item.question}
-                    <span className="absolute right-0 top-0 text-emerald-700 transition group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
+                <summary className="cursor-pointer text-xl font-black text-slate-950">
+                  {item.question}
+                </summary>
 
                 <p className="mt-4 text-base leading-8 text-slate-700">
                   {item.answer}
