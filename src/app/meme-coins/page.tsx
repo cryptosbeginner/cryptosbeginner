@@ -1,19 +1,407 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { platforms, guides, tutorials, reviewedDate } from "./content";
-import { CollectionJsonLd } from "./SeoJsonLd";
 
-export const metadata = { title: "Meme Coins 2026: Launchpads, Trading Terminals & Safety", description: "Learn how meme-coin launchpads, trading terminals, and social discovery tools work, with practical checks for contracts, liquidity, fees, and execution risk.", alternates: { canonical: "https://www.cryptosbeginner.com/meme-coins" }, openGraph: { title: "Meme Coins 2026: Launchpads, Trading Terminals & Safety", description: "Research-first meme-coin education and platform comparisons for beginners.", url: "https://www.cryptosbeginner.com/meme-coins", type: "website" } };
+export const metadata: Metadata = {
+  title: "Meme Coin Research Guide: Wallets, Liquidity & Smart Money",
+  description:
+    "A practical meme coin research guide for checking liquidity, holder concentration, wallets, token risk, and smart-money activity before you trade.",
+  alternates: {
+    canonical: "https://www.cryptosbeginner.com/meme-coins",
+  },
+  openGraph: {
+    title: "Meme Coin Research Guide: Wallets, Liquidity & Smart Money",
+    description:
+      "Use this practical framework to research meme coins, monitor wallet activity, check liquidity, and manage risk before you trade.",
+    url: "https://www.cryptosbeginner.com/meme-coins",
+    siteName: "Cryptos Beginner",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meme Coin Research Guide: Wallets, Liquidity & Smart Money",
+    description:
+      "A practical framework for researching meme coins before you trade.",
+  },
+};
 
-function HubCard({ platform }: { platform: (typeof platforms)[number] }) {
-  const label = platform.category === "launchpad" ? "Launchpad" : platform.category === "comparison" ? "Comparison" : "Trading terminal";
-  return <article className="rounded-2xl border border-slate-300 bg-white p-6 shadow-sm"><span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-indigo-950">{label}</span><h3 className="mt-4 text-2xl font-black text-slate-950">{platform.name}</h3><p className="mt-2 text-sm font-bold text-slate-700">{platform.role}</p><p className="mt-3 leading-7 text-slate-800">{platform.summary}</p><Link href={`/meme-coins/reviews/${platform.slug}`} className="mt-4 inline-block font-black text-indigo-900 hover:underline">Read the profile →</Link></article>;
+const faqItems = [
+  {
+    question: "What should I check before buying a meme coin?",
+    answer:
+      "Start with liquidity, holder concentration, recent wallet activity, the token contract, and whether the narrative is gaining or losing attention. Decide your maximum loss and profit-taking plan before entering.",
+  },
+  {
+    question: "How do I spot a risky meme coin?",
+    answer:
+      "Common warning signs include shallow liquidity, a very concentrated top-holder list, unusual deployer wallet activity, sudden volume without a clear catalyst, and token permissions that can alter supply or trading behavior.",
+  },
+  {
+    question: "Can smart-money tracking guarantee profitable trades?",
+    answer:
+      "No. Wallet activity is context, not a guarantee. A wallet may be hedging, testing liquidity, exiting gradually, or taking a high-risk position that does not suit your risk tolerance.",
+  },
+];
+
+const researchSteps = [
+  {
+    number: "01",
+    title: "Map the narrative",
+    description:
+      "Write down what is driving attention: a launch, a cultural moment, a chain rotation, a listing rumor, or a visible community. Ask whether the narrative is early, active, or already overcrowded.",
+  },
+  {
+    number: "02",
+    title: "Verify the token",
+    description:
+      "Confirm the contract address from trusted sources. Check the chain, token name, ticker, supply, and whether similar lookalike contracts exist.",
+  },
+  {
+    number: "03",
+    title: "Inspect liquidity",
+    description:
+      "Look at pool depth, trading volume, liquidity changes, and likely slippage at your intended size. A token can show a large market cap but still be difficult to exit.",
+  },
+  {
+    number: "04",
+    title: "Study holders and wallets",
+    description:
+      "Review top-holder concentration, deployer history, early buyer behavior, and transfers between related wallets. Concentration can magnify both upside and downside.",
+  },
+  {
+    number: "05",
+    title: "Plan the trade",
+    description:
+      "Set a small position size, invalidation point, and staged exit plan before buying. Do not make the risk decision after price moves against you.",
+  },
+];
+
+const toolCards = [
+  {
+    title: "GMGN",
+    text: "Research token flows, monitor notable wallets, and compare holder and trader behavior.",
+    href: "/learn/gmgn-ai-agent",
+    label: "Read the GMGN guide",
+    external: false,
+  },
+  {
+    title: "Solscan",
+    text: "Inspect Solana token transfers, wallet histories, and transaction-level activity.",
+    href: "https://solscan.io",
+    label: "Open Solscan",
+    external: true,
+  },
+  {
+    title: "DexScreener",
+    text: "Review pairs, liquidity, price action, volume, and DEX trading activity across chains.",
+    href: "https://dexscreener.com",
+    label: "Open DexScreener",
+    external: true,
+  },
+  {
+    title: "Wallet tracker",
+    text: "Keep a record of your entries, exits, position sizing, and PnL so you can improve your process.",
+    href: "/wallet-tracker",
+    label: "Open wallet tracker",
+    external: false,
+  },
+];
+
+function ToolLink({
+  href,
+  children,
+  external,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external: boolean;
+}) {
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+      >
+        {children} <span aria-hidden="true">↗</span>
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+    >
+      {children} <span aria-hidden="true">→</span>
+    </Link>
+  );
 }
 
 export default function MemeCoinsPage() {
-  const terminals = platforms.filter((p) => p.category === "terminal").slice(0, 2);
-  const launchpads = platforms.filter((p) => p.category === "launchpad").slice(0, 4);
-  return <><CollectionJsonLd title="Meme Coins 2026: Launchpads, Trading Terminals & Safety" description="Research-first meme-coin education and platform comparisons." path="/meme-coins" items={platforms.map((p) => ({ name: p.name, path: `/meme-coins/reviews/${p.slug}` }))} /><Header /><main><section className="border-b border-slate-200 bg-slate-50"><div className="mx-auto max-w-5xl px-4 py-12 sm:px-6"><p className="text-sm font-bold text-indigo-900">Meme coins · Research · Guides · {reviewedDate}</p><h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Meme Coins: Launchpads, Trading Terminals, and the Checks That Matter</h1><p className="mt-5 max-w-3xl text-lg leading-8 text-slate-900"><strong>Meme coins are highly speculative tokens.</strong> Their prices can be driven by attention, liquidity, culture, and rapid trading rather than predictable cash flow. This hub explains what each type of platform actually does so you can separate discovery from verification and execution.</p><div className="mt-6 flex flex-wrap gap-3"><Link href="/meme-coins/platforms" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-indigo-700">Browse terminals and launchpads →</Link><Link href="/meme-coins/guides/token-verification" className="rounded-full border border-slate-400 bg-white px-5 py-3 text-sm font-black text-slate-950 hover:border-indigo-500">Start with verification</Link></div></div></section><div className="mx-auto max-w-5xl px-4 py-10 sm:px-6"><section><h2 className="text-3xl font-black text-slate-950">Trading terminals and research tools</h2><p className="mt-2 max-w-3xl leading-7 text-slate-900">Terminals organize charts, wallet activity, holder data, alerts, and transaction controls. They can make a workflow faster; they cannot make a token authentic or a trade safe.</p><div className="mt-5 grid gap-5 md:grid-cols-2">{terminals.map((p) => <HubCard key={p.slug} platform={p} />)}</div></section><section className="mt-14"><h2 className="text-3xl font-black text-slate-950">Launchpads and token-creation markets</h2><p className="mt-2 max-w-3xl leading-7 text-slate-900">Launchpads lower the steps required to create or discover a token. Before using one, record the chain and contract, inspect creator and holder concentration, understand the liquidity or graduation path, and verify the current fee rules.</p><div className="mt-5 grid gap-5 md:grid-cols-2">{launchpads.map((p) => <HubCard key={p.slug} platform={p} />)}</div></section><section className="mt-10 rounded-2xl border border-amber-300 bg-amber-100 p-6"><h2 className="text-2xl font-black text-slate-950">A chart, ranking, or audit badge is only a starting point</h2><p className="mt-2 leading-7 text-slate-950">A wallet P&amp;L, leaderboard, “smart money” label, bonding-curve position, or recent buy is a signal to investigate. It is not proof that the token is authentic, liquid, or sellable. Use a dedicated low-balance wallet and decide your maximum loss before signing.</p></section><div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_1fr]"><div><h2 className="text-3xl font-black text-slate-950">Guides and tutorials</h2><div className="mt-4 grid gap-3">{[...guides, ...tutorials].map((item) => <Link key={item.slug} href={`/meme-coins/${guides.some((g) => g.slug === item.slug) ? "guides" : "tutorials"}/${item.slug}`} className="rounded-xl border border-slate-300 bg-white p-4 hover:border-indigo-500"><span className="text-xs font-black uppercase tracking-[0.14em] text-slate-700">{guides.some((g) => g.slug === item.slug) ? "Guide" : "Tutorial"}</span><span className="mt-1 block font-black text-slate-950">{item.title}</span><span className="mt-1 block text-sm leading-6 text-slate-800">{item.description}</span></Link>)}</div></div><div className="rounded-2xl border border-slate-300 bg-white p-6"><h2 className="text-3xl font-black text-slate-950">What the screenshots show</h2><p className="mt-3 leading-7 text-slate-900">The supplied visuals are used as product evidence for visible controls such as discovery feeds, charts, holder views, presets, and tracking panels. They are not presented as performance proof.</p><Image src="/images/meme-coins/platforms/gmgn-homepage.png" alt="GMGN homepage showing research and trading entry points" width={1906} height={852} className="mt-5 h-auto w-full rounded-xl border border-slate-300 bg-slate-950" /></div></div></div></main><Footer /></>;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Meme Coin Research Guide: Wallets, Liquidity & Smart Money",
+    description:
+      "A practical framework for researching meme coins, checking liquidity, reviewing wallets, and managing risk.",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.cryptosbeginner.com/meme-coins",
+    },
+    author: {
+      "@type": "Organization",
+      name: "Cryptos Beginner",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Cryptos Beginner",
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <main className="min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      <div className="border-b border-slate-800 bg-slate-950/95">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+          <nav aria-label="Breadcrumb" className="text-xs text-slate-400">
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <li>
+                <Link href="/" className="transition hover:text-slate-200">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="text-slate-200">Meme Coins</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <section className="border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/40">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">
+            Learn · Meme coin research
+          </p>
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Research Meme Coins Before You Trade
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+            A practical, repeatable framework for checking liquidity, wallet
+            behavior, token risk, and market narratives—before you risk capital
+            on a fast-moving meme coin.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#research-framework"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+            >
+              Start the research checklist
+            </a>
+            <Link
+              href="/wallet-tracker"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-600 bg-slate-900 px-5 py-3 text-sm font-bold text-slate-100 transition hover:border-slate-500 hover:bg-slate-800"
+            >
+              Track your trades
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid gap-5 md:grid-cols-3">
+          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+            <p className="text-sm font-semibold text-cyan-300">Liquidity</p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Check if you can realistically exit at your intended position
+              size, not just whether a price chart looks attractive.
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+            <p className="text-sm font-semibold text-cyan-300">Wallet flows</p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Look for concentration, early entries, transfers, and selling
+              behavior—not just a single wallet buy.
+            </p>
+          </div>
+          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+            <p className="text-sm font-semibold text-cyan-300">Risk plan</p>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              Decide position size, invalidation, and profit-taking rules before
+              the volatility begins.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="research-framework"
+        className="border-y border-slate-800 bg-slate-900/40"
+      >
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
+              The framework
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+              Five checks before any entry
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              You do not need a perfect prediction. You need a process that
+              helps you recognize weak setups, control downside, and avoid
+              buying blindly into a move.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {researchSteps.map((step) => (
+              <article
+                key={step.number}
+                className="rounded-xl border border-slate-800 bg-slate-950 p-5 sm:p-6"
+              >
+                <p className="text-sm font-bold text-cyan-300">{step.number}</p>
+                <h3 className="mt-3 text-xl font-semibold text-white">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {step.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
+            Research tools
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+            Use the right tool for each question
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-300">
+            No single dashboard tells the full story. Cross-check token details,
+            liquidity, trades, and wallets before acting.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          {toolCards.map((tool) => (
+            <article
+              key={tool.title}
+              className="flex min-w-0 flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
+            >
+              <h3 className="text-xl font-semibold text-white">{tool.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-6 text-slate-300">
+                {tool.text}
+              </p>
+              <div className="mt-5">
+                <ToolLink href={tool.href} external={tool.external}>
+                  {tool.label}
+                </ToolLink>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-slate-800 bg-amber-400/5">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-300">
+                Risk checklist
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+                Reasons to pause or skip a trade
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                These signals do not prove a token will fail, but they justify
+                greater caution, less size, or no trade at all.
+              </p>
+            </div>
+
+            <ul className="space-y-3">
+              {[
+                "Liquidity is too shallow for your intended entry or exit size.",
+                "A handful of wallets control an unusually large share of supply.",
+                "The deployer or top wallets show suspicious transfers or rapid selling.",
+                "The contract or token details cannot be independently verified.",
+                "You are entering because of urgency, FOMO, or a social post rather than a defined setup.",
+                "You cannot state where you would exit if the thesis is wrong.",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="rounded-lg border border-amber-300/20 bg-slate-950/70 px-4 py-3 text-sm leading-6 text-slate-200"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
+            FAQ
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+            Meme coin research questions
+          </h2>
+        </div>
+
+        <div className="mt-8 space-y-4">
+          {faqItems.map((item) => (
+            <article
+              key={item.question}
+              className="rounded-xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
+            >
+              <h3 className="text-lg font-semibold text-white">
+                {item.question}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                {item.answer}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-slate-800 bg-slate-900/50">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="max-w-4xl text-xs leading-5 text-slate-400">
+            Educational content only; not financial, investment, legal, or tax
+            advice. Meme coins are highly speculative and can lose value
+            rapidly. Verify information independently and only risk capital you
+            can afford to lose.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
 }
