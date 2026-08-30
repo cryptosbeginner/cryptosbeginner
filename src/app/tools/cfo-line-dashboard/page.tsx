@@ -1,13 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getMarketDashboardData } from "@/lib/crypto-market-dashboard";
-import {
-  Breadcrumbs,
-  BreadcrumbsItem,
-  BreadcrumbsLink,
-  BreadcrumbsList,
-  BreadcrumbsSeparator,
-} from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Crypto Market Regime Dashboard (CFO Line + Market Data)",
@@ -80,23 +73,24 @@ export default async function CfoLineDashboardPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <Breadcrumbs className="mb-6">
-          <BreadcrumbsList>
-            <BreadcrumbsItem>
-              <BreadcrumbsLink href="/">Home</BreadcrumbsLink>
-            </BreadcrumbsItem>
-            <BreadcrumbsSeparator />
-            <BreadcrumbsItem>
-              <BreadcrumbsLink href="/tools">Tools</BreadcrumbsLink>
-            </BreadcrumbsItem>
-            <BreadcrumbsSeparator />
-            <BreadcrumbsItem>
-              <BreadcrumbsLink href="/tools/cfo-line-dashboard">
-                CFO Dashboard
-              </BreadcrumbsLink>
-            </BreadcrumbsItem>
-          </BreadcrumbsList>
-        </Breadcrumbs>
+        {/* Breadcrumbs (inline, no custom component) */}
+        <nav className="mb-6 text-xs text-slate-400" aria-label="Breadcrumb">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-slate-200">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="/tools" className="hover:text-slate-200">
+                Tools
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-slate-200">CFO Dashboard</li>
+          </ol>
+        </nav>
 
         <section className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
