@@ -13,7 +13,7 @@ export function AffiliateCTA({
   label: string;
 }) {
   return (
-    <aside className="not-prose my-12 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 shadow-sm sm:p-6">
+    <aside className="my-12 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 shadow-sm sm:p-6">
       <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-800">
         Disclosed partner link
       </p>
@@ -46,7 +46,7 @@ export function Figure({
   caption?: string;
 }) {
   return (
-    <figure className="not-prose my-12">
+    <figure className="my-12">
       <Image
         src={src}
         alt={alt}
@@ -61,6 +61,80 @@ export function Figure({
         </figcaption>
       ) : null}
     </figure>
+  );
+}
+
+function ArticleBody({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="
+        article-body text-[1.0625rem] leading-8 text-slate-800
+
+        [&_h2]:mt-16
+        [&_h2]:mb-6
+        [&_h2]:scroll-mt-24
+        [&_h2]:text-3xl
+        [&_h2]:font-black
+        [&_h2]:leading-tight
+        [&_h2]:tracking-tight
+        [&_h2]:text-slate-950
+
+        [&_h2:first-child]:mt-0
+
+        [&_h3]:mt-10
+        [&_h3]:mb-4
+        [&_h3]:scroll-mt-24
+        [&_h3]:text-xl
+        [&_h3]:font-extrabold
+        [&_h3]:leading-snug
+        [&_h3]:text-slate-950
+
+        [&_p]:my-5
+        [&_p]:max-w-none
+        [&_p]:text-[1.0625rem]
+        [&_p]:leading-8
+        [&_p]:text-slate-800
+
+        [&_strong]:font-extrabold
+        [&_strong]:text-slate-950
+
+        [&_a]:font-bold
+        [&_a]:text-indigo-700
+        [&_a]:underline
+        [&_a]:decoration-indigo-300
+        [&_a]:underline-offset-4
+        [&_a:hover]:text-indigo-950
+
+        [&_ul]:my-7
+        [&_ul]:list-disc
+        [&_ul]:space-y-3
+        [&_ul]:pl-6
+
+        [&_ol]:my-7
+        [&_ol]:list-decimal
+        [&_ol]:space-y-3
+        [&_ol]:pl-6
+
+        [&_li]:pl-1
+        [&_li]:leading-7
+        [&_li]:text-slate-800
+
+        [&_blockquote]:my-8
+        [&_blockquote]:border-l-4
+        [&_blockquote]:border-indigo-400
+        [&_blockquote]:bg-indigo-50
+        [&_blockquote]:px-5
+        [&_blockquote]:py-4
+        [&_blockquote]:text-slate-800
+
+        [&_figure]:my-12
+
+        [&_iframe]:w-full
+        [&_iframe]:border-0
+      "
+    >
+      {children}
+    </div>
   );
 }
 
@@ -87,7 +161,7 @@ export function ArticleShell({
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="text-sm font-bold text-indigo-800">{kicker}</p>
 
-          <h1 className="mt-3 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl sm:leading-tight">
+          <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
             {title}
           </h1>
 
@@ -104,54 +178,8 @@ export function ArticleShell({
       </header>
 
       <main className="min-h-screen bg-slate-100 px-4 py-10 text-slate-950 sm:px-6 sm:py-14">
-        <article
-          className="
-            mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white
-            px-5 py-8 shadow-sm
-            sm:px-10 sm:py-12
-            prose prose-slate max-w-none
-            prose-headings:scroll-mt-24
-            prose-headings:font-black
-            prose-headings:tracking-tight
-            prose-headings:text-slate-950
-            prose-h2:mt-14
-            prose-h2:mb-5
-            prose-h2:text-3xl
-            prose-h2:leading-tight
-            prose-h3:mt-10
-            prose-h3:mb-3
-            prose-h3:text-xl
-            prose-h3:leading-snug
-            prose-p:my-5
-            prose-p:max-w-none
-            prose-p:text-[1.0625rem]
-            prose-p:leading-8
-            prose-p:text-slate-800
-            prose-strong:font-extrabold
-            prose-strong:text-slate-950
-            prose-a:font-bold
-            prose-a:text-indigo-700
-            prose-a:underline
-            prose-a:decoration-indigo-300
-            prose-a:underline-offset-4
-            hover:prose-a:text-indigo-900
-            prose-ul:my-7
-            prose-ul:pl-6
-            prose-ol:my-7
-            prose-ol:pl-6
-            prose-li:my-3
-            prose-li:pl-1
-            prose-li:leading-7
-            prose-li:text-slate-800
-            prose-blockquote:my-8
-            prose-blockquote:border-indigo-400
-            prose-blockquote:bg-indigo-50
-            prose-blockquote:px-5
-            prose-blockquote:py-4
-            prose-blockquote:text-slate-800
-          "
-        >
-          {children}
+        <article className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white px-5 py-9 shadow-sm sm:px-10 sm:py-14">
+          <ArticleBody>{children}</ArticleBody>
         </article>
       </main>
 
@@ -162,7 +190,7 @@ export function ArticleShell({
 
 export function RelatedPages() {
   return (
-    <section className="not-prose mt-14 border-t border-slate-200 pt-8">
+    <section className="mt-14 border-t border-slate-200 pt-8">
       <h2 className="text-2xl font-black tracking-tight text-slate-950">
         Related CryptosBeginner pages
       </h2>
@@ -200,7 +228,7 @@ export function PlatformProfile({
       title={`${platform.name}: features, fees and risk checks`}
       description={platform.summary}
     >
-      <aside className="not-prose mb-10 rounded-2xl border border-amber-300 bg-amber-100 p-5 sm:p-6">
+      <aside className="mb-10 rounded-2xl border border-amber-300 bg-amber-100 p-5 sm:p-6">
         <p className="text-xs font-black uppercase tracking-[0.16em] text-amber-950">
           Editorial position
         </p>
@@ -213,17 +241,19 @@ export function PlatformProfile({
       </aside>
 
       <h2>TL;DR</h2>
+
       <p>
         {platform.summary} {platform.caution}
       </p>
 
       <h2>At a glance</h2>
 
-      <div className="not-prose my-8 grid gap-4 sm:grid-cols-2">
+      <div className="my-8 grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl border border-slate-300 bg-slate-50 p-5">
           <p className="text-xs font-black uppercase tracking-wide text-slate-700">
             Category · {platform.category}
           </p>
+
           <p className="mt-2 font-bold leading-6 text-slate-950">
             {platform.role}
           </p>
@@ -233,6 +263,7 @@ export function PlatformProfile({
           <p className="text-xs font-black uppercase tracking-wide text-slate-700">
             Fee note
           </p>
+
           <p className="mt-2 text-sm leading-6 text-slate-900">
             {platform.fee}
           </p>
@@ -289,7 +320,7 @@ export function VideoReference({
 
   return (
     <section
-      className="not-prose my-12 overflow-hidden rounded-2xl border border-slate-300 bg-slate-950 shadow-sm"
+      className="my-12 overflow-hidden rounded-2xl border border-slate-300 bg-slate-950 shadow-sm"
       aria-label={`${platform} video walkthrough`}
     >
       <div className="flex items-center justify-between gap-3 border-b border-slate-800 px-5 py-3">
@@ -312,8 +343,8 @@ export function VideoReference({
       </div>
 
       <p className="px-5 py-4 text-sm leading-6 text-slate-300">
-        Product walkthrough for research and navigation context. Product
-        features, pricing, execution conditions, and availability can change.
+        Product walkthrough for research and navigation context. Features,
+        pricing, execution conditions, and availability can change.
       </p>
     </section>
   );
