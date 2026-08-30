@@ -342,10 +342,6 @@ export function VideoReference({
         />
       </div>
 
-      <p className="px-5 py-4 text-sm leading-6 text-slate-300">
-        Product walkthrough for research and navigation context. Features,
-        pricing, execution conditions, and availability can change.
-      </p>
     </section>
   );
 }
