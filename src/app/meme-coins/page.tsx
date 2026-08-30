@@ -534,10 +534,10 @@ export default function MemeCoinsPage() {
               </Link>
 
               <Link
-                href="/meme-coins/tutorials/gmgn-beginners"
+                href="/learn/gmgn-ai-agent"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-600 bg-slate-950 px-5 py-3 text-sm font-bold text-slate-100 transition hover:border-slate-500 hover:bg-slate-800"
               >
-                Start with GMGN for beginners
+                Start with GMGN AI Agent for beginners
               </Link>
 
               <Link
