@@ -32,12 +32,12 @@ export default async function TutorialPage({ params }: { params: Promise<{ slug:
     does not remove smart-contract, liquidity, slippage, or loss risk.
   </p>
 
-  <Link
-    href="/learn/gmgn-ai-agent"
-    className="mt-5 inline-flex rounded-full bg-indigo-700 px-5 py-3 text-sm font-black text-white transition hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
-  >
-    Read the GMGN AI Agent guide →
-  </Link>
+ <Link
+  href="/learn/gmgn-ai-agent"
+  className="!text-white no-underline inline-flex rounded-full bg-indigo-700 px-5 py-3 text-sm font-black transition hover:!text-white hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+>
+  Read the GMGN AI Agent guide →
+</Link>
 </aside>
 
 <Figure
