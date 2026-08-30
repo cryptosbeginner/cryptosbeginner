@@ -106,6 +106,30 @@ const toolCards = [
   },
 ];
 
+const learningCards = [
+  {
+    eyebrow: "Tutorial",
+    title: "GMGN AI Agent Guide",
+    text: "Learn how to use GMGN for token research, wallet monitoring, and smart-money workflow ideas.",
+    href: "/learn/gmgn-ai-agent",
+    label: "Read the GMGN tutorial",
+  },
+  {
+    eyebrow: "Learning hub",
+    title: "Crypto Guides for Beginners",
+    text: "Explore beginner-friendly guides on crypto basics, research tools, trading workflows, and safer decision-making.",
+    href: "/learn",
+    label: "Browse all guides",
+  },
+  {
+    eyebrow: "Tool",
+    title: "Wallet Tracker",
+    text: "Record entries, exits, allocations, and PnL so you can review your process instead of relying on memory.",
+    href: "/wallet-tracker",
+    label: "Open wallet tracker",
+  },
+];
+
 function ToolLink({
   href,
   children,
@@ -121,7 +145,7 @@ function ToolLink({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+        className="inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
       >
         {children} <span aria-hidden="true">↗</span>
       </a>
@@ -131,7 +155,7 @@ function ToolLink({
   return (
     <Link
       href={href}
-      className="inline-flex items-center text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+      className="inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
     >
       {children} <span aria-hidden="true">→</span>
     </Link>
@@ -202,14 +226,16 @@ export default function MemeCoinsPage() {
       <section className="border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950/40">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">
-            Learn · Meme coin research
+            Learn · Meme Coin Research
           </p>
+
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Research Meme Coins Before You Trade
           </h1>
+
           <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
             A practical, repeatable framework for checking liquidity, wallet
-            behavior, token risk, and market narratives—before you risk capital
+            behavior, token risk, and market narratives before you risk capital
             on a fast-moving meme coin.
           </p>
 
@@ -220,6 +246,7 @@ export default function MemeCoinsPage() {
             >
               Start the research checklist
             </a>
+
             <Link
               href="/wallet-tracker"
               className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-600 bg-slate-900 px-5 py-3 text-sm font-bold text-slate-100 transition hover:border-slate-500 hover:bg-slate-800"
@@ -232,27 +259,29 @@ export default function MemeCoinsPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="grid gap-5 md:grid-cols-3">
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+          <article className="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <p className="text-sm font-semibold text-cyan-300">Liquidity</p>
             <p className="mt-2 text-sm leading-6 text-slate-300">
-              Check if you can realistically exit at your intended position
-              size, not just whether a price chart looks attractive.
+              Check whether you can realistically exit at your intended position
+              size, not only whether a chart looks attractive.
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+          </article>
+
+          <article className="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <p className="text-sm font-semibold text-cyan-300">Wallet flows</p>
             <p className="mt-2 text-sm leading-6 text-slate-300">
               Look for concentration, early entries, transfers, and selling
-              behavior—not just a single wallet buy.
+              behavior—not just one visible wallet buy.
             </p>
-          </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+          </article>
+
+          <article className="rounded-xl border border-slate-800 bg-slate-900 p-5">
             <p className="text-sm font-semibold text-cyan-300">Risk plan</p>
             <p className="mt-2 text-sm leading-6 text-slate-300">
               Decide position size, invalidation, and profit-taking rules before
-              the volatility begins.
+              volatility forces an emotional decision.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
@@ -265,9 +294,11 @@ export default function MemeCoinsPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
               The framework
             </p>
+
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
               Five checks before any entry
             </h2>
+
             <p className="mt-4 text-base leading-7 text-slate-300">
               You do not need a perfect prediction. You need a process that
               helps you recognize weak setups, control downside, and avoid
@@ -282,9 +313,11 @@ export default function MemeCoinsPage() {
                 className="rounded-xl border border-slate-800 bg-slate-950 p-5 sm:p-6"
               >
                 <p className="text-sm font-bold text-cyan-300">{step.number}</p>
+
                 <h3 className="mt-3 text-xl font-semibold text-white">
                   {step.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-6 text-slate-300">
                   {step.description}
                 </p>
@@ -299,9 +332,11 @@ export default function MemeCoinsPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
             Research tools
           </p>
+
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
             Use the right tool for each question
           </h2>
+
           <p className="mt-4 text-base leading-7 text-slate-300">
             No single dashboard tells the full story. Cross-check token details,
             liquidity, trades, and wallets before acting.
@@ -315,9 +350,11 @@ export default function MemeCoinsPage() {
               className="flex min-w-0 flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
             >
               <h3 className="text-xl font-semibold text-white">{tool.title}</h3>
+
               <p className="mt-3 flex-1 text-sm leading-6 text-slate-300">
                 {tool.text}
               </p>
+
               <div className="mt-5">
                 <ToolLink href={tool.href} external={tool.external}>
                   {tool.label}
@@ -328,6 +365,54 @@ export default function MemeCoinsPage() {
         </div>
       </section>
 
+      <section className="border-y border-slate-800 bg-slate-900/40">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
+              Continue learning
+            </p>
+
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+              Tutorials, reviews, and practical tools
+            </h2>
+
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              Build a more structured research routine with beginner-friendly
+              guides, platform walkthroughs, and tools for tracking trades and
+              wallet activity.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {learningCards.map((card) => (
+              <article
+                key={card.title}
+                className="flex min-w-0 flex-col rounded-xl border border-slate-800 bg-slate-950 p-5 sm:p-6"
+              >
+                <p className="text-sm font-semibold text-cyan-300">
+                  {card.eyebrow}
+                </p>
+
+                <h3 className="mt-3 text-xl font-semibold text-white">
+                  {card.title}
+                </h3>
+
+                <p className="mt-3 flex-1 text-sm leading-6 text-slate-300">
+                  {card.text}
+                </p>
+
+                <Link
+                  href={card.href}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+                >
+                  {card.label} <span aria-hidden="true">→</span>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-slate-800 bg-amber-400/5">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:items-start">
@@ -335,12 +420,14 @@ export default function MemeCoinsPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-300">
                 Risk checklist
               </p>
+
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
                 Reasons to pause or skip a trade
               </h2>
+
               <p className="mt-4 text-base leading-7 text-slate-300">
                 These signals do not prove a token will fail, but they justify
-                greater caution, less size, or no trade at all.
+                greater caution, smaller size, or no trade at all.
               </p>
             </div>
 
@@ -370,6 +457,7 @@ export default function MemeCoinsPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
             FAQ
           </p>
+
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
             Meme coin research questions
           </h2>
@@ -384,6 +472,7 @@ export default function MemeCoinsPage() {
               <h3 className="text-lg font-semibold text-white">
                 {item.question}
               </h3>
+
               <p className="mt-3 text-sm leading-6 text-slate-300">
                 {item.answer}
               </p>
