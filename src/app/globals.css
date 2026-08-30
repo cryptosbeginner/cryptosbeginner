@@ -24,3 +24,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+a[class*="bg-indigo"], a[class*="bg-purple"] { color: #fff !important; text-decoration: none !important; }
