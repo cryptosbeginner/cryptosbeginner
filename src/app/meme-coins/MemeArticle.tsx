@@ -28,7 +28,7 @@ export function AffiliateCTA({
         href={href}
         target="_blank"
         rel="sponsored nofollow noreferrer"
-        className="mt-5 inline-flex rounded-full bg-indigo-600 px-5 py-3 text-sm font-black text-white transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+        className="cta-button mt-5 inline-flex rounded-full bg-indigo-600 px-5 py-3 text-sm font-black transition hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
       >
         {label} ↗
       </a>
