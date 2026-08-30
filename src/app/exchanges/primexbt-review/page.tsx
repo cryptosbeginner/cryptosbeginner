@@ -169,7 +169,7 @@ export default function PrimeXBTReviewPage() {
               priority
             />
             <figcaption className="mt-2 text-center text-sm text-slate-500">
-              Figure 1. PrimeXBT platform overview (user-uploaded screenshot).
+              PrimeXBT platform overview
             </figcaption>
           </figure>
         </section>
@@ -338,7 +338,7 @@ export default function PrimeXBTReviewPage() {
               className="w-full rounded-2xl border border-slate-200"
             />
             <figcaption className="mt-2 text-center text-sm text-slate-500">
-              Figure 2. Fees / markets overview (upload your screenshot as /images/3.png).
+             Fees/markets overview
             </figcaption>
           </figure>
 
@@ -388,7 +388,7 @@ export default function PrimeXBTReviewPage() {
               className="w-full rounded-2xl border border-slate-200"
             />
             <figcaption className="mt-2 text-center text-sm text-slate-500">
-              Figure 3. Trading terminal / chart view (upload as /images/2.png).
+             PrimeXBT Web Trading terminal/chart view
             </figcaption>
           </figure>
 
@@ -445,7 +445,7 @@ export default function PrimeXBTReviewPage() {
               className="w-full rounded-2xl border border-slate-200"
             />
             <figcaption className="mt-2 text-center text-sm text-slate-500">
-              Figure 4. Funding / deposit screen (upload as /images/4.png).
+              Funding/deposit options
             </figcaption>
           </figure>
         </section>
