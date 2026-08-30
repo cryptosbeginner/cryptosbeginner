@@ -7,23 +7,23 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_PATH = "/learn/gmgn-ai-agent";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const UPDATED = "2026-08-30";
-const GMGN_REF = "https://gmgn.ai/r/XPS1eXg4";
+const GMGN_AFFILIATE = "https://gmgn.ai/r/XPS1eXg4";
 const GMGN_DOCS = "https://docs.gmgn.ai/index/gmgn-agent-api";
+const GMGN_KEYS = "https://docs.gmgn.ai/index/generate-public-key";
 const GMGN_SKILLS = "https://github.com/GMGNAI/gmgn-skills";
-const GMGN_KEY_DOCS = "https://docs.gmgn.ai/index/generate-public-key";
 
 export const metadata: Metadata = {
   title: "GMGN AI Agent Tutorial – Research Meme Coins With Natural Language",
   description:
-    "Learn how to set up the GMGN AI Agent, install GMGN Skills, create an API key, research meme tokens, analyze wallets, and trade only after you confirm the order. Educational guide, not financial advice.",
+    "Learn how to use the GMGN AI Agent and Skills to research meme coins, track wallets, and query on-chain data with natural language. Educational guide, not financial advice.",
   keywords:
-    "GMGN AI Agent, GMGN Skills, meme coin research, Solana wallet tracker, smart money, KOL trades, gmgn-cli, Pump.fun, copy trade",
+    "GMGN AI Agent, GMGN Skills, meme coin research, wallet tracker, Solana trending tokens, smart money, KOL trades, gmgn-cli",
   authors: [{ name: "Crypto's Beginner" }],
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "GMGN AI Agent Tutorial",
     description:
-      "Step-by-step setup for GMGN Skills: query trending meme coins, analyze wallets, and keep trading behind a human confirmation.",
+      "Step-by-step guide to GMGN Skills: query tokens, wallets, and trending meme coins with an AI agent.",
     url: PAGE_URL,
     type: "article",
   },
@@ -31,53 +31,80 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GMGN AI Agent Tutorial",
     description:
-      "Use natural language to research tokens, wallets, and smart money on GMGN. Educational only.",
+      "Research meme coins and wallets with GMGN Skills using natural language.",
   },
 };
+
+const faqs = [
+  {
+    q: "Do I need to know how to code?",
+    a: "No. You install GMGN Skills, add an API key, then talk to your AI client in plain English. Coding is optional and only needed if you want the CLI yourself.",
+  },
+  {
+    q: "Is the GMGN private key a wallet seed?",
+    a: "No. GMGN_PRIVATE_KEY is a request-signing key for API calls. It is not a blockchain wallet seed phrase and does not directly hold coins. Still keep it secret, because a leaked signing key can let someone send authenticated API requests as you.",
+  },
+  {
+    q: "Which chains work today?",
+    a: "Query and trading coverage is strongest on Solana, BSC, and Base. ETH and extra chains appear in the Skills repo, but GMGN still lists some as in progress. Always confirm the chain in the official docs before you trade.",
+  },
+  {
+    q: "Can IPv6 users connect?",
+    a: "GMGN currently supports IPv4 requests only. If you get 401 or 403 errors with a valid key, your traffic may be leaving over IPv6.",
+  },
+  {
+    q: "Is this financial advice?",
+    a: "No. This page is educational. Meme coins can go to zero. AI agents can hallucinate token addresses, amounts, and risk scores. You are responsible for every click and every trade.",
+  },
+];
 
 const prompts = [
   {
     title: "Trending scan",
-    text: "Show me the trending tokens on Solana in the last 1 hour. Filter out honeypots and sort by volume.",
+    text: "Show me the trending tokens on Solana in the last 1 hour.",
   },
   {
-    title: "Token check",
-    text: "Is <token_address> safe to buy on Solana? Check contract security, pool, holders, smart money, and rug score.",
+    title: "Token safety",
+    text: "Check the contract security and pool status for <token_address>.",
+  },
+  {
+    title: "Smart money",
+    text: "Show smart money holdings of <token_address>, sorted by buy volume.",
   },
   {
     title: "Wallet check",
-    text: "Analyze wallet <wallet_address> on Solana. Show holdings, 7d PnL, win rate, recent buys, and whether it is worth following.",
-  },
-  {
-    title: "Smart money tape",
-    text: "Show the latest smart money buys on Solana over $1,000. Summarize which new tokens keep repeating.",
+    text: "Show trading stats and recent trades for wallet <wallet_address> on Solana.",
   },
   {
     title: "New launches",
-    text: "Show newly launched Pump.fun tokens on Solana from the last 6 hours with at least 1 smart money buyer.",
+    text: "Show newly launched Pump.fun tokens on Solana from the last 6 hours.",
+  },
+  {
+    title: "Daily brief",
+    text: "Give me a daily brief: Solana trending, notable smart money buys, and any high-risk flags.",
   },
 ];
 
 function AffiliateButton({
   children,
-  extraClass = "",
+  className,
 }: {
   children: React.ReactNode;
-  extraClass?: string;
+  className?: string;
 }) {
   return (
     <a
-      href={GMGN_REF}
-      rel="sponsored noopener noreferrer"
+      href={GMGN_AFFILIATE}
       target="_blank"
-      className={`inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-400 ${extraClass}`}
+      rel="sponsored noopener noreferrer"
+      className={className}
     >
       {children}
     </a>
   );
 }
 
-export default function GmgnAiAgentGuidePage() {
+export default function GmgnAiAgentTutorialPage() {
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -100,87 +127,63 @@ export default function GmgnAiAgentGuidePage() {
     },
     {
       "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "TechArticle",
       headline: "GMGN AI Agent Tutorial",
       description:
-        "A beginner-friendly walkthrough of GMGN Skills for meme-coin research, wallet analysis, and confirmed trading.",
+        "Educational tutorial on using GMGN Skills and the GMGN AI Agent to research meme coins and wallets.",
+      url: PAGE_URL,
       dateModified: UPDATED,
+      inLanguage: "en",
       author: { "@type": "Organization", name: "Crypto's Beginner" },
       publisher: { "@type": "Organization", name: "Crypto's Beginner" },
-      mainEntityOfPage: PAGE_URL,
     },
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
-      name: "How to set up the GMGN AI Agent",
+      name: "Set up the GMGN AI Agent",
       description:
-        "Install GMGN Skills, create an API key, and run your first token or wallet research prompt.",
-      totalTime: "PT20M",
+        "Install GMGN Skills, create an API key, and run your first read-only meme coin query.",
       step: [
         {
           "@type": "HowToStep",
-          name: "Open GMGN and create an account",
-          text: "Open GMGN with the referral link, then go to the AI key page when you are ready to create credentials.",
+          position: 1,
+          name: "Create a GMGN account",
+          text: "Open GMGN with the affiliate link and create an account.",
         },
         {
           "@type": "HowToStep",
+          position: 2,
           name: "Install GMGN Skills",
-          text: "Ask your AI client to run npx skills add GMGNAI/gmgn-skills.",
+          text: "Run npx skills add GMGNAI/gmgn-skills in your AI client.",
         },
         {
           "@type": "HowToStep",
-          name: "Generate an Ed25519 public key",
-          text: "Create an Ed25519 key pair with OpenSSL or the Binance key generator, then paste the full public key into GMGN.",
+          position: 3,
+          name: "Generate an Ed25519 key pair",
+          text: "Create a public and private key pair, then paste the full public key into GMGN AI.",
         },
         {
           "@type": "HowToStep",
+          position: 4,
           name: "Save the API key locally",
-          text: "Store GMGN_API_KEY in ~/.config/gmgn/.env with file permissions set to 600. Add the private key only if you later enable trading.",
+          text: "Store GMGN_API_KEY in ~/.config/gmgn/.env and never commit that file.",
         },
         {
           "@type": "HowToStep",
-          name: "Run a read-only prompt",
-          text: "Ask for Solana 1-hour trending tokens or a token security check before you ever enable swaps.",
+          position: 5,
+          name: "Run a read-only query",
+          text: "Ask your agent to show Solana trending tokens for the last hour.",
         },
       ],
     },
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Do I need to code to use the GMGN AI Agent?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. After Skills are installed, you can ask in plain English. Coding is only needed if you later build your own tracker on the API.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Which chains does GMGN Skills support?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Read tools cover Solana, BSC, Base, and ETH. Swap support is strongest on SOL, BSC, and Base. ETH trading support is still expanding.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is the GMGN private key my wallet seed?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. GMGN_PRIVATE_KEY is a request-signing key for API calls. It is not your seed phrase. Still keep it secret, because a leaked signing key can let someone send trades in your name.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is this financial advice?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No. This page is educational. Meme coins can go to zero. Confirm every trade yourself.",
-          },
-        },
-      ],
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
     },
   ];
 
@@ -195,30 +198,33 @@ export default function GmgnAiAgentGuidePage() {
         />
       ))}
       <main className="bg-white">
-        <section className="border-b bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-900 text-white">
-          <div className="mx-auto max-w-4xl px-4 py-12">
+        <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
+          <div className="mx-auto max-w-6xl px-4 py-12">
             <p className="text-sm font-medium uppercase tracking-wider text-emerald-300">
-              Learn · Draft guide
+              Learn · Draft tutorial
             </p>
-            <h1 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+            <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
               GMGN AI Agent tutorial
             </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-200">
-              Use natural language to research meme coins, read wallet PnL, and
-              watch smart money. Keep trading locked until you understand the
-              risks and confirm every order yourself.
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+              Use an AI agent to research meme coins, inspect wallets, and read
+              smart-money flow in plain English. This draft walks through GMGN
+              Skills without turning the agent loose on your funds.
             </p>
-            <p className="mt-4 text-sm leading-6 text-slate-300">
-              Updated {UPDATED}. This is a draft for review. We may earn a
-              commission if you open GMGN through our link.
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-300">
+              Updated {UPDATED}. Educational only. Not financial, legal, or tax
+              advice. We may earn a commission if you sign up through our GMGN
+              link.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <AffiliateButton>Open GMGN</AffiliateButton>
+              <AffiliateButton className="inline-flex rounded-full bg-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-300">
+                Open GMGN with our link
+              </AffiliateButton>
               <a
                 href={GMGN_DOCS}
-                rel="noopener noreferrer"
                 target="_blank"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-bold text-white hover:bg-white/10"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
               >
                 Official GMGN docs
               </a>
@@ -226,287 +232,369 @@ export default function GmgnAiAgentGuidePage() {
           </div>
         </section>
 
-        <article className="mx-auto max-w-4xl px-4 py-10 text-slate-800">
-          <aside className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
-            <p className="font-bold">Affiliate disclosure</p>
-            <p className="mt-2">
-              Crypto&apos;s Beginner may earn a rebate if you sign up or trade
-              through{" "}
-              <a
-                href={GMGN_REF}
-                rel="sponsored noopener noreferrer"
-                target="_blank"
-                className="font-semibold underline"
-              >
-                gmgn.ai/r/XPS1eXg4
-              </a>
-              . That does not change the price you pay. Always verify contracts,
-              amounts, and slippage yourself.
-            </p>
-          </aside>
+        <section className="border-b bg-amber-50">
+          <div className="mx-auto max-w-6xl px-4 py-4 text-sm leading-6 text-amber-950">
+            Draft for review. Tell us what to change in layout, wording, steps,
+            or CTAs. Trading examples stay read-first on purpose.
+          </div>
+        </section>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            What the GMGN AI Agent actually is
-          </h2>
-          <p className="mt-4 leading-7">
-            GMGN Skills sit between your AI client and GMGN&apos;s on-chain
-            data. Instead of scraping the website, the agent calls commands such
-            as <code>/gmgn-token</code>, <code>/gmgn-market</code>, and{" "}
-            <code>/gmgn-portfolio</code>. You type a question. The agent fetches
-            live trending tokens, holder mix, rug scores, and wallet activity.
-          </p>
-          <p className="mt-4 leading-7">
-            Query skills need an API key. Swap skills also need the matching
-            Ed25519 signing key. GMGN says IPv4 is required; IPv6 requests are
-            rejected. Official sources:{" "}
-            <a href={GMGN_DOCS} className="underline" rel="noopener noreferrer" target="_blank">
-              Agent API docs
-            </a>{" "}
-            and{" "}
-            <a href={GMGN_SKILLS} className="underline" rel="noopener noreferrer" target="_blank">
-              GMGNAI/gmgn-skills
-            </a>
-            .
-          </p>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            What you can ask it to do
-          </h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 p-5">
-              <p className="font-bold text-slate-900">Read-only research</p>
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p className="text-sm font-bold text-slate-900">What it is</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Trending tokens, Trenches launches, token security, top holders,
-                KOL buys, smart money tape, and wallet holdings or PnL.
+                GMGN Skills plug into Claude Code, Cursor, Cline, OpenClaw, and
+                similar clients so the agent can call GMGN instead of scraping
+                websites.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-5">
-              <p className="font-bold text-slate-900">Trading later, not first</p>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p className="text-sm font-bold text-slate-900">Best first use</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Market, limit, take-profit, stop-loss, and cooking orders exist.
-                Leave them off until you can confirm token, size, and slippage
-                without rushing.
+                Read-only research: trending tokens, token security, holders,
+                and wallet stats. Add trading credentials only after that feels
+                boringly safe.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p className="text-sm font-bold text-slate-900">What it is not</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                It is not a guaranteed alpha feed, not auto-profit, and not a
+                replacement for checking the token address yourself.
               </p>
             </div>
           </div>
+        </section>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Before you start
+        <section className="mx-auto max-w-6xl px-4 py-6">
+          <p className="text-sm font-bold uppercase tracking-wider text-emerald-700">
+            Start here
+          </p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900">
+            Set up GMGN Skills
           </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7">
-            <li>An AI client that can run Skills: Claude Code, Cursor, Cline, OpenClaw, or similar.</li>
-            <li>Node.js so you can run <code>npx skills add GMGNAI/gmgn-skills</code>.</li>
-            <li>A GMGN account created through our referral link if you want to support this site.</li>
-            <li>A separate research wallet. Do not mix this with long-term savings.</li>
-          </ul>
-          <div className="mt-6">
-            <AffiliateButton>Create a GMGN account</AffiliateButton>
-          </div>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            Follow GMGN&apos;s own order: account and key first, then Skills,
+            then a tiny read-only query. Trading stays optional.
+          </p>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Step 1 — Install GMGN Skills
-          </h2>
-          <p className="mt-4 leading-7">
-            Paste this into your AI client:
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm text-emerald-100">
-            {`Install GMGN skills by running: npx skills add GMGNAI/gmgn-skills`}
-          </pre>
-          <p className="mt-4 leading-7">
-            Optional smoke test with GMGN&apos;s public demo key (read-only,
-            not for real use):
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm text-emerald-100">
-            {`GMGN_API_KEY=gmgn_solbscbaseethmonadtron gmgn-cli market trending --chain sol --interval 1h --limit 3`}
-          </pre>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Step 2 — Create your own API key
-          </h2>
-          <p className="mt-4 leading-7">
-            The demo key is only a connection check. For real work, generate an
-            Ed25519 key pair, then paste the full public key — including BEGIN
-            and END lines — into{" "}
-            <a href={GMGN_REF} rel="sponsored noopener noreferrer" target="_blank" className="underline">
-              GMGN
-            </a>
-            . Details:{" "}
-            <a href={GMGN_KEY_DOCS} rel="noopener noreferrer" target="_blank" className="underline">
-              Generate Public Key
-            </a>
-            .
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm text-emerald-100">
-            {`Generate an Ed25519 key pair for me using OpenSSL and show me:
-1. The public key (for the GMGN API form)
-2. The private key in PEM format (only if I later enable trading)`}
-          </pre>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Step 3 — Save credentials on your machine
-          </h2>
-          <p className="mt-4 leading-7">
-            Ask the agent to create <code>~/.config/gmgn/.env</code>. Start with
-            the API key only. Add <code>GMGN_PRIVATE_KEY</code> later if you
-            enable swaps. Then run <code>chmod 600 ~/.config/gmgn/.env</code> and
-            keep that file out of git.
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm text-emerald-100">
-            {`mkdir -p ~/.config/gmgn
+          <ol className="mt-8 space-y-6">
+            <li className="rounded-2xl border border-slate-200 p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Step 1
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Create your GMGN account
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Open GMGN through our referral link, then go to the AI / API key
+                area. This is the signup path we can attribute. After that, the
+                product is GMGN&apos;s.
+              </p>
+              <AffiliateButton className="mt-4 inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+                Continue to GMGN
+              </AffiliateButton>
+            </li>
+            <li className="rounded-2xl border border-slate-200 p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Step 2
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Install Skills in your agent
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Paste this into Claude Code, Cursor, OpenClaw, or another skills-capable client:
+              </p>
+              <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm text-emerald-100">
+                {`npx skills add GMGNAI/gmgn-skills`}
+              </pre>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                Source repo:{" "}
+                <a
+                  href={GMGN_SKILLS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-emerald-800 underline"
+                >
+                  GMGNAI/gmgn-skills
+                </a>
+                .
+              </p>
+            </li>
+            <li className="rounded-2xl border border-slate-200 p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Step 3
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Generate an Ed25519 key pair
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                GMGN authenticates with a public/private key pair. Ask your agent:
+              </p>
+              <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm text-emerald-100">
+                {`Generate an Ed25519 key pair for me using OpenSSL and show me`}
+              </pre>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Paste the entire public key, including the BEGIN and END lines,
+                into GMGN. Keep the private key on your machine only. Full
+                screenshots live in the{" "}
+                <a
+                  href={GMGN_KEYS}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-emerald-800 underline"
+                >
+                  Generate Public Key
+                </a>{" "}
+                docs.
+              </p>
+            </li>
+            <li className="rounded-2xl border border-slate-200 p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Step 4
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Store the API key locally
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Query skills need <code>GMGN_API_KEY</code>. Swap skills also
+                need <code>GMGN_PRIVATE_KEY</code>. Skip the private key until
+                you actually want trading.
+              </p>
+              <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm leading-6 text-emerald-100">
+                {`mkdir -p ~/.config/gmgn
 cat > ~/.config/gmgn/.env << 'EOF'
 GMGN_API_KEY=your_api_key_here
 EOF
 chmod 600 ~/.config/gmgn/.env`}
-          </pre>
+              </pre>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                Add <code>.env</code> to <code>.gitignore</code>. Never paste
+                keys into Slack, Discord, screenshots, or this website.
+              </p>
+            </li>
+            <li className="rounded-2xl border border-slate-200 p-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Step 5
+              </p>
+              <h3 className="mt-2 text-xl font-bold text-slate-900">
+                Run a read-only test
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                Ask your agent:
+              </p>
+              <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-950 p-4 text-sm text-emerald-100">
+                {`Show me the trending tokens on Solana in the last 1 hour.`}
+              </pre>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                If you only want to confirm the CLI, GMGN publishes a public
+                demo key for a tiny trending call. It is for install testing,
+                not real research or trading. After that, use your own key.
+              </p>
+            </li>
+          </ol>
+        </section>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Step 4 — Run a first research prompt
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Prompts worth copying
           </h2>
-          <p className="mt-4 leading-7">
-            If the agent tries to open gmgn.ai in a browser, tell it: &quot;Use
-            gmgn-cli commands. Do not call gmgn.ai web endpoints directly.&quot;
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            Replace placeholders with real addresses. If the agent tries to
+            scrape gmgn.ai, tell it: use gmgn-cli, do not hit the website
+            directly.
           </p>
-          <div className="mt-5 space-y-4">
-            {prompts.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                <p className="text-sm font-bold uppercase tracking-wide text-emerald-800">
-                  {item.title}
-                </p>
-                <pre className="mt-3 overflow-x-auto whitespace-pre-wrap text-sm leading-6 text-slate-800">
-                  {item.text}
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {prompts.map((prompt) => (
+              <div
+                key={prompt.title}
+                className="rounded-2xl border border-slate-200 p-5"
+              >
+                <p className="text-sm font-bold text-slate-900">{prompt.title}</p>
+                <pre className="mt-3 overflow-x-auto rounded-xl bg-slate-50 p-3 text-sm leading-6 text-slate-800">
+                  {prompt.text}
                 </pre>
               </div>
             ))}
           </div>
+        </section>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Ready-made research workflows
+        <section className="mx-auto max-w-6xl px-4 py-6">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Skills and workflows
           </h2>
-          <p className="mt-4 leading-7">
-            GMGN ships workflow docs you can point the agent at. Use these as
-            checklists, not as buy buttons.
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            These names come from the public gmgn-skills repo. Your agent can
+            call them as slash commands or as normal chat.
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7">
-            <li>Token research: address in, then buy / watch / skip with security, holders, and liquidity.</li>
-            <li>Wallet analysis: holdings, stats, activity, then follow or skip.</li>
-            <li>Smart money profile: style tags and whether copy-trading even makes sense.</li>
-            <li>Early project screen: new launchpad tokens with smart money already in.</li>
-            <li>Daily brief: trending, notable wallets, and risk scan in one pass.</li>
-          </ul>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Trading prompts (advanced)
-          </h2>
-          <p className="mt-4 leading-7">
-            Swap, cooking, and strategy orders need the signing key. GMGN CLI
-            asks you to type <code>yes</code> before it sends a live order.
-            Automated mode needs both <code>GMGN_ALLOW_AUTOMATED_TRADES=1</code>{" "}
-            and <code>--yes</code>. Leave automation off.
-          </p>
-          <pre className="mt-3 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-sm text-emerald-100">
-            {`Get a quote: how much of <token_address> can I get for 0.05 SOL?
-Buy 0.05 SOL of <token_address> with 30% slippage.
-Sell 50% of <token_address>.`}
-          </pre>
-          <p className="mt-4 leading-7">
-            Confirm chain, wallet, token mint, amount, and slippage every time.
-            AI models can invent addresses. On-chain fills are irreversible.
-          </p>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Safety rules we actually use
-          </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7">
-            <li>Research first. Do not paste a signing key until you have run read-only prompts for a few days.</li>
-            <li>Never send API keys, PEM files, or seed phrases in chat screenshots.</li>
-            <li>Test with dust sizes. Meme coins can rug, honeypot, or lose liquidity in minutes.</li>
-            <li>If a prompt comes from a token website or Telegram group, treat it as hostile.</li>
-            <li>GMGN_PRIVATE_KEY signs API requests. It is not your seed, but rotate it if it leaks.</li>
-          </ul>
-
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">FAQ</h2>
-          <div className="mt-4 space-y-5">
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Do I need to code?</h3>
-              <p className="mt-2 leading-7">
-                No for the agent workflow. Yes later if you want a public wallet
-                tracker on this site that calls GMGN from a server.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Which chains work?</h3>
-              <p className="mt-2 leading-7">
-                SOL, BSC, Base, and ETH for most reads. Trading is documented
-                mainly on SOL, BSC, and Base.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Can I use this on mobile?</h3>
-              <p className="mt-2 leading-7">
-                The GMGN website and Telegram bots work on phones. Skills and
-                gmgn-cli are desktop / server tools.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-slate-900">Is this financial advice?</h3>
-              <p className="mt-2 leading-7">
-                No. Nothing here is a recommendation to buy, sell, or copy a
-                wallet.
-              </p>
-            </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+            <table className="min-w-full divide-y divide-slate-200 text-sm">
+              <thead className="bg-slate-50">
+                <tr>
+                  <th className="px-4 py-3 text-left font-bold uppercase tracking-wider text-slate-500">
+                    Skill
+                  </th>
+                  <th className="px-4 py-3 text-left font-bold uppercase tracking-wider text-slate-500">
+                    Use it for
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 bg-white">
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-token</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    Info, security, pool, holders, traders
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-market</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    K-line, trending, trenches, hot searches
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-portfolio</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    Holdings, activity, PnL, created tokens
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-wallet-score</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    Copy-trade quality and wallet reputation
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-track</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    Followed wallets, KOL prints, smart money
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-semibold">/gmgn-swap</td>
+                  <td className="px-4 py-3 text-slate-700">
+                    Quotes, swaps, limits, TP/SL. Needs extra keys.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            Built-in workflow docs include token research, wallet analysis,
+            smart-money profiling, early launch screening, risk warning, and a
+            daily brief. Ask the agent to run the matching workflow by name.
+          </p>
+        </section>
 
-          <h2 className="mt-12 text-2xl font-bold text-slate-900">
-            Related on this site
-          </h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7">
-            <li>
-              <Link href="/meme-coins" className="underline">
-                Meme coins hub
-              </Link>
-            </li>
-            <li>
-              <Link href="/meme-coin-research" className="underline">
-                Meme coin research
-              </Link>
-            </li>
-            <li>
-              <Link href="/wallet-tracker" className="underline">
-                Wallet tracker
-              </Link>
-            </li>
-            <li>
-              <Link href="/tools/cfo-line-dashboard" className="underline">
-                CFO Line dashboard
-              </Link>
-            </li>
-            <li>
-              <Link href="/learn" className="underline">
-                All learn guides
-              </Link>
-            </li>
-          </ul>
-
-          <div className="mt-12 rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-            <p className="text-lg font-bold text-emerald-950">Try GMGN next</p>
-            <p className="mt-2 text-sm leading-6 text-emerald-950">
-              Open GMGN, create your API key, then come back to this page with
-              notes. Tell us what to shorten, add, or rewrite.
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="rounded-2xl border border-rose-200 bg-rose-50 p-7">
+            <h2 className="text-2xl font-bold text-rose-950">
+              Trading is a later step
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-rose-950">
+              GMGN can route swaps through a hosted-wallet flow. The CLI also
+              forces a typed yes before swap, multi-swap, strategy, and cooking
+              commands unless you explicitly enable automation. Do not enable
+              that until you understand the risk.
             </p>
-            <div className="mt-5">
-              <AffiliateButton extraClass="bg-emerald-600 text-white hover:bg-emerald-500">
-                Open GMGN with our link
-              </AffiliateButton>
-            </div>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-rose-950">
+              <li>
+                Verify chain, wallet, token mint, amount, and slippage yourself.
+              </li>
+              <li>
+                AI can invent a similar-looking contract. Copy the address from
+                a source you trust.
+              </li>
+              <li>
+                Test with an amount you can lose. On-chain fills do not unwind.
+              </li>
+              <li>
+                IPv4 only. Whitelist your egress IP if you turn swap on.
+              </li>
+            </ul>
           </div>
-        </article>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-6">
+          <h2 className="text-3xl font-bold text-slate-900">FAQ</h2>
+          <div className="mt-6 space-y-4">
+            {faqs.map((item) => (
+              <div key={item.q} className="rounded-2xl border border-slate-200 p-5">
+                <h3 className="text-lg font-bold text-slate-900">{item.q}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-700">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <h2 className="text-3xl font-bold text-slate-900">Related pages</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <Link
+              href="/wallet-tracker"
+              className="rounded-2xl border border-slate-200 p-5 hover:bg-slate-50"
+            >
+              <p className="font-bold text-slate-900">Wallet tracker</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Our on-site wallet tracking work in progress.
+              </p>
+            </Link>
+            <Link
+              href="/meme-coin-research"
+              className="rounded-2xl border border-slate-200 p-5 hover:bg-slate-50"
+            >
+              <p className="font-bold text-slate-900">Meme coin research</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Broader research notes before you chase a ticker.
+              </p>
+            </Link>
+            <Link
+              href="/learn"
+              className="rounded-2xl border border-slate-200 p-5 hover:bg-slate-50"
+            >
+              <p className="font-bold text-slate-900">Learn hub</p>
+              <p className="mt-2 text-sm text-slate-600">
+                Other beginner security and market explainers.
+              </p>
+            </Link>
+          </div>
+          <div className="mt-8 rounded-2xl bg-slate-900 p-7 text-white">
+            <p className="text-sm uppercase tracking-wider text-emerald-300">
+              Affiliate disclosure
+            </p>
+            <h2 className="mt-2 text-2xl font-bold">Ready to try GMGN?</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-200">
+              Crypto&apos;s Beginner may earn a commission from{" "}
+              <a
+                href={GMGN_AFFILIATE}
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="underline"
+              >
+                gmgn.ai/r/XPS1eXg4
+              </a>
+              . That does not change the price you pay. Compare the live product
+              against the docs before you fund anything.
+            </p>
+            <AffiliateButton className="mt-5 inline-flex rounded-full bg-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-emerald-300">
+              Open GMGN
+            </AffiliateButton>
+          </div>
+        </section>
 
         <section className="border-t bg-slate-50">
-          <div className="mx-auto max-w-4xl px-4 py-8 text-sm leading-6 text-slate-600">
-            Educational content only. Not financial, legal, or tax advice. Meme
-            coins are high risk. GMGN data can be wrong. Past wallet performance
-            does not predict future results. Confirm every on-chain action
-            yourself.
+          <div className="mx-auto max-w-6xl px-4 py-8 text-sm leading-6 text-slate-600">
+            <p>
+              Educational tutorial only. Not financial, legal, or tax advice.
+              Meme coins, copy trading, and AI-assisted execution can result in
+              total loss. GMGN is a third-party product. Features, chains, and
+              rate limits can change. See our{" "}
+              <Link href="/disclaimer" className="font-semibold underline">
+                disclaimer
+              </Link>
+              .
+            </p>
           </div>
         </section>
       </main>
