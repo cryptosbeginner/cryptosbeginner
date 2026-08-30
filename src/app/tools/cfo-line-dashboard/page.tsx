@@ -1,382 +1,311 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { getMarketDashboardData } from "@/lib/crypto-market-dashboard";
+import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { getCfoLineDashboardData, type AssetCFO } from "@/lib/anny-cfo-line";
+
+const SITE_URL = "https://www.cryptosbeginner.com";
+const UPDATED = "2026-08-28";
 
 export const metadata: Metadata = {
-  title: "Crypto Market Regime Dashboard (CFO Line + Market Data)",
+  title:
+    "CFO Line Dashboard – Crypto Regime Map (Accumulate, Wait, Distribute)",
   description:
-    "Live crypto market regime dashboard combining CoinGecko price, market cap, volume, and 24h/7d changes with Anny Trade CFO Line states for BTC, ETH, SOL, BNB, and XRP.",
+    "See which crypto assets are in Accumulate, Wait or Distribute according to the CFO Line indicator. Educational, not financial advice.",
+  keywords:
+    "CFO Line, crypto regime map, Accumulate Wait Distribute, crypto indicator, Bitcoin, Ethereum, Solana, crypto signals, Anny Trade",
+  authors: [{ name: "Crypto's Beginner" }],
+  alternates: {
+    canonical: `${SITE_URL}/tools/cfo-line-dashboard`,
+  },
   openGraph: {
-    title: "Crypto Market Regime Dashboard (CFO Line + Market Data)",
+    title: "CFO Line Dashboard – Crypto Regime Map",
     description:
-      "Live crypto market regime dashboard combining CoinGecko price, market cap, volume, and 24h/7d changes with Anny Trade CFO Line states for BTC, ETH, SOL, BNB, and XRP.",
+      "Crypto regime map: Accumulate, Wait and Distribute states for BTC, ETH, SOL and more.",
+    url: `${SITE_URL}/tools/cfo-line-dashboard`,
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/og-cfo-line-dashboard.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "CFO Line Dashboard preview",
+      },
+    ],
   },
   twitter: {
-    title: "Crypto Market Regime Dashboard (CFO Line + Market Data)",
+    card: "summary_large_image",
+    title: "CFO Line Dashboard – Crypto Regime Map",
     description:
-      "Live crypto market regime dashboard combining CoinGecko price, market cap, volume, and 24h/7d changes with Anny Trade CFO Line states for BTC, ETH, SOL, BNB, and XRP.",
+      "Crypto regime map: Accumulate, Wait and Distribute states for BTC, ETH, SOL and more.",
+    images: [`${SITE_URL}/og-cfo-line-dashboard.jpg`],
   },
 };
 
-function formatNumber(n: number) {
-  if (!isFinite(n)) return "—";
-  if (Math.abs(n) >= 1e12) return (n / 1e12).toFixed(2) + "T";
-  if (Math.abs(n) >= 1e9) return (n / 1e9).toFixed(2) + "B";
-  if (Math.abs(n) >= 1e6) return (n / 1e6).toFixed(2) + "M";
-  if (Math.abs(n) >= 1e3) return (n / 1e3).toFixed(2) + "K";
-  return n.toFixed(2);
+function stateColor(state: AssetCFO["state"]) {
+  if (state === "Accumulate") return "bg-emerald-100 text-emerald-800";
+  if (state === "Wait") return "bg-amber-100 text-amber-800";
+  return "bg-rose-100 text-rose-800";
 }
 
-function formatPercent(n: number | null) {
-  if (n === null || !isFinite(n)) return "—";
-  const sign = n > 0 ? "+" : "";
-  return sign + n.toFixed(2) + "%";
+function stateLabel(state: AssetCFO["state"]) {
+  if (state === "Accumulate") return "Strength";
+  if (state === "Wait") return "Neutral";
+  return "Weakness";
 }
 
-function cfoLabel(state: string) {
-  switch (state) {
-    case "accumulate":
-      return "Accumulate";
-    case "distribute":
-      return "Distribute";
-    default:
-      return "Wait";
-  }
-}
+export default async function CFOLineDashboardPage() {
+  const assets = await getCfoLineDashboardData();
 
-function cfoColor(state: string) {
-  switch (state) {
-    case "accumulate":
-      return "text-emerald-400";
-    case "distribute":
-      return "text-rose-400";
-    default:
-      return "text-amber-400";
-  }
-}
-
-function cfoBg(state: string) {
-  switch (state) {
-    case "accumulate":
-      return "bg-emerald-500/10 border-emerald-500/30";
-    case "distribute":
-      return "bg-rose-500/10 border-rose-500/30";
-    default:
-      return "bg-amber-500/10 border-amber-500/30";
-  }
-}
-
-export default async function CfoLineDashboardPage() {
-  let assets = await getMarketDashboardData().catch(() => []);
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Tools",
+          item: `${SITE_URL}/tools`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "CFO Line Dashboard",
+          item: `${SITE_URL}/tools/cfo-line-dashboard`,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "CFO Line Dashboard",
+      description:
+        "Crypto regime map using the CFO Line indicator: Accumulate, Wait and Distribute states.",
+      url: `${SITE_URL}/tools/cfo-line-dashboard`,
+      inLanguage: "en",
+      dateModified: UPDATED,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the CFO Line?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "The CFO Line is a trend and momentum indicator that labels each asset as Accumulate, Wait or Distribute.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Accumulate mean buy?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "No. Accumulate means the indicator sees strength. It is not a direct buy signal.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is this financial advice?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:
+              "No. This dashboard is educational only and not financial, legal or tax advice.",
+          },
+        },
+      ],
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        {/* Breadcrumbs (inline, no custom component) */}
-        <nav className="mb-6 text-xs text-slate-400" aria-label="Breadcrumb">
-          <ol className="flex items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-slate-200">
-                Home
-              </Link>
-            </li>
-            <li>/</li>
-            <li>
-              <Link href="/tools" className="hover:text-slate-200">
-                Tools
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-slate-200">CFO Dashboard</li>
-          </ol>
-        </nav>
-
-        <section className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Crypto Market Regime Dashboard
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            Live overview combining CoinGecko market data with Anny Trade CFO
-            Line states for BTC, ETH, SOL, BNB, and XRP. Use this as a
-            high-level regime map, not as trading advice.
-          </p>
-        </section>
-
-        {/* Mobile cards */}
-        <section className="mb-10 grid gap-4 sm:hidden">
-          {assets.length === 0 && (
-            <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300">
-              Market data unavailable at the moment.
-            </div>
-          )}
-          {assets.map((a) => (
-            <div
-              key={a.id}
-              className="rounded-lg border border-slate-800 bg-slate-900/60 p-4"
-            >
-              <div className="mb-3 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  {a.image ? (
-                    <img
-                      src={a.image}
-                      alt={`${a.name} icon`}
-                      className="h-8 w-8 rounded-full"
-                    />
-                  ) : (
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold">
-                      {a.symbol[0]}
-                    </div>
-                  )}
-                  <div>
-                    <div className="text-sm font-semibold">{a.name}</div>
-                    <div className="text-xs text-slate-400">{a.symbol}</div>
-                  </div>
-                </div>
-                <div
-                  className={`rounded-md border px-2 py-1 text-xs font-medium ${cfoBg(
-                    a.cfo?.state ?? "wait"
-                  )} ${cfoColor(a.cfo?.state ?? "wait")}`}
-                >
-                  {cfoLabel(a.cfo?.state ?? "wait")}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div>
-                  <div className="text-slate-400">Price</div>
-                  <div className="font-medium">
-                    ${formatNumber(a.priceUsd)}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-slate-400">24h</div>
-                  <div className="font-medium">
-                    {formatPercent(a.change24h)}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-slate-400">7d</div>
-                  <div className="font-medium">
-                    {formatPercent(a.change7d)}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-slate-400">Market cap</div>
-                  <div className="font-medium">
-                    ${formatNumber(a.marketCapUsd)}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-slate-400">Volume (24h)</div>
-                  <div className="font-medium">
-                    ${formatNumber(a.volume24hUsd)}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-slate-400">Rank</div>
-                  <div className="font-medium">
-                    {a.rank ? `#${a.rank}` : "—"}
-                  </div>
-                </div>
-              </div>
-
-              {a.cfo && (
-                <div className="mt-3 rounded-md border border-slate-800 bg-slate-900/40 p-2 text-xs">
-                  <div className="mb-1 flex items-center justify-between">
-                    <span className="text-slate-400">CFO Line</span>
-                    <span className={`font-medium ${cfoColor(a.cfo.state)}`}>
-                      {cfoLabel(a.cfo.state)}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-400">
-                    <div>
-                      Confidence:{" "}
-                      <span className="text-slate-200">
-                        {(a.cfo.confidence * 100).toFixed(0)}%
-                      </span>
-                    </div>
-                    <div>
-                      Regime start:{" "}
-                      <span className="text-slate-200">
-                        {new Date(a.cfo.regimeStart).toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="col-span-2">
-                      Latest flip:{" "}
-                      <span className="text-slate-200">
-                        {new Date(a.cfo.latestFlip).toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </section>
-
-        {/* Desktop table */}
-        <section className="hidden sm:block">
-          {assets.length === 0 && (
-            <div className="mb-6 rounded-lg border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300">
-              Market data unavailable at the moment.
-            </div>
-          )}
-          {assets.length > 0 && (
-            <div className="overflow-x-auto rounded-lg border border-slate-800 bg-slate-900/60">
-              <table className="min-w-full text-left text-sm">
-                <thead className="border-b border-slate-800 text-xs uppercase text-slate-400">
-                  <tr>
-                    <th className="px-4 py-3">Asset</th>
-                    <th className="px-4 py-3">Price</th>
-                    <th className="px-4 py-3">24h</th>
-                    <th className="px-4 py-3">7d</th>
-                    <th className="px-4 py-3">Market cap</th>
-                    <th className="px-4 py-3">Volume (24h)</th>
-                    <th className="px-4 py-3">Rank</th>
-                    <th className="px-4 py-3">CFO Line</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {assets.map((a) => (
-                    <tr
-                      key={a.id}
-                      className="border-b border-slate-800/60 last:border-b-0"
-                    >
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-3">
-                          {a.image ? (
-                            <img
-                              src={a.image}
-                              alt={`${a.name} icon`}
-                              className="h-7 w-7 rounded-full"
-                            />
-                          ) : (
-                            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold">
-                              {a.symbol[0]}
-                            </div>
-                          )}
-                          <div>
-                            <div className="font-medium">{a.name}</div>
-                            <div className="text-xs text-slate-400">
-                              {a.symbol}
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td className="px-4 py-3 font-medium">
-                        ${formatNumber(a.priceUsd)}
-                      </td>
-                      <td className="px-4 py-3">
-                        {formatPercent(a.change24h)}
-                      </td>
-                      <td className="px-4 py-3">
-                        {formatPercent(a.change7d)}
-                      </td>
-                      <td className="px-4 py-3">
-                        ${formatNumber(a.marketCapUsd)}
-                      </td>
-                      <td className="px-4 py-3">
-                        ${formatNumber(a.volume24hUsd)}
-                      </td>
-                      <td className="px-4 py-3">
-                        {a.rank ? `#${a.rank}` : "—"}
-                      </td>
-                      <td className="px-4 py-3">
-                        {a.cfo ? (
-                          <div className="flex items-center gap-2">
-                            <span
-                              className={`rounded-md border px-2 py-0.5 text-xs font-medium ${cfoBg(
-                                a.cfo.state
-                              )} ${cfoColor(a.cfo.state)}`}
-                            >
-                              {cfoLabel(a.cfo.state)}
-                            </span>
-                            <span className="text-xs text-slate-400">
-                              {(a.cfo.confidence * 100).toFixed(0)}%
-                            </span>
-                          </div>
-                        ) : (
-                          <span className="text-xs text-slate-400">—</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </section>
-
-        {/* Context */}
-        <section className="mt-10 grid gap-5 lg:grid-cols-2">
-          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-            <h2 className="mb-2 text-lg font-semibold">How to read this</h2>
-            <ul className="list-inside list-disc space-y-1 text-sm leading-relaxed text-slate-300">
-              <li>
-                <strong>Accumulate:</strong> CFO Line suggests net buying
-                pressure and potential accumulation behavior.
-              </li>
-              <li>
-                <strong>Wait:</strong> Mixed signals or transitional regime;
-                often choppy price action.
-              </li>
-              <li>
-                <strong>Distribute:</strong> CFO Line suggests net selling
-                pressure and potential distribution behavior.
-              </li>
-              <li>
-                Always combine with your own analysis, risk management, and
-                time horizon.
-              </li>
-            </ul>
-          </div>
-          <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-            <h2 className="mb-2 text-lg font-semibold">Data sources</h2>
-            <ul className="list-inside list-disc space-y-1 text-sm leading-relaxed text-slate-300">
-              <li>
-                Price, 24h/7d change, market cap, volume, and rank from{" "}
-                <a
-                  href="https://www.coingecko.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300"
-                >
-                  CoinGecko
-                </a>
-                .
-              </li>
-              <li>
-                CFO Line state, confidence, and flip timestamps from{" "}
-                <a
-                  href="https://anny.trade"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300"
-                >
-                  Anny Trade
-                </a>
-                .
-              </li>
-              <li>
-                Data is cached for up to 5 minutes and may lag during API
-                outages or rate limits.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Disclaimer */}
-        <section className="mt-8">
-          <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
-            <p className="text-xs leading-relaxed text-slate-400">
-              This dashboard is for informational purposes only and is not
-              financial advice. Crypto markets are highly volatile. Always do
-              your own research and manage your risk carefully.
+    <>
+      <Header />
+      {structuredData.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <main className="bg-white">
+        <section className="border-b bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
+          <div className="mx-auto max-w-6xl px-4 py-12">
+            <p className="text-sm font-medium uppercase tracking-wider text-indigo-300">
+              Tools · Dashboard
+            </p>
+            <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
+              CFO Line Dashboard
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+              A regime map for crypto. The CFO Line labels each asset as
+              Accumulate, Wait or Distribute based on trend and momentum.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-300">
+              Data from the Anny Trade API (guest endpoint). Rate-limited for
+              unauthenticated calls; if limits are hit, you may see demo data.
             </p>
           </div>
         </section>
-      </div>
-    </main>
+
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+              <p className="text-sm font-bold text-emerald-900">Accumulate</p>
+              <p className="mt-2 text-sm leading-6 text-emerald-950">
+                Trend and momentum are aligned to the upside. Not a buy signal,
+                but a strength regime.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+              <p className="text-sm font-bold text-amber-900">Wait</p>
+              <p className="mt-2 text-sm leading-6 text-amber-950">
+                Mixed signals. Trend and momentum disagree or are flat.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-rose-200 bg-rose-50 p-5">
+              <p className="text-sm font-bold text-rose-900">Distribute</p>
+              <p className="mt-2 text-sm leading-6 text-rose-950">
+                Trend and momentum are aligned to the downside. A weakness
+                regime, not a direct sell instruction.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-6">
+          <p className="text-sm font-bold uppercase tracking-wider text-indigo-700">
+            Regime map
+          </p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900">
+            CFO Line states for major assets
+          </h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            Real-time(ish) data from Anny Trade. Each row shows the current
+            state, when it started, recent flips and a confidence level.
+          </p>
+
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+            <table className="min-w-full divide-y divide-slate-200">
+              <thead className="bg-slate-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Asset
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    CFO Line state
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Since
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Recent flips
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Confidence
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 bg-white">
+                {assets.map((asset) => (
+                  <tr key={asset.symbol} className="hover:bg-slate-50">
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={asset.logoUrl}
+                          alt={`${asset.name} logo`}
+                          width={28}
+                          height={28}
+                          className="h-7 w-7"
+                        />
+                        <div>
+                          <p className="text-sm font-bold text-slate-900">
+                            {asset.symbol}
+                          </p>
+                          <p className="text-xs text-slate-500">{asset.name}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span
+                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${stateColor(
+                          asset.state
+                        )}`}
+                      >
+                        {asset.state} · {stateLabel(asset.state)}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-slate-700">
+                      {asset.since}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-slate-700">
+                      <ul className="space-y-1">
+                        {asset.flips.length === 0 ? (
+                          <li>No flips recorded</li>
+                        ) : (
+                          asset.flips.map((f, i) => (
+                            <li key={i}>
+                              {f.date}: {f.from} → {f.to}
+                            </li>
+                          ))
+                        )}
+                      </ul>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-slate-700">
+                      {asset.confidence}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+            <h2 className="text-2xl font-bold text-slate-900">
+              How to read this dashboard
+            </h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              <li>
+                <strong>Accumulate</strong> does not mean “buy now”. It means
+                the indicator sees strength.
+              </li>
+              <li>
+                <strong>Wait</strong> means mixed signals. Many assets spend
+                most of their time here.
+              </li>
+              <li>
+                <strong>Distribute</strong> means weakness, not necessarily an
+                immediate crash.
+              </li>
+              <li>
+                Use this as context, not as a trading signal. Combine with your
+                own risk rules and time horizon.
+              </li>
+            </ul>
+            <p className="mt-6 text-sm leading-6 text-slate-600">
+              Data is provided by the Anny Trade API. Guest calls are
+              rate-limited; if limits are hit, the page falls back to demo
+              data so it always renders.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t bg-slate-50">
+          <div className="mx-auto max-w-6xl px-4 py-8 text-sm leading-6 text-slate-600">
+            <p>
+              Educational tool only. Not financial, legal or tax advice. The
+              CFO Line is an indicator, not a guarantee. Past behaviour does
+              not predict future results.
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
