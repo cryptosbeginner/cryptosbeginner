@@ -1,19 +1,318 @@
+import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { platforms, guides, tutorials, reviewedDate } from "./content";
-import { CollectionJsonLd } from "./SeoJsonLd";
+import {
+  Breadcrumbs,
+  BreadcrumbsItem,
+  BreadcrumbsLink,
+  BreadcrumbsList,
+  BreadcrumbsSeparator,
+} from "@/components/ui/breadcrumbs";
+import { ArticleJsonLd } from "next-seo";
 
-export const metadata = { title: "Meme Coins 2026: Launchpads, Trading Terminals & Safety", description: "Learn how meme-coin launchpads, trading terminals, and social discovery tools work, with practical checks for contracts, liquidity, fees, and execution risk.", alternates: { canonical: "https://www.cryptosbeginner.com/meme-coins" }, openGraph: { title: "Meme Coins 2026: Launchpads, Trading Terminals & Safety", description: "Research-first meme-coin education and platform comparisons for beginners.", url: "https://www.cryptosbeginner.com/meme-coins", type: "website" } };
+export const metadata: Metadata = {
+  title: "Meme Coins: Research, Track Wallets & Spot Smart Money",
+  description:
+    "Learn how to research meme coins, track wallets, and spot smart money using GMGN, Solscan, and other tools. Practical guides for Solana and multi-chain.",
+  openGraph: {
+    title: "Meme Coins: Research, Track Wallets & Spot Smart Money",
+    description:
+      "Learn how to research meme coins, track wallets, and spot smart money using GMGN, Solscan, and other tools. Practical guides for Solana and multi-chain.",
+    type: "article",
+  },
+  twitter: {
+    title: "Meme Coins: Research, Track Wallets & Spot Smart Money",
+    description:
+      "Learn how to research meme coins, track wallets, and spot smart money using GMGN, Solscan, and other tools. Practical guides for Solana and multi-chain.",
+  },
+};
 
-function HubCard({ platform }: { platform: (typeof platforms)[number] }) {
-  const label = platform.category === "launchpad" ? "Launchpad" : platform.category === "comparison" ? "Comparison" : "Trading terminal";
-  return <article className="rounded-2xl border border-slate-300 bg-white p-6 shadow-sm"><span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-black uppercase tracking-wide text-indigo-950">{label}</span><h3 className="mt-4 text-2xl font-black text-slate-950">{platform.name}</h3><p className="mt-2 text-sm font-bold text-slate-700">{platform.role}</p><p className="mt-3 leading-7 text-slate-800">{platform.summary}</p><Link href={`/meme-coins/reviews/${platform.slug}`} className="mt-4 inline-block font-black text-indigo-900 hover:underline">Read the profile →</Link></article>;
-}
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Meme Coins: Research, Track Wallets & Spot Smart Money",
+  description:
+    "Learn how to research meme coins, track wallets, and spot smart money using GMGN, Solscan, and other tools. Practical guides for Solana and multi-chain.",
+  image: "https://www.cryptosbeginner.com/og-image.jpg",
+  author: {
+    "@type": "Organization",
+    name: "Cryptos Beginner",
+    url: "https://www.cryptosbeginner.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Cryptos Beginner",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.cryptosbeginner.com/logo.png",
+    },
+  },
+  datePublished: "2025-08-29",
+  dateModified: "2025-08-30",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.cryptosbeginner.com/meme-coins",
+  },
+};
 
 export default function MemeCoinsPage() {
-  const terminals = platforms.filter((p) => p.category === "terminal").slice(0, 2);
-  const launchpads = platforms.filter((p) => p.category === "launchpad").slice(0, 4);
-  return <><CollectionJsonLd title="Meme Coins 2026: Launchpads, Trading Terminals & Safety" description="Research-first meme-coin education and platform comparisons." path="/meme-coins" items={platforms.map((p) => ({ name: p.name, path: `/meme-coins/reviews/${p.slug}` }))} /><Header /><main><section className="border-b border-slate-200 bg-slate-50"><div className="mx-auto max-w-5xl px-4 py-12 sm:px-6"><p className="text-sm font-bold text-indigo-900">Meme coins · Research · Guides · {reviewedDate}</p><h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Meme Coins: Launchpads, Trading Terminals, and the Checks That Matter</h1><p className="mt-5 max-w-3xl text-lg leading-8 text-slate-900"><strong>Meme coins are highly speculative tokens.</strong> Their prices can be driven by attention, liquidity, culture, and rapid trading rather than predictable cash flow. This hub explains what each type of platform actually does so you can separate discovery from verification and execution.</p><div className="mt-6 flex flex-wrap gap-3"><Link href="/meme-coins/platforms" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-indigo-700">Browse terminals and launchpads →</Link><Link href="/meme-coins/guides/token-verification" className="rounded-full border border-slate-400 bg-white px-5 py-3 text-sm font-black text-slate-950 hover:border-indigo-500">Start with verification</Link></div></div></section><div className="mx-auto max-w-5xl px-4 py-10 sm:px-6"><section><h2 className="text-3xl font-black text-slate-950">Trading terminals and research tools</h2><p className="mt-2 max-w-3xl leading-7 text-slate-900">Terminals organize charts, wallet activity, holder data, alerts, and transaction controls. They can make a workflow faster; they cannot make a token authentic or a trade safe.</p><div className="mt-5 grid gap-5 md:grid-cols-2">{terminals.map((p) => <HubCard key={p.slug} platform={p} />)}</div></section><section className="mt-14"><h2 className="text-3xl font-black text-slate-950">Launchpads and token-creation markets</h2><p className="mt-2 max-w-3xl leading-7 text-slate-900">Launchpads lower the steps required to create or discover a token. Before using one, record the chain and contract, inspect creator and holder concentration, understand the liquidity or graduation path, and verify the current fee rules.</p><div className="mt-5 grid gap-5 md:grid-cols-2">{launchpads.map((p) => <HubCard key={p.slug} platform={p} />)}</div></section><section className="mt-10 rounded-2xl border border-amber-300 bg-amber-100 p-6"><h2 className="text-2xl font-black text-slate-950">A chart, ranking, or audit badge is only a starting point</h2><p className="mt-2 leading-7 text-slate-950">A wallet P&amp;L, leaderboard, “smart money” label, bonding-curve position, or recent buy is a signal to investigate. It is not proof that the token is authentic, liquid, or sellable. Use a dedicated low-balance wallet and decide your maximum loss before signing.</p></section><div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_1fr]"><div><h2 className="text-3xl font-black text-slate-950">Guides and tutorials</h2><div className="mt-4 grid gap-3">{[...guides, ...tutorials].map((item) => <Link key={item.slug} href={`/meme-coins/${guides.some((g) => g.slug === item.slug) ? "guides" : "tutorials"}/${item.slug}`} className="rounded-xl border border-slate-300 bg-white p-4 hover:border-indigo-500"><span className="text-xs font-black uppercase tracking-[0.14em] text-slate-700">{guides.some((g) => g.slug === item.slug) ? "Guide" : "Tutorial"}</span><span className="mt-1 block font-black text-slate-950">{item.title}</span><span className="mt-1 block text-sm leading-6 text-slate-800">{item.description}</span></Link>)}</div></div><div className="rounded-2xl border border-slate-300 bg-white p-6"><h2 className="text-3xl font-black text-slate-950">What the screenshots show</h2><p className="mt-3 leading-7 text-slate-900">The supplied visuals are used as product evidence for visible controls such as discovery feeds, charts, holder views, presets, and tracking panels. They are not presented as performance proof.</p><Image src="/images/meme-coins/platforms/gmgn-homepage.png" alt="GMGN homepage showing research and trading entry points" width={1906} height={852} className="mt-5 h-auto w-full rounded-xl border border-slate-300 bg-slate-950" /></div></div></div></main><Footer /></>;
+  return (
+    <>
+      <ArticleJsonLd jsonLd={articleJsonLd} />
+      <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+          {/* Breadcrumbs */}
+          <Breadcrumbs className="mb-6">
+            <BreadcrumbsList>
+              <BreadcrumbsItem>
+                <BreadcrumbsLink href="/">Home</BreadcrumbsLink>
+              </BreadcrumbsItem>
+              <BreadcrumbsSeparator />
+              <BreadcrumbsItem>
+                <BreadcrumbsLink href="/learn">Learn</BreadcrumbsLink>
+              </BreadcrumbsItem>
+              <BreadcrumbsSeparator />
+              <BreadcrumbsItem>
+                <BreadcrumbsLink href="/meme-coins">Meme Coins</BreadcrumbsLink>
+              </BreadcrumbsItem>
+            </BreadcrumbsList>
+          </Breadcrumbs>
+
+          {/* Hero */}
+          <section className="mb-12">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Meme Coins: Research, Track Wallets & Spot Smart Money
+            </h1>
+            <p className="mt-3 text-base leading-relaxed text-slate-300 sm:text-lg">
+              Learn how to research meme coins, track wallets, and spot smart
+              money using GMGN, Solscan, and other tools. Practical guides for
+              Solana and multi-chain.
+            </p>
+          </section>
+
+          {/* Intro */}
+          <section className="mb-12 rounded-xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">
+            <h2 className="mb-3 text-xl font-semibold">
+              Why meme coin research matters
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+              Meme coins move fast and are heavily driven by narratives,
+              liquidity, and wallet flows. Without a clear research process, it
+              is easy to chase pumps, miss exits, or get trapped in illiquid
+              tokens. This page gives you a practical framework and links to
+              tools you can use immediately.
+            </p>
+          </section>
+
+          {/* Framework */}
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">
+              A simple framework for meme coin research
+            </h2>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">
+                  1. Understand the narrative
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Identify the story behind the token: community, catalysts,
+                  listings, and social traction. Check whether the narrative is
+                  new, rotating, or exhausted.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">
+                  2. Check liquidity and token structure
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Look at liquidity depth, holder distribution, top wallets,
+                  and any lock/vesting. Thin liquidity and concentrated holdings
+                  increase risk of manipulation and slippage.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">
+                  3. Track wallets and smart money
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Use tools like GMGN and Solscan to follow experienced wallets,
+                  insiders, and early buyers. Observe entry/exit patterns and
+                  position sizing.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">
+                  4. Define risk and exits
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Decide position size, invalidation levels, and profit-taking
+                  rules before entering. Meme coins can gap and gap back quickly.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Tools */}
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">
+              Tools for meme coin research
+            </h2>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">GMGN</h3>
+                <p className="mb-3 text-sm leading-relaxed text-slate-300">
+                  Analyze token pages, holder distribution, and wallet flows.
+                  Use GMGN Skills to tag and track smart money and insiders.
+                </p>
+                <Link
+                  href="/learn/gmgn-ai-agent"
+                  className="inline-flex items-center text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                >
+                  GMGN AI Agent guide →
+                </Link>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">Solscan</h3>
+                <p className="mb-3 text-sm leading-relaxed text-slate-300">
+                  Deep-dive into Solana transactions, token transfers, and
+                  wallet histories. Useful for tracing entries, exits, and
+                  cluster behavior.
+                </p>
+                <Link
+                  href="https://solscan.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                >
+                  Open Solscan →
+                </Link>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-lg font-medium">
+                  Wallet tracker & DEX monitor
+                </h3>
+                <p className="mb-3 text-sm leading-relaxed text-slate-300">
+                  Track your own positions, PnL, and DEX activity in one place.
+                  Combine with GMGN and Solscan for a full picture.
+                </p>
+                <Link
+                  href="/wallet-tracker"
+                  className="inline-flex items-center text-sm font-medium text-cyan-400 hover:text-cyan-300"
+                >
+                  Open wallet tracker →
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* How to use GMGN */}
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">
+              How to use GMGN for meme coins
+            </h2>
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">
+              <ol className="list-inside list-decimal space-y-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                <li>
+                  Open a token page on GMGN and check liquidity, holders, and
+                  recent trades.
+                </li>
+                <li>
+                  Use the “Holders” and “Top Traders” tabs to identify
+                  influential wallets and early buyers.
+                </li>
+                <li>
+                  Tag interesting wallets with GMGN Skills and monitor their
+                  future activity.
+                </li>
+                <li>
+                  Cross-check with Solscan for detailed transaction history and
+                  token flows.
+                </li>
+                <li>
+                  Combine insights with your own risk rules and position sizing.
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-semibold">
+              Frequently asked questions
+            </h2>
+            <div className="space-y-4">
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-base font-medium">
+                  Are meme coins safe to trade?
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Meme coins are highly speculative and can be manipulated. Only
+                  risk capital you can afford to lose and use clear entry/exit
+                  rules.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-base font-medium">
+                  Which chains are best for meme coins?
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Solana is currently the most active for meme coins due to low
+                  fees and fast transactions. Other chains like Base and BSC also
+                  see activity but with different risk profiles.
+                </p>
+              </div>
+              <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-5">
+                <h3 className="mb-2 text-base font-medium">
+                  How do I avoid scams?
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-300">
+                  Check liquidity locks, holder distribution, and contract
+                  ownership. Avoid tokens with extreme concentration, hidden
+                  mint functions, or suspicious trading patterns.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="mb-12">
+            <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
+              <h2 className="text-xl font-semibold">
+                Ready to track your own trades?
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+                Use the wallet tracker and DEX monitor to log entries, exits,
+                and PnL. Combine this with GMGN and Solscan for a complete
+                research and execution workflow.
+              </p>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/wallet-tracker"
+                  className="inline-flex items-center justify-center rounded-lg bg-cyan-500 px-4 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-cyan-400"
+                >
+                  Open wallet tracker
+                </Link>
+                <Link
+                  href="/learn"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:bg-slate-700"
+                >
+                  Browse all guides
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Disclaimer */}
+          <section className="mb-6">
+            <div className="rounded-lg border border-slate-800 bg-slate-900/60 p-4">
+              <p className="text-xs leading-relaxed text-slate-400">
+                This content is for educational purposes only and is not
+                financial advice. Meme coins are highly volatile and risky.
+                Always do your own research and manage your risk carefully.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </>
+  );
 }
