@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tutorials } from "../../content";
 import { ArticleShell, Figure, AffiliateCTA, VideoReference, RelatedPages } from "../../MemeArticle";
@@ -6,7 +7,44 @@ import type { Metadata } from "next";
 export function generateStaticParams() { return tutorials.map((t) => ({ slug: t.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const t = tutorials.find((x) => x.slug === slug); return t ? { title: t.title, description: t.description, alternates: { canonical: `https://www.cryptosbeginner.com/meme-coins/tutorials/${t.slug}` }, openGraph: { title: t.title, description: t.description, url: `https://www.cryptosbeginner.com/meme-coins/tutorials/${t.slug}`, type: "article" } } : {}; }
 export default async function TutorialPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const t = tutorials.find((x) => x.slug === slug); if (!t) notFound();
-  if (slug === "gmgn-beginners") return <><VideoObjectJsonLd name="GMGN.ai Beginner Tutorial Video Walkthrough" description={t.description} url={t.video} platform="GMGN.ai" path={`/meme-coins/tutorials/${slug}`} /><ArticleShell path={`/meme-coins/tutorials/${slug}`} kicker="Meme coins · Tutorial · 28 August 2026" title={t.title} description="A research-first walkthrough based on the supplied GMGN videos and screenshots. It is not a buy signal or a promise of results."><h2>Before you start</h2><p>Use a dedicated low-balance wallet and only an amount you can lose completely. The video narrator’s filter thresholds, wave theory, return targets, and low-fee scam conclusions are heuristics or promotional commentary, not universal rules.</p><VideoReference url={t.video} platform="GMGN.ai" /><h2>Step 1: Form a research queue in Trenches</h2><p>Start in Trenches or Trending. The supplied videos show token cards with age, market cap, liquidity, volume, transactions, total fees, and network selectors. Use filters to reduce noise, not to turn a candidate into a recommendation.</p><Figure src="/images/meme-coins/platforms/gmgn-interface.png" alt="GMGN interface showing Trenches and Trending navigation, token chart metrics, holder tabs and market controls" caption="GMGN interface showing discovery, chart, holder, and market-order surfaces; supplied screenshot, reviewed 28 August 2026." /><h2>Step 2: Open the token detail page</h2><p>Review the chart, candles, timeframes, volume, and RSI as context. Support and resistance drawings or a Fibonacci tool can describe a plan, but they cannot predict a low-liquidity market.</p><h2>Step 3: Investigate holders and developer history</h2><p>Open Holders, Basic Data, Token Audit, bubble maps, and developer-history views where available. Look for concentration, shared or time-linked funding, repeated launches, and sellability questions. A label is a prompt for investigation, not a verdict.</p><Figure src="/images/meme-coins/platforms/gmgn-radar-feature.png" alt="GMGN Radar discovery surface showing token-finding controls and market candidates" caption="GMGN Radar discovery surface; signals require independent contract and liquidity checks." /><h2>Step 4: Review execution settings</h2><p>Before signing, check Market, Limit, DCA, Auto, wallet presets, amount, slippage, priority fee, tip, and Anti-MEV settings. The official GMGN documentation states a 1% handling fee per single transaction; network and execution costs remain separate.</p><Figure src="/images/meme-coins/platforms/gmgn-settings.png" alt="GMGN settings panel showing execution controls and Anti-MEV-related options" caption="GMGN settings panel; confirm every field before signing." /><h2>Step 5: Write the exit rule first</h2><p>Define the maximum exposure, invalidation point, and first exit action before the chart moves. Do not copy a wallet simply because its displayed P&L is positive. Latency, timing mismatch, selection bias, and liquidity can make results materially different.</p><AffiliateCTA href="https://gmgn.ai/r/XPS1eXg4" label="Open GMGN through the partner link" /><RelatedPages /></ArticleShell></>;
+  if (slug === "gmgn-beginners") return <><VideoObjectJsonLd name="GMGN.ai Beginner Tutorial Video Walkthrough" description={t.description} url={t.video} platform="GMGN.ai" path={`/meme-coins/tutorials/${slug}`} /><ArticleShell path={`/meme-coins/tutorials/${slug}`} kicker="Meme coins · Tutorial · 28 August 2026" title={t.title} description="A research-first walkthrough based on the supplied GMGN videos and screenshots. It is not a buy signal or a promise of results."><h2>Before you start</h2><p>Use a dedicated low-balance wallet and only an amount you can lose completely. The video narrator’s filter thresholds, wave theory, return targets, and low-fee scam conclusions are heuristics or promotional commentary, not universal rules.</p><VideoReference url={t.video} platform="GMGN.ai" /><h2>Step 1: Form a research queue in Trenches</h2><p>Start in Trenches or Trending. The supplied videos show token cards with age, market cap, liquidity, volume, transactions, total fees, and network selectors. Use filters to reduce noise, not to turn a candidate into a recommendation.</p><Figure src="/images/meme-coins/platforms/gmgn-interface.png" alt="GMGN interface showing Trenches and Trending navigation, token chart metrics, holder tabs and market controls" caption="GMGN interface showing discovery, chart, holder, and market-order surfaces; supplied screenshot, reviewed 28 August 2026." /><h2>Step 2: Open the token detail page</h2><p>Review the chart, candles, timeframes, volume, and RSI as context. Support and resistance drawings or a Fibonacci tool can describe a plan, but they cannot predict a low-liquidity market.</p><h2>Step 3: Investigate holders and developer history</h2><p>Open Holders, Basic Data, Token Audit, bubble maps, and developer-history views where available. Look for concentration, shared or time-linked funding, repeated launches, and sellability questions. A label is a prompt for investigation, not a verdict.</p><Figure src="/images/meme-coins/platforms/gmgn-radar-feature.png" alt="GMGN Radar discovery surface showing token-finding controls and market candidates" caption="GMGN Radar discovery surface; signals require independent contract and liquidity checks." /><h2>Step 4: Review execution settings</h2>
+
+<p>
+  Before signing, check Market, Limit, DCA, Auto, wallet presets, amount,
+  slippage, priority fee, tip, and Anti-MEV settings. The official GMGN
+  documentation states a 1% handling fee per single transaction; network and
+  execution costs remain separate.
+</p>
+
+<aside className="not-prose my-10 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 sm:p-6">
+  <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-800">
+    Related GMGN guide
+  </p>
+
+  <h3 className="mt-2 text-xl font-black tracking-tight text-slate-950">
+    GMGN AI Agent: what to check before using automated workflows
+  </h3>
+
+  <p className="mt-3 max-w-3xl leading-7 text-slate-800">
+    If you are exploring GMGN’s AI-agent or automated trading tools, read our
+    separate guide before connecting a wallet, assigning permissions, or
+    approving an automated action. Automation can make execution faster, but it
+    does not remove smart-contract, liquidity, slippage, or loss risk.
+  </p>
+
+  <Link
+    href="/learn/gmgn-ai-agent"
+    className="mt-5 inline-flex rounded-full bg-indigo-700 px-5 py-3 text-sm font-black text-white transition hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+  >
+    Read the GMGN AI Agent guide →
+  </Link>
+</aside>
+
+<Figure
+  src="/images/meme-coins/platforms/gmgn-settings.png"
+  alt="GMGN settings panel showing execution controls and Anti-MEV-related options"
+  caption="GMGN settings panel; confirm every field before signing."
+/><h2>Step 5: Write the exit rule first</h2><p>Define the maximum exposure, invalidation point, and first exit action before the chart moves. Do not copy a wallet simply because its displayed P&L is positive. Latency, timing mismatch, selection bias, and liquidity can make results materially different.</p><AffiliateCTA href="https://gmgn.ai/r/XPS1eXg4" label="Open GMGN through the partner link" /><RelatedPages /></ArticleShell></>;
  return (
   <>
     <VideoObjectJsonLd
