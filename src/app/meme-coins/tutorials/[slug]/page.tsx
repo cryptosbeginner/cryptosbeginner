@@ -414,7 +414,7 @@ export default async function ReviewPage({
     );
   }
 
-  if (platform.slug === "axiom") {
+  if (platform.slug === "axiom-trade") {
     return (
       <PlatformProfile platform={platform}>
         <h2>What Axiom is for</h2>
