@@ -1,12 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  Breadcrumbs,
-  BreadcrumbsItem,
-  BreadcrumbsLink,
-  BreadcrumbsList,
-  BreadcrumbsSeparator,
-} from "@/components/ui/breadcrumbs";
 import { ArticleJsonLd } from "next-seo";
 
 export const metadata: Metadata = {
@@ -60,22 +53,30 @@ export default function MemeCoinsPage() {
       <ArticleJsonLd jsonLd={articleJsonLd} />
       <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-          {/* Breadcrumbs */}
-          <Breadcrumbs className="mb-6">
-            <BreadcrumbsList>
-              <BreadcrumbsItem>
-                <BreadcrumbsLink href="/">Home</BreadcrumbsLink>
-              </BreadcrumbsItem>
-              <BreadcrumbsSeparator />
-              <BreadcrumbsItem>
-                <BreadcrumbsLink href="/learn">Learn</BreadcrumbsLink>
-              </BreadcrumbsItem>
-              <BreadcrumbsSeparator />
-              <BreadcrumbsItem>
-                <BreadcrumbsLink href="/meme-coins">Meme Coins</BreadcrumbsLink>
-              </BreadcrumbsItem>
-            </BreadcrumbsList>
-          </Breadcrumbs>
+          {/* Breadcrumbs (inline, no custom component) */}
+          <nav className="mb-6 text-xs text-slate-400" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2">
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-slate-200"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link
+                  href="/learn"
+                  className="hover:text-slate-200"
+                >
+                  Learn
+                </Link>
+              </li>
+              <li>/</li>
+              <li className="text-slate-200">Meme Coins</li>
+            </ol>
+          </nav>
 
           {/* Hero */}
           <section className="mb-12">
