@@ -1,19 +1,11 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { tutorials } from "../../content";
-import {
-  ArticleShell,
-  Figure,
-  AffiliateCTA,
-  VideoReference,
-  RelatedPages,
-} from "../../MemeArticle";
-import { VideoObjectJsonLd } from "../../SeoJsonLd";
+import { platforms, videoSources } from "../../content";
+import { PlatformProfile } from "../../MemeArticle";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
-  return tutorials.map((tutorial) => ({
-    slug: tutorial.slug,
+  return platforms.map((platform) => ({
+    slug: platform.slug,
   }));
 }
 
@@ -23,491 +15,676 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const tutorial = tutorials.find((item) => item.slug === slug);
+  const platform = platforms.find((item) => item.slug === slug);
 
-  if (!tutorial) {
+  if (!platform) {
     return {};
   }
 
+  const title = `${platform.name} Review 2026: Features, Fees & Risk Checks`;
+
+  const description = `${platform.summary} Review fee layers, custody, limitations, and practical checks before using ${platform.name}.`;
+
   return {
-    title: tutorial.title,
-    description: tutorial.description,
+    title,
+    description,
     alternates: {
-      canonical: `https://www.cryptosbeginner.com/meme-coins/tutorials/${tutorial.slug}`,
+      canonical: `https://www.cryptosbeginner.com/meme-coins/reviews/${platform.slug}`,
     },
     openGraph: {
-      title: tutorial.title,
-      description: tutorial.description,
-      url: `https://www.cryptosbeginner.com/meme-coins/tutorials/${tutorial.slug}`,
+      title,
+      description,
+      url: `https://www.cryptosbeginner.com/meme-coins/reviews/${platform.slug}`,
       type: "article",
     },
   };
 }
 
-export default async function TutorialPage({
+export default async function ReviewPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const tutorial = tutorials.find((item) => item.slug === slug);
+  const platform = platforms.find((item) => item.slug === slug);
 
-  if (!tutorial) {
+  if (!platform) {
     notFound();
   }
 
-  if (slug === "gmgn-beginners") {
+  if (platform.slug === "gmgn-ai") {
     return (
-      <>
-        <VideoObjectJsonLd
-          name="GMGN.ai Beginner Tutorial Video Walkthrough"
-          description={tutorial.description}
-          url={tutorial.video}
-          platform="GMGN.ai"
-          path={`/meme-coins/tutorials/${slug}`}
-        />
+      <PlatformProfile platform={platform}>
+        <h2>What GMGN shows</h2>
 
-        <ArticleShell
-          path={`/meme-coins/tutorials/${slug}`}
-          kicker="Meme coins · Tutorial · Updated 30 August 2026"
-          title={tutorial.title}
-          description="A research-first GMGN walkthrough based on the supplied videos and screenshots. It is not a buy signal, a safety score, or a promise of results."
-        >
-          <h2>Before you start</h2>
+        <p>
+          The supplied videos show Trenches and Trending discovery, token cards,
+          chart timeframes, RSI and volume indicators, bubble maps, holders,
+          token-audit surfaces, developer history, presets, Snipe X,
+          Copywallet, and Buy/Sell panels. These features organize evidence;
+          they do not certify a token.
+        </p>
 
-          <p>
-            Use a dedicated low-balance wallet and only an amount you can lose
-            completely. The video narrator&apos;s filter thresholds, wave theory,
-            return targets, and low-fee scam conclusions are heuristics or
-            promotional commentary, not universal rules.
-          </p>
+        <h2>Research workflow</h2>
 
-          <VideoReference url={tutorial.video} platform="GMGN.ai" />
+        <ol>
+          <li>
+            Start in Trenches or Trending and use age, market-cap, liquidity,
+            volume, transaction, and network filters to reduce noise.
+          </li>
+          <li>
+            Open the token-detail page and review chart context, recent volume,
+            liquidity, holder activity, and visible transaction patterns.
+          </li>
+          <li>
+            Check holders, bubble maps, developer history, and linked-wallet
+            activity where available. A label is a reason to investigate, not a
+            final verdict.
+          </li>
+          <li>
+            Confirm the exact token contract through primary sources and assess
+            whether the token remains sellable through the expected route.
+          </li>
+          <li>
+            Review amount, slippage, priority fee, tip, Anti-MEV settings, and
+            the final wallet prompt before signing.
+          </li>
+        </ol>
 
-          <h2>Step 1: Form a research queue in Trenches</h2>
+        <h2>What to check before copy trading</h2>
 
-          <p>
-            Start in Trenches or Trending. The supplied videos show token cards
-            with age, market cap, liquidity, volume, transactions, total fees,
-            and network selectors. Use filters to reduce noise, not to turn a
-            candidate into a recommendation.
-          </p>
+        <p>
+          Copy-style workflows add latency, selection bias, timing mismatch,
+          position-size mismatch, and an exit problem. Treat a wallet&apos;s
+          displayed P&amp;L as historical context. Ask whether the result is
+          realized, what period it covers, and whether you can independently
+          verify the token and liquidity.
+        </p>
 
-          <Figure
-            src="/images/meme-coins/platforms/gmgn-interface.png"
-            alt="GMGN interface showing Trenches and Trending navigation, token chart metrics, holder tabs and market controls"
-            caption="GMGN interface showing discovery, chart, holder, and market-order surfaces; supplied screenshot, reviewed 28 August 2026."
-          />
+        <p>
+          A profitable wallet can have a different entry price, token allocation,
+          time horizon, route, and ability to exit than you. Copying a visible
+          trade does not recreate the original trade conditions.
+        </p>
 
-          <h2>Step 2: Open the token detail page</h2>
+        <h2>Fee stack</h2>
 
-          <p>
-            Review the chart, candles, timeframes, volume, and RSI as context.
-            Support and resistance drawings or a Fibonacci tool can describe a
-            plan, but they cannot predict a low-liquidity market.
-          </p>
+        <p>
+          GMGN documentation describes a 1% handling fee per single transaction.
+          Gas, priority fees, tips, venue fees, launchpad fees, slippage, and
+          price impact remain separate layers. Check live settings and the
+          transaction preview before relying on a headline fee number.
+        </p>
 
-          <h2>Step 3: Investigate holders and developer history</h2>
+        <h2>Who should avoid GMGN</h2>
 
-          <p>
-            Open Holders, Basic Data, Token Audit, bubble maps, and
-            developer-history views where available. Look for concentration,
-            shared or time-linked funding, repeated launches, and sellability
-            questions. A label is a prompt for investigation, not a verdict.
-          </p>
+        <p>
+          A reader looking for an automatic safe-token signal, a guaranteed
+          fill, or a way to copy a high-performing wallet without understanding
+          timing and risk should avoid using GMGN as a shortcut.
+        </p>
 
-          <Figure
-            src="/images/meme-coins/platforms/gmgn-radar-feature.png"
-            alt="GMGN Radar discovery surface showing token-finding controls and market candidates"
-            caption="GMGN Radar discovery surface; signals require independent contract and liquidity checks."
-          />
+        <h2>Video references</h2>
 
-          <h2>Step 4: Review execution settings</h2>
-
-          <p>
-            Before signing, check Market, Limit, DCA, Auto, wallet presets,
-            amount, slippage, priority fee, tip, and Anti-MEV settings. GMGN
-            documentation describes a 1% handling fee per single transaction;
-            network and execution costs remain separate.
-          </p>
-
-          <aside className="not-prose my-10 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 sm:p-6">
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-800">
-              Related GMGN guide
+        {videoSources
+          .filter((video) => video.platform === "GMGN.ai")
+          .map((video) => (
+            <p key={video.id}>
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open the original GMGN video on YouTube ↗
+              </a>{" "}
+              {video.caveat}
             </p>
-
-            <h3 className="mt-2 text-xl font-black tracking-tight text-slate-950">
-              GMGN AI Agent: what to check before using automated workflows
-            </h3>
-
-            <p className="mt-3 max-w-3xl leading-7 text-slate-800">
-              If you are exploring GMGN&apos;s AI-agent or automated trading
-              tools, read our separate guide before connecting a wallet,
-              assigning permissions, or approving an automated action.
-              Automation can make execution faster, but it does not remove
-              smart-contract, liquidity, slippage, or loss risk.
-            </p>
-
-            <Link
-              href="/learn/gmgn-ai-agent"
-              className="!text-white no-underline inline-flex rounded-full bg-indigo-700 px-5 py-3 text-sm font-black transition hover:!text-white hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
-            >
-              Read the GMGN AI Agent guide →
-            </Link>
-          </aside>
-
-          <Figure
-            src="/images/meme-coins/platforms/gmgn-settings.png"
-            alt="GMGN settings panel showing execution controls and Anti-MEV-related options"
-            caption="GMGN settings panel; confirm every field before signing."
-          />
-
-          <h2>Step 5: Write the exit rule first</h2>
-
-          <p>
-            Define the maximum exposure, invalidation point, and first exit
-            action before the chart moves. Do not copy a wallet simply because
-            its displayed P&amp;L is positive. Latency, timing mismatch,
-            selection bias, and liquidity can make results materially
-            different.
-          </p>
-
-          <AffiliateCTA
-            href="https://gmgn.ai/r/XPS1eXg4"
-            label="Open GMGN through the partner link"
-          />
-
-          <RelatedPages />
-        </ArticleShell>
-      </>
+          ))}
+      </PlatformProfile>
     );
   }
 
-  return (
-    <>
-      <VideoObjectJsonLd
-        name="FOMO Beginner Tutorial Video Walkthrough"
-        description={tutorial.description}
-        url={tutorial.video}
-        platform="FOMO"
-        path={`/meme-coins/tutorials/${slug}`}
-      />
-
-      <ArticleShell
-        path={`/meme-coins/tutorials/${slug}`}
-        kicker="Meme coins · Beginner tutorial · Updated 30 August 2026"
-        title={tutorial.title}
-        description="A practical, research-first FOMO tutorial for beginners. Learn how to use social discovery, trader profiles, alerts, token activity, and wallet controls without treating social signals as investment advice or a buy recommendation."
-      >
-        <h2>FOMO for beginners: the short answer</h2>
+  if (platform.slug === "fomo-photon") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>FOMO and Photon: different tools, different workflows</h2>
 
         <p>
-          FOMO is a social-first crypto trading app and web platform that
-          combines token discovery, trader activity, leaderboards, alerts,
-          social posts, and trading workflows. It can help you build a research
-          queue more quickly, but it cannot prove that a meme coin is
-          legitimate, liquid, sellable, or suitable for you.
+          FOMO and Photon are separate products that solve different parts of a
+          meme-coin workflow. FOMO focuses on social discovery, trader activity,
+          leaderboards, alerts, and feed-based market context. Photon is
+          primarily a Solana-oriented trading terminal for token discovery,
+          charts, wallet activity, and execution controls.
         </p>
 
         <p>
-          The safest way to use FOMO is to treat every post, leaderboard entry,
-          visible profit-and-loss figure, copy-trading prompt, and trending
-          token as a <strong>research lead</strong>. Before you connect a wallet
-          or sign a transaction, verify the token contract, current liquidity,
-          holder concentration, route, price impact, and the exact action you
-          are about to approve.
+          Neither platform verifies that a token is legitimate, liquid,
+          sellable, or suitable for you. Treat social activity, trending feeds,
+          visible wallet performance, and fast trading controls as research
+          inputs. Verify the exact contract, holders, liquidity, route, and
+          transaction details before signing.
         </p>
 
-        <h2>What FOMO does and does not do</h2>
+        <h2>FOMO: social discovery and alerts</h2>
 
         <p>
-          FOMO is designed around social discovery and trading context. Its
-          public materials describe features such as a social feed, trader
-          profiles, trending tokens, alerts, leaderboards, theses, and
-          cross-chain trading flows. These tools may make it easier to notice
-          activity or organize ideas, especially in fast-moving meme-coin
-          markets.
+          The supplied FOMO video shows Trending and Leaderboard discovery,
+          Thesis posts, trader profiles with average entry, investment,
+          transactions, P&amp;L, and hold time, plus Holders and Swaps tabs,
+          followed-trader alerts, and Buy/Sell controls. It also shows filters
+          such as My Swaps, Friends Only, and minimum trade size.
         </p>
 
         <p>
-          However, no social platform can independently establish that a token
-          is safe, that liquidity will remain available, that an account&apos;s
-          displayed performance is repeatable, or that you will receive a
-          comparable entry or exit. Fast execution does not remove
-          smart-contract risk, market manipulation risk, slippage, spread, or
-          the possibility that you cannot sell at the price you expect.
+          Use profiles, leaderboards, and alerts to create a research queue.
+          A positive P&amp;L may reflect timing, size, unrealized positions,
+          selection bias, and conditions you cannot reproduce. The visible
+          “0% fee” label in a video should not be treated as an all-in cost
+          statement. Routing, spread, slippage, network costs, and other charges
+          require separate verification.
         </p>
 
-        <VideoReference url={tutorial.video} platform="FOMO" />
-
-        <h2>Before you use FOMO: set a safety baseline</h2>
+        <h2>Photon: Solana discovery and execution</h2>
 
         <p>
-          Start with a dedicated wallet and an amount you can afford to lose
-          completely. Do not use your primary wallet, do not expose recovery
-          phrases or private keys, and do not approve a transaction you do not
-          understand. If you use a connected wallet, inspect the destination,
-          token amount, network, and permissions each time before signing.
+          Photon is presented as a browser-based terminal for Solana token
+          discovery and execution. The supplied token-detail, Memescope,
+          settings, and XTracker screenshots illustrate visible workflow
+          surfaces. They can help organize research and trading controls, but
+          they do not validate a token or prove expected performance.
         </p>
 
         <p>
-          FOMO&apos;s terms state that the trading wallet is non-custodial and
-          that users are responsible for their wallet activity. The terms also
-          set out restrictions for restricted persons and jurisdictions. Check
-          the current terms and local rules yourself, and do not use a VPN or
-          any workaround to bypass availability or eligibility restrictions.
+          Use a discovery feed to create a short list, then investigate the
+          exact contract address, token age, liquidity, holder concentration,
+          developer or linked-wallet activity, recent swaps, and sellability.
+          A token can move quickly while exit liquidity remains thin.
         </p>
 
-        <h2>Step 1: Use Trending, Alerts, and Leaderboard to build a queue</h2>
+        <h2>Photon fees and real execution cost</h2>
 
         <p>
-          Begin with Trending, Alerts, the social feed, or the Leaderboard, not
-          with a trade button. The goal is to create a short list of tokens or
-          trader activity worth investigating. The supplied walkthrough shows
-          trader profiles with data such as average entry, investment,
-          transactions, P&amp;L, and hold time. Those figures are context, not a
-          prediction.
+          Photon is commonly described as charging a 1% platform fee on each buy
+          and each sell. A full buy-and-sell round trip can therefore include
+          roughly 2% in stated platform fees before network fees, priority fees,
+          optional tips, spread, price impact, and slippage. Verify the current
+          fee schedule and live trade preview before submitting any transaction.
         </p>
 
         <p>
-          A leaderboard can be influenced by timing, a small number of outsized
-          trades, unrealized positions, wallet size, selection bias, deleted or
-          inactive positions, and market conditions that may never repeat. A
-          positive record does not tell you whether the person is taking hidden
-          risk, whether a token remains liquid, or whether you can enter and
-          exit at similar prices.
+          For illustration only, a 5 SOL buy at a 1% platform fee would produce
+          a 0.05 SOL fee. If you later sold for 5 SOL and the same schedule
+          applied, the sale could add another 0.05 SOL fee. This does not include
+          other costs and is not a prediction of results.
         </p>
 
-        <Figure
-          src="/images/meme-coins/platforms/fomo-interface.png"
-          alt="FOMO interface showing social posts, trader information and token activity"
-          caption="FOMO social trading interface. Use social activity to generate research questions, not as a substitute for independent token checks."
-        />
-
-        <h2>Step 2: Read the thesis before following the trade</h2>
+        <h2>Social proof is not due diligence</h2>
 
         <p>
-          When a token or trader catches your attention, read the available
-          Thesis posts, profile details, and recent activity before doing
-          anything else. Ask a simple question: is there a specific, checkable
-          reason for the interest, or only excitement, urgency, and claims about
-          price?
+          The FOMO video warns against blindly copy-trading and notes that some
+          traders may farm followers. The same caution applies to a trending
+          Photon token or a wallet with a strong recent record. Social momentum
+          can be a reason to investigate; it cannot prove creator intent,
+          contract quality, liquidity durability, or your ability to exit.
         </p>
 
-        <p>
-          Useful research notes identify the exact token contract, network,
-          catalyst, liquidity context, known risks, and the condition that would
-          invalidate the idea. Weak notes rely on phrases such as “early,”
-          “easy 100x,” “smart money is in,” or “do not miss this” without
-          evidence you can independently inspect.
-        </p>
-
-        <p>
-          Be particularly cautious when a profile repeatedly promotes new
-          tokens, uses referral links as the main call to action, or encourages
-          immediate copying. A visible following is not proof of expertise,
-          identity, independence, or aligned incentives.
-        </p>
-
-        <h2>Step 3: Check token activity, holders, and swaps</h2>
-
-        <p>
-          Use the token&apos;s activity and holder information to form a risk
-          picture. Look at the age of the token, recent transaction pattern,
-          holder concentration, wallet behavior, liquidity depth, and whether a
-          small group appears to control a meaningful share of supply. These are
-          screening signals, not definitive proof of fraud or legitimacy.
-        </p>
-
-        <p>
-          In the Swaps view, ask whether the activity looks organic and whether
-          there is enough liquidity for the position size you are considering. A
-          chart can rise sharply while meaningful exit liquidity remains thin.
-          If the visible price changes substantially when you model a small
-          trade, that is a warning that slippage and price impact may dominate
-          the result.
-        </p>
-
-        <h2>Step 4: Verify the exact contract outside the social feed</h2>
-
-        <p>
-          Before trading any meme coin, confirm the precise contract address
-          from the project&apos;s official channels and compare it with the
-          address shown in your trading view. Similar names, logos, tickers, and
-          social accounts are common. Never rely on a token name alone.
-        </p>
-
-        <p>
-          Then perform independent checks on the relevant blockchain explorer
-          and token-analysis tools. Review whether the token can be sold,
-          whether supply or transfer controls exist, whether ownership or admin
-          privileges remain relevant, how liquidity is structured, and whether
-          the contract has risks that you do not understand. If you cannot
-          confidently explain what you are buying and how you would exit, the
-          lower-risk choice is to skip it.
-        </p>
-
-        <h2>Step 5: Review wallet, network, and signing controls</h2>
-
-        <p>
-          FOMO&apos;s web experience is intended to make discovery and trading
-          easier, but convenience should not reduce your signing discipline.
-          Confirm that you are on the legitimate domain, check the connected
-          account, confirm the network or route, and read every wallet prompt.
-          Reject requests for a recovery phrase, private key, unusual
-          permissions, or an approval whose purpose is unclear.
-        </p>
-
-        <Figure
-          src="/images/meme-coins/platforms/fomo-web-terminal.png"
-          alt="FOMO browser terminal showing web trading controls"
-          caption="FOMO browser terminal. Confirm the website, account, route, token contract, amount, and signing request before submitting a transaction."
-        />
-
-        <h2>Step 6: Calculate the real cost before executing</h2>
-
-        <p>
-          A visible “0% fee” label, promotional fee claim, or gasless experience
-          should not be treated as an all-in cost statement. Your effective
-          trade result can still be affected by token price movement, spread,
-          price impact, slippage, routing, liquidity conditions, network costs,
-          and any applicable platform or third-party charges.
-        </p>
-
-        <p>
-          Test with the smallest practical size if you choose to proceed. Review
-          the quoted receive amount, minimum received amount, route, and price
-          impact before confirmation. Never increase position size merely
-          because a token is trending or because other accounts appear to be
-          buying.
-        </p>
-
-        <h2>Step 7: Define the exit rule before the entry</h2>
-
-        <p>
-          Decide your maximum exposure, maximum acceptable loss, invalidation
-          condition, and first exit action before opening a position. A meme
-          coin can move faster than you can react, and a social feed may amplify
-          urgency at the exact moment when liquidity is weakening.
-        </p>
-
-        <p>
-          Do not mirror another account&apos;s displayed trade without accepting
-          that their entry time, wallet size, holding period, risk tolerance,
-          order route, and ability to exit may be completely different from
-          yours. A copied position can become a different trade the moment you
-          enter it.
-        </p>
-
-        <h2>FOMO beginner checklist</h2>
-
-        <p>
-          Use this checklist before you connect, swap, follow, copy, or act on a
-          social signal:
-        </p>
+        <h2>First-use checklist</h2>
 
         <ul>
-          <li>Confirm the official FOMO domain and your connected wallet.</li>
-          <li>Check whether FOMO is available and permitted where you live.</li>
-          <li>Find the token&apos;s exact contract address from a primary source.</li>
-          <li>Check liquidity, holder concentration, token age, and recent swaps.</li>
-          <li>Review the contract and sellability using independent tools.</li>
-          <li>Read the thesis and identify evidence, not just price targets.</li>
-          <li>Assume trader P&amp;L and leaderboards may be incomplete context.</li>
-          <li>Review the route, price impact, slippage, amount, and receive quote.</li>
-          <li>Use an amount you can lose completely and keep it small.</li>
-          <li>Set an exit condition before you submit the transaction.</li>
+          <li>Use only verified official domains and bookmark them yourself.</li>
+          <li>Use a separate, low-balance wallet for speculative activity.</li>
+          <li>Never enter a seed phrase or private key into a website.</li>
+          <li>Confirm the exact token contract from a primary source.</li>
+          <li>Check liquidity, holders, recent swaps, and sellability.</li>
+          <li>
+            Review the wallet prompt, route, amount, slippage, and priority
+            settings before signing.
+          </li>
         </ul>
 
-        <h2>Who FOMO may suit</h2>
+        <h2>Who should be especially cautious</h2>
 
         <p>
-          FOMO may be useful for people who want a social-first interface for
-          discovering token activity, following public trader commentary, and
-          organizing a research watchlist across supported networks. It is more
-          appropriate for users who already understand that social information
-          is incomplete and who are prepared to verify a token independently.
+          Avoid treating either product as a safe-token list, a guaranteed
+          performance tool, or a substitute for independent research. Beginners
+          who do not understand contracts, wallet prompts, liquidity, slippage,
+          price impact, and local tax or legal duties should learn those basics
+          before risking funds.
+        </p>
+
+        <h2>Frequently asked questions</h2>
+
+        <h3>Is Photon the same as FOMO?</h3>
+
+        <p>
+          No. They are separate products with different interface and workflow
+          priorities. Photon is generally associated with Solana trading-terminal
+          functionality, while FOMO emphasizes social discovery, trader
+          activity, and feed-based market context.
+        </p>
+
+        <h3>Does Photon verify whether a meme coin is safe?</h3>
+
+        <p>
+          No terminal can independently prove that a meme coin is safe. Use data
+          surfaces to investigate, then confirm the contract, liquidity, holders,
+          sellability, and transaction route through primary blockchain
+          information and independent tools.
+        </p>
+
+        <h3>Can a trader&apos;s positive P&amp;L be treated as a buy signal?</h3>
+
+        <p>
+          No. Displayed performance can be incomplete or impossible to reproduce
+          because of timing, position size, unrealized results, liquidity, and
+          changing market conditions. Treat it as context for research, not a
+          trading instruction.
+        </p>
+
+        <h2>Video reference</h2>
+
+        <p>
+          <a
+            href="https://www.youtube.com/watch?v=PA4GoJvc5ls"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open the original FOMO video on YouTube ↗
+          </a>{" "}
+          The observed workflow is useful as a feature demonstration. Its social
+          and fee implications still require independent checks.
+        </p>
+      </PlatformProfile>
+    );
+  }
+
+  if (platform.slug === "pump-fun") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What Pump.fun does</h2>
+
+        <p>
+          Pump.fun lowers the technical barrier to creating and trading tokens
+          through a Solana launch flow. A visible launch list, social attention,
+          recent buy, or market-cap figure is not token due diligence.
+        </p>
+
+        <h2>How to assess a Pump.fun token</h2>
+
+        <ol>
+          <li>
+            Confirm the official domain, correct wallet, and exact token contract.
+          </li>
+          <li>
+            Review creator activity, token age, holder concentration, recent
+            swaps, and early-wallet behavior.
+          </li>
+          <li>
+            Check the current liquidity path, bonding-curve or graduation
+            status, and whether a realistic exit route exists.
+          </li>
+          <li>
+            Model the likely price impact and slippage at your intended trade
+            size before signing.
+          </li>
+          <li>
+            Use a small, predefined risk amount and set an exit condition before
+            entering.
+          </li>
+        </ol>
+
+        <h2>Fee structure and uncertainty</h2>
+
+        <p>
+          Pump.fun has published different fee layers for token creation,
+          graduation, bonding-curve activity, and canonical PumpSwap pools.
+          Network fees, wallet charges, spread, price impact, and slippage can
+          be separate. The live fee page and transaction preview are the source
+          of truth because conditions may change.
+        </p>
+
+        <h2>Who should avoid Pump.fun</h2>
+
+        <p>
+          Readers who cannot tolerate a complete loss, cannot verify a contract,
+          or treat launchpad activity as evidence of token quality should avoid
+          using permissionless token creation and early trading as a shortcut.
+        </p>
+      </PlatformProfile>
+    );
+  }
+
+  if (platform.slug === "padre-terminal") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What Padre is for</h2>
+
+        <p>
+          Padre is presented as a trading-terminal workflow for meme-coin
+          discovery, charting, wallet monitoring, and execution. A terminal can
+          make research and order placement faster, but it does not remove token,
+          liquidity, smart-contract, or execution risk.
+        </p>
+
+        <h2>What the supplied interface shows</h2>
+
+        <p>
+          The supplied screenshots show a homepage, terminal interface, tracking
+          surface, and Trenches-style view. They support descriptions of visible
+          product surfaces, but they do not independently prove execution speed,
+          uptime, fee savings, connected trading performance, or results.
+        </p>
+
+        <h2>Before using Padre</h2>
+
+        <ol>
+          <li>Verify the official domain and the connected wallet.</li>
+          <li>
+            Confirm the network, exact token contract, available liquidity, and
+            expected route.
+          </li>
+          <li>
+            Review amount, slippage, priority settings, price impact, and every
+            wallet prompt before signing.
+          </li>
+          <li>
+            Check the current terms, eligible jurisdictions, fee basis, and any
+            cashback conditions directly with the provider.
+          </li>
+        </ol>
+
+        <h2>Cashback and fee claims</h2>
+
+        <p>
+          Public Padre marketing has referenced cashback and execution-related
+          benefits. Treat these as provider claims rather than independently
+          verified outcomes. Confirm eligibility, calculation method, fees,
+          settlement timing, exclusions, and current terms before relying on a
+          promotional figure.
+        </p>
+
+        <h2>Who should avoid Padre</h2>
+
+        <p>
+          A reader who needs a guaranteed fee, guaranteed fill, or a platform
+          that removes liquidity and smart-contract risk should not treat a
+          terminal as a safety layer.
+        </p>
+      </PlatformProfile>
+    );
+  }
+
+  if (platform.slug === "axiom") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What Axiom is for</h2>
+
+        <p>
+          Axiom is a meme-coin trading terminal built around token discovery,
+          market monitoring, wallet activity, and execution workflows. It can
+          bring research tools into one interface, but it cannot determine that
+          a token is legitimate or that a trade will be profitable.
+        </p>
+
+        <h2>How to use Axiom as a research workflow</h2>
+
+        <ol>
+          <li>
+            Start with discovery surfaces to build a small research queue instead
+            of reacting immediately to every new token.
+          </li>
+          <li>
+            Open the token page and check liquidity, market activity, holder
+            concentration, recent swaps, and visible wallet behavior.
+          </li>
+          <li>
+            Confirm the exact contract through a primary source and check
+            sellability through independent on-chain tools.
+          </li>
+          <li>
+            Review order size, slippage, route, network fee, priority settings,
+            and the final signing request before execution.
+          </li>
+          <li>
+            Set a maximum position size, invalidation point, and exit rule before
+            the market moves.
+          </li>
+        </ol>
+
+        <h2>What terminal data cannot prove</h2>
+
+        <p>
+          Charts, trending lists, displayed wallet results, and social activity
+          can help identify questions to investigate. They cannot independently
+          establish creator intent, contract safety, liquidity durability, or
+          the price at which you will be able to exit.
+        </p>
+
+        <h2>Fees and execution cost</h2>
+
+        <p>
+          Check Axiom&apos;s current fee schedule, route preview, and transaction
+          prompt before trading. A platform fee is only one layer of cost;
+          network fees, priority settings, spread, price impact, slippage, and
+          token-level restrictions can materially change the outcome.
         </p>
 
         <h2>Who should be especially cautious</h2>
 
         <p>
-          It is not a shortcut for someone seeking guaranteed returns, a token
-          safety score, a replacement for personal research, or a reason to copy
-          strangers. Beginners who are unfamiliar with contracts, wallet
-          prompts, liquidity, slippage, and tax or legal obligations should
-          learn those basics before risking funds in volatile meme-coin markets.
+          Axiom is not a shortcut for beginners seeking a safe-token list,
+          guaranteed results, or automatic wallet-copying success. If you cannot
+          explain the contract, liquidity situation, transaction route, and exit
+          condition, skipping the trade is usually the lower-risk choice.
         </p>
+      </PlatformProfile>
+    );
+  }
 
-        <h2>Frequently asked questions</h2>
-
-        <h3>Is FOMO safe for beginners?</h3>
+  if (platform.slug === "bags-fm") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What Bags.fm does</h2>
 
         <p>
-          FOMO can be used as a discovery and trading tool, but no crypto
-          platform can make meme-coin trading safe. The key risks include
-          volatile prices, scams, contract restrictions, low liquidity, signing
-          mistakes, and misleading social signals. Beginners should use a
-          dedicated wallet, verify every token independently, and avoid risking
-          money they cannot afford to lose.
+          Bags.fm is a Solana-native launchpad and creator-monetization product.
+          Its public site combines token discovery with a launch flow, while its
+          documentation describes token launch configuration, metadata creation,
+          fee-share setup, transaction generation, signing, and broadcast.
         </p>
-
-        <h3>Can I trust the FOMO leaderboard?</h3>
 
         <p>
-          Use the leaderboard as a starting point for research, not as proof
-          that a trader is reliable or that copying a trade will work. Displayed
-          performance can depend on timing, position size, market conditions,
-          unrealized gains, incomplete context, and risks that are not visible
-          in a headline P&amp;L figure.
+          This makes it different from a terminal such as GMGN or Axiom. Its
+          main purpose is launching and configuring a token workflow, not merely
+          presenting a market-monitoring interface.
         </p>
 
-        <h3>Does FOMO verify meme coins?</h3>
+        <h2>Launch workflow</h2>
+
+        <ol>
+          <li>
+            Prepare the token name, symbol, description, image, and optional
+            social links.
+          </li>
+          <li>
+            Use a Solana wallet with sufficient SOL for network transactions and
+            any chosen launch configuration.
+          </li>
+          <li>
+            Configure creator and optional fee claimers before generating the
+            launch transaction.
+          </li>
+          <li>
+            Review the transaction, sign it in the correct wallet, and confirm
+            the resulting mint address and metadata independently.
+          </li>
+        </ol>
+
+        <h2>What fee sharing does not prove</h2>
 
         <p>
-          Social discovery features can help surface activity, but they do not
-          replace independent verification of a token&apos;s contract, liquidity,
-          holders, sellability, and risks. Always verify the exact contract
-          address and use primary blockchain data before considering a trade.
+          Royalties or fee sharing can explain how trading fees are allocated.
+          They do not prove that a token has organic demand, sustainable
+          liquidity, a credible creator, or a market in which you can exit.
         </p>
 
-        <h3>What does non-custodial mean on FOMO?</h3>
+        <h2>Checks before trading a launch</h2>
 
         <p>
-          In general, non-custodial means the service does not take
-          responsibility for managing your wallet assets in the same way as a
-          traditional custodian. FOMO&apos;s terms state that the trading wallet
-          is non-custodial and that users are solely responsible for their
-          wallet activity. Read the current terms and understand the wallet
-          model before depositing or trading.
+          Confirm the mint address, authority settings, holder concentration,
+          liquidity path, creator-linked wallets, social authenticity, and
+          sellability. A launch page is not a token audit or investment thesis.
         </p>
 
-        <h3>Is “gasless” the same as free trading?</h3>
+        <h2>Who Bags.fm may fit</h2>
 
         <p>
-          No. A gasless or low-fee user experience does not necessarily mean
-          that every cost is zero. Check the quoted trade outcome, spread,
-          slippage, price impact, route, liquidity, and current platform terms
-          before deciding whether to trade.
+          Bags.fm may be more relevant to a creator or researcher who wants a
+          documented Solana launch workflow than to a beginner seeking a safe
+          token signal. Some product features may be developer-oriented rather
+          than one-click consumer tools.
         </p>
+      </PlatformProfile>
+    );
+  }
 
-        <h3>Should I copy trade on FOMO?</h3>
+  if (platform.slug === "four-meme") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What Four.meme does</h2>
 
         <p>
-          Copying another trader does not copy their exact timing, risk
-          tolerance, liquidity conditions, or ability to exit. Treat
-          copy-trading features as high risk, particularly for meme coins. If
-          you do not understand the token and cannot define your own risk limit,
-          do not enter the position.
+          Four.meme is a BNB Chain launchpad for creating and discovering meme
+          tokens. It can reduce deployment and market-creation steps, but it
+          does not replace contract review, holder analysis, liquidity checks,
+          or a plan for what happens after launch.
         </p>
 
-        <AffiliateCTA
-          href="https://fomo.family/r/cryptosbeginner"
-          label="Explore FOMO through the partner link"
-        />
+        <h2>How to assess a Four.meme launch</h2>
 
-        <RelatedPages />
-      </ArticleShell>
-    </>
+        <ol>
+          <li>
+            Confirm that you are on the intended Four.meme domain and that the
+            connected wallet is using BNB Chain.
+          </li>
+          <li>
+            Record the token contract, creator address, launch time, and any
+            displayed bonding-curve or graduation information.
+          </li>
+          <li>
+            Check holder concentration, creator-linked wallets, liquidity
+            destination, sell transactions, and whether the expected route works.
+          </li>
+          <li>
+            Separate BNB Chain gas and platform charges from the token&apos;s
+            displayed market activity.
+          </li>
+        </ol>
+
+        <h2>Fees and uncertainty</h2>
+
+        <p>
+          Launch charges, graduation rules, creator fees, gas, routing, and
+          liquidity conditions can change. Check the live provider documentation
+          and transaction preview instead of relying on a single claimed all-in
+          fee.
+        </p>
+
+        <h2>Who should avoid Four.meme</h2>
+
+        <p>
+          Four.meme is a poor fit for anyone treating a low-cost launch as
+          evidence of quality or assuming that a token will graduate, retain
+          liquidity, or remain sellable. Permissionless access makes independent
+          checks more important.
+        </p>
+      </PlatformProfile>
+    );
+  }
+
+  if (platform.slug === "sunpump") {
+    return (
+      <PlatformProfile platform={platform}>
+        <h2>What SunPump does</h2>
+
+        <p>
+          SunPump is a TRON-based launchpad and discovery market. Its public
+          interface exposes Home, Launch, Ranking, SunAI, Campaigns, and
+          Explorer surfaces, with activity commonly shown in TRX.
+        </p>
+
+        <h2>Practical launch and discovery workflow</h2>
+
+        <ol>
+          <li>
+            Open the official SunPump domain and confirm the correct wallet
+            network before connecting.
+          </li>
+          <li>
+            For a new launch, review the token metadata, creator address, launch
+            conditions, and displayed market or graduation information.
+          </li>
+          <li>
+            Copy the contract address from the official page and verify it using
+            an independent TRON explorer.
+          </li>
+          <li>
+            Inspect holders, creator-linked activity, liquidity, sellability,
+            and transaction cost in TRX before considering a position.
+          </li>
+        </ol>
+
+        <h2>Fees and network context</h2>
+
+        <p>
+          SunPump activity may be displayed in TRX, but launch fees, transaction
+          fees, burns, and market or graduation rules should be checked in the
+          current product documentation. A displayed market cap or recent buy is
+          not proof that the token can be sold at the expected price.
+        </p>
+
+        <h2>Who SunPump may fit</h2>
+
+        <p>
+          SunPump may be useful for researching the TRON meme-token launch
+          ecosystem or for creators who understand TRON wallet and contract
+          workflows. It is not a safety filter, and visible ranking or activity
+          should not be treated as a recommendation.
+        </p>
+      </PlatformProfile>
+    );
+  }
+
+  return (
+    <PlatformProfile platform={platform}>
+      <h2>What {platform.name} is for</h2>
+
+      <p>
+        {platform.summary} The platform should be evaluated as a workflow tool,
+        not as a token-validation service.
+      </p>
+
+      <h2>Features and limitations</h2>
+
+      <p>{platform.caution}</p>
+
+      <h2>Fees and real execution cost</h2>
+
+      <p>
+        {platform.fee} Check the current provider documentation and transaction
+        receipt for the actual cost of any trade.
+      </p>
+
+      <h2>First-use checklist</h2>
+
+      <ol>
+        <li>Use a dedicated low-balance wallet.</li>
+        <li>Verify the contract from an independent source.</li>
+        <li>Inspect holders, liquidity, and token sellability.</li>
+        <li>Set an explicit slippage ceiling where applicable.</li>
+        <li>Test a small transaction when appropriate.</li>
+        <li>Write an exit rule before signing.</li>
+      </ol>
+    </PlatformProfile>
   );
 }
