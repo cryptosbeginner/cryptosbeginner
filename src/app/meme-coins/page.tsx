@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Best Meme Coin Trading Terminals for Beginners: Reviews & Tutorials",
   description:
-    "Beginner-friendly reviews and tutorials for meme coin trading terminals, including GMGN, FOMO, Pump.fun, Padre, Axiom, DexScreener, and Solscan. Compare features and learn safer workflows.",
+    "Beginner-friendly reviews and tutorials for meme coin trading terminals, including GMGN, Fomo.family, Pump.fun, Padre, Axiom, DexScreener, and Solscan. Compare features and learn safer workflows.",
   alternates: {
     canonical: "https://www.cryptosbeginner.com/meme-coins",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title:
       "Best Meme Coin Trading Terminals for Beginners: Reviews & Tutorials",
     description:
-      "Compare GMGN, FOMO, Pump.fun, Padre, Axiom, and other meme coin trading tools with beginner tutorials, platform guides, and practical risk reminders.",
+      "Compare GMGN, Fomo.family, Pump.fun, Padre, Axiom, and other meme coin trading tools with beginner tutorials, platform guides, and practical risk reminders.",
     url: "https://www.cryptosbeginner.com/meme-coins",
     siteName: "Cryptos Beginner",
     type: "article",
@@ -25,8 +25,15 @@ export const metadata: Metadata = {
     title:
       "Best Meme Coin Trading Terminals for Beginners: Reviews & Tutorials",
     description:
-      "Beginner reviews and tutorials for GMGN, FOMO, Pump.fun, Padre, Axiom, and meme coin trading terminals.",
+      "Beginner reviews and tutorials for GMGN, Fomo.family, Pump.fun, Padre, Axiom, and meme coin trading terminals.",
   },
+};
+
+const affiliateLinks = {
+  gmgn: "http://gmgn.ai/rewards/XPS1eXg4",
+  fomo: "https://fomo.family/r/cryptosbeginner",
+  padre: "https://trade.padre.gg/rk/1000xgems",
+  axiom: "http://go.cryptosbeginner.com/Axiom",
 };
 
 const researchSteps = [
@@ -68,16 +75,18 @@ const platformCards = [
     title: "GMGN",
     description:
       "A popular terminal for token research, wallet tracking, holder analysis, and monitoring fast-moving meme coin activity. Useful when paired with a repeatable research workflow.",
-    href: "https://gmgn.ai",
-    label: "Visit GMGN",
+    href: affiliateLinks.gmgn,
+    label: "Try GMGN",
+    sponsored: true,
   },
   {
     category: "Discovery terminal",
-    title: "FOMO",
+    title: "Fomo.family",
     description:
-      "A discovery-oriented platform for finding active and trending tokens. Use discoveries as research candidates, then independently validate contracts, liquidity, holders, and wallet flows.",
-    href: "https://fomo.com",
-    label: "Visit FOMO",
+      "A discovery-oriented platform for finding active and trending token activity. Use discoveries as research candidates, then independently validate contracts, liquidity, holders, and wallet flows.",
+    href: affiliateLinks.fomo,
+    label: "Try Fomo.family",
+    sponsored: true,
   },
   {
     category: "Token launch platform",
@@ -86,22 +95,25 @@ const platformCards = [
       "A Solana launchpad environment built around rapid token creation and discovery. Beginners should understand launch risk, liquidity changes, token verification, and fast execution conditions.",
     href: "https://pump.fun",
     label: "Visit Pump.fun",
+    sponsored: false,
   },
   {
     category: "Trading terminal",
     title: "Padre",
     description:
       "A terminal workflow for meme coin discovery, charting, wallet monitoring, and execution. Review trading settings, slippage, and wallet permissions before placing live orders.",
-    href: "https://trade.padre.gg",
-    label: "Visit Padre",
+    href: affiliateLinks.padre,
+    label: "Try Padre",
+    sponsored: true,
   },
   {
     category: "Trading terminal",
     title: "Axiom",
     description:
       "A crypto trading-terminal option for monitoring and trading fast-moving markets. Learn the interface with controlled risk and independently verify every token before executing.",
-    href: "https://axiom.trade",
-    label: "Visit Axiom",
+    href: affiliateLinks.axiom,
+    label: "Try Axiom",
+    sponsored: true,
   },
   {
     category: "Charts and research",
@@ -110,6 +122,7 @@ const platformCards = [
       "A widely used chart and pair-discovery tool for reviewing liquidity, volume, transactions, price action, and DEX market structure across supported chains.",
     href: "https://dexscreener.com",
     label: "Visit DexScreener",
+    sponsored: false,
   },
   {
     category: "On-chain explorer",
@@ -118,6 +131,7 @@ const platformCards = [
       "A Solana explorer for verifying token addresses, inspecting transfers, reviewing holder lists, and checking wallet and token activity directly on-chain.",
     href: "https://solscan.io",
     label: "Visit Solscan",
+    sponsored: false,
   },
 ];
 
@@ -150,7 +164,7 @@ const internalCards = [
     category: "FOMO beginner tutorial",
     title: "FOMO for Beginners",
     description:
-      "Learn how to use FOMO as a discovery tool, interpret trending token activity, and build a safer research process before making a trade.",
+      "Learn how to use Fomo.family as a discovery tool, interpret trending token activity, and build a safer research process before making a trade.",
     href: "/meme-coins/tutorials/fomo-beginners",
     label: "Read FOMO tutorial",
   },
@@ -160,10 +174,10 @@ const faqItems = [
   {
     question: "Which meme coin trading terminal is best for beginners?",
     answer:
-      "The best starting point depends on your goal. GMGN and FOMO can help with discovery and wallet research, Pump.fun is associated with Solana token launches, and tools such as DexScreener and Solscan help you verify market and on-chain information. Start with tutorials before connecting a wallet.",
+      "The best starting point depends on your goal. GMGN and Fomo.family can help with discovery and wallet research, Pump.fun is associated with Solana token launches, and tools such as DexScreener and Solscan help you verify market and on-chain information. Start with tutorials before connecting a wallet.",
   },
   {
-    question: "Can GMGN, FOMO, Pump.fun, Padre, or Axiom guarantee profits?",
+    question: "Can GMGN, Fomo.family, Pump.fun, Padre, or Axiom guarantee profits?",
     answer:
       "No. These platforms can help you discover tokens, inspect activity, and execute trades, but they cannot remove market, liquidity, smart-contract, or execution risk. Treat platform signals as research context, not financial advice or a guarantee.",
   },
@@ -182,15 +196,21 @@ const faqItems = [
 function ExternalLink({
   href,
   children,
+  sponsored = false,
 }: {
   href: string;
   children: React.ReactNode;
+  sponsored?: boolean;
 }) {
   return (
     <a
       href={href}
       target="_blank"
-      rel="noopener noreferrer"
+      rel={
+        sponsored
+          ? "nofollow sponsored noopener noreferrer"
+          : "noopener noreferrer"
+      }
       className="inline-flex items-center gap-1 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
     >
       {children}
@@ -206,7 +226,7 @@ export default function MemeCoinsPage() {
     headline:
       "Best Meme Coin Trading Terminals for Beginners: Reviews & Tutorials",
     description:
-      "Beginner-friendly reviews and tutorials for meme coin trading terminals, including GMGN, FOMO, Pump.fun, Padre, Axiom, DexScreener, and Solscan.",
+      "Beginner-friendly reviews and tutorials for meme coin trading terminals, including GMGN, Fomo.family, Pump.fun, Padre, Axiom, DexScreener, and Solscan.",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://www.cryptosbeginner.com/meme-coins",
@@ -276,9 +296,10 @@ export default function MemeCoinsPage() {
 
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
               Compare beginner-friendly meme coin trading terminals and research
-              tools, including GMGN, FOMO, Pump.fun, Padre, Axiom, DexScreener,
-              and Solscan. Explore reviews, tutorials, platform features, and
-              safer workflows before trading highly speculative tokens.
+              tools, including GMGN, Fomo.family, Pump.fun, Padre, Axiom,
+              DexScreener, and Solscan. Explore reviews, tutorials, platform
+              features, and safer workflows before trading highly speculative
+              tokens.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -296,6 +317,19 @@ export default function MemeCoinsPage() {
                 Browse beginner tutorials
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="border-b border-slate-800 bg-cyan-400/5">
+          <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+            <p className="text-xs leading-5 text-slate-300">
+              <span className="font-semibold text-cyan-200">
+                Affiliate disclosure:
+              </span>{" "}
+              Some links on this page are affiliate links. If you use one, we
+              may earn a commission at no additional cost to you. This does not
+              change our educational content or the risks of trading meme coins.
+            </p>
           </div>
         </section>
 
@@ -336,10 +370,7 @@ export default function MemeCoinsPage() {
           </div>
         </section>
 
-        <section
-          id="research-framework"
-          className="border-y border-slate-800 bg-slate-900/40"
-        >
+        <section className="border-y border-slate-800 bg-slate-900/40">
           <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
@@ -405,9 +436,17 @@ export default function MemeCoinsPage() {
                 key={platform.title}
                 className="flex min-w-0 flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 sm:p-6"
               >
-                <p className="text-sm font-semibold text-cyan-300">
-                  {platform.category}
-                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-sm font-semibold text-cyan-300">
+                    {platform.category}
+                  </p>
+
+                  {platform.sponsored && (
+                    <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-cyan-200">
+                      Affiliate
+                    </span>
+                  )}
+                </div>
 
                 <h3 className="mt-3 text-xl font-semibold text-white">
                   {platform.title}
@@ -418,7 +457,10 @@ export default function MemeCoinsPage() {
                 </p>
 
                 <div className="mt-5">
-                  <ExternalLink href={platform.href}>
+                  <ExternalLink
+                    href={platform.href}
+                    sponsored={platform.sponsored}
+                  >
                     {platform.label}
                   </ExternalLink>
                 </div>
@@ -582,7 +624,9 @@ export default function MemeCoinsPage() {
               Educational content only; not financial, investment, legal, or tax
               advice. Meme coins are highly speculative and can lose value
               rapidly. Verify information independently and only risk capital you
-              can afford to lose.
+              can afford to lose. Some links on this page are affiliate links,
+              which may earn Cryptos Beginner a commission at no extra cost to
+              you.
             </p>
           </div>
         </section>
