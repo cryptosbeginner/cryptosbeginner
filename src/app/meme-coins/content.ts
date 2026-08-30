@@ -152,7 +152,7 @@ export const guides = [
 
 export const tutorials = [
   { slug: "gmgn-beginners", title: "GMGN Beginner Tutorial: Research Before You Trade", description: "A research-first GMGN workflow using Trenches, filters, charts, holders, wallet signals, presets, and an explicit exit plan.", video: "https://www.youtube.com/watch?v=Obu1fk_rqqY" },
-  { slug: "fomo-beginners", title: "FOMO Beginner Tutorial: Feed, Alerts and Wallet Safety", description: "A cautious FOMO workflow for social discovery, trader profiles, alerts, independent verification, and wallet permissions.", video: "https://www.youtube.com/watch?v=PA4GoJvc5ls" },
+  { slug: "fomo-beginners", title: "FOMO Tutorial for Beginners: How to Research Meme Coins Before Trading", description: "A research-first FOMO tutorial for beginners covering social discovery, trader profiles, leaderboards, token checks, wallet safety, fees, and meme-coin trading risks.", video: "https://www.youtube.com/watch?v=PA4GoJvc5ls" },
 ];
 
 export const videoSources = [
