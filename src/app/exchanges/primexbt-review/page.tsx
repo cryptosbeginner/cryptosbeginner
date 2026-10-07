@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/primexbt-review`;
 
-const UPDATED = "31 August 2026";
-const UPDATED_ISO = "2026-08-31";
+const UPDATED = "8 October 2026";
+const UPDATED_ISO = "2026-10-08";
 
 const AFFILIATE = "https://go.prmx.co/visit/?bta=36112&nci=7605";
 const AFFILIATE_BANNER =
@@ -25,7 +25,7 @@ const PRIME_XBT_SWAP_FREE =
 export const metadata: Metadata = {
   title: "PrimeXBT Review 2026: Fees, Leverage, Regulation & Who It Suits",
   description:
-    "A research-led 2026 PrimeXBT review covering derivatives, crypto futures, CFDs, fees, leverage, legal entities, restricted countries, security, and who should avoid it.",
+    "October 2026 PrimeXBT review: 170+ crypto futures, 0.01%/0.045% futures fees, up to 1:500 crypto leverage, entity-based regulation, restricted countries, and who should avoid it.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${SITE_URL}/images/1.png`,
-        width: 1200,
-        height: 630,
+        url: `${SITE_URL}/images/primexbt-platform-overview.png`,
+        width: 1180,
+        height: 842,
         alt: "PrimeXBT trading platform overview",
       },
     ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "PrimeXBT Review 2026: Fees, Leverage & Regulation",
     description:
       "Read our PrimeXBT review before using crypto futures, CFDs, leverage, or multi-asset trading tools.",
-    images: [`${SITE_URL}/images/1.png`],
+    images: [`${SITE_URL}/images/primexbt-platform-overview.png`],
   },
 };
 
@@ -72,7 +72,12 @@ const faqItems = [
   {
     question: "What are PrimeXBT's crypto trading fees?",
     answer:
-      "Fees vary by product, account type, entity, tier, and live schedule. Public 2026 comparisons commonly cite crypto-futures fees around 0.01% maker and 0.045% taker for regular users, but you should verify the instrument's live conditions before trading.",
+      "For crypto futures, PrimeXBT's published schedule shows 0.01% maker across tiers with taker from 0.045% at entry tier, falling at higher VIP volume tiers. Forex, indices, and commodity CFDs on PXTrader are typically spread-based with no separate commission. Always verify the live fee schedule for your instrument and account type before trading.",
+  },
+  {
+    question: "What is the maximum leverage on PrimeXBT?",
+    answer:
+      "Published maximums on PXTrader 2.0 vary by market: forex and commodities up to 1:1000, crypto CFDs and crypto futures up to 1:500, indices up to 1:200, and shares up to 1:20. Treat maximum leverage as a risk parameter, not a target: a small adverse move can liquidate a highly leveraged position.",
   },
   {
     question: "Can I use PrimeXBT in my country?",
@@ -172,7 +177,7 @@ export default function PrimeXBTReviewPage() {
       name: "CryptosBeginner",
       url: SITE_URL,
     },
-    image: [`${SITE_URL}/images/1.png`],
+    image: [`${SITE_URL}/images/primexbt-platform-overview.png`],
     inLanguage: "en",
   };
 
@@ -286,8 +291,8 @@ export default function PrimeXBTReviewPage() {
         <section className="mx-auto max-w-4xl px-4 py-8">
           <figure>
             <Image
-              src="/images/1.png"
-              alt="PrimeXBT trading platform overview screenshot"
+              src="/images/primexbt-platform-overview.png"
+              alt="PrimeXBT trading platform overview"
               width={1200}
               height={630}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -399,6 +404,22 @@ export default function PrimeXBTReviewPage() {
                 </p>
                 <p className="mt-2 font-bold text-slate-950">
                   Product, entity, tier, spread, and financing dependent
+                </p>
+              </div>
+
+              <div className="p-5">
+                <p className="text-xs font-black uppercase tracking-wide text-slate-500">
+                  Founded
+                </p>
+                <p className="mt-2 font-bold text-slate-950">2018</p>
+              </div>
+
+              <div className="p-5">
+                <p className="text-xs font-black uppercase tracking-wide text-slate-500">
+                  Crypto futures
+                </p>
+                <p className="mt-2 font-bold text-slate-950">
+                  170+ contracts (Sept 2026)
                 </p>
               </div>
 
@@ -582,9 +603,11 @@ export default function PrimeXBTReviewPage() {
 
             <p className="mt-3 leading-7 text-slate-900">
               PrimeXBT lists numerous restricted jurisdictions, including the
-              United States, United Kingdom, Canada, Australia, and many
-              European countries. Availability can change. Do not use a VPN or
-              another workaround to bypass geographic restrictions.
+              United States, United Kingdom, Canada, Japan, New Zealand, the
+              EEA, and sanctioned states. Availability can change, and your
+              contracting entity is set at registration based on your country.
+              Do not use a VPN or another workaround to bypass geographic
+              restrictions.
             </p>
           </div>
         </Section>
@@ -612,8 +635,8 @@ export default function PrimeXBTReviewPage() {
 
           <figure className="my-8">
             <Image
-              src="/images/3.png"
-              alt="PrimeXBT fees or available markets overview screenshot"
+              src="/images/primexbt-fees-markets.png"
+              alt="PrimeXBT trading fees and available markets overview"
               width={1200}
               height={700}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -672,16 +695,65 @@ export default function PrimeXBTReviewPage() {
           </h2>
 
           <p className="mt-4 leading-8 text-slate-800">
-            PrimeXBT describes PXTrader 2.0 as its primary in-house environment.
-            Its April 2026 platform update says the system offers more than 350
-            instruments, TradingView charts, and asset-dependent leverage
-            limits. The platform is aimed at active traders who want charting,
-            order controls, and multiple markets in one workflow.
+            PrimeXBT describes PXTrader 2.0 as its primary in-house environment,
+            with more than 350 instruments overall, TradingView charts, and
+            asset-dependent leverage limits. In September 2026 the platform
+            expanded its crypto-futures lineup to more than 170 contracts.
+            PrimeXBT also supports MetaTrader 5 alongside PXTrader 2.0. The
+            platform is aimed at active traders who want charting, order
+            controls, and multiple markets in one workflow.
           </p>
+
+          <h3 className="mt-8 text-2xl font-black text-slate-950">
+            Maximum leverage by market
+          </h3>
+
+          <p className="mt-3 leading-8 text-slate-800">
+            PrimeXBT publishes different maximum leverage per market on
+            PXTrader 2.0. Confirm the live limits for your entity and
+            instrument before sizing any position.
+          </p>
+
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[480px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 text-xs font-black uppercase tracking-wide text-slate-500">
+                  <th className="py-3 pr-4">Market</th>
+                  <th className="py-3">Published maximum leverage</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr>
+                  <td className="py-3 pr-4 font-bold text-slate-900">Forex</td>
+                  <td className="py-3 text-slate-700">Up to 1:1000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-bold text-slate-900">
+                    Commodities
+                  </td>
+                  <td className="py-3 text-slate-700">Up to 1:1000</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-bold text-slate-900">
+                    Crypto futures &amp; crypto CFDs
+                  </td>
+                  <td className="py-3 text-slate-700">Up to 1:500</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-bold text-slate-900">Indices</td>
+                  <td className="py-3 text-slate-700">Up to 1:200</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pr-4 font-bold text-slate-900">Shares</td>
+                  <td className="py-3 text-slate-700">Up to 1:20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <figure className="my-8">
             <Image
-              src="/images/2.png"
+              src="/images/primexbt-pxtrader-terminal.png"
               alt="PrimeXBT PXTrader web trading terminal with chart and order controls"
               width={1200}
               height={700}
@@ -769,8 +841,8 @@ export default function PrimeXBTReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-12">
           <figure>
             <Image
-              src="/images/4.png"
-              alt="PrimeXBT account funding and deposit methods screenshot"
+              src="/images/primexbt-deposit-methods.png"
+              alt="PrimeXBT account funding and deposit methods"
               width={1200}
               height={700}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
