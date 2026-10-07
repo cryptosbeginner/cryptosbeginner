@@ -219,6 +219,12 @@ export default function HomePage() {
             Rankings are independent and updated when material changes
             occur.
           </p>
+          <Link
+            href="/methodology"
+            className="mt-4 inline-flex text-sm font-semibold text-indigo-700 hover:underline"
+          >
+            Read our full methodology
+          </Link>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { title: "Security", desc: "Cold storage, PoR, incident history" },
@@ -254,18 +260,17 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link
-              href="/exchanges/best-crypto-exchanges-2026"
+              href="/exchanges/primexbt-review"
               className="block p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition"
             >
               <div className="text-sm font-medium text-indigo-600 mb-1">
-                Main Comparison
+                Exchange Review
               </div>
               <h3 className="font-bold text-lg text-slate-900">
-                Best Crypto Exchanges 2026
+                PrimeXBT Review 2026
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Fees, security, liquidity and who each platform is best
-                for.
+                Fees, leverage, regulation and who it actually suits.
               </p>
             </Link>
 
@@ -304,7 +309,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+            {/* RECENTLY UPDATED */}
+      <section className="bg-slate-50 border-b">
+        <div className="max-w-6xl mx-auto px-4 py-14">
+          <h2 className="text-2xl font-bold text-slate-900">
+            Recently Updated
+          </h2>
+          <p className="mt-3 text-slate-600 max-w-3xl">
+            The guides we have reviewed or refreshed most recently.
+          </p>
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <Link
+              href="/exchanges/best-crypto-exchanges-2026"
+              className="block p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition"
+            >
+              <p className="text-xs font-semibold text-indigo-600">
+                Updated 19 Aug 2026
+              </p>
+              <h3 className="mt-1 font-bold text-slate-900">
+                Best Crypto Exchanges 2026
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Fees, security, liquidity and who each platform suits.
+              </p>
+            </Link>
+            <Link
+              href="/methodology"
+              className="block p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition"
+            >
+              <p className="text-xs font-semibold text-indigo-600">
+                Updated 21 Aug 2026
+              </p>
+              <h3 className="mt-1 font-bold text-slate-900">
+                Our Methodology
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                How we evaluate exchanges, and what independence means.
+              </p>
+            </Link>
+            <Link
+              href="/regions/uae"
+              className="block p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition"
+            >
+              <p className="text-xs font-semibold text-indigo-600">
+                Updated 5 Aug 2026
+              </p>
+              <h3 className="mt-1 font-bold text-slate-900">
+                Best Exchanges in the UAE
+              </h3>
+              <p className="mt-1 text-sm text-slate-600">
+                Licensed platforms, VARA rules and local rails.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+{/* CTA */}
       <section className="bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-14 text-center">
           <h2 className="text-2xl font-bold">

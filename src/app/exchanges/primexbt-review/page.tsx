@@ -125,15 +125,6 @@ function AffiliateBanner() {
           className="h-auto w-full"
         />
       </a>
-
-      <div className="border-t border-slate-200 bg-slate-50 px-4 py-3">
-        <p className="text-xs leading-5 text-slate-600">
-          <strong>Affiliate disclosure:</strong> This is a partner banner.
-          CryptosBeginner may earn a commission if you use this link. Trading
-          derivatives involves substantial risk, and availability depends on
-          your jurisdiction.
-        </p>
-      </div>
     </aside>
   );
 }
