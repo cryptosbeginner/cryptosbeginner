@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Methodology – How We Test Crypto Exchanges & Tools",
+  title: "Methodology - How We Test Crypto Exchanges & Tools",
   description:
     "Transparent 2026 methodology. Our scoring pillars, data sources, testing process, and how we keep affiliate bias out of exchange rankings.",
 };
@@ -158,23 +158,23 @@ export default function MethodologyPage() {
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
             <li>
-              Official exchange documentation – fee schedules, terms of
+              Official exchange documentation - fee schedules, terms of
               service, support articles and PoR pages.
             </li>
             <li>
-              Regulator registers – for example, MiCA CASP lists, FCA,
+              Regulator registers - for example, MiCA CASP lists, FCA,
               MAS, FinCEN MSB databases and other public licence records.
             </li>
             <li>
-              Market data – order-book depth, spreads, open interest and
+              Market data - order-book depth, spreads, open interest and
               volume from reputable aggregators.
             </li>
             <li>
-              Security and incident reports – public post-mortems, court
+              Security and incident reports - public post-mortems, court
               filings and on-chain analyses.
             </li>
             <li>
-              User experience – hands-on testing of sign-up, funding,
+              User experience - hands-on testing of sign-up, funding,
               trading and withdrawal flows where practical.
             </li>
           </ul>

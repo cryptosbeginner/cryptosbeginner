@@ -212,8 +212,8 @@ export default function SeedPhraseSecurityPage() {
               whoever controls the seed phrase controls the funds.
             </p>
             <p className="mt-2">
-              When you first set up a wallet—whether on a phone app,
-              browser extension, or hardware device—the software will show
+              When you first set up a wallet, whether on a phone app,
+              browser extension, or hardware device, the software will show
               you this phrase and ask you to write it down. That moment is
               crucial: it is when you decide whether your future self will
               be able to recover funds safely, or whether you are leaving
@@ -292,7 +292,7 @@ export default function SeedPhraseSecurityPage() {
                   </li>
                   <li>
                     Only confirm seed phrases on the hardware device screen
-                    itself—not on a PC or phone.
+                    itself, not on a PC or phone.
                   </li>
                   <li>
                     Test recovery with a small amount of funds first, so
@@ -377,7 +377,7 @@ export default function SeedPhraseSecurityPage() {
             <p className="mt-2">
               As your holdings grow, you can explore more advanced
               strategies such as splitting seeds across locations or using
-              multi-signature setups—but many beginners will already be
+              multi-signature setups, but many beginners will already be
               far ahead of the average user just by following this basic
               multi-backup plan.
             </p>
@@ -420,7 +420,7 @@ export default function SeedPhraseSecurityPage() {
                 </p>
                 <p className="mt-1 text-slate-700">
                   Use exchanges for access and liquidity, but treat your
-                  seed phrase as the long-term vault key—and protect it with
+                  seed phrase as the long-term vault key, and protect it with
                   care.
                 </p>
               </div>

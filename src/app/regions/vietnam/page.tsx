@@ -42,7 +42,7 @@ export default function VietnamPage() {
               In 2026 the legal picture shifted: digital assets gained clearer recognition under the
               Law on Digital Technology Industry, while authorities advanced a tightly controlled
               onshore exchange pilot. Day to day, most beginners still fund through P2P on global
-              platforms — with bank-transfer and e-wallet rails, and real scam and freeze risk.
+              platforms, with bank-transfer and e-wallet rails, and real scam and freeze risk.
             </p>
           </div>
         </section>
@@ -62,7 +62,7 @@ export default function VietnamPage() {
                 <strong>Funding:</strong> VND → USDT via bank transfer / MoMo / ZaloPay-style P2P offers
               </li>
               <li>
-                <strong>Tax note:</strong> disposal-related tax rules have been introduced — keep records
+                <strong>Tax note:</strong> disposal-related tax rules have been introduced, keep records
               </li>
               <li>
                 <strong>Main risks:</strong> P2P scams, bank freezes, policy migration toward onshore venues
@@ -129,8 +129,8 @@ export default function VietnamPage() {
           <p className="text-slate-700 mb-4">
             The pilot framework is meant to create a small number of licensed local market operators
             under heavy capital and operational requirements. Public reporting through 2026 described
-            a shortlist of prospective operators — often linked to banks, brokers, or large domestic
-            groups — rather than an open flood of licences.
+            a shortlist of prospective operators, often linked to banks, brokers, or large domestic
+            groups, rather than an open flood of licences.
           </p>
           <p className="text-slate-700 mb-4">
             Key design signals from policy coverage:
@@ -165,7 +165,7 @@ export default function VietnamPage() {
             where most disputes, fake payment proofs, and bank-account freezes originate.
           </p>
           <p className="text-slate-700">
-            Merchant quality varies hour by hour. Always inspect live offers inside the app — not
+            Merchant quality varies hour by hour. Always inspect live offers inside the app, not
             screenshots from Telegram groups.
           </p>
         </section>
@@ -259,8 +259,7 @@ export default function VietnamPage() {
           </p>
           <p className="text-slate-700">
             Export trade history from every platform you use. If you are active across P2P and spot,
-            year-end reconstruction from screenshots is a bad strategy. This is not tax advice —
-            check current Ministry of Finance guidance or a qualified local advisor for your situation.
+            year-end reconstruction from screenshots is a bad strategy. This is not tax advice, check current Ministry of Finance guidance or a qualified local advisor for your situation.
           </p>
         </section>
 
@@ -351,7 +350,7 @@ export default function VietnamPage() {
               <h3 className="font-bold text-slate-900">What is the easiest funding method?</h3>
               <p className="mt-2">
                 For most beginners: P2P USDT using bank transfer or supported e-wallets, then spot
-                conversion — always inside exchange escrow.
+                conversion, always inside exchange escrow.
               </p>
             </div>
             <div>

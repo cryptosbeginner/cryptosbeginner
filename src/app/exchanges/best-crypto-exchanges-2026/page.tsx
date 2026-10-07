@@ -166,7 +166,7 @@ export default function BestExchangesPage() {
 
         <section className="max-w-4xl mx-auto px-4 pb-16 space-y-16">
           <article id="binance">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">1. Binance — best overall</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">1. Binance: best overall</h2>
             <p className="text-slate-700 mb-4">
               For most people, Binance is still the practical starting point. The order books on
               BTC, ETH and the major alts are deeper than almost anywhere else. That usually
@@ -194,7 +194,7 @@ export default function BestExchangesPage() {
           </article>
 
           <article id="bybit">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">2. Bybit — best for derivatives</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">2. Bybit: best for derivatives</h2>
             <p className="text-slate-700 mb-4">
               Bybit is the better futures-first choice for a lot of active traders. The app is
               cleaner than Binance, and the regular USDT perpetual schedule is competitive at
@@ -219,7 +219,7 @@ export default function BestExchangesPage() {
           </article>
 
           <article id="bitget">
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">3. Bitget — best for copy trading</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">3. Bitget: best for copy trading</h2>
             <p className="text-slate-700 mb-4">
               Bitget is the one we point to when someone wants to follow other traders instead of
               building every setup from scratch. Fees are in line with the other large venues, and

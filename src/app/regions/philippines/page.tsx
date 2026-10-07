@@ -38,7 +38,7 @@ export default function PhilippinesPage() {
               Best Crypto Exchanges in the Philippines 2026
             </h1>
             <p className="mt-4 text-lg text-slate-700">
-              The Philippines is one of Asia’s more structured crypto markets — and one of the more
+              The Philippines is one of Asia’s more structured crypto markets, and one of the more
               enforcement-active. Two regulators matter: the Bangko Sentral ng Pilipinas (BSP) for
               Virtual Asset Service Providers that handle peso conversion rails, and the Securities
               and Exchange Commission (SEC) for crypto-asset service / trading activity under its
@@ -97,12 +97,12 @@ export default function PhilippinesPage() {
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
             <li>
-              <strong>BSP</strong> — Virtual Asset Service Provider (VASP) rules under Circular No.
+              <strong>BSP</strong>, Virtual Asset Service Provider (VASP) rules under Circular No.
               1108 and related memoranda. This is the core framework for entities facilitating
               virtual-asset services with peso conversion and related payment-system touchpoints.
             </li>
             <li>
-              <strong>SEC</strong> — Crypto-Asset Service Provider (CASP) rules under Memorandum
+              <strong>SEC</strong>, Crypto-Asset Service Provider (CASP) rules under Memorandum
               Circulars issued in 2025, covering registration, capital, local data handling, and
               trading/intermediation activity. SEC action is also what drove public naming and
               access pressure against unregistered offshore platforms.
@@ -120,13 +120,13 @@ export default function PhilippinesPage() {
               <a href="https://www.bsp.gov.ph/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Bangko Sentral ng Pilipinas
               </a>{" "}
-              — VASP circulars and licensed-entity materials
+              - VASP circulars and licensed-entity materials
             </li>
             <li>
               <a href="https://www.sec.gov.ph/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Securities and Exchange Commission Philippines
               </a>{" "}
-              — CASP rules and advisories on unregistered platforms
+              - CASP rules and advisories on unregistered platforms
             </li>
           </ul>
         </section>
@@ -136,24 +136,24 @@ export default function PhilippinesPage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Licensed local platforms Filipinos actually use</h2>
           <p className="text-slate-700 mb-4">
             As of mid-2026, public BSP VASP directory summaries listed a small set of active
-            licensed providers — on the order of single digits of non-bank VASPs plus bank-linked
-            names — rather than an unlimited field of new licensees.
+            licensed providers, on the order of single digits of non-bank VASPs plus bank-linked
+            names, rather than an unlimited field of new licensees.
           </p>
           <p className="text-slate-700 mb-4">
             Platforms most often recommended for compliant PHP access include:
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
             <li>
-              <strong>Coins.ph</strong> — long-running BSP VASP; broad beginner-friendly PHP rails
+              <strong>Coins.ph</strong>, long-running BSP VASP; broad beginner-friendly PHP rails
             </li>
             <li>
-              <strong>PDAX</strong> — licensed exchange with PHP order-book focus; powers GCash GCrypto
+              <strong>PDAX</strong>, licensed exchange with PHP order-book focus; powers GCash GCrypto
             </li>
             <li>
-              <strong>Maya</strong> — digital-bank ecosystem with crypto features under licensed framework
+              <strong>Maya</strong>, digital-bank ecosystem with crypto features under licensed framework
             </li>
             <li>
-              <strong>GCash GCrypto</strong> — simplest first purchase for many users via the GCash app
+              <strong>GCash GCrypto</strong>, simplest first purchase for many users via the GCash app
               (backend linked to licensed infrastructure)
             </li>
           </ul>
@@ -218,7 +218,7 @@ export default function PhilippinesPage() {
           </ul>
           <p className="text-slate-700">
             After offshore funding routes were disrupted, many users who previously relied on global
-            P2P found licensed local apps more reliable for peso on/off ramps — even if the coin list
+            P2P found licensed local apps more reliable for peso on/off ramps, even if the coin list
             is narrower.
           </p>
         </section>

@@ -189,7 +189,7 @@ export default function HowToBuyBitcoinPakistanPage() {
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
                 A beginner-friendly route through KYC, P2P escrow, JazzCash,
-                Easypaisa, fees and wallet security—updated for Pakistan&apos;s
+                Easypaisa, fees and wallet security, updated for Pakistan&apos;s
                 new PVARA framework.
               </p>
 

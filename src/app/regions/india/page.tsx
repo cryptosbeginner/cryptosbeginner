@@ -38,7 +38,7 @@ export default function IndiaPage() {
               Best Crypto Exchanges in India 2026
             </h1>
             <p className="mt-4 text-lg text-slate-700">
-              India is one of the world’s largest grassroots crypto markets — and one of the most
+              India is one of the world’s largest grassroots crypto markets, and one of the most
               tax-sensitive. Cryptocurrency is not banned, but it is not legal tender either. The
               operating reality for users is a compliance-first environment: FIU-IND registration for
               service providers, PMLA obligations, a flat tax on virtual digital asset gains, and
@@ -113,13 +113,13 @@ export default function IndiaPage() {
               <a href="https://www.incometax.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Income Tax Department
               </a>{" "}
-              — VDA / ITR guidance and reporting updates
+              - VDA / ITR guidance and reporting updates
             </li>
             <li>
               <a href="https://fiuindia.gov.in/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
-                Financial Intelligence Unit — India (FIU-IND)
+                Financial Intelligence Unit, India (FIU-IND)
               </a>{" "}
-              — reporting-entity framework under PMLA
+              - reporting-entity framework under PMLA
             </li>
             <li>
               Parliamentary / standing-committee reporting on VDA policy and compliance
@@ -138,7 +138,7 @@ export default function IndiaPage() {
           <p className="text-slate-700 mb-4">
             This is not the same as a full product regulator “licence to sell crypto” in the MAS or
             MiCA sense. Official messaging has repeatedly stressed that FIU registration is about
-            AML/CFT compliance — not a seal of investment safety or a guarantee against hacks,
+            AML/CFT compliance, not a seal of investment safety or a guarantee against hacks,
             fraud, or losses.
           </p>
           <p className="text-slate-700 mb-4">
@@ -155,7 +155,7 @@ export default function IndiaPage() {
 
         {/* Tax */}
         <section id="tax" className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">VDA tax and 1% TDS — the cost that changes behaviour</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">VDA tax and 1% TDS: the cost that changes behaviour</h2>
           <p className="text-slate-700 mb-4">
             India’s Virtual Digital Asset tax framework, introduced via the Finance Act, 2022 and
             carried forward in subsequent years, is one of the most important “all-in cost” factors

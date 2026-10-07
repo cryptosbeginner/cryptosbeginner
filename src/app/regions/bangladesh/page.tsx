@@ -42,7 +42,7 @@ export default function BangladeshPage() {
               Bangladesh Bank does not recognise virtual currencies as legal tender or approved
               foreign exchange, and has repeatedly treated dealing in them as incompatible with
               existing foreign-exchange and AML rules. Retail activity still happens through global
-              P2P channels — but it sits in a high-risk legal and operational environment, not a
+              P2P channels, but it sits in a high-risk legal and operational environment, not a
               protected licensed market.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function BangladeshPage() {
             <h2 className="text-xl font-bold text-amber-950 mb-3">Read this before anything else</h2>
             <p className="text-slate-800 mb-3">
               This page is educational. It is <strong>not</strong> an encouragement to break local
-              rules. There is no clean, Bangladesh Bank–authorised retail crypto-exchange regime
+              rules. There is no clean, Bangladesh Bank-authorised retail crypto-exchange regime
               comparable to MAS-licensed Singapore or OJK-licensed Indonesia.
             </p>
             <p className="text-slate-800">
@@ -79,7 +79,7 @@ export default function BangladeshPage() {
                 <strong>Where activity still appears:</strong> global P2P venues (Binance, Bybit, OKX, etc.)
               </li>
               <li>
-                <strong>Funding rails often discussed:</strong> bank transfer and MFS (bKash, Nagad, Rocket) — with high freeze and investigation risk
+                <strong>Funding rails often discussed:</strong> bank transfer and MFS (bKash, Nagad, Rocket), with high freeze and investigation risk
               </li>
               <li>
                 <strong>If anyone proceeds at all:</strong> escrow only, tiny tests, rapid self-custody, assume no local protection
@@ -119,15 +119,15 @@ export default function BangladeshPage() {
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
             <li>
-              <strong>Foreign Exchange Regulation Act, 1947 (FERA)</strong> — virtual currencies are
+              <strong>Foreign Exchange Regulation Act, 1947 (FERA)</strong>, virtual currencies are
               not treated as recognised currency / approved FX
             </li>
             <li>
-              <strong>Money Laundering Prevention Act, 2012</strong> — relevant where transfers are
+              <strong>Money Laundering Prevention Act, 2012</strong>, relevant where transfers are
               treated as suspicious or illicit-finance linked
             </li>
             <li>
-              <strong>Anti-Terrorism Act, 2009</strong> — relevant in illicit-finance enforcement contexts
+              <strong>Anti-Terrorism Act, 2009</strong>, relevant in illicit-finance enforcement contexts
             </li>
           </ul>
           <p className="text-slate-700 mb-4">
@@ -147,7 +147,7 @@ export default function BangladeshPage() {
               <a href="https://www.bb.org.bd/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Bangladesh Bank
               </a>{" "}
-              — official circulars, notices, and spokesperson comments
+              - official circulars, notices, and spokesperson comments
             </li>
             <li>
               Legal summaries of FERA / AML application to virtual assets (independent counsel analyses)
@@ -299,7 +299,7 @@ export default function BangladeshPage() {
             This section is harm-reduction, not encouragement.
           </p>
           <ol className="list-decimal pl-5 text-slate-700 space-y-2 mb-5">
-            <li>Use only in-app exchange escrow — never off-platform agents</li>
+            <li>Use only in-app exchange escrow, never off-platform agents</li>
             <li>Start with a very small test amount</li>
             <li>Enable authenticator 2FA immediately</li>
             <li>Do not leave meaningful balances on any exchange</li>

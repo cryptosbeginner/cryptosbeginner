@@ -95,9 +95,8 @@ export default function SingaporePage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">MAS regulatory framework in 2026</h2>
           <p className="text-slate-700 mb-4">
             Singapore regulates crypto-related payment activity primarily through the{" "}
-            <strong>Payment Services Act (PSA)</strong>. Providing Digital Payment Token services —
-            including dealing in DPTs or facilitating exchanges where the provider comes into
-            possession of tokens or money — generally requires a payment services licence such as a
+            <strong>Payment Services Act (PSA)</strong>. Providing Digital Payment Token services, including dealing in DPTs or facilitating exchanges where the provider comes into
+            possession of tokens or money, generally requires a payment services licence such as a
             Major Payment Institution (MPI) licence, unless an exemption applies.
           </p>
           <p className="text-slate-700 mb-4">
@@ -108,7 +107,7 @@ export default function SingaporePage() {
           </p>
           <p className="text-slate-700 mb-4">
             In July 2026, MAS also published supervisory expectations for DPT service providers on
-            AML/CFT controls — another signal that licensed status is not a one-time checkbox but an
+            AML/CFT controls, another signal that licensed status is not a one-time checkbox but an
             ongoing compliance obligation.
           </p>
           <p className="text-slate-700 mb-2">Primary external references (verify live yourself):</p>
@@ -122,7 +121,7 @@ export default function SingaporePage() {
               >
                 Monetary Authority of Singapore
               </a>{" "}
-              — regulations, guidance, and consumer advisories
+              - regulations, guidance, and consumer advisories
             </li>
             <li>
               <a
@@ -133,7 +132,7 @@ export default function SingaporePage() {
               >
                 MAS Financial Institutions Directory (FID)
               </a>{" "}
-              — check whether a firm holds an active licence
+              - check whether a firm holds an active licence
             </li>
             <li>
               MAS guidance pages on Payment Services / Digital Payment Token service providers and
@@ -199,7 +198,7 @@ export default function SingaporePage() {
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">Binance</td>
-                  <td className="px-4 py-3">Global liquidity leader — but local licensing history is weak</td>
+                  <td className="px-4 py-3">Global liquidity leader, but local licensing history is weak</td>
                   <td className="px-4 py-3">Do not assume SG retail access; check alert lists / terms</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
@@ -267,10 +266,10 @@ export default function SingaporePage() {
             not make token prices safe or eliminate exchange-operational risk.
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
-            <li>Market risk — prices can collapse quickly</li>
-            <li>Platform risk — outages, freezes, security incidents</li>
-            <li>Scam risk — fake apps, phishing, impersonation of licensed brands</li>
-            <li>Product risk — derivatives and leveraged products can liquidate accounts rapidly</li>
+            <li>Market risk, prices can collapse quickly</li>
+            <li>Platform risk, outages, freezes, security incidents</li>
+            <li>Scam risk, fake apps, phishing, impersonation of licensed brands</li>
+            <li>Product risk, derivatives and leveraged products can liquidate accounts rapidly</li>
           </ul>
           <p className="text-slate-700">
             Even on licensed platforms, keep only trading capital on-exchange and use hardware

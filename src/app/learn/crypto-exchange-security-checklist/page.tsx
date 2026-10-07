@@ -209,7 +209,7 @@ export default function CryptoExchangeSecurityChecklistPage() {
               Checklist before choosing an exchange
             </h2>
             <p className="mt-2">
-              This first checklist focuses on the exchange itself—how it
+              This first checklist focuses on the exchange itself, how it
               handles assets, communicates risk, and responds to incidents. You
               can use it alongside our reviews and regional guides when
               deciding where to open an account.
@@ -240,7 +240,7 @@ export default function CryptoExchangeSecurityChecklistPage() {
                   </li>
                   <li>
                     Terms of use and risk disclosures that are actually
-                    readable—not hidden or overly vague.
+                    readable, not hidden or overly vague.
                   </li>
                   <li>
                     Regional access and compliance that match your country,
@@ -315,7 +315,7 @@ export default function CryptoExchangeSecurityChecklistPage() {
                 </p>
                 <ul className="mt-1 list-disc pl-5 text-slate-800">
                   <li>
-                    Use a strong, unique password or passphrase—never reused
+                    Use a strong, unique password or passphrase, never reused
                     from email, social media, or bank accounts.
                   </li>
                   <li>
@@ -378,7 +378,7 @@ export default function CryptoExchangeSecurityChecklistPage() {
             <ul className="mt-2 list-disc pl-5 text-slate-800">
               <li>
                 Always check the URL and certificate in your browser before
-                logging in—avoid links in emails and DMs; type the domain
+                logging in, avoid links in emails and DMs; type the domain
                 manually or use a trusted bookmark.
               </li>
               <li>

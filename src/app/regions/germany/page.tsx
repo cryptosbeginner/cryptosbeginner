@@ -105,7 +105,7 @@ export default function GermanyPage() {
               crypto-asset service providers, while BaFin continues to
               supervise German financial firms and crypto custody.
               Residents compare Coinbase, Kraken, Bitpanda, Bitstamp,
-              Crypto.com and German-market infrastructure providers—but
+              Crypto.com and German-market infrastructure providers, but
               tax reporting and custody details matter as much as fees.
             </p>
           </div>

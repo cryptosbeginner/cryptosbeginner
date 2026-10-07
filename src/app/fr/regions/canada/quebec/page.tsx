@@ -118,11 +118,11 @@ const sources = [
     href: "https://lautorite.qc.ca",
   },
   {
-    label: "Obligations fiscales liées aux cryptoactifs — ARC",
+    label: "Obligations fiscales liées aux cryptoactifs, ARC",
     href: "https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency/compliance/cryptocurrency-guide/crypto-assets-tax-obligations.html",
   },
   {
-    label: "Monnaie virtuelle — FINTRAC",
+    label: "Monnaie virtuelle, FINTRAC",
     href: "https://fintrac-canafe.canada.ca",
   },
 ];

@@ -85,7 +85,7 @@ export default function IrelandPage() {
               competent authority for crypto-asset service providers.
               Irish residents compare Coinbase, Kraken, Bitstamp,
               Bitpanda and Crypto.com for euro funding, spot trading and
-              custody—but Revenue tax treatment and record-keeping are
+              custody, but Revenue tax treatment and record-keeping are
               just as important as platform fees.
             </p>
           </div>
@@ -460,7 +460,7 @@ export default function IrelandPage() {
           </p>
 
           <p className="text-slate-700">
-            Proof of Reserves is one transparency input—not proof that
+            Proof of Reserves is one transparency input, not proof that
             all liabilities are covered or that customers have priority
             in an insolvency.
           </p>

@@ -111,7 +111,7 @@ export default function KenyaPage() {
 
         <section id="framework" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
-            VASP Act, gazetted rules and CBK–CMA split
+            VASP Act, gazetted rules and CBK-CMA split
           </h2>
           <p className="text-slate-700 mb-4">
             Kenya now requires a licence for anyone offering virtual
