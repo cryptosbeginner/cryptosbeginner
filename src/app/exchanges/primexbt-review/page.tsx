@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${SITE_URL}/images/1.png`,
-        width: 1200,
-        height: 630,
+        url: `${SITE_URL}/images/primexbt-platform-overview.png`,
+        width: 1180,
+        height: 842,
         alt: "PrimeXBT trading platform overview",
       },
     ],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "PrimeXBT Review 2026: Fees, Leverage & Regulation",
     description:
       "Read our PrimeXBT review before using crypto futures, CFDs, leverage, or multi-asset trading tools.",
-    images: [`${SITE_URL}/images/1.png`],
+    images: [`${SITE_URL}/images/primexbt-platform-overview.png`],
   },
 };
 
@@ -177,7 +177,7 @@ export default function PrimeXBTReviewPage() {
       name: "CryptosBeginner",
       url: SITE_URL,
     },
-    image: [`${SITE_URL}/images/1.png`],
+    image: [`${SITE_URL}/images/primexbt-platform-overview.png`],
     inLanguage: "en",
   };
 
@@ -291,7 +291,7 @@ export default function PrimeXBTReviewPage() {
         <section className="mx-auto max-w-4xl px-4 py-8">
           <figure>
             <Image
-              src="/images/1.png"
+              src="/images/primexbt-platform-overview.png"
               alt="PrimeXBT trading platform overview screenshot"
               width={1200}
               height={630}
@@ -635,7 +635,7 @@ export default function PrimeXBTReviewPage() {
 
           <figure className="my-8">
             <Image
-              src="/images/3.png"
+              src="/images/primexbt-fees-markets.png"
               alt="PrimeXBT fees or available markets overview screenshot"
               width={1200}
               height={700}
@@ -753,7 +753,7 @@ export default function PrimeXBTReviewPage() {
 
           <figure className="my-8">
             <Image
-              src="/images/2.png"
+              src="/images/primexbt-pxtrader-terminal.png"
               alt="PrimeXBT PXTrader web trading terminal with chart and order controls"
               width={1200}
               height={700}
@@ -841,7 +841,7 @@ export default function PrimeXBTReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-12">
           <figure>
             <Image
-              src="/images/4.png"
+              src="/images/primexbt-deposit-methods.png"
               alt="PrimeXBT account funding and deposit methods screenshot"
               width={1200}
               height={700}
