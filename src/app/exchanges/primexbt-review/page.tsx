@@ -292,7 +292,7 @@ export default function PrimeXBTReviewPage() {
           <figure>
             <Image
               src="/images/primexbt-platform-overview.png"
-              alt="PrimeXBT trading platform overview screenshot"
+              alt="PrimeXBT trading platform overview"
               width={1200}
               height={630}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -636,7 +636,7 @@ export default function PrimeXBTReviewPage() {
           <figure className="my-8">
             <Image
               src="/images/primexbt-fees-markets.png"
-              alt="PrimeXBT fees or available markets overview screenshot"
+              alt="PrimeXBT trading fees and available markets overview"
               width={1200}
               height={700}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -842,7 +842,7 @@ export default function PrimeXBTReviewPage() {
           <figure>
             <Image
               src="/images/primexbt-deposit-methods.png"
-              alt="PrimeXBT account funding and deposit methods screenshot"
+              alt="PrimeXBT account funding and deposit methods"
               width={1200}
               height={700}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
