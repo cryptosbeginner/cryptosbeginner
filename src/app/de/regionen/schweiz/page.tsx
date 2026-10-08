@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Krypto-Börsen in der Schweiz vergleichen: FINMA, Schweizer Geldwäscheregeln, DLT-Regulierung, Bitcoin-Steuern, Vermögenssteuer und sichere Verwahrung.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/de/schweiz",
+    canonical: "https://www.cryptosbeginner.com/de/regionen/schweiz",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/switzerland",
       de: "https://www.cryptosbeginner.com/de/regionen/schweiz",

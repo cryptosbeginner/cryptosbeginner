@@ -71,6 +71,15 @@ const regionRoutes = [
   "/regions/vietnam",
 ];
 
+// Localised region guides (German and French) omitted from the original list.
+const localizedRegionRoutes = [
+  "/de/regionen/deutschland",
+  "/de/regionen/oesterreich",
+  "/de/regionen/schweiz",
+  "/fr/regions/canada/quebec",
+  "/fr/regions/france",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     "/",
@@ -122,6 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     ...coreRoutes,
     ...regionRoutes,
+    ...localizedRegionRoutes,
     ...cardListings.map((card) => `/crypto-cards/${card.slug}`),
     ...editorialPages.map((page) => `/crypto-cards/${page.slug}`),
     ...dexServices.filter((service) => service.isDex).map((service) => `/dexes/${service.slug}`),
