@@ -662,6 +662,16 @@ export default function BybitReviewPage() {
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Regulation and availability
           </h2>
+          <figure className="mt-6">
+            <Image
+              src="/images/bybit-kyc-requirements.png"
+              alt="Bybit KYC verification requirements overview"
+              width={1196}
+              height={578}
+              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+              loading="lazy"
+            />
+          </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
             Bybit&apos;s regulatory footprint expanded significantly after
@@ -724,6 +734,16 @@ export default function BybitReviewPage() {
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Platform and products
           </h2>
+          <figure className="mt-6">
+            <Image
+              src="/images/bybit-copy-trading.png"
+              alt="Bybit copy trading interface showing available trader strategies"
+              width={1250}
+              height={860}
+              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+              loading="lazy"
+            />
+          </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
             The core trading experience covers spot, margin, perpetual
@@ -737,6 +757,16 @@ export default function BybitReviewPage() {
             traditional-market instruments such as TradFi perpetuals and
             MT5-based CFDs.
           </p>
+          <figure className="mt-6">
+            <Image
+              src="/images/bybit-card.png"
+              alt="Bybit crypto card offering for spending balances"
+              width={1035}
+              height={696}
+              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+              loading="lazy"
+            />
+          </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
             The interface is polished by exchange standards, with capable
@@ -753,6 +783,16 @@ export default function BybitReviewPage() {
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Security
           </h2>
+          <figure className="mt-6">
+            <Image
+              src="/images/bybit-proof-of-reserves.png"
+              alt="Bybit proof of reserves verification page"
+              width={1145}
+              height={682}
+              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+              loading="lazy"
+            />
+          </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
             Beyond the hack itself, Bybit&apos;s published security stack
