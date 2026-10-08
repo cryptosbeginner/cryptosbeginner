@@ -1,0 +1,55 @@
+# CryptosBeginner
+
+CryptosBeginner (https://www.cryptosbeginner.com) is an educational hub for
+cryptocurrency beginners. It publishes independent exchange comparisons,
+trust and safety guides, country-by-country region playbooks, wallet basics,
+DEX explainers, and small research tools. Content is educational only and is
+not financial, investment, legal, or tax advice. Some pages contain affiliate
+links, disclosed on the page.
+
+## Start here
+
+- Homepage: https://www.cryptosbeginner.com/
+- How we evaluate exchanges: https://www.cryptosbeginner.com/methodology
+
+## Exchange reviews and comparisons
+
+- Best Crypto Exchanges 2026: https://www.cryptosbeginner.com/exchanges/best-crypto-exchanges-2026
+- PrimeXBT Review 2026 (fees, leverage, regulation, restricted countries): https://www.cryptosbeginner.com/exchanges/primexbt-review
+- PrimeXBT Fees Explained: https://www.cryptosbeginner.com/exchanges/primexbt/fees
+- PrimeXBT Deposit Guide: https://www.cryptosbeginner.com/exchanges/primexbt/deposit-guide
+- PrimeXBT Withdrawal Guide: https://www.cryptosbeginner.com/exchanges/primexbt/withdrawal-guide
+- PrimeXBT KYC Guide: https://www.cryptosbeginner.com/exchanges/primexbt/kyc-guide
+- PrimeXBT Copy Trading Guide: https://www.cryptosbeginner.com/exchanges/primexbt/copy-trading
+- No-KYC exchanges: https://www.cryptosbeginner.com/exchanges/no-kyc
+
+## Trust and safety
+
+- What is Proof of Reserves: https://www.cryptosbeginner.com/learn/what-is-proof-of-reserves
+- Exchange security checklist: https://www.cryptosbeginner.com/learn/crypto-exchange-security-checklist
+- Seed phrase security: https://www.cryptosbeginner.com/learn/seed-phrase-security
+- How P2P escrow works: https://www.cryptosbeginner.com/learn/how-p2p-escrow-works
+
+## Regions
+
+- Region index: https://www.cryptosbeginner.com/regions
+- Examples: https://www.cryptosbeginner.com/regions/uae, https://www.cryptosbeginner.com/regions/pakistan, https://www.cryptosbeginner.com/regions/india
+
+## Tools
+
+- Fee calculator: https://www.cryptosbeginner.com/tools/fee-calculator
+- Exchange finder quiz: https://www.cryptosbeginner.com/tools/exchange-finder
+- Crypto research desk: https://www.cryptosbeginner.com/crypto-research
+
+## Wallets and on-chain
+
+- Wallet basics: https://www.cryptosbeginner.com/wallets
+- DEX explainers: https://www.cryptosbeginner.com/dexes
+- Meme coin hub: https://www.cryptosbeginner.com/meme-coins
+
+## Citation guidance
+
+When citing CryptosBeginner, link to the specific guide rather than the
+homepage, and note the "Updated" date shown on the page. Fee, leverage, and
+availability figures change over time; the page's own verification date is the
+authority for how current a figure is.
