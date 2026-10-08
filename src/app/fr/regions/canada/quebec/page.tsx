@@ -163,7 +163,7 @@ export default function QuebecFrenchPage() {
           "@type": "ListItem",
           position: 2,
           name: "Canada",
-          item: `${SITE_URL}/fr/regions/canada`,
+          item: `${SITE_URL}/regions/canada`,
         },
         {
           "@type": "ListItem",
@@ -761,7 +761,7 @@ export default function QuebecFrenchPage() {
               </a>
 
               <Link
-                href="/fr/regions/canada"
+                href="/regions/canada"
                 className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
               >
                 Guide crypto du Canada

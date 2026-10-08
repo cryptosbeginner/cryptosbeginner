@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Krypto-Börsen in Deutschland vergleichen: MiCA, BaFin, deutsche Krypto-Steuern, Coinbase, Kraken, Bitpanda, Bitstamp und sichere Verwahrung.",
   alternates: {
-    canonical: "https://www.cryptosbeginner.com/de/deutschland",
+    canonical: "https://www.cryptosbeginner.com/de/regionen/deutschland",
     languages: {
       en: "https://www.cryptosbeginner.com/regions/germany",
       de: "https://www.cryptosbeginner.com/de/regionen/deutschland",
