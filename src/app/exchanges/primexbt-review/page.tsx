@@ -486,6 +486,11 @@ export default function PrimeXBTReviewPage() {
                 </a>
               </li>
               <li>
+                <a href="#guides" className="underline underline-offset-4">
+                  PrimeXBT guides
+                </a>
+              </li>
+              <li>
                 <a href="#faq" className="underline underline-offset-4">
                   FAQ
                 </a>
@@ -988,7 +993,69 @@ export default function PrimeXBTReviewPage() {
           </div>
         </Section>
 
-        <Section id="faq">
+                <Section id="guides">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            PrimeXBT guides
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Step-by-step companions to this review, each focused on one
+            task. Start here if you want the practical detail behind the
+            summary above.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <Link
+              href="/exchanges/primexbt/fees"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">PrimeXBT fees</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Maker/taker tiers, CFD spreads, funding, and withdrawals,
+                with a worked cost example.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/deposit-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Deposit guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Crypto and card funding routes, minimums, and processing
+                times.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/withdrawal-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Withdrawal guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Network-based fees, safety checklist, and troubleshooting.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/kyc-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">KYC guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Verification levels, documents, and account limits.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/copy-trading"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Copy trading</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                How Covesting works, profit shares, and the real risks.
+              </p>
+            </Link>
+          </div>
+        </Section>
+
+<Section id="faq">
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Frequently asked questions
           </h2>
