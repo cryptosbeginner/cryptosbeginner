@@ -257,7 +257,7 @@ export default function HowP2PEscrowWorksPage() {
                 </span>{" "}
                 You follow the merchant’s instructions and send fiat via
                 the agreed method (bank transfer, mobile wallet, etc). You
-                do this outside the exchange—but always coordinate within
+                do this outside the exchange, but always coordinate within
                 the exchange’s official chat.
               </li>
               <li>
@@ -272,8 +272,8 @@ export default function HowP2PEscrowWorksPage() {
                 <span className="font-semibold">
                   Or a dispute is opened.
                 </span>{" "}
-                If something goes wrong—payment not showing, wrong amount,
-                suspected fraud—you or the seller can open a dispute. The
+                If something goes wrong, payment not showing, wrong amount,
+                suspected fraud, you or the seller can open a dispute. The
                 exchange’s support team then steps in.
               </li>
             </ol>
@@ -285,7 +285,7 @@ export default function HowP2PEscrowWorksPage() {
               </p>
               <p className="mt-1">
                 Escrow stops the seller from “running away” with funds
-                while you pay—but you still need to use safe payment
+                while you pay, but you still need to use safe payment
                 methods and watch for fraud on the fiat side.
               </p>
             </div>
@@ -323,8 +323,8 @@ export default function HowP2PEscrowWorksPage() {
               </li>
             </ul>
             <p className="mt-2">
-              This system is not perfect—fiat payment rails have their own
-              limitations—but a well-run dispute process can resolve many
+              This system is not perfect, fiat payment rails have their own
+              limitations, but a well-run dispute process can resolve many
               honest mistakes and deter basic scams.
             </p>
 

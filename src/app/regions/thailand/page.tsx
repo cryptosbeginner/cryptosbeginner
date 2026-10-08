@@ -66,7 +66,7 @@ export default function ThailandPage() {
                 <strong>Funding:</strong> PromptPay and Thai bank transfers on licensed venues
               </li>
               <li>
-                <strong>Policy note:</strong> temporary tax relief has applied to gains via licensed operators in a defined window — verify current rules
+                <strong>Policy note:</strong> temporary tax relief has applied to gains via licensed operators in a defined window, verify current rules
               </li>
             </ul>
           </div>
@@ -94,8 +94,8 @@ export default function ThailandPage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Legal framework in 2026</h2>
           <p className="text-slate-700 mb-4">
             Thailand regulated digital-asset businesses early. The Emergency Decree on Digital Asset
-            Businesses requires operators serving the Thai market — exchanges, brokers, dealers,
-            related service models — to obtain the appropriate licence through the Ministry of
+            Businesses requires operators serving the Thai market, exchanges, brokers, dealers,
+            related service models, to obtain the appropriate licence through the Ministry of
             Finance / SEC process.
           </p>
           <p className="text-slate-700 mb-4">
@@ -115,7 +115,7 @@ export default function ThailandPage() {
               <a href="https://www.sec.or.th/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Securities and Exchange Commission Thailand
               </a>{" "}
-              — digital-asset business rules and operator lists
+              - digital-asset business rules and operator lists
             </li>
             <li>
               Emergency Decree on Digital Asset Businesses B.E. 2561 (2018) and subsequent notifications
@@ -135,13 +135,13 @@ export default function ThailandPage() {
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
             <li>
-              <strong>Bitkub</strong> — dominant local exchange, deep THB books, PromptPay-friendly onboarding
+              <strong>Bitkub</strong>, dominant local exchange, deep THB books, PromptPay-friendly onboarding
             </li>
             <li>
-              <strong>Gulf Binance / Binance TH</strong> — Binance technology stack under a local licensed joint-venture structure
+              <strong>Gulf Binance / Binance TH</strong>, Binance technology stack under a local licensed joint-venture structure
             </li>
             <li>
-              <strong>Orbix</strong> — bank-linked / beginner-oriented licensed venue
+              <strong>Orbix</strong>, bank-linked / beginner-oriented licensed venue
             </li>
             <li>
               <strong>Bitazza, Upbit Thailand</strong> and other licensed operators for specific product niches
@@ -163,7 +163,7 @@ export default function ThailandPage() {
           </p>
           <p className="text-slate-700 mb-4">
             That is the key Thailand difference versus pure P2P markets: the licensed onshore layer
-            is not optional marketing — it is the path that preserves bank rails, clearer recourse,
+            is not optional marketing, it is the path that preserves bank rails, clearer recourse,
             and any tax treatment tied to licensed operators.
           </p>
           <p className="text-slate-700">
@@ -183,7 +183,7 @@ export default function ThailandPage() {
           </p>
           <p className="text-slate-700">
             Tax rules change and personal situations differ. Treat licensed-operator status as
-            relevant not only for access, but potentially for tax outcomes — and confirm the live
+            relevant not only for access, but potentially for tax outcomes, and confirm the live
             Revenue Department / SEC guidance before you plan around any exemption.
           </p>
         </section>

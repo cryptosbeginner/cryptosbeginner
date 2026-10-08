@@ -27,7 +27,7 @@ export default function SouthKoreaPage() {
             <ul className="space-y-2 text-slate-800">
               <li>Local KRW venues usually matter first</li>
               <li>Globals: confirm eligibility before funding</li>
-              <li>High trading activity increases leverage risk — size carefully</li>
+              <li>High trading activity increases leverage risk, size carefully</li>
             </ul>
           </div>
         </section>

@@ -272,7 +272,7 @@ export default function OmanPage() {
                 The practical choice depends on whether you need direct OMR
                 funding, simple spot purchases, P2P access or advanced
                 trading. The more important question is whether the route
-                is transparent and available to you—not which platform has
+                is transparent and available to you, not which platform has
                 the largest marketing budget.
               </p>
 

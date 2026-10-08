@@ -57,7 +57,7 @@ export default function MalaysiaPage() {
                 MYR support
               </li>
               <li>
-                <strong>Globals still evaluated:</strong> Binance, Bybit, OKX, Bitget, MEXC — only
+                <strong>Globals still evaluated:</strong> Binance, Bybit, OKX, Bitget, MEXC, only
                 where onboarding actually works for Malaysian residents
               </li>
               <li>
@@ -117,7 +117,7 @@ export default function MalaysiaPage() {
               >
                 Securities Commission Malaysia
               </a>{" "}
-              — official notices and digital-asset related publications
+              - official notices and digital-asset related publications
             </li>
             <li>
               Each exchange’s own restricted-countries / terms page (Binance, Bybit, OKX, etc.)

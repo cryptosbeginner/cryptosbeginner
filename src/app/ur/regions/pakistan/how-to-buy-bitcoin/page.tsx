@@ -174,7 +174,7 @@ export default function HowToBuyBitcoinPakistanUrduPage() {
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
                 KYC، P2P escrow، JazzCash، Easypaisa، فیس اور wallet security
-                کے ذریعے beginners کے لیے عملی راستہ—پاکستان کے نئے PVARA
+                کے ذریعے beginners کے لیے عملی راستہ, پاکستان کے نئے PVARA
                 framework کے مطابق تازہ کاری شدہ۔
               </p>
 

@@ -124,7 +124,7 @@ export default function ProofOfReservesPage() {
                 <p className="mt-3 max-w-2xl text-sm text-slate-700 sm:text-base">
                   Proof of Reserves (PoR) is how a crypto exchange or
                   custodial platform demonstrates it actually holds enough
-                  assets to cover customer balances at a given moment—usually
+                  assets to cover customer balances at a given moment, usually
                   using on‑chain reserve wallets, cryptographic proofs, and
                   independent audits.
                 </p>
@@ -143,7 +143,7 @@ export default function ProofOfReservesPage() {
                   TL;DR (Beginner Summary)
                 </p>
                 <p className="mt-2 text-sm text-slate-700">
-                  Proof of Reserves is a transparency tool—not a magic
+                  Proof of Reserves is a transparency tool, not a magic
                   safety guarantee. A good PoR report shows that an exchange
                   currently holds enough crypto in reserve wallets to match
                   customer balances, and lets users or auditors verify those
@@ -220,8 +220,8 @@ export default function ProofOfReservesPage() {
             <p className="mt-2">
               In traditional finance, “reserves” are the assets a bank or
               custodian keeps to meet withdrawal requests and obligations. In
-              crypto, Proof of Reserves is any method—usually a mix of
-              on‑chain data, cryptography, and independent auditing—that
+              crypto, Proof of Reserves is any method, usually a mix of
+              on‑chain data, cryptography, and independent auditing, that
               lets you verify a platform currently holds enough crypto to
               cover customer balances it is responsible for.
             </p>
@@ -309,8 +309,8 @@ export default function ProofOfReservesPage() {
               were not included in the report.
             </p>
             <p className="mt-2">
-              Some PoR attempts only show “proof of assets”—that the platform
-              controls certain wallets—without fully accounting for
+              Some PoR attempts only show “proof of assets”, that the platform
+              controls certain wallets, without fully accounting for
               all liabilities. Others rely on opaque methodologies, infrequent
               updates, or auditors who do not specialize in crypto. A strong
               PoR implementation will clearly explain what is included, what
@@ -422,7 +422,7 @@ export default function ProofOfReservesPage() {
               How beginners should use PoR when choosing an exchange
             </h2>
             <p className="mt-2">
-              As a beginner, your goal is not to become an auditor—it is to
+              As a beginner, your goal is not to become an auditor, it is to
               avoid platforms that hide basic facts about how they store
               customer assets. You can use PoR as a simple filter: prefer
               exchanges that offer clear, recent, and verifiable PoR reports
@@ -549,7 +549,7 @@ export default function ProofOfReservesPage() {
                 </p>
                 <p className="mt-1 text-slate-700">
                   We score platforms on fees, transparency, Proof of Reserves,
-                  beginner education, and regional access—so you do not have
+                  beginner education, and regional access, so you do not have
                   to start from scratch.
                 </p>
               </div>

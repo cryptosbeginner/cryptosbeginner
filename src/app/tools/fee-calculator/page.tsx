@@ -40,7 +40,7 @@ export default function FeeCalculatorPage() {
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Tools · exchange costs</p>
             <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.05em] sm:text-6xl">What does it actually cost to buy crypto?</h1>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">Compare an estimated BTC, ETH, SOL, BNB, XRP, ZEC, XMR, or TRX purchase cost across exchanges by separating the trading fee, spread assumption, funding charge, and optional withdrawal cost. Use the result as a planning estimate—not a live quote.</p>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">Compare an estimated BTC, ETH, SOL, BNB, XRP, ZEC, XMR, or TRX purchase cost across exchanges by separating the trading fee, spread assumption, funding charge, and optional withdrawal cost. Use the result as a planning estimate, not a live quote.</p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm font-bold text-slate-300"><span className="rounded-full border border-white/15 bg-white/5 px-3 py-2">Affiliate + reference providers</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-2">Transparent assumptions</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-2">8 popular assets</span></div>
           </div>
         </section>

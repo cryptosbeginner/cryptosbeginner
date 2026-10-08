@@ -393,7 +393,7 @@ export default function BritishColumbiaPage() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-slate-700">
-                  Match the legal name and website—not just the brand name.
+                  Match the legal name and website, not just the brand name.
                 </p>
               </div>
 

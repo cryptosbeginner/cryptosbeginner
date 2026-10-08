@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Cryptos Beginner – Exchange, Safety & Region Guides 2026",
+  title: "Cryptos Beginner: Exchange, Safety & Region Guides 2026",
   description:
     "Global crypto beginner hub. Independent exchange comparisons, trust & safety guides, region playbooks, wallet and DEX basics, plus tools for fees and matching platforms.",
 };

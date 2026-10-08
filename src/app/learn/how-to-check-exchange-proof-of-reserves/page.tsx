@@ -195,7 +195,7 @@ export default function HowToCheckPorPage() {
                   You do not need to be a developer or auditor to sanity‑check
                   a crypto exchange’s Proof of Reserves. This guide walks you
                   through simple, practical steps you can take as a beginner to
-                  understand what a PoR page really proves—and what it does not.
+                  understand what a PoR page really proves, and what it does not.
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-600">
                   <span>Author: Sophia Chen</span>
@@ -286,7 +286,7 @@ export default function HowToCheckPorPage() {
               Why it is worth checking Proof of Reserves yourself
             </h2>
             <p className="mt-2">
-              Proof of Reserves pages are designed to build trust—but they are
+              Proof of Reserves pages are designed to build trust, but they are
               not all equal. Some exchanges publish detailed, verifiable PoR
               reports with reserve wallets, Merkle trees, and third‑party
               attestations. Others offer marketing graphics with little
@@ -347,7 +347,7 @@ export default function HowToCheckPorPage() {
             <ul className="mt-2 list-disc pl-5">
               <li>Customer liabilities (balances owed to users).</li>
               <li>On‑chain reserve assets held by the exchange.</li>
-              <li>Any limitations—such as which assets are covered.</li>
+              <li>Any limitations, such as which assets are covered.</li>
             </ul>
 
             <h2
@@ -414,7 +414,7 @@ export default function HowToCheckPorPage() {
             </p>
             <p className="mt-2">
               Look for auditor name and credentials, explanation of how
-              balances were processed, and discussion of limitations—such as
+              balances were processed, and discussion of limitations, such as
               off‑chain liabilities that PoR cannot fully capture. A candid PoR
               page will acknowledge that it cannot guarantee future solvency,
               even if the snapshot looks healthy.
@@ -538,7 +538,7 @@ export default function HowToCheckPorPage() {
                 </p>
                 <p className="mt-1 text-sm text-slate-700">
                   We score platforms on fees, PoR implementation, security
-                  practices, and beginner experience—especially for regional
+                  practices, and beginner experience, especially for regional
                   markets.
                 </p>
               </div>

@@ -38,7 +38,7 @@ export default function IndonesiaPage() {
               Best Crypto Exchanges in Indonesia 2026
             </h1>
             <p className="mt-4 text-lg text-slate-700">
-              Indonesia is one of Southeast Asia’s largest crypto markets — and one of the more
+              Indonesia is one of Southeast Asia’s largest crypto markets, and one of the more
               formally supervised. Since OJK took over digital-asset oversight from Bappebti in 2025,
               trading is channelled through licensed Digital Financial Asset Traders (PAKD). Crypto
               can be traded as a regulated digital financial asset, but it is not legal tender for
@@ -99,7 +99,7 @@ export default function IndonesiaPage() {
           </p>
           <p className="text-slate-700 mb-4">
             The policy signal is clear. Indonesia wants crypto activity inside supervised local
-            entities — not as an unregulated offshore free-for-all. That is why “popular globally”
+            entities, not as an unregulated offshore free-for-all. That is why “popular globally”
             is no longer a sufficient reason to fund an account if the firm cannot show a valid
             local authorisation path.
           </p>
@@ -109,7 +109,7 @@ export default function IndonesiaPage() {
               <a href="https://www.ojk.go.id/" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
                 Otoritas Jasa Keuangan (OJK)
               </a>{" "}
-              — official notices and digital-financial-asset materials
+              - official notices and digital-financial-asset materials
             </li>
             <li>
               OJK regulation on trading of digital financial assets including crypto assets
@@ -175,10 +175,10 @@ export default function IndonesiaPage() {
           </p>
           <ul className="list-disc pl-5 text-slate-700 space-y-2 mb-4">
             <li>
-              <strong>Indodax</strong> — long-running local exchange brand
+              <strong>Indodax</strong>, long-running local exchange brand
             </li>
             <li>
-              <strong>Tokocrypto</strong> — major local venue (Binance-linked history)
+              <strong>Tokocrypto</strong>, major local venue (Binance-linked history)
             </li>
             <li>
               <strong>Pintu, Pluang, Reku, Upbit Indonesia</strong> and other licensed PAKD names
@@ -194,7 +194,7 @@ export default function IndonesiaPage() {
         <section id="global" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Global brands: offshore vs local entity</h2>
           <p className="text-slate-700 mb-4">
-            Global exchanges still matter for product depth and liquidity — but the viable path in
+            Global exchanges still matter for product depth and liquidity, but the viable path in
             Indonesia is increasingly “local licensed entity,” not “use the international site and
             hope.”
           </p>
@@ -216,7 +216,7 @@ export default function IndonesiaPage() {
               <tbody className="divide-y divide-slate-100 text-slate-800">
                 <tr className="hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-slate-900">Bybit</td>
-                  <td className="px-4 py-3">Local licensed route via Indonesian entity — confirm live access</td>
+                  <td className="px-4 py-3">Local licensed route via Indonesian entity, confirm live access</td>
                   <td className="px-4 py-3">
                     <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>

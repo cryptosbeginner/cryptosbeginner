@@ -714,7 +714,7 @@ chmod 600 ~/.config/gmgn/.env`}
             of skill, identity, independence, or future performance. If several
             tracked wallets buy the same token in a short period, treat it as a
             research event that requires contract, liquidity, holder, timing,
-            and execution verification—not as a buy signal.
+            and execution verification, not as a buy signal.
           </p>
         </Section>
 
@@ -820,7 +820,7 @@ chmod 600 ~/.config/gmgn/.env`}
               >
                 GMGN Agent API documentation ↗
               </a>{" "}
-              — API-key setup, query and trading credential requirements,
+              - API-key setup, query and trading credential requirements,
               supported Agent API chains, and usage examples.
             </li>
 
@@ -833,7 +833,7 @@ chmod 600 ~/.config/gmgn/.env`}
               >
                 GMGN public-key generation guide ↗
               </a>{" "}
-              — Ed25519 key-pair and public-key upload instructions.
+              - Ed25519 key-pair and public-key upload instructions.
             </li>
 
             <li>
@@ -845,7 +845,7 @@ chmod 600 ~/.config/gmgn/.env`}
               >
                 GMGNAI/gmgn-skills repository ↗
               </a>{" "}
-              — Current skills, CLI installation, command matrix, workflows,
+              - Current skills, CLI installation, command matrix, workflows,
               and security notes.
             </li>
 
@@ -858,7 +858,7 @@ chmod 600 ~/.config/gmgn/.env`}
               >
                 GMGN AI Trader demo ↗
               </a>{" "}
-              — Public demo of token screening, wallet evaluation, simulation,
+              - Public demo of token screening, wallet evaluation, simulation,
               and manual confirmation workflows.
             </li>
           </ul>

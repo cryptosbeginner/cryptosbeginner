@@ -6,7 +6,7 @@ import WalletTracker from "./WalletTracker";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/wallet-tracker`;
 
-export const metadata: Metadata = { title: "Public Wallet Tracker | Balances, P/L & DeFi Research", description: "Review a public blockchain address with read-only CoinStats balance, performance, and DeFi snapshots—without submitting a seed phrase, private key, or exchange secret.", alternates: { canonical: PAGE_URL }, openGraph: { title: "Public Wallet Tracker | CryptosBeginner", description: "Read-only wallet research for public addresses, with clear privacy, source, and provider-cost boundaries.", url: PAGE_URL, type: "website" } };
+export const metadata: Metadata = { title: "Public Wallet Tracker | Balances, P/L & DeFi Research", description: "Review a public blockchain address with read-only CoinStats balance, performance, and DeFi snapshots, without submitting a seed phrase, private key, or exchange secret.", alternates: { canonical: PAGE_URL }, openGraph: { title: "Public Wallet Tracker | CryptosBeginner", description: "Read-only wallet research for public addresses, with clear privacy, source, and provider-cost boundaries.", url: PAGE_URL, type: "website" } };
 
 const faq = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
   { "@type": "Question", name: "Do I need to connect my wallet?", acceptedAnswer: { "@type": "Answer", text: "No. The tracker accepts a public blockchain address and requests a read-only provider snapshot. It never asks for a seed phrase, private key, exchange secret, or wallet connection." } },

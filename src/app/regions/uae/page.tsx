@@ -223,7 +223,7 @@ export default function UAEPage() {
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
                 The right UAE exchange depends first on where the service is
-                regulated—not just on fees or the number of coins listed.
+                regulated, not just on fees or the number of coins listed.
                 This guide separates Dubai, ADGM, DIFC and federal payment
                 considerations before comparing platforms.
               </p>
@@ -668,7 +668,7 @@ export default function UAEPage() {
 
                 <p className="mt-2 text-sm leading-6 text-slate-600">
                   Start with licensing, banking, AML, custody, tax and
-                  reporting—not an affiliate button.
+                  reporting, not an affiliate button.
                 </p>
               </div>
             </div>

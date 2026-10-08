@@ -267,7 +267,7 @@ export default function PakistanPage() {
 
               <p className="mt-2 text-sm leading-6 text-amber-950">
                 Bank access is tied to duly licensed VASPs and strict
-                conditions—not to every global exchange.
+                conditions, not to every global exchange.
               </p>
             </div>
 
@@ -762,7 +762,7 @@ export default function PakistanPage() {
         <section className="bg-slate-900 text-white">
           <div className="mx-auto max-w-5xl px-4 py-12 text-center">
             <h2 className="text-3xl font-bold">
-              Pakistan&apos;s licensing path is advancing—but verify every
+              Pakistan&apos;s licensing path is advancing, but verify every
               provider
             </h2>
 

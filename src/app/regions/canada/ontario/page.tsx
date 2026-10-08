@@ -379,7 +379,7 @@ export default function OntarioPage() {
               </p>
 
               <h2 className="mt-1 text-3xl font-bold text-slate-900">
-                What the OSC entry does—and does not—tell you
+                What the OSC entry does, and does not, tell you
               </h2>
             </div>
 

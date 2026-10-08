@@ -97,7 +97,7 @@ export default function SaudiArabiaPage() {
               currencies are not legal tender or approved financial products,
               while personal ownership is not clearly criminalised by a
               dedicated crypto ban. Residents may still encounter offshore
-              exchange access, P2P markets and regional platforms—but SAR
+              exchange access, P2P markets and regional platforms, but SAR
               payment channels, bank policies and local legal risk require
               careful attention.
             </p>

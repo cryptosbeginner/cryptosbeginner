@@ -143,7 +143,7 @@ export default function GhanaPage() {
               rel="noopener noreferrer"
               className="text-indigo-700 hover:underline"
             >
-              Bank of Ghana – Virtual Assets
+              Bank of Ghana - Virtual Assets
             </a>{" "}
             ·{" "}
             <a
@@ -171,7 +171,7 @@ export default function GhanaPage() {
             continuing operations.
           </p>
           <p className="text-slate-700 mb-4">
-            A joint BoG–SEC advertising directive dated 20 February
+            A joint BoG-SEC advertising directive dated 20 February
             2026 banned mass marketing of virtual assets and
             stablecoins without authorisation, including sandbox
             firms, and ordered existing billboards down within 48
