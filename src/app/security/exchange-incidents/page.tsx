@@ -669,7 +669,9 @@ export default function ExchangeIncidentsPage() {
                   {incidents.length}
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
-                  Incidents tracked on this page, from 2014 to 2026
+                  Incidents tracked on this page, from 2014 to 2026:
+                  18 hacks and exploits, 2 data breaches, and 1
+                  misuse-of-funds case
                 </p>
               </div>
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-5">
