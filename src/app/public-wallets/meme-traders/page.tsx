@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MemeTraders, { memeTraderFaqs } from "./MemeTraders";
+import MemeTraders from "./MemeTraders";
+import { memeTraderFaqs } from "./faqs";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/public-wallets/meme-traders`;
