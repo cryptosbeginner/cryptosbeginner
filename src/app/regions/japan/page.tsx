@@ -227,9 +227,9 @@ export default function JapanPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://www.binance.com/ja"
+                      href="https://go.cryptosbeginner.com/binance"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="sponsored noopener noreferrer"
                       className="font-medium text-emerald-600 hover:underline"
                     >
                       Visit site
