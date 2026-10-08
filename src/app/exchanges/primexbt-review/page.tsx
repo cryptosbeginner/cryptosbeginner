@@ -1052,6 +1052,126 @@ export default function PrimeXBTReviewPage() {
                 How Covesting works, profit shares, and the real risks.
               </p>
             </Link>
+            <Link
+              href="/exchanges/primexbt/registration-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Registration guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Create your account step by step, from email signup to
+                securing it with 2FA.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/login-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Login guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Sign in safely, manage devices and sessions, and fix common
+                login problems.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/demo-account"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Demo account</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Practice with virtual funds first, and understand what demo
+                trading cannot teach you.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/promo-code"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Promo code</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                How bonus codes work, where to enter them, and the terms
+                that actually matter.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/trading-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Trading guide</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Place your first trade, learn the order types, and avoid the
+                mistakes most beginners make.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/global-markets-trading"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Global markets</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Forex, indices, commodities, and shares CFDs, and how CFD
+                trading differs from owning assets.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/buy-crypto"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Buy crypto</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Card purchases, bank transfers, and crypto deposits, with
+                network safety checks.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/app"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Mobile app</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                The PrimeXBT app for Android and iOS: features, limits vs
+                desktop, and mobile security.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/academy"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Academy</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Free trading education from PrimeXBT and how to use it as a
+                beginner.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/contests"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Trading contests</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                How competitions work, prize structures, and what to know
+                before joining.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/customer-support-guide"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Customer support</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Contact options, what to expect, and how to get help
+                effectively.
+              </p>
+            </Link>
+            <Link
+              href="/exchanges/primexbt/rewards-center"
+              className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-indigo-300"
+            >
+              <h3 className="font-black text-slate-950">Rewards center</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Bonuses, promo codes, and referral rewards in one place, with
+                the fine print explained.
+              </p>
+            </Link>
           </div>
         </Section>
 
