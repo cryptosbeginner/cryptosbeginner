@@ -118,7 +118,7 @@ function Section({
   );
 }
 
-export default function PrimeXBT AcademyPage() {
+export default function PrimeXBTAcademyPage() {
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
