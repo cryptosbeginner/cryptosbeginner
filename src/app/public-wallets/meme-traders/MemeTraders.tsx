@@ -5,9 +5,11 @@ import Link from "next/link";
 import { featuredTraders, suggestTraderEmail, directorySourceUrl, directorySourceNote } from "./featured-traders";
 import { memeTraderFaqs } from "./faqs";
 
-const AFFILIATE_GMGN = "https://go.cryptosbeginner.com/GMGN";
+const AFFILIATE_GMGN = "https://gmgn.ai/?ref=XPS1eXg4";
 const AFFILIATE_AXIOM = "https://go.cryptosbeginner.com/Axiom";
 const AFFILIATE_PADRE = "https://trade.padre.gg/rk/1000xgems";
+const AFFILIATE_FOMO = "https://fomo.family/r/cryptosbeginner";
+const GMGN_REF = "XPS1eXg4";
 
 type SavedWallet = { address: string; label: string; chain: string; addedAt: string };
 const storageKey = "cryptosbeginner-public-wallets";
@@ -27,13 +29,13 @@ function detectChain(value: string): DetectedChain {
 
 const deepLinks = {
   Solana: [
-    { label: "GMGN", href: (a: string) => `https://gmgn.ai/sol/address/${a}`, note: "Trade history and token activity" },
-    { label: "Solscan", href: (a: string) => `https://solscan.io/account/${a}`, note: "Block explorer" },
-    { label: "Birdeye", href: (a: string) => `https://birdeye.so/profile/${a}?chain=solana`, note: "Portfolio view" },
+    { label: "GMGN", href: (a: string) => `https://gmgn.ai/sol/address/${a}?ref=${GMGN_REF}`, note: "Trade history and token activity", sponsored: true },
+    { label: "Solscan", href: (a: string) => `https://solscan.io/account/${a}`, note: "Block explorer", sponsored: false },
+    { label: "Birdeye", href: (a: string) => `https://birdeye.so/profile/${a}?chain=solana`, note: "Portfolio view", sponsored: false },
   ],
   Ethereum: [
-    { label: "GMGN", href: (a: string) => `https://gmgn.ai/eth/address/${a}`, note: "Trade history and token activity" },
-    { label: "Etherscan", href: (a: string) => `https://etherscan.io/address/${a}`, note: "Block explorer" },
+    { label: "GMGN", href: (a: string) => `https://gmgn.ai/eth/address/${a}?ref=${GMGN_REF}`, note: "Trade history and token activity", sponsored: true },
+    { label: "Etherscan", href: (a: string) => `https://etherscan.io/address/${a}`, note: "Block explorer", sponsored: false },
   ],
 };
 
@@ -216,7 +218,7 @@ export default function MemeTraders() {
                     key={l.label}
                     href={l.href(result.address)}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel={l.sponsored ? "sponsored noopener noreferrer" : "noopener noreferrer"}
                     title={l.note}
                     className="rounded-xl bg-slate-950 px-4 py-2.5 text-xs font-black text-white transition hover:bg-fuchsia-700"
                   >
@@ -258,9 +260,18 @@ export default function MemeTraders() {
                 >
                   Padre ↗
                 </a>
+                <a
+                  href={AFFILIATE_FOMO}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-black text-white transition hover:bg-emerald-700"
+                >
+                  FOMO ↗
+                </a>
               </div>
               <p className="mt-2 text-[11px] leading-5 text-slate-500">
-                Affiliate links: CryptosBeginner may earn a commission if you trade through them.
+                Affiliate links: CryptosBeginner may earn a commission if you trade through them,
+                including the GMGN research links above.
               </p>
               <div className="mt-6 border-t border-slate-200 pt-5">
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">
