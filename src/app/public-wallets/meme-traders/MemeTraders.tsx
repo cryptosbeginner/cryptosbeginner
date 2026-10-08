@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { featuredTraders, suggestTraderEmail, directorySourceUrl, directorySourceNote } from "./featured-traders";
+import { featuredTraders, suggestTraderEmail, directorySourceNote } from "./featured-traders";
 import { memeTraderFaqs } from "./faqs";
 
 const AFFILIATE_GMGN = "https://gmgn.ai/?ref=XPS1eXg4";
@@ -379,17 +379,8 @@ export default function MemeTraders() {
               <p className="text-xs font-black uppercase tracking-[0.16em] text-fuchsia-700">Curated directory</p>
               <h2 className="mt-2 text-2xl font-black">Featured meme coin traders</h2>
               <p className="mt-2 text-xs text-slate-500">
-                Source:{" "}
-                <a
-                  href={directorySourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-black text-cyan-700 underline"
-                >
-                  KOLlector
-                </a>{" "}
-                · {directorySourceNote}. Associations come from pump.fun and fomo profiles, not our
-                independent verification. Listing is not an endorsement.
+                Source: KOLlector · {directorySourceNote}. Associations come from pump.fun and fomo
+                profiles, not our independent verification. Listing is not an endorsement.
               </p>
             </div>
             <a
@@ -434,8 +425,8 @@ export default function MemeTraders() {
                     <p className="mt-1 font-mono text-xs text-slate-600">{shorten(t.address)}</p>
                     <p className="mt-1 text-xs text-slate-500">
                       {t.chain} · via KOLlector ({t.sourceNote}) ·{" "}
-                      <a href={t.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-black text-cyan-700 underline">
-                        view profile
+                      <a href={t.xUrl} target="_blank" rel="noopener noreferrer" className="font-black text-cyan-700 underline">
+                        view on X
                       </a>
                     </p>
                   </div>
