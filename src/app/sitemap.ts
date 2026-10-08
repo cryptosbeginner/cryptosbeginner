@@ -43,6 +43,8 @@ const recentRoutes = new Set([
   "/exchanges/primexbt/contests",
   "/exchanges/primexbt/customer-support-guide",
   "/exchanges/primexbt/rewards-center",
+  "/exchanges/bybit-review",
+  "/public-wallets/meme-traders",
 ]);
 
 const regionRoutes = [
@@ -124,6 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/crypto-screener",
     "/wallet-tracker",
     "/public-wallets",
+  "/public-wallets/meme-traders",
     "/wallets/popular",
     "/wallet-alerts",
     "/meme-coin-research",
@@ -137,6 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/learn/how-p2p-escrow-works",
     "/exchanges",
     "/exchanges/best-crypto-exchanges-2026",
+  "/exchanges/bybit-review",
     "/exchanges/no-kyc",
     "/exchanges/primexbt-review",
     "/exchanges/primexbt/fees",
