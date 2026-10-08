@@ -2,8 +2,12 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { featuredTraders, suggestTraderEmail } from "./featured-traders";
+import { featuredTraders, suggestTraderEmail, directorySourceUrl, directorySourceNote } from "./featured-traders";
 import { memeTraderFaqs } from "./faqs";
+
+const AFFILIATE_GMGN = "https://go.cryptosbeginner.com/GMGN";
+const AFFILIATE_AXIOM = "https://go.cryptosbeginner.com/Axiom";
+const AFFILIATE_PADRE = "https://trade.padre.gg/rk/1000xgems";
 
 type SavedWallet = { address: string; label: string; chain: string; addedAt: string };
 const storageKey = "cryptosbeginner-public-wallets";
@@ -226,6 +230,38 @@ export default function MemeTraders() {
                   Open in wallet tracker →
                 </Link>
               </div>
+              <p className="mt-5 text-xs font-black uppercase tracking-[0.14em] text-slate-500">
+                Trade memecoins on
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <a
+                  href={AFFILIATE_GMGN}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-black text-white transition hover:bg-emerald-700"
+                >
+                  GMGN ↗
+                </a>
+                <a
+                  href={AFFILIATE_AXIOM}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-black text-white transition hover:bg-emerald-700"
+                >
+                  Axiom ↗
+                </a>
+                <a
+                  href={AFFILIATE_PADRE}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-black text-white transition hover:bg-emerald-700"
+                >
+                  Padre ↗
+                </a>
+              </div>
+              <p className="mt-2 text-[11px] leading-5 text-slate-500">
+                Affiliate links: CryptosBeginner may earn a commission if you trade through them.
+              </p>
               <div className="mt-6 border-t border-slate-200 pt-5">
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">
                   Save to research board
@@ -331,6 +367,19 @@ export default function MemeTraders() {
             <div>
               <p className="text-xs font-black uppercase tracking-[0.16em] text-fuchsia-700">Curated directory</p>
               <h2 className="mt-2 text-2xl font-black">Featured meme coin traders</h2>
+              <p className="mt-2 text-xs text-slate-500">
+                Source:{" "}
+                <a
+                  href={directorySourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-black text-cyan-700 underline"
+                >
+                  KOLlector
+                </a>{" "}
+                · {directorySourceNote}. Associations come from pump.fun and fomo profiles, not our
+                independent verification. Listing is not an endorsement.
+              </p>
             </div>
             <a
               href={`mailto:${suggestTraderEmail}?subject=Featured%20trader%20suggestion`}
@@ -365,12 +414,17 @@ export default function MemeTraders() {
                   className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div>
-                    <p className="font-black text-slate-950">{t.label}</p>
+                    <p className="font-black text-slate-950">
+                      <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-fuchsia-100 text-[10px] font-black text-fuchsia-800">
+                        {t.rank}
+                      </span>
+                      {t.label}
+                    </p>
                     <p className="mt-1 font-mono text-xs text-slate-600">{shorten(t.address)}</p>
                     <p className="mt-1 text-xs text-slate-500">
-                      {t.chain} · self-disclosed ·{" "}
+                      {t.chain} · via KOLlector ({t.sourceNote}) ·{" "}
                       <a href={t.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-black text-cyan-700 underline">
-                        view disclosure
+                        view profile
                       </a>
                     </p>
                   </div>
