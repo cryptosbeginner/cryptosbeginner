@@ -48,6 +48,7 @@ const recentRoutes = new Set([
   "/tools/paper-trading",
   "/tools/coinstats-review",
   "/tools/odinbot-review",
+  "/wallets/prokey-review",
 ]);
 
 const regionRoutes = [
@@ -155,6 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/exchanges/primexbt/kyc-guide",
     "/exchanges/primexbt/copy-trading",
     "/wallets/best-crypto-wallets-2026",
+    "/wallets/prokey-review",
     "/dexes",
     "/prediction-markets",
     "/meme-coins",
