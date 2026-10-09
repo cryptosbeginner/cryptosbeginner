@@ -34,7 +34,7 @@ const navGroups: NavGroup[] = [
     description: "Build your crypto fundamentals",
     items: [
       { label: "Learn Hub", href: "/learn", note: "Guides for crypto newcomers" },
-      { label: "Wallets", href: "/wallets/best-crypto-wallets-2026", note: "Hardware and software wallets" },
+      { label: "Wallets", href: "/wallets", note: "Wallet guides and hardware reviews" },
       { label: "DEXes", href: "/dexes", note: "On-chain trading explained" },
       { label: "Security Incidents", href: "/security/exchange-incidents", note: "What failures teach us" },
       { label: "Crypto Glossary", href: "/learn/crypto-glossary", note: "Plain-English definitions" },

@@ -825,7 +825,7 @@ export default function PrimeXBTReviewPage() {
             </Link>
             {" "}and{" "}
             <Link
-              href="/wallets/best-crypto-wallets-2026"
+              href="/wallets/best-crypto-wallets"
               className="font-bold text-indigo-700 underline underline-offset-4"
             >
               crypto wallet options

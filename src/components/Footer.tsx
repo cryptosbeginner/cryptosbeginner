@@ -31,7 +31,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
     title: "Learn & Tools",
     links: [
       { label: "Learn Hub", href: "/learn" },
-      { label: "Wallets", href: "/wallets/best-crypto-wallets-2026" },
+      { label: "Wallets", href: "/wallets" },
       { label: "DEXes", href: "/dexes" },
       { label: "Crypto Glossary", href: "/learn/crypto-glossary" },
       { label: "Bitcoin Forks", href: "/learn/bitcoin-forks" },
