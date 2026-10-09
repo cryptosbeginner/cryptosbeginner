@@ -8,7 +8,7 @@ import { popularWallets } from "./wallets/popular/wallet-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const DEFAULT_MODIFIED = new Date("2026-08-27");
-const RECENT_MODIFIED = new Date("2026-10-08");
+const RECENT_MODIFIED = new Date("2026-10-09");
 
 // Routes refreshed or published in October 2026.
 const recentRoutes = new Set([
@@ -45,6 +45,7 @@ const recentRoutes = new Set([
   "/exchanges/primexbt/rewards-center",
   "/exchanges/bybit-review",
   "/public-wallets/meme-traders",
+  "/tools/paper-trading",
 ]);
 
 const regionRoutes = [
@@ -121,6 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/bitcoin-halving",
     "/tools/exchange-finder",
     "/tools/fee-calculator",
+    "/tools/paper-trading",
     "/crypto-research",
     "/crypto-prices",
     "/crypto-screener",
