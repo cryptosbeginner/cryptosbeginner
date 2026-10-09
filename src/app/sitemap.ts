@@ -46,6 +46,7 @@ const recentRoutes = new Set([
   "/exchanges/bybit-review",
   "/public-wallets/meme-traders",
   "/tools/paper-trading",
+  "/tools/coinstats-review",
 ]);
 
 const regionRoutes = [
@@ -123,6 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/exchange-finder",
     "/tools/fee-calculator",
     "/tools/paper-trading",
+    "/tools/coinstats-review",
     "/crypto-research",
     "/crypto-prices",
     "/crypto-screener",
