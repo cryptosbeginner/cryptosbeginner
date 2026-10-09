@@ -440,7 +440,7 @@ export default function SafePalS1ReviewPage() {
               with the longest auditability track record. <strong className="text-slate-900">Prokey
               Optimum ($59)</strong> is the budget open-source alternative with a web-only workflow.
               See our{" "}
-              <Link href="/wallets/best-crypto-wallets-2026" className="font-bold text-indigo-700 underline hover:text-indigo-900">
+              <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto wallets 2026
               </Link>{" "}
               guide and our{" "}
@@ -495,7 +495,7 @@ export default function SafePalS1ReviewPage() {
                 <Link href="/wallets/prokey-review" className="text-indigo-700 hover:text-indigo-900">
                   Read the Prokey Optimum review →
                 </Link>
-                <Link href="/wallets/best-crypto-wallets-2026" className="text-indigo-700 hover:text-indigo-900">
+                <Link href="/wallets/best-crypto-wallets" className="text-indigo-700 hover:text-indigo-900">
                   Compare the best crypto wallets →
                 </Link>
                 <Link href="/learn/seed-phrase-security" className="text-indigo-700 hover:text-indigo-900">

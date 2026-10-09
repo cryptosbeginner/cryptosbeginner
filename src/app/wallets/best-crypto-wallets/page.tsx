@@ -7,17 +7,17 @@ import WalletExplorer from "./WalletExplorer";
 import { walletFaqs, wallets } from "./wallets-data";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
-const UPDATED = "2026-08-27";
+const UPDATED = "2026-10-09";
 
 export const metadata: Metadata = {
-  title: "Best Crypto Wallets 2026 | Hardware, Mobile and Extensions",
+  title: "Best Crypto Wallets | Hardware, Mobile and Extensions",
   description:
-    "Compare crypto wallets for 2026: Ledger, Trezor, SafePal, Tangem, SecuX, CoolWallet, MetaMask, Phantom, Trust Wallet, Backpack, OKX Wallet, Base Wallet and Bitget Wallet.",
-  alternates: { canonical: `${SITE_URL}/wallets/best-crypto-wallets-2026` },
+    "Compare crypto wallets: Ledger, Trezor, SafePal, Tangem, SecuX, CoolWallet, MetaMask, Phantom, Trust Wallet, Backpack, OKX Wallet, Base Wallet and Bitget Wallet.",
+  alternates: { canonical: `${SITE_URL}/wallets/best-crypto-wallets` },
   openGraph: {
-    title: "Best Crypto Wallets 2026",
+    title: "Best Crypto Wallets",
     description: "Hardware, mobile and extension wallets compared in plain language.",
-    url: `${SITE_URL}/wallets/best-crypto-wallets-2026`,
+    url: `${SITE_URL}/wallets/best-crypto-wallets`,
     type: "article",
     images: [`${SITE_URL}/images/wallets/wallet-types.svg`],
   },
@@ -31,18 +31,18 @@ export default function BestWalletsPage() {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
         { "@type": "ListItem", position: 2, name: "Wallets", item: `${SITE_URL}/wallets` },
-        { "@type": "ListItem", position: 3, name: "Best crypto wallets 2026", item: `${SITE_URL}/wallets/best-crypto-wallets-2026` },
+        { "@type": "ListItem", position: 3, name: "Best crypto wallets", item: `${SITE_URL}/wallets/best-crypto-wallets` },
       ],
     },
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: "Best Crypto Wallets 2026",
+      headline: "Best Crypto Wallets",
       dateModified: UPDATED,
       inLanguage: "en",
       author: { "@type": "Organization", name: "CryptosBeginner", url: `${SITE_URL}/about` },
       publisher: { "@type": "Organization", name: "CryptosBeginner" },
-      mainEntityOfPage: `${SITE_URL}/wallets/best-crypto-wallets-2026`,
+      mainEntityOfPage: `${SITE_URL}/wallets/best-crypto-wallets`,
     },
     {
       "@context": "https://schema.org",
@@ -75,10 +75,10 @@ export default function BestWalletsPage() {
         <section className="border-b bg-slate-950 text-white">
           <div className="mx-auto max-w-6xl px-4 py-12">
             <p className="text-sm font-medium uppercase tracking-wider text-cyan-300">
-              Wallets · Updated <time dateTime={UPDATED}>27 August 2026</time>
+              Wallets · Updated <time dateTime={UPDATED}>9 October 2026</time>
             </p>
             <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">
-              Crypto wallets in 2026
+              Crypto wallets, compared
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
               Hardware for savings. Phone and browser wallets for daily use. The right choice depends on how you store keys, not on a ranking.

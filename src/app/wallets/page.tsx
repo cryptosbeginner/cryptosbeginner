@@ -306,7 +306,7 @@ export default function WalletsPage() {
             Research-led reviews, updated October 2026. No scores, no hype: what each device
             does well, where it falls short, and who it suits. For the full comparison, see
             our{" "}
-            <Link href="/wallets/best-crypto-wallets-2026" className="font-bold text-indigo-700 hover:text-indigo-900">
+            <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 hover:text-indigo-900">
               best crypto wallets 2026 guide
             </Link>
             .

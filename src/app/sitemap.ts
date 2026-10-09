@@ -157,7 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/exchanges/primexbt/withdrawal-guide",
     "/exchanges/primexbt/kyc-guide",
     "/exchanges/primexbt/copy-trading",
-    "/wallets/best-crypto-wallets-2026",
+    "/wallets/best-crypto-wallets",
     "/wallets/prokey-review",
     "/wallets/secux-nifty-review",
     "/wallets/safepal-s1-review",
