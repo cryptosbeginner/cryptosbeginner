@@ -11,8 +11,8 @@ const UPDATED = "9 October 2026";
 const UPDATED_ISO = "2026-10-09";
 const ORIGINALLY_PUBLISHED = "November 2023";
 
-// User's Prokey referral link, carried over from the legacy post.
-const AFFILIATE = "https://prokey.io/?reflink=eeef81b59f054f31957eee2be069415e";
+// Masked affiliate link (go.cryptosbeginner.com redirect).
+const AFFILIATE = "https://go.cryptosbeginner.com/Prokey";
 const YOUTUBE_VIDEO_ID = "6_P5Yn4k9ZQ";
 
 export const metadata: Metadata = {
