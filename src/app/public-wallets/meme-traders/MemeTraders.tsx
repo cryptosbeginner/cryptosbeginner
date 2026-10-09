@@ -156,6 +156,9 @@ export default function MemeTraders() {
             actually use. This tool resolves nothing by itself: no handles, no identities, no PnL. That is
             deliberate, because fabricated trader profiles are how people get scammed.
           </p>
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+            Page last reviewed: 9 October 2026
+          </p>
         </div>
       </section>
 
@@ -310,6 +313,41 @@ export default function MemeTraders() {
           )}
         </section>
 
+        <section className="mt-8 rounded-[1.5rem] border border-slate-200 bg-white p-6 sm:p-7" aria-label="How to verify a trader wallet">
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-fuchsia-700">Verification guide</p>
+          <h2 className="mt-2 text-2xl font-black">How to verify a meme coin trader's wallet in 5 steps</h2>
+          <ol className="mt-4 list-decimal space-y-4 pl-5 text-sm leading-7 text-slate-600">
+            <li>
+              <strong className="text-slate-900">Start from the trader's own channel.</strong> Only trust
+              an address the trader posted themselves: their verified X bio, an official post from their
+              account, or their project's docs. Never trust a wallet pasted by a reply account or a
+              "wallet drop" page.
+            </li>
+            <li>
+              <strong className="text-slate-900">Check the wallet's age and history.</strong> Open it on
+              Solscan or Etherscan and look at the first transactions. A wallet created yesterday with no
+              history behind the "guru" story is a red flag.
+            </li>
+            <li>
+              <strong className="text-slate-900">Read the actual trading, not the highlights.</strong> On
+              GMGN, look at the full history: frequency, position sizes, losers as well as winners. One
+              lucky 100x does not make a track record.
+            </li>
+            <li>
+              <strong className="text-slate-900">Search the address on X.</strong> If several accounts claim
+              the same wallet, or the address shows up in scam-call channels, walk away.
+            </li>
+            <li>
+              <strong className="text-slate-900">Watch before you risk anything.</strong> Save the wallet to
+              your research board, observe for weeks, and practice entries on our{" "}
+              <Link href="/tools/paper-trading" className="font-black text-fuchsia-700 underline">
+                paper trading simulator
+              </Link>{" "}
+              before you consider real funds.
+            </li>
+          </ol>
+        </section>
+
         <section className="mt-8 grid gap-4 md:grid-cols-3" aria-label="Where traders disclose wallets">
           <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-700">Legit source 1</p>
@@ -455,6 +493,17 @@ export default function MemeTraders() {
             their trades safe. Meme coins are extremely volatile and most go to zero. Availability of linked
             third-party sites depends on their own terms.
           </p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
+            <Link href="/tools/paper-trading" className="text-indigo-700 hover:text-indigo-900">
+              Practice with the paper trading simulator →
+            </Link>
+            <Link href="/meme-coins/reviews/gmgn-ai" className="text-indigo-700 hover:text-indigo-900">
+              Read our GMGN review →
+            </Link>
+            <Link href="/meme-coins/reviews/axiom-trade" className="text-indigo-700 hover:text-indigo-900">
+              Read our Axiom review →
+            </Link>
+          </div>
         </section>
       </div>
     </main>

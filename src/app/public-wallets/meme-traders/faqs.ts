@@ -34,4 +34,14 @@ export const memeTraderFaqs: FaqItem[] = [
     answer:
       "Copying trades you find online is extremely risky and this page is not financial advice. Public wallets can be cherry-picked, front-run, hedged off-chain, or simply lucky for a stretch. Most meme coins go to zero. If you trade at all, risk only money you can afford to lose completely and never mirror strangers with real capital.",
   },
+  {
+    question: "How often is the featured trader directory updated?",
+    answer:
+      "The directory reflects KOLlector's most-searched ranking for the seven days before 8 October 2026, and each entry shows how the wallet-to-handle link is recorded. We refresh the ranking monthly and date every refresh on the page, so you can always see how current the snapshot is.",
+  },
+  {
+    question: "Can I practice trading before risking real money?",
+    answer:
+      "Yes. Our paper trading simulator gives you a free $10,000 virtual account to practice buying and selling Solana memecoins against live indicative quotes. It runs entirely in your browser with no sign-up, and it is the safest place to learn how entries, exits, and position sizing feel before you consider real funds.",
+  },
 ];
