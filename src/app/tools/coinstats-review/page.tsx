@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -28,12 +29,21 @@ export const metadata: Metadata = {
       "A research-led CoinStats review: what the portfolio tracker covers, what Premium and Degen cost, how the read-only model works, and whether it fits you.",
     url: PAGE_URL,
     type: "article",
+    images: [
+      {
+        url: `${SITE_URL}/images/coinstats-app-hero.png`,
+        width: 600,
+        height: 600,
+        alt: "CoinStats app on a phone showing portfolio value, asset chart, and tabs for assets, DeFi, NFTs, and history",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "CoinStats Review 2026: Pricing, Features, Security & Verdict",
     description:
       "CoinStats portfolio tracker reviewed: coverage, pricing, AI features, pros, cons, and verdict.",
+    images: [`${SITE_URL}/images/coinstats-app-hero.png`],
   },
 };
 
@@ -267,6 +277,15 @@ export default function CoinStatsReviewPage() {
 
           <Section id="what-is">
             <H2>What is CoinStats?</H2>
+            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200">
+              <Image
+                src="/images/coinstats-app-hero.png"
+                alt="CoinStats app on a phone showing portfolio value, asset chart, and tabs for assets, DeFi, NFTs, and history"
+                width={600}
+                height={600}
+                className="h-auto w-full"
+              />
+            </div>
             <P>
               CoinStats is a crypto portfolio tracker: one dashboard that pulls together balances from
               your exchanges, wallets, DeFi positions, and NFTs, then shows live prices, allocation,
@@ -281,6 +300,15 @@ export default function CoinStatsReviewPage() {
               stars from 57,000 Google Play reviews. It runs on web, iOS, Android, macOS, and Apple
               Watch, with widgets for quick glances at your portfolio.
             </P>
+            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200">
+              <Image
+                src="/images/coinstats-app-ratings.png"
+                alt="CoinStats app store ratings: 4.8 stars from 153,000 App Store reviews and 4.7 stars from 57,000 Google Play reviews"
+                width={1353}
+                height={547}
+                className="h-auto w-full"
+              />
+            </div>
             <P>
               The core idea is simple and worth stating plainly: CoinStats watches your money, it never
               holds it. Connections are read-only, so the app can display your positions but cannot move
@@ -323,6 +351,15 @@ export default function CoinStatsReviewPage() {
               and NFT holdings are included too. This is where CoinStats pulls ahead of simpler
               trackers, though exotic positions sometimes show up as "unknown" until parsers catch up.
             </P>
+            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200">
+              <Image
+                src="/images/coinstats-app-features.png"
+                alt="CoinStats app views: a portfolio value alert, an ETH to USDT swap interface, and a wallet performance chart"
+                width={1184}
+                height={1100}
+                className="h-auto w-full"
+              />
+            </div>
             <P>
               <strong className="text-slate-900">AI agent and insights.</strong> Newer additions include
               an AI agent that answers plain questions about your own holdings ("which coin drove
