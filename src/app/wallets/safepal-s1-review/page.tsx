@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/wallets/safepal-s1-review`;
@@ -141,8 +142,8 @@ export default function SafePalS1ReviewPage() {
       "@id": PAGE_URL,
     },
     author: {
-      "@type": "Organization",
-      name: "CryptosBeginner",
+      "@type": "Person",
+      name: "Alex Rivera",
       url: SITE_URL,
     },
     publisher: {
@@ -194,6 +195,10 @@ export default function SafePalS1ReviewPage() {
             </p>
           </div>
         </section>
+
+        <div className="mx-auto max-w-4xl px-4 pt-10">
+          <AuthorByline updated="9 October 2026" />
+        </div>
 
         <div className="py-10">
           <Section>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/wallets/prokey-review`;
@@ -11,10 +12,8 @@ const UPDATED = "9 October 2026";
 const UPDATED_ISO = "2026-10-09";
 const ORIGINALLY_PUBLISHED = "November 2023";
 
-// TEMPORARY 2026-10-10: Prokey referral URL returns HTTP 500 (verified 2026-10-09).
-// CTAs repointed to SafePal until Prokey recovers. To revert, restore the Prokey
-// masked link: https://go.cryptosbeginner.com/Prokey
-const AFFILIATE = "https://go.cryptosbeginner.com/Safepal";
+// Masked affiliate link (go.cryptosbeginner.com redirect).
+const AFFILIATE = "https://go.cryptosbeginner.com/Prokey";
 const YOUTUBE_VIDEO_ID = "6_P5Yn4k9ZQ";
 
 export const metadata: Metadata = {
@@ -143,8 +142,8 @@ export default function ProkeyReviewPage() {
       "@id": PAGE_URL,
     },
     author: {
-      "@type": "Organization",
-      name: "CryptosBeginner",
+      "@type": "Person",
+      name: "Alex Rivera",
       url: SITE_URL,
     },
     publisher: {
@@ -197,7 +196,7 @@ export default function ProkeyReviewPage() {
               Ledger, Trezor, and SafePal.
             </p>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy SafePal S1</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy Prokey Optimum</PrimaryAffiliateButton>
             </div>
             <p className="mt-4 max-w-3xl text-xs leading-6 text-slate-400">
               <strong className="text-slate-200">Affiliate disclosure:</strong> Some links on this page
@@ -207,6 +206,10 @@ export default function ProkeyReviewPage() {
             </p>
           </div>
         </section>
+
+        <div className="mx-auto max-w-4xl px-4 pt-10">
+          <AuthorByline updated="9 October 2026" />
+        </div>
 
         <div className="py-10">
           <Section>
@@ -389,7 +392,7 @@ export default function ProkeyReviewPage() {
               section below matters: discounts from unofficial sellers are not worth the risk.
             </P>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy SafePal S1</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy Prokey Optimum for $59</PrimaryAffiliateButton>
             </div>
           </Section>
 
@@ -466,7 +469,7 @@ export default function ProkeyReviewPage() {
               <strong className="text-slate-900">SafePal S1</strong> is cheaper still and fully
               air-gapped, communicating by QR code. It suits the paranoid well, at the cost of a more
               fiddly signing flow. See our{" "}
-              <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 underline hover:text-indigo-900">
+              <Link href="/wallets/best-crypto-wallets-2026" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto wallets 2026
               </Link>{" "}
               guide for the full comparison.
@@ -488,7 +491,7 @@ export default function ProkeyReviewPage() {
               for the price of a dinner.
             </P>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy SafePal S1</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy Prokey Optimum for $59</PrimaryAffiliateButton>
             </div>
           </Section>
 
@@ -515,7 +518,7 @@ export default function ProkeyReviewPage() {
                 linked third-party sites depends on their own terms.
               </p>
               <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-                <Link href="/wallets/best-crypto-wallets" className="text-indigo-700 hover:text-indigo-900">
+                <Link href="/wallets/best-crypto-wallets-2026" className="text-indigo-700 hover:text-indigo-900">
                   Compare the best crypto wallets →
                 </Link>
                 <Link href="/learn/seed-phrase-security" className="text-indigo-700 hover:text-indigo-900">
