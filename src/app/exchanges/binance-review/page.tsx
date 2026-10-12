@@ -72,6 +72,16 @@ const faqItems = [
       "The largest incident was the May 2019 theft of 7,000 BTC, which Binance covered in full through its SAFU insurance fund, with no user losses. That response is a genuine positive in its track record, though no exchange is immune to future incidents.",
   },
   {
+    question: "What are Binance bStocks?",
+    answer:
+      "bStocks are tokenized securities launched by Binance in June 2026, backed 1:1 by real shares. They trade 24/7 as USDT spot pairs (for example NVDAB/USDT for Nvidia) and give holders economic exposure to the share price without voting rights. Availability depends on your jurisdiction.",
+  },
+  {
+    question: "What is Aster DEX on Binance Wallet?",
+    answer:
+      "Aster DEX is an independent perpetuals protocol that integrated with the self-custody Binance Wallet in January 2026. It lets wallet users trade on-chain perpetuals on BNB Smart Chain, including stock-linked markets, without depositing funds on the centralized exchange. Binance did not build Aster; it provides the wallet rails Aster plugs into.",
+  },
+  {
     question: "Is Binance good for beginners?",
     answer:
       "Mostly yes. Binance Lite mode simplifies the interface, liquidity is the deepest in the industry so orders fill cleanly, and fees are low. The downsides for beginners are the overwhelming number of products, uneven customer support at peak times, and the need to confirm the platform is actually available in your country before signing up.",
@@ -422,6 +432,48 @@ export default function BinanceReviewPage() {
               Breadth is also the main usability complaint: the platform can overwhelm newcomers,
               and customer support response times stretch during market peaks. Start in Lite mode,
               ignore everything you do not understand, and expand only as needed.
+            </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Tokenized stocks and TradFi</h3>
+            <P>
+              In June 2026 Binance launched <strong className="text-slate-900">bStocks</strong>,
+              tokenized securities backed 1:1 by real shares held with the issuer. The first five
+              listings covered Nvidia, Tesla, Circle, Micron, and Sandisk, trading 24/7 as ordinary
+              USDT spot pairs (NVDAB/USDT, TSLAB/USDT, and so on). By August the list had grown past
+              46 names with over $500 million in assets within seven weeks of launch, according to
+              industry reporting.
+            </P>
+            <P>
+              Alongside spot bStocks, Binance lists <strong className="text-slate-900">TradFi
+              perpetuals</strong>: USDT-settled futures on equities with up to 20x leverage, funding
+              every eight hours, also trading around the clock. Together they let eligible users hold
+              equity exposure and hedge it without leaving the exchange. In September 2026, Ethena
+              chose Binance as the first venue to extend its USDe basis trade into equities, using
+              bStocks as spot collateral against short equity perpetuals, which is a meaningful
+              institutional vote of confidence in the plumbing.
+            </P>
+            <P>
+              Know what you are buying: bStocks give economic exposure to the share price but no
+              voting rights, and availability is jurisdiction-dependent. Tokenized equities are still
+              a young product class, so position sizing and the usual custody discipline apply.
+            </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Aster DEX inside Binance Wallet</h3>
+            <P>
+              One clarification worth making: Binance did not build Aster.{" "}
+              <strong className="text-slate-900">Aster DEX</strong> is an independent perpetuals
+              protocol, formed from the 2024 merger of Astherus and APX, that{" "}
+              <strong className="text-slate-900">integrated with Binance Wallet in January
+              2026</strong>, following earlier integrations with SafePal and Trust Wallet. From
+              inside the self-custody Binance Wallet, users can trade on-chain perpetuals on BNB
+              Smart Chain, including stock-linked markets such as Apple and Nvidia alongside crypto
+              pairs, without handing custody to an exchange.
+            </P>
+            <P>
+              Why it matters for this review: it shows where Binance is heading. The company is
+              pushing derivatives deeper into self-custody rails instead of keeping everything on
+              the centralized order book. For traders, that means a choice between Binance's
+              centralized futures (deepest liquidity, up to 125x on crypto) and on-chain perps via
+              Aster (you keep your keys, thinner liquidity). Beginners should treat high leverage
+              on either venue as a fast way to lose money, not a feature to maximize.
             </P>
           </Section>
 
