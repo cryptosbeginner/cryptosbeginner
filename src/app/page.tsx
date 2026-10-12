@@ -30,7 +30,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/exchanges/best-crypto-exchanges-2026"
+              href="/exchanges/best-crypto-exchanges"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition"
             >
               Compare Exchanges
@@ -101,7 +101,7 @@ export default function HomePage() {
                 notes.
               </p>
               <Link
-                href="/exchanges/best-crypto-exchanges-2026"
+                href="/exchanges/best-crypto-exchanges"
                 className="mt-3 inline-flex text-sm text-indigo-700 hover:underline"
               >
                 View exchange guide →
@@ -320,7 +320,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <Link
-              href="/exchanges/best-crypto-exchanges-2026"
+              href="/exchanges/best-crypto-exchanges"
               className="block p-5 rounded-xl bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm transition"
             >
               <p className="text-xs font-semibold text-indigo-600">
@@ -377,7 +377,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/exchanges/best-crypto-exchanges-2026"
+              href="/exchanges/best-crypto-exchanges"
               className="bg-emerald-500 hover:bg-emerald-600 font-semibold px-6 py-3 rounded-lg transition"
             >
               View Best Exchanges 2026

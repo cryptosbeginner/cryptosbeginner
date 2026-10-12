@@ -6,7 +6,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
   {
     title: "Compare",
     links: [
-      { label: "Best Exchanges", href: "/exchanges/best-crypto-exchanges-2026" },
+      { label: "Best Exchanges", href: "/exchanges/best-crypto-exchanges" },
       { label: "Exchange Finder", href: "/tools/exchange-finder" },
       { label: "Crypto Cards", href: "/crypto-cards" },
       { label: "No-KYC Exchanges", href: "/exchanges/no-kyc" },

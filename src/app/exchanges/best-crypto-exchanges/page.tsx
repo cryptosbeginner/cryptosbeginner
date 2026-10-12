@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Best Crypto Exchanges 2026: Fees, Security, PoR and Who Wins",
+export const metadata: Metadata = {
+  title: "Best Crypto Exchanges: Fees, Security, PoR and Who Wins",
   description:
-    "Updated August 2026 comparison of Binance, Bybit, Bitget, OKX, BingX, WEEX, MEXC, Kraken and PrimeXBT. Covers fees, Proof of Reserves, security history and who each exchange is actually best for.",
+    "Updated October 2026 comparison of Binance, Bybit, Bitget, OKX, BingX, WEEX, MEXC, Kraken and PrimeXBT. Covers fees, Proof of Reserves, security history and who each exchange is actually best for.",
+  alternates: {
+    canonical: "https://www.cryptosbeginner.com/exchanges/best-crypto-exchanges",
+  },
 };
 
 export default function BestExchangesPage() {
@@ -13,9 +17,9 @@ export default function BestExchangesPage() {
     "@graph": [
       {
         "@type": "Article",
-        headline: "Best Crypto Exchanges 2026",
+        headline: "Best Crypto Exchanges",
         datePublished: "2026-07-18",
-        dateModified: "2026-08-19",
+        dateModified: "2026-10-13",
         author: { "@type": "Person", name: "Alex Rivera" },
         publisher: { "@type": "Organization", name: "CryptosBeginner" },
       },
@@ -24,7 +28,7 @@ export default function BestExchangesPage() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "Which crypto exchange is best in 2026?",
+            name: "Which crypto exchange is best?",
             acceptedAnswer: {
               "@type": "Answer",
               text: "Binance is still the best overall for most users because of liquidity and product range. Bybit is stronger for derivatives. Bitget is stronger for copy trading. Kraken is the more conservative security pick.",
@@ -55,10 +59,10 @@ export default function BestExchangesPage() {
         <section className="bg-slate-50 border-b">
           <div className="max-w-4xl mx-auto px-4 py-12">
             <p className="text-sm font-medium text-indigo-600 mb-2">
-              Updated 19 August 2026 · By Alex Rivera
+              Updated 13 October 2026 · By Alex Rivera
             </p>
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-              Best Crypto Exchanges in 2026
+              Best Crypto Exchanges
             </h1>
             <p className="mt-4 text-lg text-slate-700">
               The right exchange depends on where you live, how you trade, and how much risk

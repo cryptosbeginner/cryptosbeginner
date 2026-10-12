@@ -148,7 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/learn/crypto-exchange-security-checklist",
     "/learn/how-p2p-escrow-works",
     "/exchanges",
-    "/exchanges/best-crypto-exchanges-2026",
+    "/exchanges/best-crypto-exchanges",
   "/exchanges/bybit-review",
     "/exchanges/no-kyc",
     "/exchanges/primexbt-review",

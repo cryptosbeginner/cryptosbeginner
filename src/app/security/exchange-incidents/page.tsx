@@ -323,7 +323,7 @@ const incidents: Incident[] = [
       "Bybit's loss highlighted that custody risk remains central even for large and well-known exchanges. Blind signing defeating a multisig shows that the human approval step is itself an attack surface.",
     amountUsd: 1500,
     sourceUrl: "https://rekt.news/bybit-rekt",
-    relatedSlug: "/exchanges/best-crypto-exchanges-2026",
+    relatedSlug: "/exchanges/best-crypto-exchanges",
   },
 
   // Drift Protocol 2026

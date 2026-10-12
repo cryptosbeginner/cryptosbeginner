@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/wallets/best-crypto-wallets",
         permanent: true,
       },
+      {
+        source: "/exchanges/best-crypto-exchanges-2026",
+        destination: "/exchanges/best-crypto-exchanges",
+        permanent: true,
+      },
     ];
   },
   images: {

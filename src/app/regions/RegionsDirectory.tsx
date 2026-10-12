@@ -488,7 +488,7 @@ export default function RegionsDirectory() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/exchanges/best-crypto-exchanges-2026"
+              href="/exchanges/best-crypto-exchanges"
               className="rounded-lg bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
             >
               Compare Exchanges

@@ -11,7 +11,7 @@ const navGroups: NavGroup[] = [
     label: "Compare",
     description: "Start with a product comparison",
     items: [
-      { label: "Best Exchanges", href: "/exchanges/best-crypto-exchanges-2026", note: "Fees, safety and liquidity" },
+      { label: "Best Exchanges", href: "/exchanges/best-crypto-exchanges", note: "Fees, safety and liquidity" },
       { label: "Exchange Finder", href: "/tools/exchange-finder", note: "Answer a few questions" },
       { label: "Crypto Cards", href: "/crypto-cards", note: "31 cards, fees and regions" },
       { label: "No-KYC Exchanges", href: "/exchanges/no-kyc", note: "Verification and limitations" },

@@ -256,7 +256,7 @@ export default function PrimeXBTReviewPage() {
               </PrimaryAffiliateButton>
 
               <Link
-                href="/exchanges/best-crypto-exchanges-2026"
+                href="/exchanges/best-crypto-exchanges"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 no-underline transition hover:bg-slate-100 sm:w-auto"
               >
                 Compare crypto exchanges
@@ -876,7 +876,7 @@ export default function PrimeXBTReviewPage() {
             <p>
               For many beginners, a major spot exchange from our{" "}
               <Link
-                href="/exchanges/best-crypto-exchanges-2026"
+                href="/exchanges/best-crypto-exchanges"
                 className="font-bold text-indigo-700 underline underline-offset-4"
               >
                 best crypto exchanges guide
@@ -980,7 +980,7 @@ export default function PrimeXBTReviewPage() {
               </PrimaryAffiliateButton>
 
               <Link
-                href="/exchanges/best-crypto-exchanges-2026"
+                href="/exchanges/best-crypto-exchanges"
                 style={{
                   color: "#ffffff",
                   textDecoration: "none",

@@ -426,7 +426,7 @@ export default function SeedPhraseSecurityPage() {
               </div>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Link
-                  href="/exchanges/best-crypto-exchanges-2026"
+                  href="/exchanges/best-crypto-exchanges"
                   className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700"
                 >
                   View Best Crypto Exchanges 2026
