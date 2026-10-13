@@ -55,6 +55,7 @@ const recentRoutes = new Set([
   "/exchanges/weex-review",
   "/exchanges/blofin-review",
   "/exchanges/bitunix-review",
+  "/exchanges/m2-review",
   "/public-wallets/meme-traders",
   "/tools/paper-trading",
   "/tools/coinstats-review",
