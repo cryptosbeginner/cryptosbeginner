@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/primexbt-review`;
 
-const UPDATED = "8 October 2026";
-const UPDATED_ISO = "2026-10-08";
+const UPDATED = "3 October 2026";
+const UPDATED_ISO = "2026-10-03";
 
 const AFFILIATE = "https://go.prmx.co/visit/?bta=36112&nci=7605";
 const AFFILIATE_BANNER =

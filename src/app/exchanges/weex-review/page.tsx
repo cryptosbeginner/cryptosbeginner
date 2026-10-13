@@ -8,8 +8,8 @@ import AuthorByline from "@/components/AuthorByline";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/weex-review`;
 
-const UPDATED = "13 October 2026";
-const UPDATED_ISO = "2026-10-13";
+const UPDATED = "1 October 2026";
+const UPDATED_ISO = "2026-10-01";
 const ORIGINALLY_PUBLISHED = "3 May 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-05-03";
 

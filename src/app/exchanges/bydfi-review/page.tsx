@@ -8,8 +8,8 @@ import AuthorByline from "@/components/AuthorByline";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/bydfi-review`;
 
-const UPDATED = "11 October 2026";
-const UPDATED_ISO = "2026-10-11";
+const UPDATED = "2 October 2026";
+const UPDATED_ISO = "2026-10-02";
 const ORIGINALLY_PUBLISHED = "12 May 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-05-12";
 
