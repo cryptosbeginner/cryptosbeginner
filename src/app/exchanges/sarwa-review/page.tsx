@@ -270,6 +270,16 @@ export default function SarwaReviewPage() {
               By Alex Rivera · Reviewed for CryptosBeginner
             </p>
 
+            <p className="mt-3 text-sm">
+              <Link
+                href="/ar/exchanges/sarwa-review"
+                hrefLang="ar"
+                className="font-bold text-indigo-700 hover:underline"
+              >
+                اقرأ بالعربية ←
+              </Link>
+            </p>
+
             <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
               Sarwa Review 2026: Invest, Trade and Save from the UAE
             </h1>
