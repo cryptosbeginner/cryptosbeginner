@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-09-28";
 const ORIGINALLY_PUBLISHED = "2 June 2024";
 const ORIGINALLY_PUBLISHED_ISO = "2024-06-02";
 
-const COINSPOT = "https://www.coinspot.com.au/";
+const COINSPOT = "https://go.cryptosbeginner.com/CoinspotAustralia";
 const COINSPOT_FEES = "https://www.coinspot.com.au/fees";
 
 export const metadata: Metadata = {
@@ -151,6 +151,7 @@ const tocItems = [
   { id: "withdraw", label: "How to withdraw" },
   { id: "security", label: "Security, regulation, and the 2025 incident" },
   { id: "products", label: "NFTs, bundles, OTC, and the card" },
+  { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
   { id: "alternatives", label: "Alternatives" },
@@ -285,10 +286,10 @@ export default function CoinSpotReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-10">
           <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-slate-800">
             <strong>Disclosure:</strong> The CoinSpot links on this page are
-            direct links, not affiliate links. CryptosBeginner earns nothing
-            if you sign up through them, and that does not change our
-            assessment criteria or conclusions. This page is educational
-            content, not financial advice.
+            affiliate links. If you sign up through them, CryptosBeginner
+            may earn a commission at no extra cost to you. This does not
+            change our assessment criteria or conclusions. This page is
+            educational content, not financial advice.
           </div>
 
           <figure className="mt-8">
@@ -587,6 +588,45 @@ export default function CoinSpotReviewPage() {
             also staking on select assets and SMSF support for retirement
             accounts, which is a nice touch for long-term Australian
             investors.
+          </P>
+        </Section>
+
+        <Section id="ratings">
+          <H2>What users say: ratings</H2>
+          <P>
+            Our verdict is our own, but it is worth seeing how other users
+            rate CoinSpot on public platforms. These are third-party
+            ratings, checked in October 2026, and they move over time.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.4 out of 5 (2,700+ reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.0 out of 5 (11,500+ reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.8 out of 5 (27,000+ ratings)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            The App Store score is unusually strong for a financial app.
+            The Trustpilot base is smaller and more mixed, with complaints
+            centering on withdrawal security holds, which is the honest
+            counterweight to the glowing app reviews.
           </P>
         </Section>
 
