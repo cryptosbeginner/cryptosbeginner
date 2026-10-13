@@ -55,7 +55,7 @@ export default function MarketScreener({ initialPayload }: { initialPayload: Mar
 
   useEffect(() => {
     const refreshTimer = window.setTimeout(() => void load(), 0);
-    const interval = window.setInterval(() => void load(true), 60_000);
+    const interval = window.setInterval(() => void load(true), 300_000);
     return () => { window.clearTimeout(refreshTimer); window.clearInterval(interval); };
   }, [load]);
 
