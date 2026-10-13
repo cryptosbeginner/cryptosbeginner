@@ -22,7 +22,7 @@ const faqs = [
   { question: "Are DEXes safer than centralized exchanges?", answer: "Neither label is a universal safety rating. DEX users retain wallet-control responsibilities but face smart-contract, token, oracle, liquidity, MEV, bridge, and transaction-signing risks. Centralized platforms introduce custody and account risks." },
 ];
 
-export const revalidate = 120;
+export const revalidate = 600;
 
 export default async function DexesPage() {
   const serviceModelCount = new Set(dexDirectoryServices.map((item) => item.kind)).size;
