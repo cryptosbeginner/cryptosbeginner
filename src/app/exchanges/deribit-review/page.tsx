@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-10-09";
 const ORIGINALLY_PUBLISHED = "3 June 2024";
 const ORIGINALLY_PUBLISHED_ISO = "2024-06-03";
 
-const DERIBIT = "https://www.deribit.com/";
+const DERIBIT = "https://go.cryptosbeginner.com/DeribitExchange";
 const DERIBIT_FEES = "https://support.deribit.com/hc/en-us/articles/25944746248989-Fees";
 const DERIBIT_DOCS = "https://support.deribit.com/hc/en-us";
 
@@ -280,9 +280,9 @@ export default function DeribitReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-10">
           <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-slate-800">
             <strong>Disclosure:</strong> The Deribit links on this page are
-            direct links, not affiliate links. CryptosBeginner earns nothing
-            if you sign up through them, and that does not change our
-            assessment criteria or conclusions. This page is educational
+            affiliate links. If you sign up through them, CryptosBeginner
+            may earn a commission at no extra cost to you. This does not
+            change our assessment criteria or conclusions. This page is educational
             content, not financial advice.
           </div>
 
