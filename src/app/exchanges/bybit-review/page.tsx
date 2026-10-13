@@ -8,8 +8,8 @@ import AuthorByline from "@/components/AuthorByline";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/bybit-review`;
 
-const UPDATED = "13 October 2026";
-const UPDATED_ISO = "2026-10-13";
+const UPDATED = "30 September 2026";
+const UPDATED_ISO = "2026-09-30";
 
 const AFFILIATE = "https://go.cryptosbeginner.com/Bybit";
 

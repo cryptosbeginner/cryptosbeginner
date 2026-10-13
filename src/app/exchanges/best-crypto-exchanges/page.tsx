@@ -98,6 +98,7 @@ export default function BestExchangesPage() {
               <li><a href="#bitget" className="hover:underline">Bitget</a></li>
               <li><a href="#alternatives" className="hover:underline">OKX, BingX, WEEX, MEXC</a></li>
               <li><a href="#conservative" className="hover:underline">Kraken & PrimeXBT</a></li>
+              <li><a href="#more-reviews" className="hover:underline">More reviewed exchanges</a></li>
               <li><a href="#how-to-choose" className="hover:underline">How to choose</a></li>
               <li><a href="#faq" className="hover:underline">FAQ</a></li>
             </ol>
@@ -271,6 +272,8 @@ export default function BestExchangesPage() {
               compete on low headline fees and a long tail of altcoins. That is useful for smaller
               names. It is not automatically better for BTC or ETH, where liquidity still matters more.{" "}
               <Link href="/exchanges/mexc-review" className="text-indigo-600 font-semibold hover:underline">Read our full MEXC review →</Link>
+              {" "}
+              <Link href="/exchanges/weex-review" className="text-indigo-600 font-semibold hover:underline">Read our full WEEX review →</Link>
             </p>
           </article>
 
@@ -288,6 +291,41 @@ export default function BestExchangesPage() {
               other markets on one platform.{" "}
               <Link href="/exchanges/primexbt-review" className="text-indigo-600 font-semibold hover:underline">Read our full PrimeXBT review →</Link>
             </p>
+          </article>
+
+          <article id="more-reviews">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">6. More exchanges we reviewed</h2>
+            <p className="text-slate-700 mb-4">
+              We review more venues than the main shortlist. These are worth a look if your
+              situation is specific: regulated futures, EU licensing, Gulf fiat rails, or
+              no-KYC derivatives.
+            </p>
+            <ul className="space-y-3 text-slate-700">
+              <li>
+                <Link href="/exchanges/deribit-review" className="text-indigo-600 font-semibold hover:underline">Deribit review</Link>
+                {" "}: the professional choice for regulated futures and options.
+              </li>
+              <li>
+                <Link href="/exchanges/whitebit-review" className="text-indigo-600 font-semibold hover:underline">WhiteBIT review</Link>
+                {" "}: the EU-licensed venue, holding an Austrian MiCA licence.
+              </li>
+              <li>
+                <Link href="/exchanges/rain-review" className="text-indigo-600 font-semibold hover:underline">Rain review</Link>
+                {" "}: the licensed option for the Gulf, with Central Bank of Bahrain licensing and local fiat rails.
+              </li>
+              <li>
+                <Link href="/exchanges/bydfi-review" className="text-indigo-600 font-semibold hover:underline">BYDFi review</Link>
+                {" "}: no-KYC derivatives with 500x BTC and ETH futures and copy trading.
+              </li>
+              <li>
+                <Link href="/exchanges/blofin-review" className="text-indigo-600 font-semibold hover:underline">BloFin review</Link>
+                {" "}: no-KYC futures with Fireblocks custody and published proof of reserves.
+              </li>
+              <li>
+                <Link href="/exchanges/bitunix-review" className="text-indigo-600 font-semibold hover:underline">Bitunix review</Link>
+                {" "}: low-fee futures with published reserves, though withdrawals now require KYC.
+              </li>
+            </ul>
           </article>
         </section>
 
