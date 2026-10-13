@@ -140,6 +140,7 @@ const tocItems = [
   { id: "regulation", label: "Regulation and licensing" },
   { id: "products", label: "Products and trading tools" },
   { id: "availability", label: "Where it is available" },
+  { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
   { id: "alternatives", label: "Alternatives" },
@@ -569,6 +570,43 @@ export default function KrakenReviewPage() {
             jurisdictions including Russia, Cuba, Iran, North Korea, and
             Syria are excluded. Always check the current supported-countries
             list for your residence before planning around Kraken.
+          </P>
+        </Section>
+
+        <Section id="ratings">
+          <H2>What users say: ratings</H2>
+          <P>
+            Our verdict is our own, but it is worth seeing how other users rate
+            Kraken on public platforms. These are third-party ratings, checked in
+            October 2026, and they move over time.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">2.0 out of 5 (~8,600 reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.1 out of 5 (~52K)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.7 out of 5 (~31K)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            Trustpilot skews toward dispute-driven reviews; the App Store score from
+            mobile users is much friendlier, while the Play Store sits in between.
           </P>
         </Section>
 
