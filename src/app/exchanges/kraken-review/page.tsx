@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-10-11";
 const ORIGINALLY_PUBLISHED = "3 May 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-05-03";
 
-const KRAKEN = "https://www.kraken.com/";
+const KRAKEN = "https://go.cryptosbeginner.com/Kraken";
 const KRAKEN_FEES = "https://www.kraken.com/features/fee-schedule";
 const KRAKEN_POR = "https://www.kraken.com/proof-of-reserves";
 
@@ -276,9 +276,9 @@ export default function KrakenReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-10">
           <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-slate-800">
             <strong>Disclosure:</strong> The Kraken links on this page are
-            direct links, not affiliate links. CryptosBeginner earns nothing
-            if you sign up through them, and that does not change our
-            assessment criteria or conclusions. This page is educational
+            affiliate links. If you sign up through them, CryptosBeginner
+            may earn a commission at no extra cost to you. This does not
+            change our assessment criteria or conclusions. This page is educational
             content, not financial advice.
           </div>
 
