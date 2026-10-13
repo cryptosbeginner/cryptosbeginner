@@ -97,7 +97,7 @@ export default function PriceTracker({ initialPayload }: { initialPayload: Marke
   useEffect(() => {
     // The initial payload is server-rendered; this effect only keeps it fresh in the browser.
     const initialRefresh = window.setTimeout(() => void load(), 0);
-    const interval = window.setInterval(() => void load(true), 60_000);
+    const interval = window.setInterval(() => void load(true), 300_000);
     return () => { window.clearTimeout(initialRefresh); window.clearInterval(interval); };
   }, [load]);
 
