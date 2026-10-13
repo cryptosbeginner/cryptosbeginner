@@ -59,6 +59,8 @@ const recentRoutes = new Set([
   "/exchanges/coinspot-review",
   "/exchanges/paybis-review",
   "/exchanges/coinflare-review",
+  "/exchanges/sarwa-review",
+  "/ar/exchanges/sarwa-review",
   "/public-wallets/meme-traders",
   "/tools/paper-trading",
   "/tools/coinstats-review",
