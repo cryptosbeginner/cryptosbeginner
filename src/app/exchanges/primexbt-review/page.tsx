@@ -529,6 +529,45 @@ export default function PrimeXBTReviewPage() {
           </p>
         </Section>
 
+        <Section id="ratings">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            What users say: ratings
+          </h2>
+          <p className="mt-3 leading-7 text-slate-800">
+            Our verdict is our own, but it is worth seeing how other users rate
+            PrimeXBT on public platforms. These are third-party ratings, checked in
+            October 2026, and they move over time.
+          </p>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">3.3 out of 5 (~400+ reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.3 out of 5 (~8K)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.6 out of 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 leading-7 text-slate-800">
+            The review base is small across the board, so take these figures as
+            directional rather than definitive.
+          </p>
+        </Section>
+
         <Section id="pros-cons">
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Pros and cons

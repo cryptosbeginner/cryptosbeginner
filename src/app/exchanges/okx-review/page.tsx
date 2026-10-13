@@ -144,6 +144,7 @@ const tocItems = [
   { id: "regulation", label: "Regulation, licences, and the 2025 settlements" },
   { id: "security", label: "Security and proof of reserves" },
   { id: "products", label: "Products and trading tools" },
+  { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
   { id: "alternatives", label: "Alternatives" },
@@ -527,6 +528,44 @@ export default function OkxReviewPage() {
           <div className="mt-7">
             <PrimaryCtaButton>Visit OKX</PrimaryCtaButton>
           </div>
+        </Section>
+
+        <Section id="ratings">
+          <H2>What users say: ratings</H2>
+          <P>
+            Our verdict is our own, but it is worth seeing how other users rate OKX
+            on public platforms. These are third-party ratings, checked in October
+            2026, and they move over time.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">2.3 out of 5 (~1,700 reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.2 out of 5 (~923K)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.6 out of 5 (~22K)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            Trustpilot skews toward complaints and disputes, while the app-store
+            scores from hundreds of thousands of mobile users paint a better
+            picture.
+          </P>
         </Section>
 
         <Section id="pros-cons">

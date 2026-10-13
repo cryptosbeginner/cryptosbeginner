@@ -141,6 +141,7 @@ const tocItems = [
   { id: "security", label: "Security and proof of reserves" },
   { id: "regulation", label: "Regulation and availability" },
   { id: "products", label: "Products and trading tools" },
+  { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
   { id: "alternatives", label: "Alternatives" },
@@ -537,6 +538,43 @@ export default function BitgetReviewPage() {
             who already understand leverage, funding, and liquidation; it
             punishes tourists. The demo trading mode is genuinely useful: paper
             trade the futures interface before committing real money.
+          </P>
+        </Section>
+
+        <Section id="ratings">
+          <H2>What users say: ratings</H2>
+          <P>
+            Our verdict is our own, but it is worth seeing how other users rate
+            Bitget on public platforms. These are third-party ratings, checked in
+            October 2026, and they move over time.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">2.2 out of 5 (~2,300 reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.5 out of 5</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.6 out of 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            The low Trustpilot score reflects dispute-driven reviews; app-store
+            users rate the mobile apps considerably higher.
           </P>
         </Section>
 
