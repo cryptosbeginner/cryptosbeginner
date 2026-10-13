@@ -216,3 +216,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: ["/learn/crypto-glossary", "/crypto-research", "/crypto-cards", "/dexes", "/prediction-markets", "/exchanges/no-kyc", "/exchanges/primexbt-review"].includes(route) ? 0.8 : route.startsWith("/learn/crypto-glossary/") ? 0.6 : route.startsWith("/crypto-cards/") ? (editorialPages.some((page) => `/crypto-cards/${page.slug}` === route) ? 0.8 : 0.75) : route.startsWith("/dexes/") || route.startsWith("/prediction-markets/") || route.startsWith("/exchanges/no-kyc/") ? 0.7 : ["/crypto-prices", "/crypto-screener", "/wallet-tracker"].includes(route) ? 0.75 : 0.7,
   }));
 }
+
+// deploy-probe: verify Vercel main-branch webhook
