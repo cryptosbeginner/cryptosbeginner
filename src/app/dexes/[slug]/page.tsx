@@ -8,7 +8,7 @@ import { getDexStatsForService } from "../dex-stats";
 
 const siteUrl = "https://www.cryptosbeginner.com";
 
-export const revalidate = 120;
+export const revalidate = 600;
 
 export function generateStaticParams() {
   return dexServices.filter((service) => service.isDex).map((service) => ({ slug: service.slug }));

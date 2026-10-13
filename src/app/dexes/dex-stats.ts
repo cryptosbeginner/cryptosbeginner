@@ -47,7 +47,7 @@ function headersForCoinGecko(): Record<string, string> {
 async function getJson(url: string, headers: Record<string, string>) {
   const response = await fetch(url, {
     headers,
-    next: { revalidate: 120 },
+    next: { revalidate: 600 },
     signal: AbortSignal.timeout(8000),
   });
   if (!response.ok) throw new Error(`${response.status} from ${new URL(url).hostname}`);

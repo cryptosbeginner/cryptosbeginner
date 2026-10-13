@@ -325,6 +325,22 @@ export default function BestExchangesPage() {
                 <Link href="/exchanges/bitunix-review" className="text-indigo-600 font-semibold hover:underline">Bitunix review</Link>
                 {" "}: low-fee futures with published reserves, though withdrawals now require KYC.
               </li>
+              <li>
+                <Link href="/exchanges/m2-review" className="text-indigo-600 font-semibold hover:underline">M2 review</Link>
+                {" "}: the Abu Dhabi-licensed spot venue, ADGM and Bahamas licensed, with AED banking and 0.10% spot fees.
+              </li>
+              <li>
+                <Link href="/exchanges/coinspot-review" className="text-indigo-600 font-semibold hover:underline">CoinSpot review</Link>
+                {" "}: the Australian veteran, AUSTRAC-registered with 470+ coins and 0.1% market-order fees.
+              </li>
+              <li>
+                <Link href="/exchanges/paybis-review" className="text-indigo-600 font-semibold hover:underline">Paybis review</Link>
+                {" "}: the fiat on-ramp broker for buying crypto with cards in 180+ countries.
+              </li>
+              <li>
+                <Link href="/exchanges/coinflare-review" className="text-indigo-600 font-semibold hover:underline">Coinflare wind-down notice</Link>
+                {" "}: the former BITFLEX exchange shut down in April 2026; how to claim remaining funds.
+              </li>
             </ul>
           </article>
         </section>
