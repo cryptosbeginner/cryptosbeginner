@@ -3,13 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/bybit-review`;
 
-const UPDATED = "30 September 2026";
-const UPDATED_ISO = "2026-09-30";
+const UPDATED = "8 October 2026";
+const UPDATED_ISO = "2026-10-08";
 
 const AFFILIATE = "https://go.cryptosbeginner.com/Bybit";
 
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${SITE_URL}/images/bybit-homepage-2026.png`,
+        url: `${SITE_URL}/images/bybit-web3-portal.png`,
         width: 1107,
         height: 727,
         alt: "Bybit Web3 portal showing hot coins across multiple blockchains",
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
     title: "Bybit Review 2026: Fees, Security & the $1.5B Hack",
     description:
       "Bybit's fees, licensing, and products, plus an honest assessment of the largest exchange hack in history.",
-    images: [`${SITE_URL}/images/bybit-homepage-2026.png`],
+    images: [`${SITE_URL}/images/bybit-web3-portal.png`],
   },
 };
 
@@ -135,9 +134,8 @@ export default function BybitReviewPage() {
       "@id": PAGE_URL,
     },
     author: {
-      "@type": "Person",
-      name: "Alex Rivera",
-      url: SITE_URL,
+      "@type": "Organization",
+      name: "CryptosBeginner editorial team",
     },
     publisher: {
       "@type": "Organization",
@@ -232,7 +230,7 @@ export default function BybitReviewPage() {
               </PrimaryAffiliateButton>
 
               <Link
-                href="/exchanges/best-crypto-exchanges"
+                href="/exchanges/best-crypto-exchanges-2026"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 no-underline transition hover:bg-slate-100 sm:w-auto"
               >
                 Compare crypto exchanges
@@ -240,10 +238,6 @@ export default function BybitReviewPage() {
             </div>
           </div>
         </section>
-
-        <div className="mx-auto max-w-4xl px-4 pt-8">
-          <AuthorByline updated="13 October 2026" />
-        </div>
 
         <section className="mx-auto max-w-4xl px-4 pt-8">
           <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-slate-800">
@@ -277,8 +271,8 @@ export default function BybitReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-10">
           <figure>
             <Image
-              src="/images/bybit-homepage-2026.png"
-              alt="Bybit homepage with current promotions and product links"
+              src="/images/bybit-web3-portal.png"
+              alt="Bybit Web3 portal showing hot coins across multiple blockchains"
               width={1107}
               height={727}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -609,6 +603,45 @@ export default function BybitReviewPage() {
           </p>
         </Section>
 
+        <Section id="ratings">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            What users say: ratings
+          </h2>
+          <p className="mt-4 leading-8 text-slate-800">
+            Our verdict is our own, but it is worth seeing how other users rate
+            Bybit on public platforms. These are third-party ratings, checked in
+            October 2026, and they move over time.
+          </p>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">2.4 out of 5 (~7,800 reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.5 out of 5 (~1.4M)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.7 out of 5 (~7,400+)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 leading-8 text-slate-800">
+            Trustpilot skews toward dispute-driven reviews, while the app-store
+            scores from over a million mobile users are noticeably warmer.
+          </p>
+        </Section>
+
         <Section id="pros-cons">
           <h2 className="text-3xl font-black tracking-tight text-slate-950">
             Pros and cons
@@ -724,16 +757,6 @@ export default function BybitReviewPage() {
             competitive end of the market, roughly in line with Binance and
             OKX at the entry tier.
           </p>
-          <figure className="mt-6">
-            <Image
-              src="/images/bybit-fee-schedule-2026.png"
-              alt="Bybit fee schedule showing futures maker and taker rates by VIP tier"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              loading="lazy"
-            />
-          </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
             As with every exchange, the commission is only one cost layer.
@@ -773,59 +796,6 @@ export default function BybitReviewPage() {
             traditional-market instruments such as TradFi perpetuals and
             MT5-based CFDs.
           </p>
-
-          <h3 className="mt-8 text-xl font-black text-slate-950">
-            TradFi: stocks, ETFs, and where they fit
-          </h3>
-
-          <p className="mt-4 leading-8 text-slate-800">
-            This is where the review gets interesting for 2026. On 12 October
-            2026, Bybit opened trading in more than 1,000 US-listed stocks and
-            ETFs, settled in USDC, with fractional shares available. Apple,
-            Nvidia, Tesla, Micron, and the Invesco QQQ ETF are among the
-            listings. This is not another synthetic product: orders route
-            through Alpaca, a US self-clearing broker-dealer, which also holds
-            the underlying shares in custody, and clearing and settlement sit
-            with Alpaca&apos;s FINRA and SIPC-member clearing arm. Buyers get
-            an economic interest in the actual securities, not a
-            price-tracking derivative.
-          </p>
-
-          <p className="mt-4 leading-8 text-slate-800">
-            Two things to get straight. First, this sits alongside, not
-            instead of, Bybit&apos;s older synthetic TradFi products: USDT-settled
-            TradFi perpetuals on about 20 US stocks, three commodities, and
-            three ETFs with up to 10x leverage, plus xStocks tokenized equities
-            inside the Dual Asset structured-yield product. Perpetuals track a
-            price with funding costs; the new stock offering is backed by real
-            shares. Know which one you are trading. Second, availability is
-            limited to eligible users in permitted jurisdictions with completed
-            KYC, run through the Mauritius-regulated entity Infra Capital
-            Limited. If your country is not on the list, this section does not
-            apply to you.
-          </p>
-
-          <p className="mt-4 leading-8 text-slate-800">
-            The honest take: Bybit is clearly pushing to become a
-            multi-asset platform rather than a pure crypto exchange, and the
-            Alpaca-backed structure is more credible than the synthetic
-            tokenized-stock offerings that blew up in earlier cycles. It is
-            still early, the product is days old at the time of this update,
-            and USDC settlement plus equity exposure inside a crypto account
-            will not suit anyone who wants their stocks under their home
-            country&apos;s investor protections. But for eligible users who
-            already live on Bybit, it is a genuinely useful addition.
-          </p>
-          <figure className="mt-6">
-            <Image
-              src="/images/bybit-trading-interface-2026.png"
-              alt="Bybit spot trading interface with order book and chart"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              loading="lazy"
-            />
-          </figure>
           <figure className="mt-6">
             <Image
               src="/images/bybit-card.png"
@@ -924,7 +894,7 @@ export default function BybitReviewPage() {
             footprint, while OKX competes directly on derivatives with its
             own MiCA licensing. Our{" "}
             <Link
-              href="/exchanges/best-crypto-exchanges"
+              href="/exchanges/best-crypto-exchanges-2026"
               className="font-bold text-indigo-700 underline underline-offset-4"
             >
               best crypto exchanges of 2026
