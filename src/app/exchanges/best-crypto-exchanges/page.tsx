@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -195,6 +196,9 @@ export default function BestExchangesPage() {
             <a href="https://go.cryptosbeginner.com/binance" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
               Create Binance account →
             </a>
+            <p className="text-slate-700 mt-4">
+              <Link href="/exchanges/binance-review" className="text-indigo-600 font-semibold hover:underline">Read our full Binance review →</Link>
+            </p>
           </article>
 
           <article id="bybit">
@@ -220,6 +224,9 @@ export default function BestExchangesPage() {
             <a href="https://go.cryptosbeginner.com/Bybit" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
               Open Bybit →
             </a>
+            <p className="text-slate-700 mt-4">
+              <Link href="/exchanges/bybit-review" className="text-indigo-600 font-semibold hover:underline">Read our full Bybit review →</Link>
+            </p>
           </article>
 
           <article id="bitget">
@@ -237,6 +244,9 @@ export default function BestExchangesPage() {
             <a href="https://go.cryptosbeginner.com/Bitget-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="inline-block bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">
               Open Bitget →
             </a>
+            <p className="text-slate-700 mt-4">
+              <Link href="/exchanges/bitget-review" className="text-indigo-600 font-semibold hover:underline">Read our full Bitget review →</Link>
+            </p>
           </article>
 
           <article id="alternatives">
@@ -247,7 +257,8 @@ export default function BestExchangesPage() {
             <p className="text-slate-700 mb-4">
               <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">OKX</a>{" "}
               is the most complete: competitive fees, monthly zk-STARK PoR, and a serious Web3 wallet.
-              Choose it if you want trading and on-chain tools in one place.
+              Choose it if you want trading and on-chain tools in one place.{" "}
+              <Link href="/exchanges/okx-review" className="text-indigo-600 font-semibold hover:underline">Read our full OKX review →</Link>
             </p>
             <p className="text-slate-700 mb-4">
               <a href="https://go.cryptosbeginner.com/Bingx" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">BingX</a>{" "}
@@ -258,7 +269,8 @@ export default function BestExchangesPage() {
               and{" "}
               <a href="https://go.cryptosbeginner.com/MEXC-Bonus" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">MEXC</a>{" "}
               compete on low headline fees and a long tail of altcoins. That is useful for smaller
-              names. It is not automatically better for BTC or ETH, where liquidity still matters more.
+              names. It is not automatically better for BTC or ETH, where liquidity still matters more.{" "}
+              <Link href="/exchanges/mexc-review" className="text-indigo-600 font-semibold hover:underline">Read our full MEXC review →</Link>
             </p>
           </article>
 
@@ -267,12 +279,14 @@ export default function BestExchangesPage() {
             <p className="text-slate-700 mb-4">
               <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">Kraken</a>{" "}
               is the conservative pick. You will usually pay more than on Binance or Bybit. In
-              return you get one of the cleaner long-run reputations among large centralized venues.
+              return you get one of the cleaner long-run reputations among large centralized venues.{" "}
+              <Link href="/exchanges/kraken-review" className="text-indigo-600 font-semibold hover:underline">Read our full Kraken review →</Link>
             </p>
             <p className="text-slate-700 mb-4">
               <a href="https://go.cryptosbeginner.com/PrimeXBT" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">PrimeXBT</a>{" "}
               is not a classic spot supermarket. It is more useful if you want crypto alongside
-              other markets on one platform.
+              other markets on one platform.{" "}
+              <Link href="/exchanges/primexbt-review" className="text-indigo-600 font-semibold hover:underline">Read our full PrimeXBT review →</Link>
             </p>
           </article>
         </section>
