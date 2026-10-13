@@ -962,3 +962,5 @@ export default function SarwaReviewArPage() {
     </>
   );
 }
+
+// rebuild-trigger: ensure both sarwa files in one build
