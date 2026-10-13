@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/ar/exchanges/sarwa-review`;
@@ -192,7 +191,7 @@ export default function SarwaReviewArPage() {
     },
     author: {
       "@type": "Person",
-      name: "Alex Rivera",
+      name: "Hassan Malik",
       url: SITE_URL,
     },
     publisher: {
@@ -265,7 +264,17 @@ export default function SarwaReviewArPage() {
           <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
             <p className="text-sm font-bold text-indigo-700">
               آخر تحديث {UPDATED} · نُشرت في الأصل {ORIGINALLY_PUBLISHED} ·
-              بقلم Alex Rivera · رُوجعت لموقع CryptosBeginner
+              بقلم Hassan Malik · رُوجعت لموقع CryptosBeginner
+            </p>
+
+            <p className="mt-3 text-sm">
+              <Link
+                href="/exchanges/sarwa-review"
+                hrefLang="en"
+                className="font-bold text-indigo-700 hover:underline"
+              >
+                Read in English →
+              </Link>
             </p>
 
             <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950 sm:text-5xl">
@@ -295,7 +304,27 @@ export default function SarwaReviewArPage() {
         </section>
 
         <div className="mx-auto max-w-4xl px-4 pt-10">
-          <AuthorByline updated={UPDATED} />
+          <div className="flex items-start gap-4 rounded-[1.5rem] border border-slate-200 bg-white p-6">
+            <div
+              aria-hidden="true"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-indigo-700 text-base font-black text-white"
+            >
+              HM
+            </div>
+            <div>
+              <p className="text-sm font-black text-slate-950">
+                Hassan Malik{" "}
+                <span className="font-normal text-slate-500">
+                  · مساهم المحتوى العربي، CryptosBeginner
+                </span>
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                كل مراجعة مبنية على بحث: المواصفات والرسوم وتوفر الخدمة تُتحقق
+                من المصادر الرسمية قبل النشر وتُعاد مراجعتها مع كل تحديث.
+                روابط الإحالة لا تؤثر على التقييم. آخر مراجعة {UPDATED}.
+              </p>
+            </div>
+          </div>
         </div>
 
         <section className="mx-auto max-w-4xl px-4 pb-10">
