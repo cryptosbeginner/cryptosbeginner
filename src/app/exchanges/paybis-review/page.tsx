@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-09-27";
 const ORIGINALLY_PUBLISHED = "19 June 2024";
 const ORIGINALLY_PUBLISHED_ISO = "2024-06-19";
 
-const PAYBIS = "https://paybis.com/";
+const PAYBIS = "https://go.cryptosbeginner.com/paybis";
 
 export const metadata: Metadata = {
   title: "Paybis Review 2026: Fees, How to Buy Crypto & Is It Legit?",
@@ -149,6 +149,7 @@ const tocItems = [
   { id: "sell", label: "How to sell and cash out" },
   { id: "payments", label: "Payment methods and coverage" },
   { id: "security", label: "Security and regulation" },
+  { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
   { id: "alternatives", label: "Alternatives" },
@@ -281,10 +282,10 @@ export default function PaybisReviewPage() {
         <section className="mx-auto max-w-4xl px-4 pb-10">
           <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-slate-800">
             <strong>Disclosure:</strong> The Paybis links on this page are
-            direct links, not affiliate links. CryptosBeginner earns nothing
-            if you sign up through them, and that does not change our
-            assessment criteria or conclusions. This page is educational
-            content, not financial advice.
+            affiliate links. If you sign up through them, CryptosBeginner
+            may earn a commission at no extra cost to you. This does not
+            change our assessment criteria or conclusions. This page is
+            educational content, not financial advice.
           </div>
 
           <figure className="mt-8">
@@ -506,6 +507,45 @@ export default function PaybisReviewPage() {
             sends crypto to your wallet rather than holding an exchange
             balance, there is no big honeypot of customer funds sitting on
             the platform. Your main job is keeping your own wallet secure.
+          </P>
+        </Section>
+
+        <Section id="ratings">
+          <H2>What users say: ratings</H2>
+          <P>
+            Our verdict is our own, but it is worth seeing how other users
+            rate Paybis on public platforms. These are third-party ratings,
+            checked in October 2026, and they move over time.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Platform</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Rating</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Trustpilot</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.1 out of 5 (31,000+ reviews)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Google Play</td>
+                  <td className="py-3 pr-4 text-right font-bold">4.7 out of 5</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Apple App Store</td>
+                  <td className="py-3 pr-4 text-right font-bold">5.0 out of 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            The Trustpilot score comes from tens of thousands of
+            independent reviews, with users most often praising transaction
+            speed and support responsiveness. The app store scores are as
+            reported on Paybis's own site.
           </P>
         </Section>
 
