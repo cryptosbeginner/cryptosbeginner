@@ -471,6 +471,52 @@ export default function UAEPage() {
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6 md:p-8">
+            <p className="text-sm font-bold uppercase tracking-wider text-indigo-600">
+              Beyond crypto
+            </p>
+
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900">
+              Want stocks and ETFs instead?
+            </h2>
+
+            <p className="mt-3 leading-7 text-slate-700">
+              If you are in the UAE and would rather invest in US stocks
+              and ETFs than crypto, Sarwa is the local option built for
+              that. It is regulated by the FSRA in ADGM and the DFSA in
+              the DIFC, and offers both hands-off automated portfolios
+              and self-directed trading of stocks, ETFs and options. We
+              reviewed it in detail, including fees, the referral bonus
+              terms and the risks.
+            </p>
+
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/exchanges/sarwa-review"
+                className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700"
+              >
+                Read our Sarwa review
+              </a>
+
+              <a
+                href="https://www.sarwa.co/invite/GPWA780D"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="inline-flex items-center justify-center rounded-lg border border-indigo-300 bg-white px-5 py-3 text-sm font-bold text-indigo-700 transition hover:bg-indigo-100"
+              >
+                Visit Sarwa →
+              </a>
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-slate-500">
+              The Sarwa link above is a referral link. If you sign up
+              through it, CryptosBeginner and the referrer may each earn a
+              bonus under Sarwa's referral terms, at no extra cost to you.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 py-10">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="md:col-span-2">
               <p className="text-sm font-bold uppercase tracking-wider text-indigo-600">
