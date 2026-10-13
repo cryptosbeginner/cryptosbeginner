@@ -96,7 +96,7 @@ async function fetchCoinStats(limit: number, currency: MarketCurrency) {
 
   const response = await fetch(endpoint, {
     headers: { "X-API-KEY": apiKey, Accept: "application/json" },
-    next: { revalidate: 60 },
+    next: { revalidate: 600 },
     signal: AbortSignal.timeout(8000),
   });
   if (!response.ok) throw new Error(`CoinStats responded with ${response.status}`);
@@ -120,7 +120,7 @@ async function fetchCoinGecko(limit: number, currency: MarketCurrency) {
   if (apiKey) headers["x-cg-demo-api-key"] = apiKey;
   const response = await fetch(endpoint, {
     headers,
-    next: { revalidate: 60 },
+    next: { revalidate: 600 },
     signal: AbortSignal.timeout(8000),
   });
   if (!response.ok) throw new Error(`CoinGecko responded with ${response.status}`);
