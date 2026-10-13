@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getMarketData, normalizeCurrency, normalizeLimit } from "./market-data";
 
 export const runtime = "nodejs";
-export const revalidate = 60;
+export const revalidate = 600;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
