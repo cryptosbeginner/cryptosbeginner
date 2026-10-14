@@ -71,7 +71,7 @@ const faqItems = [
   {
     question: "What is M2 Earn and what are the rates?",
     answer:
-      "M2 Earn offers curated yield plans across digital assets. Advertised rates move over time; M2's own site shows plans such as USDT at 6.0% APR and AVAX at 4.5% APR. Yields are not guaranteed and advertised APYs change with market conditions.",
+      "M2 Earn offers curated yield plans across digital assets. Advertised rates move over time; when we checked in October 2026, M2's own site showed plans such as USDT at around 5.50% APY and AVAX at around 9.10% APY. Yields are not guaranteed and advertised rates change with market conditions.",
   },
   {
     question: "Who can use M2?",
@@ -317,8 +317,9 @@ export default function M2ReviewPage() {
               </li>
               <li>
                 <strong className="text-slate-950">Earn products.</strong>{" "}
-                M2 Earn yield plans, for example USDT at 6.0% APR on the
-                site. Rates move, and yields are never guaranteed.
+                M2 Earn yield plans, for example USDT at around 5.50% APY when
+                we checked in October 2026. Rates move, and yields are never
+                guaranteed.
               </li>
             </ul>
           </div>
@@ -402,7 +403,7 @@ export default function M2ReviewPage() {
           <figure className="mt-6">
             <Image
               src="/images/m2-earn-2026.png"
-              alt="M2 Earn page showing yield plans including USDT at 6.0% and AVAX at 4.5% APR"
+              alt="M2 Earn page showing yield plans for digital assets"
               width={1600}
               height={900}
               className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
@@ -410,9 +411,10 @@ export default function M2ReviewPage() {
             />
           </figure>
           <P>
-            M2 Earn offers curated yield plans across digital assets. The
-            site shows plans such as USDT at 6.0% APR and AVAX at 4.5% APR.
-            M2 also runs mining-related products with its Phoenix Group
+            M2 Earn offers curated yield plans across digital assets. When we
+            checked in October 2026, the site showed plans such as USDT at
+            around 5.50% APY and AVAX at around 9.10% APY. M2 also runs
+            mining-related products with its Phoenix Group
             connection, and its MMX token carries a fixed supply with a burn
             mechanism and tiered platform benefits.
           </P>
