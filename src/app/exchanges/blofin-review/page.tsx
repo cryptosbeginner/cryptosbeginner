@@ -132,11 +132,25 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What BloFin is" },
   { id: "fees", label: "Fees, verified from the official schedule" },
   { id: "kyc", label: "No-KYC trading" },
   { id: "leverage", label: "The 150x leverage warning" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy and trade" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "security", label: "Security and custody" },
   { id: "products", label: "Copy trading, bots, staking, and TradFi" },
   { id: "ratings", label: "What users say: ratings" },
@@ -245,10 +259,13 @@ export default function BlofinReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              BloFin is a no-KYC futures exchange with Fireblocks custody,
-              Merkle Tree proof of reserves, and 150x leverage. Its security
-              setup is stronger than most offshore venues, but the thin
-              regulation and extreme leverage need to be said plainly.
+              When I first opened BloFin, the pitch was obvious: trade
+              futures without identity verification, on an exchange that
+              actually publishes proof of reserves and uses Fireblocks
+              custody. That combination is rare in the offshore corner of
+              crypto, and it is why BloFin stands out. But let me be plain
+              with you: the thin regulation and 150x leverage are real
+              risks, and this review will not soft-pedal them.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -297,32 +314,34 @@ export default function BlofinReviewPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
                 <strong className="text-slate-950">No-KYC trading.</strong>{" "}
-                Trade without identity verification up to 20,000 USDT in
-                daily withdrawals.
+                Trade without handing over your ID. Unverified accounts can
+                withdraw up to 20,000 USDT a day.
               </li>
               <li>
                 <strong className="text-slate-950">150x leverage.</strong>{" "}
-                Up to 150x on perpetual futures. A move under 0.7% against
-                you means liquidation. Read that twice.
+                Up to 150x on perpetual futures. A move of less than 0.7%
+                against your position liquidates it. Read that twice.
               </li>
               <li>
                 <strong className="text-slate-950">Verified fees.</strong>{" "}
                 Spot 0.10% maker and taker, futures 0.02% maker and 0.06%
-                taker, confirmed on BloFin's official fee schedule.
+                taker, straight from BloFin's official fee schedule.
               </li>
               <li>
                 <strong className="text-slate-950">Stronger custody than most offshore venues.</strong>{" "}
-                Fireblocks custody, Merkle Tree proof of reserves, ISO 27001
-                certification.
+                Fireblocks custody, Merkle Tree proof of reserves, and ISO
+                27001 certification, which is more than most no-KYC venues
+                can show.
               </li>
               <li>
                 <strong className="text-slate-950">Thin regulation.</strong>{" "}
-                US FinCEN registration only; restricted in the US, Canada,
-                China, and now the EU under MiCA.
+                Only a US FinCEN registration; restricted in the US,
+                Canada, China, and now the EU under MiCA.
               </li>
               <li>
                 <strong className="text-slate-950">Trade here, do not store here.</strong>{" "}
-                Keep balances minimal and withdraw to your own wallet.
+                This is a place to trade, not a place to keep funds. Keep
+                balances small and move money to your own wallet.
               </li>
             </ul>
           </div>
@@ -349,17 +368,18 @@ export default function BlofinReviewPage() {
         <Section id="what-is">
           <H2>What BloFin is</H2>
           <P>
-            BloFin launched in 2019, founded by Matt Hu, and is registered in
-            the Cayman Islands. It is a derivatives-first exchange: 464-plus
-            perpetual futures contracts alongside 240-plus spot assets, with
-            a TradingView-integrated terminal, copy trading, trading bots, a
-            demo account, and even tokenized stock symbols like AAPL, NVDA,
-            and TSLA trackers.
+            BloFin launched in 2019, founded by Matt Hu, and registered in
+            the Cayman Islands. It is a derivatives-first exchange: more
+            than 464 perpetual futures contracts next to 240-plus spot
+            assets, with a TradingView-integrated terminal, copy trading,
+            trading bots, a demo account, and even tokenized stock symbols
+            like AAPL, NVDA, and TSLA trackers.
           </P>
           <P>
-            Its pitch is privacy plus custody: no-KYC access like the other
-            offshore venues, but with Fireblocks institutional custody and
-            published proof of reserves, which most of them cannot claim.
+            The appeal is privacy plus custody. You get the no-KYC access
+            that other offshore venues offer, except BloFin backs it with
+            Fireblocks institutional custody and published proof of
+            reserves. Most of its competitors cannot claim either.
           </P>
         </Section>
 
@@ -400,12 +420,13 @@ export default function BlofinReviewPage() {
         <Section id="kyc">
           <H2>No-KYC trading</H2>
           <P>
-            BloFin does not require KYC to trade. Unverified accounts can
-            withdraw up to 20,000 USDT per 24 hours. An ID document raises
-            the limit to 1,000,000 USDT, and proof of address to 2,000,000
-            USDT. Note that fiat purchases through card processors require
-            their own identity checks, so staying fully unverified means
-            funding with crypto from another wallet.
+            Here is how it works in practice: BloFin does not require KYC
+            to trade. Unverified accounts can withdraw up to 20,000 USDT
+            per 24 hours. An ID document raises the limit to 1,000,000
+            USDT, and proof of address takes it to 2,000,000 USDT. One
+            practical note: fiat purchases go through card processors with
+            their own identity checks, so if you want to stay fully
+            unverified, fund your account with crypto from another wallet.
           </P>
           <P>
             The trade-off is the same as everywhere in this segment:
@@ -433,14 +454,89 @@ export default function BlofinReviewPage() {
           </P>
         </Section>
 
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            BloFin keeps signup deliberately light, which is the whole
+            point of the platform. Verification is optional and only about
+            raising your withdrawal limits.
+          </P>
+          <Steps
+            items={[
+              "Head to BloFin and register with your email address, set a strong password, and turn on two-factor authentication right away.",
+              "No ID is needed to start trading. Unverified accounts can withdraw up to 20,000 USDT per 24 hours.",
+              "To raise your limits, verify with an ID document (up to 1,000,000 USDT per 24 hours), then add proof of address to reach 2,000,000 USDT.",
+              "Practical tip: card purchases run through third-party processors with their own ID checks, so if you want to stay unverified, fund your account with crypto from another wallet.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            BloFin is crypto-in first. Deposits are free on the platform
+            side, you just move coins from your own wallet or another
+            exchange. Pick the right network and the deposit is boring in
+            the best way.
+          </P>
+          <Steps
+            items={[
+              "Log in and open Assets, then go to Deposit and pick the coin you want to send, such as USDT.",
+              "Choose the network carefully. It must match the network you are sending from, or your funds can be lost.",
+              "Copy your BloFin deposit address and paste it into your wallet or the withdrawal screen of your other exchange.",
+              "Send the funds. BloFin charges no deposit fee, though your sending wallet or exchange will charge its own network fee.",
+            ]}
+          />
+          <P>
+            Start with a small test deposit the first time you fund the
+            account. It costs a few cents and confirms your address and
+            network choice are right.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy and trade</H2>
+          <P>
+            BloFin has two trading modes, and knowing which one you are in
+            matters. Spot buys you actual coins. Futures trades perpetual
+            contracts with leverage, which is where beginners get hurt.
+          </P>
+          <Steps
+            items={[
+              "New to this? Open the demo account first and practice there. Futures with real money can go wrong fast.",
+              "For spot: open the spot trading page, pick your pair, choose a limit or market order, enter your amount, and confirm.",
+              "For futures: pick your contract, set your leverage to a low, deliberate level before you open the position, and place a stop-loss.",
+              "Never risk money you cannot afford to lose on a leveraged position. Most leveraged retail traders lose money.",
+            ]}
+          />
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdrawals are the reason to respect the no-KYC limits: know
+            your daily cap before you need the money out. Keep balances
+            small and send funds back to a wallet you control.
+          </P>
+          <Steps
+            items={[
+              "Open Assets and go to Withdraw, then select the coin and the network you are sending on.",
+              "Paste your own wallet address. Double-check the first and last characters and confirm the network matches.",
+              "Enter the amount. Unverified accounts are capped at 20,000 USDT per 24 hours, and a network fee applies (for example, 2 USDT on TRON).",
+              "Confirm with your 2FA code. For large amounts, send a small test withdrawal first.",
+            ]}
+          />
+        </Section>
+
         <Section id="security">
           <H2>Security and custody</H2>
           <P>
-            This is where BloFin stands out from the no-KYC crowd. It uses
-            Fireblocks institutional custody, publishes Merkle Tree proof of
-            reserves, and holds ISO 27001 certification. There is no
-            reported major hack in its history. That is a materially better
-            security story than most offshore venues offer.
+            This is where BloFin genuinely separates itself from the no-KYC
+            crowd. It uses Fireblocks institutional custody, publishes
+            Merkle Tree proof of reserves, and holds ISO 27001
+            certification. There is no reported major hack in its history.
+            That is a materially better security story than most offshore
+            venues can tell.
           </P>
           <P>
             The qualifier: custody and PoR are self-reported, and there is
@@ -462,12 +558,14 @@ export default function BlofinReviewPage() {
             />
           </figure>
           <P>
-            BloFin offers copy trading with master traders, trading bots, a
-            demo account, staking with advertised rates up to 5.5% APY on
-            USDT, and a developer API. Past performance of copied traders
-            predicts nothing, and most copy traders lose money. The
-            tokenized stock trackers (AAPL, NVDA, TSLA, and others) let you
-            trade equity price exposure in USDT, at 0.20% fees each way.
+            Beyond the terminal, BloFin packs in copy trading with master
+            traders, trading bots, a demo account, staking with advertised
+            rates up to 5.5% APY on USDT, and a developer API. Be honest
+            with yourself about copy trading: past performance of copied
+            traders predicts nothing, and most copy traders lose money.
+            The tokenized stock trackers (AAPL, NVDA, TSLA, and others)
+            let you trade equity price exposure in USDT, at 0.20% fees
+            each way.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit BloFin</PrimaryCtaButton>
@@ -587,13 +685,15 @@ export default function BlofinReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            BloFin is one of the more serious no-KYC venues: verified
-            competitive fees, Fireblocks custody, published proof of
-            reserves, and no hack history. The missing licence, growing
-            restriction list, and 150x leverage define its risk profile.
-            Trade here if you know what you are doing, keep it small, and
-            never store funds here. For most beginners, a licensed exchange
-            is the better first account.
+            Here is my honest take: BloFin is one of the more serious
+            no-KYC venues. The fees check out on its official schedule,
+            the Fireblocks custody and published proof of reserves are
+            real differentiators, and there is no hack history. But the
+            missing licence, the growing restriction list, and that 150x
+            leverage define the risk. Trade here if you genuinely know
+            what you are doing, keep your balance small, and never store
+            funds here. For most beginners, a licensed exchange is still
+            the better first account.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit BloFin</PrimaryCtaButton>

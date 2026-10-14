@@ -138,6 +138,16 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What Deribit is" },
   { id: "coinbase", label: "The Coinbase acquisition" },
@@ -145,6 +155,10 @@ const tocItems = [
   { id: "options", label: "Options trading" },
   { id: "security", label: "Security and the insurance fund" },
   { id: "regulation", label: "Regulation and availability" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit crypto" },
+  { id: "futures", label: "How to open your first futures position" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -251,11 +265,16 @@ export default function DeribitReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Deribit is where serious crypto options traders go: the deepest
-              BTC and ETH options books in the industry. In 2025 it became a
-              Coinbase company, and in 2026 it is being folded into a global
-              exchange. This review covers the fees, the insurance fund, and
-              what the new ownership changes.
+              Deribit is where the crypto options market actually lives.
+              When analysts quote a Bitcoin max pain level for options
+              expiry, the number comes from Deribit&apos;s open interest.
+              It is the deepest BTC and ETH options book in the industry,
+              now owned by Coinbase after a $2.9 billion acquisition in
+              2025. It is also a derivatives-only venue where liquidation
+              is a routine event, and most retail traders should never
+              touch it. This review covers the fees, the insurance fund,
+              and the new ownership, then shows you how the platform works,
+              honestly.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -309,8 +328,8 @@ export default function DeribitReviewPage() {
               </li>
               <li>
                 <strong className="text-slate-950">Now a Coinbase company.</strong>{" "}
-                Acquired for about $2.9 billion in August 2025 and being
-                integrated into Coinbase Global Exchange.
+                Acquired for about $2.9 billion in August 2025 and folded
+                into Coinbase Global Exchange in October 2026.
               </li>
               <li>
                 <strong className="text-slate-950">Cheap for what it is.</strong>{" "}
@@ -323,9 +342,9 @@ export default function DeribitReviewPage() {
                 liquidations without socialized losses.
               </li>
               <li>
-                <strong className="text-slate-950">Not for beginners.</strong>{" "}
-                Derivatives-only, no US retail access, and leverage up to
-                100x. Most people should not trade here.
+                <strong className="text-slate-950">Not for beginners, and not for US retail.</strong>{" "}
+                Derivatives-only, leverage up to 100x, and liquidation is
+                routine. Most people should not trade here.
               </li>
             </ul>
           </div>
@@ -353,19 +372,20 @@ export default function DeribitReviewPage() {
           <H2>What Deribit is</H2>
           <P>
             Deribit launched in 2016 as a derivatives-only exchange and
-            became the venue where crypto options actually trade. While other
-            exchanges bolt options onto a spot business, Deribit built its
+            became the place where crypto options actually trade. Other
+            exchanges bolt options onto a spot business; Deribit built its
             entire order book around them: BTC, ETH, and SOL options with
-            weekly, monthly, and quarterly expirations, alongside perpetual
-            swaps and quarterly futures used to hedge those options.
+            weekly, monthly, and quarterly expirations, plus perpetual
+            swaps and quarterly futures that traders use to hedge those
+            options.
           </P>
           <P>
-            That specialization shows up in the numbers. Coinbase reported
-            over $30 billion in BTC options open interest on Deribit as of
+            That specialization shows in the numbers. Coinbase reported over
+            $30 billion in BTC options open interest on Deribit as of
             September 2026, and the platform processed more than $1 trillion
-            in volume in the year before the acquisition. If you have ever
-            seen a "max pain" level quoted for Bitcoin options expiry, it
-            was calculated from Deribit open interest.
+            in volume in the year before the acquisition. When you see a max
+            pain level quoted for Bitcoin options expiry, it was calculated
+            from this book.
           </P>
           <figure className="mt-6">
             <Image
@@ -396,7 +416,7 @@ export default function DeribitReviewPage() {
             access to Deribit-powered options is planned for later in 2026,
             and Coinbase is relaunching Coinbase Pro as a professional
             platform covering spot, futures, perpetuals, options, and
-            equities. None of this makes options safer; it makes them more
+            equities. None of this makes options safer. It makes them more
             accessible, which is a different thing.
           </P>
         </Section>
@@ -430,12 +450,12 @@ export default function DeribitReviewPage() {
         <Section id="options">
           <H2>Options trading</H2>
           <P>
-            All Deribit options are European-style: they can only be exercised
-            at expiry, which removes the early-assignment risk that complicates
-            American-style contracts. Calls and puts trade on every market,
-            expirations run from daily out to quarterly, and the interface
-            shows live Greeks (delta, gamma, theta, vega) natively in the
-            options chain.
+            All Deribit options are European-style, which means they can only
+            be exercised at expiry. That removes the early-assignment risk
+            that complicates American-style contracts, one small mercy in a
+            product that has few. Calls and puts trade on every market,
+            expirations run from daily out to quarterly, and the options
+            chain shows live Greeks (delta, gamma, theta, vega) natively.
           </P>
           <P>
             The position builder lets you model multi-leg strategies before
@@ -444,6 +464,7 @@ export default function DeribitReviewPage() {
             move the public book. Minimum sizes were lowered in 2025 with
             USDC-settled linear options (0.01 BTC, 0.1 ETH), which made the
             venue slightly less institutional-only than it used to be.
+            Slightly.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit Deribit</PrimaryCtaButton>
@@ -490,6 +511,95 @@ export default function DeribitReviewPage() {
             freeze withdrawals. Check the current restricted-countries list
             for your location before signing up.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Before anything else, confirm you are eligible. Deribit does not
+            serve US retail traders directly, and a long list of restricted
+            jurisdictions applies. KYC is mandatory for every account, and
+            there is no way around it. Do not use a VPN to bypass regional
+            blocks: getting flagged during a compliance review can freeze
+            your withdrawals.
+          </P>
+          <Steps
+            items={[
+              "Create your account with an email address and a strong password.",
+              "Turn on two-factor authentication immediately, before you deposit anything.",
+              "Complete KYC: provide your personal details and upload a government-issued ID plus a selfie. Wait for approval before funding the account.",
+              "Set IP allowlisting in the security settings so the account can only be accessed from your addresses.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit crypto</H2>
+          <P>
+            Deribit is funded with crypto, not fiat. Deposits are free from
+            Deribit&apos;s side; you pay only the network fee to send from
+            your wallet or another exchange.
+          </P>
+          <Steps
+            items={[
+              "Go to your account wallet and choose Deposit, then pick the currency: BTC, ETH, SOL, USDC, or USDT, depending on what you want to trade with.",
+              "Copy the deposit address for that currency. Match the network on the sending side if there is a choice.",
+              "Send a small test amount first, then the rest once it confirms.",
+              "Wait for the required network confirmations. The balance shows in your account when they clear.",
+            ]}
+          />
+          <P>
+            Decide upfront which currency you will margin with. Mixing coin
+            margins and stablecoin margins in your first month is a good way
+            to confuse yourself about your real exposure.
+          </P>
+        </Section>
+
+        <Section id="futures">
+          <H2>How to open your first futures position</H2>
+          <P>
+            Read this first, because it matters more than the steps: on a
+            derivatives exchange, liquidation is not a bug, it is the product
+            working as designed. Most options buyers lose money over time,
+            and leverage multiplies both directions. Only trade with money
+            you can afford to lose completely, and treat your first position
+            as tuition, not income.
+          </P>
+          <Steps
+            items={[
+              "Open the Futures section and pick a perpetual contract, for example BTC-PERPETUAL. Perpetuals have no expiry, so you do not have to manage a settlement date.",
+              "Set your leverage low. The platform offers up to 100x; a first position should use a small fraction of that. High leverage means the liquidation price sits uncomfortably close to your entry.",
+              "Use a limit order to enter at your chosen price, and note the maker fee of 0.015% at the standard tier.",
+              "Before confirming, check the liquidation price shown for the position. If the market touches it, the position closes automatically and the margin is gone.",
+              "Monitor the position from the Positions tab. Do not add to a losing position hoping it recovers; that is how small losses become account-ending ones.",
+            ]}
+          />
+          <P>
+            When you are done experimenting, close the position and withdraw
+            the remainder. Leaving margin sitting on a derivatives exchange
+            invites impulsive trades, and impulsive trades are where
+            accounts go to die.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdrawing is crypto-only, and Deribit charges no platform fee:
+            you pay only the network fee. The process is the mirror of
+            depositing, with the same address discipline.
+          </P>
+          <Steps
+            items={[
+              "Go to your account wallet and choose Withdraw, then pick the currency.",
+              "Paste your external wallet address and select the correct network.",
+              "Enter the amount, confirm the network fee shown, and complete the 2FA check.",
+              "For a large first withdrawal, send a small test amount first. It costs a few cents and removes the anxiety.",
+            ]}
+          />
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit Deribit</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="ratings">
@@ -608,9 +718,14 @@ export default function DeribitReviewPage() {
             genuine track record, and Coinbase ownership adds institutional
             weight. But it is a professional derivatives venue, not a general
             crypto exchange, and options are a negative-sum game for most
-            retail traders after fees. Use it if you already know exactly
-            what you are doing with options. Otherwise, admire it from a
-            distance.
+            retail traders after fees.
+          </P>
+          <P>
+            Use it if you already know exactly what you are doing with
+            options. Otherwise, admire it from a distance and build your
+            foundation on a spot venue first. There is no shame in that; it
+            is what the professionals did too, before they earned the right
+            to be here.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit Deribit</PrimaryCtaButton>

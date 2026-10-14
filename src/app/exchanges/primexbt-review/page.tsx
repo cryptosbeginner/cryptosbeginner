@@ -146,6 +146,16 @@ function Section({
   );
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-4 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 export default function PrimeXBTReviewPage() {
   const articleLd = {
     "@context": "https://schema.org",
@@ -242,12 +252,15 @@ export default function PrimeXBTReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              PrimeXBT is a multi-asset trading platform built around crypto
-              futures and CFDs on forex, indices, commodities, and related
-              markets. It is not a beginner-focused spot exchange for buying
-              coins and holding them long term. This review explains the
-              product model, legal-entity structure, fee layers, leverage risk,
-              platform tools, and the types of traders who should skip it.
+              If you opened PrimeXBT expecting a simple place to buy
+              Bitcoin and hold it, let me save you the confusion: that is
+              not what this is. PrimeXBT is a multi-asset trading platform
+              built around crypto futures and CFDs on forex, indices,
+              commodities, and more. It is a tool for active traders who
+              understand leverage, not a wallet for long-term holders.
+              This review walks through the product model, the legal-entity
+              structure, the real fee layers, the leverage risk, and who
+              should skip it entirely.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -323,35 +336,40 @@ export default function PrimeXBTReviewPage() {
 
             <ul className="mt-4 space-y-3 leading-7 text-slate-800">
               <li>
-                <strong>Best for:</strong> experienced traders who understand
-                margin, liquidations, funding, and the risks of using
-                derivatives.
+                <strong>Best for:</strong> experienced traders who already
+                understand margin, liquidations, funding, and the risks of
+                derivatives. If those words are new to you, this platform
+                is not your starting line.
               </li>
 
               <li>
-                <strong>Not ideal for:</strong> absolute beginners, long-term
-                coin holders, and users who need top-tier retail protections.
+                <strong>Not ideal for:</strong> absolute beginners,
+                long-term coin holders, and anyone who needs top-tier
+                retail protections.
               </li>
 
               <li>
-                <strong>Core product:</strong> crypto futures and CFDs rather
-                than a simple spot-custody exchange.
+                <strong>Core product:</strong> crypto futures and CFDs,
+                not a simple spot exchange for buying and holding coins.
               </li>
 
               <li>
-                <strong>Platform:</strong> PXTrader 2.0 is now presented by
-                PrimeXBT as its main in-house trading environment.
+                <strong>Platform:</strong> PXTrader 2.0, which PrimeXBT now
+                presents as its main in-house trading environment, with
+                MetaTrader 5 also supported.
               </li>
 
               <li>
-                <strong>Fee reality:</strong> entry commission is only one
-                layer. Spread, funding or administrative fees, slippage,
-                withdrawals, and liquidation risk can matter more.
+                <strong>Fee reality:</strong> the entry commission is only
+                one layer. Spread, funding or administrative fees,
+                slippage, withdrawal costs, and liquidation risk can matter
+                far more.
               </li>
 
               <li>
-                <strong>Main risk:</strong> leverage can amplify losses quickly
-                and lead to liquidation.
+                <strong>Main risk:</strong> leverage can amplify losses
+                fast and wipe out a position. Treat maximum leverage as a
+                risk dial, never a goal.
               </li>
             </ul>
           </div>
@@ -446,6 +464,11 @@ export default function PrimeXBTReviewPage() {
                 </a>
               </li>
               <li>
+                <a href="#ratings" className="underline underline-offset-4">
+                  What users say: ratings
+                </a>
+              </li>
+              <li>
                 <a href="#pros-cons" className="underline underline-offset-4">
                   Pros and cons
                 </a>
@@ -486,6 +509,11 @@ export default function PrimeXBTReviewPage() {
                 </a>
               </li>
               <li>
+                <a href="#getting-started" className="underline underline-offset-4">
+                  Getting started steps
+                </a>
+              </li>
+              <li>
                 <a href="#guides" className="underline underline-offset-4">
                   PrimeXBT guides
                 </a>
@@ -506,26 +534,29 @@ export default function PrimeXBTReviewPage() {
 
           <p className="mt-4 leading-8 text-slate-800">
             PrimeXBT launched in 2018 and positions itself as a multi-asset
-            trading platform for traders who want crypto derivatives alongside
-            CFD markets such as forex, indices, commodities, and selected share
-            instruments. The exact products available can depend on the
-            PrimeXBT entity that serves your country.
+            trading platform for traders who want crypto derivatives
+            alongside CFD markets such as forex, indices, commodities, and
+            selected share instruments. The exact products available can
+            depend on the PrimeXBT entity that serves your country.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
-            This differs from a conventional spot crypto exchange. On a spot
-            exchange, users generally buy an asset and may withdraw it to a
-            personal wallet. On a derivatives platform, users often trade price
-            exposure with leverage. That means funding, spread, overnight
-            charges, margin requirements, and liquidation mechanics can matter
-            as much as the entry commission.
+            This is the key difference from a conventional spot crypto
+            exchange, and it is worth getting right before you deposit
+            anything. On a spot exchange you generally buy an asset and can
+            withdraw it to a personal wallet. On a derivatives platform
+            you trade price exposure with leverage. That means funding,
+            spread, overnight charges, margin requirements, and
+            liquidation mechanics can matter as much as the entry
+            commission.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
-            PrimeXBT now presents PXTrader 2.0 as its main in-house platform.
-            PrimeXBT&apos;s published materials describe charting, account tools,
-            multi-asset trading access, and demo functionality. Availability
-            remains entity- and jurisdiction-dependent.
+            PrimeXBT now presents PXTrader 2.0 as its main in-house
+            platform. Its published materials describe charting, account
+            tools, multi-asset trading access, and demo functionality.
+            Availability remains entity- and jurisdiction-dependent, so
+            check what applies to your country before you commit.
           </p>
         </Section>
 
@@ -653,19 +684,22 @@ export default function PrimeXBTReviewPage() {
           </h2>
 
           <p className="mt-4 leading-8 text-slate-800">
-            PrimeXBT&apos;s total cost depends on the instrument, account type,
-            tier, entity, market conditions, and live fee schedule. Public 2026
-            comparisons commonly report crypto-futures fees around 0.01% maker
-            and 0.045% taker for regular users. Treat those numbers as a
-            starting point for verification, not as a guaranteed universal rate.
+            Let me be honest about how PrimeXBT&apos;s costs actually work,
+            because the headline fee is only the start. The total cost
+            depends on the instrument, account type, tier, entity, market
+            conditions, and the live fee schedule. Public 2026 comparisons
+            commonly report crypto-futures fees around 0.01% maker and
+            0.045% taker for regular users. Treat those numbers as a
+            starting point for verification, not as a guaranteed
+            universal rate.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
-            The entry commission is not the full cost of a leveraged position.
-            Depending on the product and account type, the trade may also involve
-            spread, slippage, price impact, overnight financing, swap-free
-            administrative fees, conversion costs, withdrawal network fees, and
-            liquidation risk.
+            The entry commission is not the full cost of a leveraged
+            position. Depending on the product and account type, a trade
+            can also involve spread, slippage, price impact, overnight
+            financing, swap-free administrative fees, conversion costs,
+            withdrawal network fees, and liquidation risk.
           </p>
 
           <figure className="my-8">
@@ -730,13 +764,15 @@ export default function PrimeXBTReviewPage() {
           </h2>
 
           <p className="mt-4 leading-8 text-slate-800">
-            PrimeXBT describes PXTrader 2.0 as its primary in-house environment,
-            with more than 350 instruments overall, TradingView charts, and
-            asset-dependent leverage limits. In September 2026 the platform
-            expanded its crypto-futures lineup to more than 170 contracts.
-            PrimeXBT also supports MetaTrader 5 alongside PXTrader 2.0. The
-            platform is aimed at active traders who want charting, order
-            controls, and multiple markets in one workflow.
+            PrimeXBT describes PXTrader 2.0 as its primary in-house
+            environment, with more than 350 instruments overall,
+            TradingView charts, and asset-dependent leverage limits. In
+            September 2026 the platform expanded its crypto-futures lineup
+            to more than 170 contracts. PrimeXBT also supports MetaTrader 5
+            alongside PXTrader 2.0. The platform is built for active
+            traders who want charting, order controls, and multiple
+            markets in one workflow, which is great if that is you and
+            overwhelming if it is not.
           </p>
 
           <h3 className="mt-8 text-2xl font-black text-slate-950">
@@ -841,17 +877,19 @@ export default function PrimeXBTReviewPage() {
           <p className="mt-4 leading-8 text-slate-800">
             PrimeXBT publicly describes measures such as cold storage,
             multi-signature-related safeguards, two-factor authentication,
-            encrypted connections, and withdrawal-address controls. These
-            controls can reduce certain risks, but they do not remove
-            counterparty risk, phishing, account compromise, market losses, or
-            liquidation risk.
+            encrypted connections, and withdrawal-address controls. Those
+            controls reduce certain risks, but let me be clear about what
+            they cannot do: they do not remove counterparty risk,
+            phishing, account compromise, market losses, or liquidation
+            risk.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
-            Use a unique password, enable 2FA, review connected devices and
-            security settings, and do not keep long-term savings on a
-            derivatives platform. Treat account balances as trading capital you
-            can afford to place at risk.
+            My practical advice is the same for any derivatives platform.
+            Use a unique password, enable 2FA, review connected devices
+            and security settings, and do not keep long-term savings here.
+            Treat your account balance as trading capital you can afford
+            to place at risk.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
@@ -900,16 +938,18 @@ export default function PrimeXBTReviewPage() {
             <p>
               <strong>Consider PrimeXBT if:</strong> you already understand
               margin, funding, spread, leverage, liquidation, stop-loss
-              placement, and position sizing; you want access to crypto
-              derivatives and traditional CFD markets; and you understand the
-              legal entity that serves your location.
+              placement, and position sizing; you want crypto derivatives
+              and traditional CFD markets in one place; and you know which
+              legal entity serves your location and what protections that
+              gives you.
             </p>
 
             <p>
               <strong>Skip PrimeXBT if:</strong> you are buying your first
-              Bitcoin or Ethereum for years of holding, you need top-tier retail
-              protections, you are not allowed to use the platform in your
-              country, or you are still learning basic spot-market order types.
+              Bitcoin or Ethereum to hold for years, you need top-tier
+              retail protections, the platform is restricted in your
+              country, or you are still learning basic spot-market order
+              types. Be honest about which group you are in.
             </p>
 
             <p>
@@ -920,8 +960,8 @@ export default function PrimeXBTReviewPage() {
               >
                 best crypto exchanges guide
               </Link>{" "}
-              and a separate wallet plan will be easier to understand than
-              leveraged trading.
+              and a separate wallet plan will be far easier to understand
+              than leveraged trading.
             </p>
           </div>
         </Section>
@@ -997,20 +1037,21 @@ export default function PrimeXBTReviewPage() {
             </h2>
 
             <p className="mt-5 max-w-3xl leading-8 text-slate-200">
-              PrimeXBT can be a capable multi-asset derivatives venue for
-              traders who understand leverage and accept the platform&apos;s
-              entity-based regulation model. Its main attractions are combined
-              crypto and CFD workflows, PXTrader 2.0, and competitive-looking
-              published fee structures. The trade-off is that leverage,
-              financing, liquidation mechanics, restrictions, and variable
-              client protections require more care than a basic spot exchange.
+              Here is my honest take. PrimeXBT can be a capable
+              multi-asset derivatives venue for traders who understand
+              leverage and accept its entity-based regulation model. The
+              main attractions are combined crypto and CFD workflows,
+              PXTrader 2.0, and competitive-looking published fee
+              structures. The trade-off is that leverage, financing,
+              liquidation mechanics, restrictions, and variable client
+              protections demand more care than a basic spot exchange.
             </p>
 
             <p className="mt-4 max-w-3xl leading-8 text-slate-200">
-              Our view: it may suit experienced active traders who verify their
-              eligibility and understand the full cost of leveraged positions.
-              It is a weak fit for first-time crypto buyers and long-term
-              holders.
+              Our view: it may suit experienced active traders who verify
+              their eligibility and understand the full cost of leveraged
+              positions. It is a weak fit for first-time crypto buyers and
+              long-term holders, and I would say that to anyone asking.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -1030,6 +1071,108 @@ export default function PrimeXBTReviewPage() {
               </Link>
             </div>
           </div>
+        </Section>
+
+        <Section id="getting-started">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            Getting started steps
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            I will keep this at the overview level: the dedicated guides
+            linked below cover each step in full detail. But here is the
+            honest sequence I would follow, especially if leveraged
+            trading is new to me. No profit promises here, just the
+            mechanics and the risks.
+          </p>
+
+          <h3 className="mt-8 text-2xl font-black text-slate-950">
+            How to sign up and verify
+          </h3>
+
+          <Steps
+            items={[
+              "Check that your country is not restricted before you do anything else. PrimeXBT restricts users in the United States, United Kingdom, Canada, Japan, New Zealand, the EEA, and sanctioned states. Do not try to work around this with a VPN.",
+              "Register with your email address and confirm your account, then set up two-factor authentication immediately.",
+              "Complete any verification your onboarding entity asks for, using a government ID. Your documents, limits, and available products depend on which entity accepts your registration.",
+            ]}
+          />
+
+          <h3 className="mt-8 text-2xl font-black text-slate-950">
+            How to deposit
+          </h3>
+
+          <Steps
+            items={[
+              "Open the deposit page and choose your funding route: crypto transfer or card purchase, depending on what your account type and jurisdiction allow.",
+              "For crypto, select the coin and network carefully, then copy your PrimeXBT deposit address and paste it into your sending wallet. The network must match on both sides.",
+              "Check the minimums and expected processing times on the deposit page before you send. Start small on your first deposit.",
+            ]}
+          />
+
+          <h3 className="mt-8 text-2xl font-black text-slate-950">
+            How to place a futures or CFD trade
+          </h3>
+
+          <p className="mt-3 leading-8 text-slate-800">
+            This is the section where people lose money, so take it
+            seriously. You are not buying an asset here. You are opening a
+            leveraged position on price movement, and a small adverse move
+            can liquidate it.
+          </p>
+
+          <Steps
+            items={[
+              "Practice on the demo account first. It is the only free way to learn how leverage, margin, and liquidation behave.",
+              "Choose your market and instrument, then set your leverage to the lowest practical level. Maximum leverage is a risk parameter, not a target.",
+              "Pick an order type you understand, enter your position size, and place a stop-loss before you think about profit targets.",
+              "If you hold the position beyond the session, watch funding and financing costs: they quietly eat into multi-day trades.",
+            ]}
+          />
+
+          <h3 className="mt-8 text-2xl font-black text-slate-950">
+            How to withdraw
+          </h3>
+
+          <Steps
+            items={[
+              "Go to the withdrawal page, select the asset, and check the network-based fee before you confirm.",
+              "Paste your external wallet address and make sure the network matches. Crypto withdrawals are one-way: a wrong address loses your funds.",
+              "Confirm with 2FA. For larger amounts, send a small test withdrawal first.",
+            ]}
+          />
+
+          <p className="mt-5 leading-8 text-slate-800">
+            For the full detail behind each of these flows, see the{" "}
+            <Link
+              href="/exchanges/primexbt/registration-guide"
+              className="font-bold text-indigo-700 underline underline-offset-4"
+            >
+              registration guide
+            </Link>
+            ,{" "}
+            <Link
+              href="/exchanges/primexbt/deposit-guide"
+              className="font-bold text-indigo-700 underline underline-offset-4"
+            >
+              deposit guide
+            </Link>
+            ,{" "}
+            <Link
+              href="/exchanges/primexbt/trading-guide"
+              className="font-bold text-indigo-700 underline underline-offset-4"
+            >
+              trading guide
+            </Link>
+            , and{" "}
+            <Link
+              href="/exchanges/primexbt/withdrawal-guide"
+              className="font-bold text-indigo-700 underline underline-offset-4"
+            >
+              withdrawal guide
+            </Link>
+            .
+          </p>
         </Section>
 
                 <Section id="guides">

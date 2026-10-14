@@ -133,6 +133,16 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What Bitget is" },
   { id: "hack", label: "The September 2026 hack, honestly assessed" },
@@ -141,6 +151,10 @@ const tocItems = [
   { id: "security", label: "Security and proof of reserves" },
   { id: "regulation", label: "Regulation and availability" },
   { id: "products", label: "Products and trading tools" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy crypto (spot)" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -247,11 +261,12 @@ export default function BitgetReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Bitget built its name on copy trading and low futures fees, and
-              for years that was the whole story. Then September 2026 happened:
-              a $387 million breach of its hot wallets. This review treats that
-              hack as core trust data, alongside fees, the BGB token, its pending
-              MiCA application, and who should avoid the platform.
+              Bitget built its name on two things: copy trading and low
+              futures fees, and for years that was the whole story. Then
+              September 2026 happened, and a $387 million breach of its hot
+              wallets rewrote the conversation. This review treats that hack
+              as core trust data, alongside fees, the BGB token, its pending
+              MiCA application, and an honest account of who should stay away.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -299,29 +314,29 @@ export default function BitgetReviewPage() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
-                <strong className="text-slate-950">Copy trading is the product.</strong>{" "}
+                <strong className="text-slate-950">Copy trading is the draw.</strong>{" "}
                 Over 100,000 traders to mirror, with 10 to 20% of your profits
-                going to the trader you follow.
+                going to the trader you follow. It looks passive. It is not.
               </li>
               <li>
                 <strong className="text-slate-950">Fees are competitive.</strong>{" "}
-                Spot at 0.10% each side, 0.08% with BGB; futures at 0.02%
-                maker and 0.06% taker.
+                Spot costs 0.10% each side, 0.08% if you pay in BGB; futures
+                run 0.02% maker and 0.06% taker.
               </li>
               <li>
                 <strong className="text-slate-950">The September 2026 hack is the context.</strong>{" "}
-                About $387.5M drained from hot and warm wallets; Bitget says
-                its protection fund covers it and withdrawals resumed in
-                phases. Cold wallets were untouched.
+                About $387.5M left the hot and warm wallets; Bitget says its
+                protection fund covers the loss and withdrawals reopened in
+                phases from 28 September. Cold wallets were untouched.
               </li>
               <li>
                 <strong className="text-slate-950">Regulation is mixed.</strong>{" "}
-                MiCA application pending in Austria (no EU authorization yet), no US
-                service, and no UK presence.
+                The MiCA application in Austria is still pending (no EU
+                authorization yet), there is no US service, and no UK presence.
               </li>
               <li>
                 <strong className="text-slate-950">Not for hands-off beginners.</strong>{" "}
-                Copy trading looks passive but most followed traders
+                Copy trading looks like a shortcut, but most followed traders
                 underperform over time. Learn first, copy later, if at all.
               </li>
             </ul>
@@ -353,20 +368,20 @@ export default function BitgetReviewPage() {
           <H2>What Bitget is</H2>
           <P>
             Bitget launched in 2018 and grew into one of the largest
-            derivatives exchanges by volume, with a pitch built on two things:
-            cheap perpetual futures and copy trading at a scale nobody else
-            matched. It lists well over 1,000 spot assets, offers USDT-M,
-            USDC-M, and coin-margined futures with up to 125x leverage, and
-            runs the BGB exchange token across fee discounts, VIP tiers, and
-            launch events.
+            derivatives exchanges by volume on two promises: cheap perpetual
+            futures and copy trading at a scale nobody else matched. The
+            lineup now covers well over 1,000 spot assets, USDT-M, USDC-M,
+            and coin-margined futures with up to 125x leverage, plus the BGB
+            token woven through fee discounts, VIP tiers, and launch events.
           </P>
           <P>
-            The platform&apos;s identity is the follower economy. Where other
-            exchanges sell you tools, Bitget sells you people: browse elite
-            traders, check their win rates and profit history, and mirror
-            their positions automatically. That is either the most beginner
-            friendly product in crypto or the most dangerous one, depending on
-            how honestly you assess what copy trading actually delivers.
+            When I look at Bitget, I see a follower economy first and an
+            exchange second. Where other platforms sell you tools, Bitget
+            sells you people: browse elite traders, study their win rates and
+            profit history, and mirror their positions automatically. Whether
+            that is the most beginner friendly product in crypto or the most
+            dangerous one depends entirely on how honestly you assess what
+            copy trading actually delivers.
           </P>
         </Section>
 
@@ -541,6 +556,92 @@ export default function BitgetReviewPage() {
           </P>
         </Section>
 
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Signing up is quick, but the availability check comes first:
+            Bitget does not serve the US or the UK, and EU onboarding is
+            restricted while the MiCA application is pending.
+          </P>
+          <Steps
+            items={[
+              "Confirm Bitget serves your country and that you can complete KYC, which is mandatory for all users.",
+              "Register with your email address, set a strong password you use nowhere else, and enable two-factor authentication right away.",
+              "Complete identity verification with a government ID. Approval is usually quick outside peak periods.",
+              "Turn on anti-phishing codes and withdrawal allowlisting before you deposit anything.",
+            ]}
+          />
+          <P>
+            Do not use a VPN to bypass restrictions. It violates the terms
+            and can freeze your funds during a compliance review.
+          </P>
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            Crypto deposits are the standard route in. Keep it simple and
+            test small first.
+          </P>
+          <Steps
+            items={[
+              "Log in, go to Assets, and choose Deposit.",
+              "Pick the coin and the network, then copy the deposit address. The network must match exactly.",
+              "Send from your wallet or another exchange, and wait for the confirmations to land.",
+              "For fiat, use the Buy Crypto page where your region supports it, and check the charges shown at checkout.",
+            ]}
+          />
+          <P>
+            First deposit? Send a small test amount and confirm it arrives
+            before moving the rest.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy crypto (spot)</H2>
+          <P>
+            Spot trading is the calm corner of Bitget. Learn here before
+            touching futures or copy trading.
+          </P>
+          <Steps
+            items={[
+              "Go to Spot and choose your pair, for example BTC/USDT.",
+              "Use a limit order while you are learning: set your price and wait for the fill. Market orders fill instantly at the going price.",
+              "Enter the amount, check the 0.10% fee (or 0.08% if you pay with BGB), and confirm.",
+              "Your coins land in your spot account. Use the demo trading mode to practice futures before committing real money.",
+            ]}
+          />
+          <P>
+            Copy trading can wait. Most followed traders underperform over
+            time, so learn what a good trade looks like before you mirror
+            anyone.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdrawals reopened in phases after the September hack, and the
+            habit to build is simple: keep only trading-size balances on the
+            exchange.
+          </P>
+          <Steps
+            items={[
+              "Go to Assets, then Withdraw, and choose the coin.",
+              "Paste your external wallet address and select the network. Double-check both.",
+              "Review the withdrawal fee shown and confirm with your 2FA.",
+              "For large amounts, do a small test withdrawal first.",
+            ]}
+          />
+          <P>
+            Whatever the protection fund promises, your own wallet is the
+            safest place for savings.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit Bitget</PrimaryCtaButton>
+          </div>
+        </Section>
+
         <Section id="ratings">
           <H2>What users say: ratings</H2>
           <P>
@@ -644,19 +745,19 @@ export default function BitgetReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            Bitget is a capable derivatives exchange with the industry&apos;s
-            deepest copy trading bench and genuinely competitive fees. The
-            September 2026 hack is the unavoidable context: the response was
-            fast and the protection fund did its job, but attackers lived in
-            the wallet infrastructure for weeks, and the full story is still
-            being written. That earns Bitget a cautious rating rather than a
-            clean one.
+            My honest take: Bitget is a capable derivatives exchange with the
+            industry&apos;s deepest copy trading bench and genuinely
+            competitive fees. The September 2026 hack is the unavoidable
+            context. The response was fast and the protection fund did its
+            job, but attackers sat inside the wallet infrastructure for weeks,
+            and the full story is still being written. That earns Bitget a
+            cautious rating, not a clean one.
           </P>
           <P>
-            Use it for what it is good at, active futures trading and, if you
-            truly understand the risks, copy trading with money you can
-            afford to lose. Keep balances modest, verify the proof of
-            reserves yourself, and hold the rest in self-custody.
+            If you use it, use it for what it does well: active futures
+            trading, and copy trading only if you truly understand the risks,
+            with money you can afford to lose. Keep balances modest, check the
+            proof of reserves yourself, and hold the rest in self-custody.
           </P>
         </Section>
 

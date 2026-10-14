@@ -133,6 +133,16 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What Kraken is" },
   { id: "security", label: "Security: the never-hacked record" },
@@ -140,6 +150,10 @@ const tocItems = [
   { id: "regulation", label: "Regulation and licensing" },
   { id: "products", label: "Products and trading tools" },
   { id: "availability", label: "Where it is available" },
+  { id: "register", label: "How to register and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy spot on Kraken Pro" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -246,12 +260,14 @@ export default function KrakenReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Kraken has operated since 2011 without a single successful hack,
-              a claim no other major exchange can make. This review covers the
-              July 2026 fee changes that made Kraken Pro pricier at the entry
-              tier, the proof-of-reserves record, the growing license stack
-              including fresh Dubai approval, xStocks tokenized equities, and
-              the honest trade-offs against Binance and Coinbase.
+              Kraken is the exchange I recommend when someone asks me where
+              their money is safest. It has run since 2011 without a single
+              successful hack of client funds, a record no other major
+              exchange can touch. It is also honest about its trade-offs:
+              fees went up in July 2026, the simple app still charges 1% plus
+              a spread, and US clients do not get futures or margin. This
+              review covers all of it, then shows you how to use Kraken
+              without overpaying.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -299,29 +315,29 @@ export default function KrakenReviewPage() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
-                <strong className="text-slate-950">Security is the story.</strong>{" "}
+                <strong className="text-slate-950">The security story is real.</strong>{" "}
                 Operating since 2011 with no successful hack, cold storage for
                 the bulk of assets, and regular proof-of-reserves audits.
               </li>
               <li>
-                <strong className="text-slate-950">Fees got worse in July 2026.</strong>{" "}
+                <strong className="text-slate-950">But fees got worse in July 2026.</strong>{" "}
                 Kraken Pro entry tier is now 0.40% maker and 0.80% taker, up
                 from 0.25% and 0.40%. The simple app still charges 1% plus a
                 spread. Always trade on Pro with limit orders.
               </li>
               <li>
-                <strong className="text-slate-950">Regulation is a strength.</strong>{" "}
-                More than 100 licenses and registrations worldwide, MiCA
+                <strong className="text-slate-950">Regulation is a genuine strength.</strong>{" "}
+                More than 100 licences and registrations worldwide, MiCA
                 coverage in the EU, and full Dubai approval secured in October
                 2026.
               </li>
               <li>
-                <strong className="text-slate-950">Tokenized equities are live.</strong>{" "}
+                <strong className="text-slate-950">New ways to invest.</strong>{" "}
                 xStocks give non-US users stock price exposure with 0% fees on
                 USD funding, and US clients get zero-commission stocks and ETFs.
               </li>
               <li>
-                <strong className="text-slate-950">Not for everyone.</strong>{" "}
+                <strong className="text-slate-950">Check the exclusions first.</strong>{" "}
                 No futures or margin for US clients, state-by-state staking
                 limits in the US, and unavailable in New York and Washington.
               </li>
@@ -353,23 +369,22 @@ export default function KrakenReviewPage() {
         <Section id="what-is">
           <H2>What Kraken is</H2>
           <P>
-            Kraken is a US-based centralized crypto exchange founded in 2011,
-            making it one of the oldest continuously operating venues in the
+            Kraken is a US-based crypto exchange founded in 2011, which makes
+            it one of the oldest continuously operating venues in the
             industry. It lists hundreds of cryptocurrencies across spot
-            markets and serves clients in more than 190 countries. The
-            business runs two interfaces on one account: the simple Kraken
-            app and website for buying in a few taps, and Kraken Pro, a full
-            trading terminal with order books, charting, and advanced order
-            types.
+            markets and serves clients in more than 190 countries. You get
+            two interfaces on one account: the simple Kraken app and website
+            for buying in a few taps, and Kraken Pro, a full trading terminal
+            with order books, charting, and advanced order types.
           </P>
           <P>
-            Positioning matters here. Kraken never tried to be the everything
-            app. It built its reputation on security engineering and
-            regulatory compliance first, then layered on products: margin,
-            futures, staking, an OTC desk, the Krak payments app, and now
-            tokenized equities. If Binance is the supermarket and Coinbase is
-            the beginner on-ramp, Kraken is the exchange for people who rank
-            trust above novelty.
+            When I explain Kraken to beginners, I put it like this: it never
+            tried to be the everything app. It built its reputation on
+            security engineering and regulatory compliance first, then
+            layered on products, margin, futures, staking, an OTC desk, the
+            Krak payments app, and now tokenized equities. If Binance is the
+            supermarket and Coinbase is the beginner on-ramp, Kraken is the
+            exchange for people who rank trust above novelty.
           </P>
         </Section>
 
@@ -519,9 +534,10 @@ export default function KrakenReviewPage() {
           <P>
             Kraken offers staking on 17+ assets with flexible and bonded
             options. US users should read this carefully: after regulatory
-            action curtailed staking, Kraken resumed it for clients in 39
-            states in 2025, but availability is still state-dependent. Check
-            the current list for your state rather than assuming it works.
+            action curtailed staking, Kraken brought it back for clients in
+            39 states in 2025, but availability is still state-dependent. Do
+            not assume it works where you live; check the current list for
+            your state first.
           </P>
           <h3 className="mt-8 text-xl font-black text-slate-950">
             xStocks and US equities
@@ -532,8 +548,8 @@ export default function KrakenReviewPage() {
             funded with USD or USDG and 1% with other assets, and Kraken has
             even offered IPO access through xStocks. The catch is
             jurisdiction: xStocks are not available in the US, UK, Canada,
-            or Australia, and they give price exposure only, with no voting
-            or dividend rights.
+            or Australia, and they give you price exposure only, with no
+            voting or dividend rights.
           </P>
           <P>
             US clients get a different product: zero-commission trading in US
@@ -550,8 +566,8 @@ export default function KrakenReviewPage() {
             solid mobile app for both the simple and Pro interfaces, and
             24/7 support, and the package is complete without being bloated.
             What you will not find: copy trading, trading bots, or the
-            casino-style product sprawl of some competitors. Kraken&apos;s
-            restraint here is a feature, not a gap.
+            casino-style product sprawl of some competitors. I count that as
+            a feature, not a gap.
           </P>
         </Section>
 
@@ -571,6 +587,91 @@ export default function KrakenReviewPage() {
             Syria are excluded. Always check the current supported-countries
             list for your residence before planning around Kraken.
           </P>
+        </Section>
+
+        <Section id="register">
+          <H2>How to register and verify</H2>
+          <P>
+            Getting started on Kraken takes a few minutes. Verification is
+            tiered: higher limits unlock as you verify further, so it pays
+            to complete it fully before you deposit. Have an ID ready, and
+            check first that Kraken serves your state or country.
+          </P>
+          <Steps
+            items={[
+              "Create your account with your email address and a strong password.",
+              "Complete identity verification with your personal details and a government-issued ID. Fully verified accounts get the highest limits.",
+              "Turn on two-factor authentication before you deposit anything. Add a withdrawal allowlist in the security settings for extra protection.",
+              "Once verified, you are ready to fund your account.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            Kraken supports seven fiat currencies for deposits and
+            withdrawals: USD, EUR, GBP, CAD, AUD, CHF, and JPY, plus crypto
+            deposits from any wallet or exchange. Bank transfers are the
+            usual route for fiat, and the method you choose affects both the
+            fee and how fast the money arrives.
+          </P>
+          <Steps
+            items={[
+              "Go to Funding in the navigation, then choose Deposit.",
+              "Pick your currency, for example USD, and choose a deposit method. Read the fee and arrival time shown for each method before picking.",
+              "Follow the instructions to send the money: bank details for fiat, or a deposit address with the correct network for crypto.",
+              "Wait for the funds to clear. Bank transfers take longer than crypto; plan around it.",
+            ]}
+          />
+          <P>
+            If you are depositing crypto, the usual rule applies: match the
+            network on both sides, and send a small test amount first if the
+            address is new to you.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy spot on Kraken Pro</H2>
+          <P>
+            This is the single most valuable habit on Kraken. The simple app
+            charges 1% plus an undisclosed spread on every buy; Kraken Pro,
+            free on the same account, charges 0.40% maker and 0.80% taker at
+            the entry tier. Same account, same Bitcoin, meaningfully cheaper.
+          </P>
+          <Steps
+            items={[
+              "Open Kraken Pro from your account, the full trading interface, not the simple buy screen.",
+              "Pick your pair, for example BTC/USD. You will see the order book, the chart, and the order form.",
+              "Use a limit order: set the price you are willing to pay and the amount. This gets you the maker rate.",
+              "Confirm the order and check your balance. For anything you will not trade soon, move it to your own wallet.",
+            ]}
+          />
+          <P>
+            It takes about ten minutes to learn the Pro layout the first
+            time. After that it is second nature, and you will save the 1%
+            app fee on every trade from then on.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Cashing out on Kraken is straightforward. Fiat withdrawals go
+            back to your linked bank account, and crypto withdrawals go to
+            any external wallet address.
+          </P>
+          <Steps
+            items={[
+              "Go to Funding, then Withdraw, and choose your currency or crypto.",
+              "For fiat: pick your linked bank account, enter the amount, and confirm. For crypto: paste your external wallet address and pick the right network.",
+              "Double-check the address and the network before confirming. A wrong address means the funds are gone.",
+              "Complete the 2FA check. For large amounts, do a small test withdrawal first for peace of mind.",
+            ]}
+          />
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit Kraken</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="ratings">
@@ -678,19 +779,20 @@ export default function KrakenReviewPage() {
           <H2>Verdict</H2>
           <P>
             Kraken is the trust pick among major exchanges. Fourteen years
-            without a hack, cold storage discipline, early proof of reserves,
-            and a license stack that keeps growing, most recently into Dubai,
-            add up to the strongest safety story in the business. The July
-            2026 fee increase is a genuine mark against it: entry-tier Pro
-            pricing is no longer cheap, and the 1% app fee remains a trap for
-            beginners who never discover Pro.
+            without a hack, cold storage discipline, early proof of
+            reserves, and a licence stack that keeps growing, most recently
+            into Dubai, add up to the strongest safety story in the
+            business. The July 2026 fee increase is a genuine mark against
+            it: entry-tier Pro pricing is no longer cheap, and the 1% app
+            fee remains a trap for beginners who never discover Pro.
           </P>
           <P>
-            If you rank security and regulation first and are willing to learn
-            limit orders on Kraken Pro, it is hard to beat. If you want the
-            lowest possible fees or the widest product menu, look at the
-            alternatives. Either way, keep most holdings in self-custody. No
-            record, however clean, makes an exchange a vault.
+            If you rank security and regulation first and are willing to
+            learn limit orders on Kraken Pro, it is hard to beat. If you
+            want the lowest possible fees or the widest product menu, the
+            alternatives above have you covered. Either way, keep most
+            holdings in self-custody. No record, however clean, makes an
+            exchange a vault.
           </P>
         </Section>
 

@@ -133,11 +133,25 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What Bitunix is" },
   { id: "fees", label: "Fees, verified from the official schedule" },
   { id: "kyc", label: "The July 2026 KYC change" },
   { id: "leverage", label: "The 200x leverage warning" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy and trade" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "reserves", label: "Proof of reserves and the Care Fund" },
   { id: "products", label: "Copy trading, TradFi, and multi-window charts" },
   { id: "ratings", label: "What users say: ratings" },
@@ -246,10 +260,14 @@ export default function BitunixReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Bitunix is a futures-first exchange with genuinely low fees,
-              published proof of reserves, and 200x leverage. The big 2026
-              change: withdrawals now require KYC. Here is the full picture,
-              honestly framed.
+              Bitunix first caught my eye for a simple reason: futures
+              fees that are genuinely among the lowest in the market, on
+              an interface that does not make you work for it. Then 2026
+              changed the story. Since 1 July, withdrawals require
+              identity verification, and the old no-KYC pitch is dead.
+              Here is the full picture: the low fees, the published
+              reserves, the 200x leverage warning, all of it said
+              plainly.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -299,32 +317,32 @@ export default function BitunixReviewPage() {
               <li>
                 <strong className="text-slate-950">Futures-first, low fees.</strong>{" "}
                 Spot 0.08% maker and 0.10% taker, futures 0.02% maker and
-                0.06% taker, with VIP tiers below that.
+                0.06% taker, with VIP tiers going lower still.
               </li>
               <li>
                 <strong className="text-slate-950">KYC now required for withdrawals.</strong>{" "}
                 Since 1 July 2026 you can trade without KYC, but you cannot
-                withdraw without verifying.
+                get your money out without verifying first.
               </li>
               <li>
                 <strong className="text-slate-950">200x leverage.</strong>{" "}
                 Up to 200x on BTC and ETH perpetuals. A 0.5% move against
-                you means liquidation. Read that twice.
+                your position liquidates it. Read that twice.
               </li>
               <li>
                 <strong className="text-slate-950">Published reserves.</strong>{" "}
                 October 2026 audit: BTC 156%, ETH 108%, USDT 105%. MPC
-                custody via Cobo and a reported $30M Care Fund.
+                custody via Cobo plus a reported $30M Care Fund.
               </li>
               <li>
                 <strong className="text-slate-950">TradFi on the side.</strong>{" "}
-                Stock, ETF, forex, index, and commodity perpetuals next to
-                crypto.
+                Stock, ETF, forex, index, and commodity perpetuals sitting
+                next to crypto.
               </li>
               <li>
                 <strong className="text-slate-950">Young and offshore.</strong>{" "}
-                Founded 2021, Seychelles, thin team documentation, no major
-                licence.
+                Founded 2021 in Seychelles, thin team documentation, no
+                major licence. A trading venue, not a vault.
               </li>
             </ul>
           </div>
@@ -351,12 +369,11 @@ export default function BitunixReviewPage() {
         <Section id="what-is">
           <H2>What Bitunix is</H2>
           <P>
-            Bitunix launched in 2021, founded by Arron Lee, and is
-            registered in Seychelles. It grew into a top-15 derivatives
-            exchange with a reported 5 to 10 million users and over 1,200
-            trading pairs: 540-plus spot assets, 520-plus futures contracts,
-            and a TradFi lineup of stocks, ETFs, forex, indices, and
-            commodities.
+            Bitunix launched in 2021, founded by Arron Lee, and registered
+            in Seychelles. It grew fast into a top-15 derivatives exchange,
+            reporting 5 to 10 million users and more than 1,200 trading
+            pairs: 540-plus spot assets, 520-plus futures contracts, and a
+            TradFi lineup of stocks, ETFs, forex, indices, and commodities.
           </P>
           <figure className="mt-6">
             <Image
@@ -369,9 +386,10 @@ export default function BitunixReviewPage() {
             />
           </figure>
           <P>
-            Its identity is futures-first and fee-competitive: one of the
-            lowest futures maker fees in the market at 0.02%, a clean
-            interface, and a mobile app that does not feel like an
+            What Bitunix is known for is simple: futures-first and
+            fee-competitive. At 0.02% it offers one of the lowest futures
+            maker fees anywhere, the interface is clean, and the mobile
+            app genuinely feels like a first-class product rather than an
             afterthought.
           </P>
         </Section>
@@ -407,18 +425,18 @@ export default function BitunixReviewPage() {
         <Section id="kyc">
           <H2>The July 2026 KYC change</H2>
           <P>
-            This is the most important 2026 development for Bitunix, and the
-            old no-KYC marketing is now misleading. Since 1 July 2026,
-            withdrawals require completing identity verification. You can
-            still register and trade without upfront KYC, and KYC is also
-            mandatory for card purchases and higher limits, but the era of
-            withdrawing freely without verification is over.
+            Let me spell this out, because old reviews are still
+            misleading on it. Since 1 July 2026, withdrawals require
+            completing identity verification. You can still register and
+            trade without upfront KYC, and KYC is also mandatory for card
+            purchases and higher limits, but the era of withdrawing freely
+            without verification is over.
           </P>
           <P>
             Practically, this makes Bitunix a low-friction trading venue
             rather than a privacy venue. If anonymous withdrawals are your
-            priority, venues like BloFin still offer higher no-KYC
-            withdrawal allowances.
+            priority, venues like BloFin still allow higher no-KYC
+            withdrawal limits.
           </P>
         </Section>
 
@@ -441,6 +459,78 @@ export default function BitunixReviewPage() {
           </P>
         </Section>
 
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Signup itself is quick: you can register and start trading
+            without upfront KYC. The important thing to know is that you
+            will need to verify your identity before you can withdraw,
+            so plan to do that step before you deposit anything serious.
+          </P>
+          <Steps
+            items={[
+              "Register with your email address, set a strong password, and turn on two-factor authentication right away.",
+              "Complete identity verification with a government ID. Since 1 July 2026, withdrawals are blocked until verification is done.",
+              "KYC is also mandatory for card purchases and higher limits, so treat verification as part of signup, not an optional extra.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            Bitunix funds like most derivatives exchanges: mainly with
+            crypto from your own wallet or another exchange. Card
+            purchases are available but require KYC first.
+          </P>
+          <Steps
+            items={[
+              "Log in and open the deposit page, then pick the coin you want to send, such as USDT.",
+              "Choose the network carefully. It must match the network you are sending from, or your funds can be lost.",
+              "Copy your Bitunix deposit address and paste it into your wallet or the withdrawal screen of your other exchange.",
+              "Send the funds and wait for network confirmations. Start with a small test amount on your first deposit.",
+            ]}
+          />
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy and trade</H2>
+          <P>
+            Bitunix offers both spot and futures, and it pays to be clear
+            which one you are using. Spot is straightforward buying. Futures
+            is where leverage, and liquidation, live.
+          </P>
+          <Steps
+            items={[
+              "For spot: open the markets page, pick your pair, choose a market or limit order, enter your amount, and confirm.",
+              "For futures: pick your contract and set your leverage to a low, deliberate level before opening the position.",
+              "Choose an order type you understand, enter your position size, and place a stop-loss.",
+              "Bitunix has no officially documented demo mode, so practice on a platform that does before risking real capital here.",
+            ]}
+          />
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            This is the section the 2026 KYC change is about. Verify your
+            identity first, then withdrawing is a normal exchange process.
+            Keep balances small and send funds back to a wallet you
+            control.
+          </P>
+          <Steps
+            items={[
+              "Make sure your identity verification is complete, or the withdrawal will be blocked.",
+              "Go to Withdraw, select the coin, and pick the network you are sending on.",
+              "Paste your external wallet address. Double-check the address and confirm the network matches.",
+              "Enter the amount, review the fee, and confirm with your 2FA code. For large amounts, send a small test withdrawal first.",
+            ]}
+          />
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit Bitunix</PrimaryCtaButton>
+          </div>
+        </Section>
+
         <Section id="reserves">
           <H2>Proof of reserves and the Care Fund</H2>
           <figure className="mt-6">
@@ -455,10 +545,10 @@ export default function BitunixReviewPage() {
           </figure>
           <P>
             Bitunix publishes proof-of-reserve snapshots with a user audit
-            tool. The 1 October 2026 audit showed reserve ratios of 156% for
-            BTC, 108% for ETH, and 105% for USDT. Custody runs through Cobo's
-            MPC infrastructure, and the exchange reports a $30 million Care
-            Fund. See the live{" "}
+            tool you can check yourself. The 1 October 2026 audit showed
+            reserve ratios of 156% for BTC, 108% for ETH, and 105% for
+            USDT. Custody runs through Cobo's MPC infrastructure, and the
+            exchange reports a $30 million Care Fund. See the live{" "}
             <Link href={BITUNIX_POR} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
               proof-of-reserve page
             </Link>{" "}
@@ -466,7 +556,7 @@ export default function BitunixReviewPage() {
           </P>
           <P>
             The qualifier, as always with self-published reserves: this is
-            better than nothing, but not an independent audit at the
+            better than nothing, but it is not an independent audit at the
             standard of the most regulated exchanges.
           </P>
         </Section>
@@ -478,9 +568,9 @@ export default function BitunixReviewPage() {
             plus a distinctive multi-window mode that fits up to 16 charts
             on one screen for active futures traders. The TradFi lineup,
             177 stocks, 35 ETFs, 49 forex pairs, 12 indices, and 12
-            commodities, sits alongside crypto perpetuals. Past performance
-            of copied traders predicts nothing, and most copy traders lose
-            money.
+            commodities, sits alongside the crypto perpetuals. On copy
+            trading, stay honest with yourself: past performance of copied
+            traders predicts nothing, and most copy traders lose money.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit Bitunix</PrimaryCtaButton>
@@ -598,12 +688,13 @@ export default function BitunixReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            Bitunix is a solid low-fee futures exchange with real proof of
-            reserves and a clean trading experience. The July 2026
-            KYC-for-withdrawals change ended its no-KYC era, and the young,
-            offshore profile keeps it a trading venue rather than a storage
-            venue. Use it for what it is good at, keep balances small, and
-            never touch 200x unless you fully understand liquidation.
+            My honest read: Bitunix is a solid low-fee futures exchange
+            with real proof of reserves and a clean trading experience.
+            The July 2026 KYC-for-withdrawals change ended its no-KYC era
+            for good, and the young, offshore profile keeps it a trading
+            venue rather than a place to store funds. Use it for what it
+            is good at, keep balances small, and never touch 200x unless
+            you fully understand what liquidation feels like.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit Bitunix</PrimaryCtaButton>

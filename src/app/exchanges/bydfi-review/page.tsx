@@ -133,9 +133,23 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What BYDFi is" },
   { id: "fees", label: "Fees and costs" },
+  { id: "signup", label: "How to sign up and start trading" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy crypto step by step" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "kyc", label: "No-KYC trading" },
   { id: "leverage", label: "The 500x leverage warning" },
   { id: "regulation", label: "Regulation and the removed PoR page" },
@@ -246,11 +260,13 @@ export default function BydfiReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              BYDFi is a no-KYC exchange with 1,000-plus spot pairs, copy
-              trading, and futures leverage that hit 500x in September 2026.
-              It is usable for active traders, but the missing licence, the
-              removed proof-of-reserves page, and that leverage all need to
-              be said plainly.
+              If you want to trade crypto without verifying your identity,
+              BYDFi is one of the first names you will hear: 1,000-plus
+              spot pairs, copy trading, and futures leverage that hit 500x
+              in September 2026. It is usable for active traders, but go in
+              with your eyes open. The missing licence, the removed
+              proof-of-reserves page, and that leverage all need to be said
+              plainly.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -299,7 +315,7 @@ export default function BydfiReviewPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
                 <strong className="text-slate-950">No-KYC trading.</strong>{" "}
-                Trade without identity verification up to about 50,000 USDT
+                Trade without identity verification, up to about 50,000 USDT
                 in daily withdrawals.
               </li>
               <li>
@@ -351,12 +367,12 @@ export default function BydfiReviewPage() {
         <Section id="what-is">
           <H2>What BYDFi is</H2>
           <P>
-            BYDFi launched in 2020 out of Singapore and built its name on two
-            things: letting people trade without KYC, and listing a long
-            tail of altcoins that bigger exchanges ignore. It now lists over
-            1,000 spot pairs and 500-plus perpetual contracts, and was
-            recognized by Forbes in 2023 as one of the top ten crypto
-            exchanges. The name stands for "BUIDL Your Dream Finance."
+            BYDFi's whole identity is access. It launched in 2020 out of
+            Singapore and made its name by letting people trade without
+            KYC and listing the long tail of altcoins the big exchanges
+            ignore. Today it lists over 1,000 spot pairs and 500-plus
+            perpetual contracts, earned a Forbes top-ten nod in 2023, and
+            the name stands for "BUIDL Your Dream Finance."
           </P>
           <figure className="mt-6">
             <Image
@@ -369,10 +385,11 @@ export default function BydfiReviewPage() {
             />
           </figure>
           <P>
-            It is a derivatives-first venue dressed in beginner-friendly
-            clothing: one-click buy, demo trading, and copy trading sit next
-            to 500x leverage. That combination is exactly why the honest
-            framing in this review matters.
+            It is a derivatives-first venue in beginner-friendly clothing:
+            one-click buy, demo trading, and copy trading sit right next to
+            500x leverage. That combination is exactly why the honest
+            framing in this review matters, so read the leverage section
+            before you trade a single dollar.
           </P>
         </Section>
 
@@ -401,6 +418,88 @@ export default function BydfiReviewPage() {
             </Link>{" "}
             before you trade, since fee pages change.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and start trading</H2>
+          <P>
+            Signing up on BYDFi is fast, and unlike most exchanges, you can
+            start trading without verifying your identity. That convenience
+            comes with a trade-off, so read the limits before you deposit.
+          </P>
+          <Steps
+            items={[
+              "Go to the BYDFi website or app and register with your email or phone number.",
+              "You can start trading right away: unverified accounts can deposit, trade, and withdraw up to around 50,000 USDT per day.",
+              "Optional: complete KYC in your account settings to raise your limits and unlock more fiat deposit methods.",
+              "Turn on two-factor authentication before you deposit anything.",
+            ]}
+          />
+          <P>
+            Check that BYDFi serves your country first. It restricts users
+            in China, Pakistan, Bangladesh, Kazakhstan, the UK, and Iran,
+            and you should never use a VPN to get around that.
+          </P>
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            Crypto is the natural way to fund a no-KYC account. Fiat is
+            possible through third-party processors, but it costs more.
+          </P>
+          <Steps
+            items={[
+              "Log in and open your Assets or Wallet, then choose Deposit.",
+              "For crypto: pick the coin, copy your BYDFi deposit address, and send from your wallet or another exchange. Crypto deposits are free, but always match the network.",
+              "For fiat: choose a third-party on-ramp in your region. Fees typically run between 1% and 5%, so check the quote before you confirm.",
+              "For a first deposit, send a small test amount and confirm it arrives before moving the rest.",
+            ]}
+          />
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy crypto step by step</H2>
+          <P>
+            BYDFi's spot market is simple enough for a first trade. If the
+            futures tab is calling your name, resist it until you have read
+            the leverage warning below, and start on the free demo account.
+          </P>
+          <Steps
+            items={[
+              "Go to Spot trading.",
+              "Pick your pair, for example BTC/USDT.",
+              "For an instant fill, place a market order at 0.10%. To set your own price, use a limit order instead.",
+              "Enter the amount, review, and confirm. Your crypto lands in your BYDFi wallet.",
+            ]}
+          />
+          <P>
+            Use the demo account to learn the interface before risking real
+            money. It is free and it exists for exactly this.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdraw regularly and keep only what you are actively trading
+            on the exchange. That is the golden rule for any no-KYC venue.
+          </P>
+          <Steps
+            items={[
+              "Open Assets or Wallet and choose Withdraw.",
+              "Pick the coin, paste your external wallet address, and confirm the network matches. Withdrawal fees are network-based.",
+              "Enter the amount, keeping in mind the roughly 50,000 USDT daily limit for unverified accounts.",
+              "Confirm the withdrawal with your two-factor and email codes.",
+            ]}
+          />
+          <P>
+            Test new addresses with a small amount first. Crypto
+            withdrawals cannot be undone.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit BYDFi</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="kyc">
@@ -477,11 +576,12 @@ export default function BydfiReviewPage() {
           <P>
             Copy trading is one of BYDFi's better products, with multiple
             modes including on-chain copy and whale wallet tracking, plus
-            trading bots and a bot marketplace. A warning that belongs here:
-            past performance of copied traders predicts nothing, and most
-            copy traders lose money. MoonX routes orders to over 500,000
-            on-chain pairs across Solana, BNB Chain, and Base for memecoin
-            and DeFi access inside the exchange.
+            trading bots and a bot marketplace. A warning that belongs
+            here: past performance of copied traders predicts nothing, and
+            most copy traders lose money. MoonX routes orders to over
+            500,000 on-chain pairs across Solana, BNB Chain, and Base, so
+            you can reach memecoins and DeFi tokens without leaving the
+            exchange.
           </P>
           <P>
             Two unusual extras: USDT-settled TradFi products (stocks, ETFs,
@@ -610,12 +710,12 @@ export default function BydfiReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            BYDFi is a genuinely useful no-KYC trading venue with a strong
-            product set, but the missing regulator, the removed
-            proof-of-reserves page, and 500x leverage define its risk
-            profile. Trade here if you know what you are doing, keep it
-            small, and never store funds here. For most beginners, a
-            licensed exchange is the better first account.
+            So, is BYDFi worth it? It is a genuinely useful no-KYC venue
+            with a strong product set, but the missing regulator, the
+            removed proof-of-reserves page, and 500x leverage define its
+            risk profile. If you know exactly what you are doing, trade
+            here small and withdraw often. For most beginners, a licensed
+            exchange is still the better first account.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit BYDFi</PrimaryCtaButton>
