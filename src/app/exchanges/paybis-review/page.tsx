@@ -381,22 +381,22 @@ export default function PaybisReviewPage() {
             Paybis does not charge one fee. It stacks two: a service fee of
             around 1.49% plus a payment processing fee that runs roughly
             4.5% to 8.5% on card purchases, with a $10 minimum on card
-            transactions. Put together, a card buy can cost you somewhere in
-            the high single digits in total fees. That is the honest number,
-            and it is a lot compared to the 0.1% you would pay on an
-            exchange.
+            transactions. Bank transfers are cheaper where available: SEPA
+            transfers carry a reduced 0.99% service fee. Put together, a
+            card buy can cost you somewhere in the high single digits in
+            total fees. That is the honest number, and it is a lot compared
+            to the 0.1% you would pay on an exchange.
           </P>
           <P>
-            Two things soften the blow: Paybis frequently waives its own
-            service fee on your first card purchase, and bank transfer
-            options are cheaper than cards where available. One honest note
-            on our process: Paybis hosts its fee details on a support page
-            protected by a bot check that our systems could not get past, so
-            these figures come from Paybis's published materials and
-            independent reviews rather than a live capture of the fee page.
-            Always check the final quote in the purchase widget before you
-            confirm, because the widget shows you the exact amount of crypto
-            you will receive.
+            Two things soften the blow: Paybis waives its service fee
+            entirely on your first card purchase of each cryptocurrency, and
+            bank transfer options are cheaper than cards where available.
+            One honest note on our process: these figures are confirmed from
+            Paybis's own published materials (their site and blog, checked
+            October 2026), since their support fee page sits behind a bot
+            check our systems could not get past. Always check the final
+            quote in the purchase widget before you confirm, because the
+            widget shows you the exact amount of crypto you will receive.
           </P>
         </Section>
 
@@ -407,6 +407,11 @@ export default function PaybisReviewPage() {
             reasonable: you can buy up to $1,000 without verification in
             most regions, which is perfect for a first small purchase, and
             the full check takes just a couple of minutes when you need it.
+            Two regional exceptions worth knowing: UK users face full KYC
+            with a cooling-off period, and US users need to provide a SSN
+            or ITIN. Paybis states the $1,000 no-verification threshold
+            directly on its own site, so this is their policy, not our
+            guess.
           </P>
           <Steps
             items={[
