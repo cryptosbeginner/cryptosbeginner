@@ -228,3 +228,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 // deploy-trigger: fresh build with both sarwa fixes after quota reset
 
 // production-trigger: cards phase 1
+
+// production trigger for comprehensive cards directory
