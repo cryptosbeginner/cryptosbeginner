@@ -64,6 +64,8 @@ const recentRoutes = new Set([
   "/ar/exchanges/sarwa-review",
   "/crypto-cards/redotpay-review",
   "/crypto-cards/tevau-review",
+  "/crypto-cards/avici-review",
+  "/crypto-cards/solid-review",
   "/public-wallets/meme-traders",
   "/tools/paper-trading",
   "/tools/coinstats-review",
