@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${SITE_URL}/images/cards/redotpay-app-2025.jpg`,
+        url: `${SITE_URL}/images/cards/redotpay-card.png`,
         width: 504,
         height: 1024,
-        alt: "RedotPay app home screen showing card balance and crypto holdings",
+        alt: "RedotPay Visa card official product image",
       },
     ],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "RedotPay Review 2026: Fees, Limits & Is It Worth It?",
     description:
       "The crypto debit card reviewed: fees, how it works, and what to watch.",
-    images: [`${SITE_URL}/images/cards/redotpay-app-2025.jpg`],
+    images: [`${SITE_URL}/images/cards/redotpay-card.png`],
   },
 };
 
@@ -308,6 +308,19 @@ export default function RedotPayReviewPage() {
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
               The RedotPay app home screen with card balance and holdings.
               Captured in 2025; the interface may have changed since.
+            </figcaption>
+          </figure>
+
+          <figure className="mt-8">
+            <Image
+              src="/images/cards/redotpay-card.png"
+              alt="RedotPay Visa card official product image showing the red virtual card in the app"
+              width={889}
+              height={1380}
+              className="mx-auto h-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-sm"
+            />
+            <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
+              The official RedotPay card artwork from redotpay.com.
             </figcaption>
           </figure>
 
