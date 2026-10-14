@@ -563,7 +563,7 @@ export default function SarwaReviewArPage() {
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">عملات ساروا الرقمية</td>
-                  <td className="py-3 pr-4 text-right font-bold">فرق سعر بنحو 0.75% إلى 1.5% للصفقة</td>
+                  <td className="py-3 pr-4 text-right font-bold">فرق سعر 1.5% للصفقة (بدون عمولة)</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">نسب مصاريف الصناديق (إنفست)</td>
