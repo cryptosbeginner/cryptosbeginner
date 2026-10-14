@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { glossaryTerms } from "./learn/crypto-glossary/glossary-data";
 import { cardListings } from "./crypto-cards/cards-data";
 import { editorialPages } from "./crypto-cards/editorial-data";
+import { countries } from "./crypto-cards/countries/countries-data";
 import { dexServices } from "./dexes/dex-data";
 import { predictionPlatforms } from "./prediction-markets/prediction-data";
 import { popularWallets } from "./wallets/popular/wallet-data";
@@ -195,6 +196,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedRegionRoutes,
     ...cardListings.map((card) => `/crypto-cards/${card.slug}`),
     ...editorialPages.map((page) => `/crypto-cards/${page.slug}`),
+    ...countries.map((c) => `/crypto-cards/countries/${c.slug}`),
+    "/crypto-cards/countries",
+    "/crypto-cards/issuers",
+    "/crypto-cards/guides",
+    "/crypto-cards/guides/how-crypto-cards-work",
+    "/crypto-cards/guides/crypto-card-fees-explained",
+    "/crypto-cards/guides/crypto-cards-and-taxes",
+    "/crypto-cards/finder",
     ...dexServices.filter((service) => service.isDex).map((service) => `/dexes/${service.slug}`),
     ...predictionPlatforms.map((platform) => `/prediction-markets/${platform.slug}`),
     "/meme-coins/reviews/axiom-trade",
