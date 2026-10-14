@@ -133,12 +133,26 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What MEXC is" },
   { id: "fees", label: "Fees and costs" },
   { id: "safety", label: "Safety, reserves, and the honest risks" },
   { id: "regulation", label: "Regulation and availability" },
   { id: "products", label: "Products and trading tools" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy spot step by step" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -243,11 +257,15 @@ export default function MexcReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              MEXC lists new altcoins faster than almost anyone and charges
-              some of the lowest fees in the business. It also operates with
-              thin regulation, a history of warnings, and a real pattern of
-              risk-control account freezes. This review gives both sides their
-              full weight.
+              Every altcoin hunter has a story that starts with MEXC. A
+              token explodes on social media, you check where it trades,
+              and it is MEXC, listed days before the big exchanges even
+              notice it. That is the draw: over 2,000 tokens and some of
+              the lowest fees in the business. But this is also the exchange
+              with regulatory warnings on record, no licences in the US, UK,
+              or EU, and a real pattern of risk-control account freezes. I
+              use MEXC as a satellite, never a home base, and this review
+              explains why.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -295,28 +313,31 @@ export default function MexcReviewPage() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
-                <strong className="text-slate-950">Altcoin selection is the draw.</strong>{" "}
+                <strong className="text-slate-950">The altcoin supermarket.</strong>{" "}
                 Over 2,000 tokens listed, often days before bigger exchanges
-                touch them.
+                touch them. If it is new and tiny, it is probably here first.
               </li>
               <li>
-                <strong className="text-slate-950">Fees are among the lowest anywhere.</strong>{" "}
+                <strong className="text-slate-950">Genuinely cheap trading.</strong>{" "}
                 Spot at 0% maker and 0.05% taker; futures at 0% maker and
-                around 0.02% taker.
+                around 0.02% taker. MX token holders get 20% off.
               </li>
               <li>
-                <strong className="text-slate-950">Regulation is the weak spot.</strong>{" "}
-                No licenses in the US, UK, or EU; warnings from multiple
-                regulators in 2023; Estonian license revoked.
+                <strong className="text-slate-950">Thin regulation.</strong>{" "}
+                No licences in the US, UK, or EU; warnings from multiple
+                regulators in 2023; the Estonian licence was revoked in
+                November 2023.
               </li>
               <li>
-                <strong className="text-slate-950">Account freezes are the top complaint.</strong>{" "}
+                <strong className="text-slate-950">Freezes are the top complaint.</strong>{" "}
                 Risk-control reviews can lock withdrawals for days. Complete
-                KYC before depositing anything serious.
+                KYC before depositing anything serious, and withdraw profits
+                regularly.
               </li>
               <li>
-                <strong className="text-slate-950">No US, UK, or Canada.</strong>{" "}
-                Blocked in all three plus several more jurisdictions.
+                <strong className="text-slate-950">Not available where you might expect.</strong>{" "}
+                Blocked in the US, UK, Canada, Singapore, Malaysia, mainland
+                China, Hong Kong, and more.
               </li>
             </ul>
           </div>
@@ -346,20 +367,21 @@ export default function MexcReviewPage() {
         <Section id="what-is">
           <H2>What MEXC is</H2>
           <P>
-            MEXC launched in 2018 and carved out a clear niche: list everything,
-            list it early, and charge almost nothing to trade it. With over
-            2,000 tokens and thousands of spot pairs, it has one of the
-            largest altcoin catalogs of any major exchange, and new listings
-            often appear here days or weeks before Binance or Coinbase consider
-            them. Daily volumes run into the billions, and the matching
-            engine is built for speed.
+            MEXC launched in 2018 with a simple strategy: list everything,
+            list it early, and charge almost nothing to trade it. Eight
+            years on, it has one of the largest altcoin catalogs anywhere,
+            over 2,000 tokens and thousands of spot pairs, with daily
+            volumes in the billions. The matching engine is fast, and new
+            listings often appear here days or weeks before Binance or
+            Coinbase consider them.
           </P>
           <P>
-            That positioning explains both the fans and the critics. If you
-            hunt early-stage altcoins, MEXC is where they live first. If you
-            want a regulated venue with deep fiat rails and strong consumer
-            protections, this was never that exchange. Both things are true at
-            once, and this review will not pretend otherwise.
+            That positioning explains both the fans and the critics. When I
+            want exposure to an early-stage altcoin, MEXC is usually the
+            first place that has it. But it was never built to be a
+            regulated venue with strong consumer protections, and it still
+            is not. Both things are true at once, so size your use of it
+            accordingly.
           </P>
         </Section>
 
@@ -468,21 +490,109 @@ export default function MexcReviewPage() {
             />
           </figure>
           <P>
-            Beyond spot, MEXC runs futures with leverage up to 500x on select
-            perpetuals, copy trading, a demo mode with virtual funds, margin,
-            staking through Savings products, and the MX-zone Kickstarter and
-            Launchpad for early token access. P2P markets cover fiat on and
-            off ramps where direct rails do not exist.
+            Beyond spot, MEXC runs futures with leverage up to 500x on
+            select perpetuals, copy trading, a demo mode with virtual funds,
+            margin, staking through Savings products, and the MX-zone
+            Kickstarter and Launchpad for early token access. P2P markets
+            cover fiat on and off ramps where direct rails do not exist,
+            because there is no direct bank withdrawal in most regions.
           </P>
           <P>
-            Two notes for beginners. First, 500x leverage is not a feature to
-            use; it is a number that exists. Liquidation at that leverage is
-            nearly instant on any normal market move. Second, brand-new
-            listings are where MEXC shines and where the risk concentrates:
-            thin order books mean your market order can move the price hard
-            against you. Use limit orders, small size, and check liquidity
-            before touching fresh listings.
+            Two notes for beginners, and the second one matters more. First,
+            500x leverage is not a feature to use; it is a number that
+            exists. Liquidation at that leverage is nearly instant on any
+            normal market move. Second, brand-new listings are where MEXC
+            shines and where the risk concentrates: thin order books mean
+            your market order can move the price hard against you. Use limit
+            orders, keep size small, and check liquidity before touching
+            fresh listings.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            First, check MEXC is available where you live. It blocks the US,
+            UK, Canada, Singapore, Malaysia, mainland China, Hong Kong, and
+            several other jurisdictions, and the list can change. If you are
+            clear, signup is quick, but there is one rule to follow
+            religiously: finish full KYC before you deposit anything
+            serious. Most of the painful freeze stories start with a large
+            deposit into an unverified account.
+          </P>
+          <Steps
+            items={[
+              "Create your account with an email address and a strong password.",
+              "Turn on two-factor authentication before you move any funds.",
+              "Complete KYC: provide your personal details and upload a government ID plus a selfie. Wait for approval before depositing.",
+              "Set up a withdrawal allowlist in the security settings so funds can only go to addresses you approve.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            MEXC is crypto-first for funding. In most regions there is no
+            direct bank deposit, so you will fund it with a crypto transfer
+            from another exchange or wallet, or use the P2P market to buy
+            crypto with fiat from other users.
+          </P>
+          <Steps
+            items={[
+              "Go to Wallet or Assets, then Deposit, and choose the coin you want to send.",
+              "Pick the network carefully and copy the deposit address. The network must match the one you send from.",
+              "Send a small test amount first, then the rest once it arrives. Deposit times depend on network confirmations.",
+              "For P2P: open the P2P market, choose a seller with a strong completion record, follow the payment instructions, and the crypto is released to your account when payment is confirmed.",
+            ]}
+          />
+          <P>
+            Whichever route you use, keep a record of where the funds came
+            from. MEXC&apos;s risk reviews sometimes ask for fund-source
+            documentation, and having it ready shortens the wait.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy spot step by step</H2>
+          <P>
+            Spot trading on MEXC is where the low fees live, and a limit
+            order gets you the 0% maker rate. On fresh listings especially,
+            never use a market order: thin books mean the price can slip
+            hard against you.
+          </P>
+          <Steps
+            items={[
+              "Go to Trade, then Spot, and pick your pair, for example the new token against USDT.",
+              "Look at the order book first. Deep books near the current price mean you can trade; a thin book means you should wait or use a very small size.",
+              "Switch to a limit order, set your price and amount, and place the order. It fills when the market reaches your price.",
+              "Confirm the coins in your spot wallet. For anything you plan to hold, move it off the exchange.",
+            ]}
+          />
+          <P>
+            One more beginner trap: the brand-new listing you came for is
+            also the most volatile thing on the platform. Decide your exit
+            before you enter, and do not chase a coin that is already up
+            several hundred percent.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Crypto withdrawals are the norm on MEXC. There is no direct
+            bank withdrawal in most regions, so cashing out usually means
+            withdrawing crypto to a second exchange or selling through the
+            P2P market.
+          </P>
+          <Steps
+            items={[
+              "Go to Wallet or Assets, then Withdraw, and choose the coin.",
+              "Paste your destination address, or pick it from your allowlist, and select the network carefully.",
+              "Enter the amount, check the withdrawal fee shown, and complete the 2FA confirmation.",
+              "To cash out to fiat: send the crypto to an exchange with bank rails, or sell it on MEXC&apos;s P2P market.",
+            ]}
+          />
         </Section>
 
         <Section id="ratings">
@@ -592,16 +702,16 @@ export default function MexcReviewPage() {
           <P>
             MEXC is the best exchange for one specific job, trading new
             altcoins cheaply, and a mediocre choice for almost everything
-            else. The fee structure is genuinely excellent, the listing speed
-            is unmatched, and the reserves reporting is solid. Against that:
-            thin regulation, a real pattern of account freezes, and no
-            service in the biggest Western markets.
+            else. The fee structure is genuinely excellent, the listing
+            speed is unmatched, and the reserves reporting is solid.
+            Against that: thin regulation, a real pattern of account
+            freezes, and no service in the biggest Western markets.
           </P>
           <P>
-            Use it as a satellite exchange for altcoin exposure, not as your
-            main account. Complete KYC first, keep balances small, withdraw
-            regularly, and never hold your long-term stack on a venue with
-            this regulatory profile.
+            I treat it as a satellite exchange for altcoin exposure, never
+            as my main account. Complete KYC first, keep balances small,
+            withdraw regularly, and never park your long-term stack on a
+            venue with this regulatory profile.
           </P>
         </Section>
 
