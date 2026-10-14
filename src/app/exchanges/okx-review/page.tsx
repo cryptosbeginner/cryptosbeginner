@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
+import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/okx-review`;
@@ -292,6 +293,10 @@ export default function OkxReviewPage() {
 
         <div className="mx-auto max-w-4xl px-4 pt-10">
           <AuthorByline updated={UPDATED} />
+        </div>
+
+        <div className="mx-auto max-w-4xl px-4 pt-4">
+          <PreferredSourceBadge />
         </div>
 
         <section className="mx-auto max-w-4xl px-4 pb-10">
