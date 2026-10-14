@@ -137,9 +137,23 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What WhiteBIT is" },
   { id: "fees", label: "Fees and costs" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy crypto step by step" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "regulation", label: "Regulation and the honest caveats" },
   { id: "security", label: "Security" },
   { id: "products", label: "Products, WBT, and the Nova card" },
@@ -249,11 +263,13 @@ export default function WhitebitReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              WhiteBIT is one of Europe's largest crypto exchanges, founded
-              in Ukraine in 2018, and it secured a MiCA licence in June 2026.
-              This review covers its fees, its genuinely strong security
-              posture, the WBT ecosystem, and the regulatory blemishes that
-              belong in any fair assessment.
+              If you are shopping for a European exchange and WhiteBIT keeps
+              coming up, here is the honest picture. Founded in Ukraine in
+              2018, it grew into one of the continent's biggest exchanges
+              and secured a MiCA licence in June 2026. Below I walk through
+              its fees, its genuinely strong security setup, the WBT
+              ecosystem, and the regulatory blemishes a fair review cannot
+              skip.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -302,13 +318,13 @@ export default function WhitebitReviewPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
                 <strong className="text-slate-950">Europe's major exchange.</strong>{" "}
-                Founded in Ukraine in 2018, part of W Group, with 330-plus
+                Founded in Ukraine in 2018 and part of W Group, with 330-plus
                 assets and a claimed $2.5 billion in daily volume.
               </li>
               <li>
                 <strong className="text-slate-950">MiCA licensed.</strong>{" "}
-                WhiteBIT EU received MiCA authorization from Austria's FMA in
-                June 2026, passporting across 30 EEA countries.
+                WhiteBIT EU was authorized by Austria's FMA in June 2026,
+                passporting regulated services across 30 EEA countries.
               </li>
               <li>
                 <strong className="text-slate-950">Straightforward fees.</strong>{" "}
@@ -316,14 +332,14 @@ export default function WhitebitReviewPage() {
                 0.055% taker, with VIP tiers and WBT discounts on top.
               </li>
               <li>
-                <strong className="text-slate-950">Strong security posture.</strong>{" "}
+                <strong className="text-slate-950">Strong security, one gap.</strong>{" "}
                 96% cold storage, CCSS Level 3, AAA on CER.live, and a $1
-                million bug bounty. No proof-of-reserves audit, though.
+                million bug bounty. Still no proof-of-reserves audit.
               </li>
               <li>
                 <strong className="text-slate-950">Not for everyone.</strong>{" "}
-                Unavailable in the US, UK, and Canada on the global platform,
-                and India's FIU issued it a non-compliance notice in 2026.
+                No US, UK, or Canada on the global platform, and India's FIU
+                issued it a non-compliance notice in 2026.
               </li>
             </ul>
           </div>
@@ -351,13 +367,12 @@ export default function WhitebitReviewPage() {
           <H2>What WhiteBIT is</H2>
           <P>
             WhiteBIT launched in 2018, founded by Ukrainian entrepreneur
-            Volodymyr Nosov, and grew into one of Europe's largest crypto
-            exchanges. It sits inside the W Group ecosystem, which claims
-            more than 35 million customers globally. The platform lists over
-            330 assets across 780-plus trading pairs and reports average
-            daily volume around $2.5 billion, putting it firmly in the second
-            tier of global exchanges by size: far below Binance, but a
-            serious venue in its own right.
+            Volodymyr Nosov, and it has grown into one of Europe's largest
+            crypto exchanges. It sits inside the W Group ecosystem, which
+            claims more than 35 million customers worldwide. The platform
+            lists over 330 assets across 780-plus trading pairs and reports
+            average daily volume of around $2.5 billion. That is far below
+            Binance, but it is a serious venue in its own right.
           </P>
           <figure className="mt-6">
             <Image
@@ -370,11 +385,12 @@ export default function WhitebitReviewPage() {
             />
           </figure>
           <P>
-            Its identity is European and compliance-forward. WhiteBIT has
-            worked with Ukrainian government institutions, partners with
-            brands like Visa and Juventus, and spent the last two years
-            collecting licences. That positioning is its main selling point
-            against offshore competitors with thinner regulatory cover.
+            What sets it apart is the compliance-first identity. WhiteBIT
+            has worked with Ukrainian government institutions, partners with
+            names like Visa and Juventus, and spent the last two years
+            collecting licences. If you are weighing it against offshore
+            competitors with thinner regulatory cover, that positioning is
+            the main selling point.
           </P>
         </Section>
 
@@ -400,6 +416,90 @@ export default function WhitebitReviewPage() {
             </Link>{" "}
             for your asset and method, since these change.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Signing up on WhiteBIT takes a few minutes, but plan for
+            verification before you need to trade. KYC is mandatory here:
+            you cannot deposit, trade, or withdraw until it is done, and on
+            a regulated exchange that is a good sign.
+          </P>
+          <Steps
+            items={[
+              "Head to the WhiteBIT website or app and click Sign up, then register with your email address and a strong password.",
+              "Confirm your email to activate the account.",
+              "Open the verification section in your account settings and complete the ID check with a government-issued ID and a selfie.",
+              "Turn on two-factor authentication before you deposit anything. Do this on every exchange, no exceptions.",
+            ]}
+          />
+          <P>
+            One note before you start: the global platform does not serve
+            US, UK, or Canadian residents, so check availability for your
+            country first.
+          </P>
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            Once you are verified, funding your account is straightforward.
+            Crypto deposits are free, while euro deposits cost a little.
+          </P>
+          <Steps
+            items={[
+              "Log in and go to Balances, then click Deposit.",
+              "For crypto: choose the coin, copy your WhiteBIT deposit address, and send from your wallet or another exchange. Double-check the network.",
+              "For euros: choose EUR and a SEPA bank transfer, which runs about 0.1%. Card deposits work too but cost more.",
+              "Wait for the funds to clear. For a first deposit, send a small test amount and confirm it lands before moving the rest.",
+            ]}
+          />
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy crypto step by step</H2>
+          <P>
+            WhiteBIT's spot market is where most beginners belong. The
+            interface packs in everything a pro needs, which can feel like
+            a lot at first glance, but a simple market buy takes seconds.
+          </P>
+          <Steps
+            items={[
+              "Go to Trade and choose Spot.",
+              "Pick your pair, for example BTC/EUR or BTC/USDT.",
+              "For the simplest route, place a market order: enter how much you want to spend and confirm. The base fee is 0.10%.",
+              "Prefer to set your own price? Use a limit order instead and wait for the market to meet it.",
+            ]}
+          />
+          <P>
+            Holding WBT can cut your maker fees further, but do not buy the
+            exchange token just for discounts as a beginner. Learn the
+            interface with small trades first.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Getting your money out matters just as much as getting it in.
+            Crypto goes to your own wallet, euros go back to your bank.
+          </P>
+          <Steps
+            items={[
+              "Go to Balances and click Withdraw.",
+              "For crypto: choose the coin, paste your external wallet address, and make sure the network matches. Withdrawal fees track network costs.",
+              "For euros: choose EUR and your bank account. EUR withdrawals carry a 5 euro flat fee.",
+              "Confirm the withdrawal, including any email or two-factor codes.",
+            ]}
+          />
+          <P>
+            For a new address, do a small test withdrawal first. It costs
+            very little and buys real peace of mind.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit WhiteBIT</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="regulation">
@@ -464,12 +564,13 @@ export default function WhitebitReviewPage() {
         <Section id="products">
           <H2>Products, WBT, and the Nova card</H2>
           <P>
-            Beyond spot, WhiteBIT offers margin up to 10x, futures up to
-            100x, crypto lending, auto-invest plans, a Launchpad for new
-            tokens, and trading bots. The WBT token threads through all of
-            it: fee discounts, Launchpad access, a burn mechanism, and gas
-            for Whitechain, the group's own blockchain. WBT has even been
-            included in S&P Dow Jones crypto indices, unusual for an
+            This is where WhiteBIT tries to be more than a trading screen.
+            Beyond spot, you get margin up to 10x, futures up to 100x,
+            crypto lending, auto-invest plans, a Launchpad for new tokens,
+            and trading bots. The WBT token runs through all of it: fee
+            discounts, Launchpad access, a burn mechanism, and gas for
+            Whitechain, the group's own blockchain. WBT has even made it
+            into S&P Dow Jones crypto indices, which is unusual for an
             exchange token.
           </P>
           <figure className="mt-6">
@@ -604,14 +705,15 @@ export default function WhitebitReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            WhiteBIT is a solid second-tier exchange with first-tier
-            compliance ambitions: the MiCA licence is real, the security
-            documentation is unusually thorough, and the fees are fair. The
-            missing proof-of-reserves audit and the India FIU notice keep it
-            from a clean bill of health. For European traders who value
-            regulation and security over maximum liquidity, it is a
-            defensible choice. For everyone else, Kraken or OKX deserve a
-            look first.
+            So where does that leave WhiteBIT? It is a solid second-tier
+            exchange with first-tier compliance ambitions, and for European
+            traders who value regulation and security, it is one of the
+            more defensible choices out there. The missing
+            proof-of-reserves audit and the India FIU notice keep it from a
+            spotless record, so go in with open eyes: use it for trading
+            rather than long-term storage, and if maximum liquidity or
+            audited reserves are your priority, Kraken or OKX deserve a look
+            first.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit WhiteBIT</PrimaryCtaButton>
