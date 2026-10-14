@@ -119,6 +119,16 @@ function Section({
   );
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 export default function BybitReviewPage() {
   const articleLd = {
     "@context": "https://schema.org",
@@ -215,13 +225,14 @@ export default function BybitReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Bybit is one of the world&apos;s largest crypto exchanges by
-              trading volume, built first for derivatives and now offering
-              spot, earn products, copy trading, and a Web3 wallet. It is
-              also the exchange that survived the largest theft in crypto
-              history. This review treats that hack as core trust data,
-              alongside fees, licensing, products, and who should avoid the
-              platform.
+              Bybit is one of the largest crypto exchanges in the world by
+              trading volume, and it wears its history openly: a
+              derivatives-first platform with spot, earn products, copy
+              trading, and a Web3 wallet, and the exchange that lived
+              through the largest theft in crypto history. This review
+              treats that hack as core trust data, alongside fees,
+              licensing, products, and an honest account of who should
+              steer clear.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -294,37 +305,38 @@ export default function BybitReviewPage() {
 
             <ul className="mt-4 space-y-3 leading-7 text-slate-800">
               <li>
-                <strong>Best for:</strong> active traders who want deep
-                derivatives liquidity, competitive futures fees, and a broad
-                product suite in one account.
+                <strong>Who it is for:</strong> active traders who want deep
+                derivatives liquidity, competitive futures fees, and a lot of
+                products under one roof.
               </li>
 
               <li>
-                <strong>Not ideal for:</strong> US, Canadian, and several
-                other restricted residents, absolute beginners, and anyone
-                who wants maximum regulatory protection for long-term
-                holdings.
+                <strong>Who should look elsewhere:</strong> residents of the
+                US, Canada, and other restricted countries, absolute
+                beginners, and anyone who wants the strongest possible
+                regulatory protection for long-term holdings.
               </li>
 
               <li>
                 <strong>The hack, in one line:</strong> about $1.5B stolen in
                 February 2025 through a spoofed signing interface, and no
                 user lost funds because Bybit kept withdrawals open and
-                covered the shortfall.
+                covered the shortfall itself.
               </li>
 
               <li>
                 <strong>Regulation:</strong> MiCA-licensed in the EU via
                 Austria and licensed in the UAE, with several other regional
-                registrations. Protections still depend on your entity and
-                jurisdiction.
+                registrations. The protections you get still depend on your
+                entity and jurisdiction.
               </li>
 
               <li>
                 <strong>Fee reality:</strong> entry-tier spot at 0.10% and
-                perps at 0.02% maker / 0.055% taker are competitive, but
-                funding rates, spreads, and withdrawal fees are separate
-                layers. Check the live schedule.
+                perps at 0.02% maker / 0.055% taker are genuinely
+                competitive, but funding rates, spreads, and withdrawal fees
+                are separate cost layers. Check the live schedule before you
+                trade.
               </li>
 
               <li>
@@ -434,6 +446,11 @@ export default function BybitReviewPage() {
                 </a>
               </li>
               <li>
+                <a href="#ratings" className="underline underline-offset-4">
+                  What users say: ratings
+                </a>
+              </li>
+              <li>
                 <a href="#pros-cons" className="underline underline-offset-4">
                   Pros and cons
                 </a>
@@ -451,6 +468,26 @@ export default function BybitReviewPage() {
               <li>
                 <a href="#platform" className="underline underline-offset-4">
                   Platform and products
+                </a>
+              </li>
+              <li>
+                <a href="#signup" className="underline underline-offset-4">
+                  How to sign up and verify
+                </a>
+              </li>
+              <li>
+                <a href="#deposit" className="underline underline-offset-4">
+                  How to deposit
+                </a>
+              </li>
+              <li>
+                <a href="#buy" className="underline underline-offset-4">
+                  How to buy crypto (spot)
+                </a>
+              </li>
+              <li>
+                <a href="#withdraw" className="underline underline-offset-4">
+                  How to withdraw
                 </a>
               </li>
               <li>
@@ -487,24 +524,24 @@ export default function BybitReviewPage() {
           </h2>
 
           <p className="mt-4 leading-8 text-slate-800">
-            Bybit launched in 2018 as a derivatives-first exchange and has
-            grown into one of the largest crypto trading venues in the world
-            by volume. It now serves tens of millions of registered users,
-            per company claims, across spot trading, perpetual futures,
-            options, earn products, copy trading, trading bots, a Web3
-            wallet, a crypto card, and P2P markets. Its headquarters are in
-            Dubai, and it operates through several separately licensed
-            regional entities.
+            Bybit started in 2018 as a derivatives-first exchange, and that
+            is still its core: deep order books, a wide range of perpetual
+            contracts, and tooling built for people who trade often. It has
+            since grown into one of the largest venues in the world by
+            volume, serving tens of millions of registered users, per the
+            company&apos;s own claims, with spot, options, earn products,
+            copy trading, trading bots, a Web3 wallet, a crypto card, and
+            P2P markets. Headquarters are in Dubai, and it runs through
+            several separately licensed regional entities.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
-            The platform&apos;s identity is still derivatives: deep order
-            books, a wide range of perpetual contracts, and tooling aimed at
-            frequent traders. Spot trading and passive products were added
-            later and are solid, but Bybit is not designed as a simple
-            buy-and-hold app for first-time buyers. Beginners can use it,
-            but the product menu rewards users who already understand order
-            types, margin, and funding rates.
+            Spot and the passive products came later and are solid, but do
+            not mistake Bybit for a simple buy-and-hold app for first-time
+            buyers. The product menu rewards people who already understand
+            order types, margin, and funding rates. If you are new, you can
+            still use it, just start with spot and small sizes while you
+            learn the ropes.
           </p>
         </Section>
 
@@ -785,14 +822,14 @@ export default function BybitReviewPage() {
           </figure>
 
           <p className="mt-4 leading-8 text-slate-800">
-            The core trading experience covers spot, margin, perpetual
+            At the center is the trading engine: spot, margin, perpetual
             futures, and options, with leverage advertised up to 100x on
-            the most liquid contracts. Around that core sits a full product
-            menu: Bybit Earn (flexible savings, fixed staking, dual
-            investment, crypto loans), copy trading, trading bots including
-            grid and martingale strategies, a Launchpad and Launchpool for
-            new token listings, P2P markets, an OTC desk, a Web3 wallet,
-            and a crypto card for spending balances. Bybit has also added
+            the most liquid contracts. Around it runs the full menu: Bybit
+            Earn (flexible savings, fixed staking, dual investment, crypto
+            loans), copy trading, trading bots including grid and
+            martingale strategies, a Launchpad and Launchpool for new token
+            listings, P2P markets, an OTC desk, a Web3 wallet, and a
+            crypto card for spending balances. Bybit has also added
             traditional-market instruments such as TradFi perpetuals and
             MT5-based CFDs.
           </p>
@@ -816,6 +853,116 @@ export default function BybitReviewPage() {
             advanced tools, not starting points. Spot buying, small sizes,
             and limit orders are the sane way to learn the platform.
           </p>
+        </Section>
+
+        <Section id="signup">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            How to sign up and verify
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Before anything else, check that Bybit actually serves your
+            country. The restricted list is long, and signing up where you
+            are not welcome ends with frozen funds.
+          </p>
+
+          <Steps
+            items={[
+              "Check availability for your residence: the US, mainland China, Hong Kong, Singapore, and Canada are prohibited, EEA users go to the MiCA-licensed bybit.eu, and the UK gets spot trading only.",
+              "Register with your email address, set a strong password you use nowhere else, and enable two-factor authentication immediately.",
+              "Complete identity verification, which is mandatory for meaningful use. Higher verification levels unlock higher limits and selected services.",
+              "Turn on the anti-phishing code and withdrawal address whitelisting before you deposit anything.",
+            ]}
+          />
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Do not use a VPN to get around restrictions. It breaks the
+            platform&apos;s terms and can leave your funds stranded during
+            a compliance review.
+          </p>
+        </Section>
+
+        <Section id="deposit">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            How to deposit
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Funding your account is simple. Crypto is the cheapest route;
+            card and P2P options depend on your region and carry their own
+            charges.
+          </p>
+
+          <Steps
+            items={[
+              "Log in and go to Assets, then Deposit.",
+              "For crypto: choose the coin and the network, then copy the deposit address. The network must match the one you send from.",
+              "For fiat: use the Buy Crypto page for card purchases or P2P, depending on what your region supports, and check the processor charges shown at checkout.",
+              "Wait for the deposit to confirm, then start with a small amount while you learn the interface.",
+            ]}
+          />
+
+          <p className="mt-4 leading-8 text-slate-800">
+            A small first deposit is cheap insurance against address and
+            network mistakes.
+          </p>
+        </Section>
+
+        <Section id="buy">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            How to buy crypto (spot)
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Spot is where beginners belong on Bybit. The derivatives
+            terminal can wait.
+          </p>
+
+          <Steps
+            items={[
+              "Go to Spot trading and pick your pair, for example BTC/USDT.",
+              "While you are learning, use a limit order: name your price and let the order fill. Market orders fill instantly, but you accept whatever the book offers.",
+              "Enter the amount, review the 0.10% spot fee, and confirm. Your coins land in your spot account.",
+              "Leave leverage, bots, and copy trading alone until spot feels routine.",
+            ]}
+          />
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Martingale bots and 100x leverage are advanced tools with sharp
+            edges. Treat them as things to study, not starting points.
+          </p>
+        </Section>
+
+        <Section id="withdraw">
+          <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            How to withdraw
+          </h2>
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Withdrawing is straightforward, and on Bybit it is worth doing
+            regularly: keep only trading funds on the platform.
+          </p>
+
+          <Steps
+            items={[
+              "Go to Assets, then Withdraw, and choose crypto or fiat.",
+              "For crypto: pick the coin, paste your external wallet address, and select the network. Check both twice before continuing.",
+              "Review the withdrawal fee, which varies by asset and network, and confirm with your 2FA.",
+              "For large amounts, send a small test withdrawal first.",
+            ]}
+          />
+
+          <p className="mt-4 leading-8 text-slate-800">
+            Withdrawals stayed open through the worst week in Bybit&apos;s
+            history. Use that: move profits and savings to self-custody as a
+            habit.
+          </p>
+
+          <div className="mt-7">
+            <PrimaryAffiliateButton>
+              Visit Bybit through our partner link
+            </PrimaryAffiliateButton>
+          </div>
         </Section>
 
         <Section id="security">
@@ -911,23 +1058,23 @@ export default function BybitReviewPage() {
           </h2>
 
           <p className="mt-4 leading-8 text-slate-800">
-            Bybit is a capable, competitive exchange for active traders,
-            and its handling of the February 2025 hack is genuinely the
-            best crisis response the industry has seen: fast disclosure,
-            open withdrawals, and users made whole within days. That
-            record deserves weight in any trust assessment, alongside the
-            MiCA and UAE licenses earned afterward.
+            Here is where I land. Bybit is a capable, competitive exchange
+            for active traders, and its handling of the February 2025 hack
+            remains the best crisis response the industry has seen: fast
+            disclosure, withdrawals kept open, and users made whole within
+            days. That deserves real weight in any trust assessment, along
+            with the MiCA and UAE licenses that followed.
           </p>
 
           <p className="mt-4 leading-8 text-slate-800">
             But the hack also proved that custody risk at Bybit is real,
-            not theoretical, and no licensing or proof-of-reserves report
-            eliminates it. Use Bybit for what it is good at, active
-            trading with competitive fees, keep balances limited to what
-            you trade, and hold the rest in self-custody. For beginners,
-            start with spot, skip leverage until you understand
-            liquidations, and verify every fee and restriction on the live
-            site before depositing.
+            not theoretical, and no license or proof-of-reserves report
+            removes it. Use Bybit for what it does well, active trading
+            with competitive fees, keep balances to what you trade, and
+            hold the rest in self-custody. If you are starting out, begin
+            with spot, skip leverage until you understand liquidations, and
+            verify every fee and restriction on the live site before you
+            deposit.
           </p>
 
           <div className="mt-7">
