@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
-const PAGE_URL = `${SITE_URL}/cards/redotpay-review`;
+const PAGE_URL = `${SITE_URL}/crypto-cards/redotpay-review`;
 
 const UPDATED = "14 October 2026";
 const UPDATED_ISO = "2026-10-14";
@@ -204,7 +204,7 @@ export default function RedotPayReviewPage() {
         "@type": "ListItem",
         position: 2,
         name: "Cards",
-        item: `${SITE_URL}/cards`,
+        item: `${SITE_URL}/crypto-cards`,
       },
       {
         "@type": "ListItem",

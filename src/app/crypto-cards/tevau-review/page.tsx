@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
-const PAGE_URL = `${SITE_URL}/cards/tevau-review`;
+const PAGE_URL = `${SITE_URL}/crypto-cards/tevau-review`;
 
 const UPDATED = "14 October 2026";
 const UPDATED_ISO = "2026-10-14";
@@ -204,7 +204,7 @@ export default function TevauReviewPage() {
         "@type": "ListItem",
         position: 2,
         name: "Crypto Cards",
-        item: `${SITE_URL}/cards`,
+        item: `${SITE_URL}/crypto-cards`,
       },
       {
         "@type": "ListItem",
@@ -274,7 +274,7 @@ export default function TevauReviewPage() {
               </PrimaryCtaButton>
 
               <Link
-                href="/cards"
+                href="/crypto-cards"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-800 no-underline transition hover:bg-slate-100 sm:w-auto"
               >
                 Compare crypto cards
