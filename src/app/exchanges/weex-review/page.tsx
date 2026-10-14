@@ -133,9 +133,23 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What WEEX is" },
   { id: "fees", label: "Fees and costs" },
+  { id: "signup", label: "How to sign up and start trading" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy crypto step by step" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "kyc", label: "No-KYC trading" },
   { id: "leverage", label: "The 400x leverage warning" },
   { id: "reserves", label: "Proof of reserves and the protection fund" },
@@ -247,10 +261,12 @@ export default function WeexReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              WEEX is a no-KYC exchange with 1,000-plus assets, 400x futures,
-              published proof of reserves, and a 1,000 BTC protection fund. It
-              is a capable derivatives venue, but the thin regulation, weak
-              support reviews, and extreme leverage need to be said plainly.
+              If no-KYC trading with deep altcoin futures sounds like your
+              thing, WEEX will show up on your radar: 1,000-plus assets,
+              400x futures, published proof of reserves, and a 1,000 BTC
+              protection fund. It is a capable derivatives venue, but the
+              thin regulation, weak support reviews, and extreme leverage
+              need to be said plainly.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -299,7 +315,7 @@ export default function WeexReviewPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
                 <strong className="text-slate-950">No-KYC trading.</strong>{" "}
-                Trade without identity verification up to 50,000 USDT per
+                Trade without identity verification, up to 50,000 USDT per
                 transaction and 500,000 USDT per day in withdrawals.
               </li>
               <li>
@@ -352,12 +368,13 @@ export default function WeexReviewPage() {
         <Section id="what-is">
           <H2>What WEEX is</H2>
           <P>
-            WEEX launched in 2018 and now reports 6 to 10 million users
-            across 150-plus countries. It lists over 1,000 assets with 640-plus
-            spot pairs and more than 1,000 perpetual futures contracts. Its
-            pitch is simple: deep altcoin futures access without mandatory
-            KYC, and it signed footballer Michael Owen as brand ambassador in
-            2025.
+            If you want altcoin futures without handing over your ID, WEEX
+            is built for exactly that. It launched in 2018 and now reports
+            6 to 10 million users across 150-plus countries, with over
+            1,000 assets listed, 640-plus spot pairs, and more than 1,000
+            perpetual futures contracts. In 2025 it signed footballer
+            Michael Owen as brand ambassador, which tells you who it is
+            marketing to.
           </P>
           <figure className="mt-6">
             <Image
@@ -396,6 +413,92 @@ export default function WeexReviewPage() {
             </Link>{" "}
             before you trade, since fee pages change.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and start trading</H2>
+          <P>
+            Getting started on WEEX is quick, and like BYDFi, you can trade
+            without verifying your identity. The limits for unverified
+            accounts are generous, but know them before you deposit.
+          </P>
+          <Steps
+            items={[
+              "Go to the WEEX website or app and register with your email or phone number.",
+              "You can trade right away without KYC. Unverified accounts can withdraw around 50,000 USDT per transaction and 500,000 USDT per day.",
+              "Optional: complete KYC in your account settings for higher limits.",
+              "Turn on two-factor authentication before you deposit anything.",
+            ]}
+          />
+          <P>
+            WEEX blocks US users and restricts several regulated markets.
+            Check your country first, and never use a VPN to bypass
+            restrictions.
+          </P>
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            WEEX's fiat infrastructure is limited, so most users fund with
+            crypto. That is the smoothest route here.
+          </P>
+          <Steps
+            items={[
+              "Log in, open your Assets or Wallet, and choose Deposit.",
+              "Select the coin and network, then send from your wallet or another exchange to the deposit address shown.",
+              "Double-check the network before you send. A wrong network can mean lost funds.",
+              "For a first deposit, send a small test amount and confirm it arrives.",
+            ]}
+          />
+          <P>
+            WEEX also offers P2P trading if you need a fiat route in your
+            region.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy crypto step by step</H2>
+          <P>
+            Spot trading on WEEX is straightforward. If you are tempted by
+            the futures tab, read the leverage warning below first and
+            practice on the demo account.
+          </P>
+          <Steps
+            items={[
+              "Go to the Spot trading section.",
+              "Pick your pair, for example BTC/USDT.",
+              "Place a market order for an instant fill at 0.10%, or a limit order to set your own price.",
+              "Enter the amount, review, and confirm. Your crypto lands in your WEEX wallet.",
+            ]}
+          />
+          <P>
+            Start small while you learn the interface, and use the demo
+            account before putting real money at risk.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdraw to your own wallet regularly and keep only active
+            trading funds on the exchange.
+          </P>
+          <Steps
+            items={[
+              "Open Assets or Wallet and choose Withdraw.",
+              "Pick the coin and paste your external wallet address. Make sure the network matches.",
+              "BTC withdrawals cost a fixed 0.00016 BTC; other coins carry network-based fees.",
+              "Confirm with your two-factor and email codes.",
+            ]}
+          />
+          <P>
+            Always test a new address with a small amount first. It costs
+            very little and buys real peace of mind.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit WEEX</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="kyc">
@@ -489,10 +592,10 @@ export default function WeexReviewPage() {
           <P>
             Copy trading is a core WEEX product: follow lead traders, with
             the lead trader taking 10% of your net profit from copied
-            trades. Past performance predicts nothing, and most copy traders
-            lose money, so treat it as a tool, not a strategy. The platform
-            also offers P2P trading, an Earn product, and the WXT native
-            token for fee discounts and incentives.
+            trades. Past performance predicts nothing, and most copy
+            traders lose money, so treat it as a tool, not a strategy. The
+            platform also offers P2P trading, an Earn product, and the WXT
+            native token for fee discounts and incentives.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit WEEX</PrimaryCtaButton>
@@ -614,12 +717,13 @@ export default function WeexReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            WEEX is a capable no-KYC derivatives exchange with competitive
-            fees, real proof of reserves, and a public protection fund. The
-            missing licence, weak support reviews, and 400x leverage define
-            its risk profile. Trade here if you know what you are doing,
-            keep it small, and never store funds here. For most beginners, a
-            licensed exchange is the better first account.
+            So where does that leave WEEX? It is a capable no-KYC
+            derivatives exchange with competitive fees, published proof of
+            reserves, and a public protection fund. The missing licence,
+            weak support reviews, and 400x leverage define its risk
+            profile. If you know what you are doing, keep it small and
+            never store funds here. For most beginners, a licensed exchange
+            is the better first account.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit WEEX</PrimaryCtaButton>
