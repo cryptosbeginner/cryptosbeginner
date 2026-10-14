@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: `${SITE_URL}/images/cards/tevau-virtual-card-2025.jpg`,
+        url: `${SITE_URL}/images/cards/tevau-card.png`,
         width: 1747,
         height: 1080,
         alt: "Tevau app virtual card ordering screen showing the card tier options",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Tevau Card Review 2026: Fees, Availability & Is It Worth It?",
     description:
       "The USDT-funded crypto card reviewed: fees, availability, and what to watch.",
-    images: [`${SITE_URL}/images/cards/tevau-virtual-card-2025.jpg`],
+    images: [`${SITE_URL}/images/cards/tevau-card.png`],
   },
 };
 
@@ -311,6 +311,19 @@ export default function TevauReviewPage() {
               Historical image from 2025: Tevau&apos;s virtual card order
               flow. Fees and availability have changed since; current
               figures are verified October 2026.
+            </figcaption>
+          </figure>
+
+          <figure className="mt-8">
+            <Image
+              src="/images/cards/tevau-card.png"
+              alt="Tevau Visa card official product image showing the green physical cards"
+              width={1200}
+              height={630}
+              className="mx-auto h-auto w-full max-w-md rounded-2xl border border-slate-200 shadow-sm"
+            />
+            <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
+              The official Tevau card artwork from tevau.co.
             </figcaption>
           </figure>
 
