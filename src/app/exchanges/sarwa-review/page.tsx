@@ -553,7 +553,7 @@ export default function SarwaReviewPage() {
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Sarwa Crypto</td>
-                  <td className="py-3 pr-4 text-right font-bold">Spread of roughly 0.75% to 1.5% per trade</td>
+                  <td className="py-3 pr-4 text-right font-bold">1.5% spread per trade (no commission)</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">ETF expense ratios (Invest)</td>
