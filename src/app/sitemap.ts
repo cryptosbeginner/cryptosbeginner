@@ -226,3 +226,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 // deploy-probe-2: kick Vercel main-branch webhook
 
 // deploy-trigger: fresh build with both sarwa fixes after quota reset
+
+// production-trigger: cards phase 1
