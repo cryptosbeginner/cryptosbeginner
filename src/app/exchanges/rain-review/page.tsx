@@ -132,9 +132,23 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What Rain is" },
   { id: "fees", label: "Fees and costs" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to fund your account in AED" },
+  { id: "buy", label: "How to buy crypto step by step" },
+  { id: "withdraw", label: "How to withdraw to your bank" },
   { id: "licences", label: "Licences and the honest caveats" },
   { id: "security", label: "Security and the 2024 hack" },
   { id: "sharia", label: "Sharia certification and local fiat" },
@@ -243,11 +257,14 @@ export default function RainReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              Rain is the Middle East's most established licensed crypto
-              exchange: Bahrain's central bank licence since 2019, Sharia
-              certification, and direct local bank transfers. It also has a
-              2024 wallet theft and a disclosure delay that belong in any
-              fair review.
+              If you live in the Gulf and want to buy your first Bitcoin
+              without sending money to an offshore exchange, Rain is
+              probably the name you keep hearing. It is the region's most
+              established licensed exchange: a Central Bank of Bahrain
+              licence since 2019, Sharia certification, and deposits
+              straight from your local bank. It also has a 2024 wallet
+              theft and a disclosure delay that a fair review cannot skip,
+              so here is the full, honest picture.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -301,8 +318,9 @@ export default function RainReviewPage() {
               </li>
               <li>
                 <strong className="text-slate-950">Two ways to buy.</strong>{" "}
-                Simple page at about 0.5% markup, or Rain Pro order book at
-                0% maker and 0.05% taker.
+                The simple page adds about 0.5% to the price. Rain Pro, the
+                order-book platform, costs 0% maker and 0.05% taker, ten
+                times cheaper.
               </li>
               <li>
                 <strong className="text-slate-950">Sharia certified.</strong>{" "}
@@ -311,18 +329,19 @@ export default function RainReviewPage() {
               </li>
               <li>
                 <strong className="text-slate-950">Local fiat rails.</strong>{" "}
-                Direct bank transfers in SAR, AED, BHD, KWD, OMR, and USD.
+                Direct bank transfers in SAR, AED, BHD, KWD, OMR, and USD,
+                so you fund from your own bank.
               </li>
               <li>
                 <strong className="text-slate-950">The blemish.</strong>{" "}
-                A $14.8 million wallet theft in April 2024, disclosed only
+                A $14.8 million wallet theft in April 2024, confirmed only
                 after an outside investigator published it. No customer lost
                 money, but the delay matters.
               </li>
               <li>
                 <strong className="text-slate-950">Limited products.</strong>{" "}
-                Around 150 assets, no futures, margin, staking, or Earn for
-                retail.
+                Around 150 assets, and no futures, margin, staking, or Earn
+                for retail accounts.
               </li>
             </ul>
           </div>
@@ -368,11 +387,11 @@ export default function RainReviewPage() {
             />
           </figure>
           <P>
-            Its proposition is simple: a regulated on-ramp for the Middle
-            East. Around ten regional markets, including Bahrain, Saudi
-            Arabia, the UAE, Kuwait, Qatar, and Oman, with support in Arabic
-            and English around the clock. It expanded further in 2026, with
-            in-principle approval in Dubai adding to its Abu Dhabi
+            The pitch is simple and it works: a regulated on-ramp for the
+            Middle East. Around ten regional markets, including Bahrain,
+            Saudi Arabia, the UAE, Kuwait, Qatar, and Oman, with support in
+            Arabic and English around the clock. It kept expanding in 2026,
+            adding in-principle approval in Dubai to its Abu Dhabi
             authorization.
           </P>
         </Section>
@@ -404,6 +423,96 @@ export default function RainReviewPage() {
             it where a bank transfer works. Crypto deposits are free;
             withdrawal fees vary by network.
           </P>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Getting started on Rain is quick, but because it is a licensed
+            exchange, full identity verification is mandatory before you
+            can deposit or trade. Have your ID ready and you will be
+            through in minutes.
+          </P>
+          <Steps
+            items={[
+              "Go to the Rain website or download the mobile app and click Sign up.",
+              "Register with your email address and create a strong password.",
+              "Complete identity verification with a government-issued ID, such as your Emirates ID or national ID, plus a selfie. Rain is licensed, so there is no way around this step.",
+              "Turn on two-factor authentication before you deposit anything.",
+            ]}
+          />
+          <P>
+            Verify before you need to trade. Nothing is more frustrating
+            than a pending verification when the market is moving.
+          </P>
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to fund your account in AED</H2>
+          <P>
+            This is where Rain feels built for the Gulf. You fund your
+            account straight from your local bank: no offshore card
+            processors, no P2P strangers.
+          </P>
+          <Steps
+            items={[
+              "Log in and go to Deposit or Fund your account.",
+              "Choose AED and a bank transfer, then follow the instructions to send from your UAE bank account.",
+              "In a hurry? Card funding works too, but it runs about 4%, so it is an expensive shortcut.",
+              "Already hold crypto elsewhere? Crypto deposits are free: pick the coin, copy your Rain deposit address, and send, double-checking the network.",
+            ]}
+          />
+          <P>
+            Bank transfer is the cheapest way in. Save the card for
+            emergencies, not for regular buys.
+          </P>
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy crypto step by step</H2>
+          <P>
+            Rain gives you two ways to buy, and this is the single most
+            useful thing to know: the simple buy page is easy, the Rain Pro
+            order book is cheap. For anything above a few hundred dollars,
+            use Rain Pro.
+          </P>
+          <Steps
+            items={[
+              "For the cheapest buys, open Rain Pro, pick your pair, for example BTC/AED, and place a market or limit order. You pay 0% maker or 0.05% taker.",
+              "For the simplest buys, use the regular buy page: pick the coin, enter the amount in AED, and confirm. The price includes about a 0.5% markup.",
+              "Your crypto lands in your Rain wallet either way.",
+            ]}
+          />
+          <P>
+            Use the simple page for your very first small purchase if the
+            order book feels intimidating, then switch to Rain Pro. At
+            0.5% versus 0.05%, every trade after that saves you real
+            money.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw to your bank</H2>
+          <P>
+            Cashing out sends dirhams back to your own bank account. The
+            process is simple, and the fees depend on where you are.
+          </P>
+          <Steps
+            items={[
+              "Go to Withdraw in your account.",
+              "Choose AED and your linked local bank account, enter the amount, and confirm.",
+              "Withdrawing crypto instead? Choose the coin, hit Withdraw, and paste your external wallet address. Double-check the address and the network.",
+              "Confirm the withdrawal, including any two-factor codes.",
+            ]}
+          />
+          <P>
+            A heads-up on fees: transfers inside Bahrain are free both
+            ways, while a withdrawal to a Saudi bank costs SAR 50. For a
+            new wallet address, always do a small test withdrawal first.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit Rain</PrimaryCtaButton>
+          </div>
         </Section>
 
         <Section id="licences">
@@ -460,11 +569,11 @@ export default function RainReviewPage() {
             />
           </figure>
           <P>
-            The Sharia certification is Rain's signature differentiator.
-            Having the Shariyah Review Bureau certify the whole service,
-            brokerage, trading, and custody, gives Muslim investors in the
-            Gulf a compliance basis that no global exchange offers at the
-            same level.
+            For many Gulf investors, this is the section that matters most.
+            The Shariyah Review Bureau has certified Rain's entire service,
+            brokerage, trading, and custody, as compliant with Islamic
+            finance rules. No global exchange offers that at the same
+            level, and it is a genuine reason many people choose Rain.
           </P>
           <P>
             Paired with that is direct fiat access: bank transfers in
@@ -557,13 +666,14 @@ export default function RainReviewPage() {
         <Section id="verdict">
           <H2>Verdict</H2>
           <P>
-            Rain is the default first exchange for the Gulf for good reason:
-            real licences, Sharia certification, local bank rails, and honest
-            pricing on Rain Pro. The 2024 theft and its slow disclosure are
-            genuine marks against it, but customer funds were made whole and
-            the regulatory record is otherwise strong. Buy on Rain Pro, keep
-            the simple page for small amounts, and graduate to a global
-            exchange when you need derivatives.
+            If you live in the Gulf and want your first crypto account to
+            be licensed, Sharia-compliant, and funded from your own bank,
+            Rain is the natural starting point, and honestly it is hard to
+            beat for that job. Go in with open eyes: the 2024 theft and its
+            slow disclosure are real marks on the record, even though no
+            customer lost money. Use Rain Pro instead of the simple buy
+            page, keep the simple page for small top-ups, and move to a
+            global exchange when you outgrow it and need derivatives.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit Rain</PrimaryCtaButton>
