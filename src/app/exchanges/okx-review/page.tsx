@@ -138,12 +138,26 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 leading-8 text-slate-800">{children}</p>;
 }
 
+function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 list-decimal space-y-3 pl-6 leading-7 text-slate-800">
+      {items.map((item, i) => (
+        <li key={i}>{item}</li>
+      ))}
+    </ol>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What OKX is" },
   { id: "fees", label: "Fees and costs" },
   { id: "regulation", label: "Regulation, licences, and the 2025 settlements" },
   { id: "security", label: "Security and proof of reserves" },
   { id: "products", label: "Products and trading tools" },
+  { id: "signup", label: "How to sign up and verify" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "buy", label: "How to buy spot step by step" },
+  { id: "withdraw", label: "How to withdraw" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -250,11 +264,15 @@ export default function OkxReviewPage() {
             </h1>
 
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
-              OKX is one of the few exchanges that can credibly claim both
-              scale and regulation: top-five volumes, a full MiCA licence, and
-              monthly proof of reserves. It also paid $505 million in 2025 to
-              settle US charges of operating without a licence. This review
-              gives both halves their proper weight.
+              OKX is the exchange I point experienced traders to when they
+              ask for one venue that does everything. When I first opened it,
+              what struck me was the scale: top-five volumes, a full MiCA
+              licence in Europe, and monthly proof of reserves you can check
+              yourself. It has the polish of a serious financial product.
+              But a fair review has to carry the other half too. In 2025,
+              OKX paid $505 million to settle US charges of operating without
+              a licence. This review weighs both halves honestly, then walks
+              you through the platform step by step.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -302,31 +320,34 @@ export default function OkxReviewPage() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
-                <strong className="text-slate-950">One of the most regulated major exchanges.</strong>{" "}
+                <strong className="text-slate-950">Serious regulation, with an asterisk.</strong>{" "}
                 Full MiCA licence in the EU (January 2025), plus licences in
-                Dubai, Singapore, and Australia, and a relaunched US operation.
+                Dubai, Singapore, and Australia, and a relaunched US
+                operation.
               </li>
               <li>
-                <strong className="text-slate-950">But the compliance record has real blemishes.</strong>{" "}
+                <strong className="text-slate-950">The compliance record has real blemishes.</strong>{" "}
                 A $505 million DOJ settlement in February 2025 for unlicensed
                 US operations, and a 1.1 million euro Malta fine for weak
-                transaction monitoring.
+                transaction monitoring. Compliance failures, not insolvency,
+                and it has since rebuilt its compliance setup, but they count.
               </li>
               <li>
-                <strong className="text-slate-950">Competitive fees.</strong>{" "}
+                <strong className="text-slate-950">Fees that hold up.</strong>{" "}
                 Spot at 0.08% maker and 0.10% taker, futures at 0.02% maker
                 and 0.05% taker, with OKB discounts up to 40%.
               </li>
               <li>
-                <strong className="text-slate-950">Strong transparency cadence.</strong>{" "}
+                <strong className="text-slate-950">Reserves you can actually check.</strong>{" "}
                 Monthly proof of reserves since 2022; the September 2026
                 report showed $27.4 billion in primary assets, all major
                 assets above 100%.
               </li>
               <li>
-                <strong className="text-slate-950">Full product suite.</strong>{" "}
+                <strong className="text-slate-950">Everything under one roof.</strong>{" "}
                 Spot, margin, perpetuals up to 125x, options, copy trading,
-                bots, Earn, and a built-in Web3 wallet.
+                bots, Earn, and a built-in Web3 wallet. Treat 125x as a risk
+                feature, not a goal.
               </li>
             </ul>
           </div>
@@ -353,22 +374,20 @@ export default function OkxReviewPage() {
         <Section id="what-is">
           <H2>What OKX is</H2>
           <P>
-            OKX launched in 2017 as OKEx and rebranded in 2022. Founded by
-            Star Xu, it grew out of the OKCoin lineage into one of the five
-            largest crypto exchanges by volume, serving tens of millions of
-            users across more than 100 countries. It is a derivatives-first
-            exchange that also runs a serious spot market, and it has spent
-            the last two years buying the licences its earlier growth phase
-            skipped.
+            OKX started life in 2017 as OKEx and took its current name in
+            2022. It was founded by Star Xu out of the OKCoin lineage, and it
+            grew the fast way: deep liquidity, a derivatives-first product
+            line, and expansion into more than 100 countries, where it now
+            serves tens of millions of users. It is one of the five largest
+            crypto exchanges by volume.
           </P>
           <P>
-            That arc is the whole story in miniature. OKX scaled fast on
-            product and liquidity, got caught with compliance gaps, paid
-            heavily for them, and is now one of the most licensed exchanges
-            in the industry. Whether you read that as redemption or as a
-            warning depends on how much you trust institutions to change.
-            This review will not decide that for you, but it will lay out
-            both sides plainly.
+            That growth came at a cost the company is still paying down. OKX
+            scaled on product and liquidity first and bought the licences
+            second, which is how you end up with both a full MiCA licence
+            and a $505 million settlement in the same story. I will not tell
+            you which half to weigh more. The regulation section below lays
+            out both plainly.
           </P>
           <figure className="mt-6">
             <Image
@@ -508,23 +527,108 @@ export default function OkxReviewPage() {
         <Section id="products">
           <H2>Products and trading tools</H2>
           <P>
-            OKX is a full-stack trading venue. Spot and margin sit alongside
-            perpetual swaps with up to 125x leverage, expiry futures,
-            options on BTC and ETH, and a Convert feature for instant swaps.
-            Copy trading lets you mirror experienced traders for a profit
-            share, and the trading bots cover grid, DCA, and arbitrage
-            strategies. Earn products offer staking and savings yields,
-            though rates move with the market and are never guaranteed.
+            OKX is a full-stack trading venue, and the product list is long:
+            spot and margin, perpetual swaps with up to 125x leverage, expiry
+            futures, options on BTC and ETH, and a Convert feature for
+            instant swaps. Copy trading lets you mirror experienced traders
+            for a share of profits, trading bots cover grid, DCA, and
+            arbitrage strategies, and Earn products offer staking and savings
+            yields that move with the market and are never guaranteed.
           </P>
           <P>
-            The built-in Web3 wallet is a genuine differentiator: a
-            self-custody wallet with DEX aggregation, NFT support, and DeFi
-            access inside the same app, so you can move funds off the
-            exchange without a separate download. OKB, the native token,
-            pays fee discounts up to 40% and counts toward VIP tiers. The
-            interface is powerful but dense; beginners often find the sheer
-            number of products overwhelming at first.
+            Two things stand out for me. The built-in Web3 wallet is a real
+            differentiator: a self-custody wallet with DEX aggregation, NFT
+            support, and DeFi access inside the same app, so you can move
+            funds off the exchange without downloading anything else. The
+            other is a warning, not a perk: the interface is dense, and
+            beginners regularly tell me they felt overwhelmed the first
+            week. Start with spot, ignore the leverage slider, and let the
+            rest wait. OKB, the native token, pays fee discounts up to 40%
+            and counts toward VIP tiers.
           </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Visit OKX</PrimaryCtaButton>
+          </div>
+        </Section>
+
+        <Section id="signup">
+          <H2>How to sign up and verify</H2>
+          <P>
+            Signing up is straightforward, and verification is not optional
+            here. OKX requires KYC for trading, deposits, and withdrawals,
+            so have an ID ready before you start. One rule before anything
+            else: check that a licensed OKX entity actually serves your
+            country, and do not use a VPN to fake it. The 2025 settlement is
+            exactly about what happens when geographic controls fail.
+          </P>
+          <Steps
+            items={[
+              "Create your account with your email address or phone number, then set a strong password.",
+              "Turn on two-factor authentication immediately, before you deposit anything.",
+              "Complete KYC: choose your country, select an ID type, and upload clear photos of your ID plus a selfie. Approval is usually quick.",
+              "Set a withdrawal allowlist and an anti-phishing code in the security settings. Both take two minutes and both are worth it.",
+            ]}
+          />
+        </Section>
+
+        <Section id="deposit">
+          <H2>How to deposit</H2>
+          <P>
+            You can fund OKX with crypto or, depending on which OKX entity
+            serves you, with fiat. The exact options differ by region, so
+            treat the steps below as the general flow and follow what your
+            account shows.
+          </P>
+          <Steps
+            items={[
+              "Go to Assets, then Deposit, and choose whether you are depositing crypto or fiat.",
+              "For crypto: pick the coin, then pick the network. Match the network on both sides, or the funds will not arrive.",
+              "Copy the deposit address and send from your wallet. Start with a small test amount if you are unsure.",
+              "Wait for the required network confirmations. The balance appears in your funding account when they clear.",
+            ]}
+          />
+        </Section>
+
+        <Section id="buy">
+          <H2>How to buy spot step by step</H2>
+          <P>
+            When I first opened OKX&apos;s trading screen, there was a lot
+            going on. The trick is to ignore most of it. The spot market is
+            where you buy coins you actually own, and a limit order keeps
+            your fee at the 0.08% maker rate.
+          </P>
+          <Steps
+            items={[
+              "Go to Trade, then Spot, and pick your pair, for example BTC/USDT.",
+              "You will see the order book, the price chart, and the buy/sell panel. Focus on the panel.",
+              "Switch to a limit order, enter your price and amount, and confirm. The order fills when the market reaches your price.",
+              "Check your Assets to confirm the coins arrived. Consider moving anything you will not trade soon to the Web3 wallet or your own wallet.",
+            ]}
+          />
+          <P>
+            Two cost traps to know. The Convert feature is instant but prices
+            its cost into the spread, so it is fine for small amounts and
+            wasteful for large ones. And if you wander into perpetuals,
+            funding payments settle every 8 hours and can cost more than the
+            headline fee on positions you hold for weeks.
+          </P>
+        </Section>
+
+        <Section id="withdraw">
+          <H2>How to withdraw</H2>
+          <P>
+            Withdrawing is the mirror of depositing, with one extra safety
+            habit: the allowlist. If you set it up during signup, your
+            account can only send to addresses you approved.
+          </P>
+          <Steps
+            items={[
+              "Go to Assets, then Withdraw, and choose the coin.",
+              "Paste your external wallet address, or pick it from your allowlist, and select the network carefully.",
+              "Enter the amount, confirm the fee and destination, and complete the 2FA check.",
+              "For a large first withdrawal, send a small test amount first. It costs a few cents and removes the anxiety.",
+            ]}
+          />
           <div className="mt-7">
             <PrimaryCtaButton>Visit OKX</PrimaryCtaButton>
           </div>
@@ -642,14 +746,18 @@ export default function OkxReviewPage() {
           <H2>Verdict</H2>
           <P>
             OKX is a top-tier exchange on product and a serious one on
-            regulation today, with the MiCA licence, monthly proof of
-            reserves, and deep markets to back it up. The $505 million
-            settlement is the unavoidable context: it was a compliance
-            failure, not a theft, and the company paid for it and rebuilt.
-            But it happened, and a fair review says so plainly. If you can
-            live with that history, OKX is one of the most complete trading
-            venues available. If you cannot, Kraken is the cleaner
-            alternative.
+            regulation today: the MiCA licence, monthly proof of reserves,
+            and deep markets are real. The $505 million settlement is the
+            unavoidable context. It was a compliance failure, not a theft,
+            and the company paid for it and rebuilt, but it happened, and a
+            fair review says so plainly.
+          </P>
+          <P>
+            If you can live with that history, OKX is one of the most
+            complete trading venues available. If you cannot, Kraken is the
+            cleaner alternative. Either way, turn on every security feature,
+            verify what you can in the proof of reserves, and keep your
+            exchange balance at trading size.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit OKX</PrimaryCtaButton>
