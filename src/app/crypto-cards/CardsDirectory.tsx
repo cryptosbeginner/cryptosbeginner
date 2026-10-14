@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cardCategories, cardListings, CardCategory, CardListing } from "./cards-data";
 
-type GlyphName = "check" | "money" | "globe" | "shield" | "wallet";
+type GlyphName = "check" | "money" | "globe" | "shield" | "wallet" | "card" | "search" | "star";
 function Glyph({ name, size = 15, className = "" }: { name: GlyphName; size?: number; className?: string }) {
   const paths: Record<GlyphName, string> = {
     check: "M20 6 9 17l-5-5m12-6 4 4",
@@ -13,22 +13,58 @@ function Glyph({ name, size = 15, className = "" }: { name: GlyphName; size?: nu
     globe: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-18c2.1 2.2 3.2 5.2 3.2 9S14.1 18.8 12 21c-2.1-2.2-3.2-5.2-3.2-9S9.9 5.2 12 3Zm-8.5 9h17",
     shield: "M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Z",
     wallet: "M3 6h18v13H3zM16 10h5v5h-5a2.5 2.5 0 0 1 0-5Z",
+    card: "M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm2 3h14",
+    search: "M11 4a7 7 0 1 0 4.9 12L21 21l-1.4 1.4-5.1-5.1A7 7 0 0 0 11 4Z",
+    star: "M12 3l2.7 5.8 6.3.8-4.6 4.3 1.2 6.1-5.6-3.1-5.6 3.1 1.2-6.1L3 9.6l6.3-.8L12 3Z",
   };
   return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d={paths[name]} /></svg>;
 }
 
-function CardArtwork({ card, large = false }: { card: CardListing; large?: boolean }) {
+function isPlaceholder(card: CardListing) {
+  return card.imageUrl.includes("placeholder") || !card.imageUrl;
+}
+
+function CardArtwork({ card }: { card: CardListing }) {
   const [broken, setBroken] = useState(false);
+  const showPlaceholder = broken || isPlaceholder(card);
   return (
-    <div className={`relative overflow-hidden rounded-[1.5rem] bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,.34),transparent_30%),linear-gradient(135deg,#111827,#312e81_58%,#c026d3)] ${large ? "min-h-[270px]" : "min-h-[190px]"}`}>
-      {!broken && <Image src={card.imageUrl} alt={card.imageAlt} onError={() => setBroken(true)} fill priority={large} sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-contain p-5 mix-blend-normal" referrerPolicy="no-referrer" />}
-      {broken && <div className="absolute inset-0 flex flex-col justify-between p-6 text-white"><span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">Official product link</span><div><p className="text-4xl font-black tracking-[-0.06em]">{card.name.split(" ").slice(0, 2).join(" ")}</p><p className="mt-2 text-sm font-semibold text-white/75">Image unavailable in this environment. View the official source for the current design.</p></div></div>}
-      <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-slate-950/70 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.13em] text-white">{card.network}</span>
+    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[radial-gradient(circle_at_25%_15%,rgba(255,255,255,.22),transparent_45%),linear-gradient(135deg,#0f172a,#312e81_55%,#a21caf)]">
+      {!showPlaceholder && (
+        <Image
+          src={card.imageUrl}
+          alt={card.imageAlt}
+          onError={() => setBroken(true)}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-6 transition duration-300 group-hover:scale-[1.04]"
+          referrerPolicy="no-referrer"
+        />
+      )}
+      {showPlaceholder && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
+          <Glyph name="card" size={36} className="text-white/40" />
+          <p className="mt-3 text-2xl font-black tracking-[-0.03em]">{card.name}</p>
+          <p className="mt-1 text-xs font-black uppercase tracking-[0.18em] text-white/60">{card.provider} · {card.network}</p>
+        </div>
+      )}
+      <span className="absolute left-3 top-3 rounded-full border border-white/25 bg-slate-950/75 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-white backdrop-blur">{card.network}</span>
+      {card.fullReviewUrl && (
+        <span className="absolute right-3 top-3 rounded-full bg-emerald-400 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-950">Reviewed</span>
+      )}
     </div>
   );
 }
 
-function categoryLabel(category: CardCategory) { return category === "dual-mode" ? "Dual-mode" : category === "self-custody" ? "Self-custody" : category[0].toUpperCase() + category.slice(1); }
+function categoryLabel(category: CardCategory) {
+  return category === "dual-mode" ? "Dual-mode" : category === "self-custody" ? "Self-custody" : category[0].toUpperCase() + category.slice(1);
+}
+
+function cashbackHighlight(card: CardListing): string | null {
+  const m = card.rewards.match(/(\d+(?:\.\d+)?\s*%)/);
+  if (!m) return null;
+  if (/no cashback|no rewards|0%/.test(card.rewards.toLowerCase())) return null;
+  return m[1].replace(/\s+/, "");
+}
 
 export default function CardsDirectory() {
   const [query, setQuery] = useState("");
@@ -67,12 +103,224 @@ export default function CardsDirectory() {
       .sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : b.reviewedAt.localeCompare(a.reviewedAt));
   }, [category, query, region, network, sort, cashback]);
 
-  return <main className="min-h-screen bg-[#f7f7fb] text-slate-950"><section className="relative overflow-hidden bg-[#0b0820] text-white"><div className="pointer-events-none absolute -left-16 top-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl" /><div className="pointer-events-none absolute right-0 top-12 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl" /><div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8"><div className="flex flex-wrap items-center justify-between gap-4"><Link href="/" className="text-sm font-black text-cyan-200 hover:text-white">← Back to CryptosBeginner</Link><span className="rounded-full border border-white/15 bg-white/[.08] px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.14em] text-fuchsia-100">Published 25 Aug 2026 · facts checked 27 Aug 2026</span></div><div className="mt-12 grid gap-10 lg:grid-cols-[1fr_.78fr] lg:items-end"><div><p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Crypto Cards · compare the rails</p><h1 className="mt-4 max-w-4xl text-5xl font-black leading-[.96] tracking-[-0.06em] sm:text-7xl">Find the card.<br /><span className="bg-gradient-to-r from-cyan-200 via-white to-fuchsia-300 bg-clip-text text-transparent">Read the footnotes.</span></h1><p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">A source-backed directory of crypto spending cards, from prepaid exchange products to wallet-linked and collateral-backed models. Availability, fees, rewards, issuers, and taxes vary; this page organizes the facts without turning them into a personal recommendation.</p><p className="mt-4 max-w-2xl text-xs leading-6 text-slate-400"><strong className="text-slate-200">Affiliate disclosure:</strong> Some “Check card” buttons may use referral links. That does not change the listing criteria or guarantee approval, pricing, rewards, or suitability. Provider pages remain the source of current terms.</p><div className="mt-5 flex flex-wrap gap-2"><Link href="/crypto-cards/best-crypto-no-kyc-cards" className="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/10 px-3 py-2 text-xs font-black text-fuchsia-100 hover:bg-fuchsia-400/20">No-KYC claims guide</Link><Link href="/crypto-cards/best-crypto-cards-for-usa" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">USA</Link><Link href="/crypto-cards/best-crypto-cards-for-eu" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Europe / EEA</Link><Link href="/crypto-cards/best-crypto-cards-for-apac" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">APAC</Link><Link href="/crypto-cards/best-crypto-cards-for-latam" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">LATAM</Link><Link href="/crypto-cards/finder" className="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/10 px-3 py-2 text-xs font-black text-fuchsia-100 hover:bg-fuchsia-400/20">Card finder quiz</Link><Link href="/crypto-cards/countries" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">By country</Link><Link href="/crypto-cards/issuers" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Issuers</Link><Link href="/crypto-cards/guides" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Guides</Link><Link href="/crypto-cards/graveyard" className="rounded-full border border-red-300/40 bg-red-400/10 px-3 py-2 text-xs font-black text-red-100 hover:bg-red-400/20">Card graveyard</Link><Link href="/crypto-cards/collections" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Collections</Link></div><div className="mt-7 flex flex-wrap gap-3"><a href="#directory" className="rounded-xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-0.5">Browse cards</a><a href="#how-we-list" className="rounded-xl border border-white/20 bg-white/[.08] px-5 py-3 text-sm font-black text-white transition hover:bg-white/15">How this directory works</a></div></div><div className="rounded-[2rem] border border-white/15 bg-white/[.08] p-6 backdrop-blur-xl"><p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-200">The fast answer</p><p className="mt-4 text-2xl font-black tracking-[-0.04em]">A crypto card is not one product category.</p><p className="mt-3 text-sm leading-7 text-slate-300">Some cards spend a prepaid balance, some convert crypto at checkout, some link to self-custody, and some let you borrow against collateral. Compare the funding model before comparing the cashback headline.</p></div></div></div></section><section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><div className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/30 sm:p-7"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-700">Full reviews</p><h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">Tested cards, reviewed in depth</h2></div><p className="max-w-md text-sm leading-6 text-slate-500">Step-by-step how-tos, verified fee tables, and honest availability checks. Every figure verified October 2026.</p></div><div className="mt-6 grid gap-5 md:grid-cols-2"><article className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-50"><div className="p-6"><p className="text-xs font-black uppercase tracking-[0.13em] text-slate-500">Visa · Virtual + Physical</p><h3 className="mt-2 text-2xl font-black tracking-[-0.03em]">RedotPay Review 2026</h3><p className="mt-3 text-sm leading-6 text-slate-600">High-limit crypto spending in 100+ countries. $10 virtual, $100 physical, 1% USD swipes, honest ATM math, and where the fees hide.</p><div className="mt-5 flex flex-wrap gap-2"><Link href="/crypto-cards/redotpay-review" className="rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-fuchsia-700">Read the full review →</Link><a href="https://go.cryptosbeginner.com/RedotPay" target="_blank" rel="sponsored nofollow noreferrer" className="rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-3 text-sm font-black text-fuchsia-800 transition hover:bg-fuchsia-100">Get RedotPay ↗</a></div></div></article><article className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-50"><div className="p-6"><p className="text-xs font-black uppercase tracking-[0.13em] text-slate-500">Visa · Virtual + Physical</p><h3 className="mt-2 text-2xl font-black tracking-[-0.03em]">Tevau Card Review 2026</h3><p className="mt-3 text-sm leading-6 text-slate-600">USDT-first Visa with a simple fee structure. Includes the August 2026 availability change: virtual cards removed in Algeria, Egypt, and Turkey.</p><div className="mt-5 flex flex-wrap gap-2"><Link href="/crypto-cards/tevau-review" className="rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-fuchsia-700">Read the full review →</Link><a href="https://go.cryptosbeginner.com/Tevau" target="_blank" rel="sponsored nofollow noreferrer" className="rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-3 text-sm font-black text-fuchsia-800 transition hover:bg-fuchsia-100">Get Tevau ↗</a></div></div></article></div></div></section><section id="directory" className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><div className="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/30 sm:p-7"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-700">Directory controls</p><h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">Compare by product shape</h2></div><p className="text-sm font-semibold text-slate-500">{filtered.length} of {cardListings.length} demo listings</p></div><div className="mt-6"><details className="group md:hidden" open>
-<summary className="flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-slate-600 marker:hidden">
-<span>Filters {filtered.length !== cardListings.length ? `(${filtered.length} shown)` : ""}</span>
-<span className="text-fuchsia-700 transition group-open:rotate-180">▼</span>
-</summary>
-<div className="mt-3 grid gap-3"><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Search<input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Provider, card, network, use case" className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold normal-case tracking-normal outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100" /></label><div className="grid grid-cols-2 gap-3"><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Model<select value={category} onChange={(event) => setCategory(event.target.value as "all" | CardCategory)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">All</option>{cardCategories.slice(1).map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Region<select value={region} onChange={(event) => setRegion(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any</option><option value="United States">US</option><option value="Europe">EU/EEA</option><option value="United Kingdom">UK</option></select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Network<select value={network} onChange={(event) => setNetwork(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any</option>{networks.map((n) => <option key={n} value={n}>{n}</option>)}</select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Cashback<select value={cashback} onChange={(event) => setCashback(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any</option><option value="yes">Has</option><option value="no">None</option></select></label></div><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Order<select value={sort} onChange={(event) => setSort(event.target.value as "name" | "reviewed")} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="name">Name A-Z</option><option value="reviewed">Recently reviewed</option></select></label></div>
-</details>
-<div className="hidden gap-3 md:grid md:grid-cols-[1.2fr_.7fr_.7fr_.6fr_.6fr_.6fr]"><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Search<input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Provider, card, network, use case" className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold normal-case tracking-normal outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100" /></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Model<select value={category} onChange={(event) => setCategory(event.target.value as "all" | CardCategory)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">All approaches</option>{cardCategories.slice(1).map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}</select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Region<select value={region} onChange={(event) => setRegion(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any listed region</option><option value="United States">United States</option><option value="Europe">Europe / EEA</option><option value="United Kingdom">United Kingdom</option><option value="150+">150+ countries advertised</option></select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Network<select value={network} onChange={(event) => setNetwork(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any network</option>{networks.map((n) => <option key={n} value={n}>{n}</option>)}</select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Order<select value={sort} onChange={(event) => setSort(event.target.value as "name" | "reviewed")} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="name">Name</option><option value="reviewed">Recently reviewed</option></select></label><label className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Cashback<select value={cashback} onChange={(event) => setCashback(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-black normal-case tracking-normal"><option value="all">Any rewards</option><option value="yes">Has cashback</option><option value="no">No cashback</option></select></label></div></div><div className="mt-4 flex items-center justify-between"><p className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">View</p><div className="flex gap-2"><button onClick={() => setView("grid")} className={`rounded-xl px-4 py-2.5 text-xs font-black ${view === "grid" ? "bg-slate-950 text-white" : "border border-slate-200 bg-white text-slate-600"}`}>Cards</button><button onClick={() => setView("table")} className={`rounded-xl px-4 py-2.5 text-xs font-black ${view === "table" ? "bg-slate-950 text-white" : "border border-slate-200 bg-white text-slate-600"}`}>Compare table</button></div></div></div>{view === "table" ? <div className="mt-7 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm"><table className="w-full min-w-[900px] text-left text-sm"><thead><tr className="border-b border-slate-200 bg-slate-50 text-xs font-black uppercase tracking-[0.1em] text-slate-500"><th className="sticky left-0 bg-slate-50 px-4 py-3 shadow-[2px_0_4px_rgba(0,0,0,0.05)]">Card</th><th className="px-4 py-3">Network</th><th className="px-4 py-3">Formats</th><th className="px-4 py-3">Pricing</th><th className="px-4 py-3">Rewards</th><th className="px-4 py-3">Availability</th><th className="px-4 py-3">Links</th></tr></thead><tbody>{filtered.map((card) => <tr key={card.slug} className="border-b border-slate-100 hover:bg-slate-50"><td className="sticky left-0 bg-white px-4 py-3 font-black shadow-[2px_0_4px_rgba(0,0,0,0.05)]"><Link href={`/crypto-cards/${card.slug}`} className="hover:text-fuchsia-700">{card.name}</Link>{card.fullReviewUrl && <Link href={card.fullReviewUrl} className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-black text-emerald-800">Full review</Link>}<div className="text-xs font-semibold text-slate-500">{card.provider}</div></td><td className="px-4 py-3">{card.network}</td><td className="px-4 py-3">{card.cardFormats.join(", ")}</td><td className="px-4 py-3 text-xs leading-5">{card.pricing}</td><td className="px-4 py-3 text-xs leading-5">{card.rewards}</td><td className="px-4 py-3 text-xs leading-5">{card.availability}</td><td className="px-4 py-3"><div className="flex flex-col gap-1"><Link href={`/crypto-cards/${card.slug}`} className="text-xs font-black text-slate-950 hover:text-fuchsia-700">Profile →</Link>{card.referralUrl && <a href={card.referralUrl} target="_blank" rel="sponsored nofollow noreferrer" className="text-xs font-black text-fuchsia-700">Check card ↗</a>}</div></td></tr>)}</tbody></table></div> : <div className="mt-7 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{filtered.map((card) => <article key={card.slug} className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/25 transition duration-200 hover:-translate-y-1 hover:border-fuchsia-200 hover:shadow-xl"><CardArtwork card={card} /><div className="p-5"><div className="flex flex-wrap gap-2">{card.categories.map((item) => <span key={item} className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-slate-600"><Glyph name={item === "self-custody" ? "shield" : item === "dual-mode" ? "wallet" : "check"} size={12} />{categoryLabel(item)}</span>)}{card.referralUrl && <span className="inline-flex items-center gap-1.5 rounded-full bg-fuchsia-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-fuchsia-700"><Glyph name="check" size={12} />Partner link</span>}</div><div className="mt-4 flex items-start justify-between gap-3"><div><h3 className="text-xl font-black tracking-[-0.03em]">{card.name}</h3><p className="mt-1 text-xs font-black uppercase tracking-[0.13em] text-slate-500">{card.provider}</p></div><span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[10px] font-black text-cyan-800">{card.cardFormats[0]}</span></div><p className="mt-4 text-sm leading-6 text-slate-600">{card.shortDescription}</p><div className="mt-5 grid gap-3 border-y border-slate-100 py-4 text-xs"><div><p className="flex items-center gap-2 font-black uppercase tracking-[0.12em] text-slate-400"><Glyph name="money" size={14} />Pricing</p><p className="mt-1 leading-5 text-slate-700">{card.pricing}</p></div><div><p className="flex items-center gap-2 font-black uppercase tracking-[0.12em] text-slate-400"><Glyph name="globe" size={14} />Availability</p><p className="mt-1 leading-5 text-slate-700">{card.availability}</p></div></div><div className="mt-5 flex flex-wrap items-center justify-between gap-3"><span className="text-xs font-semibold text-slate-500">Facts checked {card.reviewedAt}</span><div className="flex flex-wrap gap-2">{card.fullReviewUrl && <Link href={card.fullReviewUrl} className="rounded-xl bg-emerald-600 px-3 py-2.5 text-xs font-black text-white transition hover:bg-emerald-500">Full review →</Link>}<Link href={`/crypto-cards/${card.slug}`} className="rounded-xl bg-slate-950 px-3 py-2.5 text-xs font-black text-white transition hover:bg-fuchsia-700">Open profile →</Link>{card.referralUrl && <a href={card.referralUrl} target="_blank" rel="sponsored nofollow noreferrer" className="rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-3 py-2.5 text-xs font-black text-fuchsia-800 transition hover:bg-fuchsia-100">{card.referralLabel ?? "Check card"} ↗</a>}</div></div></div></article>)}</div>}{filtered.length === 0 && <div className="mt-7 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-10 text-center"><p className="text-lg font-black">No listing matches those filters.</p><p className="mt-2 text-sm text-slate-600">Try a broader search or reset one filter; an empty result is more honest than a forced recommendation.</p></div>}</section><section id="how-we-list" className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8"><div className="grid gap-5 lg:grid-cols-[.95fr_1.05fr]"><div className="rounded-[1.75rem] bg-slate-950 p-7 text-white"><p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-200">Editorial method</p><h2 className="mt-3 text-3xl font-black tracking-[-0.04em]">What makes a listing useful?</h2><p className="mt-4 text-sm leading-7 text-slate-300">Each profile separates the card’s funding model, network, formats, region wording, pricing, rewards, and provider relationship. Facts are checked against the linked official product page; they are not copied into a fake score.</p><div className="mt-6 grid gap-3 sm:grid-cols-2"><div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-fuchsia-200">01 · Source</p><p className="mt-2 text-sm leading-6 text-slate-300">The provider page is the evidence layer.</p></div><div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-cyan-200">02 · Scope</p><p className="mt-2 text-sm leading-6 text-slate-300">Country and tier conditions stay visible.</p></div><div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-amber-200">03 · Costs</p><p className="mt-2 text-sm leading-6 text-slate-300">Fees, lockups, spreads, and funding are distinct.</p></div><div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-emerald-200">04 · Update</p><p className="mt-2 text-sm leading-6 text-slate-300">Review dates make stale copy easier to spot.</p></div></div></div><div className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7"><p className="text-xs font-black uppercase tracking-[0.17em] text-amber-800">Read before applying</p><h2 className="mt-3 text-3xl font-black tracking-[-0.04em] text-amber-950">Headline rewards are not the whole cost.</h2><p className="mt-4 text-sm leading-7 text-amber-950/80">A card may involve identity verification, a spread, FX conversion, staking or lockup requirements, borrowing risk, tax consequences, ATM charges, or an issuer that is different from the brand on the front. Availability can change without the directory changing at the same time.</p><Link href="/methodology" className="mt-6 inline-flex rounded-xl bg-amber-950 px-4 py-3 text-sm font-black text-white hover:bg-amber-900">Read site methodology →</Link></div></div></section></main>;
+  const activeFilterCount = [query.trim() !== "", category !== "all", region !== "all", network !== "all", cashback !== "all"].filter(Boolean).length;
+  const resetFilters = () => { setQuery(""); setCategory("all"); setRegion("all"); setNetwork("all"); setCashback("all"); setSort("name"); };
+
+  return (
+    <main className="min-h-screen bg-[#f7f7fb] text-slate-950">
+      {/* HERO — compact */}
+      <section className="relative overflow-hidden bg-[#0b0820] text-white">
+        <div className="pointer-events-none absolute -left-16 top-0 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 top-12 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <Link href="/" className="text-sm font-black text-cyan-200 hover:text-white">← Back to CryptosBeginner</Link>
+            <span className="rounded-full border border-white/15 bg-white/[.08] px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.14em] text-fuchsia-100">Facts checked October 2026</span>
+          </div>
+          <div className="mt-8 max-w-4xl">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Crypto Cards · compare the rails</p>
+            <h1 className="mt-3 text-4xl font-black leading-[1.02] tracking-[-0.05em] sm:text-6xl">
+              Find the card. <span className="bg-gradient-to-r from-cyan-200 via-white to-fuchsia-300 bg-clip-text text-transparent">Read the footnotes.</span>
+            </h1>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              A source-backed directory of {cardListings.length} crypto spending cards. Availability, fees, rewards, issuers, and taxes vary; this page organizes the facts without turning them into a personal recommendation.
+            </p>
+            <p className="mt-3 max-w-2xl text-xs leading-6 text-slate-400">
+              <strong className="text-slate-200">Affiliate disclosure:</strong> Some “Check card” buttons may use referral links. That does not change the listing criteria or guarantee approval, pricing, rewards, or suitability. Provider pages remain the source of current terms.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <Link href="/crypto-cards/finder" className="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/10 px-3 py-2 text-xs font-black text-fuchsia-100 hover:bg-fuchsia-400/20">Card finder quiz</Link>
+              <Link href="/crypto-cards/collections" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Collections</Link>
+              <Link href="/crypto-cards/countries" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">By country</Link>
+              <Link href="/crypto-cards/issuers" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Issuers</Link>
+              <Link href="/crypto-cards/guides" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Guides</Link>
+              <Link href="/crypto-cards/graveyard" className="rounded-full border border-red-300/40 bg-red-400/10 px-3 py-2 text-xs font-black text-red-100 hover:bg-red-400/20">Card graveyard</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STICKY FILTER BAR */}
+      <div className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="relative min-w-[200px] flex-1">
+              <Glyph name="search" size={16} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search cards, providers, networks..."
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm font-semibold outline-none focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-100"
+              />
+            </div>
+            <select value={category} onChange={(e) => setCategory(e.target.value as "all" | CardCategory)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Card model">
+              <option value="all">All models</option>
+              {cardCategories.slice(1).map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+            </select>
+            <select value={network} onChange={(e) => setNetwork(e.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Network">
+              <option value="all">Any network</option>
+              {networks.map((n) => <option key={n} value={n}>{n}</option>)}
+            </select>
+            <select value={region} onChange={(e) => setRegion(e.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Region">
+              <option value="all">Any region</option>
+              <option value="United States">United States</option>
+              <option value="Europe">Europe / EEA</option>
+              <option value="United Kingdom">United Kingdom</option>
+            </select>
+            <select value={cashback} onChange={(e) => setCashback(e.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Cashback">
+              <option value="all">Any rewards</option>
+              <option value="yes">Has cashback</option>
+              <option value="no">No cashback</option>
+            </select>
+            <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "reviewed")} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Sort">
+              <option value="name">Name A-Z</option>
+              <option value="reviewed">Recently reviewed</option>
+            </select>
+            <div className="flex overflow-hidden rounded-xl border border-slate-200">
+              <button onClick={() => setView("grid")} className={`px-3.5 py-2.5 text-xs font-black ${view === "grid" ? "bg-slate-950 text-white" : "bg-white text-slate-600"}`}>Cards</button>
+              <button onClick={() => setView("table")} className={`px-3.5 py-2.5 text-xs font-black ${view === "table" ? "bg-slate-950 text-white" : "bg-white text-slate-600"}`}>Compare</button>
+            </div>
+            {activeFilterCount > 0 && (
+              <button onClick={resetFilters} className="rounded-xl px-3 py-2.5 text-xs font-black text-fuchsia-700 hover:bg-fuchsia-50">
+                Reset ({activeFilterCount})
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* DIRECTORY */}
+      <section id="directory" className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <p className="text-sm font-black text-slate-700">{filtered.length} <span className="font-semibold text-slate-500">of {cardListings.length} cards</span></p>
+          <p className="hidden text-xs font-semibold text-slate-400 sm:block">Images: official issuer artwork · Facts checked October 2026</p>
+        </div>
+
+        {view === "table" ? (
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <table className="w-full min-w-[1000px] text-left text-sm">
+              <thead>
+                <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-black uppercase tracking-[0.1em] text-slate-500">
+                  <th className="sticky left-0 bg-slate-50 px-4 py-3 shadow-[2px_0_4px_rgba(0,0,0,0.05)]">Card</th>
+                  <th className="px-4 py-3">Network</th>
+                  <th className="px-4 py-3">Formats</th>
+                  <th className="px-4 py-3">Pricing</th>
+                  <th className="px-4 py-3">Rewards</th>
+                  <th className="px-4 py-3">Availability</th>
+                  <th className="px-4 py-3">Links</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filtered.map((card) => (
+                  <tr key={card.slug} className="border-b border-slate-100 hover:bg-slate-50">
+                    <td className="sticky left-0 bg-white px-4 py-3 shadow-[2px_0_4px_rgba(0,0,0,0.05)]">
+                      <div className="flex items-center gap-3">
+                        <div className="relative h-12 w-20 shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-slate-900 via-indigo-900 to-fuchsia-800">
+                          {!isPlaceholder(card) && (
+                            <Image src={card.imageUrl} alt="" onError={() => {}} fill sizes="80px" className="object-contain p-1" referrerPolicy="no-referrer" />
+                          )}
+                          {isPlaceholder(card) && (
+                            <div className="flex h-full items-center justify-center"><Glyph name="card" size={18} className="text-white/50" /></div>
+                          )}
+                        </div>
+                        <div>
+                          <Link href={`/crypto-cards/${card.slug}`} className="font-black hover:text-fuchsia-700">{card.name}</Link>
+                          <div className="text-xs font-semibold text-slate-500">{card.provider}</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-4 py-3">{card.network}</td>
+                    <td className="px-4 py-3">{card.cardFormats.join(", ")}</td>
+                    <td className="px-4 py-3 text-xs leading-5">{card.pricing}</td>
+                    <td className="px-4 py-3 text-xs leading-5">{card.rewards}</td>
+                    <td className="px-4 py-3 text-xs leading-5">{card.availability}</td>
+                    <td className="px-4 py-3">
+                      <div className="flex flex-col gap-1">
+                        <Link href={`/crypto-cards/${card.slug}`} className="text-xs font-black text-slate-950 hover:text-fuchsia-700">Profile →</Link>
+                        {card.referralUrl && <a href={card.referralUrl} target="_blank" rel="sponsored nofollow noreferrer" className="text-xs font-black text-fuchsia-700">Check card ↗</a>}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {filtered.map((card) => {
+              const cb = cashbackHighlight(card);
+              return (
+                <article key={card.slug} className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-fuchsia-200 hover:shadow-xl hover:shadow-fuchsia-100/40">
+                  <Link href={`/crypto-cards/${card.slug}`} className="block" aria-label={`${card.name} profile`}>
+                    <CardArtwork card={card} />
+                  </Link>
+                  <div className="flex flex-1 flex-col p-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-black tracking-[-0.02em] leading-tight">
+                          <Link href={`/crypto-cards/${card.slug}`} className="hover:text-fuchsia-700">{card.name}</Link>
+                        </h3>
+                        <p className="mt-0.5 text-[11px] font-black uppercase tracking-[0.14em] text-slate-400">{card.provider}</p>
+                      </div>
+                      {cb && (
+                        <span className="flex shrink-0 items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1.5 text-xs font-black text-emerald-700">
+                          <Glyph name="star" size={12} />{cb}
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {card.categories.map((item) => (
+                        <span key={item} className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-black uppercase tracking-[0.1em] text-slate-600">{categoryLabel(item)}</span>
+                      ))}
+                      <span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-black uppercase tracking-[0.1em] text-slate-600">{card.cardFormats.join(" · ")}</span>
+                    </div>
+                    <p className="mt-3 line-clamp-2 text-sm leading-6 text-slate-600">{card.shortDescription}</p>
+                    <div className="mt-4 space-y-2 border-t border-slate-100 pt-4 text-xs leading-5">
+                      <p className="flex gap-2"><Glyph name="money" size={14} className="mt-0.5 shrink-0 text-slate-400" /><span className="text-slate-600 line-clamp-2">{card.pricing}</span></p>
+                      <p className="flex gap-2"><Glyph name="globe" size={14} className="mt-0.5 shrink-0 text-slate-400" /><span className="text-slate-600 line-clamp-1">{card.availability}</span></p>
+                    </div>
+                    <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
+                      <Link href={`/crypto-cards/${card.slug}`} className="rounded-xl bg-slate-950 px-4 py-2.5 text-xs font-black text-white transition hover:bg-fuchsia-700">Open profile →</Link>
+                      {card.fullReviewUrl && <Link href={card.fullReviewUrl} className="rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-black text-white transition hover:bg-emerald-500">Full review →</Link>}
+                      {card.referralUrl && <a href={card.referralUrl} target="_blank" rel="sponsored nofollow noreferrer" className="rounded-xl border border-fuchsia-200 bg-fuchsia-50 px-4 py-2.5 text-xs font-black text-fuchsia-800 transition hover:bg-fuchsia-100">{card.referralLabel ?? "Check card"} ↗</a>}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
+
+        {filtered.length === 0 && (
+          <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
+            <p className="text-lg font-black">No cards match those filters.</p>
+            <p className="mt-2 text-sm text-slate-600">Try a broader search or <button onClick={resetFilters} className="font-black text-fuchsia-700">reset all filters</button>.</p>
+          </div>
+        )}
+      </section>
+
+      {/* HOW WE LIST */}
+      <section id="how-we-list" className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <div className="rounded-[1.75rem] bg-slate-950 p-7 text-white">
+            <p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-200">Editorial method</p>
+            <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] sm:text-3xl">What makes a listing useful?</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-300">Each profile separates the funding model, network, formats, region wording, pricing, rewards, and provider relationship. Facts are checked against the linked official product page.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-fuchsia-200">01 · Source</p><p className="mt-2 text-sm leading-6 text-slate-300">The provider page is the evidence layer.</p></div>
+              <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-cyan-200">02 · Scope</p><p className="mt-2 text-sm leading-6 text-slate-300">Country and tier conditions stay visible.</p></div>
+              <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-amber-200">03 · Costs</p><p className="mt-2 text-sm leading-6 text-slate-300">Fees, lockups, spreads, and funding are distinct.</p></div>
+              <div className="rounded-2xl border border-white/10 bg-white/[.06] p-4"><p className="text-xs font-black text-emerald-200">04 · Update</p><p className="mt-2 text-sm leading-6 text-slate-300">Review dates make stale copy easier to spot.</p></div>
+            </div>
+          </div>
+          <div className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-7">
+            <p className="text-xs font-black uppercase tracking-[0.17em] text-amber-800">Read before applying</p>
+            <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] text-amber-950 sm:text-3xl">Headline rewards are not the whole cost.</h2>
+            <p className="mt-4 text-sm leading-7 text-amber-950/80">A card may involve identity verification, a spread, FX conversion, staking or lockup requirements, borrowing risk, tax consequences, ATM charges, or an issuer that is different from the brand on the front.</p>
+            <Link href="/methodology" className="mt-6 inline-flex rounded-xl bg-amber-950 px-4 py-3 text-sm font-black text-white hover:bg-amber-900">Read site methodology →</Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
