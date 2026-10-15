@@ -587,6 +587,24 @@ export default function WhatIsANeobankPage() {
               </P>
               <p className="mt-3 text-xs leading-6 text-slate-500">Affiliate disclosure: CryptosBeginner may earn a commission if you sign up through this link, at no extra cost to you.</p>
             </div>
+            <div className="mt-6 rounded-2xl border border-violet-200 bg-violet-50 p-6">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-violet-700">AI-powered option: Bankable Pro</p>
+              <P>
+                If you want to skip the setup entirely, <a href="https://whop.com/bankable-pro/" target="_blank" rel="noopener noreferrer" className="font-bold text-indigo-700 hover:text-indigo-900">Bankable Pro</a> is
+                an AI-powered neobank builder created by Zach Russell that runs on Whop's financial
+                infrastructure. You describe the bank you want in plain English (for example, "Create
+                a bank for my local town" or "Sub-accounts for my team with instant transfers"), and the
+                AI agent spins up a working neobank with real accounts, deposits, withdrawals, transfers,
+                and child/sub-accounts. No code, no compliance team, no months of setup.
+              </P>
+              <P>
+                It is built for indie developers, fintech founders, and anyone who wants to launch a
+                banking product without becoming a bank. Every plan starts with a 7-day free trial, and
+                you can get 20% off your first month with code LAUNCH20. Try it here:{' '}
+                <a href="https://whop.com/bankable-3eac/?a=cryptosbeginner" target="_blank" rel="noopener noreferrer sponsored" className="font-bold text-indigo-700 hover:text-indigo-900">Bankable Pro on Whop</a>.
+              </P>
+              <p className="mt-3 text-xs leading-6 text-slate-500">Affiliate disclosure: CryptosBeginner may earn a commission if you sign up through this link, at no extra cost to you.</p>
+            </div>
 
             <H3>Step 5: Set your fee structure</H3>
             <P>
