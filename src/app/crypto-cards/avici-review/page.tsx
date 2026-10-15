@@ -497,14 +497,14 @@ export default function AviciReviewPage() {
           <figure className="mt-6">
             <Image
               src="/images/cards/reviews/avici-card-front.png"
-              alt="Avici card design, official image from avici.money"
-              width={800}
-              height={1530}
+              alt="Avici app showing multiple virtual cards set up for travel, groceries, and other spending categories"
+              width={786}
+              height={1704}
               className="mx-auto h-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-sm"
               loading="lazy"
             />
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              Avici Card design showing the secured Visa credit card linked to your self-custodial crypto wallet.
+              The Avici app lets you create separate virtual cards for different spending categories, all linked to your self-custodial wallet.
             </figcaption>
           </figure>
           <P>

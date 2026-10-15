@@ -24,7 +24,7 @@ const platforms = [
     name: "Rain",
     bestFor: "Regional GCC comparison",
     note:
-      "A MENA-oriented platform often compared by Gulf users. Verify whether the current product is available to Saudi residents, how SAR funding works and which legal entity provides the service.",
+      "A MENA-oriented platform holding the Gulf's first Category 3 crypto-asset licence from the Central Bank of Bahrain (since 2019), widely used by Gulf residents for SAR funding and Arabic support. Verify current Saudi onboarding and which legal entity provides the service.",
     href: "https://go.cryptosbeginner.com/Rain",
     affiliate: true,
   },
