@@ -558,6 +558,26 @@ export default function WhatIsANeobankPage() {
               blueprint route is the fastest way to test whether your users actually want a neobank
               from you before committing serious capital.
             </P>
+            <div className="mt-6 rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">How Whop's neobank works</p>
+              <div className="mt-3 text-sm leading-7 text-slate-600">
+                Whop is not a bank. Licensed partners move the money while Whop provides the
+                white-label template and infrastructure. Here is what actually happens under the hood:
+              </div>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                <Li><strong className="text-slate-900">Where money sits:</strong> User payments land in a Whop Balance held in pooled FBO (for-benefit-of) accounts. US funds sit at an FDIC-member bank; non-US funds sit at ClearBank, JP Morgan, or Bank Frick. Note that these balances are not themselves FDIC insured.</Li>
+                <Li><strong className="text-slate-900">How users cash out:</strong> Withdrawals run via ACH, wire, PayPal, or crypto through Coinbase Commerce. Crypto deposits come in via MoonPay.</Li>
+                <Li><strong className="text-slate-900">Stablecoin rails:</strong> Every account also gets a self-custodial wallet (via Privy). Moving dollars into the wallet converts them to USDT. An opt-in Treasury feature routes balances through a Veda vault into Aave for yield.</Li>
+                <Li><strong className="text-slate-900">How you earn:</strong> You set fees on deposits, transfers, card spend, and swaps. Whop charges a base fee when money moves; the difference between your fee and their base is your revenue. For example, add $1 to each of 2,000 monthly seller payouts and that is $2,000 a month on money already moving through your platform.</Li>
+                <Li><strong className="text-slate-900">Customization:</strong> Deploy the blueprint, then rebrand with Whop AI (describe your colors and features), edit code directly via the Whop CLI with versioned deploys, or embed individual elements into an existing app.</Li>
+              </ul>
+              <P>
+                Tether invested $200 million in Whop in February 2026, which explains the deep
+                stablecoin integration. If you want to try the blueprint yourself, you can{' '}
+                <a href="https://whop.com/start/?code=CRYPTOSBEGINNER" target="_blank" rel="noopener noreferrer sponsored" className="font-bold text-indigo-700 hover:text-indigo-900">get started on Whop here</a>.
+              </P>
+              <p className="mt-3 text-xs leading-6 text-slate-500">Affiliate disclosure: CryptosBeginner may earn a commission if you sign up through this link, at no extra cost to you.</p>
+            </div>
 
             <H3>Step 5: Set your fee structure</H3>
             <P>
@@ -642,6 +662,19 @@ export default function WhatIsANeobankPage() {
           </Section>
 
           <Section id="faq">
+            <H2>Related guides</H2>
+            <P>
+              Continue learning with these guides from CryptosBeginner:
+            </P>
+            <ul className="mt-4 space-y-3 text-sm leading-7">
+              <Li><a href="/learn/what-is-monero" className="font-bold text-indigo-700 hover:text-indigo-900">What is Monero?</a> Privacy-focused cryptocurrency explained</Li>
+              <Li><a href="/learn/privacy-coins" className="font-bold text-indigo-700 hover:text-indigo-900">Privacy Coins Hub</a> Compare Monero, Zcash, and other privacy assets</Li>
+              <Li><a href="/learn/non-custodial-crypto-wallets" className="font-bold text-indigo-700 hover:text-indigo-900">Non-Custodial Wallets</a> How self-custody wallets work</Li>
+              <Li><a href="/exchanges/best-crypto-exchanges" className="font-bold text-indigo-700 hover:text-indigo-900">Best Crypto Exchanges</a> Compare exchanges for buying crypto</Li>
+              <Li><a href="/tools/fee-calculator" className="font-bold text-indigo-700 hover:text-indigo-900">Fee Calculator</a> Compare trading costs across exchanges</Li>
+              <Li><a href="/crypto-cards" className="font-bold text-indigo-700 hover:text-indigo-900">Crypto Cards</a> Spend crypto with debit cards</Li>
+            </ul>
+
             <H2>Frequently asked questions</H2>
             <div className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
               {faqItems.map((item) => (
@@ -669,7 +702,17 @@ export default function WhatIsANeobankPage() {
             </P>
           </Section>
         </div>
-      </main>
+      
+            <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-6">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-amber-800">Important disclosure</p>
+              <p className="mt-3 text-sm leading-7 text-amber-950/80">
+                This guide is for educational purposes only and is not financial, legal, or investment advice.
+                Launching a neobank involves significant regulatory requirements that vary by jurisdiction.
+                Always consult qualified legal and compliance professionals before offering financial services.
+                CryptosBeginner may earn a commission from affiliate links on this page.
+              </p>
+            </div>
+</main>
       <Footer />
     </>
   );
