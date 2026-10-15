@@ -325,7 +325,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Users who want a wallet-based card and prefer choosing the asset in which rewards are paid.",
     availability: "50+ countries and regions published: EEA and the UK; ten Latin American markets (Argentina, Brazil, Chile, Colombia, Ecuador, El Salvador, Guatemala, Mexico, Panama, Peru); ten Asia-Pacific markets (Singapore, South Korea, Japan, Vietnam, Malaysia, mainland China, Taiwan, Australia, Thailand, Philippines); South Africa; Pakistan and Bangladesh. Issuing partners vary by region.",
     regions: ["Selected regions; verify in application"],
-    pricing: "The product page publishes no universal fee schedule; Bitget states it does not profit from exchange-rate spreads and that standard fees apply once the monthly assetback allowance is exceeded. Check the in-app fee center for activation and regional charges.",
+    pricing: "Activation fees vary by region: observed $5 in Pakistan and $2 in Nigeria in October 2026, though regional pricing changes, so confirm the current figure in the Bitget Wallet app before applying. Regions not on the published list remain on waitlist. No annual fee is published. The 2% base and 3% threshold assetback typically offsets top-up and conversion fees within the monthly allowance; standard fees apply above it. Verified against the official product page October 2026.",
     rewards: "All cardholders earn 2% base assetback by default; new users or those reaching the monthly spending threshold (200 to 400 USD) earn 3%. The reward asset (BTC, gold, US stocks or USDC) can be changed once per calendar month; excluded merchant categories and refunded or reversed transactions earn nothing.",
     funding: "Top up the card with USDT, USDC, ETH or SOL, then spend anywhere Visa or Mastercard is accepted; supports Apple Pay, Google Pay, WeChat Pay, Alipay and PayPal.",
     cardFormats: ["Virtual", "Physical availability varies"],
@@ -336,7 +336,6 @@ export const cardListings: CardListing[] = [
     imageSourceNote: "Official Bitget Wallet-hosted product image",
     reviewedAt: "2026-10-15",
     caution: "“Up to 3%” is a provider headline, not a guaranteed rate. Confirm eligible purchases, reward assets, regional fees, and settlement timing.",
-    referralUrl: "https://web3.bitget.com/share/h0Nk8?inviteCode=pC8Hzp",
     referralLabel: "Check Bitget Wallet Card",
     feesUrl: "https://web3.bitget.com/helpCenter/283",
     updateUrl: "https://web3.bitget.com/en/academy/how-to-use-a-crypto-card-a-beginners-guide-to-spending-bitcoin-and-stablecoins",
@@ -344,11 +343,7 @@ export const cardListings: CardListing[] = [
     updateNote: "Bitget Wallet maintains a fee center and Academy guides; the exact card flow, region, rewards, and fee schedule can change.",
     applicationMethod: "Apply online through Bitget Wallet, complete identity verification, activate the card, and top up before spending.",
     verification: "The official setup flow begins with online application and identity verification.",
-    galleryImages: [
-      { url: "/images/cards/gallery/bitget-wallet-card-gallery-1.png", alt: "Bitget Wallet Card app showing BTC cashback reward options", source: "Bitget Wallet Card interface with Bitcoin reward selection" },
-      { url: "/images/cards/gallery/bitget-wallet-card-gallery-2.png", alt: "Bitget Wallet Card app showing stock reward options", source: "Bitget Wallet Card interface with stock reward selection" }
-    
-    ],
+
   },
   {
     slug: "kardpay-card",

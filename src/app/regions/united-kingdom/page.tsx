@@ -330,6 +330,22 @@ export default function UnitedKingdomPage() {
               external wallet and export complete tax records.
             </p>
           </div>
+
+          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="font-semibold text-slate-900">
+              What about Binance and Bybit?
+            </h3>
+
+            <p className="mt-2 text-sm leading-7 text-slate-700">
+              Two global names come with UK restrictions. Binance paused new
+              UK sign-ups in October 2023 over the FCA&apos;s financial
+              promotions rules, so new UK users cannot open accounts there.
+              Bybit serves UK users with spot trading only, through an
+              FCA-authorized partner. If either is on your shortlist, verify
+              the current UK entity and its exact permissions on the FCA
+              register before proceeding.
+            </p>
+          </div>
         </section>
 
         {/* Consumer protection */}
