@@ -319,6 +319,9 @@ export default function WhatIsANeobankPage() {
               views, cheaper payouts. Keep this model in mind; the launch tutorial later in this guide
               is organized around it.
             </P>
+            <Figure caption="Whop's neobank blueprint feature overview: balance management in fiat and stablecoin, deposits via bank transfer or crypto on-ramp, invoicing with checkout links, user-to-user transfers, withdrawals to bank or wallet, full activity feed, built-in KYC, and currency swaps. Image courtesy of Whop.">
+              <img src="/images/learn/neobank/whop-features.png" alt="Whop neobank blueprint features diagram showing balance, deposits, invoicing, transfers, withdrawals, activity feed, KYC verification, and swap capabilities" className="h-auto w-full rounded-xl" loading="lazy" />
+            </Figure>
           </Section>
 
           <Section id="baas">
@@ -510,6 +513,9 @@ export default function WhatIsANeobankPage() {
               percent of transaction economics through revenue shares and platform fees, so model your
               unit economics with the partner's cut included, not just the headline base fee.
             </P>
+            <Figure caption="Whop's fee configuration screen: operators set their own fees on deposits, payments, transfers, and swaps. Whop charges a base fee underneath; the markup between the two is the operator's revenue. Every fee appears in the activity feed so nothing is hidden. Image courtesy of Whop.">
+              <img src="/images/learn/neobank/whop-fees.png" alt="Whop neobank fee settings showing configurable deposit, transfer, and swap fees with transparent activity feed" className="h-auto w-full rounded-xl" loading="lazy" />
+            </Figure>
           </Section>
 
           <Section id="launch">
@@ -571,6 +577,9 @@ export default function WhatIsANeobankPage() {
                 <Li><strong className="text-slate-900">How you earn:</strong> You set fees on deposits, transfers, card spend, and swaps. Whop charges a base fee when money moves; the difference between your fee and their base is your revenue. For example, add $1 to each of 2,000 monthly seller payouts and that is $2,000 a month on money already moving through your platform.</Li>
                 <Li><strong className="text-slate-900">Customization:</strong> Deploy the blueprint, then rebrand with Whop AI (describe your colors and features), edit code directly via the Whop CLI with versioned deploys, or embed individual elements into an existing app.</Li>
               </ul>
+            <Figure caption="Whop's neobank dashboard: a single reports view showing all money moving through your neobank, including balances, transaction volume, and fee revenue. Image courtesy of Whop.">
+              <img src="/images/learn/neobank/whop-reports.png" alt="Whop neobank reports dashboard showing transaction activity, balances, and revenue from money moving through the platform" className="h-auto w-full rounded-xl" loading="lazy" />
+            </Figure>
               <P>
                 Tether invested $200 million in Whop in February 2026, which explains the deep
                 stablecoin integration. If you want to try the blueprint yourself, you can{' '}
