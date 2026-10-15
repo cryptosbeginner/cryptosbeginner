@@ -202,7 +202,8 @@ export default function SuiStakingPage() {
             <P>
               Network staking rewards currently sit <strong className="text-slate-900">around 1.5% APY</strong>,
               varying slightly between validators depending on their commission (typically 2% to 10%) and
-              performance. That is modest compared to some chains, but it comes with short unstaking and
+              performance. Rate trackers put native SUI staking at 1.49% to 1.55% as of mid-October 2026,
+              which matches. That is modest compared to some chains, but it comes with short unstaking and
               no slashing of your principal.
             </P>
             <P>
@@ -233,9 +234,11 @@ export default function SuiStakingPage() {
                 you trust the exchange with custody and accept their terms and rates.
               </Li>
               <Li>
-                <strong className="text-slate-900">Banking and broker apps:</strong> platforms like
-                Revolut have added SUI staking for their users, which can be the simplest entry point if
-                you already use one, though rates and terms vary.
+                <strong className="text-slate-900">Banking and broker apps:</strong> some fintech
+                apps now offer in-app staking (Revolut, for example, added SOL staking in
+                December 2025). Check whether your app lists SUI specifically, since support
+                varies by asset and region, and compare its rate and terms against the network
+                rate.
               </Li>
             </ul>
             <P>
