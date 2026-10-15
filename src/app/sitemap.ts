@@ -81,6 +81,7 @@ const recentRoutes = new Set([
   "/learn/what-is-monero",
   "/learn/privacy-coins",
   "/learn/what-is-zcash",
+  "/learn/what-is-a-neobank",
   "/learn/tornado-cash-explained",
   "/learn/privacy-coins-vs-mixers",
   "/learn/non-custodial-crypto-wallets",
