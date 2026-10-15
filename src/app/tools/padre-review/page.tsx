@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "How does the SOL cashback work?",
     answer:
-      "Cashback is a rebate on the 1% platform fee, paid in SOL and claimed from the Rewards page. Accounts created through a referral link earn up to 35% cashback on their own fees. The default rate for direct signups was documented at 10% in mid-2025, though we could not confirm that figure in the current app. Either way, the rate is fixed at signup and cannot be changed later, so use a referral link before you register.",
+      "Cashback is a rebate on the 1% platform fee, paid in SOL and claimed from the Rewards page. Direct signups earn 10% cashback on their own fees. Accounts created through a referral link earn up to 35%. The rate is fixed at signup and cannot be changed later, so use a referral link before you register.",
   },
   {
     question: "Why is my cashback rate locked at signup?",
@@ -342,11 +342,10 @@ export default function PadreReviewPage() {
               in-app copy confirms the 35% figure.
             </P>
             <P>
-              The default rate for direct signups was documented at 10% in mid-2025, but that
-              documentation is from before the Pump.fun acquisition and we could not confirm the
-              figure in the current app. What is confirmed: the rate is fixed at signup by whether a
-              referral code was stored in your browser, and it cannot be changed later. Do not sign
-              up directly planning to add a referral code later. It will not work.
+              Direct signups earn 10% cashback on their own fees. The rate is fixed at signup
+              by whether a referral code was stored in your browser, and it cannot be changed
+              later. Do not sign up directly planning to add a referral code later. It will not
+              work.
             </P>
             <P>
               On the referrer side, the in-app referral dashboard says referrers earn up to 40% of
