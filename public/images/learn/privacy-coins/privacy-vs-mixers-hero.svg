@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Privacy coins versus mixers hero: two contrasting panels showing a shielded network and a mixing process">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.6" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  <g transform="translate(380,250)">
+    <rect x="-140" y="-110" width="280" height="220" rx="20" fill="none" stroke="#6d28d9" stroke-width="6"/>
+    <path d="M0,-60 L55,-20 L35,50 L-35,50 L-55,-20 Z" fill="none" stroke="#a78bfa" stroke-width="6"/>
+    <text y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#c4b5fd">Privacy coins</text>
+  </g>
+  <text x="600" y="262" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="800" fill="#64748b">vs</text>
+  <g transform="translate(820,250)">
+    <rect x="-140" y="-110" width="280" height="220" rx="20" fill="none" stroke="#0369a1" stroke-width="6"/>
+    <circle cx="-40" cy="-20" r="22" fill="#38bdf8" opacity="0.8"/>
+    <circle cx="40" cy="-20" r="22" fill="#38bdf8" opacity="0.8"/>
+    <circle cx="0" cy="40" r="22" fill="#7dd3fc" opacity="0.8"/>
+    <path d="M-40,2 L-8,22 M40,2 L8,22" stroke="#e0f2fe" stroke-width="3"/>
+    <text y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="24" font-weight="700" fill="#bae6fd">Mixers</text>
+  </g>
+  <text x="600" y="470" text-anchor="middle" font-family="system-ui,sans-serif" font-size="50" font-weight="800" fill="#ffffff">Privacy coins vs mixers</text>
+  <text x="600" y="525" text-anchor="middle" font-family="system-ui,sans-serif" font-size="26" fill="#c4b5fd">Two architectures, one goal</text>
+  <text x="600" y="570" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#8b5cf6">When each approach makes sense, and the trade-offs</text>
+</svg>

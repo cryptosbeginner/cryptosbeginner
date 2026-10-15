@@ -181,6 +181,64 @@ export default function WhatIsMoneroPage() {
               people never turn on, which makes the few who use it stand out. On Monero, everyone is
               private, so nobody stands out.
             </P>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <svg viewBox="0 0 800 400" className="h-auto w-full" role="img" aria-label="Diagram showing how Monero hides a transaction: ring signatures mix the sender with decoys, RingCT encrypts the amount, and stealth addresses give the receiver a fresh one time address">
+                <rect x="0" y="0" width="800" height="400" fill="#f8fafc" />
+                <text x="400" y="32" textAnchor="middle" fontSize="18" fontWeight="800" fill="#0f172a">One Monero transaction, three layers of privacy</text>
+
+                <g>
+                  <rect x="20" y="55" width="240" height="310" rx="12" fill="#ffffff" stroke="#f97316" strokeWidth="2" />
+                  <text x="140" y="85" textAnchor="middle" fontSize="14" fontWeight="800" fill="#c2410c">1. Ring signatures</text>
+                  <text x="140" y="106" textAnchor="middle" fontSize="11" fill="#64748b">hide the sender</text>
+                  <circle cx="80" cy="170" r="20" fill="#fed7aa" />
+                  <text x="80" y="176" textAnchor="middle" fontSize="11" fontWeight="700" fill="#7c2d12">you</text>
+                  <circle cx="140" cy="150" r="20" fill="#ffedd5" />
+                  <circle cx="200" cy="170" r="20" fill="#ffedd5" />
+                  <circle cx="110" cy="220" r="20" fill="#ffedd5" />
+                  <circle cx="170" cy="220" r="20" fill="#ffedd5" />
+                  <text x="140" y="280" textAnchor="middle" fontSize="11" fill="#475569">Your input hides among</text>
+                  <text x="140" y="298" textAnchor="middle" fontSize="11" fill="#475569">decoy inputs pulled</text>
+                  <text x="140" y="316" textAnchor="middle" fontSize="11" fill="#475569">from the blockchain.</text>
+                  <text x="140" y="344" textAnchor="middle" fontSize="11" fontWeight="700" fill="#c2410c">16 members per ring</text>
+                </g>
+
+                <g>
+                  <rect x="280" y="55" width="240" height="310" rx="12" fill="#ffffff" stroke="#6d28d9" strokeWidth="2" />
+                  <text x="400" y="85" textAnchor="middle" fontSize="14" fontWeight="800" fill="#6d28d9">2. RingCT</text>
+                  <text x="400" y="106" textAnchor="middle" fontSize="11" fill="#64748b">hides the amount</text>
+                  <rect x="315" y="140" width="170" height="50" rx="8" fill="#ede9fe" />
+                  <text x="400" y="162" textAnchor="middle" fontSize="13" fontWeight="700" fill="#4c1d95">2.4 XMR</text>
+                  <text x="400" y="180" textAnchor="middle" fontSize="11" fill="#6d28d9">real amount</text>
+                  <text x="400" y="216" fontSize="20" fill="#8b5cf6" textAnchor="middle">↓</text>
+                  <rect x="315" y="228" width="170" height="50" rx="8" fill="#ddd6fe" />
+                  <text x="400" y="250" textAnchor="middle" fontSize="13" fontWeight="700" fill="#4c1d95">encrypted</text>
+                  <text x="400" y="268" textAnchor="middle" fontSize="11" fill="#6d28d9">proof of validity</text>
+                  <text x="400" y="316" textAnchor="middle" fontSize="11" fill="#475569">The network confirms</text>
+                  <text x="400" y="334" textAnchor="middle" fontSize="11" fill="#475569">the math without</text>
+                  <text x="400" y="352" textAnchor="middle" fontSize="11" fill="#475569">seeing the number.</text>
+                </g>
+
+                <g>
+                  <rect x="540" y="55" width="240" height="310" rx="12" fill="#ffffff" stroke="#047857" strokeWidth="2" />
+                  <text x="660" y="85" textAnchor="middle" fontSize="14" fontWeight="800" fill="#047857">3. Stealth addresses</text>
+                  <text x="660" y="106" textAnchor="middle" fontSize="11" fill="#64748b">hide the receiver</text>
+                  <rect x="570" y="140" width="180" height="44" rx="8" fill="#d1fae5" />
+                  <text x="660" y="167" textAnchor="middle" fontSize="12" fontWeight="700" fill="#065f46">receiver's public address</text>
+                  <text x="660" y="210" fontSize="20" fill="#10b981" textAnchor="middle">↓</text>
+                  <rect x="570" y="224" width="180" height="44" rx="8" fill="#a7f3d0" />
+                  <text x="660" y="245" textAnchor="middle" fontSize="12" fontWeight="700" fill="#065f46">one-time address</text>
+                  <text x="660" y="261" textAnchor="middle" fontSize="11" fill="#047857">used once, then never again</text>
+                  <text x="660" y="316" textAnchor="middle" fontSize="11" fill="#475569">Nobody can look up</text>
+                  <text x="660" y="334" textAnchor="middle" fontSize="11" fill="#475569">the receiver's balance</text>
+                  <text x="660" y="352" textAnchor="middle" fontSize="11" fill="#475569">or history.</text>
+                </g>
+              </svg>
+            </div>
+            <p className="mt-3 text-xs leading-6 text-slate-500">
+              Monero's privacy trio: ring signatures hide who sent, RingCT hides how much, and
+              stealth addresses hide who received. All three apply to every transaction automatically.
+            </p>
           </Section>
 
           <Section id="fungibility">
@@ -271,6 +329,25 @@ export default function WhatIsMoneroPage() {
             <P>
               Monero's own motto sums up the promise: money that is secure, private, and untraceable.
               Whether that is worth the trade-offs is your call, made with eyes open.
+            </P>
+            <P>
+              Monero is one piece of a bigger story. Our{" "}
+              <Link href="/learn/privacy-coins" className="font-bold text-indigo-700 hover:underline">
+                privacy coins hub
+              </Link>{" "}
+              covers the full landscape, including{" "}
+              <Link href="/learn/what-is-zcash" className="font-bold text-indigo-700 hover:underline">
+                Zcash
+              </Link>
+              ,{" "}
+              <Link href="/learn/tornado-cash-explained" className="font-bold text-indigo-700 hover:underline">
+                Tornado Cash
+              </Link>
+              , and our explainer on{" "}
+              <Link href="/learn/privacy-coins-vs-mixers" className="font-bold text-indigo-700 hover:underline">
+                privacy coins vs mixers
+              </Link>
+              .
             </P>
           </Section>
 
