@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Neobank hero graphic: a smartphone showing a digital banking app with balance, cards and stablecoin symbols, connected to payment rails">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="phoneScreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="130" fill="#6366f1" opacity="0.15"/>
+  <circle cx="120" cy="560" r="170" fill="#8b5cf6" opacity="0.12"/>
+  <circle cx="940" cy="520" r="70" fill="#22d3ee" opacity="0.10"/>
+
+  <g transform="translate(500,105)">
+    <rect x="-110" y="-20" width="220" height="440" rx="36" fill="#0b1120" stroke="#475569" stroke-width="3"/>
+    <rect x="-98" y="-8" width="196" height="416" rx="28" fill="url(#phoneScreen)"/>
+    <rect x="-40" y="-8" width="80" height="18" rx="9" fill="#0b1120"/>
+    <text x="0" y="42" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" fill="#64748b">Total balance</text>
+    <text x="0" y="82" text-anchor="middle" font-family="system-ui,sans-serif" font-size="38" font-weight="800" fill="#0f172a">$12,480.25</text>
+    <g>
+      <rect x="-80" y="104" width="158" height="58" rx="12" fill="url(#cardGrad)"/>
+      <text x="-64" y="128" font-family="system-ui,sans-serif" font-size="13" fill="#e0e7ff">Virtual card</text>
+      <text x="-64" y="149" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#ffffff">•••• 4821</text>
+      <circle cx="56" cy="133" r="10" fill="#fbbf24" opacity="0.9"/>
+      <circle cx="68" cy="133" r="10" fill="#f87171" opacity="0.9"/>
+    </g>
+    <g font-family="system-ui,sans-serif" font-size="14" fill="#0f172a">
+      <rect x="-80" y="176" width="158" height="44" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <circle cx="-58" cy="198" r="11" fill="#dcfce7"/><text x="-58" y="203" text-anchor="middle" font-size="13" fill="#15803d">$</text>
+      <text x="-40" y="203" font-weight="600">USDC deposit</text><text x="62" y="203" text-anchor="end" fill="#15803d" font-weight="700">+$500</text>
+      <rect x="-80" y="228" width="158" height="44" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <circle cx="-58" cy="250" r="11" fill="#ede9fe"/><text x="-58" y="255" text-anchor="middle" font-size="13" fill="#6d28d9">⇄</text>
+      <text x="-40" y="255" font-weight="600">Swap to EUR</text><text x="62" y="255" text-anchor="end" fill="#6d28d9" font-weight="700">€210</text>
+      <rect x="-80" y="280" width="158" height="44" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <circle cx="-58" cy="302" r="11" fill="#dbeafe"/><text x="-58" y="307" text-anchor="middle" font-size="13" fill="#1d4ed8">→</text>
+      <text x="-40" y="307" font-weight="600">Payout sent</text><text x="62" y="307" text-anchor="end" fill="#1d4ed8" font-weight="700">-$120</text>
+    </g>
+  </g>
+
+  <g font-family="system-ui,sans-serif">
+    <text x="90" y="200" font-size="52" font-weight="800" fill="#ffffff">What is a</text>
+    <text x="90" y="262" font-size="52" font-weight="800" fill="#a5b4fc">neobank?</text>
+    <text x="90" y="310" font-size="21" fill="#cbd5e1">Banking without branches.</text>
+    <text x="90" y="342" font-size="21" fill="#cbd5e1">Now with stablecoin rails.</text>
+    <g font-size="16" fill="#e2e8f0">
+      <rect x="90" y="380" width="200" height="40" rx="20" fill="#ffffff" opacity="0.08" stroke="#475569"/>
+      <text x="110" y="406">✓ No branches</text>
+      <rect x="90" y="430" width="240" height="40" rx="20" fill="#ffffff" opacity="0.08" stroke="#475569"/>
+      <text x="110" y="456">✓ App-first accounts</text>
+      <rect x="90" y="480" width="280" height="40" rx="20" fill="#ffffff" opacity="0.08" stroke="#475569"/>
+      <text x="110" y="506">✓ Fiat + stablecoin balances</text>
+    </g>
+  </g>
+
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <g transform="translate(950,180)">
+      <circle r="46" fill="#0ea5e9" opacity="0.18" stroke="#38bdf8" stroke-width="2"/>
+      <text y="-4" font-size="15" font-weight="700" fill="#bae6fd">Money in</text>
+      <text y="18" font-size="13" fill="#7dd3fc">deposits</text>
+    </g>
+    <g transform="translate(950,330)">
+      <circle r="46" fill="#8b5cf6" opacity="0.18" stroke="#a78bfa" stroke-width="2"/>
+      <text y="-4" font-size="15" font-weight="700" fill="#ddd6fe">Balance</text>
+      <text y="18" font-size="13" fill="#c4b5fd">fiat + USDC</text>
+    </g>
+    <g transform="translate(950,480)">
+      <circle r="46" fill="#22c55e" opacity="0.18" stroke="#4ade80" stroke-width="2"/>
+      <text y="-4" font-size="15" font-weight="700" fill="#bbf7d0">Money out</text>
+      <text y="18" font-size="13" fill="#86efac">payouts</text>
+    </g>
+    <line x1="950" y1="226" x2="950" y2="284" stroke="#475569" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="950" y1="376" x2="950" y2="434" stroke="#475569" stroke-width="2" stroke-dasharray="6 6"/>
+  </g>
+</svg>
