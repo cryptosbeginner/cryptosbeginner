@@ -499,18 +499,19 @@ export default function AxiomProPage() {
 
           <Section id="getting-started">
             <H2>Getting started on Axiom</H2>
-            <P>
-              1. Sign up through a referral link to lock in the fee discount. 2. Deposit SOL or
-              USDC: email signups get an auto-generated wallet, or connect Phantom or MetaMask
-              directly. 3. Set your presets first: start with safe mode, low slippage, and MEV
-              protection on. 4. Start small while you learn the interface: the terminal is
-              powerful and the learning curve is real. The full walkthrough, including settings
-              and advanced features, is in our{" "}
-              <Link href="/tools/axiom-trade-tutorial" className="font-bold text-emerald-700 underline">
-                Axiom trade tutorial
-              </Link>
-              .
-            </P>
+            <ol className="mt-4 list-decimal space-y-2 pl-6 text-base leading-8 text-slate-600">
+              <li>Sign up through a referral link to lock in the fee discount.</li>
+              <li>Deposit SOL or USDC: email signups get an auto-generated wallet, or connect Phantom or MetaMask directly.</li>
+              <li>Set your presets first: start with safe mode, low slippage, and MEV protection on.</li>
+              <li>
+                Start small while you learn the interface: the terminal is powerful and the learning curve is real. The
+                full walkthrough, including settings and advanced features, is in our{" "}
+                <Link href="/tools/axiom-trade-tutorial" className="font-bold text-emerald-700 underline">
+                  Axiom trade tutorial
+                </Link>
+                .
+              </li>
+            </ol>
             <div className="mt-6">
               <PrimaryAffiliateButton>Start on Axiom with a fee discount</PrimaryAffiliateButton>
             </div>

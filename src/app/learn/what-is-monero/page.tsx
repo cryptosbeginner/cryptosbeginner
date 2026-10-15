@@ -42,7 +42,7 @@ const faqItems = [
   {
     question: "Why do some exchanges not list XMR?",
     answer:
-      "Monero's privacy makes compliance harder for exchanges, since they cannot monitor transactions the way regulators expect. Several major exchanges have limited or removed XMR support in certain regions as regulations tightened. Availability varies a lot by country, so always check your local exchange's current listing status before assuming you can buy there.",
+      "Monero's privacy makes compliance harder for exchanges, since they cannot monitor transactions the way regulators expect. Binance ended XMR spot trading worldwide in February 2024, OKX removed its XMR pairs around the same time, and Kraken delisted XMR for the UK in 2021, the EEA in October 2024, and the UAE in June 2026. In the EU, anti-money-laundering rules coming in July 2027 will bar licensed platforms from custodying privacy coins entirely. Availability varies a lot by country, so always check your local exchange's live markets rather than assuming from an old article.",
   },
   {
     question: "What is fungibility, and why does Monero have it?",
@@ -218,27 +218,25 @@ export default function WhatIsMoneroPage() {
           <Section id="where-to-buy">
             <H2>Where to buy XMR</H2>
             <P>
-              This is where things get complicated. Because regulators dislike untraceable transactions,
-              several major exchanges have restricted or removed XMR in certain regions, and availability
-              varies a lot depending on where you live. Some regions have easy access; others have almost
-              none. Always check your local exchange's current listing status rather than assuming from an
-              old article.
+              This is where things get complicated. Because regulators dislike untraceable
+              transactions, major exchanges have pulled back on XMR, and availability varies a
+              lot depending on where you live. The specifics, checked October 2026:{" "}
+              <strong className="text-slate-900">Binance</strong> ended all XMR spot trading
+              worldwide in February 2024 (its XMR perpetual futures contract still trades, but
+              that is a derivative, not buying coins).{" "}
+              <strong className="text-slate-900">Kraken</strong> removed XMR for UK customers
+              in 2021, for the European Economic Area in October 2024, and for the UAE in June
+              2026, but still lists it elsewhere.{" "}
+              <strong className="text-slate-900">OKX</strong> removed its XMR pairs in early
+              2024. In the EU, the direction is clear: from July 2027, EU anti-money-laundering
+              rules will prohibit licensed platforms from holding privacy coins at all.
             </P>
             <P>
-              Start by checking which exchanges still support XMR in your country and comparing their fees
-              and safety. Our reviews of{" "}
-              <Link href="/exchanges/kraken-review" className="text-blue-600 hover:underline">
-                Kraken
-              </Link>
-              ,{" "}
-              <Link href="/exchanges/binance-review" className="text-blue-600 hover:underline">
-                Binance
-              </Link>
-              , and{" "}
-              <Link href="/exchanges/bybit-review" className="text-blue-600 hover:underline">
-                Bybit
-              </Link>{" "}
-              are checked against official sources, and our{" "}
+              As of late 2026, most XMR spot volume runs through{" "}
+              <strong className="text-slate-900">KuCoin</strong>, followed by HTX, Poloniex,
+              Kraken (outside restricted regions), Bitfinex, and WhiteBIT. DEX and
+              non-custodial swap options exist too. The practical rule: check the exchange&apos;s
+              live markets for your country before assuming anything, and our{" "}
               <Link href="/learn/crypto-exchange-security-checklist" className="text-blue-600 hover:underline">
                 exchange security checklist
               </Link>{" "}

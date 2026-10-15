@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-10-15";
 export const metadata: Metadata = {
   title: "Ostium Review 2026: RWA Perps, Fees, Pros and Cons",
   description:
-    "October 2026 Ostium review: the Arbitrum perp DEX for gold, oil, forex, indices, and stocks. Up to 200x leverage, no KYC, no close fees, honest pros and cons.",
+    "October 2026 Ostium review: the Arbitrum perp DEX for gold, oil, forex, indices, and stocks. Up to 200x leverage, no KYC, no close fees, plus the honest story of the July 2026 $23.75M vault exploit and its recovery.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Ostium Review 2026: RWA Perps, Fees, Pros and Cons",
@@ -65,9 +65,9 @@ const faqItems = [
       "Yes. Ostium is non-custodial: margin sits on-chain, positions execute through smart contracts, and there is no sign-up wall or identity check. You can even sign in with an email address and trade without holding ETH for gas, since gas is sponsored for most trades. You remain in full control of your funds throughout.",
   },
   {
-    question: "What is the OLP vault?",
+    question: "What is the OLP vault, and is it safe to deposit now?",
     answer:
-      "OLP (Ostium Liquidity Provider) vault is the protocol's counterparty mechanism. Liquidity providers deposit USDC, receive OLP tokens representing their share, and earn from opening fees, rollover fees, and liquidation rewards. The vault has historically delivered strong APY, reported around 53% in early 2026, but returns vary with trader performance: LPs profit when traders lose and absorb outflows when traders win.",
+      "OLP (Ostium Liquidity Provider) vault is the protocol's counterparty mechanism: liquidity providers deposit USDC, receive OLP tokens for their share, and earn from opening fees, rollover fees, and liquidation rewards. But the OLP vault was drained in the July 2026 oracle exploit (about $23.75 million USDC), and it is impaired. As of October 2026, new OLP deposits remain paused and a recovery plan is still playing out: smaller LPs received a flat $1,000 payment each, while 345 larger LPs are choosing between a share of recovered funds plus a slice of future protocol revenue, or converting part of their loss into equity in Ostium Labs. Only a small fraction of the stolen funds has been recovered. Do not deposit into OLP until Ostium confirms the vault is healthy again.",
   },
   {
     question: "Is there a minimum deposit on Ostium?",
@@ -75,14 +75,14 @@ const faqItems = [
       "No. Ostium has no minimum deposit requirement and no sign-up hurdles, so you can start with a small amount, test strategies, and learn the platform before committing real size.",
   },
   {
-    question: "Is Ostium safe? Has it been hacked?",
+    question: "Is Ostium safe? Was it hacked?",
     answer:
-      "Ostium operates on-chain with audited-style transparency and real-time market data, but decentralized perps carry real risks: smart contract risk, oracle risk, and liquidation risk at high leverage. At least one third-party review flagged a past security incident, so check Ostium's official announcements and docs for the current security status before depositing. Never trade with money you cannot afford to lose, and use a dedicated trading wallet.",
+      "Ostium was hacked on 15 July 2026. An attacker compromised an oracle signer key and pushed fake BTC price reports (pricing Bitcoin at $5,000 against a real price near $60,000) through a registered PriceUpKeep forwarder, manufacturing profitable trades that drained 23,752,746 USDC, about $23.75 million, from the OLP liquidity vault in roughly five minutes. Ostium's post-mortem blamed unauthorized access to off-chain signing infrastructure, not a flaw in the audited smart-contract code. Trader collateral sits in a separate contract and was untouched. Trading paused the same day and resumed in stages on 23 July 2026 after the team migrated to new systems. The honest read: the trading engine worked as designed, but the off-chain oracle plumbing was the weak point, and LPs took the loss. Verify the current status of the OLP vault and the recovery plan on Ostium's official channels before depositing anything.",
   },
   {
     question: "Who should use Ostium, and who should skip it?",
     answer:
-      "Ostium suits traders who want on-chain exposure to macro markets, gold, oil, forex, indices, stocks, without a broker account, and who are comfortable with wallets, leverage, and self-custody. Skip it if you are a complete beginner to leveraged trading, if you need a traditional broker with customer support and dispute resolution, or if you cannot handle the risk of liquidation at high leverage.",
+      "Ostium suits experienced traders who want on-chain exposure to macro markets, gold, oil, forex, indices, stocks, without a broker account, and who are comfortable with wallets, leverage, and self-custody. Skip it if you are a complete beginner to leveraged trading, if you need a traditional broker with customer support and dispute resolution, or if you cannot handle the risk of liquidation at high leverage. Note that as of October 2026 Ostium has repositioned toward institutional and professional clients with a new API product (Gateway), so confirm the retail trading app is still available in your region before signing up.",
   },
 ];
 
@@ -132,7 +132,7 @@ export default function OstiumReviewPage() {
     "@type": "Article",
     headline: "Ostium Review 2026: RWA Perps, Fees, Pros and Cons",
     description:
-      "October 2026 Ostium review: the Arbitrum perpetual DEX for real-world assets, gold, oil, forex, indices, stocks, and crypto, with up to 200x leverage, no KYC, and no closing fees.",
+      "October 2026 Ostium review: the Arbitrum perpetual DEX for real-world assets, gold, oil, forex, indices, stocks, and crypto, with up to 200x leverage, no KYC, and no closing fees. Covers the July 2026 $23.75M vault exploit and the ongoing recovery.",
     datePublished: UPDATED_ISO,
     dateModified: UPDATED_ISO,
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
@@ -188,10 +188,21 @@ export default function OstiumReviewPage() {
         <div className="py-10">
           <Section id="what-it-is">
             <H2>What Ostium is</H2>
+            <Callout title="Security update: the July 2026 exploit (checked October 2026)">
+              <p>
+                On 15 July 2026, Ostium lost about $23.75 million USDC from its OLP liquidity
+                vault when an attacker used a compromised oracle signer key to push fake price
+                reports through the protocol&apos;s own price-feed infrastructure. Trader
+                collateral was not affected, and trading resumed in stages from 23 July. The OLP
+                vault, however, remains impaired with a recovery plan still underway. This
+                review reflects that reality: the trading product is real, but the incident is
+                part of the story.
+              </p>
+            </Callout>
             <P>
               Ostium is a decentralized perpetual exchange built on Arbitrum, an Ethereum Layer 2
-              known for speed and low fees. Launched in October 2024 by Kaledora Fontana and Marco
-              Antonio Ribeiro, it specializes in something most crypto exchanges cannot do: trade
+              known for speed and low fees. Launched in October 2024 by Kaledora Kiernan-Linn and
+              Marco Antonio Ribeiro, it specializes in something most crypto exchanges cannot do: trade
               real-world assets, gold, oil, forex pairs, stock indices, and individual stocks,
               entirely on-chain as perpetual contracts.
             </P>
@@ -206,9 +217,12 @@ export default function OstiumReviewPage() {
               Unlike tokenization projects that mint backed tokens for each asset, Ostium mirrors
               the price movements of real assets through synthetic perpetual contracts. There is
               no physical delivery and no wrapped token to bridge: you get price exposure, long
-              or short, settled in USDC. The platform has grown fast, with over $25 billion in
-              cumulative volume, around $60 million in total value locked, and daily perp volume
-              frequently exceeding $200 million by early 2026.
+              or short, settled in USDC. The platform had grown fast before the July 2026
+              exploit, with over $25 billion in cumulative volume, around $60 million in total
+              value locked, and daily perp volume frequently exceeding $200 million by early
+              2026. Those are pre-exploit figures: the vault attack and the company&apos;s
+              October 2026 pivot to an institutional API product (Gateway) mean you should check
+              a live dashboard for current numbers.
             </P>
           </Section>
 
@@ -292,7 +306,8 @@ export default function OstiumReviewPage() {
             <P>
               Ostium&apos;s fee structure is genuinely transparent and competitive: you pay to
               open a position, and closing costs nothing. Here is how it breaks down by market
-              class, based on the platform&apos;s published fee schedule:
+              class, based on the platform&apos;s published fee schedule (confirm in-app before
+              trading, since terms can change):
             </P>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
               <table className="w-full min-w-[560px] text-left text-sm">
@@ -400,8 +415,20 @@ export default function OstiumReviewPage() {
               position, the vault is the house. Liquidity providers deposit USDC, receive OLP
               tokens for their share, and earn from opening fees, rollover fees, and liquidation
               rewards. In periods when traders lose, LPs earn more; in sustained trader-profit
-              periods, LPs absorb outflows. Historically the vault has paid strong APY, reported
-              around 53% in early 2026, but that is not a savings rate, it is a risk premium.
+              periods, LPs absorb outflows. Before the July 2026 exploit, the vault had
+              historically paid strong APY, reported around 53% in early 2026, but that was a
+              risk premium, not a savings rate.
+            </P>
+            <P>
+              Then came 15 July 2026: an attacker drained roughly $23.75 million USDC from the
+              OLP vault using a compromised oracle signer key. New OLP deposits remain paused,
+              and a recovery plan is still playing out as of October 2026. Only a small share
+              of the stolen funds (about 2.7%) has been recovered, smaller LPs received a flat
+              $1,000 each, and 345 larger LPs are choosing between a pro-rata share of
+              recovered funds plus a slice of future protocol revenue, or converting part of
+              their loss into equity in Ostium Labs. A related $15 million loan dispute reached
+              a New York federal court in September 2026. Bottom line: do not deposit into the
+              OLP vault until Ostium confirms it is whole again.
             </P>
             <P>
               Ostium also runs a points program that rewards trading volume and OLP deposits
@@ -446,8 +473,9 @@ export default function OstiumReviewPage() {
                   <li>Limited crypto pair selection vs crypto-native perps DEXs</li>
                   <li>Rollover and funding fees eat slow positions</li>
                   <li>No traditional broker support or dispute resolution</li>
-                  <li>Smart contract and oracle risk on every trade</li>
-                  <li>One third-party review flagged a past security incident; verify current status</li>
+                  <li>Smart contract and oracle risk on every trade; the July 2026 exploit ($23.75M) showed the off-chain oracle plumbing was the weak point</li>
+                  <li>OLP vault impaired and new LP deposits paused; recovery plan still ongoing</li>
+                  <li>Company pivoting to an institutional API product (Gateway); retail availability may change</li>
                   <li>Synthetic exposure, not ownership of the underlying asset</li>
                 </ul>
               </div>
@@ -467,9 +495,14 @@ export default function OstiumReviewPage() {
             <P>
               The honest downsides: leverage this high is a liquidation machine for beginners,
               crypto pair coverage is thinner than dedicated crypto perp DEXs, and you trade the
-              broker safety net for self-custody. Start small, use low leverage, put a stop-loss
-              on everything, and treat the points program as a bonus, not a strategy. If that
-              sounds like your kind of trading, Ostium is worth your time.
+              broker safety net for self-custody. And the July 2026 exploit is now the
+              elephant in the room: the team handled the aftermath transparently (published
+              post-mortem, trader collateral untouched, trading resumed in a week), but LPs
+              lost $23.75 million to a compromised oracle signer, and the vault is still not
+              whole. Start small, use low leverage, put a stop-loss on everything, treat the
+              points program as a bonus not a strategy, and do not touch the OLP vault until
+              recovery is confirmed. If that sounds like your kind of trading, Ostium is worth
+              your time, with eyes open.
             </P>
           </Section>
 

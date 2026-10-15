@@ -43,17 +43,17 @@ const faqItems = [
   {
     question: "What is SolPot.com?",
     answer:
-      "SolPot.com is a gaming platform built exclusively on Solana. It offers provably fair Jackpot and Coinflip games that run through your own Solana wallet, with no account registration, no deposits to the platform, and instant on-chain payouts. It also runs daily free-to-play rewards like the Daily Solana Case.",
+      "SolPot.com is a gaming platform built exclusively on Solana. It offers provably fair Jackpot and Coinflip games played through your own Solana wallet, with no account registration, no custodial balance held by the platform, and instant on-chain payouts. It also runs daily free-to-play rewards like the Daily Solana Case.",
   },
   {
     question: "Is SolPot legit and safe to use?",
     answer:
-      "SolPot is a real, operating platform with a transparency-first design: provably fair outcomes using a dual-seed SHA-256 system documented at solpot.com/fairness, and smart contracts that the original review reports were audited by Certik. The wallet-first, non-custodial model means the platform never holds your funds. That said, it is a gambling platform with a 5% fee on each game, so treat it as entertainment with real financial risk, not a way to earn income. Never play with money you cannot afford to lose.",
+      "SolPot is a real, operating platform with a transparency-first design: provably fair outcomes using a dual-seed SHA-256 system documented at solpot.com/fairness, and smart contracts the original review reports were audited by Certik (we could not independently verify the audit report, so check it yourself before playing for real stakes). The wallet-first, non-custodial model means the platform never holds a custodial balance of your funds, though wagers do go to on-chain game contracts while a game runs. That said, it is a gambling platform with a 5% fee on each game, so treat it as entertainment with real financial risk, not a way to earn income. Never play with money you cannot afford to lose.",
   },
   {
     question: "Do I need to create an account on SolPot?",
     answer:
-      "No. SolPot has no signups, no deposits, and no KYC. You connect a Solana wallet such as Phantom or Backpack and play directly from it. Everything happens through your wallet, and winnings are sent back to you on-chain instantly.",
+      "No. SolPot has no signups and no KYC. You connect a Solana wallet such as Phantom or Backpack and play directly from it. Your funds stay in your wallet, wagers go to on-chain game contracts while a round runs, and winnings are sent back to you on-chain instantly.",
   },
   {
     question: "What games does SolPot offer?",
@@ -207,7 +207,7 @@ export default function SolPotReviewPage() {
             <P>
               SolPot.com is a gaming platform that runs exclusively on the Solana blockchain. It
               offers fast, on-chain games of chance with a twist that matters: you never create an
-              account, you never deposit funds onto the platform, and every result is provably
+              account, the platform never holds a custodial balance of your money, and every result is provably
               fair, meaning you can independently verify that the outcome was not rigged.
             </P>
             <Figure
@@ -238,16 +238,18 @@ export default function SolPotReviewPage() {
             <H2>How SolPot works: wallet-first, non-custodial play</H2>
             <P>
               Traditional online casinos ask you to sign up, pass KYC, and deposit money into an
-              account they control. SolPot skips all of that. You visit the site, connect a Solana
-              wallet like Phantom or Backpack, and play directly from your wallet. When you win,
-              winnings land in your wallet instantly, on-chain.
+              account they control. SolPot skips the signup, KYC, and custodial balance. You
+              visit the site, connect a Solana wallet like Phantom or Backpack, and play
+              directly from your wallet: wagers go to on-chain game contracts while a round
+              runs, and winnings land back in your wallet instantly, on-chain.
             </P>
             <P>
               This wallet-first design is the biggest safety argument in SolPot&apos;s favor.
-              Because the platform never takes custody of your funds, there is no deposit balance
+              Because the platform never holds a custodial balance, there is no deposit account
               to freeze, seize, or lose in a hack. You stay in control of your assets the entire
               time, which removes the counterparty risk that sank plenty of centralized gambling
-              sites over the years.
+              sites over the years. It does not remove the gambling math: the house still takes
+              its 5% per round.
             </P>
           </Section>
 
@@ -344,10 +346,10 @@ export default function SolPotReviewPage() {
           <Section id="community">
             <H2>Community and support</H2>
             <P>
-              SolPot&apos;s community is part of the product. The platform has tens of thousands of
-              followers on X and a large Telegram group, plus a live in-app Degen Chat where
-              players talk in real time while games run. Support is handled by real agents and
-              community managers around the clock.
+              SolPot&apos;s community is part of the product. The platform has an active
+              following on X and a Telegram community, plus a live in-app Degen Chat where
+              players talk in real time while games run. Support comes through the
+              site&apos;s live chat and community channels.
             </P>
             <P>
               For a beginner, this matters: an active community means questions get answered fast,
@@ -359,15 +361,13 @@ export default function SolPotReviewPage() {
 
           <Section id="how-to-start">
             <H2>How to get started with SolPot, step by step</H2>
-            <P>
-              1. Visit SolPot.com and connect your Solana wallet (Phantom, Backpack, or any
-              compatible wallet). 2. Claim your free Daily Case. No deposit or gameplay needed,
-              just connect and spin. 3. Explore the games: try Jackpot or Coinflip with small
-              amounts first, knowing the 5% fee applies. 4. Join the community: hop into the
-              Degen Chat and the Telegram group for updates and giveaways. 5. Refer and earn:
-              share your referral code, or use ours, to earn commissions on referred player
-              activity.
-            </P>
+            <ol className="mt-4 list-decimal space-y-2 pl-6 text-base leading-8 text-slate-600">
+              <li>Visit SolPot.com and connect your Solana wallet (Phantom, Backpack, or any compatible wallet).</li>
+              <li>Claim your free Daily Case. No deposit or gameplay needed, just connect and spin.</li>
+              <li>Explore the games: try Jackpot or Coinflip with small amounts first, knowing the 5% fee applies.</li>
+              <li>Join the community: hop into the Degen Chat and the Telegram group for updates and giveaways.</li>
+              <li>Refer and earn: share your referral code, or use ours, to earn commissions on referred player activity.</li>
+            </ol>
           </Section>
 
           <Section id="comparison">
@@ -384,7 +384,7 @@ export default function SolPotReviewPage() {
                 <tbody className="text-slate-600">
                   <tr className="border-b border-slate-100">
                     <td className="px-4 py-3 font-bold text-slate-900">Custody of funds</td>
-                    <td className="px-4 py-3">Non-custodial, wallet only</td>
+                    <td className="px-4 py-3">No platform balance; wagers go to on-chain contracts</td>
                     <td className="px-4 py-3">Centralized, deposit required</td>
                   </tr>
                   <tr className="border-b border-slate-100">
@@ -435,7 +435,7 @@ export default function SolPotReviewPage() {
                 <p className="font-black text-emerald-900">What stands out</p>
                 <ul className="mt-3 space-y-2 text-sm leading-6 text-emerald-950/80">
                   <li>Provably fair games, verifiable by any player</li>
-                  <li>Non-custodial: you never deposit to the platform</li>
+                  <li>Non-custodial: no platform-held balance; wagers go to on-chain contracts</li>
                   <li>No account, no KYC, instant on-chain payouts</li>
                   <li>Generous free-to-play rewards, including a daily case</li>
                   <li>Smart contracts audited by Certik, per the original review</li>
@@ -462,9 +462,9 @@ export default function SolPotReviewPage() {
             <H2>Verdict: is SolPot safe and legit?</H2>
             <P>
               SolPot is a real, functioning platform, and its design choices are genuinely
-              pro-user: provably fair outcomes you can verify yourself, a non-custodial model
-              where your funds never leave your wallet, instant payouts, and a reported Certik
-              audit of the contracts. For a crypto-native player who understands gambling math,
+              pro-user: provably fair outcomes you can verify yourself, no custodial balance
+              held by the platform, instant payouts, and, per the original review, audited
+              contracts. For a crypto-native player who understands gambling math,
               it is one of the more transparent ways to play on-chain.
             </P>
             <P>

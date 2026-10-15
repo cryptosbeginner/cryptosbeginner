@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "What is the biggest RWA project right now?",
     answer:
-      "By assets on-chain, Ondo Finance is the clear leader as of late 2026: roughly $4 billion in total value locked across its products, number one in tokenized treasuries (about $2.9 billion) and number one in tokenized stocks (about $869 million) according to RWA.xyz data from September 2026. BlackRock's BUIDL money market fund is the other landmark product, and its scale shows how seriously traditional finance takes this.",
+      "By assets on-chain, Ondo Finance is the name to know as of early October 2026: roughly $3.7 to $4 billion in total value locked across its products, number one in tokenized treasuries (about $2.9 billion) and number one in tokenized stocks (around $1 billion) per RWA.xyz data from September 2026. By total TVL it sits near the top alongside Securitize. BlackRock's BUIDL money market fund is the other landmark product, and its scale shows how seriously traditional finance takes this.",
   },
   {
     question: "Are RWA tokens regulated?",
@@ -185,7 +185,7 @@ export default function RwaCryptoProjectsPage() {
               </li>
               <li>
                 <strong className="text-slate-900">Tokenized stocks and ETFs.</strong> The breakout category
-                of 2026. Ondo Global Markets offers tokenized exposure to 260+ US stocks and ETFs and crossed
+                of 2026. Ondo Global Markets offers tokenized exposure to more than 100 US stocks and ETFs and crossed
                 $1 billion in TVL in May 2026; issuers like xStocks route similar products into Solana DEX
                 liquidity. You get 24/7 price exposure, usually without shareholder rights.
               </li>
@@ -216,8 +216,8 @@ export default function RwaCryptoProjectsPage() {
             </P>
             <ul className="mt-4 space-y-3 text-base leading-8 text-slate-600">
               <li>
-                <strong className="text-slate-900">Ondo Finance.</strong> The category leader: roughly $4
-                billion in total value locked across USDY (yield-bearing dollar token), OUSG (institutional
+                <strong className="text-slate-900">Ondo Finance.</strong> The category leader: roughly $3.7
+                to $4 billion in total value locked across USDY (yield-bearing dollar token), OUSG (institutional
                 treasury access), and Ondo Global Markets (tokenized stocks), with regulatory licenses
                 including an SEC-registered broker-dealer and FINRA authorizations. The ONDO token itself has
                 no claim on protocol revenue, which is worth knowing before buying the token instead of the

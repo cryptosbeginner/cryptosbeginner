@@ -243,8 +243,11 @@ export default function BestSolanaDexPage() {
             <H2>PumpSwap: the memecoin casino (handle with care)</H2>
             <P>
               PumpSwap is the DEX attached to Pump.fun, the token launchpad behind Solana's memecoin waves.
-              It leads Solana in raw direct-DEX volume (around $19 billion monthly as of September 2026) and
-              lists thousands of brand-new micro-cap tokens within minutes of creation. It is also where rug
+              It leads Solana in raw direct-DEX volume (around $19 billion monthly as of September 2026, per DefiLlama) and
+              lists thousands of brand-new micro-cap tokens within minutes of creation. One honesty note: analytics firm Bitquery
+              flagged that about 58% of Solana DEX volume in a late-summer 2026 window looked like circular or bot-like trading,
+              concentrated on PumpSwap. Raw volume leaderboards overstate real trading, so treat venue rankings as directional, not exact.
+              It is also where rug
               pulls live: most of these tokens go to zero, many are outright scams, and fake copies of real
               tokens are everywhere.
             </P>
