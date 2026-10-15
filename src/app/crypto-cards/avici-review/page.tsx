@@ -300,15 +300,14 @@ export default function AviciReviewPage() {
           <figure className="mt-8">
             <Image
               src="/images/cards/reviews/avici-physical-card.png"
-              alt="Avici physical Visa card, official product image from avici.money"
+              alt="Avici physical Visa card backed by USDC collateral"
               width={631}
               height={424}
               className="mx-auto h-auto w-full max-w-md rounded-2xl border border-slate-200 shadow-sm"
               priority
             />
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              The Avici physical Visa card. Official product image from
-              avici.money.
+              The Avici physical Visa card backed by USDC collateral in a self-custodial smart contract.
             </figcaption>
           </figure>
 
@@ -405,7 +404,7 @@ export default function AviciReviewPage() {
               loading="lazy"
             />
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              The Avici app flow. Official image from avici.money.
+              Setting up the Avici Card in the app: connect your wallet, deposit USDC as collateral, and activate your Visa.
             </figcaption>
           </figure>
           <P>
@@ -505,7 +504,7 @@ export default function AviciReviewPage() {
               loading="lazy"
             />
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              Avici card design. Official image from avici.money.
+              Avici Card design showing the secured Visa credit card linked to your self-custodial crypto wallet.
             </figcaption>
           </figure>
           <P>
