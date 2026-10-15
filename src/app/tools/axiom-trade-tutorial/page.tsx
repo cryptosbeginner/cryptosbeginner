@@ -315,6 +315,40 @@ export default function AxiomTutorialPage() {
             </div>
           </Section>
 
+          <Section id="videos">
+            <H2>Video tutorials</H2>
+            <P>
+              Video walkthroughs of the Axiom trading platform. These are
+              third-party tutorials, not affiliated with CryptosBeginner.
+            </P>
+            <div className="mt-6 grid gap-6">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/c0jfxKdraPI"
+                    title="Axiom trading platform tutorial"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/xyKLNK0ee2U?start=14"
+                    title="Axiom platform walkthrough"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </Section>
+
           <Section id="faq">
             <H2>Frequently asked questions</H2>
             <div className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">

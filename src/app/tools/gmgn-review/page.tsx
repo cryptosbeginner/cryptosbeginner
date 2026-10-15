@@ -329,6 +329,69 @@ export default function GmgnReviewPage() {
             </div>
           </Section>
 
+          <Section id="videos">
+            <H2>Video walkthroughs</H2>
+            <P>
+              Prefer to watch? Here are video walkthroughs of GMGN.AI, including
+              our own tutorials and a third-party review.
+            </P>
+            <div className="mt-6 grid gap-6">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/X_9iXQ-i4cQ"
+                    title="GMGN.AI video tutorial"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src="https://www.youtube-nocookie.com/embed/MxK5C2eQXNc"
+                      title="GMGN.AI short tutorial"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                  <div className="relative w-full" style={{ paddingBottom: "177.78%" }}>
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src="https://www.youtube-nocookie.com/embed/MU_JEqglP7I"
+                      title="GMGN.AI short guide"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/pERD-Qr9sDk"
+                    title="GMGN.AI third-party review"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="px-4 py-2 text-xs text-slate-500">
+                  Third-party review, not affiliated with CryptosBeginner.
+                </p>
+              </div>
+            </div>
+          </Section>
+
           <Section id="faq">
             <H2>Frequently asked questions</H2>
             <div className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
