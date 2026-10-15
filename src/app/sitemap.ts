@@ -92,6 +92,7 @@ const recentRoutes = new Set([
   "/learn/best-solana-dex",
   "/learn/rwa-crypto-projects",
   "/learn/crypto-platforms-for-beginners",
+  "/learn/exchange-insurance-funds",
   "/funded-accounts",
   "/wallets/prokey-review",
   "/wallets/secux-nifty-review",
