@@ -75,6 +75,7 @@ const recentRoutes = new Set([
   "/tools/fomo-review",
   "/tools/padre-review",
   "/tools/solpot-review",
+  "/tools/bankable-pro-review",
   "/tools/ostium-review",
   "/tools/axiom-pro",
   "/learn/how-to-trade-memecoins-safely",
