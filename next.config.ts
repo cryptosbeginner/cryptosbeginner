@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         destination: "/exchanges/best-crypto-exchanges",
         permanent: true,
       },
+      {
+        source: "/tools/dogpay-review",
+        destination: "/crypto-cards/dogpay-review",
+        permanent: true,
+      },
+      {
+        source: "/tools/kast-review",
+        destination: "/crypto-cards/kast-review",
+        permanent: true,
+      },
     ];
   },
   images: {
