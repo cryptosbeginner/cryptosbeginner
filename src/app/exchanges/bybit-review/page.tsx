@@ -844,6 +844,17 @@ export default function BybitReviewPage() {
             />
           </figure>
 
+          <div className="mt-4">
+            <a
+              href="https://go.cryptosbeginner.com/BybitCardBonus"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-emerald-700"
+            >
+              Get the Bybit Card
+            </a>
+          </div>
+
           <p className="mt-4 leading-8 text-slate-800">
             The interface is polished by exchange standards, with capable
             charting and a functional mobile app for iOS and Android, but
