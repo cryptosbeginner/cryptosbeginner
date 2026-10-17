@@ -12,12 +12,12 @@ const UPDATED_ISO = "2026-10-16";
 export const metadata: Metadata = {
   title: "Crypto Card Reviews: Tested, Compared, Honest | CryptosBeginner",
   description:
-    "In-depth crypto card reviews tested on the real apps: Avici, DogPay, KAST, RedotPay, Solid, and Tevau. Real fee tables, honest verdicts, no hype.",
+    "In-depth crypto card reviews tested on the real apps: Avici, DogPay, KAST, RedotPay, Solid, Tevau, and Tria. Real fee tables, honest verdicts, no hype.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Crypto Card Reviews | CryptosBeginner",
     description:
-      "Six crypto cards tested on the real apps, with real fee tables and honest verdicts.",
+      "Seven crypto cards tested on the real apps, with real fee tables and honest verdicts.",
     url: PAGE_URL,
     type: "website",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Crypto Card Reviews | CryptosBeginner",
     description:
-      "Six crypto cards tested on the real apps, with real fee tables and honest verdicts.",
+      "Seven crypto cards tested on the real apps, with real fee tables and honest verdicts.",
   },
   robots: { index: true, follow: true },
 };
@@ -114,6 +114,18 @@ const REVIEWS: Review[] = [
       "A fair deal if you hold USDT and can pass KYC: tiers from a $20 virtual card to a $499 24K gold card, roughly 1% top-up fees, and Earn on idle USDT.",
     highlights: ["Tiers from $20 to $499", "Roughly 1% top-up fee", "Earn on idle USDT"],
     href: "/crypto-cards/tevau-review",
+  },
+  {
+    slug: "tria-review",
+    name: "Tria Card",
+    provider: "Tria",
+    network: "Visa",
+    imageUrl: "/images/cards/tria-card.png",
+    imageAlt: "Tria Visa card official product visual",
+    summary:
+      "A self-custodial crypto neobank card: you hold the keys, three memberships from $20 to $250 a year, and up to 6% cashback on the first $2,000 of monthly spend.",
+    highlights: ["Self-custodial, you hold the keys", "Up to 6% cashback by tier", "9 top-up networks, gasless deposits"],
+    href: "/crypto-cards/tria-review",
   },
 ];
 

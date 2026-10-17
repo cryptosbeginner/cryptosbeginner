@@ -409,6 +409,7 @@ export const cardListings: CardListing[] = [
     updateNote: "Tria publishes product and legal information across its card page, app flow, blog, privacy policy, and legal pages; tier benefits and regional access can change.",
     applicationMethod: "Open the Tria app flow, review the card tier available for your country, complete the provider onboarding, and confirm current terms before funding.",
     verification: "Provider onboarding and country eligibility apply; check the current application flow for the exact verification requirements.",
+    fullReviewUrl: "/crypto-cards/tria-review",
     galleryImages: [
       { url: "/images/cards/gallery/tria-card-gallery-1.png", alt: "Tria Signature Card showing the premium card design", source: "Tria Signature Card product visual with premium finish" },
       { url: "/images/cards/gallery/tria-card-gallery-2.png", alt: "Tria Premium Card showing the card design and features", source: "Tria Premium Card product visual" }
