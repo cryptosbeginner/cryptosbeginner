@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/redotpay-review`;
 
-const UPDATED = "14 October 2026";
-const UPDATED_ISO = "2026-10-14";
+const UPDATED = "17 October 2026";
+const UPDATED_ISO = "2026-10-17";
 const ORIGINALLY_PUBLISHED = "9 April 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-04-09";
 
@@ -61,7 +61,7 @@ const faqItems = [
   {
     question: "What are RedotPay's fees?",
     answer:
-      "The virtual card costs $10 one-time and the physical card costs $100 one-time, with no monthly or annual fee. Spending costs 1% on USD purchases and 2.2% on non-USD purchases (1% conversion plus 1.2% FX markup). ATM withdrawals cost 2%. Top-ups are free with on-chain crypto, 3% with a bank card, and 1% with Binance Pay. There is a $0.20 fee from your 5th small swipe each month and a $0.50 declined-transaction fee after 3 consecutive declines. Fees verified October 2026.",
+      "The virtual card costs $10 one-time and the physical card costs $100 one-time, with no monthly or annual fee (account maintenance is waived). Spending costs 1% on USD purchases (the crypto conversion fee) and 2.2% on non-USD purchases (1% conversion plus 1.2% FX markup). ATM withdrawals cost 2% on HKD cards and 2% on USD cards up to $10,000 of monthly withdrawals, then 3%. Top-ups are free with on-chain crypto, 3% with a bank card, and 1% with Binance Pay. Small purchases of $1 or less are free for the first 5 per card each month, then $0.20 each. Declined transactions are free for the first 3 per card each month, then $0.50 each. Card spending limits are $100,000 per transaction and $1,000,000 daily. Fees from the official schedule effective December 1, 2025, verified October 2026.",
   },
   {
     question: "Does RedotPay require KYC?",
@@ -71,7 +71,22 @@ const faqItems = [
   {
     question: "Does RedotPay offer cashback?",
     answer:
-      "No. Standard RedotPay cards have no cashback program. If cashback is the reason you want a crypto card, look elsewhere.",
+      "Standard RedotPay cards have no cashback program. Cashback only comes with the paid RedotPay Pro membership, which pays 3% on Apple Pay and Google Pay purchases. If cashback is the reason you want a crypto card and you do not want to pay for Pro, look elsewhere.",
+  },
+  {
+    question: "What is RedotPay Pro?",
+    answer:
+      "RedotPay Pro is RedotPay's paid membership, launched in June 2026. The monthly plan costs $12.90 a month and includes a free virtual card (the usual $10 issuance fee is waived) plus 3% cashback on Apple Pay and Google Pay purchases. The annual plan costs $129 a year and includes a free physical card (the usual $100 issuance fee is waived), the same 3% cashback, up to $1,000 a month of ATM withdrawals without RedotPay's withdrawal fee, and an extra 1% APY on RedotPay Earn balances where Earn is available. Cashback is paid in USDs, RedotPay's dollar credit for card spending. Membership fees are non-refundable and auto-renew.",
+  },
+  {
+    question: "Is RedotPay Pro worth it?",
+    answer:
+      "It depends on how you pay. The 3% cashback applies only to Apple Pay and Google Pay purchases, not to physical card swipes or typed-in online payments, and third-party reviewers report it is capped at 18 USDs a month (about $600 of mobile-pay spend). At $12.90 a month, the monthly plan breaks even near $430 of Apple Pay or Google Pay spend a month, and you also skip the $10 virtual card fee. The $129 annual plan makes more sense if you want the free physical card, the $1,000 a month of fee-free ATM withdrawals, or the Earn boost. If you mostly swipe the physical card or spend under a few hundred dollars a month, Pro will cost you more than it pays back.",
+  },
+  {
+    question: "Which countries cannot use RedotPay?",
+    answer:
+      "RedotPay's Help Center (updated August 2026) lists around 40 unsupported countries and regions where you cannot register or complete KYC, including the United States, Mainland China, Russia, Iran, North Korea, Cuba, Syria, Myanmar, Venezuela, Ukraine, and Belarus. If you are physically located in one of these areas you also cannot access the app at all. The lists can change as regulations evolve, so check RedotPay's Help Center before signing up. RedotPay P2P, meanwhile, is available in 100+ countries and regions; the app shows the current list for your location.",
   },
   {
     question: "Which cryptocurrencies can I spend on RedotPay?",
@@ -157,6 +172,8 @@ const tocItems = [
   { id: "spend", label: "How to spend with RedotPay" },
   { id: "atm", label: "ATM withdrawals: the weak spot" },
   { id: "fees", label: "Full fee table (verified October 2026)" },
+  { id: "pro", label: "RedotPay Pro: is the membership worth it?" },
+  { id: "availability", label: "Where RedotPay works (and where it does not)" },
   { id: "video", label: "Video review" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
@@ -583,7 +600,8 @@ export default function RedotPayReviewPage() {
             Let me be honest here, because the original review that this
             page builds on flagged it too: ATM withdrawals are RedotPay's
             weak spot. Only the physical card can use ATMs, withdrawals
-            cost 2% of the amount, and on a non-USD withdrawal the fees can
+            cost 2% of the amount on USD cards up to $10,000 of monthly
+            withdrawals and 3% above that, and on a non-USD withdrawal the fees can
             stack to around 4.2% all-in once conversion and FX are included.
             On top of that, the ATM operator itself may add its own
             surcharge.
@@ -607,17 +625,13 @@ export default function RedotPayReviewPage() {
           </P>
           <figure className="mt-6">
             <Image
-              src="/images/cards/redotpay-fees-2025.jpg"
-              alt="RedotPay fee schedule shown in the app"
-              width={644}
-              height={1024}
-              className="mx-auto h-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-sm"
+              src="/images/cards/redotpay-fee-schedule-dec-2025.png"
+              alt="RedotPay official fee schedule effective December 1, 2025, showing card application fees, transaction fees, and card limits"
+              width={640}
+              height={965}
+              className="mx-auto h-auto w-full max-w-md rounded-2xl border border-slate-200 shadow-sm"
               loading="lazy"
             />
-            <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              The RedotPay fee schedule in the app. Captured in 2025; check
-              the current schedule in the app, as figures may have changed.
-            </figcaption>
           </figure>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full min-w-[480px] border-collapse text-left text-sm">
@@ -637,20 +651,40 @@ export default function RedotPayReviewPage() {
                   <td className="py-3 text-right font-bold">$100 one-time</td>
                 </tr>
                 <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Virtual card replacement</td>
+                  <td className="py-3 text-right font-bold">$5 first update, $10 each one after</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Physical card mailing</td>
+                  <td className="py-3 text-right font-bold">Standard mail waived, DHL Express varies by country</td>
+                </tr>
+                <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Monthly or annual fee</td>
-                  <td className="py-3 text-right font-bold">None</td>
+                  <td className="py-3 text-right font-bold">None (account maintenance waived)</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">USD merchant purchase</td>
-                  <td className="py-3 text-right font-bold">1%</td>
+                  <td className="py-3 text-right font-bold">1% crypto conversion fee</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Non-USD merchant purchase</td>
                   <td className="py-3 text-right font-bold">2.2% (1% conversion + 1.2% FX)</td>
                 </tr>
                 <tr className="border-b border-slate-100">
-                  <td className="py-3 pr-4">ATM withdrawal (physical card)</td>
+                  <td className="py-3 pr-4">ATM withdrawal (HKD card)</td>
                   <td className="py-3 text-right font-bold">2%</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">ATM withdrawal (USD card)</td>
+                  <td className="py-3 text-right font-bold">2% up to $10,000/mo, then 3%</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">ATM withdrawal limits</td>
+                  <td className="py-3 text-right font-bold">3/day, 30/month; $3,750/day, $50,000/month (USD)</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Card spending limits</td>
+                  <td className="py-3 text-right font-bold">$100,000 per transaction, $1,000,000 daily</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Top-up with crypto (on-chain)</td>
@@ -665,12 +699,12 @@ export default function RedotPayReviewPage() {
                   <td className="py-3 text-right font-bold">1%</td>
                 </tr>
                 <tr className="border-b border-slate-100">
-                  <td className="py-3 pr-4">Small-transaction fee</td>
-                  <td className="py-3 text-right font-bold">$0.20 from the 5th swipe per month</td>
+                  <td className="py-3 pr-4">Small-transaction fee (purchases of $1 or less)</td>
+                  <td className="py-3 text-right font-bold">First 5 per card per month waived, then $0.20 each</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Declined-transaction fee</td>
-                  <td className="py-3 text-right font-bold">$0.50 after 3 consecutive declines</td>
+                  <td className="py-3 text-right font-bold">First 3 per card per month waived, then $0.50 each</td>
                 </tr>
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">Cashback</td>
@@ -680,11 +714,129 @@ export default function RedotPayReviewPage() {
             </table>
           </div>
           <P>
-            The small-transaction fee deserves a mention: from your fifth
-            swipe in a calendar month, tiny purchases attract a $0.20 fee
-            each. If you use the card for lots of small buys, like a daily
-            coffee, those add up over a month. It is not a dealbreaker, but
-            it is the kind of fee that only shows up in the fine print.
+            The small-transaction fee deserves a mention: the first 5
+            small purchases (each $1.00 or less) per card each month are
+            waived, then every one after that costs $0.20. If you use the
+            card for lots of small buys, like a daily coffee, those add up
+            over a month. It is not a dealbreaker, but it is the kind of
+            fee that only shows up in the fine print.
+          </P>
+          <P>
+            Two more details from the December 2025 schedule worth knowing:
+            replacing your virtual card costs $5 for the first update and
+            $10 for each one after that, and standard-mail delivery of a
+            physical card is waived while DHL Express varies by country.
+            Note the USD-card ATM limits too: in some countries and
+            regions the daily ATM limit drops to $3,000 and the monthly
+            limit to $10,000, so check the app before a big cash trip.
+          </P>
+        </Section>
+
+        <Section id="pro">
+          <H2>RedotPay Pro: is the membership worth it?</H2>
+          <P>
+            In June 2026 RedotPay launched RedotPay Pro, a paid membership
+            for people who use the card heavily. It does not change how
+            you pay. It trades a monthly or annual fee for cashback,
+            waived card fees, and fee-free ATM withdrawals.
+          </P>
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 pr-4 font-black text-slate-950">Benefit</th>
+                  <th className="py-3 pr-4 text-right font-black text-slate-950">Monthly ($12.90/mo)</th>
+                  <th className="py-3 text-right font-black text-slate-950">Annual ($129/yr)</th>
+                </tr>
+              </thead>
+              <tbody className="leading-7 text-slate-800">
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Free card</td>
+                  <td className="py-3 pr-4 text-right font-bold">Virtual card fee waived</td>
+                  <td className="py-3 text-right font-bold">Physical card fee waived</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Cashback</td>
+                  <td className="py-3 pr-4 text-right font-bold">3% on Apple Pay and Google Pay</td>
+                  <td className="py-3 text-right font-bold">3% on Apple Pay and Google Pay</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">ATM fee waiver</td>
+                  <td className="py-3 pr-4 text-right font-bold">None</td>
+                  <td className="py-3 text-right font-bold">First $1,000/mo free of RedotPay&apos;s ATM fee</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 pr-4">Earn boost</td>
+                  <td className="py-3 pr-4 text-right font-bold">None</td>
+                  <td className="py-3 text-right font-bold">Extra 1% APY on RedotPay Earn (supported regions)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            The honest fine print: the 3% cashback applies only to Apple
+            Pay and Google Pay purchases, not to physical card swipes or
+            manually typed online payments. It is paid in USDs,
+            RedotPay&apos;s dollar credit that can only be spent on future
+            card purchases, and third-party reviewers report it is capped
+            at 18 USDs a month (roughly $600 of mobile-pay spend). The
+            membership fee is non-refundable and auto-renews, though you
+            can cancel and keep benefits until the period ends.
+          </P>
+          <P>
+            The breakeven math: at $12.90 a month, the monthly plan pays
+            for itself near $430 of Apple Pay or Google Pay spend a
+            month, and you also skip the $10 virtual card fee. The $129
+            annual plan (about $10.75 a month) makes sense if you want the
+            free $100 physical card, the $1,000 a month of fee-free ATM
+            withdrawals, or the Earn boost. If you mostly swipe the
+            physical card or spend a few hundred dollars a month, Pro
+            costs more than it returns.
+          </P>
+          <div className="mt-7">
+            <PrimaryCtaButton>Get the RedotPay card</PrimaryCtaButton>
+          </div>
+        </Section>
+
+        <Section id="availability">
+          <H2>Where RedotPay works (and where it does not)</H2>
+          <P>
+            RedotPay says its card is available in 100+ countries, but the
+            exclusions matter more than the headline. RedotPay&apos;s Help
+            Center (updated August 2026) lists the countries and regions
+            where you cannot register or complete KYC: Afghanistan,
+            Albania, Belarus, Bosnia and Herzegovina, Bouvet Island,
+            Burkina Faso, Burundi, Central African Republic, DR Congo,
+            Croatia, Cuba, Eritrea, Ethiopia, Guinea-Bissau, Haiti, Iran,
+            Iraq, Kosovo, Lebanon, Liberia, Libya, Mainland China, Mali,
+            Montenegro, Myanmar, Netherlands Antilles, Nicaragua, North
+            Korea, North Macedonia, Russia, Serbia, Slovenia, Somalia,
+            South Sudan, Sudan, Syria, Ukraine, the United States,
+            Venezuela, Yemen, and Zimbabwe.
+          </P>
+          <P>
+            There is a second, overlapping list for location-based access:
+            if you are physically located in one of the restricted areas,
+            you cannot open the app at all. That list is nearly identical
+            and adds Tanzania. The key point for travelers: it is not
+            just about where your account was opened, it is about where
+            you are standing. RedotPay says the lists are updated as
+            regulations evolve, with changes announced in-app or by email.
+          </P>
+          <P>
+            RedotPay P2P, the in-app peer-to-peer marketplace for buying
+            and selling stablecoins, is available in 100+ countries and
+            regions, including Argentina, Australia, Austria, Bahrain,
+            Bangladesh, Belgium, the UAE, and many more. The full current
+            list lives in your RedotPay app: if P2P shows up for your
+            location, you can start an order.
+          </P>
+          <P>
+            Bottom line: if you are in the US, Mainland China, or any
+            sanctioned jurisdiction, RedotPay is not an option. Everyone
+            else should still confirm their country in the app before
+            paying any card fee, because issuance and delivery can have
+            their own narrower restrictions.
           </P>
         </Section>
 
@@ -760,12 +912,13 @@ export default function RedotPayReviewPage() {
                 <li>100+ countries supported</li>
                 <li>Apple Pay, Google Pay, and Samsung Pay support</li>
                 <li>PCI DSS 4.0 certified with Fireblocks custody</li>
+                <li>RedotPay Pro adds 3% Apple Pay and Google Pay cashback for heavy users</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
               <p className="font-black text-rose-900">Cons</p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-800">
-                <li>No cashback on standard cards</li>
+                <li>No cashback on standard cards (Pro membership required)</li>
                 <li>Physical card costs $100 one-time</li>
                 <li>2% ATM fee, weak for cash users</li>
                 <li>Small-transaction and declined-transaction fees add up</li>

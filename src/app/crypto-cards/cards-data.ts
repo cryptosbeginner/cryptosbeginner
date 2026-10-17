@@ -36,6 +36,7 @@ export type CardListing = {
   pros?: string[];
   cons?: string[];
   noKycStatus?: "not-verified" | "provider-claims-no-credit-check" | "provider-states-no-kyc";
+  extraFaqs?: { question: string; answer: string }[];
 };
 
 export function getCardFaqs(card: CardListing) {
@@ -48,6 +49,7 @@ export function getCardFaqs(card: CardListing) {
     { question: `How is ${card.name} funded?`, answer: card.funding },
     { question: `Where is ${card.name} available?`, answer: card.availability },
     { question, answer },
+    ...(card.extraFaqs ?? []),
   ];
 }
 
@@ -223,21 +225,21 @@ export const cardListings: CardListing[] = [
     network: "Card networks vary by region",
     categories: ["prepaid", "debit"],
     shortDescription: "A stablecoin-based spending card with virtual and physical formats.",
-    editorialSummary: "RedotPay combines a stablecoin spending card with a broader payments app. The official card page separates physical and virtual use cases, while the Help Center publishes the issuance and usage economics. That makes the card easier to compare when the one-time issuance cost is not confused with ongoing fees.",
+    editorialSummary: "RedotPay combines a stablecoin spending card with a broader payments app. The official fee schedule (effective December 1, 2025) publishes the full economics: $10 virtual and $100 physical issuance, no account maintenance fee, 1% crypto conversion on spending, 1.2% non-default currency markup, and tiered ATM fees. RedotPay Pro, launched June 2026, adds 3% Apple Pay and Google Pay cashback for $12.90/month or $129/year. That makes the card easier to compare when the one-time issuance cost is not confused with ongoing fees.",
     bestFor: "Stablecoin users who want a card plus app-based payment rails, subject to local availability.",
-    availability: "Registration is unavailable in certain countries and regions; verify the current unsupported-country list.",
-    regions: ["Global with country and region exclusions"],
-    pricing: "The official Help Center lists a $10 virtual-card issuance fee and $100 physical-card issuance fee. RedotPay states there is no monthly or annual card-management fee; transaction, ATM, conversion, and other charges may still apply.",
-    rewards: "No universal card reward rate is stated on the reviewed card page; separate RedotPay rewards or Earn features may have their own conditions.",
-    funding: "Stablecoins and other supported assets are managed through the RedotPay app and converted for card spending or withdrawals.",
+    availability: "RedotPay's Help Center (August 2026) lists around 40 unsupported countries and regions where registration and KYC are unavailable, including the United States, Mainland China, Russia, Iran, North Korea, Cuba, Syria, Myanmar, Venezuela, Ukraine, and Belarus. If you are physically located in a restricted area you cannot access the app at all. RedotPay P2P is available in 100+ countries and regions; the app shows the current list for your location.",
+    regions: ["100+ countries; around 40 unsupported countries and regions per the Help Center"],
+    pricing: "The official fee schedule (effective December 1, 2025) lists a $10 virtual-card issuance fee and $100 physical-card issuance fee, with account maintenance waived. Virtual card replacement costs $5 for the first update and $10 for each subsequent update; standard-mail delivery of the physical card is waived. Spending: 1% crypto conversion fee on default-currency purchases, plus 1.2% on non-default currency purchases. ATM withdrawals: 2% on HKD cards, and 2% on USD cards up to $10,000 of monthly withdrawals, then 3%. Small purchases of $1 or less are free for the first 5 per card each month, then $0.20 each; declined transactions are free for the first 3 per card each month, then $0.50 each. Card limits: $100,000 per transaction, $1,000,000 daily; ATM withdrawals 3 per day and 30 per month, $3,750 daily and $50,000 monthly on USD cards (in some countries $3,000 daily and $10,000 monthly).",
+    rewards: "Standard cards have no cashback. RedotPay Pro (launched June 2026) costs $12.90/month or $129/year and pays 3% cashback on Apple Pay and Google Pay purchases, credited in USDs for future card spending. The monthly plan waives the $10 virtual card fee; the annual plan waives the $100 physical card fee, adds up to $1,000/month of ATM withdrawals without RedotPay's withdrawal fee, and adds 1% APY on RedotPay Earn balances where available. Membership fees are non-refundable and auto-renew.",
+    funding: "Stablecoins and other supported assets are managed through the RedotPay app and converted for card spending or withdrawals. On-chain crypto deposits are free; bank-card top-ups cost 3% and Binance Pay top-ups cost 1%.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.redotpay.com/card",
     sourceLabel: "RedotPay Card product page",
     imageUrl: "/images/cards/redotpay-card.png",
     imageAlt: "RedotPay physical stablecoin card",
     imageSourceNote: "Official RedotPay-hosted card image",
-    reviewedAt: "2026-08-27",
-    caution: "Card availability, supported assets, verification, fees, and unsupported regions can change. Read the current RedotPay Help Center and terms before funding an account.",
+    reviewedAt: "2026-10-17",
+    caution: "Card availability, supported assets, verification, fees, and unsupported regions can change. ATM fees are tiered on USD cards (3% above $10,000 of monthly withdrawals). RedotPay Pro cashback applies only to Apple Pay and Google Pay purchases and its terms can change. Read the current RedotPay Help Center and terms before funding an account.",
     referralUrl: "https://go.cryptosbeginner.com/RedotPay",
     fullReviewUrl: "/crypto-cards/redotpay-review",
     referralLabel: "Check RedotPay card",
@@ -250,6 +252,16 @@ export const cardListings: CardListing[] = [
     galleryImages: [
       { url: "/images/cards/gallery/redotpay-card-gallery-1.webp", alt: "RedotPay virtual card interface showing the digital card design", source: "RedotPay app displaying the virtual crypto card" }
     
+    ],
+    extraFaqs: [
+      {
+        question: "What is RedotPay Pro?",
+        answer: "RedotPay Pro is RedotPay's paid membership, launched in June 2026. The monthly plan costs $12.90 a month and includes a free virtual card plus 3% cashback on Apple Pay and Google Pay purchases. The annual plan costs $129 a year and includes a free physical card, the same 3% cashback, up to $1,000 a month of ATM withdrawals without RedotPay's withdrawal fee, and an extra 1% APY on RedotPay Earn balances where Earn is available. Cashback is paid in USDs for future card spending. Membership fees are non-refundable and auto-renew.",
+      },
+      {
+        question: "Is RedotPay Pro worth it?",
+        answer: "It depends on how you pay. The 3% cashback applies only to Apple Pay and Google Pay purchases, and third-party reviewers report it is capped at 18 USDs a month. At $12.90 a month, the monthly plan breaks even near $430 of mobile-pay spend a month. The $129 annual plan suits users who want the free physical card, fee-free ATM withdrawals up to $1,000 a month, or the Earn boost. Light spenders will pay more than they get back.",
+      },
     ],
   },
   {
