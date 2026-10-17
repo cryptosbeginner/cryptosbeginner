@@ -199,8 +199,7 @@ export default function TriaReviewPage() {
         </div>
         <div className="mx-auto max-w-4xl px-4 pt-4 text-xs leading-6 text-slate-500">
           <strong className="text-slate-700">Affiliate disclosure:</strong> we may earn a commission
-          if you sign up through our link, at no extra cost to you. No referral code was provided
-          for this review.{" "}
+          if you sign up through our link, at no extra cost to you.{" "}
           <strong className="text-slate-700">Risk warning:</strong> crypto is volatile and card
           programs can change fees or availability. Educational content, not financial advice.
         </div>
