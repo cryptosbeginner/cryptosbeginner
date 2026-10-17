@@ -9,7 +9,7 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/tria-review`;
 const UPDATED = "17 October 2026";
 const UPDATED_ISO = "2026-10-17";
-const AFFILIATE = "https://go.cryptosbeginner.com/Tria";
+const AFFILIATE = "https://app.tria.so/?accessCode=IY97IDZRFP";
 
 const REVIEWER = {
   name: "Alex Rivera",
@@ -84,7 +84,7 @@ const faqItems = [
   {
     question: "How do I sign up for Tria?",
     answer:
-      "Open our link at https://go.cryptosbeginner.com/Tria, download the Tria app for iPhone or Android, and create your account. Tria sets up a self-custodial wallet where you hold the keys. Choose a membership tier (Lite, Pro, or Max), complete any required verification, then top up your card from the Cards section by selecting your wallet, token, and amount. The app showed a 10 USD joining bonus at the time we reviewed it.",
+      "Open our link at https://app.tria.so/?accessCode=IY97IDZRFP, download the Tria app for iPhone or Android, and create your account. Tria sets up a self-custodial wallet where you hold the keys. Choose a membership tier (Lite, Pro, or Max), complete any required verification, then top up your card from the Cards section by selecting your wallet, token, and amount. The app showed a 10 USD joining bonus at the time we reviewed it.",
   },
 ];
 
@@ -118,15 +118,15 @@ function P({ children }: { children: React.ReactNode }) {
   return <p className="mt-4 text-base leading-8 text-slate-600">{children}</p>;
 }
 
-function Figure({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+function Figure({ src, alt, caption, width = 540, height = 1170, wide = false }: { src: string; alt: string; caption: string; width?: number; height?: number; wide?: boolean }) {
   return (
     <figure className="mt-8">
       <Image
         src={src}
         alt={alt}
-        width={540}
-        height={1170}
-        className="mx-auto h-auto w-full max-w-xs rounded-2xl border border-slate-200 shadow-sm"
+        width={width}
+        height={height}
+        className={`mx-auto h-auto w-full ${wide ? "max-w-2xl" : "max-w-xs"} rounded-2xl border border-slate-200 shadow-sm`}
       />
       <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">{caption}</figcaption>
     </figure>
@@ -139,6 +139,24 @@ function Callout({ title, children }: { title: string; children: React.ReactNode
       <p className="font-black text-amber-900">{title}</p>
       <div className="mt-2 text-sm leading-7 text-amber-950/80">{children}</div>
     </div>
+  );
+}
+
+function Steps({ steps }: { steps: { title: string; detail: React.ReactNode }[] }) {
+  return (
+    <ol className="mt-6 space-y-3">
+      {steps.map((step, i) => (
+        <li key={i} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 sm:p-5">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-black text-white">
+            {i + 1}
+          </span>
+          <div className="min-w-0">
+            <p className="font-bold text-slate-950">{step.title}</p>
+            <p className="mt-1 text-sm leading-6 text-slate-600">{step.detail}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -275,10 +293,24 @@ export default function TriaReviewPage() {
               All tiers include a virtual card, spending up to 1M USD per day, price protection up
               to 2,000 USD, purchase protection up to 10,000 USD, plus Google Pay and Apple Pay.
               Pro and Max add a physical card, airport lounge access, Visa Luxury Hotels, and Visa
-              concierge. Max upgrades the physical card to metal. The app showed a 10 USD joining
+              concierge. Max upgrades the physical card to metal. Tria claims an annual card value
+              of 500 USD plus on Lite, 2,000 USD plus on Pro, and 3,000 USD plus on Max, which are
+              provider marketing figures, not guaranteed returns. The app showed a 10 USD joining
               bonus at the time we reviewed it, marked as expiring in 5 days in the screenshot, so
               treat that as a limited offer rather than a permanent perk.
             </P>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <Figure
+                src="/images/tools/tria/tria-lite-membership-virtual-card.jpg"
+                alt="Tria Lite membership screen showing the virtual card with 1.5 percent cashback up to $1,000 and a 10 dollar joining bonus"
+                caption="Lite costs $20 a year and opens with a $10 joining bonus. It is the cheapest way to try Tria."
+              />
+              <Figure
+                src="/images/tools/tria/tria-pro-membership-plastic-card.jpg"
+                alt="Tria Pro membership screen showing the black and gold plastic Visa Signature card with 4.5 percent cashback up to $1,000"
+                caption="Pro costs $109 a year and adds a physical Visa Signature card with 4.5% cashback on the first $1,000 of monthly spend."
+              />
+            </div>
             <Figure
               src="/images/tools/tria/tria-max-membership-metal-card.jpg"
               alt="Tria Max membership screen showing the black metal Visa Signature card with 6 percent cashback"
@@ -299,14 +331,47 @@ export default function TriaReviewPage() {
             <P>
               Top-ups add funds to your card by depositing crypto from your wallet. The deposit is
               converted and credited to your card balance, ready for immediate use. Most top-ups
-              are processed near-instantly. The app lays out the steps:
+              are processed near-instantly. Here is the exact flow from the app:
             </P>
-            <P>
-              1. Navigate to the Cards section of your app. 2. Tap on Top-up. 3. Select your
-              preferred wallet: the Tria Wallet or any supported external wallet. 4. Choose the
-              token you wish to deposit. 5. Enter the amount you want to add. 6. Tap Review to
-              verify your details. 7. Swipe to Top-up to finalize the transaction.
-            </P>
+            <Steps
+              steps={[
+                {
+                  title: "Open the Cards section",
+                  detail: "Navigate to the Cards section of your Tria app.",
+                },
+                {
+                  title: "Tap Top-up",
+                  detail: "Hit the Top-up button to start funding your card.",
+                },
+                {
+                  title: "Choose your wallet",
+                  detail: "Select the Tria Wallet or any supported external wallet.",
+                },
+                {
+                  title: "Pick your token",
+                  detail: "Choose the token you wish to deposit.",
+                },
+                {
+                  title: "Enter the amount",
+                  detail:
+                    "Type in how much you want to add. Minimums are 50 USD for Bitcoin and 10 USD for all other supported tokens.",
+                },
+                {
+                  title: "Review your details",
+                  detail: "Tap Review to verify the token, network, and amount.",
+                },
+                {
+                  title: "Swipe to confirm",
+                  detail:
+                    "Swipe to Top-up to finalize the transaction. Funds are usually credited near-instantly.",
+                },
+              ]}
+            />
+            <Figure
+              src="/images/tools/tria/tria-receive-tokens-networks.jpg"
+              alt="Tria Receive screen showing supported deposit tokens and networks with QR code addresses"
+              caption="Tria generates a deposit address per network. Supported tokens include BTC, ETH, SOL, APT, USDC, USDT, and BNB."
+            />
             <P>
               One quirk worth knowing: funds can be visible but not usable. Refunds in progress
               (posted charges) are merchant refunds still being processed by Visa, and merchant
@@ -407,22 +472,61 @@ export default function TriaReviewPage() {
               deposits and withdrawals before committing serious money.
             </P>
             <Figure
-              src="/images/tools/tria/tria-google-play-listing.jpg"
-              alt="Tria app listing on Google Play showing a 1.9 star rating from 3,000 reviews"
-              caption="Google Play rates Tria 1.9 stars from about 3,000 reviews. App Store is higher at 3.5, but from only 40 ratings."
+              src="/images/tools/tria/tria-google-play-ratings-reviews.jpg"
+              alt="Tria Google Play ratings detail showing 1.9 stars from 3,895 reviews with an AI summary of user feedback"
+              caption="Google Play rates Tria 1.9 stars from 3,895 reviews. Users praise the clean UI and cashback but report delayed processing and unhelpful support."
             />
           </Section>
 
           <Section id="signup">
             <H2>How to sign up</H2>
             <P>
-              1. Open our link: <a href={AFFILIATE} target="_blank" rel="sponsored noopener noreferrer" className="font-bold text-emerald-700 hover:text-emerald-900">go.cryptosbeginner.com/Tria</a>.
-              2. Download the Tria app for iPhone or Android. 3. Create your account: Tria sets up
-              a self-custodial wallet where you hold the keys. 4. Choose a membership tier (Lite,
-              Pro, or Max) and complete any required verification. 5. Go to the Cards section, tap
-              Top-up, pick your token and network, and fund your card. The app showed a 10 USD
-              joining bonus during our review.
+              Getting started takes a few minutes. Follow these steps in order:
             </P>
+            <Steps
+              steps={[
+                {
+                  title: "Open our link",
+                  detail: (
+                    <>
+                      Start here:{" "}
+                      <a
+                        href={AFFILIATE}
+                        target="_blank"
+                        rel="sponsored noopener noreferrer"
+                        className="font-bold break-all text-emerald-700 hover:text-emerald-900"
+                      >
+                        app.tria.so/?accessCode=IY97IDZRFP
+                      </a>
+                    </>
+                  ),
+                },
+                {
+                  title: "Download the app",
+                  detail: "Get the Tria app for iPhone or Android.",
+                },
+                {
+                  title: "Create your account",
+                  detail:
+                    "Tria sets up a self-custodial wallet where you hold the keys, not Tria, not a bank.",
+                },
+                {
+                  title: "Pick a membership tier",
+                  detail:
+                    "Choose Lite, Pro, or Max and complete any required verification.",
+                },
+                {
+                  title: "Fund your card",
+                  detail:
+                    "Go to the Cards section, tap Top-up, pick your token and network. The app showed a 10 USD joining bonus during our review.",
+                },
+              ]}
+            />
+            <Figure
+              src="/images/tools/tria/tria-joining-bonus-popup.jpg"
+              alt="Tria onboarding popup offering a 10 dollar joining bonus that expires in 5 days"
+              caption="Tria shows a $10 joining bonus during onboarding. It expires 5 days after signup, so claim it before buying a membership."
+            />
             <div className="mt-6">
               <PrimaryAffiliateButton>Sign up for Tria now</PrimaryAffiliateButton>
             </div>
@@ -478,6 +582,109 @@ export default function TriaReviewPage() {
               your keys either. For a self-custody believer who spends enough to justify a tier,
               Tria is worth a serious look. Start with Lite, test deposits and a withdrawal, and
               upgrade only if the numbers work for you.
+            </P>
+            <div className="mt-6">
+              <PrimaryAffiliateButton>Get the Tria Card</PrimaryAffiliateButton>
+            </div>
+          </Section>
+
+          <Section id="compare">
+            <H2>Tria vs the alternatives</H2>
+            <P>
+              Tria is not the only crypto card we have tested on the real apps. Here is how it
+              stacks up against five alternatives we reviewed hands-on, so you can see where your
+              money goes furthest.
+            </P>
+            <Figure
+              src="/images/tools/tria/tria-vs-competitors-infographic.png"
+              alt="Infographic comparing boosted cashback rates and yearly costs of Tria, Solid, KAST, RedotPay, and DogPay"
+              caption="Boosted cashback and yearly cost, side by side. Tria leads on headline cashback, but the caps and fees decide the real winner for your spend."
+              width={1200}
+              height={880}
+              wide
+            />
+            <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+              <table className="w-full min-w-[760px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="px-4 py-3 font-black text-slate-950">Card</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Yearly cost</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Boosted cashback</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Custody</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Top-ups</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Best for</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-600">
+                  <tr className="border-b border-emerald-100 bg-emerald-50/60">
+                    <td className="px-4 py-3 font-bold text-slate-900">Tria</td>
+                    <td className="px-4 py-3">20 to 250 USD membership</td>
+                    <td className="px-4 py-3">Up to 6% on first 2,000 USD/mo, then 1%</td>
+                    <td className="px-4 py-3">Self-custodial, you hold the keys</td>
+                    <td className="px-4 py-3">9 networks, gasless on most chains</td>
+                    <td className="px-4 py-3">Self-custody plus high-spend cashback</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">
+                      <a href="/crypto-cards/solid-review" className="text-emerald-700 hover:text-emerald-900">Solid</a>
+                    </td>
+                    <td className="px-4 py-3">Free, no annual fee</td>
+                    <td className="px-4 py-3">3% to 5% USDC, caps 50 to 200 USD/mo</td>
+                    <td className="px-4 py-3">Self-custodial throughout</td>
+                    <td className="px-4 py-3">USDC deposits, free top-ups</td>
+                    <td className="px-4 py-3">Free card with real cashback and yield</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">
+                      <a href="/crypto-cards/kast-review" className="text-emerald-700 hover:text-emerald-900">KAST</a>
+                    </td>
+                    <td className="px-4 py-3">Free Standard tier</td>
+                    <td className="px-4 py-3">1.5% to 3% by tier</td>
+                    <td className="px-4 py-3">Self-custodial Earn vaults</td>
+                    <td className="px-4 py-3">Stablecoin neobank</td>
+                    <td className="px-4 py-3">Free tier with earn on idle balance</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">
+                      <a href="/crypto-cards/redotpay-review" className="text-emerald-700 hover:text-emerald-900">RedotPay</a>
+                    </td>
+                    <td className="px-4 py-3">10 USD virtual card</td>
+                    <td className="px-4 py-3">None</td>
+                    <td className="px-4 py-3">App-managed</td>
+                    <td className="px-4 py-3">Stablecoins, free on-chain top-ups</td>
+                    <td className="px-4 py-3">Cheapest honest way to spend crypto</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">
+                      <a href="/crypto-cards/dogpay-review" className="text-emerald-700 hover:text-emerald-900">DogPay</a>
+                    </td>
+                    <td className="px-4 py-3">10 USD virtual, memberships to 29.80 USD/mo</td>
+                    <td className="px-4 py-3">None, tier perks instead</td>
+                    <td className="px-4 py-3">App-managed</td>
+                    <td className="px-4 py-3">USDT, USDC, DOGE, BTC, SOL, ETH</td>
+                    <td className="px-4 py-3">Multi-BIN Visa and Mastercard, USD account</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-bold text-slate-900">
+                      <a href="/crypto-cards/rizon-card" className="text-emerald-700 hover:text-emerald-900">Rizon</a>
+                    </td>
+                    <td className="px-4 py-3">Free maintenance</td>
+                    <td className="px-4 py-3">RizPoints points program</td>
+                    <td className="px-4 py-3">App-managed</td>
+                    <td className="px-4 py-3">Stablecoin and USD services</td>
+                    <td className="px-4 py-3">Points chasers, metal tiers pending</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <P>
+              The quick read: Tria has the highest headline cashback at 6%, but only on the 250 USD
+              a year Max tier and only on your first 2,000 USD of monthly spend. Solid pays up to
+              5% in USDC with no annual fee, which wins on pure math for moderate spenders. KAST
+              gives you a free tier with self-custodial earn. RedotPay is the cheapest honest way
+              to simply spend crypto, and DogPay is the toolkit pick with multiple BINs and a USD
+              bank account. If self-custody is non-negotiable and you spend over 1,500 USD a month
+              on card, Tria Max is the strongest of the self-custodial options.
             </P>
             <div className="mt-6">
               <PrimaryAffiliateButton>Get the Tria Card</PrimaryAffiliateButton>
