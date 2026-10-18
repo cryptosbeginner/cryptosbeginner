@@ -22,7 +22,7 @@ const AFF = {
   weex: "https://go.cryptosbeginner.com/WEEX-Bonus",
   bydfi: "https://go.cryptosbeginner.com/BYDFi",
   primexbt: "https://go.prmx.co/visit/?bta=36112&nci=7605",
-  kraken: "https://go.cryptosbeginner.com/Kraken",
+  kraken: "https://invite.kraken.com/JDNW/1blpzfsr",
 };
 
 export const metadata: Metadata = {

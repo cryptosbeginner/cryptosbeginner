@@ -46,7 +46,7 @@ const platforms = [
       "A global platform with Australian access that may appeal to active traders. Products and payment methods can vary by country, account type and local requirements.",
     check:
       "Check AUD deposits, Osko or bank-transfer availability, fees, staking, derivatives and withdrawals.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -766,7 +766,7 @@ export default function AustraliaPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

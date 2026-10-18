@@ -35,7 +35,7 @@ const platforms = [
       "A global platform with Canadian access that may appeal to active traders. Confirm the Canadian entity, provincial eligibility, CAD funding route, fee schedule and available products.",
     checks:
       "Review CAD deposits, wire or Interac availability, staking restrictions, withdrawal rules and current Canadian status.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -725,7 +725,7 @@ export default function CanadaPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

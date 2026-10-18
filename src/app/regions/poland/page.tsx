@@ -25,7 +25,7 @@ const platforms = [
     bestFor: "EU-facing spot trading",
     note:
       "Useful trading tools and European market access. Compare PLN conversion, EUR/SEPA funding, maker/taker fees, staking and products available to Polish residents.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -521,7 +521,7 @@ export default function PolandPage() {
 
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Kraken"
+                      href="https://invite.kraken.com/JDNW/1blpzfsr"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
@@ -789,7 +789,7 @@ export default function PolandPage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"

@@ -81,7 +81,7 @@ export default function BestExchangesPage() {
               <li>If you want one main platform: start with <a href="https://go.cryptosbeginner.com/binance" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">Binance</a>.</li>
               <li>If you trade futures: look at <a href="https://go.cryptosbeginner.com/Bybit" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">Bybit</a>.</li>
               <li>If you want copy trading: <a href="https://go.cryptosbeginner.com/Bitget-Bonus" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">Bitget</a> is usually the better fit.</li>
-              <li>If you care most about reputation: <a href="https://go.cryptosbeginner.com/Kraken" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">Kraken</a>.</li>
+              <li>If you care most about reputation: <a href="https://invite.kraken.com/JDNW/1blpzfsr" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">Kraken</a>.</li>
               <li>Low-fee / altcoin hunting: <a href="https://go.cryptosbeginner.com/MEXC-Bonus" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">MEXC</a> or <a href="https://go.cryptosbeginner.com/WEEX-Bonus" className="text-emerald-700 font-semibold hover:underline" target="_blank" rel="noopener noreferrer sponsored">WEEX</a>.</li>
             </ul>
           </div>
@@ -147,7 +147,7 @@ export default function BestExchangesPage() {
                   ["BingX", "8.4", "Competitive", "Social trading", "https://go.cryptosbeginner.com/Bingx"],
                   ["WEEX", "8.3", "Low", "Futures", "https://go.cryptosbeginner.com/WEEX-Bonus"],
                   ["MEXC", "8.2", "Low", "Altcoins", "https://go.cryptosbeginner.com/MEXC-Bonus"],
-                  ["Kraken", "8.5", "Higher", "Security", "https://go.cryptosbeginner.com/Kraken"],
+                  ["Kraken", "8.5", "Higher", "Security", "https://invite.kraken.com/JDNW/1blpzfsr"],
                   ["PrimeXBT", "8.1", "Varies", "Multi-asset", "https://go.cryptosbeginner.com/PrimeXBT"],
                 ].map(([name, score, fee, best, href]) => (
                   <tr key={name} className="hover:bg-slate-50">
@@ -280,7 +280,7 @@ export default function BestExchangesPage() {
           <article id="conservative">
             <h2 className="text-2xl font-bold text-slate-900 mb-3">5. Kraken and PrimeXBT</h2>
             <p className="text-slate-700 mb-4">
-              <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">Kraken</a>{" "}
+              <a href="https://invite.kraken.com/JDNW/1blpzfsr" target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-600 font-semibold hover:underline">Kraken</a>{" "}
               is the conservative pick. You will usually pay more than on Binance or Bybit. In
               return you get one of the cleaner long-run reputations among large centralized venues.{" "}
               <Link href="/exchanges/kraken-review" className="text-indigo-600 font-semibold hover:underline">Read our full Kraken review →</Link>

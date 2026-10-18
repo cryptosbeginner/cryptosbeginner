@@ -33,7 +33,7 @@ const platforms = [
     bestFor: "Experienced spot traders",
     note:
       "Useful trading tools and established European market access. Compare EUR funding, maker/taker fees, withdrawals and products available to German residents.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -485,7 +485,7 @@ export default function GermanyPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Kraken"
+                      href="https://invite.kraken.com/JDNW/1blpzfsr"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
@@ -648,7 +648,7 @@ export default function GermanyPage() {
               </a>
 
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"

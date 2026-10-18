@@ -23,7 +23,7 @@ const platforms = [
     bestFor: "Experienced spot traders",
     note:
       "Strong trading tools and a broad asset range. Compare the applicable UK fees, custody terms and product restrictions before opening an account.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
   },
   {
     name: "Crypto.com",
@@ -569,7 +569,7 @@ export default function UnitedKingdomPage() {
                   </td>
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Kraken"
+                      href="https://invite.kraken.com/JDNW/1blpzfsr"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"

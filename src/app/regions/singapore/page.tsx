@@ -193,7 +193,7 @@ export default function SingaporePage() {
                   <td className="px-4 py-3">Conservative / security-focused alternative where available</td>
                   <td className="px-4 py-3">Whether SG residents can onboard and fund cleanly</td>
                   <td className="px-4 py-3">
-                    <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
+                    <a href="https://invite.kraken.com/JDNW/1blpzfsr" target="_blank" rel="noopener noreferrer sponsored" className="text-emerald-600 font-medium hover:underline">Visit →</a>
                   </td>
                 </tr>
                 <tr className="hover:bg-slate-50">
@@ -314,7 +314,7 @@ export default function SingaporePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">OKX</a>
-              <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">Kraken</a>
+              <a href="https://invite.kraken.com/JDNW/1blpzfsr" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700">Kraken</a>
               <a href="https://go.cryptosbeginner.com/LedgerWallet" target="_blank" rel="noopener noreferrer sponsored" className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-slate-800">Ledger</a>
             </div>
           </div>
@@ -367,7 +367,7 @@ export default function SingaporePage() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href="https://go.cryptosbeginner.com/OKX" target="_blank" rel="noopener noreferrer sponsored" className="bg-emerald-500 hover:bg-emerald-600 font-semibold px-5 py-3 rounded-lg">OKX</a>
-              <a href="https://go.cryptosbeginner.com/Kraken" target="_blank" rel="noopener noreferrer sponsored" className="bg-white/10 hover:bg-white/20 font-semibold px-5 py-3 rounded-lg">Kraken</a>
+              <a href="https://invite.kraken.com/JDNW/1blpzfsr" target="_blank" rel="noopener noreferrer sponsored" className="bg-white/10 hover:bg-white/20 font-semibold px-5 py-3 rounded-lg">Kraken</a>
               <a href="https://eservices.mas.gov.sg/fid" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 font-semibold px-5 py-3 rounded-lg">Check MAS FID</a>
             </div>
           </div>

@@ -45,7 +45,7 @@ const platforms = [
       "A global platform with a Canadian operating entity. Ontario users should check the current OSC position and which products are available in their account.",
     check:
       "Review CAD rails, fee tiers, staking, derivatives restrictions and external-wallet withdrawals.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -746,7 +746,7 @@ export default function OntarioPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

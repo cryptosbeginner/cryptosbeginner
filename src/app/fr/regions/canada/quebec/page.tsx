@@ -36,7 +36,7 @@ const platforms = [
       "Une plateforme internationale souvent comparée par les traders canadiens. Vérifiez la situation actuelle auprès de l’AMF ou de la CSA, l’entité canadienne et les produits offerts au Québec.",
     check:
       "Vérifiez les dépôts en CAD, les paliers de frais, le staking, les produits dérivés et les retraits vers un portefeuille externe.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -752,7 +752,7 @@ export default function QuebecFrenchPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

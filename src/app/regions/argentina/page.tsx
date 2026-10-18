@@ -65,7 +65,7 @@ const platforms = [
     bestFor: "Experienced spot traders",
     note:
       "Useful international trading tools and liquidity. Review ARS or USD conversion, fees, withdrawals, staking and Argentina availability.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
 ];

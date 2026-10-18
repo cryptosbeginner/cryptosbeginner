@@ -35,7 +35,7 @@ const results: Record<string, { name: string; href: string; reason: string }> = 
   },
   Kraken: {
     name: "Kraken",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     reason: "Better if security reputation matters more than the lowest possible fees.",
   },
 };

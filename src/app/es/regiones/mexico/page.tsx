@@ -41,7 +41,7 @@ const platforms = [
     bestFor: "Traders spot con experiencia",
     note:
       "Ofrece herramientas de trading y liquidez internacional. Revisa la conversión MXN/USD, las comisiones, el staking, los retiros y los productos disponibles en México.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -395,7 +395,7 @@ export default function MexicoSpanishPage() {
               </p>
 
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:underline"
@@ -689,7 +689,7 @@ export default function MexicoSpanishPage() {
 
                   <td className="px-4 py-3">
                     <a
-                      href="https://go.cryptosbeginner.com/Kraken"
+                      href="https://invite.kraken.com/JDNW/1blpzfsr"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       className="text-emerald-700 font-medium hover:underline"
@@ -931,7 +931,7 @@ export default function MexicoSpanishPage() {
               </a>
 
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-emerald-700"
