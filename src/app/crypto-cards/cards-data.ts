@@ -1151,6 +1151,8 @@ export const cardListings: CardListing[] = [
     imageAlt: "Kraken Debit Card official product image",
     imageSourceNote: "Official Kraken product image, cached locally",
     reviewedAt: "2026-10-14",
+    referralUrl: "https://invite.kraken.com/JDNW/1blpzfsr",
+    referralLabel: "Get the Kraken Card",
     caution: "Strictly limited to verified personal accounts in the UK and EEA; business accounts and other regions are excluded.",
     verification: "A verified personal Kraken account is required; limited to individual clients in the United Kingdom and EEA.",
   },
