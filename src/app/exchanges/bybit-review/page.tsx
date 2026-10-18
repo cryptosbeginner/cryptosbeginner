@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/bybit-review`;
 
-const UPDATED = "8 October 2026";
-const UPDATED_ISO = "2026-10-08";
+const UPDATED = "18 October 2026";
+const UPDATED_ISO = "2026-10-18";
 
 const AFFILIATE = "https://go.cryptosbeginner.com/Bybit";
 
@@ -212,6 +212,23 @@ export default function BybitReviewPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            name: "Bybit Review 2026: Is It Actually Safe? (Fees, Features & Bonus)",
+            description:
+              "Video review of Bybit covering fees, features, security, and the signup bonus.",
+            thumbnailUrl: "https://i.ytimg.com/vi/JxbYMXV5Acg/hqdefault.jpg",
+            uploadDate: "2026-10-18",
+            embedUrl: "https://www.youtube.com/embed/JxbYMXV5Acg",
+            contentUrl: "https://www.youtube.com/watch?v=JxbYMXV5Acg",
+          }),
+        }}
+      />
+
       <main className="min-w-0 overflow-x-hidden bg-white text-slate-900">
         <section className="border-b border-slate-200 bg-slate-50">
           <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
@@ -295,6 +312,32 @@ export default function BybitReviewPage() {
               terms vary by legal entity and jurisdiction.
             </figcaption>
           </figure>
+        </section>
+
+        <section className="mx-auto max-w-4xl px-4 pb-10">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">
+              Watch the video review
+            </p>
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
+              Bybit Review 2026: Is It Actually Safe? (Fees, Features &amp;
+              Bonus)
+            </h2>
+            <p className="mt-3 leading-7 text-slate-800">
+              Prefer video? Our full Bybit review walks through fees,
+              features, security, and the signup bonus step by step.
+            </p>
+            <div className="relative mt-5 aspect-video w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-950">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/JxbYMXV5Acg"
+                title="Bybit Review 2026: Is It Actually Safe? (Fees, Features & Bonus)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="mx-auto max-w-4xl px-4 pb-10">
