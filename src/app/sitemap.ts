@@ -89,6 +89,8 @@ const recentRoutes = new Set([
   "/learn/what-is-a-neobank",
   "/learn/tornado-cash-explained",
   "/learn/privacy-coins-vs-mixers",
+  "/learn/what-are-privacy-swaps",
+  "/learn/no-kyc-exchanges-explained",
   "/learn/non-custodial-crypto-wallets",
   "/learn/proof-of-reserves",
   "/learn/sui-staking",
