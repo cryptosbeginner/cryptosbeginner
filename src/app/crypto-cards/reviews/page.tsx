@@ -12,12 +12,12 @@ const UPDATED_ISO = "2026-10-16";
 export const metadata: Metadata = {
   title: "Crypto Card Reviews: Tested, Compared, Honest | CryptosBeginner",
   description:
-    "In-depth crypto card reviews tested on the real apps: Avici, DogPay, KAST, RedotPay, Solid, Tevau, and Tria. Real fee tables, honest verdicts, no hype.",
+    "In-depth crypto card reviews tested on the real apps: Avici, DogPay, ether.fi, KAST, Plasma One, RedotPay, Solid, Tevau, and Tria. Real fee tables, honest verdicts, no hype.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Crypto Card Reviews | CryptosBeginner",
     description:
-      "Seven crypto cards tested on the real apps, with real fee tables and honest verdicts.",
+      "Nine crypto cards tested on the real apps, with real fee tables and honest verdicts.",
     url: PAGE_URL,
     type: "website",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Crypto Card Reviews | CryptosBeginner",
     description:
-      "Seven crypto cards tested on the real apps, with real fee tables and honest verdicts.",
+      "Nine crypto cards tested on the real apps, with real fee tables and honest verdicts.",
   },
   robots: { index: true, follow: true },
 };
@@ -138,6 +138,18 @@ const REVIEWS: Review[] = [
       "A non-custodial Visa card with a Borrow mode from 1.43%: spend without selling your assets. Four tiers from Core to VIP, 3% to 4% cashback, and an Earn tab with live reward rates.",
     highlights: ["Non-custodial Vault", "Borrow mode from 1.43%", "3% to 4% cashback by tier"],
     href: "/crypto-cards/etherfi-review",
+  },
+  {
+    slug: "plasma-one-review",
+    name: "Plasma One Card",
+    provider: "Plasma",
+    network: "Visa",
+    imageUrl: "/images/cards/plasma/70b201ce462df995d5db09a3c316504b0f23374588aaecd6f7876757152118ce.jpg",
+    imageAlt: "Plasma One Visa cards for the Lite, Core, and Platinum tiers shown together",
+    summary:
+      "A self-custodial Visa card for stablecoin spending with a genuinely free Lite tier paying 2% XPL cashback. Core and Platinum add higher rates, 0% FX, and Visa Signature and Infinite perks, unlocked with XPL locks.",
+    highlights: ["Free Lite tier with 2% cashback", "XPL locks: 20K Core, 100K Platinum", "0% FX markup on Platinum"],
+    href: "/crypto-cards/plasma-one-review",
   },
 ];
 
