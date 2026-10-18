@@ -3918,6 +3918,8 @@ export const cardListings: CardListing[] = [
     caution:
       "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
     verification: "KYC required through the card application flow.",
+    referralUrl: "https://go.cryptosbeginner.com/Plasma",
+    referralLabel: "Get the Plasma One Card",
     cashbackBands: [
       { tier: "Lite", ratePct: 2, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
       { tier: "Core", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
