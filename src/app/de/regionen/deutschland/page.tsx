@@ -267,7 +267,7 @@ export default function GermanyGermanPage() {
                 Produktbeschränkungen.
               </p>
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:underline"
@@ -582,7 +582,7 @@ export default function GermanyGermanPage() {
                 Coinbase
               </a>
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg"

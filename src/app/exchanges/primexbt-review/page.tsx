@@ -1012,7 +1012,7 @@ export default function PrimeXBTReviewPage() {
 
             <li>
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="sponsored noopener noreferrer"
                 className="font-bold text-indigo-700 underline underline-offset-4"

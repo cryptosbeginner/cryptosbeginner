@@ -11,7 +11,7 @@ const PAGE_URL = `${SITE_URL}/exchanges/kraken-vs-coinbase`;
 const UPDATED = "15 October 2026";
 const UPDATED_ISO = "2026-10-15";
 const ORIGINALLY_PUBLISHED = "April 2025";
-const KRAKEN_AFF = "https://go.cryptosbeginner.com/Kraken";
+const KRAKEN_AFF = "https://invite.kraken.com/JDNW/1blpzfsr";
 
 export const metadata: Metadata = {
   title: "Kraken vs Coinbase 2026: Fees, Features, and Which Exchange Suits You",

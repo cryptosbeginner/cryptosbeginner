@@ -14,7 +14,7 @@ const ORIGINALLY_PUBLISHED = "April 2024";
 
 const AFF = {
   bybit: "https://go.cryptosbeginner.com/Bybit",
-  kraken: "https://go.cryptosbeginner.com/Kraken",
+  kraken: "https://invite.kraken.com/JDNW/1blpzfsr",
   binance: "https://go.cryptosbeginner.com/binance",
   okx: "https://go.cryptosbeginner.com/OKX",
   bitget: "https://go.cryptosbeginner.com/BitgetBonus",

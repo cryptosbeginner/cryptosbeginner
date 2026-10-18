@@ -36,7 +36,7 @@ const platforms = [
       "A global platform commonly compared by Canadian traders. Quebec users should verify the current AMF or CSA position, the Canadian entity and available products.",
     check:
       "Review CAD funding, trading fees, staking, derivatives restrictions and external withdrawals.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -745,7 +745,7 @@ export default function QuebecPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

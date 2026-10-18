@@ -35,7 +35,7 @@ const platforms = [
       "A global platform commonly compared by Canadian traders. BC users should verify the current Canadian registration position, entity and product availability.",
     check:
       "Review CAD funding, fee tiers, staking, derivatives restrictions and external withdrawals.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -730,7 +730,7 @@ export default function BritishColumbiaPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"

@@ -69,7 +69,7 @@ const platforms = [
     fit: "Trading tools",
     note:
       "A global platform with Australian access and a stronger trading focus.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -677,7 +677,7 @@ export default function HowToBuyBitcoinAustraliaPage() {
                   Compare CoinSpot
                 </AffiliateButton>
 
-                <AffiliateButton href="https://go.cryptosbeginner.com/Kraken">
+                <AffiliateButton href="https://invite.kraken.com/JDNW/1blpzfsr">
                   Compare Kraken
                 </AffiliateButton>
 

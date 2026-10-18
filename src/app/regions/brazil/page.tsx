@@ -57,7 +57,7 @@ const platforms = [
     bestFor: "Experienced spot traders",
     note:
       "Useful international trading tools and liquidity. Review BRL or USD conversion, fees, staking, withdrawals and Brazilian availability.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
 ];

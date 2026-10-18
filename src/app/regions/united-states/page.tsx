@@ -62,7 +62,7 @@ const platforms = [
       "A major US-facing platform to compare for spot trading, USD funding, custody and available assets. Product access can vary by state and account type.",
     checks:
       "Verify your state, USD rail, fee schedule, staking availability and external withdrawal rules.",
-    href: "https://go.cryptosbeginner.com/Kraken",
+    href: "https://invite.kraken.com/JDNW/1blpzfsr",
     affiliate: true,
   },
   {
@@ -716,7 +716,7 @@ export default function UnitedStatesPage() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://go.cryptosbeginner.com/Kraken"
+                href="https://invite.kraken.com/JDNW/1blpzfsr"
                 target="_blank"
                 rel="noopener noreferrer sponsored"
                 className="rounded-lg bg-emerald-600 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-700"
