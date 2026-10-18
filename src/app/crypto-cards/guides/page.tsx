@@ -43,6 +43,13 @@ const guides = [
       "Why spending crypto can trigger tax in many countries, record-keeping basics, stablecoin nuances, and when to talk to a professional.",
     readTime: "9 min read",
   },
+  {
+    slug: "plasma-one-vs-tria",
+    title: "Plasma One vs Tria",
+    description:
+      "Two self-custodial Visa cards on Rain infrastructure compared: cashback tiers, FX fees, and app features side by side.",
+    readTime: "7 min read",
+  },
 ];
 
 export default function CryptoCardGuidesPage() {

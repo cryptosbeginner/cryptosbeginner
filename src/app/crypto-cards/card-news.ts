@@ -14,6 +14,25 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-10-18",
+    type: "launch",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "ether.fi Cash review published with full fee tables",
+    details:
+      "Our hands-on ether.fi Cash review is live, built from in-app screenshots: all four membership tiers (Core, Luxe, Pinnacle, VIP), 3% cashback with monthly caps, borrow mode from 1.43%, ATM and FX fee tables, and bank transfer availability across 162 countries.",
+    sourceLabel: "CryptosBeginner review",
+  },
+  {
+    date: "2026-10-18",
+    type: "launch",
+    cardName: "Plasma One vs Tria",
+    title: "Plasma One vs Tria comparison published",
+    details:
+      "New comparison guide: two self-custodial Visa cards on Rain infrastructure compared side by side on cashback tiers, monthly caps, FX fees, and app features. Includes corrections to viral social media claims (Tria perps are 40x, not 50x).",
+    sourceLabel: "CryptosBeginner guide",
+  },
+  {
+    date: "2026-10-18",
     type: "market",
     cardName: "Gnosis Pay",
     cardSlug: "gnosis-pay-card",
