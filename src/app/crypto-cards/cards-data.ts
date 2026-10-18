@@ -1301,9 +1301,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/gnosis-pay-card.png",
     imageAlt: "Gnosis Pay Card official product image",
     imageSourceNote: "Official Gnosis Pay product image, cached locally",
-    reviewedAt: "2026-10-15",
-    caution: "Eligibility depends on country and KYC approval. The main site now focuses on white-label infrastructure.",
+    reviewedAt: "2026-10-18",
+    caution: "Eligibility depends on country and KYC approval. The main site now focuses on white-label infrastructure. Consumer card and web app stop working December 20, 2026 at 23:59 UTC; users keep their self-custodial Safe and all assets inside it, with no withdrawal deadline.",
     verification: "KYC verification required and must be approved before the Safe account is deployed.",
+    updateNote: "September 21, 2026: Gnosis Pay notified cardholders that the consumer card and web app cease on December 20, 2026. New sign-ups closed September 30, 2026; GNO cashback ended with final distribution October 7, 2026. The company is pivoting to B2B white-label card infrastructure; users are directed to partner programs for replacement cards.",
+    updateUrl: "https://cryptobriefing.com/gnosis-pay-shutdown-consumer-cards-b2b/",
+    updateLabel: "Read the shutdown notice summary",
   },
   {
     slug: "etherfi-cash-card",
@@ -3886,27 +3889,32 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A self-custodial Visa stablecoin card with tiered XPL cashback from 2% on the free Lite plan to 4% on Platinum.",
     editorialSummary:
-      "Plasma One is a self-custodial Visa card for stablecoin spending. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback, and Platinum requires a 100,000 XPL lock with 4% cashback. Plasma advertises zero foreign exchange fees, making the paid tiers attractive mainly to heavy spenders.",
+      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
     bestFor:
       "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 4% cashback.",
     availability:
       "Provider does not publish a specific country list on the reviewed page.",
     regions: ["North America", "Europe", "Asia"],
     pricing:
-      "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock. Zero FX fees advertised.",
+      "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX markup: 0% Platinum, 0.5% Core, 1% Lite.",
     rewards:
-      "XPL cashback: 2% on Lite, 3% on Core, 4% on Platinum.",
-    funding: "Spends self-custodied stablecoins through the Plasma card program.",
+      "XPL cashback: 2% on Lite (first $500/month), 3% on Core (first $1,000/month), 4% on Platinum (first $3,000/month).",
+    funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.plasma.org/learn/crypto-card-benefits",
     sourceLabel: "Plasma",
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Plasma One Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-10-18",
     caution:
-      "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading.",
+      "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
     verification: "KYC required through the card application flow.",
+    cashbackBands: [
+      { tier: "Lite", ratePct: 2, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
+      { tier: "Core", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Platinum", ratePct: 4, spendBand: "first $3,000/mo", bandCapUsd: 3000, rewardAsset: "XPL" },
+    ],
   },
   {
     slug: "solayer-card",

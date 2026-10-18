@@ -67,6 +67,46 @@ export default function IssuersPage() {
             </p>
           </div>
 
+          <div className="mt-8 rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6 sm:p-8" role="img" aria-label="Infographic mapping crypto card brands to their infrastructure providers">
+            <p className="text-xs font-black uppercase tracking-[0.17em] text-indigo-700">Brand vs infrastructure</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight">The brand in your app is not always the company powering the card</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
+              Verified brand-to-infrastructure mappings. When the brand and the provider are different companies, either one can change terms, restrict countries, or end the program.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                <p className="text-sm font-black uppercase tracking-[0.12em] text-slate-500">Powered by</p>
+                <p className="mt-1 text-xl font-black text-slate-950">Wirex</p>
+                <div className="mt-3 space-y-2">
+                  {["BingX card", "COCA card"].map((c) => (
+                    <p key={c} className="rounded-lg bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700">{c}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                <p className="text-sm font-black uppercase tracking-[0.12em] text-slate-500">Powered by</p>
+                <p className="mt-1 text-xl font-black text-slate-950">Rain</p>
+                <div className="mt-3 space-y-2">
+                  {["Plasma One", "ether.fi Cash", "Tuyo", "KAST"].map((c) => (
+                    <p key={c} className="rounded-lg bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700">{c}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5">
+                <p className="text-sm font-black uppercase tracking-[0.12em] text-slate-500">Powered by</p>
+                <p className="mt-1 text-xl font-black text-slate-950">Baanx</p>
+                <div className="mt-3 space-y-2">
+                  {["MetaMask card", "Ledger CL card", "1inch card"].map((c) => (
+                    <p key={c} className="rounded-lg bg-slate-100 px-3 py-2 text-sm font-bold text-slate-700">{c}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="mt-4 text-xs leading-5 text-slate-500">
+              Mappings verified against official announcements and provider materials, October 2026. Some reported mappings could not be verified and are omitted; Bitrefill's Striga partnership was superseded by Lightspark in February 2026. Programs can change providers; your cardholder agreement is authoritative.
+            </p>
+          </div>
+
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {issuers.map((issuer) => (
               <article key={issuer.slug} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">

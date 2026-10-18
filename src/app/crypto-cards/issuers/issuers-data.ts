@@ -43,7 +43,7 @@ export const issuers: Issuer[] = [
     slug: "wirex",
     description: "Wirex is a UK-regulated digital payments company and FCA-licensed e-money institution that issues crypto-enabled cards. Beyond its own Wirex card product, Wirex Limited acts as the licensed issuer for third-party card programs in the UK and Europe.",
     headquarters: "London, United Kingdom",
-    knownCryptoCards: ["Wirex One", "Pulsar Money", "COCA Card"],
+    knownCryptoCards: ["Wirex One", "Pulsar Money", "COCA Card", "BingX Card"],
     website: "https://wirexapp.com",
     type: "card-issuer",
   },

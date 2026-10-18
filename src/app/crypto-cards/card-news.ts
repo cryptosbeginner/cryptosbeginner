@@ -14,6 +14,25 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-10-18",
+    type: "market",
+    cardName: "Gnosis Pay",
+    cardSlug: "gnosis-pay-card",
+    title: "Gnosis Pay consumer card shuts down December 20",
+    details:
+      "Gnosis Pay notified cardholders on September 21 that the consumer card and web app stop working on December 20, 2026 at 23:59 UTC. Users keep their self-custodial Safe and all assets inside it, with no withdrawal deadline. New sign-ups closed September 30; GNO cashback ended with final distribution October 7. The company is pivoting to B2B white-label card infrastructure.",
+    sourceLabel: "Multiple secondary reports (Crypto Briefing, Binance Square); original cardholder notice not directly retrievable",
+  },
+  {
+    date: "2026-10-18",
+    type: "market",
+    cardName: "Bitget",
+    title: "Bitget adds Russia and Belarus to prohibited countries",
+    details:
+      "Bitget's updated Terms of Use (October 16, 2026) added Russia and Belarus to its prohibited-country list. Thailand was already prohibited in earlier versions, contrary to some social media reports. Affected users receive individual deadlines and withdrawal instructions; there is no universal cutoff date. Note: this concerns the Bitget exchange; no official notice links the separate Bitget Wallet Card to this offboarding.",
+    sourceLabel: "Bitget official Terms of Use; crypto.news, TronWeekly",
+  },
+  {
+    date: "2026-10-18",
     type: "catalog-update",
     cardName: "Site-wide",
     title: "Worked cost examples added to card pages",
