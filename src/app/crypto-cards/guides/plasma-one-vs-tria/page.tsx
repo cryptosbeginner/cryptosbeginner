@@ -214,8 +214,16 @@ export default function PlasmaOneVsTriaPage() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/crypto-cards/tria-review"
+              href="https://go.cryptosbeginner.com/Plasma"
+              target="_blank"
+              rel="sponsored nofollow noopener"
               className="rounded-full bg-slate-950 px-6 py-3 text-sm font-black text-white hover:bg-slate-800"
+            >
+              Get the Plasma One Card
+            </Link>
+            <Link
+              href="/crypto-cards/tria-review"
+              className="rounded-full border border-slate-300 px-6 py-3 text-sm font-black text-slate-700 hover:bg-slate-100"
             >
               Read the full Tria review
             </Link>
