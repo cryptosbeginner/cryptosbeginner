@@ -127,6 +127,18 @@ const REVIEWS: Review[] = [
     highlights: ["Self-custodial, you hold the keys", "Up to 6% cashback by tier", "9 top-up networks, gasless deposits"],
     href: "/crypto-cards/tria-review",
   },
+  {
+    slug: "etherfi-review",
+    name: "ether.fi Cash Card",
+    provider: "ether.fi",
+    network: "Visa",
+    imageUrl: "/images/cards/etherfi-cash-card.webp",
+    imageAlt: "ether.fi Cash Visa card official product visual",
+    summary:
+      "A non-custodial Visa card with a Borrow mode from 1.43%: spend without selling your assets. Four tiers from Core to VIP, 3% to 4% cashback, and an Earn tab with live reward rates.",
+    highlights: ["Non-custodial Vault", "Borrow mode from 1.43%", "3% to 4% cashback by tier"],
+    href: "/crypto-cards/etherfi-review",
+  },
 ];
 
 function ReviewCard({ review }: { review: Review }) {
