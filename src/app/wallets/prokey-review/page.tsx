@@ -8,12 +8,12 @@ import AuthorByline from "@/components/AuthorByline";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/wallets/prokey-review`;
 
-const UPDATED = "9 October 2026";
-const UPDATED_ISO = "2026-10-09";
+const UPDATED = "19 October 2026";
+const UPDATED_ISO = "2026-10-19";
 const ORIGINALLY_PUBLISHED = "November 2023";
 
 // Masked affiliate link (go.cryptosbeginner.com redirect).
-const AFFILIATE = "https://go.cryptosbeginner.com/Prokey";
+const AFFILIATE = "https://go.cryptosbeginner.com/Safepal";
 const YOUTUBE_VIDEO_ID = "6_P5Yn4k9ZQ";
 
 export const metadata: Metadata = {
@@ -196,7 +196,7 @@ export default function ProkeyReviewPage() {
               Ledger, Trezor, and SafePal.
             </p>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy Prokey Optimum</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy SafePal S1 Instead</PrimaryAffiliateButton>
             </div>
             <p className="mt-4 max-w-3xl text-xs leading-6 text-slate-400">
               <strong className="text-slate-200">Affiliate disclosure:</strong> Some links on this page
@@ -204,6 +204,14 @@ export default function ProkeyReviewPage() {
               This does not change our assessment criteria or conclusions. This page is educational
               content, not financial advice.
             </p>
+            <div className="mt-5 max-w-3xl rounded-lg border border-amber-500/40 bg-amber-500/10 p-4">
+              <p className="text-sm leading-7 text-amber-200">
+                <strong>Heads up (October 2026):</strong> Prokey&apos;s official purchase link is
+                currently broken and their support is unresponsive. We no longer recommend buying
+                through Prokey directly. If you want a hardware wallet, consider the SafePal S1
+                (button above), Ledger, or Trezor instead.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -392,7 +400,7 @@ export default function ProkeyReviewPage() {
               section below matters: discounts from unofficial sellers are not worth the risk.
             </P>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy Prokey Optimum for $59</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy SafePal S1 Instead</PrimaryAffiliateButton>
             </div>
           </Section>
 
@@ -491,7 +499,7 @@ export default function ProkeyReviewPage() {
               for the price of a dinner.
             </P>
             <div className="mt-6">
-              <PrimaryAffiliateButton>Buy Prokey Optimum for $59</PrimaryAffiliateButton>
+              <PrimaryAffiliateButton>Buy SafePal S1 Instead</PrimaryAffiliateButton>
             </div>
           </Section>
 

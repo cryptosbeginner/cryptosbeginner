@@ -57,6 +57,20 @@ const guides = [
       "Two self-custodial Visa cards on Rain infrastructure compared: cashback tiers, FX fees, and app features side by side.",
     readTime: "7 min read",
   },
+  {
+    slug: "kast-vs-etherfi",
+    title: "KAST vs ether.fi Cash",
+    description:
+      "Two premium Visa crypto cards from the same issuer family compared: cashback tiers, fees, custody models, and who each one suits.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "redotpay-vs-competitors",
+    title: "RedotPay vs the Field",
+    description:
+      "The biggest crypto card against KAST, ether.fi Cash, and Plasma One: custody, cashback caps, fees, and availability compared side by side.",
+    readTime: "8 min read",
+  },
 ];
 
 export default function CryptoCardGuidesPage() {
