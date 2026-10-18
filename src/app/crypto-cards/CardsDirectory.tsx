@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cardCategories, cardListings, CardCategory, CardListing } from "./cards-data";
+import TrustStats from "./TrustStats";
 
 type GlyphName = "check" | "money" | "globe" | "shield" | "wallet" | "card" | "search" | "star";
 function Glyph({ name, size = 15, className = "" }: { name: GlyphName; size?: number; className?: string }) {
@@ -135,6 +136,9 @@ export default function CardsDirectory() {
               <Link href="/crypto-cards/issuers" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Issuers</Link>
               <Link href="/crypto-cards/guides" className="rounded-full border border-white/15 bg-white/[.06] px-3 py-2 text-xs font-black text-slate-200 hover:bg-white/10">Guides</Link>
               <Link href="/crypto-cards/graveyard" className="rounded-full border border-red-300/40 bg-red-400/10 px-3 py-2 text-xs font-black text-red-100 hover:bg-red-400/20">Card graveyard</Link>
+            </div>
+            <div className="mt-6 border-t border-white/10 pt-5">
+              <TrustStats />
             </div>
           </div>
         </div>

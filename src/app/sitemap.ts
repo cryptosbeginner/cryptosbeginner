@@ -188,6 +188,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/crypto-cards/kast-review",
     "/crypto-cards/reviews",
     "/crypto-cards/effective-cashback",
+    "/crypto-cards/news",
     "/crypto-cards/tria-review",
     "/dexes/perps-volume",
     "/funded-accounts",
