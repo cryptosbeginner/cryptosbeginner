@@ -6,6 +6,30 @@ import { useMemo, useState } from "react";
 import { cardCategories, cardListings, CardCategory, CardListing } from "./cards-data";
 import TrustStats from "./TrustStats";
 
+// Region filter options. Each option matches when any of the card's region
+// strings contains the value or one of its aliases (case-insensitive).
+const REGION_OPTIONS: Array<{ value: string; label: string; aliases: string[] }> = [
+  { value: "north america", label: "North America", aliases: [] },
+  { value: "united states", label: "United States", aliases: ["usa"] },
+  { value: "canada", label: "Canada", aliases: [] },
+  { value: "europe", label: "Europe / EEA", aliases: ["european economic area", "eea"] },
+  { value: "united kingdom", label: "United Kingdom", aliases: ["uk"] },
+  { value: "asia", label: "Asia", aliases: [] },
+  { value: "middle east", label: "Middle East", aliases: [] },
+  { value: "africa", label: "Africa", aliases: [] },
+  { value: "latin america", label: "Latin America", aliases: ["latam"] },
+  { value: "australia", label: "Australia & Oceania", aliases: ["oceania", "new zealand"] },
+  { value: "global", label: "Global", aliases: [] },
+];
+
+function regionMatches(cardRegions: string[], option: { value: string; aliases: string[] }): boolean {
+  const needles = [option.value, ...option.aliases];
+  return cardRegions.some((item) => {
+    const hay = item.toLowerCase();
+    return needles.some((needle) => hay.includes(needle));
+  });
+}
+
 type GlyphName = "check" | "money" | "globe" | "shield" | "wallet" | "card" | "search" | "star";
 function Glyph({ name, size = 15, className = "" }: { name: GlyphName; size?: number; className?: string }) {
   const paths: Record<GlyphName, string> = {
@@ -92,7 +116,11 @@ export default function CardsDirectory() {
     return [...cardListings]
       .filter((card) => !needle || [card.name, card.provider, card.network, card.shortDescription, card.bestFor].join(" ").toLowerCase().includes(needle))
       .filter((card) => category === "all" || card.categories.includes(category))
-      .filter((card) => region === "all" || card.regions.some((item) => item.toLowerCase().includes(region.toLowerCase())))
+      .filter((card) => {
+        if (region === "all") return true;
+        const option = REGION_OPTIONS.find((o) => o.value === region);
+        return option ? regionMatches(card.regions, option) : card.regions.some((item) => item.toLowerCase().includes(region.toLowerCase()));
+      })
       .filter((card) => network === "all" || card.network.toLowerCase().includes(network.toLowerCase()))
       .filter((card) => {
         if (cashback === "all") return true;
@@ -167,9 +195,7 @@ export default function CardsDirectory() {
             </select>
             <select value={region} onChange={(e) => setRegion(e.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Region">
               <option value="all">Any region</option>
-              <option value="United States">United States</option>
-              <option value="Europe">Europe / EEA</option>
-              <option value="United Kingdom">United Kingdom</option>
+              {REGION_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
             <select value={cashback} onChange={(e) => setCashback(e.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Cashback">
               <option value="all">Any rewards</option>
