@@ -744,6 +744,76 @@ export const collections: CollectionPage[] = [
       },
     ],
   },
+  {
+    slug: "privacy-focused-crypto-cards",
+    title: "Privacy-Focused Crypto Cards in 2026",
+    eyebrow: "Privacy features · honestly labeled",
+    description:
+      "Privacy-focused crypto cards in 2026, ranked from our card data: BingCard, Kite, Peanut, Kripicard, KardPay, SolCard, and Laso compared by what their privacy claims actually cover, with the fine print kept visible.",
+    intro:
+      "Privacy is the most overstated claim in crypto cards. A provider saying no KYC for its wallet is not the same as no verification for its Visa card, and no credit check is not the same as no identity check. We ranked the privacy-relevant cards in our database by what providers actually published, keeping the card-versus-wallet distinction and every AML caveat visible.",
+    methodology: [
+      "Cards qualify through a provider-stated privacy claim in our data (noKycStatus field), a non-custodial architecture where the user controls funds, or a minimal-data onboarding claim.",
+      "Each pick states exactly what the privacy claim covers: the card, the wallet, or the signup flow, and what it does not cover.",
+      "Provider claims are labeled as provider claims. Card issuers are regulated entities, so verification requirements can change and regional rules apply.",
+    ],
+    thinDataNote:
+      "No-KYC positioning is provider marketing, not a verified fact, and it usually describes the wallet or a specific signup flow rather than the card itself. Treat every claim here as a starting point to verify on the provider's current terms.",
+    cards: [
+      {
+        slug: "bingcard",
+        reasoning:
+          "The most direct no-KYC card claim in our data: the official page states no photo ID or verified address for the stated flow. The same page makes it subject to AML and regulatory requirements, so read it as lighter onboarding with limits, not verification-free spending.",
+      },
+      {
+        slug: "kite-card",
+        reasoning:
+          "Kite's privacy story is architectural: a non-custodial stablecoin card where licensed third-party partners handle issuance. The provider's no-KYC positioning sits alongside verification for card provisioning, so confirm which step requires what before funding.",
+      },
+      {
+        slug: "peanut-card",
+        reasoning:
+          "Peanut separates its non-custodial smart-account wallet from its card programme, and the distinction matters: the site states verification is required for all cardholders even where core wallet functions onboard differently. Included for the architecture, not as a no-verification card.",
+      },
+      {
+        slug: "kripicard",
+        reasoning:
+          "The fine-print example: Kripicard advertises no credit check, which is not the same as no KYC. Its own site describes identity verification, sanctions screening, and AML monitoring with regulated partners. Included so readers see how these claims are actually worded.",
+      },
+      {
+        slug: "kardpay-card",
+        reasoning:
+          "KardPay appears on independent researchers' privacy and minimal-KYC shortlists for crypto cards. Our data does not verify a no-KYC claim on its official page, so treat the privacy angle as community reputation to confirm, not a published term.",
+      },
+      {
+        slug: "solcard",
+        reasoning:
+          "A Solana-native virtual card that keeps the funding step on-chain in SOL, USDC, or USDT. The privacy angle is structural: less fiat-rail involvement than a bank-linked card. Verification and regional eligibility still apply through the provider flow.",
+      },
+      {
+        slug: "laso-card",
+        reasoning:
+          "Laso's virtual Visa is built for crypto-native spending with a light app onboarding story, which is why it lands on minimal-KYC watchlists. Our listing carries the standard caution: verify the current verification terms on the official site before applying.",
+      },
+    ],
+    faq: [
+      {
+        question: "Is there really a crypto card with no KYC?",
+        answer:
+          "Providers sometimes advertise lighter onboarding for a wallet or a specific signup flow, but the card itself runs on regulated Visa or Mastercard rails, and issuers must meet AML rules. In our data, every no-KYC claim comes with caveats or applies to the wallet rather than the card. Verify the current terms before relying on any claim.",
+      },
+      {
+        question: "What actually gives a crypto card privacy?",
+        answer:
+          "Self-custody architecture matters more than marketing: when funds stay in your wallet or contract until the moment of spend, the card company never holds your balance. Minimal-data signup helps at the margins, but the issuer and the card network still see transactions.",
+      },
+      {
+        question: "Why is Goblin not on this list?",
+        answer:
+          "Goblin appears on some researchers' minimal-KYC lists, but it is not in our card database, and independent coverage flags it as an unregulated operator with higher counterparty risk. We only rank cards we have reviewed data for.",
+      },
+    ],
+  },
 ];
 
 export function getCollection(slug: string): CollectionPage | undefined {

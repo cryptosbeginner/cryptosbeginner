@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-10-19",
+    type: "market",
+    cardName: "Crypto card market",
+    title: "Crypto card spending tripled in a year: $403M to $1.22B",
+    details:
+      "Per-card figures from researcher @0xVishnya (Oct 14, 2026) show September 2026 spend at $1.22B vs $403M a year earlier. Fastest growers: Tria 108x, Kolo/Karta/Avici 16x each, Tuyo 9.4x, ether.fi 5.4x. RedotPay still leads absolute volume at $537.9M topped up. Full breakdown in our market article. Figures are the researcher's tracking; his methodology is not published.",
+    sourceUrl: "https://www.cryptosbeginner.com/crypto-cards/news/crypto-card-spending-tripled-2026",
+    sourceLabel: "CryptosBeginner market article; data attributed to @0xVishnya",
+  },
+  {
+    date: "2026-10-19",
     type: "launch",
     cardName: "AnomaPay Card",
     cardSlug: "anomapay-card",

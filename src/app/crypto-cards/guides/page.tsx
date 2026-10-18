@@ -44,6 +44,13 @@ const guides = [
     readTime: "9 min read",
   },
   {
+    slug: "cashback-ad-vs-reality",
+    title: "Crypto Card Cashback: Advertised vs Reality",
+    description:
+      "What $1,000 a month really earns on 8 crypto cards, after monthly caps, tier requirements, and fees. Computed from published bands, independently cross-checked.",
+    readTime: "9 min read",
+  },
+  {
     slug: "plasma-one-vs-tria",
     title: "Plasma One vs Tria",
     description:

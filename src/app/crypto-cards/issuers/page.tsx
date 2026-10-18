@@ -63,7 +63,11 @@ export default function IssuersPage() {
           <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
             <h2 className="text-xl font-black">Why issuers matter</h2>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
-              When you get a crypto card, your legal relationship is typically with the licensed issuer, not the crypto brand whose logo is on the plastic. The issuer holds your funds, handles disputes, and appears in the cardholder agreement. If the crypto brand has problems, the issuer relationship determines what happens to your money. Knowing who stands behind a card is basic due diligence.
+              When you get a crypto card, your legal relationship is typically with the licensed issuer, not the crypto brand whose logo is on the plastic. The issuer holds your funds, handles disputes, and appears in the cardholder agreement. If the crypto brand has problems, the issuer relationship determines what happens to your money. Knowing who stands behind a card is basic due diligence. Our guide on{" "}
+              <Link href="/crypto-cards/guides/what-happens-if-your-card-shuts-down" className="font-black text-fuchsia-700 hover:underline">
+                what happens to your money if your card shuts down
+              </Link>{" "}
+              walks through real shutdowns and how to verify any card before you load it.
             </p>
           </div>
 

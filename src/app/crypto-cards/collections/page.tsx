@@ -9,7 +9,7 @@ const HUB_URL = `${SITE_URL}/crypto-cards`;
 const PAGE_URL = `${SITE_URL}/crypto-cards/collections`;
 const PAGE_TITLE = "Crypto Card Collections: Curated Rankings by CryptosBeginner";
 const PAGE_DESCRIPTION =
-  "Ten curated crypto card collections from CryptosBeginner: metal cards, cashback, self-custodial cards, US and Europe availability, Apple Pay, travel perks, and more, ranked from our 132-card database.";
+  "Eleven curated crypto card collections from CryptosBeginner: metal cards, cashback, self-custodial cards, privacy-focused cards, US and Europe availability, Apple Pay, travel perks, and more, ranked from our card database.";
 
 export const metadata: Metadata = {
   title: { absolute: `${PAGE_TITLE} | CryptosBeginner` },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Crypto Card Collections",
-    description: "Ten curated rankings from our own card data, verified October 2026.",
+    description: "Eleven curated rankings from our own card data, verified October 2026.",
   },
   robots: { index: true, follow: true },
 };
@@ -92,7 +92,7 @@ export default function CollectionsIndexPage() {
                   Crypto Card Collections
                 </h1>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-                  Ten curated shortlists from our own database of 132 card profiles. Each collection ranks cards against a published methodology, keeps provider wording intact, and says plainly where our data is thin instead of inventing winners.
+                  Eleven curated shortlists from our card database. Each collection ranks cards against a published methodology, keeps provider wording intact, and says plainly where our data is thin instead of inventing winners.
                 </p>
                 <p className="mt-4 max-w-3xl text-xs leading-6 text-slate-400">
                   <strong className="text-slate-200">Affiliate disclosure:</strong> Some buttons may use referral links. A referral relationship does not change the inclusion criteria or guarantee approval, fees, rewards, availability, or suitability. These are editorial curations, not financial advice.

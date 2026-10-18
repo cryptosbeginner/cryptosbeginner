@@ -432,14 +432,23 @@ export default function GraveyardPage() {
             <h2 className="text-2xl font-black tracking-[-0.03em]">Now go compare the cards that are still alive</h2>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
               The full directory separates provider claims from editorial context and shows the issuer
-              behind each card, so the pattern above never catches you by surprise again.
+              behind each card, so the pattern above never catches you by surprise again. And if you want
+              the full playbook, our guide explains exactly what happens to your money when a card shuts down.
             </p>
-            <Link
-              href={HUB_URL}
-              className="mt-5 inline-flex rounded-xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-0.5"
-            >
-              Browse the live cards directory
-            </Link>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                href={HUB_URL}
+                className="inline-flex rounded-xl bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-0.5"
+              >
+                Browse the live cards directory
+              </Link>
+              <Link
+                href="/crypto-cards/guides/what-happens-if-your-card-shuts-down"
+                className="inline-flex rounded-xl border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              >
+                What happens to your money if your card shuts down
+              </Link>
+            </div>
           </div>
         </section>
       </main>

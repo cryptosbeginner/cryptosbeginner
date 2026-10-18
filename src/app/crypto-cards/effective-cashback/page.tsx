@@ -171,7 +171,15 @@ export default function EffectiveCashbackPage() {
               provider quotes. Figures were computed {UPDATED}; cashback
               programs change frequently, so confirm current terms on the
               provider page before applying. Spending crypto can have tax
-              consequences depending on your jurisdiction.
+              consequences depending on your jurisdiction. For the full story
+              behind the headline rates, read our guide{" "}
+              <Link
+                href="/crypto-cards/guides/cashback-ad-vs-reality"
+                className="font-bold text-indigo-700 underline hover:text-indigo-900"
+              >
+                Crypto Card Cashback: Advertised vs Reality
+              </Link>
+              .
             </p>
           </div>
         </section>

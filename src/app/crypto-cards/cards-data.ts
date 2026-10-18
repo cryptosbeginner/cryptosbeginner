@@ -173,15 +173,19 @@ export const cardListings: CardListing[] = [
     regions: ["150+ countries advertised; verify residence eligibility"],
     pricing: "The reviewed product page advertises no monthly or annual card fee; applicable terms and regional charges should be checked with Wirex.",
     rewards: "Wirex advertises 0.5% to 8% cashback in USD depending on membership tier.",
-    funding: "Spend crypto and fiat through the Wirex One app; conversion and supported-asset details depend on the account and region.",
+    funding: "Spend crypto and fiat through the Wirex One app; conversion and supported-asset details depend on the account and region. In October 2026 Wirex One was reported to support Apple Pay top-ups (no Wirex fee on local card top-ups, instant settlement; USD top-ups carry a conversion fee as payments process in EUR, and the user's card issuer may add its own fee; availability is region-dependent), with Google Pay top-ups also reported.",
     cardFormats: ["Virtual", "Physical", "Visa Signature Metal"],
     sourceUrl: "https://www.wirexapp.com/stablecoin-and-crypto-card",
     sourceLabel: "Wirex One product page",
     imageUrl: "/images/cards/wirex-one-card.png",
     imageAlt: "Wirex physical crypto card",
     imageSourceNote: "Official Wirex product image, cached locally",
-    reviewedAt: "2026-08-27",
+    reviewedAt: "2026-10-19",
     caution: "Wirex states that availability and features are subject to jurisdictional limitations. Headline cashback is not a guaranteed rate for every user.",
+    updateUrl: "https://x.com/0xDani/status/2111769135596060898",
+    updateLabel: "Apple Pay top-ups reported (Oct 2026)",
+    updateNote:
+      "Apple Pay top-ups were reported for Wirex One in October 2026: no Wirex fee on local card top-ups and instant settlement, but USD top-ups carry a conversion fee since payments process in EUR, the card issuer may charge its own fee, and availability depends on region. Confirm current top-up methods in the Wirex app before relying on them.",
   },
   {
     slug: "metamask-card",
@@ -1359,7 +1363,7 @@ export const cardListings: CardListing[] = [
     network: "Visa",
     categories: ["dual-mode", "self-custody"],
     shortDescription: "A non-custodial Visa card that lets holders spend against crypto kept in their own vault, with 3% cashback and tiered memberships.",
-    editorialSummary: "ether.fi Cash is a DeFi-native Visa card where assets stay in the user's self-custodial Vault under a non-custodial architecture, spendable in Direct Pay mode or as collateral in Borrow mode (from 1.43%). Four membership tiers (Core, Luxe, Pinnacle, VIP) offer 3% cashback on card spend (4% on VIP), 5% cashback on ether.fi Travel bookings, airport lounge access, Visa concierge, global eSIM, and balance protection up to $500K on VIP. Bank transfers are supported in 162 countries; the physical Cash card ships to 31 US states with Belgium and Ireland excluded from physical delivery. Card issuance runs on Rain infrastructure.",
+    editorialSummary: "ether.fi Cash is a DeFi-native Visa card where assets stay in the user's self-custodial Vault under a non-custodial architecture, spendable in Direct Pay mode or as collateral in Borrow mode (from 1.43%). Four membership tiers (Core, Luxe, Pinnacle, VIP) offer 3% cashback on card spend (4% on VIP), 5% cashback on ether.fi Travel bookings, airport lounge access, Visa concierge, global eSIM, and balance protection up to $500K on VIP. Bank transfers are supported in 162 countries; the physical Cash card ships to 31 US states with Belgium and Ireland excluded from physical delivery. The card is issued by Third National, a Rain group company, pursuant to a license from Visa.",
     bestFor: "Crypto holders who want credit-card spending power without selling their assets or giving up custody, plus travel perks.",
     availability: "Bank transfers available in 162 countries including the US, UK, EU members, UAE, Pakistan, and India; not available in 24 jurisdictions including Russia, China, Belarus, Iran, and North Korea. Physical Cash card available in 31 US states; Belgium and Ireland are Cash-eligible but have no physical card delivery. xStocks trading available in supported EU countries.",
     regions: ["North America", "Europe", "United Kingdom", "Asia", "Middle East", "Africa", "Latin America", "Australia & Oceania"],
@@ -3853,7 +3857,7 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A virtual Visa card linked to Tangem's self-custody wallet that spends USDC on Polygon across 42 countries.",
     editorialSummary:
-      "Tangem Pay is a virtual Visa card connected to the Tangem self-custody wallet, spending USDC held on Polygon. Tangem advertises no transaction or monthly fees, support for Apple Pay and Google Pay, and availability across 42 countries in the US, Latin America, and APAC, with a physical card planned. Identity verification is handled by Sumsub during onboarding.",
+      "Tangem Pay is a virtual Visa card connected to the Tangem self-custody wallet, spending USDC held on Polygon. The card is issued by Rain, a Visa Principal Member, and the program is operated by Paera LLC, not Tangem AG. Tangem advertises no transaction or monthly fees, support for Apple Pay and Google Pay, and availability across 42 countries in the US, Latin America, and APAC, with a physical card planned. Identity verification is handled by Sumsub during onboarding.",
     bestFor:
       "Tangem wallet owners who want a virtual card for stablecoin spending with mobile wallet support.",
     availability:
@@ -3941,7 +3945,7 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A self-custodial Visa stablecoin card with tiered XPL cashback from 2% on the free Lite plan to 4% on Platinum.",
     editorialSummary:
-      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
+      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
     bestFor:
       "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 4% cashback.",
     availability:
@@ -3958,9 +3962,20 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Plasma One Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-18",
+    reviewedAt: "2026-10-19",
     caution:
       "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
+    updateUrl: "https://x.com/0xVishnya/status/2111004467449745425",
+    updateLabel: "App-store popularity ranks (Sensor Tower via @0xVishnya)",
+    updateNote:
+      "Sensor Tower data for Sep 16 to Oct 15, 2026 shows the Plasma app ranking highest in MENA: Algeria #48 on Android and #62 on iPhone, Libya #92/#79, Morocco #109/#162, Yemen #136/#92. The US sits at #302 and the UK at #494 on Android. Ranks are median Top Free Finance positions where the app charted at least 15 of 30 days.",
+    galleryImages: [
+      {
+        url: "/images/cards/plasma/popularity-ranks.png",
+        alt: "Chart of Plasma One app store rankings by country on iPhone and Android, September to October 2026",
+        source: "Sensor Tower data via @0xVishnya, compiled by CryptosBeginner",
+      },
+    ],
     verification: "KYC required through the card application flow.",
     referralUrl: "https://go.cryptosbeginner.com/Plasma",
     referralLabel: "Get the Plasma One Card",
@@ -5046,7 +5061,7 @@ export const cardListings: CardListing[] = [
     network: "Visa",
     categories: ["prepaid", "debit"],
     shortDescription: "A stablecoin spending card with tiered cashback and a USD Reserve account earning boosted rates.",
-    editorialSummary: "KAST pairs a Visa card lineup with a USD Reserve account paying boosted reward rates until mid-2027. Three membership tiers (Standard free, Premium 1,000 USD/year, Private 10,000 USD/year) unlock progressively higher cashback and Reserve rates. The card family spans Visa Platinum options (K Card, Solana Card) to Visa Infinite (X Card, Solana Illuma, Gold Plated, Bitcoin Black). The Earn section offers self-custodial yield vaults, including USDKY via the M0 protocol and a Gauntlet-curated vault. Deposit rules are strict: USDT on Solana only for the main funding path.",
+    editorialSummary: "KAST pairs a Visa card lineup with a USD Reserve account paying boosted reward rates until mid-2027. Three membership tiers (Standard free, Premium 1,000 USD/year, Private 10,000 USD/year) unlock progressively higher cashback and Reserve rates. The card family spans Visa Platinum options (K Card, Solana Card) to Visa Infinite (X Card, Solana Illuma, Gold Plated, Bitcoin Black). The Earn section offers self-custodial yield vaults, including USDKY via the M0 protocol and a Gauntlet-curated vault. Deposit rules are strict: USDT on Solana only for the main funding path. The card is issued by Third National, a Rain group company.",
     bestFor: "Stablecoin holders who want tiered cashback plus yield on idle USD, and who are comfortable with the deposit network rules.",
     availability: "190+ countries per KAST; card eligibility and ID requirements vary by country. Not a bank; verify availability in the app.",
     regions: ["190+ countries; verify in application"],
