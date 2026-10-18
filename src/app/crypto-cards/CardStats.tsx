@@ -119,6 +119,17 @@ function computeStats() {
     return `${d} ${months[m - 1]} ${y}`;
   })();
 
+  const sortedRates = [...statedRates].sort((a, b) => a - b);
+  const minRate = sortedRates.length > 0 ? sortedRates[0] : 0;
+  const maxRate = sortedRates.length > 0 ? sortedRates[sortedRates.length - 1] : 0;
+  const medianRate =
+    sortedRates.length > 0
+      ? sortedRates.length % 2 === 1
+        ? sortedRates[Math.floor(sortedRates.length / 2)]
+        : (sortedRates[sortedRates.length / 2 - 1] + sortedRates[sortedRates.length / 2]) / 2
+      : 0;
+  const rate2Plus = statedRates.filter((r) => r >= 2).length;
+
   return {
     total,
     networks,
@@ -126,6 +137,10 @@ function computeStats() {
     buckets,
     statedRateCount: statedRates.length,
     meanRate,
+    minRate,
+    maxRate,
+    medianRate,
+    rate2Plus,
     virtualOffered,
     physicalOffered,
     metalOffered,
@@ -246,7 +261,7 @@ export default function CardStats() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-700">Market statistics</p>
-            <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">What 132 listings look like in aggregate</h2>
+            <h2 className="mt-2 text-3xl font-black tracking-[-0.04em]">What {stats.total} listings look like in aggregate</h2>
           </div>
           <p className="max-w-md text-sm leading-6 text-slate-500">
             Based on CryptosBeginner directory data, verified October 2026. All figures are computed from the
@@ -272,6 +287,41 @@ export default function CardStats() {
             label="Offer a virtual card"
             note={`${stats.virtualOnly} of these are virtual-only.`}
           />
+        </div>
+
+        <div className="mt-8 rounded-[1.5rem] border border-indigo-200 bg-indigo-50/60 p-6 sm:p-7">
+          <p className="text-xs font-black uppercase tracking-[0.17em] text-indigo-700">Market rate blocks</p>
+          <h3 className="mt-2 text-xl font-black tracking-[-0.02em]">What the advertised rates are actually worth</h3>
+          <p className="mt-1 max-w-3xl text-xs leading-5 text-slate-500">
+            Headline cashback rates translated into dollars per year at $10,000 of annual card spend. These are
+            best-case advertising figures, before tier caps, spend caps, and annual fees. See the{" "}
+            <a href="/crypto-cards/effective-cashback" className="font-black text-indigo-700 underline">
+              effective cashback rankings
+            </a>{" "}
+            for what cards pay after caps and fees.
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <StatTile
+              value={`${stats.maxRate.toFixed(1)}%`}
+              label="Best headline rate"
+              note={`About $${Math.round((stats.maxRate / 100) * 10000).toLocaleString()} a year on $10,000 of spend, if you qualify for the top tier and stay under every cap.`}
+            />
+            <StatTile
+              value={`${stats.meanRate.toFixed(1)}%`}
+              label="Average headline rate"
+              note={`About $${Math.round((stats.meanRate / 100) * 10000).toLocaleString()} a year on $10,000 of spend across the ${stats.statedRateCount} cards that publish a rate. Advertising, not typical earnings.`}
+            />
+            <StatTile
+              value={`${stats.medianRate.toFixed(1)}%`}
+              label="Median headline rate"
+              note={`Half of rate-publishing cards advertise more, half advertise less. About $${Math.round((stats.medianRate / 100) * 10000).toLocaleString()} a year on $10,000 of spend.`}
+            />
+            <StatTile
+              value={`${stats.rate2Plus}`}
+              label="Cards at 2% or more"
+              note="Headline rate of 2% or higher. Always check the caps behind the headline before choosing."
+            />
+          </div>
         </div>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
