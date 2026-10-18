@@ -14,7 +14,7 @@ const UPDATED_ISO = "2026-10-11";
 const ORIGINALLY_PUBLISHED = "3 May 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-05-03";
 
-const KRAKEN = "https://go.cryptosbeginner.com/Kraken";
+const KRAKEN = "https://invite.kraken.com/JDNW/1blpzfsr"; // referral code 49w2tbf7, up to $200 each
 const KRAKEN_FEES = "https://www.kraken.com/features/fee-schedule";
 const KRAKEN_POR = "https://www.kraken.com/proof-of-reserves";
 
