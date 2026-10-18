@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/sarwa-review`;
 
-const UPDATED = "13 October 2026";
-const UPDATED_ISO = "2026-10-13";
+const UPDATED = "19 October 2026";
+const UPDATED_ISO = "2026-10-19";
 const ORIGINALLY_PUBLISHED = "13 October 2026";
 const ORIGINALLY_PUBLISHED_ISO = "2026-10-13";
 
@@ -263,6 +263,23 @@ export default function SarwaReviewPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            name: "Sarwa Review 2026: Is It Legit? Fees, Halal Investing & Full App Tour",
+            description:
+              "Video review of Sarwa covering fees, halal investing options, and a full app tour.",
+            thumbnailUrl: "https://i.ytimg.com/vi/ZfXYNIpuB8Y/hqdefault.jpg",
+            uploadDate: "2026-10-19",
+            embedUrl: "https://www.youtube.com/embed/ZfXYNIpuB8Y",
+            contentUrl: "https://www.youtube.com/watch?v=ZfXYNIpuB8Y",
+          }),
+        }}
+      />
+
       <main className="min-w-0 overflow-x-hidden bg-white text-slate-900">
         <section className="border-b border-slate-200 bg-slate-50">
           <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
@@ -336,6 +353,30 @@ export default function SarwaReviewPage() {
               priority
             />
           </figure>
+
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">
+              Watch the video review
+            </p>
+            <h2 className="mt-3 text-2xl font-black tracking-tight text-slate-950">
+              Sarwa Review 2026: Is It Legit? Fees, Halal Investing &amp; Full
+              App Tour
+            </h2>
+            <p className="mt-3 leading-7 text-slate-800">
+              Prefer video? Our full Sarwa review walks through fees, halal
+              investing options, and a complete tour of the app.
+            </p>
+            <div className="relative mt-5 aspect-video w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-sm">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/ZfXYNIpuB8Y"
+                title="Sarwa Review 2026: Is It Legit? Fees, Halal Investing & Full App Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
+          </div>
 
           <nav aria-label="On this page" className="mt-8">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">
