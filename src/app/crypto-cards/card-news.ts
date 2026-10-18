@@ -13,6 +13,16 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-10-19",
+    type: "launch",
+    cardName: "Plasma One",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One Card review published with full fee tables",
+    details:
+      "Full review of the self-custodial Plasma One Visa card: Lite free (2% XPL on first $500/month), Core $199/year or 20,000 XPL lock (3% base), Platinum 100,000 XPL lock promo (4% base, 0% FX). Real fee tables from the help center, deposit networks, ATM limits, and country availability, tested on the live app.",
+    sourceLabel: "Plasma help center; Plasma One app (verified from in-app images)",
+  },
+  {
     date: "2026-10-18",
     type: "launch",
     cardName: "ether.fi Cash",

@@ -79,6 +79,7 @@ const recentRoutes = new Set([
   "/crypto-cards/reviews",
   "/crypto-cards/tria-review",
   "/crypto-cards/etherfi-review",
+  "/crypto-cards/plasma-one-review",
   "/tools/solpot-review",
   "/tools/bankable-pro-review",
   "/tools/ostium-review",
