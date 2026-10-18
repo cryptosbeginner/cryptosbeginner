@@ -1,5 +1,40 @@
 export type CardCategory = "prepaid" | "debit" | "dual-mode" | "self-custody";
 
+/** Structured cashback tier, paymentscan-style: one row per tier/spend band. */
+export type CashbackBand = {
+  /** Tier or program name, e.g. "Core", "Lite", "Standard". */
+  tier: string;
+  /** Cashback rate in percent, e.g. 3 for 3%. */
+  ratePct: number;
+  /** Human-readable spend band, e.g. "first $2,000/mo". */
+  spendBand: string;
+  /** Band cap in USD when the band has a fixed ceiling. */
+  bandCapUsd?: number;
+  /** Asset rewards are paid in, e.g. "ETHFI", "USD", "BTC". */
+  rewardAsset?: string;
+};
+
+/** Structured fee breakdown. Null = free, undefined = not published. */
+export type FeeBreakdown = {
+  virtualIssuanceUsd?: number | null;
+  physicalIssuanceUsd?: number | null;
+  annualFeeUsd?: number | null;
+  /** Free-text FX fee note, e.g. "1% + 0-0.5% by tier". */
+  fxFeeNote?: string;
+  /** Free-text ATM fee note. */
+  atmFeeNote?: string;
+};
+
+/** Feature flags extracted from listing text or curated. */
+export type FeatureFlags = {
+  applePay?: boolean;
+  googlePay?: boolean;
+  /** Spend against crypto collateral without selling. */
+  borrowAgainstCrypto?: boolean;
+  /** Earn yield on balances. */
+  earnYield?: boolean;
+};
+
 export type CardListing = {
   slug: string;
   name: string;
@@ -37,6 +72,12 @@ export type CardListing = {
   cons?: string[];
   noKycStatus?: "not-verified" | "provider-claims-no-credit-check" | "provider-states-no-kyc";
   extraFaqs?: { question: string; answer: string }[];
+  /** Structured cashback tiers (paymentscan-style bands). */
+  cashbackBands?: CashbackBand[];
+  /** Structured fee breakdown. */
+  feeBreakdown?: FeeBreakdown;
+  /** Feature flags. */
+  featureFlags?: FeatureFlags;
 };
 
 export function getCardFaqs(card: CardListing) {
@@ -98,6 +139,12 @@ export const cardListings: CardListing[] = [
     imageAlt: "Crypto.com Midnight Blue Visa prepaid card",
     imageSourceNote: "Local copy of official Crypto.com card artwork",
     reviewedAt: "2026-10-15",
+    cashbackBands: [
+      { tier: "Ruby", ratePct: 1.5, spendBand: "up to $750/mo rewards", rewardAsset: "CRO" },
+      { tier: "Jade", ratePct: 2.5, spendBand: "up to $1,500/mo rewards", rewardAsset: "CRO" },
+      { tier: "Royal Indigo", ratePct: 3.5, spendBand: "up to $3,000/mo rewards", rewardAsset: "CRO" },
+      { tier: "Icy White", ratePct: 4.5, spendBand: "up to $5,000/mo rewards", rewardAsset: "CRO" },
+    ],
     caution: "Rewards, lockups, limits, fees, issuers, and availability vary by country and card tier. Verify the applicable cardholder agreement before applying.",
     referralUrl: "https://cryptocom.sjv.io/6yYRZV",
     referralLabel: "Check Crypto.com card options",
@@ -216,6 +263,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Ledger-compatible CL Card with Ledger device",
     imageSourceNote: "Official Ledger product image, cached locally",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Ledger is not the card issuer. Provider, fee, issuer, and country-specific terms must be verified before applying.",
   },
   {
@@ -239,11 +287,15 @@ export const cardListings: CardListing[] = [
     imageAlt: "RedotPay physical stablecoin card",
     imageSourceNote: "Official RedotPay-hosted card image",
     reviewedAt: "2026-10-17",
+    featureFlags: { applePay: true, googlePay: true, earnYield: true },
     caution: "Card availability, supported assets, verification, fees, and unsupported regions can change. ATM fees are tiered on USD cards (3% above $10,000 of monthly withdrawals). RedotPay Pro cashback applies only to Apple Pay and Google Pay purchases and its terms can change. Read the current RedotPay Help Center and terms before funding an account.",
     referralUrl: "https://go.cryptosbeginner.com/RedotPay",
     fullReviewUrl: "/crypto-cards/redotpay-review",
     referralLabel: "Check RedotPay card",
     feesUrl: "https://helpcenter.redotpay.com/en/articles/10339271-redotpay-card-limitations-fees",
+    cashbackBands: [
+      { tier: "Pro", ratePct: 3.0, spendBand: "Apple Pay and Google Pay", rewardAsset: "USDs" },
+    ],
     updateUrl: "https://www.redotpay.com/news",
     updateLabel: "RedotPay updates",
     updateNote: "RedotPay currently highlights Apple Pay support and maintains separate product, verification, terms, and Help Center pages.",
@@ -325,6 +377,10 @@ export const cardListings: CardListing[] = [
     updateNote: "Bybit publishes current eligibility and fee FAQs within its Card flow; the visible region notice should be checked before sign-up.",
     applicationMethod: "Apply through an eligible Bybit account, complete identity verification, and follow the regional virtual or physical card onboarding flow.",
     verification: "Identity verification and country eligibility apply; EEA customers are explicitly excluded on the reviewed page.",
+    cashbackBands: [
+      { tier: "Base", ratePct: 2.0, spendBand: "everyday spending", rewardAsset: "USD" },
+      { tier: "Boosted", ratePct: 10.0, spendBand: "selected users, up to $300", rewardAsset: "USD" },
+    ],
   },
   {
     slug: "bitget-wallet-card",
@@ -347,6 +403,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Bitget Wallet Card in the Bitget Wallet app",
     imageSourceNote: "Official Bitget Wallet-hosted product image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "“Up to 3%” is a provider headline, not a guaranteed rate. Confirm eligible purchases, reward assets, regional fees, and settlement timing.",
     referralLabel: "Check Bitget Wallet Card",
     feesUrl: "https://web3.bitget.com/helpCenter/283",
@@ -416,6 +473,14 @@ export const cardListings: CardListing[] = [
     imageAlt: "Tria Virtual Card official product visual",
     imageSourceNote: "Official Tria product image, cached locally",
     reviewedAt: "2026-10-17",
+    cashbackBands: [
+      { tier: "Lite", ratePct: 1.5, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "USD" },
+      { tier: "Lite", ratePct: 0.5, spendBand: "above $1,000/mo", rewardAsset: "USD" },
+      { tier: "Pro", ratePct: 4.5, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "USD" },
+      { tier: "Pro", ratePct: 1.0, spendBand: "above $1,000/mo", rewardAsset: "USD" },
+      { tier: "Max", ratePct: 6.0, spendBand: "first $2,000/mo", bandCapUsd: 2000, rewardAsset: "USD" },
+      { tier: "Max", ratePct: 1.0, spendBand: "above $2,000/mo", rewardAsset: "USD" },
+    ],
     caution: "Self-custody does not eliminate wallet, smart-contract, conversion, tax, or card-issuer risk. Cashback caps mean headline rates apply only to the first 1,000 to 2,000 USD of monthly spend. Google Play rates the app 1.9 stars from about 3,895 reviews, with users citing support and transparency issues.",
     feesUrl: "https://www.tria.so/",
     updateUrl: "https://www.tria.so/en/blogs",
@@ -524,6 +589,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "OppiWallet virtual crypto card shown in app",
     imageSourceNote: "Official product image not available from issuer",
     reviewedAt: "2026-08-27",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Oppi states that KYC is required to enable card features. Self-custody before top-up does not remove card, conversion, issuer, merchant, or regulatory risk.",
     feesUrl: "https://oppiwallet.com/en/virtual-crypto-card",
     updateUrl: "https://oppiwallet.com/en",
@@ -751,6 +817,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Privacy Gateway brand logo artwork",
     imageSourceNote: "Official product image not available from issuer",
     reviewedAt: "2026-08-27",
+    featureFlags: { googlePay: true },
     caution: "The provider’s no-ID claim is not a promise of anonymity or permanent exemption from AML, sanctions, regulatory, merchant, or transaction controls. The access hash may be unrecoverable if lost.",
     feesUrl: "https://privacygateway.io/",
     updateUrl: "https://privacygateway.io/",
@@ -850,6 +917,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "BloFin Wallet official product visual",
     imageSourceNote: "Official BloFin product image, cached locally",
     reviewedAt: "2026-08-27",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "BloFin Wallet is separate from BloFin Exchange. Self-custody does not remove card issuer, network, conversion, region, or loss-of-access risks.",
     referralUrl: "https://blofin.com/register?referral_code=dPCaMa",
     referralLabel: "Explore BloFin Wallet",
@@ -916,6 +984,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "MEXC Visa Card official product banner",
     imageSourceNote: "Official MEXC-hosted card banner",
     reviewedAt: "2026-10-15",
+    featureFlags: { googlePay: true },
     caution: "MEXC presents multiple regional card variants. Do not combine the Taiwan route and other MEXC or Ether.fi routes into one universal fee, reward, or eligibility claim.",
     referralUrl: "https://go.cryptosbeginner.com/MEXC-Bonus",
     referralLabel: "Explore MEXC Card",
@@ -950,6 +1019,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "SwissBorg crypto debit card official product visual",
     imageSourceNote: "Official SwissBorg product image, cached locally",
     reviewedAt: "2026-08-27",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "The card is virtual on the reviewed page, conversion fees apply, and BORG rewards depend on loyalty rank. Confirm the current country, fee, and supported-asset terms.",
     feesUrl: "https://swissborg.com/fees",
     updateUrl: "https://swissborg.com/crypto-debit-card",
@@ -982,6 +1052,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Tevau Visa card official product visual",
     imageSourceNote: "Official Tevau-hosted card image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Tevau lists different legal entities and regulated-service descriptions. Confirm the applicable entity, country access, fee schedule, verification, and cardholder terms.",
     referralUrl: "https://go.cryptosbeginner.com/Tevau",
     fullReviewUrl: "/crypto-cards/tevau-review",
@@ -1017,6 +1088,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "BYDFi Card official product visual",
     imageSourceNote: "Official BYDFi product image, cached locally",
     reviewedAt: "2026-10-15",
+    featureFlags: { googlePay: true },
     caution: "The monthly fee continues unless the card is terminated (termination currently free); ATM availability and fees vary by location. Re-verify country eligibility since the old unsupported-country FAQ URL is dead.",
     referralUrl: "https://partner.bydfi.com/j/jO7nayOF",
     referralLabel: "Explore BYDFi Card",
@@ -1053,6 +1125,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Binance Card official product image",
     imageSourceNote: "Official Binance product image, cached locally",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Only available to eligible, identity-verified users residing in launched markets, and the card must be ordered from the Card section of the Binance app.",
     verification: "Identity verification (KYC) is required; eligibility is limited to users residing in a launched market such as Brazil.",
     referralUrl: "https://go.cryptosbeginner.com/binance",
@@ -1079,6 +1152,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "OKX Card official product image",
     imageSourceNote: "Official OKX product image, cached locally",
     reviewedAt: "2026-10-14",
+    featureFlags: { earnYield: true },
     caution: "Availability and features such as ATM withdrawals vary by region and local regulations, and the card may not yet be offered in the user's market.",
     verification: "Eligibility is region based; users must check for the Card entry in the OKX app.",
   },
@@ -1103,6 +1177,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "KuCard by KuCoin official product image",
     imageSourceNote: "Official KuCoin product image, cached locally",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Australia only, virtual card only for now, and applicants need a valid KuCoin AU account with full identity verification.",
     verification: "Full KYC identity verification required, including proof of Australian residential address.",
   },
@@ -1127,6 +1202,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Gate Card official product image",
     imageSourceNote: "Official Gate.io product image, cached locally",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Rewards, caps, fees and supported assets vary by card variant and region, and Gate may restrict the service in certain locations.",
     verification: "An active Gate account is required to apply; specific identity requirements not stated on reviewed pages.",
   },
@@ -1303,6 +1379,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Solid green Visa card official product image",
     imageSourceNote: "Official Solid product image, cached locally",
     reviewedAt: "2026-10-15",
+    featureFlags: { borrowAgainstCrypto: true, earnYield: true },
     caution: "Cashback caps apply monthly and rewards depend on tier eligibility. Yield rates are variable and depend on DeFi strategy performance; a 10% performance fee applies to yield. Locked FUSE cannot be withdrawn before the unlock date. Availability varies by issuer program and region; verify current status before applying.",
     verification: "Identity verification required for card issuance and for TransFi local deposits (separate verification).",
     referralUrl: "https://www.solid.xyz/refer?ref=4Z0ZE",
@@ -1310,6 +1387,11 @@ export const cardListings: CardListing[] = [
     fullReviewUrl: "/crypto-cards/solid-review",
   },
   {
+    cashbackBands: [
+      { tier: "Core", ratePct: 3.0, spendBand: "up to $50/mo rewards", rewardAsset: "USDC" },
+      { tier: "Prime", ratePct: 4.0, spendBand: "up to $100/mo rewards", rewardAsset: "USDC" },
+      { tier: "Ultra", ratePct: 5.0, spendBand: "up to $200/mo rewards", rewardAsset: "USDC" },
+    ],
     slug: "lemon-card",
     name: "Lemon Card",
     provider: "Lemon",
@@ -1403,6 +1485,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Dark 1inch Mastercard with unicorn artwork",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Spending crypto may trigger taxable events depending on your jurisdiction.",
     verification: "KYC required through the card issuer; UK or EEA residency required.",
   },
@@ -1451,6 +1534,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Gray metal Holyheld Mastercard debit card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Card and e-money services are provided by Holyheld's banking and crypto partners, not by Holyheld directly.",
     verification: "KYC required for card issuance; European residency required.",
   },
@@ -1691,6 +1775,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Black Trustee crypto card with white logo, cropped from app view",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "ATM cash withdrawals are not currently available, and the wallet is custodial.",
     verification: "KYC verification required to issue the card.",
   },
@@ -1763,6 +1848,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Bit.Store yellow and black Mastercard crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "The card was marketed as KYC-free at launch, which raises compliance questions; verify current onboarding requirements.",
     verification: "Account registration required; verify current KYC requirements on the official site.",
   },
@@ -1787,6 +1873,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Oobit pink Visa crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Virtual only; no physical card. Self-custody spending requires keeping wallet credentials safe.",
     verification: "Identity verification required on signup.",
   },
@@ -1931,6 +2018,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Black Brighty Mastercard crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { earnYield: true },
     caution: "Yield comes from DeFi strategies and is not guaranteed; earning rates depend on the subscription plan.",
     verification: "Identity verification required; EEA residency required.",
   },
@@ -1979,6 +2067,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Blue and orange SpectroCoin Visa debit card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { borrowAgainstCrypto: true },
     caution: "US investors cannot use the card; eligibility is limited to the issuer's supported country list.",
     verification: "SpectroCoin account with identity verification required.",
   },
@@ -3327,6 +3416,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Phantom iridescent Visa cash card on blue hero art",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-10-14",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "CASH balances are not FDIC-insured, and the card is currently limited to US users outside New York.",
     verification: "One-time identity verification via Stripe required for the card; basic wallet use needs no verification.",
   },
@@ -4334,6 +4424,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "TRASTRA Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Availability is limited to EEA residents, and the full fee schedule is not published on the reviewed page.",
     verification: "Verified TRASTRA account required; card available to EEA residents.",
   },
@@ -4478,6 +4569,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Bitunix Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Cashback rates and caps depend on VIP tier, and regional availability and network fees can change, so confirm current terms in the app.",
     verification: "Identity verification (KYC) required.",
   },
@@ -4502,6 +4594,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "CoinW Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { googlePay: true },
     caution: "Upfront issuance and per-transaction fees are higher than many competing cards, so compare total costs before ordering.",
     verification: "KYC required.",
   },
@@ -4526,6 +4619,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "LBank Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Cashback eligibility, limits and rewards terms vary by location and verification level, so confirm details in the app.",
     verification: "Account verification required; terms vary by location.",
   },
@@ -4550,6 +4644,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Gleec Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true },
     caution: "Fees, limits and country eligibility are not published on the reviewed page, so verify them in the app before ordering.",
     verification: "Not disclosed on the reviewed page.",
   },
@@ -4574,6 +4669,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "CoinJar Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Foreign transactions carry a 2.99%+ fee and ATM withdrawals cost 1%, so it is best used for domestic purchases.",
     verification: "Fully verified CoinJar account with 2FA required.",
   },
@@ -4622,6 +4718,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Onboard Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Funding and FX fees apply on most loads and non-USD spending, so check the help center fee table for current rates.",
     verification: "Identity verification required.",
   },
@@ -4646,6 +4743,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "CoinSpot Mastercard card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "The card is digital-only with no physical option, and it is only available to Australian residents.",
     verification: "Fully verified CoinSpot account with 2FA enabled.",
   },
@@ -4670,6 +4768,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "CEX.IO Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "The card is virtual-only with no ATM access, and it is unavailable outside the EEA.",
     verification: "KYC and 2FA required.",
   },
@@ -4694,6 +4793,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Anytap Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "This is a new 2026 launch with limited public fee and limit details, so verify current terms before applying.",
     verification: "KYC and country eligibility requirements apply.",
   },
@@ -4718,6 +4818,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "SafePal Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Availability is limited to select European countries and excludes the US, so confirm eligibility in the app.",
     verification: "KYC and login through the Fiat24 SafePal mobile wallet app required.",
   },
@@ -4766,6 +4867,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Jupiter Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Fees, limits and Apple Pay or Google Pay support differ by issuer and country, so check the Jupiter docs for current terms.",
     verification: "KYC required; card issuer is assigned by country of residence.",
   },
@@ -4790,6 +4892,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "Foxbit Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-10-15",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Cashback only applies to crypto-funded transactions above R$1,000 in monthly spend, and conversion fees apply per the fee table.",
     verification: "Foxbit account registration required.",
   },
@@ -4862,6 +4965,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "DogPay app Money tab showing total USD balance with Deposit, Transfer, Red packet, Bank, Card, Swap, Esim, and Scan options",
     imageSourceNote: "User-provided app capture, October 2026",
     reviewedAt: "2026-10-16",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Card fees, BIN availability, and membership pricing are set inside the app and can change. KYC is required for card issuance.",
     referralUrl: "https://go.cryptosbeginner.com/DogPay",
     referralLabel: "Get DogPay",
@@ -4894,6 +4998,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "KAST app home screen showing Reserve balance with Deposit, Rewards, and Refer buttons plus membership upgrade banner",
     imageSourceNote: "User-provided app capture, October 2026",
     reviewedAt: "2026-10-16",
+    featureFlags: { applePay: true, googlePay: true },
     caution: "Boosted Reserve rates are a KAST-funded promotion ending mid-2027. Yield vaults carry DeFi risk. KAST is not a bank. Deposit rules are strict; wrong-network deposits can be lost.",
     referralUrl: "https://go.cryptosbeginner.com/KAST",
     referralLabel: "Get KAST",
@@ -4901,6 +5006,11 @@ export const cardListings: CardListing[] = [
     feesUrl: "https://kast.xyz/",
     updateUrl: "https://kast.xyz/",
     updateLabel: "Latest KAST terms",
+    cashbackBands: [
+      { tier: "Standard", ratePct: 1.5, spendBand: "first $2,000/mo", bandCapUsd: 2000, rewardAsset: "USD" },
+      { tier: "Premium", ratePct: 2.0, spendBand: "standard spend", rewardAsset: "USD" },
+      { tier: "Private", ratePct: 3.0, spendBand: "standard spend", rewardAsset: "USD" },
+    ],
     updateNote: "Membership pricing, Reserve rates, and vault APYs are set in the app and can change; check current terms before signing up.",
     applicationMethod: "Download the KAST app, sign up through the referral link, complete verification, and order a virtual card instantly or a physical card for 40 USD.",
     verification: "Identity verification and country eligibility apply; ID requirements vary by country.",
