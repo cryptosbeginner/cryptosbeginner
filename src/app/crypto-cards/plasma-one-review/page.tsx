@@ -885,7 +885,12 @@ export default function PlasmaOneReviewPage() {
               cashback at 6% but no free tier and no borrow mode. Solid wins on pure math for
               moderate spenders with USDC rewards. If you want to test a self-custodial
               stablecoin card without paying or locking anything, Plasma One's Lite tier is the
-              obvious starting point.
+              obvious starting point. For the full side-by-side against the volume leader, see
+              our{" "}
+              <a href="/crypto-cards/guides/redotpay-vs-competitors" className="text-emerald-700 hover:text-emerald-900 underline">
+                RedotPay vs KAST, ether.fi, and Plasma One
+              </a>{" "}
+              comparison.
             </P>
             <div className="mt-6">
               <PrimaryAffiliateButton>Get the Plasma One Card</PrimaryAffiliateButton>

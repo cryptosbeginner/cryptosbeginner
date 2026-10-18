@@ -373,7 +373,11 @@ export default function RedotPayReviewPage() {
               <li>
                 <strong className="text-slate-950">No cashback.</strong>{" "}
                 Standard cards earn nothing back, so compare carefully with
-                cashback cards.
+                cashback cards. See our{" "}
+                <Link href="/crypto-cards/guides/redotpay-vs-competitors" className="text-indigo-700 underline">
+                  RedotPay vs KAST, ether.fi, and Plasma One
+                </Link>{" "}
+                comparison for the full side-by-side.
               </li>
               <li>
                 <strong className="text-slate-950">Not for US users.</strong>{" "}

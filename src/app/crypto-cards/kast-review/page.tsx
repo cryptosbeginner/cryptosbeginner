@@ -629,6 +629,17 @@ export default function KastReviewPage() {
                 Try KAST free · referral code {REF_CODE}
               </PrimaryAffiliateButton>
             </div>
+            <P>
+              Deciding between KAST and its closest rival? Read our head-to-head{" "}
+              <a href="/crypto-cards/guides/kast-vs-etherfi" className="font-bold text-emerald-700 hover:text-emerald-900">
+                KAST vs ether.fi Cash comparison
+              </a>
+              . For the wider field including the volume leader, see our{" "}
+              <a href="/crypto-cards/guides/redotpay-vs-competitors" className="font-bold text-emerald-700 hover:text-emerald-900">
+                RedotPay vs KAST, ether.fi, and Plasma One
+              </a>{" "}
+              comparison.
+            </P>
           </Section>
 
           <Section id="faq">

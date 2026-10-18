@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cardCategories, cardListings, CardCategory, CardListing } from "./cards-data";
+import { getCardRating, RATING_METHODOLOGY } from "./ratings";
+import RatingBadge from "./RatingBadge";
 import TrustStats from "./TrustStats";
 
 // Region filter options. Each option matches when any of the card's region
@@ -96,7 +98,7 @@ export default function CardsDirectory() {
   const [category, setCategory] = useState<"all" | CardCategory>("all");
   const [region, setRegion] = useState("all");
   const [network, setNetwork] = useState("all");
-  const [sort, setSort] = useState<"name" | "reviewed">("name");
+  const [sort, setSort] = useState<"name" | "reviewed" | "rating">("name");
   const [view, setView] = useState<"grid" | "table">("grid");
   const [cashback, setCashback] = useState("all");
 
@@ -109,6 +111,12 @@ export default function CardsDirectory() {
       if (n.includes("amex") || n.includes("american express")) set.add("Amex");
     }
     return [...set].sort();
+  }, []);
+
+  const ratings = useMemo(() => {
+    const map = new Map<string, ReturnType<typeof getCardRating>>();
+    for (const card of cardListings) map.set(card.slug, getCardRating(card));
+    return map;
   }, []);
 
   const filtered = useMemo(() => {
@@ -129,8 +137,11 @@ export default function CardsDirectory() {
         if (cashback === "no") return /no cashback|no rewards/.test(rewards);
         return true;
       })
-      .sort((a, b) => sort === "name" ? a.name.localeCompare(b.name) : b.reviewedAt.localeCompare(a.reviewedAt));
-  }, [category, query, region, network, sort, cashback]);
+      .sort((a, b) => {
+        if (sort === "rating") return (ratings.get(b.slug)?.score ?? 0) - (ratings.get(a.slug)?.score ?? 0);
+        return sort === "name" ? a.name.localeCompare(b.name) : b.reviewedAt.localeCompare(a.reviewedAt);
+      });
+  }, [category, query, region, network, sort, cashback, ratings]);
 
   const activeFilterCount = [query.trim() !== "", category !== "all", region !== "all", network !== "all", cashback !== "all"].filter(Boolean).length;
   const resetFilters = () => { setQuery(""); setCategory("all"); setRegion("all"); setNetwork("all"); setCashback("all"); setSort("name"); };
@@ -202,9 +213,10 @@ export default function CardsDirectory() {
               <option value="yes">Has cashback</option>
               <option value="no">No cashback</option>
             </select>
-            <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "reviewed")} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Sort">
+            <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "reviewed" | "rating")} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Sort">
               <option value="name">Name A-Z</option>
               <option value="reviewed">Recently reviewed</option>
+              <option value="rating">Top rated</option>
             </select>
             <div className="flex overflow-hidden rounded-xl border border-slate-200">
               <button onClick={() => setView("grid")} className={`px-3.5 py-2.5 text-xs font-black ${view === "grid" ? "bg-slate-950 text-white" : "bg-white text-slate-600"}`}>Cards</button>
@@ -232,6 +244,7 @@ export default function CardsDirectory() {
               <thead>
                 <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-black uppercase tracking-[0.1em] text-slate-500">
                   <th className="sticky left-0 bg-slate-50 px-4 py-3 shadow-[2px_0_4px_rgba(0,0,0,0.05)]">Card</th>
+                  <th className="px-4 py-3">Rating</th>
                   <th className="px-4 py-3">Network</th>
                   <th className="px-4 py-3">Formats</th>
                   <th className="px-4 py-3">Pricing</th>
@@ -259,6 +272,7 @@ export default function CardsDirectory() {
                         </div>
                       </div>
                     </td>
+                    <td className="px-4 py-3"><RatingBadge rating={ratings.get(card.slug)!} compact /></td>
                     <td className="px-4 py-3">{card.network}</td>
                     <td className="px-4 py-3">{card.cardFormats.join(", ")}</td>
                     <td className="px-4 py-3 text-xs leading-5">{card.pricing}</td>
@@ -297,6 +311,7 @@ export default function CardsDirectory() {
                           <Glyph name="star" size={12} />{cb}
                         </span>
                       )}
+                      <span className="shrink-0"><RatingBadge rating={ratings.get(card.slug)!} compact /></span>
                     </div>
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {card.categories.map((item) => (
@@ -327,6 +342,26 @@ export default function CardsDirectory() {
             <p className="mt-2 text-sm text-slate-600">Try a broader search or <button onClick={resetFilters} className="font-black text-fuchsia-700">reset all filters</button>.</p>
           </div>
         )}
+      </section>
+
+      {/* HOW WE RATE */}
+      <section id="how-we-rate" className="mx-auto max-w-7xl scroll-mt-24 px-4 pb-10 sm:px-6 lg:px-8">
+        <div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
+          <p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-700">How we rate</p>
+          <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] sm:text-3xl">Every card gets a score out of 10. No human picks the number.</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">
+            Each rating is computed by a fixed formula from the structured facts already in the listing: cashback tiers, fee data, regions, custody model, and features. Nobody hand-assigns scores, so two cards with the same facts always get the same score. A muted <strong>Provisional</strong> badge means the provider has not published structured fee and cashback data yet, so that score rests on thinner evidence and updates automatically when the data arrives.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {RATING_METHODOLOGY.map((item) => (
+              <div key={item.title} className="rounded-2xl bg-slate-50 p-4">
+                <p className="text-xs font-black text-slate-950">{item.title}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-600">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs leading-6 text-slate-500">A rating is a comparison shortcut, not a recommendation. Provider terms change; the linked official source on each profile is the final word.</p>
+        </div>
       </section>
 
       {/* HOW WE LIST */}

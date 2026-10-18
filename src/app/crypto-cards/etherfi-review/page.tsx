@@ -771,6 +771,10 @@ export default function EtherfiReviewPage() {
               <a href="/crypto-cards/reviews" className="font-bold text-emerald-700 hover:text-emerald-900">
                 card reviews
               </a>
+              . For a head-to-head breakdown against its closest rival, see our{" "}
+              <a href="/crypto-cards/guides/kast-vs-etherfi" className="font-bold text-emerald-700 hover:text-emerald-900">
+                KAST vs ether.fi Cash comparison
+              </a>
               .
             </P>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
@@ -845,7 +849,12 @@ export default function EtherfiReviewPage() {
               spending mode, and its 3% to 4% cashback with self-custody is a strong combo. Tria
               has the higher headline cashback at 6% but tighter caps and no borrow mode. Solid
               wins on pure math for moderate spenders with no annual fee. If spending without
-              selling your crypto is the goal, ether.fi Cash stands alone.
+              selling your crypto is the goal, ether.fi Cash stands alone. For the full
+              side-by-side against the volume leader, see our{" "}
+              <a href="/crypto-cards/guides/redotpay-vs-competitors" className="text-emerald-700 hover:text-emerald-900 underline">
+                RedotPay vs KAST, ether.fi, and Plasma One
+              </a>{" "}
+              comparison.
             </P>
             <div className="mt-6">
               <PrimaryAffiliateButton>Get the ether.fi Cash Card</PrimaryAffiliateButton>
