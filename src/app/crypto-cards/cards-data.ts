@@ -733,6 +733,50 @@ export const cardListings: CardListing[] = [
     cons: ["Physical card is not yet available on the reviewed page", "FX and top-up fees remain part of the spending cost", "Issuer and country terms are partner- and jurisdiction-dependent"],
   },
   {
+    slug: "anomapay-card",
+    name: "AnomaPay Card",
+    provider: "AnomaPay",
+    network: "Not published",
+    categories: ["self-custody"],
+    shortDescription:
+      "A planned crypto card from the privacy-preserving AnomaPay payments app, currently on a waitlist with no published launch date.",
+    editorialSummary:
+      "AnomaPay is a live non-custodial payments app built on Anoma's intent-based architecture, offering shielded ERC20 transfers and confidential same-chain swaps on EVM chains and Solana. Its crypto card is announced as coming soon with a waitlist signup, listing planned referral bonuses and reward earning as future features. No card network, issuer, fee schedule, cashback rates, or country list are published, so none of the card's final terms should be treated as settled.",
+    bestFor:
+      "Readers tracking an upcoming privacy-focused card rather than applying to a fully documented live product.",
+    availability:
+      "Card not launched; the official page offers a waitlist signup only. The AnomaPay app itself is live in some regions and geoblocked in others.",
+    regions: ["Waitlist only; regions not published"],
+    pricing:
+      "No card issuance, monthly, FX, ATM, or conversion fee schedule is published. The AnomaPay app charges no protocol fees; users pay network gas fees.",
+    rewards:
+      "The card page lists referral bonuses and multiple ways to earn rewards as planned features. No rates, caps, or reward asset are published.",
+    funding:
+      "Final card funding mechanics are not published. The AnomaPay app is non-custodial: users keep sole control of private keys and fund shielded balances with ERC20 tokens.",
+    cardFormats: ["Card planned; formats not published"],
+    sourceUrl: "https://anomapay.app/",
+    sourceLabel: "AnomaPay official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "AnomaPay Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-10-19",
+    caution:
+      "This is a pre-launch listing. The card page is a waitlist with no launch date; do not assume that advertised rewards, fees, issuer arrangements, availability, or card benefits are final. AnomaPay's own terms describe the software as experimental and state that usage does not entitle users to any compensation or incentive.",
+    verification:
+      "The final verification process is not published; regional eligibility and onboarding requirements will apply if the card launches.",
+    featureTags: ["Pre-launch", "Waitlist", "Self-custody", "Privacy"],
+    pros: [
+      "Non-custodial model: users keep sole control of private keys",
+      "Privacy-preserving shielded transfers are the core product concept",
+      "No protocol fees on the app itself; gas abstraction lets users pay fees in any token",
+    ],
+    cons: [
+      "Card is not launched; no network, issuer, fees, or country list published",
+      "No live referral or rewards program despite planned features",
+      "The app is geoblocked in some regions, including the reviewer's region at check time",
+    ],
+  },
+  {
     slug: "defi-com-card",
     name: "DeFi.com Card",
     provider: "DeFi.com",

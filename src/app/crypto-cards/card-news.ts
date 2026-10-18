@@ -15,6 +15,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-10-19",
     type: "launch",
+    cardName: "AnomaPay Card",
+    cardSlug: "anomapay-card",
+    title: "AnomaPay Card announced, waitlist open",
+    details:
+      "AnomaPay, the non-custodial privacy-preserving payments app built on Anoma's intent architecture, has announced a crypto card with a waitlist signup. Planned features include referral bonuses and reward earning, but no card network, issuer, fee schedule, or launch date is published. Added to the catalog as a pre-launch listing.",
+    sourceUrl: "https://anomapay.app/",
+    sourceLabel: "AnomaPay official site",
+  },
+  {
+    date: "2026-10-19",
+    type: "launch",
     cardName: "Plasma One",
     cardSlug: "plasma-one-card",
     title: "Plasma One Card review published with full fee tables",
