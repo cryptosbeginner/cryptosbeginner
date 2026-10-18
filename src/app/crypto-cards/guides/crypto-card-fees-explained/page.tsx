@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
+import { GuideH2, GuideH3, GuideP, Callout, StepList, BulletList, WarningList } from "../GuideStyles";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/crypto-card-fees-explained`;
@@ -103,68 +104,113 @@ export default function CryptoCardFeesGuide() {
 
           <AuthorByline updated="14 October 2026" />
 
-          <div className="prose prose-slate mt-10 max-w-none">
-            <h2>The fee nobody advertises: the spread</h2>
-            <p>
+          <div className="mt-10">
+            <GuideH2>The fee nobody advertises: the spread</GuideH2>
+            <GuideP>
               The single most important cost on most crypto cards is the conversion spread, and it is the one least likely to appear in marketing. When you spend crypto, the card program converts it to fiat at a rate it sets. The gap between the market rate and the rate you get is the spread, and it functions exactly like a fee on every transaction.
-            </p>
-            <p>
+            </GuideP>
+
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-950 p-5 text-white sm:p-7" role="img" aria-label="Infographic: a 1 percent spread means 1 dollar lost on every 100 dollars spent">
+              <p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-300">How the spread works</p>
+              <div className="mt-5 space-y-4">
+                <div>
+                  <div className="flex items-center justify-between text-sm font-black">
+                    <span className="text-slate-300">Market price of your crypto</span>
+                    <span className="text-xl text-white">$100.00</span>
+                  </div>
+                  <div className="mt-2 h-3 overflow-hidden rounded-full bg-white/10">
+                    <div className="h-full w-full rounded-full bg-cyan-400" />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between text-sm font-black">
+                    <span className="text-slate-300">Rate your card gives you</span>
+                    <span className="text-xl text-white">$99.00</span>
+                  </div>
+                  <div className="mt-2 h-3 overflow-hidden rounded-full bg-white/10">
+                    <div className="h-full w-[99%] rounded-full bg-cyan-400/60" />
+                  </div>
+                </div>
+                <div className="rounded-xl border border-rose-400/40 bg-rose-500/15 p-4">
+                  <p className="text-sm font-black text-rose-200">The $1.00 gap is the spread. You pay it on every purchase, and it never appears as a line item.</p>
+                </div>
+              </div>
+            </div>
+
+            <GuideP>
               A 1% spread on $2,000 of monthly spending costs you $20 a month, or $240 a year. That can easily wipe out a headline cashback rate. When comparing cards, the spread matters more than almost any advertised fee. The problem is that spreads are often buried in terms documents or described vaguely as "conversion at our current rate." If a card does not publish its spread clearly, treat that as information.
-            </p>
+            </GuideP>
 
-            <h2>The full fee menu</h2>
-            <h3>Issuance fees</h3>
-            <p>
-              What you pay to get the card. Virtual cards are often free or cheap ($0-$10). Physical cards typically cost $10-$50. Metal cards can cost $100 or more, sometimes bundled with a premium tier. This is a one-time cost, so it matters less than recurring fees unless you replace cards often.
-            </p>
-            <h3>Subscription or monthly fees</h3>
-            <p>
-              Some cards charge a monthly fee ($5-$30) for premium tiers with higher cashback or limits. Do the math: a $15/month fee needs $180/year in extra cashback just to break even versus the free tier. Subscriptions only make sense if your spending is high enough to clear that hurdle comfortably.
-            </p>
-            <h3>Foreign exchange fees</h3>
-            <p>
-              When you spend in a currency different from your card's base currency, an FX markup usually applies on top of the crypto conversion spread. This can be 0.5%-2%. If you travel frequently, a card with low or zero FX fees saves real money. Some cards advertise "no FX fees" but still apply a spread on the crypto conversion, so check both.
-            </p>
-            <h3>ATM fees and limits</h3>
-            <p>
-              Most cards include a free ATM allowance (commonly $200-$800/month depending on tier), then charge 1%-2% beyond it. The ATM operator's own surcharge is separate and unavoidable. If you regularly need cash, the free allowance size matters more than the headline cashback rate.
-            </p>
-            <h3>Top-up and deposit fees</h3>
-            <p>
-              Moving crypto onto the card can carry fees depending on the method. On-chain deposits may just cost network gas. Card or bank top-ups can carry 1%-3% processing fees. Some programs charge for converting between cryptocurrencies inside the wallet.
-            </p>
-            <h3>Token lockup opportunity cost</h3>
-            <p>
-              Several card programs offer higher cashback tiers if you lock (stake) their native token. This is not a fee exactly, but it has a real cost: your tokens are illiquid, exposed to price drops, and earning whatever staking yield applies instead of being deployed elsewhere. A "free" premium tier that requires a $4,000 token lockup is not free.
-            </p>
-            <h3>Inactivity and miscellaneous fees</h3>
-            <p>
+            <GuideH2>The full fee menu</GuideH2>
+            <GuideP>Every way a crypto card can charge you, in one place:</GuideP>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                { title: "Issuance fees", range: "$0-$100+", body: "What you pay to get the card. Virtual cards are often free or cheap ($0-$10). Physical cards typically cost $10-$50. Metal cards can cost $100 or more, sometimes bundled with a premium tier. One-time cost, so it matters less than recurring fees." },
+                { title: "Subscription fees", range: "$5-$30/month", body: "Premium tiers with higher cashback or limits. Do the math: a $15/month fee needs $180/year in extra cashback just to break even versus the free tier. Only makes sense if your spending clears that hurdle comfortably." },
+                { title: "Foreign exchange fees", range: "0.5%-2%", body: "Applied when you spend in a currency different from your card's base currency, on top of the crypto conversion spread. Some cards advertise 'no FX fees' but still apply a spread on the crypto conversion, so check both." },
+                { title: "ATM fees and limits", range: "1%-2% after allowance", body: "Most cards include a free ATM allowance (commonly $200-$800/month), then charge 1%-2% beyond it. The ATM operator's own surcharge is separate. If you need cash regularly, the free allowance matters more than cashback." },
+                { title: "Top-up and deposit fees", range: "0%-3%", body: "On-chain deposits may just cost network gas. Card or bank top-ups can carry 1%-3% processing fees. Some programs charge for converting between cryptocurrencies inside the wallet." },
+                { title: "Token lockup cost", range: "Opportunity cost", body: "Higher cashback tiers may require locking the program's native token. Your tokens sit illiquid and exposed to price drops. A 'free' premium tier requiring a $4,000 token lockup is not free." },
+              ].map((fee) => (
+                <div key={fee.title} className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="font-black text-slate-950">{fee.title}</p>
+                    <span className="shrink-0 rounded-full bg-indigo-100 px-3 py-1 text-xs font-black text-indigo-800">{fee.range}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{fee.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <Callout tone="amber" title="Often missed">
               Less common but worth checking: monthly inactivity fees on dormant accounts, card replacement fees, chargeback fees, and fees for paper statements or premium support. Read the full schedule, not just the summary.
-            </p>
+            </Callout>
 
-            <h2>How to compare the true cost</h2>
-            <p>
-              Ignore the marketing and build your own comparison for your usage:
-            </p>
-            <ol>
-              <li><strong>Estimate your monthly card spending</strong> in fiat terms.</li>
-              <li><strong>Find the conversion spread</strong> (ask support if it is not published; their answer tells you a lot).</li>
-              <li><strong>Add subscription fees</strong> if you are considering a paid tier.</li>
-              <li><strong>Add expected ATM costs</strong> based on your cash usage versus the free allowance.</li>
-              <li><strong>Add FX costs</strong> if you spend in foreign currencies.</li>
-              <li><strong>Subtract realistic cashback</strong> after caps, not the headline rate.</li>
-            </ol>
-            <p>
-              The card with the lowest total is your answer, regardless of which one has the flashiest rewards page. Our <Link href={HUB_URL}>crypto cards directory</Link> and <Link href={`${HUB_URL}#calculator`}>cashback calculator</Link> can help with the comparison.
-            </p>
+            <GuideH2>How to compare the true cost</GuideH2>
+            <GuideP>Ignore the marketing and build your own comparison for your usage:</GuideP>
+            <StepList steps={[
+              { title: "Estimate your monthly card spending", body: "In fiat terms, based on your real habits." },
+              { title: "Find the conversion spread", body: "Ask support if it is not published. Their answer tells you a lot." },
+              { title: "Add subscription fees", body: "If you are considering a paid tier." },
+              { title: "Add expected ATM costs", body: "Based on your cash usage versus the free allowance." },
+              { title: "Add FX costs", body: "If you spend in foreign currencies." },
+              { title: "Subtract realistic cashback", body: "After caps, not the headline rate." },
+            ]} />
+            <GuideP>
+              The card with the lowest total is your answer, regardless of which one has the flashiest rewards page. Our <Link href={HUB_URL} className="font-black text-fuchsia-700 hover:text-fuchsia-900">crypto cards directory</Link> and <Link href={`${HUB_URL}#calculator`} className="font-black text-fuchsia-700 hover:text-fuchsia-900">cashback calculator</Link> can help with the comparison.
+            </GuideP>
 
-            <h2>Red flags in fee marketing</h2>
-            <ul>
-              <li><strong>"Zero fees"</strong> without specifying which fees. Usually means zero issuance fee, with spreads and other charges intact.</li>
-              <li><strong>Cashback rates without caps.</strong> A 5% rate capped at $10/month is worse than 1.5% uncapped for most spenders.</li>
-              <li><strong>"Interbank rate" claims</strong> without specifying when the rate is locked. The rate at authorization vs settlement can differ.</li>
-              <li><strong>Fee schedules that require login to view.</strong> Transparency should not need an account.</li>
-            </ul>
+            <div className="mt-8 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 sm:p-7" role="img" aria-label="Infographic: on 100 dollars of monthly spending, a 1 percent spread costs 12 dollars a year, a 2 percent FX fee on half your spending costs 12 dollars a year">
+              <p className="text-xs font-black uppercase tracking-[0.17em] text-indigo-700">Where the money goes</p>
+              <p className="mt-2 text-lg font-black text-slate-950">What $100 of monthly spending really costs</p>
+              <div className="mt-5 space-y-3">
+                {[
+                  { label: "1% spread on all $100", cost: "$12/year", width: "50%" },
+                  { label: "2% FX fee on $50 of travel spending", cost: "$12/year", width: "50%" },
+                  { label: "$15/month subscription, unrecovered", cost: "$180/year", width: "100%" },
+                ].map((row) => (
+                  <div key={row.label}>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-semibold text-slate-700">{row.label}</span>
+                      <span className="font-black text-slate-950">{row.cost}</span>
+                    </div>
+                    <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-white">
+                      <div className="h-full rounded-full bg-gradient-to-r from-indigo-600 to-fuchsia-500" style={{ width: row.width }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs leading-5 text-slate-500">Illustrative figures. Your costs depend on your card's actual schedule and your spending mix.</p>
+            </div>
+
+            <GuideH2>Red flags in fee marketing</GuideH2>
+            <WarningList items={[
+              { title: '"Zero fees" without specifying which fees', body: "Usually means zero issuance fee, with spreads and other charges intact." },
+              { title: "Cashback rates without caps", body: "A 5% rate capped at $10/month is worse than 1.5% uncapped for most spenders." },
+              { title: '"Interbank rate" claims without timing', body: "The rate at authorization vs settlement can differ. Ask when the rate is locked." },
+              { title: "Fee schedules that require login to view", body: "Transparency should not need an account." },
+            ]} />
           </div>
 
           <section className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6">

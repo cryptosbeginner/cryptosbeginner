@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
+import { GuideH2, GuideP, Callout, StepList, BulletList } from "../GuideStyles";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/how-crypto-cards-work`;
@@ -108,60 +109,128 @@ export default function HowCryptoCardsWorkGuide() {
 
           <AuthorByline updated="14 October 2026" />
 
-          <div className="prose prose-slate mt-10 max-w-none">
-            <h2>The short version</h2>
-            <p>
+          <div className="mt-10">
+            <GuideH2>The short version</GuideH2>
+            <GuideP>
               A crypto card connects your cryptocurrency holdings to the Visa or Mastercard payment network. When you pay for something, crypto is converted to fiat currency and the merchant receives fiat. You never hand Bitcoin directly to the coffee shop. The card is a bridge, not a crypto-native payment rail.
-            </p>
+            </GuideP>
 
-            <h2>Two funding models: top-up vs direct spend</h2>
-            <p>
+            <Callout tone="cyan" title="The one-sentence version">
+              You tap. Crypto becomes fiat behind the scenes. The merchant gets dollars or euros and never knows crypto was involved.
+            </Callout>
+
+            <GuideH2>Two funding models: top-up vs direct spend</GuideH2>
+            <GuideP>
               Crypto cards generally follow one of two models. Understanding which one your card uses matters because it affects fees, convenience, and control.
-            </p>
-            <h3>Top-up (prepaid) model</h3>
-            <p>
-              You convert cryptocurrency to fiat and load it onto the card in advance, like topping up a prepaid phone. Spending draws from this fiat balance. The advantage is predictability: you lock in the conversion rate when you top up, and there are no surprises at checkout. The downside is an extra step before you can spend, and your loaded fiat balance earns nothing while it sits there.
-            </p>
-            <h3>Direct-spend model</h3>
-            <p>
-              The card pulls from your crypto balance automatically at the point of sale, converting just enough crypto to cover each transaction. This is more convenient, you do not need to pre-load, but you accept whatever conversion rate and spread applies at that exact moment. If the market moves sharply, the cost of your purchase in crypto terms can differ from what you expected.
-            </p>
+            </GuideP>
 
-            <h2>Where stablecoins fit in</h2>
-            <p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-5 sm:p-6">
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-cyan-800">Model A</p>
+                <p className="mt-2 text-lg font-black text-slate-950">Top-up (prepaid)</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  You convert crypto to fiat and load it onto the card in advance, like topping up a prepaid phone. Spending draws from this fiat balance.
+                </p>
+                <div className="mt-4 space-y-2 text-sm">
+                  <p className="flex gap-2"><span className="font-black text-emerald-700">+</span><span className="text-slate-700">Predictable: you lock the rate when you top up</span></p>
+                  <p className="flex gap-2"><span className="font-black text-emerald-700">+</span><span className="text-slate-700">No surprises at checkout</span></p>
+                  <p className="flex gap-2"><span className="font-black text-rose-700">-</span><span className="text-slate-700">Extra step before you can spend</span></p>
+                  <p className="flex gap-2"><span className="font-black text-rose-700">-</span><span className="text-slate-700">Loaded fiat earns nothing sitting there</span></p>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-5 sm:p-6">
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-fuchsia-800">Model B</p>
+                <p className="mt-2 text-lg font-black text-slate-950">Direct spend</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  The card pulls from your crypto balance automatically at the point of sale, converting just enough crypto to cover each transaction.
+                </p>
+                <div className="mt-4 space-y-2 text-sm">
+                  <p className="flex gap-2"><span className="font-black text-emerald-700">+</span><span className="text-slate-700">Convenient: no pre-loading needed</span></p>
+                  <p className="flex gap-2"><span className="font-black text-emerald-700">+</span><span className="text-slate-700">Spend straight from your balance</span></p>
+                  <p className="flex gap-2"><span className="font-black text-rose-700">-</span><span className="text-slate-700">You accept the rate at that exact moment</span></p>
+                  <p className="flex gap-2"><span className="font-black text-rose-700">-</span><span className="text-slate-700">Sharp market moves can change your cost</span></p>
+                </div>
+              </div>
+            </div>
+
+            <GuideH2>Where stablecoins fit in</GuideH2>
+            <GuideP>
               Many card programs use stablecoins such as USDT or USDC as a middle layer. You hold stablecoins in the card wallet, and spending converts them to local fiat at checkout. This sidesteps the volatility problem: your spending balance holds its dollar value instead of swinging with Bitcoin's price. For most users, keeping spending money in stablecoins and investment crypto separate is the sensible approach.
-            </p>
+            </GuideP>
 
-            <h2>What happens when you tap to pay</h2>
-            <p>Here is the typical sequence for a direct-spend card:</p>
-            <ol>
-              <li>You tap your card or phone at a terminal for a $50 purchase.</li>
-              <li>The card program checks your available crypto or stablecoin balance.</li>
-              <li>It converts roughly $50 worth (plus any spread or fee) to fiat.</li>
-              <li>The Visa or Mastercard network processes a standard fiat transaction.</li>
-              <li>The merchant receives $50 minus their usual card processing fees.</li>
-            </ol>
-            <p>
-              The whole thing takes seconds. From the merchant's perspective, it is indistinguishable from a regular card payment. They do not need to accept crypto, run special software, or even know you paid with a crypto card.
-            </p>
+            <GuideH2>What happens when you tap to pay</GuideH2>
+            <GuideP>Here is the typical sequence for a direct-spend card:</GuideP>
 
-            <h2>Self-custody cards: a newer model</h2>
-            <p>
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-950 p-5 text-white sm:p-7" role="img" aria-label="Infographic: the five steps of a crypto card payment, from tap to merchant settlement">
+              <p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-300">The payment journey</p>
+              <p className="mt-2 text-lg font-black">A $50 tap, second by second</p>
+              <ol className="mt-5 space-y-0">
+                {[
+                  { n: "1", title: "You tap", body: "Card or phone at the terminal for a $50 purchase." },
+                  { n: "2", title: "Balance check", body: "The card program checks your available crypto or stablecoin balance." },
+                  { n: "3", title: "Conversion", body: "Roughly $50 worth (plus any spread or fee) converts to fiat." },
+                  { n: "4", title: "Network processing", body: "Visa or Mastercard processes a standard fiat transaction." },
+                  { n: "5", title: "Merchant paid", body: "The merchant receives $50 minus their usual card processing fees." },
+                ].map((s, i, arr) => (
+                  <li key={s.n} className="relative flex gap-4 pb-6 last:pb-0">
+                    {i < arr.length - 1 && <span className="absolute left-[17px] top-10 h-full w-0.5 bg-white/15" aria-hidden="true" />}
+                    <span className="z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cyan-400 text-sm font-black text-slate-950">{s.n}</span>
+                    <div className="pt-1">
+                      <p className="font-black text-white">{s.title}</p>
+                      <p className="mt-0.5 text-sm leading-6 text-slate-300">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-5 rounded-xl border border-white/15 bg-white/[0.07] p-4 text-sm leading-6 text-slate-300">
+                The whole thing takes seconds. From the merchant's perspective, it is indistinguishable from a regular card payment.
+              </p>
+            </div>
+
+            <GuideH2>Self-custody cards: a newer model</GuideH2>
+            <GuideP>
               A newer category connects directly to your own crypto wallet instead of requiring you to deposit funds with the card company. You keep control of your private keys, and the card draws from your wallet at spend time, often using smart contracts. This removes custodial risk (the card company cannot freeze your deposited balance because they never hold it), but the products are newer, availability is limited, and the user experience can be rougher.
-            </p>
+            </GuideP>
 
-            <h2>Key differences from a regular debit card</h2>
-            <ul>
-              <li><strong>Conversion spread:</strong> Regular debit cards spend fiat directly. Crypto cards add a conversion step, and the spread on that conversion is often the card program's main revenue source.</li>
-              <li><strong>Volatility exposure:</strong> If you hold volatile crypto as your spending balance, your purchasing power fluctuates. Regular debit balances do not.</li>
-              <li><strong>Tax events:</strong> In many countries, converting crypto to fiat counts as a disposal for tax purposes. Every coffee purchase could theoretically be a taxable event. Regular debit spending has no such implication.</li>
-              <li><strong>Issuer risk:</strong> Your card depends on the card program staying in business and maintaining its banking relationships. If the issuer has problems, your card can stop working with little warning.</li>
-            </ul>
+            <GuideH2>Key differences from a regular debit card</GuideH2>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-slate-950 text-white">
+                    <th className="p-4 text-left font-black">What differs</th>
+                    <th className="p-4 text-left font-black">Regular debit card</th>
+                    <th className="p-4 text-left font-black">Crypto card</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    ["Conversion", "Spends fiat directly", "Adds a conversion step; the spread is often the program's main revenue"],
+                    ["Volatility", "Balance holds its value", "Purchasing power fluctuates if you hold volatile crypto"],
+                    ["Tax", "No tax implication", "Each conversion can be a taxable disposal in many countries"],
+                    ["Issuer risk", "Bank-backed", "Depends on the program staying in business and keeping banking partners"],
+                  ].map(([a, b, c]) => (
+                    <tr key={a} className="bg-white odd:bg-slate-50">
+                      <td className="p-4 font-black text-slate-950">{a}</td>
+                      <td className="p-4 leading-6 text-slate-600">{b}</td>
+                      <td className="p-4 leading-6 text-slate-600">{c}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-            <h2>What to check before getting one</h2>
-            <p>
-              Before applying for any crypto card, confirm: which funding model it uses, the conversion spread (not just the headline "no fees" claim), supported cryptocurrencies, your country's eligibility, ATM fees and limits, and what happens to your balance if the program shuts down. Our <Link href={HUB_URL}>crypto cards directory</Link> lists these details per card with links to official sources.
-            </p>
+            <GuideH2>What to check before getting one</GuideH2>
+            <BulletList items={[
+              <span key="1">Which <strong className="text-slate-950">funding model</strong> it uses: top-up or direct spend.</span>,
+              <span key="2">The <strong className="text-slate-950">conversion spread</strong>, not just the headline "no fees" claim.</span>,
+              <span key="3">Which <strong className="text-slate-950">cryptocurrencies</strong> are supported.</span>,
+              <span key="4">Your country's <strong className="text-slate-950">eligibility</strong>.</span>,
+              <span key="5"><strong className="text-slate-950">ATM fees and limits</strong>.</span>,
+              <span key="6">What happens to your balance <strong className="text-slate-950">if the program shuts down</strong>.</span>,
+            ]} />
+            <GuideP>
+              Our <Link href={HUB_URL} className="font-black text-fuchsia-700 hover:text-fuchsia-900">crypto cards directory</Link> lists these details per card with links to official sources.
+            </GuideP>
           </div>
 
           <section className="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6">
