@@ -35,6 +35,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
       { label: "DEXes", href: "/dexes" },
       { label: "Crypto Glossary", href: "/learn/crypto-glossary" },
       { label: "Bitcoin Forks", href: "/learn/bitcoin-forks" },
+      { label: "Swap Crypto", href: "/tools/swap" },
       { label: "Bitcoin Halving", href: "/tools/bitcoin-halving" },
       { label: "Fee Calculator", href: "/tools/fee-calculator" },
     ],
