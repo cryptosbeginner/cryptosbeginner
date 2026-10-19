@@ -9,26 +9,40 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/bydfi-review`;
 
-const UPDATED = "11 October 2026";
-const UPDATED_ISO = "2026-10-11";
+const UPDATED = "20 October 2026";
+const UPDATED_ISO = "2026-10-20";
 const ORIGINALLY_PUBLISHED = "12 May 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-05-12";
 
 const BYDFI = "https://go.cryptosbeginner.com/BYDFi";
 const BYDFI_FEES =
   "https://www.bydfi.com/support/article/transaction-fee-calculation-420626952122912768";
+const BYDFI_FEE_OVERVIEW =
+  "https://www.bydfi.com/support/article/deposit-withdrawal-fees-432587345120586752";
+const BYDFI_COPY_TRADING = "https://www.bydfi.com/support/copy-trading";
+const BYDFI_FUTURES = "https://www.bydfi.com/support/futures-trading";
+const BYDFI_BOTS = "https://www.bydfi.com/support/trading-bots";
+const BYDFI_SPOT = "https://www.bydfi.com/support/spot-trading";
+const BYDFI_CONVERT_FAQ =
+  "https://www.bydfi.com/support/article/convert-faqs-437545352287879168";
+const BYDFI_EARN_FAQ =
+  "https://www.bydfi.com/support/article/faq-on-futures-earn-443429045166538752";
+const BYDFI_WITHDRAWAL =
+  "https://www.bydfi.com/support/deposit-withdrawal/withdrawal";
+const BYDFI_FIAT_BUY = "https://www.bydfi.com/support/fiat/buy-crypto";
+const CMC_POR = "https://coinmarketcap.com/exchanges/bydfi/";
 
 export const metadata: Metadata = {
   title: "BYDFi Review 2026: Fees, No-KYC Trading & 500x Leverage, Honestly Assessed",
   description:
-    "October 2026 BYDFi review: the no-KYC exchange with 500x futures, copy trading, and MoonX. Fees, regulation, the removed PoR page, and honest warnings.",
+    "October 2026 BYDFi review: fees, copy trading, Futures Earn, proof of reserves, and the honest warnings. US users are now prohibited. Verified from official sources.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "BYDFi Review 2026: Fees, No-KYC Trading & 500x Leverage",
     description:
-      "BYDFi's fees, no-KYC policy, copy trading, and risks, assessed honestly.",
+      "BYDFi's fees, no-KYC policy, copy trading, and risks, assessed honestly with official sources.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -51,34 +65,34 @@ export const metadata: Metadata = {
 
 const faqItems = [
   {
-    question: "Is BYDFi safe and legit?",
+    question: "What are BYDFi's trading fees?",
     answer:
-      "BYDFi is a real, operating exchange founded in 2020 with an 800 BTC protection fund and cold-warm-hot custody. But it names no financial regulator that supervises it, and a September 2026 system upgrade removed both its trading API and its Proof of Reserves page, which are steps in the wrong direction for transparency. Treat it as a place to trade, not a place to store funds.",
+      "Spot trading costs 0.10% maker and taker, flat, with no volume tiers on spot. Futures cost 0.02% maker and 0.06% taker at the base tier, with VIP discounts of up to 60% for high-volume traders. The Convert tool charges zero fees. Crypto deposits are free; withdrawals carry network-based fees. Fiat on-ramps run through third-party providers with their own fees, shown at checkout.",
+  },
+  {
+    question: "Can US users trade on BYDFi?",
+    answer:
+      "No. As of the March 2026 Terms of Use, the United States is a prohibited country on BYDFi, down to individual territories like Puerto Rico and Guam. Canada is also prohibited. The older US money-services registration is an anti-money-laundering filing, not an exchange operating license, and it does not make BYDFi legal for US users. Do not use a VPN to bypass restrictions; BYDFi can freeze accounts that do.",
   },
   {
     question: "Does BYDFi require KYC?",
     answer:
-      "No. BYDFi is KYC-optional: unverified users can trade with a daily withdrawal limit of around 50,000 USDT. Completing KYC raises limits and unlocks some fiat deposit methods. The exchange is restricted in some countries, including China, Pakistan, Bangladesh, Kazakhstan, the UK, and Iran.",
+      "No, KYC is optional for spot and futures trading. The exact no-KYC withdrawal limit is not currently verifiable from official sources: third-party figures range from 0.5 to 1.5 BTC per day, and DataWallet removed BYDFi from its no-KYC ranking in September 2026 because it could not confirm a figure. On a real verified account, Primary KYC allows 50,000 USDT per day in crypto withdrawals and Advanced KYC allows 500,000 USDT per day. KYC also unlocks fiat purchase channels and the BYDFi card.",
   },
   {
-    question: "What are BYDFi's trading fees?",
+    question: "How does BYDFi copy trading work?",
     answer:
-      "Spot trading costs 0.10% maker and taker, flat, with no discounts. Futures cost 0.02% maker and 0.06% taker. Crypto deposits are free; withdrawals carry network-based fees.",
+      "You pick a trader from the leaderboard, allocate from $10, and your account mirrors their futures trades automatically. You pay a 10% profit share on winning copied trades only; nothing is taken from losing trades. Trader profiles show real-time P&L, ROI, win rate, and follower counts. The honest warning: past performance of copied traders predicts nothing, and most copy traders lose money.",
   },
   {
-    question: "What is the maximum leverage on BYDFi?",
+    question: "Does BYDFi publish proof of reserves?",
     answer:
-      "Since 30 September 2026, BYDFi offers up to 500x leverage on BTC and ETH futures, up from 200x. At 500x, a 0.2% price move against you liquidates the position. This is an extremely dangerous product for beginners and should be treated as a warning label, not a selling point.",
+      "BYDFi says its reserves are audited by Hacken and advertises an 800 BTC protection fund established in September 2025. CoinMarketCap's independent proof-of-reserves tracker currently shows about $98 million in reserves across BTC (about 902 BTC), XRP (6.7 million), USDC (about 10.3 million), ETH (about 1,003), and USDT (about 1.88 million). Treat these as point-in-time snapshots, not full financial audits.",
   },
   {
-    question: "What is MoonX on BYDFi?",
+    question: "What is Futures Earn on BYDFi?",
     answer:
-      "MoonX is BYDFi's on-chain trading tool that routes orders to over 500,000 pairs on Solana, BNB Chain, and Base, letting you trade memecoins and DeFi tokens from inside the exchange interface.",
-  },
-  {
-    question: "Does BYDFi have copy trading and a demo account?",
-    answer:
-      "Yes to both. BYDFi offers copy trading with several modes, trading bots, and a free demo trading account, which is the only safe way to learn its futures interface before risking real money.",
+      "Futures Earn pays daily interest on USDT held in your futures account, advertised at up to 18% estimated maximum APR with a 10 USDT minimum. Once activated, eligible funds enroll automatically without affecting your futures trading. The rate is an estimate that can change, and it is not risk-free: your funds sit on the exchange, so the usual custody warnings apply.",
   },
 ] as const;
 
@@ -144,6 +158,39 @@ function Steps({ items }: { items: string[] }) {
   );
 }
 
+function Figure({
+  src,
+  alt,
+  caption,
+  width = 1440,
+  height = 900,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  width?: number;
+  height?: number;
+  priority?: boolean;
+}) {
+  return (
+    <figure className="mt-6">
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
+        loading={priority ? undefined : "lazy"}
+        priority={priority}
+      />
+      <figcaption className="mt-2 text-sm leading-6 text-slate-600">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 const tocItems = [
   { id: "what-is", label: "What BYDFi is" },
   { id: "fees", label: "Fees and costs" },
@@ -153,8 +200,8 @@ const tocItems = [
   { id: "withdraw", label: "How to withdraw" },
   { id: "kyc", label: "No-KYC trading" },
   { id: "leverage", label: "The 500x leverage warning" },
-  { id: "regulation", label: "Regulation and the removed PoR page" },
-  { id: "products", label: "Copy trading, MoonX, TradFi, and the card" },
+  { id: "regulation", label: "Regulation and proof of reserves" },
+  { id: "products", label: "Copy trading, bots, DCA, and earn" },
   { id: "ratings", label: "What users say: ratings" },
   { id: "pros-cons", label: "Pros and cons" },
   { id: "who", label: "Who it suits, and who should skip it" },
@@ -170,7 +217,7 @@ export default function BydfiReviewPage() {
     headline:
       "BYDFi Review 2026: Fees, No-KYC Trading & 500x Leverage, Honestly Assessed",
     description:
-      "October 2026 BYDFi review: the no-KYC exchange with 500x futures, copy trading, and MoonX. Fees, regulation, the removed PoR page, and honest warnings.",
+      "October 2026 BYDFi review: fees, copy trading, Futures Earn, proof of reserves, and the honest warnings. US users are now prohibited.",
     datePublished: ORIGINALLY_PUBLISHED_ISO,
     dateModified: UPDATED_ISO,
     mainEntityOfPage: {
@@ -263,11 +310,10 @@ export default function BydfiReviewPage() {
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-800">
               If you want to trade crypto without verifying your identity,
               BYDFi is one of the first names you will hear: 1,000-plus
-              spot pairs, copy trading, and futures leverage that hit 500x
-              in September 2026. It is usable for active traders, but go in
-              with your eyes open. The missing licence, the removed
-              proof-of-reserves page, and that leverage all need to be said
-              plainly.
+              spot pairs, copy trading, grid bots, and futures leverage
+              that reaches 500x on BTC. It is usable for active traders,
+              but go in with your eyes open. The thin licence story, the
+              US ban, and that leverage all need to be said plainly.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -302,16 +348,12 @@ export default function BydfiReviewPage() {
             content, not financial advice.
           </div>
 
-          <figure className="mt-8">
-            <Image
-              src="/images/bydfi-homepage-2026.png"
-              alt="BYDFi homepage with the BUIDL Your Dream Finance tagline and 500x futures navigation"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              priority
-            />
-          </figure>
+          <Figure
+            src="/images/exchanges/bydfi-review/markets-overview.png"
+            alt="BYDFi Markets page showing Hot Tokens, Hot Futures, and Spot Gainers panels with BTC, ETH, and SOL prices"
+            caption="The BYDFi Markets page: hot tokens, hot futures with 500x badges on BTC and ETH perpetuals, and spot gainers. This is the starting point for finding pairs to trade."
+            priority
+          />
 
           <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-7">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">
@@ -320,28 +362,37 @@ export default function BydfiReviewPage() {
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
                 <strong className="text-slate-950">No-KYC trading.</strong>{" "}
-                Trade without identity verification, up to about 50,000 USDT
-                in daily withdrawals.
+                Trade without identity verification. The exact no-KYC
+                withdrawal limit is not verifiable from official sources,
+                so treat third-party numbers with caution.
+              </li>
+              <li>
+                <strong className="text-slate-950">US users are banned.</strong>{" "}
+                The March 2026 Terms of Use list the United States as a
+                prohibited country. Older reviews saying otherwise are out
+                of date.
               </li>
               <li>
                 <strong className="text-slate-950">500x leverage.</strong>{" "}
-                BTC and ETH futures went to 500x in September 2026. A 0.2%
-                move against you means liquidation. Read that twice.
+                BTC futures go to 500x. A 0.2% move against you means
+                liquidation. Read that twice.
               </li>
               <li>
                 <strong className="text-slate-950">Simple fees.</strong>{" "}
                 Spot 0.10% maker and taker, futures 0.02% maker and 0.06%
-                taker, no tiers or discounts.
+                taker, zero-fee Convert, VIP discounts on futures.
               </li>
               <li>
                 <strong className="text-slate-950">Wide product set.</strong>{" "}
-                1,000-plus spot pairs, 500-plus perps, copy trading, bots,
-                MoonX on-chain trading, TradFi assets, and a Visa card.
+                1,000-plus spot pairs, 500-plus perps, copy trading, grid
+                bots, DCA plans, Futures Earn at up to 18% APR, MoonX
+                on-chain trading, TradFi assets, and a Visa card.
               </li>
               <li>
-                <strong className="text-slate-950">Transparency went backwards.</strong>{" "}
-                The September 2026 upgrade removed the proof-of-reserves page
-                and the trading API. No regulator supervises the exchange.
+                <strong className="text-slate-950">Reserves are visible.</strong>{" "}
+                CoinMarketCap's independent tracker shows about $98 million
+                in reserves; BYDFi advertises an 800 BTC protection fund.
+                No hacks on record since the 2020 launch.
               </li>
               <li>
                 <strong className="text-slate-950">Trade here, do not store here.</strong>{" "}
@@ -372,23 +423,14 @@ export default function BydfiReviewPage() {
         <Section id="what-is">
           <H2>What BYDFi is</H2>
           <P>
-            BYDFi's whole identity is access. It launched in 2020 out of
-            Singapore and made its name by letting people trade without
-            KYC and listing the long tail of altcoins the big exchanges
-            ignore. Today it lists over 1,000 spot pairs and 500-plus
-            perpetual contracts, earned a Forbes top-ten nod in 2023, and
-            the name stands for "BUIDL Your Dream Finance."
+            BYDFi's whole identity is access. It launched in 2020 and made
+            its name by letting people trade without KYC and listing the
+            long tail of altcoins the big exchanges ignore. Today it claims
+            over 1 million users across 190-plus countries, lists 1,000-plus
+            spot pairs and 500-plus perpetual contracts, and is the official
+            cryptocurrency exchange partner of Newcastle United. The name
+            stands for "BUIDL Your Dream Finance."
           </P>
-          <figure className="mt-6">
-            <Image
-              src="/images/bydfi-spot-2026.png"
-              alt="BYDFi spot trading interface showing the BTC/USDT chart, order book, and buy/sell panel"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              loading="lazy"
-            />
-          </figure>
           <P>
             It is a derivatives-first venue in beginner-friendly clothing:
             one-click buy, demo trading, and copy trading sit right next to
@@ -400,29 +442,41 @@ export default function BydfiReviewPage() {
 
         <Section id="fees">
           <H2>Fees and costs</H2>
-          <figure className="mt-6">
-            <Image
-              src="/images/bydfi-fees-2026.png"
-              alt="BYDFi official fee schedule showing spot trading fees of 0.1% maker and 0.1% taker"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              loading="lazy"
-            />
-          </figure>
+          <Figure
+            src="/images/exchanges/bydfi-review/fee-overview.png"
+            alt="BYDFi Fee Overview page showing Spot Trading Fee at 0.1% maker and taker, and Futures Trading Fee at 0.02% maker and 0.06% taker"
+            caption="BYDFi's official fee overview, captured from the live site: spot is a flat 0.10% both sides, futures are 0.02% maker and 0.06% taker at the base tier."
+          />
           <P>
             Spot trading costs{" "}
             <strong className="text-slate-900">0.10% maker and taker</strong>,
-            flat, with no volume tiers or token discounts. Futures cost{" "}
-            <strong className="text-slate-900">0.02% maker and 0.06% taker</strong>.
-            Crypto deposits are free, withdrawals carry network-based fees,
-            and fiat on-ramps run through third-party processors with fees
-            typically between 1% and 5%. Check the{" "}
+            flat, with no volume tiers or token discounts on spot. Futures
+            cost{" "}
+            <strong className="text-slate-900">0.02% maker and 0.06% taker</strong>{" "}
+            at the base tier, with a VIP program (VIP 0 through 6) cutting
+            futures fees by up to 60% for high-volume traders. Crypto
+            deposits are free, withdrawals carry network-based fees, and
+            fiat on-ramps run through third-party processors with their own
+            fees shown at checkout. Check the{" "}
             <Link href={BYDFI_FEES} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              official fee article
+              official fee calculation article
+            </Link>{" "}
+            and the{" "}
+            <Link href={BYDFI_FEE_OVERVIEW} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              deposit and withdrawal fee schedule
             </Link>{" "}
             before you trade, since fee pages change.
           </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/spot-fees-table.png"
+            alt="BYDFi spot fee table listing BTC, ETH, XRP, SOL, ADA, LTC, TRX, LINK, DOGE, and SHIB pairs against USDT, each at 0.1% maker and taker"
+            caption="The spot fee table: every major pair sits at the same flat 0.10% maker and taker. Simple, but there are no volume discounts on spot."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/futures-fees-table.png"
+            alt="BYDFi USDT-M futures fee table showing BTC, ETH, XRP, SOL, and altcoin perpetuals all at 0.02% maker and 0.06% taker"
+            caption="The futures fee table: every USDT-M perpetual, from BTC down to small-cap altcoins, charges 0.02% maker and 0.06% taker at the base tier."
+          />
         </Section>
 
         <Section id="signup">
@@ -435,31 +489,58 @@ export default function BydfiReviewPage() {
           <Steps
             items={[
               "Go to the BYDFi website or app and register with your email or phone number.",
-              "You can start trading right away: unverified accounts can deposit, trade, and withdraw up to around 50,000 USDT per day.",
-              "Optional: complete KYC in your account settings to raise your limits and unlock more fiat deposit methods.",
+              "You can start trading right away without KYC: deposit, trade spot and futures, and use bots and copy trading.",
+              "Optional: complete Primary or Advanced KYC in your account settings to raise withdrawal limits and unlock fiat channels and the BYDFi card.",
               "Turn on two-factor authentication before you deposit anything.",
             ]}
           />
           <P>
-            Check that BYDFi serves your country first. It restricts users
-            in China, Pakistan, Bangladesh, Kazakhstan, the UK, and Iran,
-            and you should never use a VPN to get around that.
+            Check that BYDFi serves your country first. The United States
+            and Canada are prohibited under the March 2026 Terms of Use,
+            along with 40-plus other jurisdictions, and you should never use
+            a VPN to get around that.
           </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/language-options.png"
+            alt="BYDFi language selector showing English, Japanese, Vietnamese, Russian, Spanish, Portuguese, Traditional Chinese, Dutch, and Polish"
+            caption="BYDFi ships in nine languages, a sign of how international its user base is. English is the default, with full Asian and European coverage."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/currency-options.png"
+            alt="BYDFi display currency selector showing USD, CAD, AUD, VND, RUB, EUR, TRY, and JPY options"
+            caption="The display currency picker covers the major fiat currencies, so balances and P&L read naturally wherever you are."
+          />
         </Section>
 
         <Section id="deposit">
           <H2>How to deposit</H2>
           <P>
             Crypto is the natural way to fund a no-KYC account. Fiat is
-            possible through third-party processors, but it costs more.
+            possible through third-party processors and bank transfer, but
+            it costs more and some channels need KYC.
           </P>
           <Steps
             items={[
               "Log in and open your Assets or Wallet, then choose Deposit.",
               "For crypto: pick the coin, copy your BYDFi deposit address, and send from your wallet or another exchange. Crypto deposits are free, but always match the network.",
-              "For fiat: choose a third-party on-ramp in your region. Fees typically run between 1% and 5%, so check the quote before you confirm.",
+              "For fiat: choose a third-party on-ramp (Banxa, Transak, Mercuryo, or Alchemy Pay) in your region. Fees vary by provider and are shown at checkout.",
               "For a first deposit, send a small test amount and confirm it arrives before moving the rest.",
             ]}
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/deposit-guide.png"
+            alt="BYDFi deposit guide showing the four steps: select token and copy wallet address, withdraw to the address, wait for network confirmation, deposit successful"
+            caption="BYDFi's own four-step deposit guide. The key warning is in the tips panel: never use your deposit address for airdrops or mining, and match the network exactly."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/bank-transfer-purchase.png"
+            alt="BYDFi bank transfer purchase page showing a 100 USD purchase converting to about 98 USDT through Legend Trading at zero transaction fee, with KYC name-matching requirements"
+            caption="Bank transfer purchases run through Legend Trading. The example quote shows $100 converting to about 98 USDT at zero stated transaction fee, but the bank account name must match your BYDFi KYC name or the transfer fails."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/fiat-currencies.png"
+            alt="BYDFi fiat currency list showing USD, EUR, CHF, JPY, AUD, and CAD as available purchase currencies"
+            caption="Supported fiat purchase currencies include USD, EUR, CHF, JPY, AUD, and CAD. Availability of each channel depends on your region and the third-party provider."
           />
         </Section>
 
@@ -479,9 +560,27 @@ export default function BydfiReviewPage() {
             ]}
           />
           <P>
-            Use the demo account to learn the interface before risking real
-            money. It is free and it exists for exactly this.
+            For the simplest possible purchase, the Convert tool swaps one
+            crypto for another instantly with zero stated fees and no order
+            book to learn. Use the demo account to learn the interface
+            before risking real money. It is free and it exists for exactly
+            this.
           </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/spot-trading-btc-usdt.png"
+            alt="BYDFi spot trading interface for BTC/USDT showing the candlestick chart, order book, recent trades, and buy/sell panel with limit and market orders"
+            caption="The spot trading interface: full charting, a live order book, and a straightforward buy/sell panel. The fee readout at the bottom confirms the flat 0.10% maker and taker."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/convert-interface.png"
+            alt="BYDFi Convert tool showing a USDT to BTC conversion widget with zero fees, instant conversion, and a preview button"
+            caption="The Convert tool: pick a coin, pick a target, preview, done. BYDFi states zero fees and instant conversion, which makes it the easiest on-ramp for a first purchase."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/convert-faq.png"
+            alt="BYDFi Convert FAQ explaining that Convert exchanges crypto instantly without order book matching, with zero fees and no slippage"
+            caption="Convert's official FAQ: instant exchange with no order book matching, zero fees, and no slippage. The full FAQ is linked in the references section below."
+          />
         </Section>
 
         <Section id="withdraw">
@@ -489,19 +588,30 @@ export default function BydfiReviewPage() {
           <P>
             Withdraw regularly and keep only what you are actively trading
             on the exchange. That is the golden rule for any no-KYC venue.
+            Note that withdrawals are crypto-only: there is no direct fiat
+            withdrawal.
           </P>
           <Steps
             items={[
               "Open Assets or Wallet and choose Withdraw.",
               "Pick the coin, paste your external wallet address, and confirm the network matches. Withdrawal fees are network-based.",
-              "Enter the amount, keeping in mind the roughly 50,000 USDT daily limit for unverified accounts.",
+              "Enter the amount, keeping your account's daily limit in mind.",
               "Confirm the withdrawal with your two-factor and email codes.",
             ]}
           />
           <P>
             Test new addresses with a small amount first. Crypto
-            withdrawals cannot be undone.
+            withdrawals cannot be undone. See the{" "}
+            <Link href={BYDFI_WITHDRAWAL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              official withdrawal guide
+            </Link>{" "}
+            for the current process.
           </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/deposit-withdrawal-fees.png"
+            alt="BYDFi deposit and withdrawal fee table showing USDT, BTC, ETH, and SOL across TRC20, Solana, Polygon, TON, BSC, ERC20, Arbitrum, and Base networks with free deposits and network-based withdrawal fees"
+            caption="The deposit and withdrawal fee schedule: deposits are free across every network, and withdrawals carry small network-based fees. USDT on TRON costs 1 USDT to withdraw; on Solana it is 0.25."
+          />
           <div className="mt-7">
             <PrimaryCtaButton>Visit BYDFi</PrimaryCtaButton>
           </div>
@@ -510,31 +620,55 @@ export default function BydfiReviewPage() {
         <Section id="kyc">
           <H2>No-KYC trading</H2>
           <P>
-            BYDFi does not require KYC to trade. Unverified accounts can
-            deposit, trade, and withdraw up to roughly 50,000 USDT per day.
-            Completing verification raises limits and unlocks more fiat
-            deposit options. This is the exchange's main draw for
-            privacy-minded traders, and it is a genuine differentiator from
-            the majors.
+            BYDFi does not require KYC to trade spot or futures, and this
+            is the exchange's main draw for privacy-minded traders. It is a
+            genuine differentiator from the majors.
           </P>
           <P>
+            Here is the honest part: the exact no-KYC withdrawal limit is
+            not currently verifiable from official sources. Third-party
+            reviews cite figures ranging from 0.5 to 1.5 BTC per day, and
+            DataWallet removed BYDFi from its no-KYC exchange ranking in
+            September 2026 because it could not confirm a figure. We will
+            not publish a single number as fact when we cannot verify it.
+            What we can show is the verified tier structure from a real
+            account: Primary KYC allows 50,000 USDT per day in crypto
+            withdrawals, and Advanced KYC raises that to 500,000 USDT per
+            day plus 20,000 USD per day in fiat trading.
+          </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/kyc-identification-tiers.png"
+            alt="BYDFi Identification page showing Primary KYC verified with 50,000 USDT per day crypto withdrawal limit, and Advanced KYC under review with 500,000 USDT per day"
+            caption="The real KYC tier page from an actual account: Primary KYC verified at 50,000 USDT per day in withdrawals, Advanced KYC pending review at 500,000 USDT per day. Unverified limits are not published here."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/kyc-faq.png"
+            alt="BYDFi KYC FAQ explaining why verification is necessary, how to complete it with an ID card, driver's license, or passport, and common reasons verification fails"
+            caption="BYDFi's KYC FAQ: verification needs an ID card, driver's license, or passport, and the most common failure reasons are expired documents and blurry photos."
+          />
+          <P>
             The trade-off is real: no-KYC venues operate with thinner
-            regulatory protection, and BYDFi restricts users in China,
-            Pakistan, Bangladesh, Kazakhstan, the UK, and Iran. Do not use a
-            VPN to bypass restrictions; getting funds frozen in a restricted
+            regulatory protection, and BYDFi restricts users in the US,
+            Canada, and 40-plus other jurisdictions. Do not use a VPN to
+            bypass restrictions; getting funds frozen in a restricted
             account is a well-worn way to lose money.
           </P>
         </Section>
 
         <Section id="leverage">
           <H2>The 500x leverage warning</H2>
+          <Figure
+            src="/images/exchanges/bydfi-review/futures-trading-btc-perp.png"
+            alt="BYDFi BTC/USDT perpetual futures trading interface in demo mode showing the chart, order book, 10x leverage selector, and 0.02% maker and 0.06% taker fee readout"
+            caption="The futures interface in demo mode: BTC perpetuals with the 500x badge in the nav, a full order book, and the fee readout confirming 0.02% maker and 0.06% taker. Practice here before touching real funds."
+          />
           <P>
-            On 30 September 2026, BYDFi raised maximum leverage on BTC and
-            ETH futures from 200x to{" "}
-            <strong className="text-slate-900">500x</strong>. At 500x, a 0.2%
-            price move against your position liquidates it. On a volatile
-            asset like Bitcoin, that is a move that happens in seconds,
-            routinely, on ordinary days.
+            BYDFi advertises up to{" "}
+            <strong className="text-slate-900">500x leverage</strong> on BTC
+            futures, visible in the nav badge on the live site. At 500x, a
+            0.2% price move against your position liquidates it. On a
+            volatile asset like Bitcoin, that is a move that happens in
+            seconds, routinely, on ordinary days.
           </P>
           <P>
             High leverage is marketed as opportunity; mathematically it is a
@@ -542,57 +676,142 @@ export default function BydfiReviewPage() {
             trading, start with the free demo account, never trade leverage
             with money you cannot afford to lose, and understand that most
             leveraged retail traders lose money. This applies on every
-            exchange, and especially on one advertising 500x.
+            exchange, and especially on one advertising 500x. See the{" "}
+            <Link href={BYDFI_FUTURES} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              official futures trading guide
+            </Link>{" "}
+            for how the product actually works.
           </P>
         </Section>
 
         <Section id="regulation">
-          <H2>Regulation and the removed PoR page</H2>
+          <H2>Regulation and proof of reserves</H2>
           <P>
-            BYDFi names no financial regulator that supervises it. Some
-            sources cite US money-services registration and a Canadian
-            FINTRAC registration, but neither amounts to prudential
-            supervision of the exchange. This is the normal state of affairs
-            for no-KYC offshore venues, and it is the price of the privacy:
-            if something goes wrong, you have fewer places to complain.
+            BYDFi names no financial regulator that supervises it. Its US
+            money-services registration (FinCEN) and Canadian FINTRAC
+            foreign money-services registration are anti-money-laundering
+            filings, not exchange operating licences, and neither amounts
+            to prudential supervision. There is no MiCA authorisation, no
+            FCA registration, and no MAS approval. This is the normal state
+            of affairs for no-KYC offshore venues, and it is the price of
+            the privacy: if something goes wrong, you have fewer places to
+            complain.
           </P>
           <P>
-            The September 2026 system upgrade made transparency worse, not
-            better: it removed the trading API and the Proof of Reserves
-            page. The 800 BTC protection fund is still advertised, but
-            without a public PoR page, users cannot verify reserves
-            themselves. That is a step backwards, and it is the single
-            biggest reason to keep balances on BYDFi minimal.
+            Two regulatory flags belong in the open. In February 2025, the
+            Ontario Securities Commission placed BYDFi on its investor
+            warning list as not registered to trade securities in the
+            province. In March 2025, a phishing site impersonating the old
+            BitYard brand landed on Singapore's MAS investor alert list;
+            BYDFi's official statement says it never operated or marketed
+            in Singapore.
+          </P>
+          <P>
+            On the positive side, there have been no successful hacks or
+            breaches on BYDFi's own record since its 2020 launch, and the
+            exchange advertises an 800 BTC protection fund established in
+            September 2025. CoinMarketCap's independent proof-of-reserves
+            tracker currently shows about{" "}
+            <strong className="text-slate-900">$98 million</strong> in
+            reserves: roughly 902 BTC, 6.7 million XRP, 10.3 million USDC,
+            1,003 ETH, and 1.88 million USDT, against about $186 million in
+            24-hour spot volume. BYDFi says its reserves are audited by
+            Hacken. Treat all of these as point-in-time snapshots, not full
+            financial audits, and verify the current figures yourself on{" "}
+            <Link href={CMC_POR} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              CoinMarketCap's BYDFi exchange page
+            </Link>
+            .
           </P>
         </Section>
 
         <Section id="products">
-          <H2>Copy trading, MoonX, TradFi, and the card</H2>
-          <figure className="mt-6">
-            <Image
-              src="/images/bydfi-copy-trading-2026.png"
-              alt="BYDFi copy trading page showing the trader match feature and performance statistics"
-              width={1440}
-              height={900}
-              className="h-auto w-full rounded-2xl border border-slate-200 shadow-sm"
-              loading="lazy"
-            />
-          </figure>
+          <H2>Copy trading, bots, DCA, and earn</H2>
           <P>
-            Copy trading is one of BYDFi's better products, with multiple
-            modes including on-chain copy and whale wallet tracking, plus
-            trading bots and a bot marketplace. A warning that belongs
-            here: past performance of copied traders predicts nothing, and
-            most copy traders lose money. MoonX routes orders to over
-            500,000 on-chain pairs across Solana, BNB Chain, and Base, so
-            you can reach memecoins and DeFi tokens without leaving the
-            exchange.
+            Copy trading is one of BYDFi's better products. The Trader Match
+            tool recommends traders based on your preferences for assets
+            and market direction, and each profile shows 7-day ROI, P&L,
+            win rate, and follower counts. You can start copying from $10,
+            and you pay a 10% profit share on winning copied trades only.
+            Nothing is taken from losing trades.
+          </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/copy-trading-trader-match.png"
+            alt="BYDFi copy trading Trader Match page showing AI-recommended traders yakuBOSS, watson, and Cryptogenic with 7-day ROI figures and Copy Trade buttons"
+            caption="Trader Match in action: AI-recommended traders with 7-day ROI figures and one-tap Copy Trade buttons. The platform reports over 2 million successful copy trades and 50,000 copy trade users."
+          />
+          <P>
+            A warning that belongs here: past performance of copied traders
+            predicts nothing, and most copy traders lose money. Read the{" "}
+            <Link href={BYDFI_COPY_TRADING} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              official copy trading guide
+            </Link>{" "}
+            before allocating anything.
           </P>
           <P>
-            Two unusual extras: USDT-settled TradFi products (stocks, ETFs,
-            commodities, forex with zero posted commissions, though spreads
-            apply), and the BYDFi Visa card with a free virtual card. The
-            mobile app rates 4.6 out of 5 on both major app stores.
+            The trading bots deserve their own mention. Grid trading bots
+            start from just 10 USDT and come in long, short, and neutral
+            flavours for choppy uptrends, choppy downtrends, and range-bound
+            markets respectively. They run 24/7 automatically with no
+            strategy creation or management fees beyond the normal futures
+            rates. Spot DCA plans let you automate recurring buys across
+            tokens like BTC, ETH, SOL, and XRP, with historical ROI figures
+            shown per timeframe so you can see what steady buying would
+            have done.
+          </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/grid-trading-setup.png"
+            alt="BYDFi grid trading setup guide showing the three steps of choosing a direction, setting parameters, and activating the strategy, plus advantages like low investment threshold and 24/7 automation"
+            caption="Setting up a grid bot takes three steps: pick long, short, or neutral, set your price range and investment, and activate. The headline advantages are the 10 USDT minimum and round-the-clock automation."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/grid-trading-types.png"
+            alt="BYDFi grid trading types showing Long Grid for choppy upward trends, Short Grid for choppy downward trends, and Neutral Grid for range-bound markets"
+            caption="The three grid flavours: long for choppy uptrends, short for choppy downtrends, neutral for sideways markets. Pick the one that matches your actual market view."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/dca-plans-tokens.png"
+            alt="BYDFi DCA Plans page listing BTC, ETH, USDC, SOL, ENA, USD1, XRP, BNB, PUMP, and UNI with historical ROI figures and Create DCA Bot buttons"
+            caption="DCA plans: automate recurring buys across majors and stables, with historical ROI per timeframe shown for each token. Note the red figures too, DCA does not make downtrends profitable."
+          />
+          <Figure
+            src="/images/exchanges/bydfi-review/spot-dca-overview.png"
+            alt="BYDFi Spot DCA landing page with strategy cards showing a high-appreciation strategy at 40.19% one-year ROI, major tokens at 15.99%, and meme tokens at 0.47%"
+            caption="Spot DCA strategy cards: curated baskets with one-year ROI figures and user counts. The spread between the best and worst cards is the honest story about strategy picking."
+          />
+          <P>
+            Futures Earn is the newest earn product: hold USDT in your
+            futures account and earn daily interest, advertised at up to 18%
+            estimated maximum APR with a 10 USDT minimum. Once activated,
+            eligible funds enroll automatically without affecting your
+            futures trading. The rate is an estimate that can change, and
+            your funds sit on the exchange, so the usual custody warnings
+            apply. Read the{" "}
+            <Link href={BYDFI_EARN_FAQ} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              official Futures Earn FAQ
+            </Link>{" "}
+            before opting in.
+          </P>
+          <Figure
+            src="/images/exchanges/bydfi-review/futures-earn.png"
+            alt="BYDFi Futures Earn page showing USDT with an estimated maximum APR of 18%, a 10 USDT minimum principal, and an Earn Now button"
+            caption="Futures Earn: up to 18% estimated max APR on USDT held in the futures account, from a 10 USDT minimum. Attractive on paper, but the rate is an estimate and the funds stay on the exchange."
+          />
+          <P>
+            Two more products round out the set. MoonX routes orders to over
+            500,000 on-chain pairs across Solana, BNB Chain, and Base, so
+            you can reach memecoins and DeFi tokens without leaving the
+            exchange. And the TradFi desk offers USDT-settled contracts on
+            stocks, gold, and forex with zero posted commissions, though
+            spreads apply. See the{" "}
+            <Link href={BYDFI_BOTS} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              official trading bots guide
+            </Link>{" "}
+            and the{" "}
+            <Link href={BYDFI_SPOT} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              spot trading guide
+            </Link>{" "}
+            for the full product documentation.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit BYDFi</PrimaryCtaButton>
@@ -642,23 +861,26 @@ export default function BydfiReviewPage() {
             <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
               <p className="font-black text-emerald-900">Pros</p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-800">
-                <li>KYC-optional trading up to ~50,000 USDT/day withdrawals</li>
+                <li>KYC-optional trading for spot and futures</li>
                 <li>1,000+ spot pairs, 500+ perps</li>
                 <li>Simple flat fees: 0.10% spot, 0.02%/0.06% futures</li>
-                <li>Copy trading, bots, demo account, MoonX</li>
-                <li>TradFi assets and a Visa card</li>
-                <li>800 BTC protection fund</li>
+                <li>Zero-fee Convert tool for instant swaps</li>
+                <li>Copy trading from $10, grid bots from 10 USDT, DCA plans</li>
+                <li>Futures Earn up to 18% estimated APR on USDT</li>
+                <li>No hacks on record since 2020; 800 BTC protection fund</li>
+                <li>CoinMarketCap-tracked reserves of about $98M</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
               <p className="font-black text-rose-900">Cons</p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-800">
-                <li>No supervising regulator</li>
-                <li>Proof-of-reserves page removed in September 2026</li>
+                <li>No supervising regulator; MSB filings are not licences</li>
+                <li>US and Canada prohibited since March 2026</li>
+                <li>No-KYC withdrawal limit not verifiable</li>
                 <li>500x leverage is a liquidation machine</li>
-                <li>Thin liquidity on smaller altcoin pairs</li>
+                <li>Ontario OSC investor warning (Feb 2025)</li>
                 <li>Crypto-only withdrawals, limited fiat rails</li>
-                <li>Restricted in several countries</li>
+                <li>Thin liquidity on smaller altcoin pairs</li>
               </ul>
             </div>
           </div>
@@ -667,15 +889,19 @@ export default function BydfiReviewPage() {
         <Section id="who">
           <H2>Who it suits, and who should skip it</H2>
           <P>
-            BYDFi suits experienced derivatives traders who want no-KYC
-            access, a huge altcoin list, and copy trading tools, and who
-            understand exactly what unregulated leverage means. Use the demo
-            account first, keep balances small, and withdraw regularly.
+            BYDFi suits experienced derivatives traders outside the US and
+            Canada who want no-KYC access, a huge altcoin list, and copy
+            trading tools, and who understand exactly what unregulated
+            leverage means. Use the demo account first, keep balances
+            small, and withdraw regularly.
           </P>
           <P>
-            Beginners should skip the leverage entirely and think carefully
-            about whether a no-KYC offshore venue is the right first
-            exchange. If you want licensed, supervised trading, look at{" "}
+            US and Canadian users should skip it entirely: you are
+            prohibited under the current Terms of Use, and no VPN
+            workaround is worth the risk of frozen funds. Beginners should
+            skip the leverage entirely and think carefully about whether a
+            no-KYC offshore venue is the right first exchange. If you want
+            licensed, supervised trading, look at{" "}
             <Link href="/exchanges/kraken-review" className="text-blue-600 hover:underline">
               Kraken
             </Link>{" "}
@@ -716,11 +942,15 @@ export default function BydfiReviewPage() {
           <H2>Verdict</H2>
           <P>
             So, is BYDFi worth it? It is a genuinely useful no-KYC venue
-            with a strong product set, but the missing regulator, the
-            removed proof-of-reserves page, and 500x leverage define its
-            risk profile. If you know exactly what you are doing, trade
-            here small and withdraw often. For most beginners, a licensed
-            exchange is still the better first account.
+            with one of the strongest product sets in its class: flat fees,
+            zero-fee Convert, copy trading from $10, grid bots, DCA plans,
+            and Futures Earn. The other side of the ledger is real: no
+            supervising regulator, a US and Canada ban, an unverifiable
+            no-KYC limit, an OSC warning, and 500x leverage that will
+            liquidate careless traders in seconds. If you know exactly what
+            you are doing, trade here small and withdraw often. For most
+            beginners, a licensed exchange is still the better first
+            account.
           </P>
           <div className="mt-7">
             <PrimaryCtaButton>Visit BYDFi</PrimaryCtaButton>
@@ -742,6 +972,86 @@ export default function BydfiReviewPage() {
               </details>
             ))}
           </div>
+        </Section>
+
+        <Section id="references">
+          <H2>Official references</H2>
+          <P>
+            Every fee and product claim in this review traces back to
+            BYDFi's own documentation. The key pages, checked October 2026:
+          </P>
+          <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-800">
+            <li>
+              <Link href={BYDFI_FEE_OVERVIEW} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Deposit and withdrawal fees
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_FEES} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Transaction fee calculation
+              </Link>
+            </li>
+            <li>
+              <Link href="https://www.bydfi.com/support/article/when-will-the-transaction-fees-be-charged-436146344000614400" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                When transaction fees are charged
+              </Link>
+            </li>
+            <li>
+              <Link href="https://www.bydfi.com/support/article/how-are-funding-rates-and-funding-fees-calculated-426299667618059264" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Funding rates and funding fees
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_SPOT} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Spot trading guide
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_FUTURES} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Futures trading guide
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_COPY_TRADING} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Copy trading guide
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_BOTS} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Trading bots guide
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_CONVERT_FAQ} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Convert FAQ
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_EARN_FAQ} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Futures Earn FAQ
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_WITHDRAWAL} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Withdrawal guide
+              </Link>
+            </li>
+            <li>
+              <Link href={BYDFI_FIAT_BUY} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Buy crypto with fiat
+              </Link>
+            </li>
+            <li>
+              <Link href="https://www.bydfi.com/support/fiat/sell-crypto" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                Sell crypto for fiat
+              </Link>
+            </li>
+            <li>
+              <Link href={CMC_POR} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                CoinMarketCap: BYDFi exchange page and proof of reserves
+              </Link>
+            </li>
+          </ul>
         </Section>
       </main>
 
