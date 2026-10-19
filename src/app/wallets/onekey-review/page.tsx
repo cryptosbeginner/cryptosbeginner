@@ -12,7 +12,10 @@ const UPDATED = "19 October 2026";
 const UPDATED_ISO = "2026-10-19";
 
 // No affiliate link on file yet. Direct link to the official store.
-const BUY_LINK = "https://onekey.so/";
+const BUY_LINK = "https://go.cryptosbeginner.com/OneKey";
+const PERPS_LINK = "https://go.cryptosbeginner.com/OneKeyPerps";
+const SWAP_LINK = "https://go.cryptosbeginner.com/OneKeySwap";
+const DEFI_LINK = "https://go.cryptosbeginner.com/OneKeyDeFi";
 
 export const metadata: Metadata = {
   title: "OneKey Review 2026: Hardware Wallets, App, Swap, Perps and DeFi, Assessed",
@@ -326,6 +329,11 @@ export default function OneKeyReviewPage() {
               alt="OneKey hardware wallet lineup with prices: Pro 2 at $299, Pro at $278, Classic 1S at $99, Classic 1S Pure at $79, and Classic 1S Pure Bitcoin Edition at $79"
               caption="Five models, one app. The Pro 2 and Pro are the touchscreen flagships, the Classic 1S is the budget entry, and the Pure is a battery-free vault for long-term storage."
             />
+            <Figure
+              src="/images/wallets/onekey-review/onekey-models-full-comparison.png"
+              alt="Full side-by-side comparison of OneKey Pro 2, Pro, and Classic 1S: prices, EAL6+ chip counts, screen sizes and types, and features including fingerprint unlock, wireless charging, Apple Find My, and 30,000 supported coins"
+              caption="The full model comparison in one view: chip configuration, displays, and every feature flag, from fingerprint unlock to Apple Find My. The Pro 2 leads on screen and battery, the Classic 1S keeps the essentials at a third of the price."
+            />
             <P>
               OneKey currently sells five models, all working with the same app. The
               <strong className="text-slate-900"> Pro 2 ($299)</strong>, launched October 2026, is the
@@ -510,6 +518,13 @@ export default function OneKeyReviewPage() {
               alt="OneKey tokenized stocks interface showing Apple stock token AAPL at $345.37 with market data and an FAQ explaining on-chain stock tokens"
               caption="Tokenized stocks via Ondo: buy on-chain tokens tracking Apple and other equities, backed 1 to 1 by real shares. No voting rights, dividends are reinvested, and your rights are subject to the issuer's terms."
             />
+            <div className="mt-6 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 text-center">
+              <p className="font-semibold text-slate-900">Try OneKey Swap with 10% cashback on swap fees</p>
+              <p className="mt-1 text-sm text-slate-600">Use referral code CRYPTOSBEGINNER when you bind your wallet.</p>
+              <a href={SWAP_LINK} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block rounded-full bg-indigo-600 px-6 py-2.5 font-bold text-white hover:bg-indigo-700">
+                Open OneKey Swap
+              </a>
+            </div>
             <P>
               The Trade tab goes further than crypto. Tokenized stocks let you buy on-chain tokens
               issued by a licensed issuer and backed 1:1 by real shares, Apple was the example in
@@ -552,6 +567,13 @@ export default function OneKeyReviewPage() {
               alt="OneKey perps trading screen for NVDAUSDC with order book depth, isolated margin mode, and market, limit, and stop market order types"
               caption="Stock perps too: NVDA perpetuals with 20x leverage selected, tight 0.01 spread on the order book, and reduce-only and take-profit/stop-loss toggles built into the ticket."
             />
+            <div className="mt-6 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 text-center">
+              <p className="font-semibold text-slate-900">Trade perps on OneKey, powered by Hyperliquid</p>
+              <p className="mt-1 text-sm text-slate-600">Up to 40x leverage on 200+ tokens, self-custodial.</p>
+              <a href={PERPS_LINK} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block rounded-full bg-indigo-600 px-6 py-2.5 font-bold text-white hover:bg-indigo-700">
+                Open OneKey Perps
+              </a>
+            </div>
           </Section>
 
           <Section id="defi">
@@ -575,6 +597,13 @@ export default function OneKeyReviewPage() {
               alt="OneKey device compatibility with Windows, macOS, Linux, iOS, and Android, plus upcoming Coin Control and Tor privacy features"
               caption="Compatibility spans Windows, macOS, Linux, iOS, and Android over USB-C. Coin Control and Tor support are marked coming soon, worth watching for privacy-minded users."
             />
+            <div className="mt-6 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 text-center">
+              <p className="font-semibold text-slate-900">Explore DeFi and staking in the OneKey app</p>
+              <p className="mt-1 text-sm text-slate-600">Stake, earn yield, and manage DeFi positions in one place.</p>
+              <a href={DEFI_LINK} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block rounded-full bg-indigo-600 px-6 py-2.5 font-bold text-white hover:bg-indigo-700">
+                Open OneKey DeFi
+              </a>
+            </div>
           </Section>
 
           <Section id="buying">
