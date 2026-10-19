@@ -95,6 +95,16 @@ const reviews = [
       "The NFT-first hardware wallet. A 2.8-inch touchscreen shows your artwork and clear-signs every approval, but NFT support is limited to four chains.",
     badge: "Best for NFTs",
   },
+  {
+    slug: "/wallets/onekey-review",
+    image: "/images/wallets/onekey-review/device-lineup.png",
+    imageAlt: "OneKey Pro 2 in orange, OneKey Pro in white, and OneKey Classic 1S in black, the three current hardware wallet models side by side",
+    name: "OneKey",
+    price: "$99-$299",
+    verdict:
+      "Our preferred pick. Four EAL6+ chips, open-source firmware, and an app covering swap, perps, and DeFi. The Classic 1S at $99 is the value entry.",
+    badge: "Our pick",
+  },
 ] as const;
 
 function Section({ children }: { children: React.ReactNode }) {

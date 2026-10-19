@@ -106,6 +106,7 @@ const recentRoutes = new Set([
   "/wallets/prokey-review",
   "/wallets/secux-nifty-review",
   "/wallets/safepal-s1-review",
+  "/wallets/onekey-review",
 ]);
 
 const regionRoutes = [
@@ -272,6 +273,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/wallets/prokey-review",
     "/wallets/secux-nifty-review",
     "/wallets/safepal-s1-review",
+    "/wallets/onekey-review",
     "/dexes",
     "/prediction-markets",
     "/meme-coins",
