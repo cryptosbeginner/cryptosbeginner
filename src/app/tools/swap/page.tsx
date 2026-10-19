@@ -132,6 +132,17 @@ export default function SwapPage() {
             </Link>{" "}
             is written independently of that arrangement.
           </p>
+          <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+            <p className="text-sm text-slate-600">Widget not loading? Swap directly on SimpleSwap instead.</p>
+            <a
+              href="https://go.cryptosbeginner.com/SimpleSwap"
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg bg-indigo-600 px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-indigo-700"
+            >
+              Open SimpleSwap
+            </a>
+          </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
