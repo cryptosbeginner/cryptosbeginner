@@ -41,6 +41,7 @@ const guides: Guide[] = [
   { slug: "how-to-trade-memecoins-safely", title: "How to Trade Memecoins Safely", description: "Spotting scams and rug pulls before they spot you: a survival guide for memecoin trading.", category: "Trading Guides" },
   { slug: "best-solana-dex", title: "Best Solana DEX in 2026", description: "Jupiter vs Raydium vs Orca compared: fees, liquidity, and which DEX fits your style.", category: "Trading Guides" },
   { slug: "gmgn-ai-agent", title: "GMGN AI Agent Guide", description: "How GMGN's AI agent and skills work, and how query access differs from signed trading.", category: "Trading Guides" },
+  { slug: "what-is-crypto-arbitrage", title: "What Is Crypto Arbitrage?", description: "The 7 types with real numbers, the gross-vs-net fee trap, why beginners lose, and scam red flags.", category: "Trading Guides", badge: "New" },
   // DeFi & Staking
   { slug: "sui-staking", title: "SUI Staking: The Complete Beginner's Guide", description: "How Sui's delegated proof-of-stake works, current APY, and the risks to know.", category: "DeFi & Staking" },
   { slug: "rwa-crypto-projects", title: "RWA Crypto Explained", description: "Tokenization of real-world assets: the categories, the leading projects, and the risks.", category: "DeFi & Staking" },

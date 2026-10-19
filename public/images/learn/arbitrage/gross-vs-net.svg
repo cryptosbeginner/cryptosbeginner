@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect width="1200" height="620" rx="24" fill="#0f172a"/>
+  <text x="60" y="70" fill="#fbbf24" font-size="20" font-weight="800" letter-spacing="4">GROSS VS NET: THE FEE STACK</text>
+  <text x="60" y="108" fill="#ffffff" font-size="32" font-weight="900">A 1.33% gap is not a 1.33% profit</text>
+  <text x="60" y="140" fill="#94a3b8" font-size="15">ETH at $3,000 on Exchange A, $3,040 on Exchange B. 10 ETH = $30,000 capital.</text>
+
+  <!-- Bar segments -->
+  <g>
+    <!-- gross -->
+    <rect x="60" y="200" width="600" height="64" rx="12" fill="#34d399"/>
+    <text x="80" y="240" fill="#064e3b" font-size="20" font-weight="900">Gross gain: $400</text>
+
+    <!-- fees eating in -->
+    <rect x="60" y="290" width="600" height="64" rx="12" fill="#1e293b"/>
+    <rect x="60" y="290" width="34" height="64" rx="12" fill="#f87171"/>
+    <rect x="94" y="290" width="34" height="64" fill="#f87171"/>
+    <text x="80" y="330" fill="#fca5a5" font-size="17" font-weight="700">Buy fee $22.50</text>
+
+    <rect x="60" y="370" width="600" height="64" rx="12" fill="#1e293b"/>
+    <rect x="60" y="370" width="34" height="64" rx="12" fill="#f87171"/>
+    <rect x="94" y="370" width="34" height="64" fill="#f87171"/>
+    <text x="80" y="410" fill="#fca5a5" font-size="17" font-weight="700">Sell fee $22.80</text>
+
+    <rect x="60" y="450" width="600" height="64" rx="12" fill="#1e293b"/>
+    <rect x="60" y="450" width="24" height="64" rx="12" fill="#fb923c"/>
+    <rect x="84" y="450" width="24" height="64" fill="#fb923c"/>
+    <text x="80" y="490" fill="#fdba74" font-size="17" font-weight="700">Withdrawal + network ~$15</text>
+  </g>
+
+  <!-- Net result -->
+  <g>
+    <rect x="720" y="200" width="420" height="314" rx="20" fill="#064e3b"/>
+    <text x="760" y="260" fill="#a7f3d0" font-size="16" font-weight="700" letter-spacing="2">NET PROFIT</text>
+    <text x="760" y="330" fill="#ffffff" font-size="64" font-weight="900">~$340</text>
+    <text x="760" y="370" fill="#a7f3d0" font-size="18">about 1.1% on capital</text>
+    <text x="760" y="420" fill="#6ee7b7" font-size="14">before transfer-time risk,</text>
+    <text x="760" y="444" fill="#6ee7b7" font-size="14">slippage, and taxes.</text>
+    <text x="760" y="490" fill="#a7f3d0" font-size="14" font-style="italic">The headline gap is never</text>
+    <text x="760" y="512" fill="#a7f3d0" font-size="14" font-style="italic">the profit. Do the math first.</text>
+  </g>
+</svg>
