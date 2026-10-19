@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
+import SwapWidget from "./SwapWidget";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/tools/swap`;
@@ -71,7 +72,7 @@ const faqLd = {
       name: "Does CryptosBeginner earn from my swap?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Swaps made through our SimpleSwap link are referred by CryptosBeginner, and we may earn a commission from SimpleSwap. This does not change the rates you see, and our review of the service is independent of that arrangement.",
+        text: "Yes. Swaps made through this page are referred by CryptosBeginner, and we may earn a commission from SimpleSwap. This does not change the rates you see, and our review of the service is independent of that arrangement.",
       },
     },
   ],
@@ -95,9 +96,9 @@ export default function SwapPage() {
               Swap crypto without signing up
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-              Exchange 1,500+ cryptocurrencies with no account and no registration for
-              crypto-to-crypto swaps. Pick a pair, enter your receiving address, and send
-              your deposit.
+              Exchange 1,500+ cryptocurrencies right here, with no account and no
+              registration for crypto-to-crypto swaps. Pick a pair, enter your receiving
+              address, and send your deposit.
             </p>
             <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
               Updated {UPDATED} · Powered by SimpleSwap
@@ -110,34 +111,15 @@ export default function SwapPage() {
         </div>
 
         <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
-          <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-indigo-600 to-violet-700 p-8 text-center shadow-sm sm:p-12">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-indigo-200">
-              1,500+ cryptocurrencies · no account needed
-            </p>
-            <h2 className="mx-auto mt-4 max-w-xl text-2xl font-black text-white sm:text-3xl">
-              Start your swap on SimpleSwap
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-indigo-100">
-              Pick your pair, choose a fixed or floating rate, enter your receiving wallet
-              address, and send your deposit. The swapped coins land directly in your wallet.
-            </p>
-            <a
-              href="https://go.cryptosbeginner.com/SimpleSwap"
-              target="_blank"
-              rel="sponsored noopener noreferrer"
-              className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-8 py-4 text-center text-base font-black text-indigo-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-50"
-            >
-              Swap on SimpleSwap →
-            </a>
-            <p className="mt-4 text-xs leading-6 text-indigo-200">
-              Affiliate disclosure: swaps through this link are referred by CryptosBeginner and
-              we may earn a commission from SimpleSwap. Our{" "}
-              <Link href="/tools/simpleswap-review" className="font-bold text-white underline hover:text-indigo-100">
-                SimpleSwap review
-              </Link>{" "}
-              is written independently of that arrangement.
-            </p>
-          </div>
+          <SwapWidget />
+          <p className="mt-3 text-xs leading-6 text-slate-500">
+            Affiliate disclosure: swaps created through this page are referred by CryptosBeginner and
+            we may earn a commission from SimpleSwap. Our{" "}
+            <Link href="/tools/simpleswap-review" className="font-bold text-indigo-700 hover:text-indigo-900">
+              SimpleSwap review
+            </Link>{" "}
+            is written independently of that arrangement.
+          </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
