@@ -8,8 +8,8 @@ import AuthorByline from "@/components/AuthorByline";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/wallets/secux-nifty-review`;
 
-const UPDATED = "9 October 2026";
-const UPDATED_ISO = "2026-10-09";
+const UPDATED = "19 October 2026";
+const UPDATED_ISO = "2026-10-19";
 const ORIGINALLY_PUBLISHED = "August 2022";
 
 // Masked affiliate link. Direct fallback from the legacy post:
@@ -48,6 +48,11 @@ export const metadata: Metadata = {
 };
 
 const faqItems = [
+  {
+    question: "What happened with SecuX in October 2026?",
+    answer:
+      "On 16 October 2026 SecuX announced emergency maintenance and a major upgrade to its wallet app without disclosing the cause. The same day, Ripple CTO Emeritus David Schwartz publicly reported a notification impersonating the SecuX app that linked to a phishing page asking for recovery phrases. The notification's origin was never established and no compromise of the hardware was reported. SecuX said services returned to normal and reiterated it never asks for recovery phrases. Treat any urgent message asking for your seed words as a scam, regardless of which wallet you use.",
+  },
   {
     question: "How much does the SecuX Nifty cost?",
     answer:
@@ -269,7 +274,7 @@ export default function SecuXNiftyReviewPage() {
         </section>
 
         <div className="mx-auto max-w-4xl px-4 pt-10">
-          <AuthorByline updated="9 October 2026" />
+          <AuthorByline updated="19 October 2026" />
         </div>
 
         <div className="py-10">
@@ -297,6 +302,12 @@ export default function SecuXNiftyReviewPage() {
                   <strong className="text-slate-900">Main caveat:</strong> it works only with the
                   SecuX Wallet App, and NFT support is limited to Ethereum, Polygon, BNB Chain, and
                   Solana.
+                </li>
+                <li>
+                  <strong className="text-slate-900">October 2026 incident:</strong> SecuX ran
+                  emergency app maintenance on 16 October while a phishing notification impersonating
+                  the SecuX app targeted recovery phrases. The hardware was not reported compromised,
+                  but treat any "urgent" SecuX message asking for your seed words as a scam.
                 </li>
               </ul>
             </div>
@@ -388,6 +399,20 @@ export default function SecuXNiftyReviewPage() {
               third-party integration than Ledger or Trezor offer. Your keys never leave the device,
               but your workflow lives inside SecuX's ecosystem.
             </P>
+            <P>
+              <strong className="text-slate-900">October 2026 incident, reported honestly:</strong> on
+              16 October 2026 SecuX announced emergency maintenance and a major system upgrade to its
+              wallet app without disclosing the cause. The same day, Ripple CTO Emeritus David
+              Schwartz publicly reported a notification that appeared to come from the SecuX app,
+              warning of a critical vulnerability and linking to a page that asked for his 12 or
+              24-word recovery phrase: a phishing attempt. The notification's origin was never
+              established, and coverage did not confirm whether SecuX's own infrastructure was
+              compromised. SecuX said services returned to normal, reiterated that it never asks for
+              recovery phrases, and its store now carries a permanent banner to that effect. The
+              hardware itself was not reported compromised and no fund losses were confirmed in the
+              coverage we reviewed. The lesson stands regardless of vendor: no legitimate wallet
+              company will ever ask for your seed words, and any message that does is a scam.
+            </P>
           </Section>
 
           <Section id="setup">
@@ -427,9 +452,11 @@ export default function SecuXNiftyReviewPage() {
             <P>
               The Nifty lists at <strong className="text-slate-900">$199</strong>, and SecuX's own
               store regularly offers 15% promotions that bring it to about $169.15 before shipping.
-              Prices exclude VAT and duties in some regions. For pure coin storage this is steep
-              against the $50 tier; for NFT collectors, the premium buys the only hardware wallet
-              built around displaying and clear-signing collectibles.
+              Note that SecuX's store now labels the Nifty a "Limited edition", which suggests the
+              model may not be restocked indefinitely. Prices exclude VAT and duties in some regions.
+              For pure coin storage this is steep against the $50 tier; for NFT collectors, the
+              premium buys the only hardware wallet built around displaying and clear-signing
+              collectibles.
             </P>
             <div className="mt-6">
               <PrimaryAffiliateButton>Buy SecuX Nifty for $199</PrimaryAffiliateButton>
@@ -488,30 +515,111 @@ export default function SecuXNiftyReviewPage() {
             <P>
               Skip it if your NFTs live on other chains, if you need a hidden-wallet passphrase, or
               if you want maximum third-party ecosystem breadth. Pure coin holders get better value
-              from the SecuX W10 at a fraction of the price, or from our other reviews below.
+              from the SecuX W10, now $49 on the official store, or from our other reviews below.
             </P>
           </Section>
 
           <Section id="alternatives">
-            <H2>Alternatives</H2>
+            <H2>Alternatives: how the Nifty compares</H2>
             <P>
-              <strong className="text-slate-900">Ledger Stax or Flex</strong> offers the premium
-              touchscreen experience with a far broader app ecosystem, at a higher price.
-              <strong className="text-slate-900"> Trezor Safe 5</strong> brings a color touchscreen
-              with fully open-source firmware for the auditability minded.
+              Prices checked October 2026 against official stores and current third-party reviews.
+              The Nifty is the only wallet here built around displaying NFTs; every alternative below
+              is cheaper, and each trades the gallery for something else.
+            </P>
+            <div className="mt-6 overflow-x-auto rounded-[1.5rem] border border-slate-200 bg-white">
+              <table className="w-full min-w-[720px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="px-4 py-3 font-black text-slate-950">Wallet</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Price</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Screen</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Secure element</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Bluetooth</th>
+                    <th className="px-4 py-3 font-black text-slate-950">NFT display</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Open source</th>
+                  </tr>
+                </thead>
+                <tbody className="text-slate-600">
+                  <tr className="border-b border-slate-100 bg-indigo-50/50">
+                    <td className="px-4 py-3 font-bold text-slate-900">SecuX Nifty</td>
+                    <td className="px-4 py-3">$199</td>
+                    <td className="px-4 py-3">2.8-inch color touchscreen</td>
+                    <td className="px-4 py-3">Infineon, EAL5+</td>
+                    <td className="px-4 py-3">Yes (BT 5)</td>
+                    <td className="px-4 py-3">Yes: ETH, Polygon, BNB Chain, Solana</td>
+                    <td className="px-4 py-3">No</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">SafePal S1</td>
+                    <td className="px-4 py-3">$49.99</td>
+                    <td className="px-4 py-3">Color display</td>
+                    <td className="px-4 py-3">EAL6+</td>
+                    <td className="px-4 py-3">No (air-gapped QR signing)</td>
+                    <td className="px-4 py-3">No</td>
+                    <td className="px-4 py-3">No</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">Ledger Nano S Plus</td>
+                    <td className="px-4 py-3">$59</td>
+                    <td className="px-4 py-3">128x64 OLED, two buttons</td>
+                    <td className="px-4 py-3">ST33, EAL6+</td>
+                    <td className="px-4 py-3">No (USB-C only)</td>
+                    <td className="px-4 py-3">Via Ledger Live, not on-device gallery</td>
+                    <td className="px-4 py-3">Partial (app open, OS closed)</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="px-4 py-3 font-bold text-slate-900">Trezor Safe 3</td>
+                    <td className="px-4 py-3">$59</td>
+                    <td className="px-4 py-3">0.96-inch monochrome OLED, two buttons</td>
+                    <td className="px-4 py-3">Optiga Trust M, EAL6+</td>
+                    <td className="px-4 py-3">No (USB-C only)</td>
+                    <td className="px-4 py-3">No</td>
+                    <td className="px-4 py-3">Yes, fully</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-bold text-slate-900">OneKey Classic 1S</td>
+                    <td className="px-4 py-3">$99</td>
+                    <td className="px-4 py-3">1.54-inch monochrome OLED</td>
+                    <td className="px-4 py-3">EAL6+</td>
+                    <td className="px-4 py-3">Yes</td>
+                    <td className="px-4 py-3">No</td>
+                    <td className="px-4 py-3">App and MCU firmware open; SE firmware closed</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <P>
+              <strong className="text-slate-900">SafePal S1 ($49.99)</strong> is the budget pick: a
+              color screen and fully air-gapped QR signing at a quarter of the Nifty's price, but
+              with no NFT display and a workflow that lives inside the SafePal app. Read our{" "}
+              <Link href="/wallets/safepal-s1-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
+                SafePal S1 review
+              </Link>.
             </P>
             <P>
-              <strong className="text-slate-900">SafePal S1 ($49.99)</strong> is the budget pick with
-              a color screen and air-gapped signing, though without NFT display.
+              <strong className="text-slate-900">Ledger Nano S Plus ($59)</strong> and{" "}
+              <strong className="text-slate-900">Trezor Safe 3 ($59)</strong> are the mainstream
+              budget pair, both with EAL6+ chips and USB-C only. Ledger brings the deeper app
+              ecosystem; Trezor brings fully open-source firmware for the auditability minded.
+              Neither shows your NFTs on the device.
+            </P>
+            <P>
+              <strong className="text-slate-900">OneKey Classic 1S ($99)</strong> adds Bluetooth and
+              a larger monochrome screen over the $59 pair, with open app and MCU firmware, but
+              again no NFT gallery. A OneKey review is in preparation.
+            </P>
+            <P>
+              Within SecuX's own lineup, note that prices have dropped sharply: the V20 flagship is
+              now $99 and the W20 $69 on the official store, and the newer Neo series (from $99)
+              offers NFT display on its Neo-X model. If the Nifty's "Limited edition" label means
+              what it says, the Neo-X may become SecuX's NFT option going forward.
+            </P>
+            <P>
               See our{" "}
               <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto wallets 2026
               </Link>{" "}
-              guide, our{" "}
-              <Link href="/wallets/safepal-s1-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
-                SafePal S1 review
-              </Link>
-              for the full comparison.
+              guide for the full comparison.
             </P>
           </Section>
 

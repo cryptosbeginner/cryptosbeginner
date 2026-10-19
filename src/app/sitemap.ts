@@ -103,6 +103,7 @@ const recentRoutes = new Set([
   "/learn/crypto-platforms-for-beginners",
   "/learn/exchange-insurance-funds",
   "/funded-accounts",
+  "/wallets/prokey-review",
   "/wallets/secux-nifty-review",
   "/wallets/safepal-s1-review",
 ]);
@@ -268,6 +269,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/exchanges/primexbt/kyc-guide",
     "/exchanges/primexbt/copy-trading",
     "/wallets/best-crypto-wallets",
+    "/wallets/prokey-review",
     "/wallets/secux-nifty-review",
     "/wallets/safepal-s1-review",
     "/dexes",
