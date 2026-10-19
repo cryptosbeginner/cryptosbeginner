@@ -52,9 +52,13 @@ export default function CurrencyPicker({
     const out: SwapCurrency[] = [];
     const seen = new Set<string>();
     for (const t of POPULAR_TICKERS) {
-      const c = currencies.find(
+      const candidates = currencies.filter(
         (x) => x.ticker.toLowerCase() === t && key(x) !== excludeKey && !seen.has(key(x))
       );
+      // Prefer the native network (ticker === network), e.g. BTC on Bitcoin not Lightning
+      const c =
+        candidates.find((x) => x.network.toLowerCase() === t) ??
+        candidates[0];
       if (c) { out.push(c); seen.add(key(c)); }
     }
     return out;

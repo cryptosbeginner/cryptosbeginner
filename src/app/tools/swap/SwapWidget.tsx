@@ -104,12 +104,17 @@ export default function SwapWidget() {
         const list: SwapCurrency[] = Array.isArray(data.result) ? data.result : Array.isArray(data) ? data : [];
         if (!cancelled) {
           setCurrencies(list);
-          // Keep defaults only if they exist in the list
-          const has = (k: string) => list.some((c) => currencyKey(c) === k);
-          if (list.length && !has("btc:btc")) setFromKey(currencyKey(list[0]));
-          if (list.length && !has("eth:eth")) {
-            const eth = list.find((c) => c.ticker.toLowerCase() === "eth");
-            if (eth) setToKey(currencyKey(eth));
+          // Sensible defaults: native BTC -> native ETH, with fallbacks
+          const findNative = (t: string) =>
+            list.find((c) => c.ticker.toLowerCase() === t && c.network.toLowerCase() === t) ??
+            list.find((c) => c.ticker.toLowerCase() === t);
+          if (list.length) {
+            const btc = findNative("btc");
+            const eth = findNative("eth");
+            if (btc && currencyKey(btc) !== "btc:btc") setFromKey(currencyKey(btc));
+            else if (!list.some((c) => currencyKey(c) === "btc:btc")) setFromKey(currencyKey(btc ?? list[0]));
+            if (eth && currencyKey(eth) !== "eth:eth") setToKey(currencyKey(eth));
+            else if (!list.some((c) => currencyKey(c) === "eth:eth") && eth) setToKey(currencyKey(eth));
           }
         }
       } catch (e) {
@@ -151,6 +156,25 @@ export default function SwapWidget() {
     return () => { cancelled = true; };
   }, [fromKey, toKey, fixed, fromCur, toCur]);
 
+  // Keep the receive currency on a valid pair when the send currency changes
+  useEffect(() => {
+    if (!pairs.length) return;
+    const valid = pairs.some((pr) => pr.toLowerCase() === toKey);
+    if (!valid) {
+      const lower = pairs.map((pr) => pr.toLowerCase());
+      const preferred =
+        lower.find((pr) => pr.startsWith("eth:")) ??
+        lower.find((pr) => pr.startsWith("usdt:")) ??
+        lower[0];
+      const match = currencies.find((c) => currencyKey(c) === preferred);
+      if (match) {
+        setToKey(currencyKey(match));
+        setEstimate(null);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pairs]);
+
   const fetchEstimate = useCallback(async () => {
     if (!fromCur || !toCur || !amount || Number(amount) <= 0) {
       setEstimate(null);
@@ -165,7 +189,13 @@ export default function SwapWidget() {
         `/api/swap/estimate?tickerFrom=${t}&networkFrom=${n}&tickerTo=${tt}&networkTo=${tn}&amount=${encodeURIComponent(amount)}&fixed=${fixed}`
       );
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Could not get a quote");
+      if (!res.ok) {
+        const raw = String(data.error ?? "Could not get a quote");
+        const friendly = /pair/i.test(raw)
+          ? "This pair is not available. Pick a different receive currency."
+          : raw;
+        throw new Error(friendly);
+      }
       const r = data.result as Estimate | null;
       if (r && r.estimatedAmount) {
         setEstimate(r);
