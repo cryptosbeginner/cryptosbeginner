@@ -311,6 +311,27 @@ export default function NoKycExchangesPage() {
           </Section>
 
           <Section id="faq">
+            <div className="mb-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+              <p className="text-lg font-black text-slate-950">A no-signup swap option with honest limits</p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">
+                SimpleSwap lets you swap crypto without creating an account, which suits small,
+                everyday exchanges. It is not anonymous: transactions can trigger AML verification,
+                and fiat purchases may require KYC. See our{" "}
+                <Link href="/tools/simpleswap-review" className="font-black text-emerald-700 hover:text-emerald-900">
+                  SimpleSwap review
+                </Link>{" "}
+                for the full picture.
+              </p>
+              <a
+                href="https://go.cryptosbeginner.com/SimpleSwap"
+                target="_blank"
+                rel="sponsored noopener noreferrer"
+                className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-emerald-600 px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-emerald-700"
+              >
+                Try SimpleSwap
+              </a>
+              <p className="mt-2 text-xs text-slate-500">Affiliate link. We may earn a commission.</p>
+            </div>
             <H2>Frequently asked questions</H2>
             <div className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
               {faqItems.map((item) => (
