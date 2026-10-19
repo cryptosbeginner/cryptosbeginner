@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
+import { wpRedirects } from "./wp-redirects";
 
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      ...wpRedirects,
       {
         source: "/wallets/best-crypto-wallets-2026",
         destination: "/wallets/best-crypto-wallets",
