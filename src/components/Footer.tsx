@@ -38,6 +38,7 @@ const footerGroups: { title: string; links: FooterLink[] }[] = [
       { label: "Swap Crypto", href: "/tools/swap" },
       { label: "Bitcoin Halving", href: "/tools/bitcoin-halving" },
       { label: "Fee Calculator", href: "/tools/fee-calculator" },
+      { label: "Token Safety Checker", href: "/tools/token-safety-checker" },
     ],
   },
   {

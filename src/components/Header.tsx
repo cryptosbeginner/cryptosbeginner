@@ -58,6 +58,7 @@ const navGroups: NavGroup[] = [
     items: [
       { label: "Swap Crypto", href: "/tools/swap", note: "Instant no-signup swaps" },
       { label: "Fee Calculator", href: "/tools/fee-calculator", note: "Compare trading costs" },
+      { label: "Token Safety Checker", href: "/tools/token-safety-checker", note: "Spot honeypots and rug pulls" },
       { label: "Bitcoin Halving", href: "/tools/bitcoin-halving", note: "Countdown and history" },
       { label: "Wallet Alerts", href: "/wallet-alerts", note: "Research notification tools" },
       { label: "Public Wallet Explorer", href: "/public-wallets", note: "Explore public wallets" },

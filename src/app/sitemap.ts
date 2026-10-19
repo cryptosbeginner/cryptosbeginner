@@ -183,6 +183,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/bitcoin-halving",
     "/tools/exchange-finder",
     "/tools/fee-calculator",
+    "/tools/token-safety-checker",
     "/tools/paper-trading",
     "/tools/coinstats-review",
     "/tools/odinbot-review",
