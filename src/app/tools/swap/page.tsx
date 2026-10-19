@@ -151,6 +151,51 @@ export default function SwapPage() {
             </div>
           </div>
 
+          <section className="mt-10">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-indigo-700">How it works</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl">Four steps, no account</h2>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-black text-indigo-700">01</p>
+                <h3 className="mt-2 font-black">Choose your pair</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Pick the coin you send and the coin you want back, then enter the amount. Toggle floating or fixed rate.</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-black text-indigo-700">02</p>
+                <h3 className="mt-2 font-black">Enter your address</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Paste the wallet address that should receive the swapped coins. Double-check it: wrong addresses cannot be reversed.</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-black text-indigo-700">03</p>
+                <h3 className="mt-2 font-black">Send your deposit</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">We show you a deposit address. Send the exact amount on the right network from your own wallet or exchange.</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-black text-indigo-700">04</p>
+                <h3 className="mt-2 font-black">Receive your coins</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">SimpleSwap converts and sends the result to your address. Track the status live on this page until it finishes.</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="mt-8 rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-500">Terms of use</p>
+            <h2 className="mt-2 text-2xl font-black tracking-tight">The short version</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-600">
+              <li>This swap tool is a front end for SimpleSwap. Exchanges are processed by SimpleSwap under their Terms of Service and AML/KYC policy.</li>
+              <li>No account or registration is needed for crypto-to-crypto swaps. Fiat purchases are a separate flow and may require identity verification.</li>
+              <li>SimpleSwap may flag a transaction under its AML policy and hold it pending verification, even without an account.</li>
+              <li>Floating rates follow the market until your deposit confirms, so the received amount can shift slightly. Fixed rates lock the quote at creation.</li>
+              <li>Always verify the receiving address and network before sending. Cryptocurrency transactions are irreversible.</li>
+              <li>Swaps through this page are referred by CryptosBeginner and may earn us a commission. Our review of the service is independent of that arrangement.</li>
+            </ul>
+            <p className="mt-4 text-sm">
+              <a href="https://simpleswap.io/terms-of-service" target="_blank" rel="noopener noreferrer" className="font-bold text-indigo-700 hover:text-indigo-900">
+                Read SimpleSwap&apos;s full Terms of Service →
+              </a>
+            </p>
+          </section>
+
           <section className="mt-8 rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-slate-500">Keep researching</p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">

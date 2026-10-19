@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import CurrencyPicker from "./CurrencyPicker";
 
-type Currency = {
+export type SwapCurrency = {
   ticker: string;
   network: string;
   name: string;
@@ -57,7 +58,7 @@ function currencyKey(c: { ticker: string; network: string }) {
 }
 
 export default function SwapWidget() {
-  const [currencies, setCurrencies] = useState<Currency[]>([]);
+  const [currencies, setCurrencies] = useState<SwapCurrency[]>([]);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -84,7 +85,7 @@ export default function SwapWidget() {
   const pollTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currencyMap = useMemo(() => {
-    const m = new Map<string, Currency>();
+    const m = new Map<string, SwapCurrency>();
     for (const c of currencies) m.set(currencyKey(c), c);
     return m;
   }, [currencies]);
@@ -100,7 +101,7 @@ export default function SwapWidget() {
         const res = await fetch("/api/swap/currencies");
         const data = await res.json();
         if (!res.ok) throw new Error(data.error ?? "Could not load currencies");
-        const list: Currency[] = Array.isArray(data.result) ? data.result : Array.isArray(data) ? data : [];
+        const list: SwapCurrency[] = Array.isArray(data.result) ? data.result : Array.isArray(data) ? data : [];
         if (!cancelled) {
           setCurrencies(list);
           // Keep defaults only if they exist in the list
@@ -383,20 +384,13 @@ export default function SwapWidget() {
     <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm">
       <div className="grid gap-0 md:grid-cols-[1fr_auto_1fr]">
         <div className="p-6 sm:p-8">
-          <label className="block text-xs font-black uppercase tracking-[0.14em] text-slate-500">
-            You send
-            <select
-              value={fromKey}
-              onChange={(e) => { setFromKey(e.target.value); setEstimate(null); }}
-              className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-black normal-case tracking-normal text-slate-900"
-            >
-              {currencies.map((c) => (
-                <option key={currencyKey(c)} value={currencyKey(c)}>
-                  {c.name} ({c.ticker.toUpperCase()}) · {c.network.toUpperCase()}
-                </option>
-              ))}
-            </select>
-          </label>
+          <CurrencyPicker
+            label="You send"
+            currencies={currencies}
+            value={fromKey}
+            excludeKey={toKey}
+            onChange={(k) => { setFromKey(k); setEstimate(null); }}
+          />
           <label className="mt-4 block text-xs font-black uppercase tracking-[0.14em] text-slate-500">
             Amount
             <input
@@ -427,20 +421,13 @@ export default function SwapWidget() {
         </div>
 
         <div className="p-6 sm:p-8">
-          <label className="block text-xs font-black uppercase tracking-[0.14em] text-slate-500">
-            You receive
-            <select
-              value={toKey}
-              onChange={(e) => { setToKey(e.target.value); setEstimate(null); }}
-              className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-black normal-case tracking-normal text-slate-900"
-            >
-              {activeToOptions.map((c) => (
-                <option key={currencyKey(c)} value={currencyKey(c)}>
-                  {c.name} ({c.ticker.toUpperCase()}) · {c.network.toUpperCase()}
-                </option>
-              ))}
-            </select>
-          </label>
+          <CurrencyPicker
+            label="You receive"
+            currencies={activeToOptions}
+            value={toKey}
+            excludeKey={fromKey}
+            onChange={(k) => { setToKey(k); setEstimate(null); }}
+          />
           <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3">
             <p className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Estimated receive</p>
             <p className="mt-1 text-lg font-black text-slate-950">
