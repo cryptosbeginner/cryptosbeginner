@@ -850,9 +850,10 @@ export default function SarwaReviewPage() {
             Two honest caveats. The review bases are small compared to global
             brokers, so a handful of angry reviews moves the average. And
             app trackers flagged the Sarwa app as removed from both stores
-            around April 2026, which may explain the thin rating counts;
-            check the live store listings yourself before judging the app on
-            these numbers.
+            around April 2026; it has since been relisted (live on Google
+            Play as of October 2026 with fresh ratings coming in), which
+            explains why the rating counts are still thin. Check the live
+            store listings yourself before judging the app on these numbers.
           </P>
         </Section>
 
