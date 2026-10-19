@@ -15,15 +15,9 @@ type Currency = {
 };
 
 type Estimate = {
-  tickerFrom: string;
-  networkFrom: string;
-  tickerTo: string;
-  networkTo: string;
-  amount?: string;
-  rate?: string;
-  minerFee?: string;
-  rateId?: string;
-  untilTime?: string;
+  estimatedAmount: string;
+  rateId?: string | null;
+  validUntil?: string | null;
 };
 
 type ExchangeResult = {
@@ -171,9 +165,13 @@ export default function SwapWidget() {
       );
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Could not get a quote");
-      const list: Estimate[] = Array.isArray(data.result) ? data.result : [];
-      setEstimate(list[0] ?? null);
-      if (!list.length) setEstimateError("No quote available for this pair and amount.");
+      const r = data.result as Estimate | null;
+      if (r && r.estimatedAmount) {
+        setEstimate(r);
+      } else {
+        setEstimate(null);
+        setEstimateError("No quote available for this pair and amount.");
+      }
     } catch (e) {
       setEstimate(null);
       setEstimateError(e instanceof Error ? e.message : "Could not get a quote");
@@ -446,12 +444,12 @@ export default function SwapWidget() {
           <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3">
             <p className="text-xs font-black uppercase tracking-[0.14em] text-slate-500">Estimated receive</p>
             <p className="mt-1 text-lg font-black text-slate-950">
-              {estimating ? "…" : estimate?.amount ?? estimate?.rate ? `${estimate.amount ?? ""} ${toCur?.ticker.toUpperCase()}` : "—"}
+              {estimating ? "…" : estimate?.estimatedAmount ? `${estimate.estimatedAmount} ${toCur?.ticker.toUpperCase()}` : "—"}
             </p>
-            {estimate?.rate && (
+            {estimate?.estimatedAmount && Number(amount) > 0 && (
               <p className="mt-1 text-xs text-slate-500">
-                Rate: 1 {fromCur?.ticker.toUpperCase()} ≈ {estimate.rate} {toCur?.ticker.toUpperCase()}
-                {estimate.minerFee ? ` · network fee ${estimate.minerFee}` : ""}
+                Rate: 1 {fromCur?.ticker.toUpperCase()} ≈ {(Number(estimate.estimatedAmount) / Number(amount)).toPrecision(6)} {toCur?.ticker.toUpperCase()}
+                {fixed && estimate.validUntil ? ` · locked until ${new Date(estimate.validUntil).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}` : ""}
               </p>
             )}
             {estimateError && <p className="mt-1 text-xs font-semibold text-rose-700">{estimateError}</p>}
