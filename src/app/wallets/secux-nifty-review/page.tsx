@@ -215,6 +215,22 @@ export default function SecuXNiftyReviewPage() {
       contentUrl: "https://www.youtube.com/watch?v=AAJjWfDZfJk",
       embedUrl: "https://www.youtube.com/embed/AAJjWfDZfJk",
     },
+    {
+      "@type": "VideoObject",
+      name: "SecuX Nifty Hardware Wallet Unboxing - Cryptos Beginner",
+      description: "Cryptos Beginner unboxes the SecuX Nifty hardware wallet.",
+      thumbnailUrl: "https://i.ytimg.com/vi/Q9-kOrKa-4o/hqdefault.jpg",
+      contentUrl: "https://www.youtube.com/watch?v=Q9-kOrKa-4o",
+      embedUrl: "https://www.youtube.com/embed/Q9-kOrKa-4o",
+    },
+    {
+      "@type": "VideoObject",
+      name: "SecuX Nifty video by Cryptos Beginner",
+      description: "Cryptos Beginner video covering the SecuX Nifty hardware wallet.",
+      thumbnailUrl: "https://i.ytimg.com/vi/oljypWDSxnI/hqdefault.jpg",
+      contentUrl: "https://www.youtube.com/watch?v=oljypWDSxnI",
+      embedUrl: "https://www.youtube.com/embed/oljypWDSxnI",
+    },
   ];
 
   return (
@@ -424,10 +440,13 @@ export default function SecuXNiftyReviewPage() {
             <H2>Videos</H2>
             <P>
               Two videos accompanied the original review: SecuX's own Nifty overview and a hands-on
-              walkthrough. They are worth a watch for the screen and gallery in motion.
+              walkthrough, plus two videos from the Cryptos Beginner channel. They are worth a watch
+              for the screen and gallery in motion.
             </P>
             <LiteYouTube id="x41V9Sb8Ik4" title="SecuX Nifty hardware wallet overview" />
             <LiteYouTube id="AAJjWfDZfJk" title="SecuX Nifty hardware wallet walkthrough" />
+            <LiteYouTube id="Q9-kOrKa-4o" title="SecuX Nifty Hardware Wallet Unboxing - Cryptos Beginner" />
+            <LiteYouTube id="oljypWDSxnI" title="SecuX Nifty video by Cryptos Beginner" />
           </Section>
 
           <Section id="pros-cons">
@@ -484,8 +503,7 @@ export default function SecuXNiftyReviewPage() {
             <P>
               <strong className="text-slate-900">SafePal S1 ($49.99)</strong> is the budget pick with
               a color screen and air-gapped signing, though without NFT display.
-              <strong className="text-slate-900"> Prokey Optimum ($59)</strong> is the budget
-              open-source alternative. See our{" "}
+              See our{" "}
               <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto wallets 2026
               </Link>{" "}
@@ -493,10 +511,6 @@ export default function SecuXNiftyReviewPage() {
               <Link href="/wallets/safepal-s1-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 SafePal S1 review
               </Link>
-              , and our{" "}
-              <Link href="/wallets/prokey-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
-                Prokey Optimum review
-              </Link>{" "}
               for the full comparison.
             </P>
           </Section>
@@ -544,9 +558,6 @@ export default function SecuXNiftyReviewPage() {
               <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
                 <Link href="/wallets/safepal-s1-review" className="text-indigo-700 hover:text-indigo-900">
                   Read the SafePal S1 review →
-                </Link>
-                <Link href="/wallets/prokey-review" className="text-indigo-700 hover:text-indigo-900">
-                  Read the Prokey Optimum review →
                 </Link>
                 <Link href="/wallets/best-crypto-wallets" className="text-indigo-700 hover:text-indigo-900">
                   Compare the best crypto wallets →

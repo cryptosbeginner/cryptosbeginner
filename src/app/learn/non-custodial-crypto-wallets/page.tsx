@@ -297,10 +297,6 @@ export default function NonCustodialWalletsPage() {
               <Link href="/wallets/secux-nifty-review" className="text-blue-600 hover:underline">
                 SecuX Nifty review
               </Link>
-              , and{" "}
-              <Link href="/wallets/prokey-review" className="text-blue-600 hover:underline">
-                Prokey review
-              </Link>
               . For a broader comparison, see our{" "}
               <Link href="/wallets/best-crypto-wallets" className="text-blue-600 hover:underline">
                 best crypto wallets

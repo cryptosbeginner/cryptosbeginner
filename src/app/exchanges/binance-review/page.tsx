@@ -706,11 +706,7 @@ export default function BinanceReviewPage() {
               <Link href="/wallets/safepal-s1-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 SafePal S1 review
               </Link>
-              , our{" "}
-              <Link href="/wallets/prokey-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
-                Prokey Optimum review
-              </Link>
-              , and our{" "}
+              and our{" "}
               <Link href="/exchanges/best-crypto-exchanges" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto exchanges guide
               </Link>

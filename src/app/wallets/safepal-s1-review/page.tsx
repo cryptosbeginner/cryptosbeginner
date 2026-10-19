@@ -442,17 +442,12 @@ export default function SafePalS1ReviewPage() {
             </P>
             <P>
               <strong className="text-slate-900">Trezor Safe 3</strong> is the open-source-first pick
-              with the longest auditability track record. <strong className="text-slate-900">Prokey
-              Optimum ($59)</strong> is the budget open-source alternative with a web-only workflow.
+              with the longest auditability track record.
               See our{" "}
               <Link href="/wallets/best-crypto-wallets" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 best crypto wallets 2026
               </Link>{" "}
-              guide and our{" "}
-              <Link href="/wallets/prokey-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
-                Prokey Optimum review
-              </Link>{" "}
-              for the full comparison.
+              guide for the full comparison.
             </P>
           </Section>
 
@@ -497,9 +492,6 @@ export default function SafePalS1ReviewPage() {
                 linked third-party sites depends on their own terms.
               </p>
               <div className="mt-4 flex flex-wrap gap-4 text-sm font-bold">
-                <Link href="/wallets/prokey-review" className="text-indigo-700 hover:text-indigo-900">
-                  Read the Prokey Optimum review →
-                </Link>
                 <Link href="/wallets/best-crypto-wallets" className="text-indigo-700 hover:text-indigo-900">
                   Compare the best crypto wallets →
                 </Link>

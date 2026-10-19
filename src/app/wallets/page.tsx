@@ -13,7 +13,7 @@ const UPDATED_ISO = "2026-10-09";
 export const metadata: Metadata = {
   title: "Crypto Wallets Explained 2026: Types, Safety, and Which to Choose",
   description:
-    "Beginner-friendly guide to crypto wallets: hot vs cold, hardware vs software, custodial vs self-custody, plus honest reviews of the SafePal S1, Prokey Optimum, and SecuX Nifty.",
+    "Beginner-friendly guide to crypto wallets: hot vs cold, hardware vs software, custodial vs self-custody, plus honest reviews of the SafePal S1 and SecuX Nifty.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -84,16 +84,6 @@ const reviews = [
     verdict:
       "The best value in air-gapped hardware wallets. True offline QR signing and an EAL6+ chip at a budget price, though the experience lives inside the SafePal app.",
     badge: "Best value",
-  },
-  {
-    slug: "/wallets/prokey-review",
-    image: "/images/prokey-optimum-device.png",
-    imageAlt: "Prokey Optimum hardware wallet showing its secure element chip",
-    name: "Prokey Optimum",
-    price: "$59",
-    verdict:
-      "The budget open-source pick. $59, open firmware and hardware, browser-based workflow with no software installs, but Micro-B USB and a dated design.",
-    badge: "Best open source",
   },
   {
     slug: "/wallets/secux-nifty-review",
@@ -256,11 +246,6 @@ export default function WalletsPage() {
                 <li>
                   <Link href="/wallets/safepal-s1-review" className="hover:text-indigo-900">
                     SafePal S1 review: $49.99 air-gapped signing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/wallets/prokey-review" className="hover:text-indigo-900">
-                    Prokey Optimum review: $59 open-source wallet
                   </Link>
                 </li>
                 <li>
