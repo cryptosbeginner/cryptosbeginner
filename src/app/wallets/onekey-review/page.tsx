@@ -351,11 +351,6 @@ export default function OneKeyReviewPage() {
               exists at the same price.
             </P>
             <Figure
-              src="/images/wallets/onekey-review/comparison-at-a-glance.png"
-              alt="Side by side comparison of OneKey Pro 2, Pro, and Classic 1S specifications including secure element chips, screens, and battery capacity"
-              caption="At a glance: the Pro 2 and Pro share the 4x EAL6+ chip configuration, multitouch screens, fingerprint unlock, and wireless charging. The Classic 1S keeps one EAL6+ chip and button controls at a third of the price."
-            />
-            <Figure
               src="/images/wallets/onekey-review/technical-specifications.png"
               alt="Technical specifications table for OneKey Pro 2, Pro, and Classic 1S covering materials, dimensions, display, and operating temperature"
               caption="Full technical specifications. The Pro 2 measures 84.9 by 53.2 by 6.2mm at 51 grams, the Pro is slightly larger at 65 grams, and the Classic 1S is the lightest at 20.5 grams."
@@ -689,18 +684,44 @@ export default function OneKeyReviewPage() {
             <P>
               <strong className="text-slate-900">Ledger Nano S Plus ($59)</strong> brings the deepest
               mainstream ecosystem through Ledger Live and the widest third-party integrations. The
-              trade-offs are a closed secure element and closed firmware, plus the lingering reputational
-              shadow of Ledger's 2023 customer data breach, which exposed buyer personal data (not
-              device keys, but still). Choose Ledger if you want the most supported device in the
-              industry and accept the closed stack.
+              trade-offs are a closed secure element and closed firmware, plus two documented security
+              incidents: the 2023 customer data breach that exposed buyer personal data, and the
+              October 2026 CryptoBilis supply-chain attack, in which Ledger confirmed that a covert
+              cellular implant inside devices sold by the reseller CryptoBilis captured users 24-word
+              recovery phrases from the device screen and transmitted them over LTE, with estimated
+              losses of up to $93.2 million across more than 300 wallets (see{" "}
+              <a
+                href="https://www.coindesk.com/tech/2026/10/13/ledger-says-spy-chip-inside-cryptobilis-ledger-devices-transmitted-wallet-keys-over-mobile-network"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-indigo-700 underline hover:text-indigo-900"
+              >
+                CoinDesk, October 13 2026
+              </a>
+              ). Ledger described it as a physical supply-chain attack, not a breach of its software.
+              OneKey revoked the same reseller and offered free replacements with zero reported user
+              losses. Choose Ledger if you want the most supported device in the industry and accept
+              the closed stack.
             </P>
             <P>
               <strong className="text-slate-900">SafePal S1 ($49.99)</strong> is the air-gap
               maximalist's pick: QR-code-only signing with no Bluetooth, WiFi, NFC, or USB data, an
-              EAL6+ chip, and the lowest price of any credible air-gapped wallet. The cost is
-              app dependence and closed firmware, and the experience lives or dies inside SafePal's
-              mobile app. Choose SafePal if a true offline signing boundary matters more to you than
-              an open stack or a trading app. Read our{" "}
+              EAL6+ chip, and the lowest price of any credible air-gapped wallet. In August 2026
+              SafePal disclosed unauthorized access to order information for approximately 39,798
+              customers who ordered between March 2025 and April 2026, exposing names, emails,
+              shipping addresses, and phone numbers (seed phrases and private keys were not affected,
+              per{" "}
+              <a
+                href="https://www.safepal.com/en/blog/security-update"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-indigo-700 underline hover:text-indigo-900"
+              >
+                SafePal's official security update
+              </a>
+              ). The cost of the device itself is app dependence and closed firmware, and the
+              experience lives or dies inside SafePal's mobile app. Choose SafePal if a true offline
+              signing boundary matters more to you than an open stack or a trading app. Read our{" "}
               <Link href="/wallets/safepal-s1-review" className="font-bold text-indigo-700 underline hover:text-indigo-900">
                 SafePal S1 review
               </Link>{" "}
