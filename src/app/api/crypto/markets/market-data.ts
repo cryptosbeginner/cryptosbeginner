@@ -1,7 +1,7 @@
 export const ALLOWED_CURRENCIES = new Set(["usd", "eur", "gbp", "aud", "cad", "jpy"]);
 
 export type MarketCurrency = "usd" | "eur" | "gbp" | "aud" | "cad" | "jpy";
-export type MarketProvider = "CoinStats" | "CoinGecko" | "CoinGecko public" | "unavailable";
+export type MarketProvider = "CoinStats" | "CoinGecko" | "CoinGecko public" | "CoinCap" | "unavailable";
 
 export type MarketCoin = {
   id: string;
@@ -60,8 +60,8 @@ function normalizeCoin(raw: unknown, index: number): MarketCoin {
   const coin = (raw && typeof raw === "object" ? raw : {}) as Record<string, unknown>;
   const price = asNumber(coin.price ?? coin.current_price ?? coin.priceUsd);
   const marketCap = asNumber(coin.marketCap ?? coin.market_cap ?? coin.marketCapUsd);
-  const volume = asNumber(coin.volume ?? coin.total_volume ?? coin.volumeUsd);
-  const change24h = asNumber(coin.priceChange1d ?? coin.priceChange24h ?? coin.price_change_percentage_24h ?? coin.pCh24h);
+  const volume = asNumber(coin.volume ?? coin.total_volume ?? coin.volumeUsd ?? coin.volumeUsd24Hr);
+  const change24h = asNumber(coin.priceChange1d ?? coin.priceChange24h ?? coin.price_change_percentage_24h ?? coin.pCh24h ?? coin.changePercent24Hr);
   const change1h = asNumber(coin.priceChange1h ?? coin.price_change_percentage_1h ?? coin.price_change_percentage_1h_in_currency);
   const change7d = asNumber(coin.priceChange7d ?? coin.price_change_percentage_7d ?? coin.price_change_percentage_7d_in_currency);
   const change30d = asNumber(coin.priceChange1m ?? coin.price_change_percentage_30d ?? coin.price_change_percentage_30d_in_currency);
@@ -130,6 +130,21 @@ async function fetchCoinGecko(limit: number, currency: MarketCurrency) {
   return data;
 }
 
+async function fetchCoinCap(limit: number) {
+  const endpoint = new URL("https://api.coincap.io/v2/assets");
+  endpoint.searchParams.set("limit", String(limit));
+  const response = await fetch(endpoint, {
+    headers: { Accept: "application/json" },
+    next: { revalidate: 600 },
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!response.ok) throw new Error(`CoinCap responded with ${response.status}`);
+  const payload = await response.json();
+  const data = listFromPayload(payload).map(normalizeCoin).filter((coin) => coin.price !== null);
+  if (!data.length) throw new Error("CoinCap returned no market rows");
+  return data;
+}
+
 export async function getMarketData(limit: number, currency: MarketCurrency): Promise<MarketResponse> {
   const checkedAt = new Date().toISOString();
   try {
@@ -140,7 +155,13 @@ export async function getMarketData(limit: number, currency: MarketCurrency): Pr
       const keyless = !process.env.COINGECKO_API_KEY;
       return { provider: keyless ? "CoinGecko public" : "CoinGecko", currency, checkedAt, staleAfterSeconds: 90, data, fallback: true, keyless };
     } catch {
-      return { provider: "unavailable", currency, checkedAt, staleAfterSeconds: 90, data: [], error: "Market data is temporarily unavailable. Try again shortly." };
+      try {
+        if (currency !== "usd") throw new Error("CoinCap serves USD only");
+        const data = await fetchCoinCap(limit);
+        return { provider: "CoinCap", currency, checkedAt, staleAfterSeconds: 90, data, fallback: true, keyless: true };
+      } catch {
+        return { provider: "unavailable", currency, checkedAt, staleAfterSeconds: 90, data: [], error: "Market data is temporarily unavailable. Try again shortly." };
+      }
     }
   }
 }
