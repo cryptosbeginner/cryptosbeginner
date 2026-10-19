@@ -148,7 +148,9 @@ async function fetchCoinCap(limit: number) {
 export async function getMarketData(limit: number, currency: MarketCurrency): Promise<MarketResponse> {
   const checkedAt = new Date().toISOString();
   try {
-    return { provider: "CoinStats", currency, checkedAt, staleAfterSeconds: 90, data: await fetchCoinStats(limit, currency) };
+    if (currency !== "usd") throw new Error("CoinCap serves USD only");
+    const data = await fetchCoinCap(limit);
+    return { provider: "CoinCap", currency, checkedAt, staleAfterSeconds: 90, data, fallback: true, keyless: true };
   } catch {
     try {
       const data = await fetchCoinGecko(limit, currency);
@@ -156,9 +158,7 @@ export async function getMarketData(limit: number, currency: MarketCurrency): Pr
       return { provider: keyless ? "CoinGecko public" : "CoinGecko", currency, checkedAt, staleAfterSeconds: 90, data, fallback: true, keyless };
     } catch {
       try {
-        if (currency !== "usd") throw new Error("CoinCap serves USD only");
-        const data = await fetchCoinCap(limit);
-        return { provider: "CoinCap", currency, checkedAt, staleAfterSeconds: 90, data, fallback: true, keyless: true };
+        return { provider: "CoinStats", currency, checkedAt, staleAfterSeconds: 90, data: await fetchCoinStats(limit, currency), fallback: true };
       } catch {
         return { provider: "unavailable", currency, checkedAt, staleAfterSeconds: 90, data: [], error: "Market data is temporarily unavailable. Try again shortly." };
       }
