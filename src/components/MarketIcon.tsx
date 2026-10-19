@@ -20,7 +20,7 @@ export default function MarketIcon({ src, name, symbol = "?", size = "md" }: Mar
   const initials = symbol.replace(/[^a-z0-9]/gi, "").slice(0, 3).toUpperCase() || name.slice(0, 2).toUpperCase();
 
   return (
-    <span className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-cyan-400 font-black text-white shadow-lg shadow-violet-950/20 ${sizes[size]}`}>
+    <span className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-slate-100 font-black text-slate-500 ${sizes[size]}`}>
       {src && !failed ? (
         // Provider image hosts are dynamic; a native image keeps the fallback resilient.
         // eslint-disable-next-line @next/next/no-img-element
