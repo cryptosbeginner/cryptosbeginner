@@ -225,6 +225,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/learn/how-to-check-exchange-proof-of-reserves",
     "/learn/crypto-exchange-security-checklist",
     "/learn/how-p2p-escrow-works",
+    "/learn/best-rpc-providers",
     "/learn/best-solana-dex",
     "/learn/crypto-platforms-for-beginners",
     "/learn/exchange-insurance-funds",

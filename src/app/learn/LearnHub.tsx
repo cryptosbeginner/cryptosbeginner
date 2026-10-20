@@ -45,6 +45,7 @@ const guides: Guide[] = [
   // DeFi & Staking
   { slug: "sui-staking", title: "SUI Staking: The Complete Beginner's Guide", description: "How Sui's delegated proof-of-stake works, current APY, and the risks to know.", category: "DeFi & Staking" },
   { slug: "rwa-crypto-projects", title: "RWA Crypto Explained", description: "Tokenization of real-world assets: the categories, the leading projects, and the risks.", category: "DeFi & Staking" },
+  { slug: "best-rpc-providers", title: "Best RPC Node Providers", description: "Alchemy, Infura, QuickNode, Chainstack, Ankr, GetBlock and dRPC compared on published pricing, free tiers and chain coverage.", category: "DeFi & Staking", badge: "New" },
   // Fintech
   { slug: "what-is-a-neobank", title: "What Is a Neobank?", description: "Digital banks explained: the 3-jobs model, banking-as-a-service, crypto neobanks, and how to launch your own.", category: "Fintech", badge: "New" },
 ];

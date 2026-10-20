@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect width="1200" height="640" rx="24" fill="#0f172a"/>
+  <text x="60" y="70" fill="#5eead4" font-size="20" font-weight="800" letter-spacing="4">HOW AN RPC ENDPOINT WORKS</text>
+  <text x="60" y="108" fill="#ffffff" font-size="34" font-weight="900">Your app asks. The endpoint answers.</text>
+
+  <!-- Box 1: Wallet or app -->
+  <g>
+    <rect x="60" y="170" width="300" height="330" rx="20" fill="#1e293b"/>
+    <circle cx="110" cy="220" r="24" fill="#6366f1"/>
+    <text x="110" y="229" fill="#fff" font-size="22" font-weight="900" text-anchor="middle">1</text>
+    <text x="150" y="216" fill="#cbd5e1" font-size="16" font-weight="700">YOU</text>
+    <text x="150" y="240" fill="#94a3b8" font-size="14">Wallet or DeFi app</text>
+    <text x="90" y="310" fill="#e2e8f0" font-size="19" font-weight="700">Opens MetaMask,</text>
+    <text x="90" y="336" fill="#e2e8f0" font-size="19" font-weight="700">loads a swap page,</text>
+    <text x="90" y="362" fill="#e2e8f0" font-size="19" font-weight="700">checks a balance</text>
+    <text x="90" y="420" fill="#94a3b8" font-size="15">The app cannot read the</text>
+    <text x="90" y="444" fill="#94a3b8" font-size="15">blockchain on its own.</text>
+    <text x="90" y="478" fill="#64748b" font-size="13">It needs to ask someone.</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g>
+    <line x1="375" y1="310" x2="445" y2="310" stroke="#5eead4" stroke-width="4"/>
+    <polygon points="445,298 465,310 445,322" fill="#5eead4"/>
+    <text x="410" y="285" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">request</text>
+    <line x1="465" y1="360" x2="395" y2="360" stroke="#64748b" stroke-width="3"/>
+    <polygon points="395,350 375,360 395,370" fill="#64748b"/>
+    <text x="410" y="392" fill="#94a3b8" font-size="12" text-anchor="middle">answer</text>
+  </g>
+
+  <!-- Box 2: RPC endpoint -->
+  <g>
+    <rect x="460" y="170" width="300" height="330" rx="20" fill="#1e293b" stroke="#5eead4" stroke-width="2"/>
+    <circle cx="510" cy="220" r="24" fill="#6366f1"/>
+    <text x="510" y="229" fill="#fff" font-size="22" font-weight="900" text-anchor="middle">2</text>
+    <text x="550" y="216" fill="#cbd5e1" font-size="16" font-weight="700">RPC ENDPOINT</text>
+    <text x="550" y="240" fill="#94a3b8" font-size="14">The middleman</text>
+    <text x="490" y="310" fill="#5eead4" font-size="19" font-weight="700">Receives the question,</text>
+    <text x="490" y="336" fill="#5eead4" font-size="19" font-weight="700">passes it to a node,</text>
+    <text x="490" y="362" fill="#5eead4" font-size="19" font-weight="700">sends back the reply</text>
+    <text x="490" y="420" fill="#94a3b8" font-size="15">One URL, like an address</text>
+    <text x="490" y="444" fill="#94a3b8" font-size="15">you paste into your wallet.</text>
+    <text x="490" y="478" fill="#64748b" font-size="13">This is what providers sell.</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g>
+    <line x1="775" y1="310" x2="845" y2="310" stroke="#5eead4" stroke-width="4"/>
+    <polygon points="845,298 865,310 845,322" fill="#5eead4"/>
+    <text x="810" y="285" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">query</text>
+    <line x1="865" y1="360" x2="795" y2="360" stroke="#64748b" stroke-width="3"/>
+    <polygon points="795,350 775,360 795,370" fill="#64748b"/>
+    <text x="810" y="392" fill="#94a3b8" font-size="12" text-anchor="middle">data</text>
+  </g>
+
+  <!-- Box 3: Blockchain nodes -->
+  <g>
+    <rect x="860" y="170" width="280" height="330" rx="20" fill="#1e293b"/>
+    <circle cx="910" cy="220" r="24" fill="#6366f1"/>
+    <text x="910" y="229" fill="#fff" font-size="22" font-weight="900" text-anchor="middle">3</text>
+    <text x="950" y="216" fill="#cbd5e1" font-size="16" font-weight="700">THE CHAIN</text>
+    <text x="950" y="240" fill="#94a3b8" font-size="14">Blockchain nodes</text>
+    <text x="890" y="310" fill="#34d399" font-size="19" font-weight="700">Hold the full ledger:</text>
+    <text x="890" y="336" fill="#34d399" font-size="19" font-weight="700">balances, blocks,</text>
+    <text x="890" y="362" fill="#34d399" font-size="19" font-weight="700">every transaction</text>
+    <text x="890" y="420" fill="#94a3b8" font-size="15">Nodes do the actual</text>
+    <text x="890" y="444" fill="#94a3b8" font-size="15">record keeping.</text>
+    <text x="890" y="478" fill="#64748b" font-size="13">Running one yourself is heavy.</text>
+  </g>
+
+  <!-- Result bar -->
+  <g>
+    <rect x="60" y="540" width="1080" height="55" rx="14" fill="#064e3b"/>
+    <text x="90" y="575" fill="#a7f3d0" font-size="18" font-weight="800">Round trip: usually a fraction of a second, repeated thousands of times a day</text>
+  </g>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect width="1200" height="700" rx="24" fill="#0f172a"/>
+  <text x="60" y="70" fill="#5eead4" font-size="20" font-weight="800" letter-spacing="4">FOUR KINDS OF RPC ENDPOINT</text>
+  <text x="60" y="108" fill="#ffffff" font-size="34" font-weight="900">Same data. Very different trade-offs.</text>
+
+  <!-- Public -->
+  <g>
+    <rect x="60" y="150" width="255" height="430" rx="20" fill="#1e293b"/>
+    <text x="90" y="205" fill="#e2e8f0" font-size="24" font-weight="900">Public</text>
+    <text x="90" y="232" fill="#94a3b8" font-size="14">Open to anyone</text>
+    <text x="90" y="290" fill="#94a3b8" font-size="15">Cost</text>
+    <text x="90" y="316" fill="#34d399" font-size="19" font-weight="800">Free, no sign-up</text>
+    <text x="90" y="360" fill="#94a3b8" font-size="15">Speed</text>
+    <text x="90" y="386" fill="#e2e8f0" font-size="19" font-weight="700">Slow at busy times</text>
+    <text x="90" y="430" fill="#94a3b8" font-size="15">Limits</text>
+    <text x="90" y="456" fill="#e2e8f0" font-size="19" font-weight="700">Strict rate caps</text>
+    <text x="90" y="512" fill="#64748b" font-size="13">Good for: a first wallet</text>
+    <text x="90" y="534" fill="#64748b" font-size="13">connection or a quick test.</text>
+  </g>
+
+  <!-- Shared -->
+  <g>
+    <rect x="335" y="150" width="255" height="430" rx="20" fill="#1e293b"/>
+    <text x="365" y="205" fill="#e2e8f0" font-size="24" font-weight="900">Shared</text>
+    <text x="365" y="232" fill="#94a3b8" font-size="14">Nodes pooled across users</text>
+    <text x="365" y="290" fill="#94a3b8" font-size="15">Cost</text>
+    <text x="365" y="316" fill="#34d399" font-size="19" font-weight="800">Free tier, then paid</text>
+    <text x="365" y="360" fill="#94a3b8" font-size="15">Speed</text>
+    <text x="365" y="386" fill="#e2e8f0" font-size="19" font-weight="700">Solid for most apps</text>
+    <text x="365" y="430" fill="#94a3b8" font-size="15">Limits</text>
+    <text x="365" y="456" fill="#e2e8f0" font-size="19" font-weight="700">Per-plan quotas</text>
+    <text x="365" y="512" fill="#64748b" font-size="13">Good for: most projects</text>
+    <text x="365" y="534" fill="#64748b" font-size="13">and nearly all beginners.</text>
+  </g>
+
+  <!-- Private -->
+  <g>
+    <rect x="610" y="150" width="255" height="430" rx="20" fill="#1e293b" stroke="#5eead4" stroke-width="2"/>
+    <text x="640" y="205" fill="#e2e8f0" font-size="24" font-weight="900">Private</text>
+    <text x="640" y="232" fill="#94a3b8" font-size="14">Your own key, paid plan</text>
+    <text x="640" y="290" fill="#94a3b8" font-size="15">Cost</text>
+    <text x="640" y="316" fill="#fbbf24" font-size="19" font-weight="800">Monthly or per request</text>
+    <text x="640" y="360" fill="#94a3b8" font-size="15">Speed</text>
+    <text x="640" y="386" fill="#e2e8f0" font-size="19" font-weight="700">Faster, priority access</text>
+    <text x="640" y="430" fill="#94a3b8" font-size="15">Limits</text>
+    <text x="640" y="456" fill="#e2e8f0" font-size="19" font-weight="700">Higher ceilings</text>
+    <text x="640" y="512" fill="#64748b" font-size="13">Good for: busy dApps,</text>
+    <text x="640" y="534" fill="#64748b" font-size="13">traders, production use.</text>
+  </g>
+
+  <!-- Dedicated -->
+  <g>
+    <rect x="885" y="150" width="255" height="430" rx="20" fill="#1e293b"/>
+    <text x="915" y="205" fill="#e2e8f0" font-size="24" font-weight="900">Dedicated</text>
+    <text x="915" y="232" fill="#94a3b8" font-size="14">A node that is only yours</text>
+    <text x="915" y="290" fill="#94a3b8" font-size="15">Cost</text>
+    <text x="915" y="316" fill="#fb7185" font-size="19" font-weight="800">Hundreds per month</text>
+    <text x="915" y="360" fill="#94a3b8" font-size="15">Speed</text>
+    <text x="915" y="386" fill="#e2e8f0" font-size="19" font-weight="700">No noisy neighbours</text>
+    <text x="915" y="430" fill="#94a3b8" font-size="15">Limits</text>
+    <text x="915" y="456" fill="#e2e8f0" font-size="19" font-weight="700">Set by the hardware</text>
+    <text x="915" y="512" fill="#64748b" font-size="13">Good for: exchanges and</text>
+    <text x="915" y="534" fill="#64748b" font-size="13">high-volume services.</text>
+  </g>
+
+  <!-- Result bar -->
+  <g>
+    <rect x="60" y="610" width="1080" height="55" rx="14" fill="#064e3b"/>
+    <text x="90" y="645" fill="#a7f3d0" font-size="18" font-weight="800">Most people reading this need a shared or private endpoint. Dedicated is overkill until traffic proves otherwise.</text>
+  </g>
+</svg>
