@@ -10,19 +10,43 @@ export const revalidate = 600;
 const GOPLUS_BASE = "https://api.gopluslabs.io/api/v1/token_security";
 const TTL_MS = 10 * 60 * 1000;
 
-const CHAINS: Record<string, { label: string; evm: boolean }> = {
-  "1": { label: "Ethereum", evm: true },
-  "56": { label: "BNB Chain", evm: true },
-  "137": { label: "Polygon", evm: true },
-  "8453": { label: "Base", evm: true },
-  "42161": { label: "Arbitrum", evm: true },
-  "10": { label: "Optimism", evm: true },
-  "43114": { label: "Avalanche", evm: true },
-  "1399811149": { label: "Solana", evm: false },
+type ChainKind = "evm" | "solana" | "tron";
+
+const CHAINS: Record<string, { label: string; kind: ChainKind }> = {
+  "1": { label: "Ethereum", kind: "evm" },
+  "56": { label: "BNB Chain", kind: "evm" },
+  "137": { label: "Polygon", kind: "evm" },
+  "8453": { label: "Base", kind: "evm" },
+  "42161": { label: "Arbitrum", kind: "evm" },
+  "10": { label: "Optimism", kind: "evm" },
+  "43114": { label: "Avalanche", kind: "evm" },
+  "324": { label: "zkSync Era", kind: "evm" },
+  "59144": { label: "Linea", kind: "evm" },
+  "534352": { label: "Scroll", kind: "evm" },
+  "81457": { label: "Blast", kind: "evm" },
+  "169": { label: "Manta Pacific", kind: "evm" },
+  "146": { label: "Sonic", kind: "evm" },
+  "80094": { label: "Berachain", kind: "evm" },
+  "480": { label: "World Chain", kind: "evm" },
+  "1868": { label: "Soneium", kind: "evm" },
+  "130": { label: "Unichain", kind: "evm" },
+  "5000": { label: "Mantle", kind: "evm" },
+  "204": { label: "opBNB", kind: "evm" },
+  "25": { label: "Cronos", kind: "evm" },
+  "100": { label: "Gnosis", kind: "evm" },
+  "321": { label: "KCC", kind: "evm" },
+  "solana": { label: "Solana", kind: "solana" },
+  "tron": { label: "Tron", kind: "tron" },
 };
 
 const EVM_RE = /^0x[0-9a-fA-F]{40}$/;
 const SOL_RE = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+const TRON_RE = /^T[1-9A-HJ-NP-Za-km-z]{33}$/;
+
+const EVM_DEAD = new Set([
+  "0x0000000000000000000000000000000000000000",
+  "0x000000000000000000000000000000000000dead",
+]);
 
 type CacheEntry = { expires: number; body: Record<string, unknown> };
 const cache = new Map<string, CacheEntry>();
@@ -64,7 +88,11 @@ function fmtPct(p: number | null): string {
   return p === 0 ? "0%" : `${p.toFixed(p < 1 ? 2 : 1)}%`;
 }
 
-function buildFindings(r: Record<string, unknown>): TokenSafetyFinding[] {
+function shortAddr(a: string): string {
+  return a.length > 14 ? `${a.slice(0, 6)}...${a.slice(-4)}` : a;
+}
+
+function buildFindings(r: Record<string, unknown>, kind: ChainKind): TokenSafetyFinding[] {
   const findings: TokenSafetyFinding[] = [];
   const honeypot = bool(r.is_honeypot);
   const cannotBuy = bool(r.cannot_buy);
@@ -75,9 +103,13 @@ function buildFindings(r: Record<string, unknown>): TokenSafetyFinding[] {
   const proxy = bool(r.is_proxy);
   const openSource = bool(r.is_open_source);
   const trusted = bool(r.trust_list);
-  const owner = typeof r.owner_address === "string" && r.owner_address.startsWith("0x") ? r.owner_address : null;
-  const ownerRenounced = !owner || owner === "0x0000000000000000000000000000000000000000" || owner.toLowerCase() === "0x000000000000000000000000000000000000dead";
   const holderCount = Number(r.holder_count);
+
+  const ownerRaw = typeof r.owner_address === "string" ? r.owner_address : "";
+  const ownerRenounced =
+    kind === "evm"
+      ? !ownerRaw || EVM_DEAD.has(ownerRaw.toLowerCase())
+      : !ownerRaw;
 
   findings.push({
     key: "honeypot",
@@ -139,8 +171,8 @@ function buildFindings(r: Record<string, unknown>): TokenSafetyFinding[] {
     label: "Ownership",
     status: ownerRenounced ? "pass" : "warn",
     detail: ownerRenounced
-      ? "Ownership renounced or no owner set"
-      : `Owner set: ${owner ? `${owner.slice(0, 6)}...${owner.slice(-4)}` : "unknown"}`,
+      ? "Ownership renounced or no admin owner reported"
+      : `Admin owner set: ${shortAddr(ownerRaw)}`,
     explanation: ownerRenounced
       ? "Nobody holds the admin keys, so privileged functions like pausing trading cannot be used against holders."
       : "An admin wallet still controls the contract. If that wallet is compromised or malicious, holders are exposed.",
@@ -194,28 +226,34 @@ function verdictFor(findings: TokenSafetyFinding[]): { verdict: TokenSafetyResul
   return { verdict: "unknown", reason: "Not enough data to judge this token." };
 }
 
+function noDataResult(address: string, chain: string, label: string, timestamp: string): Omit<TokenSafetyResult, "cached"> {
+  return {
+    address, chain, chainLabel: label,
+    tokenName: null, tokenSymbol: null,
+    verdict: "unknown",
+    verdictReason: `GoPlus could not scan this token on ${label} right now. Try again later.`,
+    findings: [], timestamp, dataSource: "GoPlus Security",
+  };
+}
+
 async function checkToken(address: string, chain: string): Promise<Omit<TokenSafetyResult, "cached">> {
+  const { label, kind } = CHAINS[chain];
   const url = `${GOPLUS_BASE}/${chain}?contract_addresses=${encodeURIComponent(address)}`;
-  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" } });
-  if (!res.ok) throw new Error(`GoPlus request failed (${res.status})`);
-  const payload = (await res.json()) as { code?: number; result?: Record<string, Record<string, unknown>> };
-  const raw = payload?.result?.[address] ?? payload?.result?.[address.toLowerCase()];
   const timestamp = new Date().toISOString();
+  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" } });
+  if (!res.ok) return noDataResult(address, chain, label, timestamp);
+  const payload = (await res.json()) as { code?: number; result?: Record<string, Record<string, unknown>> };
+  if (payload?.code !== 1) return noDataResult(address, chain, label, timestamp);
+  const raw = payload?.result?.[address] ?? payload?.result?.[address.toLowerCase()];
 
   if (!raw || typeof raw !== "object" || Object.keys(raw).length === 0) {
-    return {
-      address, chain, chainLabel: CHAINS[chain].label,
-      tokenName: null, tokenSymbol: null,
-      verdict: "unknown",
-      verdictReason: "GoPlus has no security data for this contract. It may be too new, on an unsupported setup, or not a token contract.",
-      findings: [], timestamp, dataSource: "GoPlus Security",
-    };
+    return noDataResult(address, chain, label, timestamp);
   }
 
-  const findings = buildFindings(raw);
+  const findings = buildFindings(raw, kind);
   const { verdict, reason } = verdictFor(findings);
   return {
-    address, chain, chainLabel: CHAINS[chain].label,
+    address, chain, chainLabel: label,
     tokenName: typeof raw.token_name === "string" ? raw.token_name : null,
     tokenSymbol: typeof raw.token_symbol === "string" ? raw.token_symbol : null,
     verdict, verdictReason: reason, findings, timestamp,
@@ -228,16 +266,23 @@ export async function GET(request: Request) {
   const rawAddress = (searchParams.get("address") ?? "").trim();
   const chain = searchParams.get("chain") ?? "1";
 
-  if (!CHAINS[chain]) {
+  const chainInfo = CHAINS[chain];
+  if (!chainInfo) {
     return NextResponse.json({ error: "Unsupported chain." }, { status: 400 });
   }
-  const { evm } = CHAINS[chain];
-  const valid = evm ? EVM_RE.test(rawAddress) : SOL_RE.test(rawAddress);
+
+  const valid =
+    chainInfo.kind === "evm" ? EVM_RE.test(rawAddress)
+    : chainInfo.kind === "solana" ? SOL_RE.test(rawAddress)
+    : TRON_RE.test(rawAddress);
   if (!valid) {
-    return NextResponse.json(
-      { error: evm ? "Enter a valid contract address (0x followed by 40 hex characters)." : "Enter a valid Solana token address." },
-      { status: 400 }
-    );
+    const hint =
+      chainInfo.kind === "evm"
+        ? "Enter a valid contract address (0x followed by 40 hex characters)."
+        : chainInfo.kind === "solana"
+          ? "Enter a valid Solana token address (base58, 32 to 44 characters)."
+          : "Enter a valid Tron token address (starts with T, 34 characters).";
+    return NextResponse.json({ error: hint }, { status: 400 });
   }
 
   const key = `${chain}:${rawAddress.toLowerCase()}`;
@@ -259,9 +304,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ ...result, cached: false }, {
       headers: { "Cache-Control": "s-maxage=600, stale-while-revalidate=600" },
     });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
-      { error: "Could not reach the security scanner. Try again in a moment." },
+      { error: `Could not reach the security scanner for ${chainInfo.label}. Try again in a moment.` },
       { status: 503, headers: { "Cache-Control": "no-store" } }
     );
   }

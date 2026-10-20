@@ -48,7 +48,7 @@ const faqs = [
   {
     question: "Which blockchains are supported?",
     answer:
-      "Ethereum, BNB Chain, Polygon, Base, Arbitrum, Optimism, Avalanche, and Solana. Paste the token contract address for the chain you select.",
+      "24 networks: Ethereum, BNB Chain, Polygon, Base, Arbitrum, Optimism, Avalanche, zkSync Era, Linea, Scroll, Blast, Manta Pacific, Sonic, Berachain, World Chain, Soneium, Unichain, Mantle, opBNB, Cronos, Gnosis, KCC, Solana, and Tron. Paste the token contract address for the chain you select.",
   },
   {
     question: "Where does the scan data come from?",
@@ -73,22 +73,49 @@ export default function TokenSafetyCheckerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <Header />
       <main className="min-h-screen bg-[#f7f7fb] text-slate-950">
-        <section className="border-b border-slate-200 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white">
-          <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
-              Tools · token safety
-            </p>
-            <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
-              Check a token before you buy it
-            </h1>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-              Paste any token contract address and scan it for the classic rug pull patterns:
-              honeypots, sell blocks, hidden taxes, mint functions, and upgradeable contracts.
-              Free, powered by GoPlus Security.
-            </p>
-            <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-              Updated {UPDATED} · Data by GoPlus Security
-            </p>
+        <section className="relative overflow-hidden border-b border-slate-200 bg-slate-950 text-white">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.14]"
+            aria-hidden="true"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 18% 22%, #10b981 0, transparent 26%), radial-gradient(circle at 82% 78%, #4f46e5 0, transparent 30%), radial-gradient(circle at 68% 18%, #f59e0b 0, transparent 22%)",
+            }}
+          />
+          <div className="relative mx-auto grid max-w-4xl items-center gap-8 px-4 py-14 sm:px-6 md:grid-cols-[1fr_auto] md:py-16">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">
+                Tools · token safety
+              </p>
+              <h1 className="mt-4 text-4xl font-black tracking-[-0.05em] sm:text-5xl">
+                Check a token before you buy it
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+                Paste any token contract address and scan it for the classic rug pull patterns:
+                honeypots, sell blocks, hidden taxes, mint functions, and upgradeable contracts.
+                Free, across 24 networks, powered by GoPlus Security.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2 text-xs font-black">
+                <span className="rounded-full bg-white/10 px-3.5 py-2 text-emerald-300">Honeypot scan</span>
+                <span className="rounded-full bg-white/10 px-3.5 py-2 text-amber-300">Hidden tax check</span>
+                <span className="rounded-full bg-white/10 px-3.5 py-2 text-sky-300">Mint and proxy detection</span>
+                <span className="rounded-full bg-white/10 px-3.5 py-2 text-rose-300">Sell-block detection</span>
+              </div>
+              <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
+                Updated {UPDATED} · Data by GoPlus Security
+              </p>
+            </div>
+            <div className="hidden justify-center md:flex" aria-hidden="true">
+              <div className="relative">
+                <div className="absolute -inset-6 rounded-full bg-emerald-500/20 blur-2xl" />
+                <div className="relative flex h-40 w-40 items-center justify-center rounded-[2rem] border border-white/15 bg-gradient-to-br from-emerald-500/25 via-slate-900 to-indigo-900/40 shadow-2xl">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="h-20 w-20 text-emerald-300">
+                    <path d="M12 2 4 5.5v5.6c0 5 3.4 8.6 8 10.9 4.6-2.3 8-5.9 8-10.9V5.5L12 2Z" />
+                    <path d="m9 11.5 2.2 2.2L15.5 9.5" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
