@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/learn/gmgn-ai-agent`;
-const UPDATED = "31 August 2026";
-const UPDATED_ISO = "2026-08-31";
+const UPDATED = "20 October 2026";
+const UPDATED_ISO = "2026-10-20";
 
 const GMGN_AFFILIATE = "https://gmgn.ai/r/XPS1eXg4";
 const GMGN_DOCS = "https://docs.gmgn.ai/index/gmgn-agent-api";
@@ -345,7 +346,15 @@ export default function GmgnAiAgentTutorialPage() {
               wallet, portfolio, tracking, and trading capabilities. This
               tutorial focuses on safer read-only research first: checking token
               data, reviewing wallet activity, protecting API credentials, and
-              documenting what still needs manual verification.
+              documenting what still needs manual verification. It pairs well
+              with our broader{" "}
+              <Link
+                href="/meme-coins"
+                className="font-bold text-emerald-700 underline underline-offset-4"
+              >
+                meme-coin research hub
+              </Link>
+              .
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -377,6 +386,44 @@ export default function GmgnAiAgentTutorialPage() {
               legal, or tax advice. CryptosBeginner may earn a commission if you
               use the GMGN partner link.
             </p>
+
+            <div className="mt-8 max-w-4xl rounded-2xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6">
+              <h2 className="text-sm font-black uppercase tracking-[0.16em] text-emerald-700">
+                Key takeaways
+              </h2>
+              <ul className="mt-4 space-y-3 leading-7 text-slate-800">
+                <li>
+                  <strong>Query access and signed access are different:</strong>{" "}
+                  research and market queries need only an API key, while swaps
+                  and orders need the API key plus private-key authentication.
+                </li>
+                <li>
+                  <strong>GMGN_PRIVATE_KEY is a signing key, not a seed phrase:</strong>{" "}
+                  it authenticates API requests rather than controlling a
+                  wallet, but an exposed key still allows requests on your
+                  behalf.
+                </li>
+                <li>
+                  <strong>Start read-only:</strong> begin with token, wallet,
+                  and market queries before enabling any signed or trading
+                  workflow, and verify every transaction manually.
+                </li>
+                <li>
+                  <strong>Network requirement:</strong> the Agent API currently
+                  supports IPv4 requests only, not IPv6. Check your environment
+                  if authentication fails.
+                </li>
+                <li>
+                  <strong>No scan replaces manual checks:</strong> security
+                  fields and Smart Money labels are inputs, not verdicts.
+                  Confirm the contract, liquidity, and holders independently.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-6 max-w-4xl">
+              <AuthorByline updated={UPDATED} />
+            </div>
           </div>
         </section>
 
@@ -729,7 +776,22 @@ chmod 600 ~/.config/gmgn/.env`}
             liquidity data are useful inputs. No single field proves that a
             token is safe or that you can sell at a displayed price. Token
             metadata, social accounts, volume, and visible activity can be
-            manipulated.
+            manipulated. For an independent contract check outside any single
+            platform, run the address through our{" "}
+            <Link
+              href="/tools/token-safety-checker"
+              className="font-bold text-emerald-800 underline underline-offset-4"
+            >
+              free token safety checker
+            </Link>{" "}
+            and follow the steps in our{" "}
+            <Link
+              href="/meme-coin-research"
+              className="font-bold text-emerald-800 underline underline-offset-4"
+            >
+              meme-coin research checklist
+            </Link>
+            .
           </p>
 
           <div className="mt-8 rounded-2xl border border-rose-200 bg-rose-50 p-5 sm:p-6">

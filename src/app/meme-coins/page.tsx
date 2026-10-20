@@ -1,20 +1,35 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import AuthorByline from "@/components/AuthorByline";
+
+const SITE_URL = "https://www.cryptosbeginner.com";
+const PAGE_URL = `${SITE_URL}/meme-coins`;
+const UPDATED = "20 October 2026";
+const UPDATED_ISO = "2026-10-20";
 
 export const metadata: Metadata = {
-  title: "Meme Coin Research Hub | Tools, Risks, and Beginner Workflow",
+  title: "Meme Coin Research: A Beginner Workflow for Safer Token Checks",
   description:
-    "Learn a practical meme-coin research workflow. Understand trading terminals, launchpads, social discovery tools, charts, explorers, wallet checks, liquidity risks, and red flags before you trade.",
+    "Learn a practical meme-coin research workflow: verify contract addresses, check liquidity and holders, spot red flags, and stay safe before trading.",
+  authors: [{ name: "CryptosBeginner editorial team" }],
   alternates: {
-    canonical: "/meme-coins",
+    canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Meme Coin Research Hub",
+    title: "Meme Coin Research: A Beginner Workflow for Safer Token Checks",
     description:
-      "A beginner-friendly process for researching meme coins before connecting a wallet or signing a trade.",
+      "A beginner-friendly research process for meme coins: contract verification, liquidity checks, wallet analysis, and red flags before you trade.",
     type: "website",
-    url: "/meme-coins",
+    url: PAGE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meme Coin Research: A Beginner Workflow for Safer Token Checks",
+    description:
+      "A practical meme-coin research workflow: verify contracts, check liquidity, spot red flags, and stay safe.",
   },
 };
 
@@ -151,234 +166,79 @@ function SectionLabel({
   );
 }
 
-function PageHeader() {
-  return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-5 px-5 sm:px-8 lg:px-12">
-        <Link
-          href="/"
-          className="text-2xl font-black tracking-tight text-slate-950 no-underline"
-          aria-label="CryptosBeginner home"
-        >
-          Cryptos<span className="text-indigo-600">Beginner</span>
-        </Link>
-
-        <nav
-          aria-label="Primary navigation"
-          className="hidden items-center gap-7 lg:flex"
-        >
-          <Link
-            href="/crypto-research"
-            className="text-sm font-bold text-slate-700 no-underline transition hover:text-indigo-600"
-          >
-            Compare
-          </Link>
-
-          <Link
-            href="/crypto-research"
-            className="text-sm font-bold text-slate-700 no-underline transition hover:text-indigo-600"
-          >
-            Research
-          </Link>
-
-          <Link
-            href="/learn"
-            className="text-sm font-bold text-slate-700 no-underline transition hover:text-indigo-600"
-          >
-            Learn
-          </Link>
-
-          <Link
-            href="/regions"
-            className="text-sm font-bold text-slate-700 no-underline transition hover:text-indigo-600"
-          >
-            Regions
-          </Link>
-
-          <Link
-            href="/tools"
-            className="text-sm font-bold text-slate-700 no-underline transition hover:text-indigo-600"
-          >
-            Tools
-          </Link>
-
-          <Link
-            href="/crypto-cards"
-            className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-black text-white no-underline transition hover:bg-indigo-700"
-          >
-            Crypto Cards
-          </Link>
-        </nav>
-
-        <Link
-          href="/crypto-cards"
-          className="inline-flex min-h-10 items-center justify-center rounded-xl bg-indigo-600 px-4 py-2 text-sm font-black text-white no-underline lg:hidden"
-        >
-          Cards
-        </Link>
-      </div>
-    </header>
-  );
-}
-
-function PageFooter() {
-  return (
-    <footer className="border-t border-slate-800 bg-slate-950 px-5 py-14 text-slate-300 sm:px-8 lg:px-12">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
-        <div className="max-w-sm">
-          <Link
-            href="/"
-            className="text-2xl font-black tracking-tight text-white no-underline"
-            aria-label="CryptosBeginner home"
-          >
-            Cryptos<span className="text-indigo-400">Beginner</span>
-          </Link>
-
-          <p className="mt-5 text-sm leading-7 text-slate-400">
-            Beginner-friendly crypto education, research frameworks, tool
-            guides, and practical safety information.
-          </p>
-
-          <p className="mt-5 text-sm leading-7 text-slate-500">
-            Educational content only. Nothing on this website is investment,
-            legal, tax, or financial advice.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-black uppercase tracking-[0.16em] text-white">
-            Research
-          </h2>
-
-          <ul className="mt-5 space-y-3 text-sm">
-            <li>
-              <Link
-                href="/crypto-research"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Crypto research
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/meme-coins"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Meme coin research
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/exchanges"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Exchange reviews
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-black uppercase tracking-[0.16em] text-white">
-            Learn
-          </h2>
-
-          <ul className="mt-5 space-y-3 text-sm">
-            <li>
-              <Link
-                href="/learn"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Learn crypto
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/learn/gmgn-ai-agent"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                GMGN AI Agent guide
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/wallets"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Wallet guides
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-black uppercase tracking-[0.16em] text-white">
-            Site information
-          </h2>
-
-          <ul className="mt-5 space-y-3 text-sm">
-            <li>
-              <Link
-                href="/about"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/methodology"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Methodology
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/disclaimer"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Disclaimer
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/privacy-policy"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Privacy policy
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-slate-400 no-underline transition hover:text-white"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="mx-auto mt-12 max-w-7xl border-t border-slate-800 pt-6 text-sm text-slate-500">
-        © {new Date().getFullYear()} CryptosBeginner. All rights reserved.
-      </div>
-    </footer>
-  );
-}
-
 export default function MemeCoinsPage() {
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Meme Coin Research",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline:
+        "Meme Coin Research: A Beginner Workflow for Safer Token Checks",
+      description:
+        "A practical meme-coin research workflow: verify contract addresses, check liquidity and holders, spot red flags, and stay safe before trading.",
+      url: PAGE_URL,
+      dateModified: UPDATED_ISO,
+      inLanguage: "en",
+      author: {
+        "@type": "Organization",
+        name: "CryptosBeginner",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "CryptosBeginner",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <>
-      <PageHeader />
+      <Header />
+
+      {structuredData.map((schema) => (
+        <script
+          key={schema["@type"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
 
       <main className="overflow-hidden bg-white text-slate-950">
         <Section className="bg-[#020617] text-white">
           <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div className="max-w-3xl">
               <SectionLabel className="text-emerald-300">
-                Meme Coins · Beginner Research Hub
+                Meme Coins · Beginner Research Hub · Updated {UPDATED}
               </SectionLabel>
 
               <h1 className="mt-6 max-w-3xl text-5xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
@@ -406,6 +266,61 @@ export default function MemeCoinsPage() {
                 >
                   Understand the tools
                 </a>
+              </div>
+
+              <nav
+                aria-label="On this page"
+                className="mt-10 rounded-2xl border border-slate-700 bg-slate-900/60 p-5"
+              >
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-emerald-300">
+                  On this page
+                </p>
+                <ul className="mt-3 grid gap-2 text-sm font-bold sm:grid-cols-2">
+                  <li>
+                    <a
+                      href="#tool-types"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      Tool types explained
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#research-workflow"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      Five-step research workflow
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#red-flags"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      Red flags to watch for
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#wallet-safety"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      Wallet safety checklist
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#faq"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      FAQ
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div className="mt-8 max-w-2xl">
+                <AuthorByline updated={UPDATED} />
               </div>
 
               <p className="mt-8 max-w-2xl text-sm leading-7 text-slate-400">
@@ -448,7 +363,15 @@ export default function MemeCoinsPage() {
               wrong question. A trading terminal may help you monitor and route
               a transaction. A launchpad may help create or discover a token. A
               charting tool or blockchain explorer can help verify activity.
-              None of these tools independently validates a meme coin.
+              None of these tools independently validates a meme coin. For a
+              contract-level scan, try our{" "}
+              <Link
+                href="/tools/token-safety-checker"
+                className="font-bold text-emerald-700 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-900"
+              >
+                free token safety checker
+              </Link>
+              , which flags honeypots, hidden taxes, and mint functions.
             </p>
           </div>
 
@@ -573,7 +496,7 @@ export default function MemeCoinsPage() {
           </div>
         </Section>
 
-        <Section className="bg-[#fff5f3]">
+        <Section id="red-flags" className="bg-[#fff5f3]">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div className="max-w-xl">
               <SectionLabel className="text-rose-700">
@@ -587,7 +510,15 @@ export default function MemeCoinsPage() {
               <p className="mt-6 text-lg leading-9 text-slate-700">
                 These signals do not automatically prove fraud. They do mean
                 you should slow down, verify more information, use less
-                exposure, or avoid the trade altogether.
+                exposure, or avoid the trade altogether. For a printable
+                version you can work through before every trade, see our{" "}
+                <Link
+                  href="/meme-coin-research"
+                  className="font-bold text-rose-700 underline decoration-rose-300 underline-offset-4 transition hover:text-rose-900"
+                >
+                  meme-coin research checklist
+                </Link>
+                .
               </p>
             </div>
 
@@ -604,7 +535,7 @@ export default function MemeCoinsPage() {
           </div>
         </Section>
 
-        <Section className="bg-slate-950 text-white">
+        <Section id="wallet-safety" className="bg-slate-950 text-white">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
               <SectionLabel className="text-emerald-300">
@@ -619,7 +550,14 @@ export default function MemeCoinsPage() {
                 A correct token address is not enough if a wallet prompt
                 requests an approval or transaction you do not understand.
                 Review the network, asset, allowance, recipient, route, fees,
-                and slippage before confirming anything.
+                and slippage before confirming anything. Our{" "}
+                <Link
+                  href="/meme-coins/tutorials"
+                  className="font-bold text-emerald-300 underline decoration-emerald-600 underline-offset-4 transition hover:text-emerald-200"
+                >
+                  step-by-step meme-coin tutorials
+                </Link>{" "}
+                walk through these checks with real examples.
               </p>
             </div>
 
@@ -647,7 +585,7 @@ export default function MemeCoinsPage() {
           </div>
         </Section>
 
-        <Section className="bg-white">
+        <Section id="faq" className="bg-white">
           <div className="mx-auto max-w-4xl">
             <SectionLabel className="text-indigo-700">
               Common questions
@@ -710,7 +648,7 @@ export default function MemeCoinsPage() {
         </Section>
       </main>
 
-      <PageFooter />
+      <Footer />
     </>
   );
 }
