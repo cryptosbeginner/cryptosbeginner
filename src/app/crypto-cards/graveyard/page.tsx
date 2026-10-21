@@ -87,6 +87,17 @@ const entries: GraveyardEntry[] = [
     verified: true,
   },
   {
+    name: "1inch Card",
+    issuer: "1inch, issued by Monavate (Baanx / Crypto Life)",
+    status: "Shutting down",
+    date: "December 18, 2026",
+    whatHappened:
+      "The 1inch Card program is reported to be closing on December 18, 2026. New sign-ups are already closed, and cardholders have been told to spend or withdraw their balances before the shutdown date.",
+    lesson:
+      "Spending from self-custody at purchase time does not protect the program itself: the issuer partnership behind the card can still switch it off. Keep balances low and act on spend-down deadlines early.",
+    verified: false,
+  },
+  {
     name: "Gnosis Pay consumer cards",
     issuer: "Gnosis Pay",
     status: "Shutting down",
@@ -95,6 +106,17 @@ const entries: GraveyardEntry[] = [
       "Gnosis Pay is reported to be shutting down its direct-to-consumer debit card and web app by December 20, 2026, ending the GNO cashback program by September 30. The company is pivoting to a B2B model with white-label card infrastructure, and consumer users are being pointed toward partner programs such as MiniPay.",
     lesson:
       "A pivot is not a scam: self-custodial Gnosis Safe balances remain fully accessible. But the card you signed up for is still gone.",
+    verified: false,
+  },
+  {
+    name: "Holyheld Card (personal accounts)",
+    issuer: "Holyheld, issued via Unlimit",
+    status: "Shutting down",
+    date: "Reported October 2026",
+    whatHappened:
+      "Issuer Unlimit is reported to be closing Holyheld personal accounts and cards. New personal accounts are now invitation-only, and Holyheld is pivoting toward business accounts and APIs.",
+    lesson:
+      "When the issuer pulls the plug, the brand on the card cannot keep personal accounts alive. A pivot to B2B is a signal for consumer users to move early, not at the deadline.",
     verified: false,
   },
   {
@@ -257,7 +279,7 @@ export default function GraveyardPage() {
                 url: PAGE_URL,
                 description: "Discontinued, paused, and shut-down crypto cards: what happened, when, and the lessons each teaches.",
                 datePublished: "2026-10-14",
-                dateModified: "2026-10-14",
+                dateModified: "2026-10-21",
                 mainEntity: { "@id": `${PAGE_URL}#itemlist` },
                 breadcrumb: { "@id": `${PAGE_URL}#breadcrumb` },
               },
@@ -395,6 +417,64 @@ export default function GraveyardPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="mt-14 rounded-[1.75rem] border border-indigo-400/25 bg-indigo-400/[.06] p-6 sm:p-8">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-indigo-200">
+              Beyond cards
+            </p>
+            <h2 className="mt-3 text-2xl font-black tracking-[-0.03em] sm:text-3xl">
+              The 2026 protocol shutdown wave
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300">
+              Cards are not the only crypto products dying this year. On October 21, 2026,
+              Cointelegraph reported that at least 82 crypto projects have shut down in 2026,
+              citing a shutdown list compiled by researcher Stacy Muur (@stacy_muur). The causes
+              are unglamorous and familiar from the card graveyard above: weak demand, funding
+              that ran out, revenues that fell away, and, in some cases, security breaches.
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
+              To be clear about what this list is: these are protocols, wallets, and apps, not
+              card programs, and they come from Muur&rsquo;s reporting rather than our own card
+              verification. Some of the dated entries:
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["Blur", "October 12, 2026"],
+                ["Abstract", "October 8, 2026"],
+                ["Fantasy", "May 20, 2026"],
+                ["Legend", "May 13, 2026"],
+                ["Mint Blockchain", "April 17, 2026"],
+                ["Seamless Protocol", "April 8, 2026"],
+                ["Dmail", "April 2, 2026"],
+                ["Leap Wallet", "April 2, 2026"],
+                ["Magic Eden Wallet", "April 1, 2026"],
+                ["MilkyWay", "March 26, 2026"],
+                ["Tally", "March 17, 2026"],
+              ].map(([name, date]) => (
+                <div
+                  key={name}
+                  className="rounded-2xl border border-white/10 bg-white/[.04] px-4 py-3"
+                >
+                  <p className="text-sm font-black">{name}</p>
+                  <p className="mt-0.5 text-xs font-bold text-slate-400">
+                    Shut down {date}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-300">
+              The names are different from the card graveyard above. The lesson is the same.
+              Products with real users, real funding, and real brand recognition still shut
+              down, sometimes with very little warning. Wherever your crypto life runs through
+              someone else&rsquo;s product, a card program, a wallet, or a protocol, keep an exit
+              open: hold your own keys where you can, keep balances you cannot afford to strand
+              low, and know how you would get out before the day you need to.
+            </p>
+            <p className="mt-4 max-w-3xl text-xs leading-6 text-slate-500">
+              Source: Cointelegraph, October 21, 2026, reporting on the 2026 shutdown list
+              compiled by Stacy Muur (@stacy_muur). Shutdown dates are as reported in that list.
+            </p>
           </div>
 
           <div className="mt-10 rounded-[1.75rem] border border-white/10 bg-white/[.05] p-6 sm:p-8">

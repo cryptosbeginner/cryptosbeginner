@@ -13,6 +13,46 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-10-21",
+    type: "catalog-update",
+    cardName: "1inch Card",
+    cardSlug: "1inch-card",
+    title: "1inch Card program closes December 18, 2026",
+    details:
+      "As reported in October 2026, the 1inch Card program closes on December 18, 2026. New sign-ups are already closed, and cardholders have been told to spend or withdraw their balances before the shutdown date. The Mastercard was issued by Monavate and powered by Crypto Life and Baanx. This is based on reports, not an issuer notice we could retrieve directly.",
+    sourceLabel: "Reports, October 2026; issuer notice not directly retrievable",
+  },
+  {
+    date: "2026-10-21",
+    type: "catalog-update",
+    cardName: "Holyheld Card",
+    cardSlug: "holyheld-card",
+    title: "Holyheld personal accounts and cards closing as issuer Unlimit exits",
+    details:
+      "As reported in October 2026, issuer Unlimit is closing Holyheld personal accounts and cards. New personal accounts are now invitation-only, and Holyheld is pivoting to business accounts and APIs. Personal cardholders should move spending and any partner-held balances to another card. Based on reports; no issuer notice was directly retrievable.",
+    sourceLabel: "Reports, October 2026; issuer notice not directly retrievable",
+  },
+  {
+    date: "2026-10-21",
+    type: "promo",
+    cardName: "KAST Card",
+    cardSlug: "kast-card",
+    title: "KAST Uber cashback promo in Latin America, plus 0% FX in 16 LATAM currencies",
+    details:
+      "Reported promotion, October 19 to November 18, 2026: 50% cashback on the first Uber ride and 10% on following rides, capped at $10 (Latin America excluding Brazil), $15 in Brazil, and $8 for existing Brazil users. KAST also advertises 0% FX fees on purchases in 16 Latin American currencies until the end of 2027. Promotion as reported by @0xDani; confirm current terms in the KAST app.",
+    sourceLabel: "@0xDani report, October 2026",
+  },
+  {
+    date: "2026-10-21",
+    type: "launch",
+    cardName: "Pulsar Money Card",
+    cardSlug: "pulsar-money-card",
+    title: "Pulsar Money launches with 0% swap fees on EUR and USD conversions",
+    details:
+      "Pulsar Money (@PulsarMoneyApp) has launched with 0% swap fees on EUR to USD and USD to USDT conversions via StableFX, EUR card spending, and SEPA payouts in euros. Card network, issuer, and a full fee schedule are not published yet, so the listing marks those fields as unpublished.",
+    sourceLabel: "Pulsar Money (@PulsarMoneyApp) launch reports, October 2026",
+  },
+  {
     date: "2026-10-19",
     type: "market",
     cardName: "Crypto card market",

@@ -7,8 +7,8 @@ import AuthorByline from "@/components/AuthorByline";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/meme-coins`;
-const UPDATED = "20 October 2026";
-const UPDATED_ISO = "2026-10-20";
+const UPDATED = "21 October 2026";
+const UPDATED_ISO = "2026-10-21";
 
 export const metadata: Metadata = {
   title: "Meme Coin Research: A Beginner Workflow for Safer Token Checks",
@@ -57,6 +57,134 @@ const toolCategories = [
     description:
       "Charts and blockchain explorers help validate addresses, transactions, holder concentration, liquidity activity, approvals, and wallet behavior. They are essential checks before you trust a ticker symbol or social post.",
     examples: "Examples: DexScreener, GeckoTerminal, Solscan, Etherscan",
+  },
+];
+
+const freeToolGroups = [
+  {
+    title: "Insider and safety checks",
+    tools: [
+      {
+        name: "RugCheck",
+        url: "https://rugcheck.xyz",
+        sponsored: false,
+        description:
+          "Flags tokens where insiders or the deployer still hold a large share of the supply, and runs basic contract risk checks on top.",
+      },
+      {
+        name: "SolSniffer",
+        url: "https://solsniffer.com",
+        sponsored: false,
+        description:
+          "Gives a token a quick scam-risk score based on its contract settings and trading patterns.",
+      },
+    ],
+  },
+  {
+    title: "Bundle and holder analysis",
+    tools: [
+      {
+        name: "Trench Bot bundles",
+        url: "https://trench.bot/bundles",
+        sponsored: false,
+        description:
+          "Shows which wallets bought in the same block or bundle, a common sign that the early buying was coordinated.",
+      },
+      {
+        name: "Bubblemaps",
+        url: "https://bubblemaps.io",
+        sponsored: false,
+        description:
+          "Turns holder data into a bubble chart, so groups of connected wallets stand out at a glance.",
+      },
+      {
+        name: "InsightX",
+        url: "https://insightx.network",
+        sponsored: false,
+        description:
+          "Maps holder clusters to show whether supply sits with many independent wallets or a few linked ones.",
+      },
+      {
+        name: "HolderScan",
+        url: "https://holderscan.com",
+        sponsored: false,
+        description:
+          "Tracks holder growth over time, which helps separate real adoption from farmed or botted holder counts.",
+      },
+    ],
+  },
+  {
+    title: "Charts and discovery",
+    tools: [
+      {
+        name: "DexScreener",
+        url: "https://dexscreener.com",
+        sponsored: false,
+        description:
+          "Live charts, liquidity, and volume for new trading pairs across many chains.",
+      },
+      {
+        name: "Birdeye",
+        url: "https://birdeye.so",
+        sponsored: false,
+        description:
+          "Token charts and trending lists with wallet and trade data layered on top.",
+      },
+      {
+        name: "GeckoTerminal",
+        url: "https://www.geckoterminal.com",
+        sponsored: false,
+        description:
+          "Trending pools and pair data from CoinGecko's on-chain DEX tracker.",
+      },
+    ],
+  },
+  {
+    title: "Wallet and dev tracing",
+    tools: [
+      {
+        name: "GMGN",
+        url: "https://gmgn.ai/r/XPS1eXg4",
+        sponsored: true,
+        description:
+          "Shows a developer's earlier tokens and how those launches ended, alongside wallet tracking and holder data.",
+      },
+      {
+        name: "Solscan",
+        url: "https://solscan.io",
+        sponsored: false,
+        description:
+          "Trace where a dev wallet was funded from, and what else it has launched, held, or sold.",
+      },
+      {
+        name: "KolScan",
+        url: "https://kolscan.io",
+        sponsored: false,
+        description:
+          "Checks whether a caller actually bought the token before posting about it, or only talked.",
+      },
+      {
+        name: "TweetScout",
+        url: "https://app.tweetscout.io",
+        sponsored: false,
+        description:
+          "Scores X accounts to help tell a real trader with a track record from a bot farm or a bought account.",
+      },
+      {
+        name: "Cielo",
+        url: "https://app.cielo.finance",
+        sponsored: false,
+        description:
+          "Wallet tracking with alerts, so you get notified when the wallets you follow make a trade.",
+      },
+      {
+        name: "FomoScan",
+        url: "https://pro.fomoscan.sh",
+        sponsored: false,
+        description:
+          "Separates realized profit, money actually banked from sales, from paper gains that only exist on a chart.",
+      },
+    ],
   },
 ];
 
@@ -286,6 +414,14 @@ export default function MemeCoinsPage() {
                   </li>
                   <li>
                     <a
+                      href="#free-tools"
+                      className="text-slate-200 underline-offset-4 hover:underline"
+                    >
+                      15 free research tools
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       href="#research-workflow"
                       className="text-slate-200 underline-offset-4 hover:underline"
                     >
@@ -411,6 +547,82 @@ export default function MemeCoinsPage() {
               careful reading of the transaction you are about to sign.
             </figcaption>
           </figure>
+        </Section>
+
+        <Section id="free-tools" className="bg-white">
+          <div className="max-w-4xl">
+            <SectionLabel className="text-emerald-700">
+              The free toolkit
+            </SectionLabel>
+
+            <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+              15 free tools for meme coin research
+            </h2>
+
+            <p className="mt-6 text-lg leading-9 text-slate-700">
+              You do not need paid subscriptions to research a token properly.
+              The tools below are free to use and cover the checks that matter
+              most: who holds the supply, who launched the coin, whether the
+              early buying was coordinated, and whether the people promoting
+              it have anything real at stake. They are grouped by the job each
+              one does.
+            </p>
+
+            <p className="mt-6 text-lg leading-9 text-slate-700">
+              One warning before the list: every tool here surfaces data. None
+              of them can prove a token is safe, and a clean result from all
+              fifteen still leaves you with a meme coin. Use them to find
+              reasons to walk away, not to talk yourself into a trade.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {freeToolGroups.map((group) => (
+              <article
+                key={group.title}
+                className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm"
+              >
+                <h3 className="text-2xl font-black tracking-tight">
+                  {group.title}
+                </h3>
+
+                <ul className="mt-6 space-y-5">
+                  {group.tools.map((tool) => (
+                    <li key={tool.name}>
+                      <a
+                        href={tool.url}
+                        target="_blank"
+                        rel={
+                          tool.sponsored
+                            ? "sponsored noopener noreferrer"
+                            : "noopener noreferrer"
+                        }
+                        className="text-lg font-black text-emerald-800 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-950"
+                      >
+                        {tool.name} ↗
+                      </a>
+
+                      <p className="mt-1 text-base leading-7 text-slate-700">
+                        {tool.description}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-10 max-w-4xl text-lg leading-9 text-slate-700">
+            New to the workflow these tools plug into? Our{" "}
+            <Link
+              href="/meme-coins/tutorials"
+              className="font-bold text-emerald-700 underline decoration-emerald-300 underline-offset-4 transition hover:text-emerald-900"
+            >
+              meme-coin tutorials
+            </Link>{" "}
+            walk through a full rug check on a Pump.fun launch, step by step,
+            using free tools only.
+          </p>
         </Section>
 
         <Section id="research-workflow" className="bg-white">
