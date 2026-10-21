@@ -193,3 +193,4 @@ export const CARD_NEWS: CardNewsEntry[] = [
 export function getNewsByType(type: CardNewsEntry["type"]): CardNewsEntry[] {
   return CARD_NEWS.filter((entry) => entry.type === type);
 }
+
