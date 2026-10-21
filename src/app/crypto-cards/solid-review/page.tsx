@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/solid-review`;
 
-const UPDATED = "15 October 2026";
-const UPDATED_ISO = "2026-10-15";
+const UPDATED = "21 October 2026";
+const UPDATED_ISO = "2026-10-21";
 
 const SOLID = "https://www.solid.xyz/refer?ref=4Z0ZE";
 
@@ -146,6 +146,7 @@ function Steps({ items }: { items: string[] }) {
 }
 
 const tocItems = [
+  { id: "video", label: "Video review" },
   { id: "what-is", label: "What the Solid Card is" },
   { id: "modes", label: "Savings Mode vs Borrow Mode" },
   { id: "signup", label: "How to sign up" },
@@ -213,6 +214,23 @@ export default function SolidReviewPage() {
     ],
   };
 
+  const videoLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Spend Your Crypto Anywhere: Honest Solid.xyz Review (6% APY + Visa Card)",
+    description:
+      "Our video review of the Solid Card: how the self-custodial Visa card works, the Rewards tiers, the savings yield, and the fees to watch.",
+    thumbnailUrl: "https://i.ytimg.com/vi/rtu6w7SYKsk/hqdefault.jpg",
+    embedUrl: "https://www.youtube-nocookie.com/embed/rtu6w7SYKsk",
+    contentUrl: "https://www.youtube.com/watch?v=rtu6w7SYKsk",
+    publisher: {
+      "@type": "Organization",
+      name: "CryptosBeginner",
+      url: SITE_URL,
+    },
+    inLanguage: "en",
+  };
+
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -243,6 +261,11 @@ export default function SolidReviewPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
       />
 
       <main className="min-w-0 overflow-x-hidden bg-white text-slate-900">
@@ -365,6 +388,27 @@ export default function SolidReviewPage() {
             </ul>
           </nav>
         </section>
+
+        <Section id="video">
+          <H2>Video review</H2>
+          <P>
+            Prefer to watch? Here is our video review of the Solid Card,
+            covering how the self-custodial Visa card works, the Rewards
+            tiers, the savings yield, and the fees to watch.
+          </P>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/rtu6w7SYKsk"
+                title="Solid Card video review: Spend Your Crypto Anywhere, Honest Solid.xyz Review"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </Section>
 
         <Section id="what-is">
           <H2>What the Solid Card is</H2>
