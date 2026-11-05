@@ -32,6 +32,63 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceUrl: "https://paymentscan.xyz",
   },
   {
+    date: "2026-11-03",
+    type: "market",
+    cardName: "Card tokens",
+    title: "Crypto card tokens are down a median 94% from their peaks",
+    details:
+      "@xKseilas ranked the tokens crypto cards pay cashback in or stake for tiers on November 3, 2026: XPL down 96% from its peak, CRO down 94%, ETHFI down 93%, NEXO down about 81%, with a median drop of 94% against Bitcoin's 39%. His corrected breakdown: Plasma, Crypto.com, and Nexo pay rewards in their own token; Tria, ether.fi, and COCA use a token to unlock better tiers while paying cashback in dollars or stablecoins; OKX, MEXC, and Kraken need no token at all. Cashback paid in the card's own token means you carry its drop.",
+    sourceLabel: "@xKseilas analysis and corrections, November 3, 2026",
+  },
+  {
+    date: "2026-11-03",
+    type: "market",
+    cardName: "Crypto card market",
+    title: "October 2026 was the biggest month ever: $1.69B including top-ups",
+    details:
+      "Crypto card volume reached $1.69B in October 2026 with top-ups included, up 7% on September, per @0xVishnya's PaymentScan-based tracking. RedotPay topped up $555.5M and spent $423.5M, both records; KAST topped up $230.3M; ether.fi topped up $172.4M and spent a record $141.9M; Plasma One spend hit a record $29.8M; Wirex One spent $54.8M and has grown every month since its June launch; Kolo spent a record $20.5M. Spend-only, PaymentScan's tracker puts the month at $1.37B.",
+    sourceLabel: "@0xVishnya with PaymentScan data, November 3, 2026",
+  },
+  {
+    date: "2026-11-03",
+    type: "catalog-update",
+    cardName: "Card BINs",
+    title: "Some personal crypto cards run on company card BINs",
+    details:
+      "BIN research published by @xKseilas on November 3, 2026 found cards sold to individuals running on business ranges: Gate Essential on a Mastercard Purchasing BIN (Sutton Bank, US), GMGN on a Mastercard Corporate BIN (Hong Kong), Infini Lite on a Visa Business BIN (US), and Rain's issuer range on Visa Corporate T&E. The card type matters: EU interchange caps and the EU surcharge ban cover consumer cards only, and some merchants block business or prepaid BINs. Our BIN guide has the full explanation.",
+    sourceLabel: "@xKseilas BIN research, November 3, 2026",
+  },
+  {
+    date: "2026-11-02",
+    type: "catalog-update",
+    cardName: "KAST Card",
+    cardSlug: "kast-card",
+    title: "KAST Points end November 30: the Pioneer Units deadlines that matter",
+    details:
+      "@xKseilas laid out the fine print on November 2, 2026: KAST Points stop being earned on November 30, allocations are revealed in the first week of December, and holders who miss the in-app acknowledgement before the December deadline have their units cancelled with no points back. Too few points, the wrong country, or a low balance means spending vouchers instead of units. Cash-outs are planned with no dates or amounts. Our KAST Points and Pioneer Units guide has the full breakdown, including how the July pitch of 10,000 points as two shares became a unit with no ownership and no guaranteed cash value.",
+    sourceLabel: "@xKseilas report, November 2, 2026",
+  },
+  {
+    date: "2026-11-02",
+    type: "catalog-update",
+    cardName: "RedotPay Card",
+    cardSlug: "redotpay-card",
+    title: "RedotPay cards are not issued for India, even though the app allows sign-up",
+    details:
+      "RedotPay's Card Issuance Restrictions, updated August 28, 2026, state that Indian residents are not eligible for virtual or physical cards and that India is not accepted as a billing address, as highlighted by @xKseilas on November 2, 2026. The app still allows registration, KYC, and balances, and Indian users have recently reported failed card payments while Indian regulators are reportedly examining offshore crypto cards. If you are in India, do not load a RedotPay card expecting it to keep working.",
+    sourceLabel: "RedotPay Card Issuance Restrictions via @xKseilas, November 2, 2026",
+  },
+  {
+    date: "2026-11-02",
+    type: "promo",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "ether.fi refunds bank deposit fees for paid tiers until December 31",
+    details:
+      "ether.fi is refunding fees on ACH, wire, SEPA, PIX, and Faster Payments deposits until December 31, 2026, paid back after each month ends. Monthly covered deposit caps: Luxe $3,000, Pinnacle $15,000, VIP $150,000. Core members get nothing unless they upgrade to Luxe or Pinnacle by December 31, which backdates refunds to deposits made from November 1. The FX spread on deposits is not refunded.",
+    sourceLabel: "ether.fi announcement and promotion terms, November 2, 2026",
+  },
+  {
     date: "2026-11-01",
     type: "catalog-update",
     cardName: "KAST Card",

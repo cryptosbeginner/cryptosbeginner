@@ -154,7 +154,8 @@ export default function CryptoCardSpendingTripledPage() {
             and Kolo as the largest named programs and a further $524.9M spread
             across 28 other programs. Separately, @0xVishnya's tracking shows
             $584.2M spent on Rain-issued cards alone in October, making Rain the
-            largest issuer in the market. Sources: paymentscan.xyz and @0xVishnya,
+            largest issuer in the market. Counted with top-ups included, October
+            volume reached $1.69B, up 7% on September, per @0xVishnya. Sources: paymentscan.xyz and @0xVishnya,
             November 2026.
           </Callout>
 

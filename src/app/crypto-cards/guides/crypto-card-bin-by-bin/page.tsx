@@ -228,6 +228,14 @@ export default function CryptoCardBinByBinPage() {
             A BIN lookup can confirm the network and sometimes the issuing institution, but crypto programs move between issuers and share program managers, so databases lag reality. Use a lookup to form a suspicion, then confirm it in the agreement.
           </GuideP>
 
+          <GuideH2>When the BIN says your personal card is a company card</GuideH2>
+          <GuideP>
+            A BIN lookup can also reveal something the marketing never mentions: the card type. In November 2026, @xKseilas published BIN research showing several cards sold to regular people running on business card ranges. Gate Essential's BIN 53710074 reads as a Mastercard Purchasing Card issued by Sutton Bank in the US. GMGN's card BIN 52401394 reads as a Mastercard Corporate card from Hong Kong. Infini's Lite card BIN 44135765 reads as a Visa Business card in the US, and Rain's issuer range beginning 454988 reads as Visa Corporate T&E. You opened these with your own passport; the network sees an employee expense card.
+          </GuideP>
+          <GuideP>
+            The type is not trivia. In the EU, the interchange caps that limit what shops pay to accept a card cover consumer cards only, so a business BIN costs the shop more. The EU ban on checkout surcharges also covers consumer cards only, which means a shop may legally add a fee for yours. And some merchants read the card type at checkout and block business or prepaid BINs outright. Your card app shows the full number: put the first eight digits into any BIN checker and see what type your card claims to be.
+          </GuideP>
+
           <GuideH2>What to do with this information</GuideH2>
           <BulletList
             items={[

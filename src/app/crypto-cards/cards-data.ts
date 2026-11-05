@@ -302,7 +302,7 @@ export const cardListings: CardListing[] = [
     ],
     updateUrl: "https://www.redotpay.com/news",
     updateLabel: "RedotPay updates",
-    updateNote: "RedotPay currently highlights Apple Pay support and maintains separate product, verification, terms, and Help Center pages.",
+    updateNote: "RedotPay currently highlights Apple Pay support and maintains separate product, verification, terms, and Help Center pages. India warning (November 2026): RedotPay's Card Issuance Restrictions, updated August 28, 2026, state Indian residents are not eligible for virtual or physical cards and India is not accepted as a billing address, even though the app allows registration and balances. Indian users have reported failed card payments, per @xKseilas.",
     applicationMethod: "Download the RedotPay app, complete the provider’s account and verification flow, and choose the virtual or physical card available in your region.",
     verification: "Account verification and regional restrictions apply; RedotPay links to a dedicated verification area.",
     galleryImages: [
@@ -1387,7 +1387,7 @@ export const cardListings: CardListing[] = [
       { tier: "VIP", ratePct: 4, spendBand: "headline rate", rewardAsset: "USD" },
     ],
     updateNote:
-      "From October 30, 2026, rent and tax payments earn cashback, and the card fully supports ZCHF (Swiss franc stablecoin) spending, per the ether.fi Help Center.",
+      "From October 30, 2026, rent and tax payments earn cashback, and the card fully supports ZCHF (Swiss franc stablecoin) spending, per the ether.fi Help Center. Until December 31, 2026, Luxe, Pinnacle, and VIP members get bank deposit fees refunded after each month ends (monthly covered caps: Luxe $3,000, Pinnacle $15,000, VIP $150,000); upgrading by December 31 backdates refunds to November 1 deposits. The FX spread is not refunded.",
   },
   {
     slug: "avici-card",
@@ -2826,6 +2826,65 @@ export const cardListings: CardListing[] = [
     verification: "Takenos account verification applies; requirements are not fully published.",
   },
   {
+    slug: "infini-lite-plus-card",
+    name: "Infini Lite Plus Card",
+    provider: "Infini",
+    network: "Visa",
+    categories: ["prepaid"],
+    shortDescription:
+      "A business Visa card with a US BIN from Infini, aimed at team spending on AI subscriptions, cloud services, and ads, with 0% FX conversion fees and 1.5% cashback with no cap.",
+    editorialSummary:
+      "Infini launched the Lite Plus card on November 2, 2026, positioned as the simpler, cheaper tier of its corporate card line. Per Infini's announcement: a Visa card with a US BIN, 0% foreign currency conversion fees, 1.5% cashback with no cap, and support for Apple Pay and Google Pay. The pitch is team spending on AI subscriptions (Claude, ChatGPT, and Kiro are named), cloud services, and ads. It is available now on Infini Business, with Infini Personal availability announced as coming soon. Pricing and issuance fees for Lite Plus were not in the announcement, so check the corporate card guide on Infini's help center before committing. Context matters with this issuer: Infini suffered a $49.5M exploit in February 2025, covered in our crypto card security incidents guide.",
+    bestFor:
+      "Businesses and teams paying for AI subscriptions, cloud services, and ads that want a US-BIN Visa with no FX conversion fee.",
+    availability:
+      "Available on Infini Business at launch (November 2, 2026). Infini Personal availability announced as coming soon; a country list is not published.",
+    regions: ["Global"],
+    pricing:
+      "Not published in the launch announcement. The card advertises 0% foreign currency conversion fees.",
+    rewards: "1.5% cashback with no cap, per Infini's announcement.",
+    funding: "Infini Business account balance (stablecoins).",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://help.infini.money/en/articles/13726614-how-to-get-corporate-card",
+    sourceLabel: "Infini announcement and corporate card guide, November 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Infini Lite Plus Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    updateNote:
+      "BIN research by @xKseilas (November 2026) shows Infini's Lite card running on a US Visa Business BIN (44135765), a company card range rather than a consumer one. Our guide to crypto card BINs explains why the card type matters at checkout.",
+    reviewedAt: "2026-11-05",
+    caution:
+      "New launch with unpublished pricing. Infini was exploited for about $49.5M in February 2025; read our security incidents guide and size balances accordingly.",
+  },
+  {
+    slug: "another-card",
+    name: "Another Card",
+    provider: "Another",
+    network: "Mastercard",
+    categories: ["self-custody"],
+    shortDescription:
+      "A Mastercard from Another that pairs virtual and physical cards with non-custodial wallets, stablecoin top-ups, and personal EUR and USD IBAN accounts in one app.",
+    editorialSummary:
+      "Another Card was profiled by TODEY in November 2026. Per that profile, the app combines virtual and physical Mastercard spending with non-custodial wallets, stablecoin top-ups, and personal EUR and USD IBAN accounts in one place. Fees, cashback, issuer details, and a country list are not published in the profile, so treat the terms as thin and check the app before loading funds.",
+    bestFor:
+      "Users who want card spending, self-custody wallets, and EUR/USD IBAN accounts in a single app.",
+    availability:
+      "A country list is not published; check the Another app for eligibility.",
+    regions: ["Global"],
+    pricing: "Not published.",
+    rewards: "No cashback programme is published.",
+    funding: "Stablecoin top-ups and IBAN accounts, per the TODEY profile.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://todey.xyz/card/another-card/",
+    sourceLabel: "TODEY card profile, November 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Another Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "Thin public data: no published fee schedule, issuer, or country list. Details here come from TODEY's card profile; confirm terms in the app before loading funds.",
+  },
+  {
     slug: "kontigo-card",
     name: "Kontigo Card",
     provider: "Kontigo",
@@ -4146,7 +4205,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "MiniPay Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
+    updateNote:
+      "TODEY profiled MiniPay as its card of the day on November 2, 2026: a self-custodial Celo wallet spending stablecoins through a virtual Visa, with up to 5% cashback on eligible purchases.",
     caution:
       "Cashback is limited to selected markets; check eligibility in the MiniPay app.",
     verification: "KYC required through the Gnosis Pay issuance flow.",
@@ -4285,6 +4346,8 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "DeCard card placeholder image",
     imageSourceNote: "Placeholder image",
+    updateNote:
+      "On November 2, 2026, DCS announced it has become a Hong Kong Mastercard issuer and launched the DeCard Business Account: USD business accounts with corporate cards for ad spend, travel, and procurement. The first 20 eligible businesses get 10% cashback on spending, and signup currently accepts Hong Kong-registered companies only.",
     reviewedAt: "2026-10-15",
     caution:
       "It is a credit product, so missed repayments can incur interest and affect credit standing.",
@@ -5014,6 +5077,8 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Onboard Card card placeholder image",
     imageSourceNote: "Placeholder image",
+    updateNote:
+      "TODEY profiled the Onboard Flex card on November 3, 2026: a USD virtual Visa Platinum funded with USDT or USDC across multiple networks, local currencies, or Onboard balances. Per the profile, card funding costs 1.25%, Tron and Ethereum funding carry surcharges, non-USD and cross-border USD spending costs $0.30 plus 1.5%, and no card cashback programme is disclosed.",
     reviewedAt: "2026-10-15",
     featureFlags: { applePay: true, googlePay: true },
     caution: "Funding and FX fees apply on most loads and non-USD spending, so check the help center fee table for current rates.",
@@ -5308,7 +5373,7 @@ export const cardListings: CardListing[] = [
       { tier: "Premium", ratePct: 2.0, spendBand: "standard spend", rewardAsset: "USD" },
       { tier: "Private", ratePct: 3.0, spendBand: "standard spend", rewardAsset: "USD" },
     ],
-    updateNote: "Uber promotion reported for Latin America, October 19 to November 18, 2026: 50% cashback on the first Uber ride and 10% on following rides, capped at $10 (Latin America excluding Brazil), $15 in Brazil, and $8 for existing Brazil users. KAST also advertises 0% FX fees on purchases in 16 Latin American currencies until the end of 2027. Promotion as reported by @0xDani; confirm current terms in the app. Membership pricing, Reserve rates, and vault APYs are set in the app and can change.",
+    updateNote: "Uber promotion reported for Latin America, October 19 to November 18, 2026: 50% cashback on the first Uber ride and 10% on following rides, capped at $10 (Latin America excluding Brazil), $15 in Brazil, and $8 for existing Brazil users. KAST also advertises 0% FX fees on purchases in 16 Latin American currencies until the end of 2027. Promotion as reported by @0xDani; confirm current terms in the app. Membership pricing, Reserve rates, and vault APYs are set in the app and can change. KAST Points stop being earned on November 30, 2026 ahead of the Pioneer Units conversion. Allocations are revealed in the first week of December, and holders must complete an in-app acknowledgement before the December deadline or the units are cancelled. Full breakdown in our KAST Points and Pioneer Units guide.",
     applicationMethod: "Download the KAST app, sign up through the referral link, complete verification, and order a virtual card instantly or a physical card for 40 USD.",
     verification: "Identity verification and country eligibility apply; ID requirements vary by country.",
   },

@@ -128,6 +128,14 @@ export default function KastPointsPioneerUnitsPage() {
             Here is what we are not going to do: invent the rest. The reports we have seen do not establish a verified conversion rate from points to units, a cash value for a unit, what units can be redeemed for, or whether they expire. Those details decide whether this swap is a mild disappointment or a total wipeout, and they belong to KAST's official announcement and the terms shown in the app. If you hold a balance, open the app and read the conversion KAST actually applied to your account. If the terms are not written down there, that absence is information too.
           </GuideP>
 
+          <GuideH2>Update, 2 November: the deadlines and the fine print</GuideH2>
+          <GuideP>
+            A day later, @xKseilas published the detail behind the swap, and it is sharper than the first reports. In July, KAST's CEO had framed 10,000 points as two shares: $800 of notional value at $400 a share, with an equity-linked instrument planned for the community. What points actually become, per KAST's own wording as quoted in the post, is a Pioneer Unit that is not a share: no ownership, no vote, nothing you can sell, transfer, or trade, and no guaranteed cash value or payment.
+          </GuideP>
+          <GuideP>
+            The mechanics matter more than the label. Points stop being earned on 30 November 2026. How many units you get, and how KAST calculated it, arrives in the first week of December. Cash-outs are something KAST plans to offer, with no dates and no amounts. Holders with too few points, the wrong country, or a low balance get spending vouchers instead of units. And there is a trap for the inattentive: miss the in-app acknowledgement before the December deadline and the units are cancelled, with the points gone too. Meanwhile Private, at $10,000 a year, was still on sale with points listed as a perk: 10,000 points is what one month on Private earns at $40,000 of card spend. If you hold points, the single most valuable action in this story is opening the app and completing that acknowledgement in time.
+          </GuideP>
+
           <GuideH2>Why companies do this</GuideH2>
           <GuideP>
             Points are the perfect marketing liability. They cost nothing to issue, they feel like money to the user, and the terms almost always say, in the fine print, that the issuer can change or cancel the program at any time. A token, by contrast, creates expectations that are hard to walk back, plus regulatory and market obligations. When a company quietly retires the token future and swaps points for a closed unit with no market, it converts an open-ended promise into a closed one it fully controls. Rational for the company. Expensive for anyone who spent real money chasing the points.
