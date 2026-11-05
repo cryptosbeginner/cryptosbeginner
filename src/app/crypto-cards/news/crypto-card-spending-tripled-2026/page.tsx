@@ -9,8 +9,8 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/news/crypto-card-spending-tripled-2026`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "19 October 2026";
-const UPDATED_ISO = "2026-10-19";
+const UPDATED = "5 November 2026";
+const UPDATED_ISO = "2026-11-05";
 
 const SOURCE_URL = "https://x.com/0xVishnya/status/2110271623509000676";
 
@@ -147,6 +147,17 @@ export default function CryptoCardSpendingTripledPage() {
         </section>
 
         <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+          <Callout title="October 2026 update">
+            The market kept growing after this article was published. PaymentScan's
+            October 2026 tracker puts total crypto card spending at $1.37B for the
+            month, with RedotPay, ether.fi Cash, KAST, Wirex One, Karta, Plasma One,
+            and Kolo as the largest named programs and a further $524.9M spread
+            across 28 other programs. Separately, @0xVishnya's tracking shows
+            $584.2M spent on Rain-issued cards alone in October, making Rain the
+            largest issuer in the market. Sources: paymentscan.xyz and @0xVishnya,
+            November 2026.
+          </Callout>
+
           <Callout title="The short version">
             The whole crypto card market did 3x in twelve months. The fastest growers
             are young, mostly self-custodial programs: Tria at 108x, Kolo, Karta, and

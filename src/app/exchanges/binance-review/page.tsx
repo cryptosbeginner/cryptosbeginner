@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/binance-review`;
 
-const UPDATED = "13 October 2026";
-const UPDATED_ISO = "2026-10-13";
+const UPDATED = "5 November 2026";
+const UPDATED_ISO = "2026-11-05";
 const ORIGINALLY_PUBLISHED = "May 2024";
 
 // Masked affiliate link (go.cryptosbeginner.com redirect).
@@ -19,7 +19,7 @@ const AFFILIATE = "https://go.cryptosbeginner.com/binance";
 export const metadata: Metadata = {
   title: "Binance Review 2026: Fees, Security, and Is It Still Worth It?",
   description:
-    "October 2026 Binance review: 0.10% spot fees, 323M+ users, SAFU protection, proof of reserves, the regulatory reality, geo restrictions, pros, cons, and verdict.",
+    "November 2026 Binance review: 0.10% spot fees, 323M users, SAFU protection, proof of reserves, and the full story of the October 2026 hack and the recovery that followed.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -51,7 +51,7 @@ const faqItems = [
   {
     question: "Is Binance safe and legit in 2026?",
     answer:
-      "Binance is the world's largest exchange by volume, with monthly proof-of-reserves reports and a SAFU emergency fund now holding 15,000 BTC. It is a real, operating business, not a scam. But 'legit' depends on your country: it has no MiCA license in the EU, paused new UK sign-ups in October 2023, and US residents must use the separate Binance.US. Check availability in your jurisdiction first.",
+      "Binance is the world's largest exchange by volume, with monthly proof-of-reserves reports and a SAFU emergency fund holding about 15,000 BTC. It is a real, operating business, not a scam. The honest 2026 picture also includes the 29 October 2026 hack, in which about $6.3 billion was stolen from its hot wallets: Binance replaced about 98% of it from company funds within a week, with no losses passed to users, and withdrawals were still reopening in phases in early November. 'Legit' also depends on your country: it has no MiCA license in the EU, paused new UK sign-ups in October 2023, and US residents must use the separate Binance.US. Check availability in your jurisdiction first.",
   },
   {
     question: "What are Binance's trading fees?",
@@ -66,17 +66,22 @@ const faqItems = [
   {
     question: "What happened with Binance and regulators?",
     answer:
-      "In November 2023 Binance settled with the US Department of Justice for $4.3 billion over compliance failures, and founder Changpeng Zhao stepped down as CEO, later serving a prison sentence in 2024. Richard Teng now leads the company. Since then Binance has pursued licenses in jurisdictions including Dubai, France, Bahrain, and Australia, but access remains restricted in several major markets.",
+      "In November 2023 Binance settled with the US Department of Justice for $4.3 billion over compliance failures, and founder Changpeng Zhao stepped down as CEO, later serving a prison sentence in 2024. Zhao received a full presidential pardon in October 2025, and since December 2025 Binance has been led by co-CEOs Richard Teng and co-founder Yi He, based in Abu Dhabi. Binance withdrew its EU MiCA application in June 2026 and restricted EEA services from July 2026. In autumn 2026, US prosecutors filed a forfeiture case over Iran-linked flows (Binance was not charged), were reported to be investigating sanctions compliance, and the DOJ confirmed it is reviewing Binance's compliance with the 2023 settlement. An investigation is not a finding of wrongdoing, but the regulatory story is not finished.",
   },
   {
     question: "Has Binance ever been hacked?",
     answer:
-      "The largest incident was the May 2019 theft of 7,000 BTC, which Binance covered in full through its SAFU insurance fund, with no user losses. That response is a genuine positive in its track record, though no exchange is immune to future incidents.",
+      "Yes, twice, at very different scales. In May 2019, 7,000 BTC was stolen and Binance covered it in full through its SAFU insurance fund, with no user losses. On 29 October 2026, attackers the FBI attributes to North Korea's TraderTraitor group drained about $6.3 billion from Binance hot wallets, the largest crypto theft on record. Binance suspended withdrawals, set aside more than $6.34 billion of company money, and had replaced about 98% of the stolen assets by 4 November 2026, with withdrawals reopening in phases from 1 November.",
+  },
+  {
+    question: "What happened in the October 2026 Binance hack?",
+    answer:
+      "On 29 October 2026, attackers drained about $6.3 billion from Binance's hot wallets across ten networks in roughly 20 minutes, after getting in through a compromised DevOps engineer's laptop. The FBI attributed the attack to North Korea's TraderTraitor group on 31 October. Binance suspended withdrawals, set aside more than $6.34 billion of company money (corporate treasury, part of the SAFU fund, and part of its futures insurance fund), and replaced about 98% of the stolen assets by 4 November, with no losses passed to users. About $2.8 billion of the stolen crypto was frozen on chain with help from issuers such as Tether and Circle, though frozen is not the same as returned. Withdrawals began reopening on 1 November and continued in batches into November.",
   },
   {
     question: "What are Binance bStocks?",
     answer:
-      "bStocks are tokenized securities launched by Binance in June 2026, backed 1:1 by real shares. They trade 24/7 as USDT spot pairs (for example NVDAB/USDT for Nvidia) and give holders economic exposure to the share price without voting rights. Availability depends on your jurisdiction.",
+      "bStocks are tokenized securities launched by Binance on 11 June 2026, backed 1:1 by real shares. They trade 24/7 as USDT spot pairs (for example NVDAB/USDT for Nvidia) and give holders economic exposure to the share price without voting rights. By 15 October 2026 there were nearly 100 listings, with more than $1 billion in assets and over $40 billion in cumulative trading volume, according to Binance. They are not available to US persons, and availability elsewhere depends on your jurisdiction.",
   },
   {
     question: "What is Aster DEX on Binance Wallet?",
@@ -204,7 +209,8 @@ export default function BinanceReviewPage() {
               than anywhere else in crypto. This review walks through what that scale means for
               you: the 0.10% spot fees, the SAFU safety net, the regulatory record since the 2023
               DOJ settlement, and the geo restrictions you need to check before you even think
-              about signing up.
+              about signing up. It also, as of late October 2026, holds an unwanted record: the
+              largest hack in crypto history, and a recovery that is still being completed.
             </p>
             <div className="mt-6">
               <PrimaryAffiliateButton>Visit Binance</PrimaryAffiliateButton>
@@ -219,7 +225,7 @@ export default function BinanceReviewPage() {
         </section>
 
         <div className="mx-auto max-w-4xl px-4 pt-10">
-          <AuthorByline updated="13 October 2026" />
+          <AuthorByline updated="5 November 2026" />
         </div>
 
         <div className="mx-auto max-w-4xl px-4 pt-4">
@@ -249,8 +255,11 @@ export default function BinanceReviewPage() {
                 </li>
                 <li>
                   <strong className="text-slate-900">Safety net:</strong> the SAFU fund holds
-                  15,000 BTC, proof-of-reserves reports land monthly, and when 7,000 BTC was
-                  stolen in 2019, users were covered in full.
+                  about 15,000 BTC, roughly $1 billion, and proof-of-reserves reports land
+                  monthly. When 7,000 BTC was stolen in 2019, users were covered in full. In
+                  October 2026 Binance lost about $6.3 billion to North Korea-linked hackers
+                  and had replaced about 98% of it from company funds within a week, with no
+                  losses passed to users (figure as of 4 November 2026).
                 </li>
                 <li>
                   <strong className="text-slate-900">The caveat that matters:</strong> the $4.3B
@@ -298,9 +307,10 @@ export default function BinanceReviewPage() {
             </div>
             <P>
               Binance opened in 2017 and has been the biggest exchange in crypto ever since, by a
-              distance: over 330 million registered users as of late 2026, more than 500 coins
-              across 1,300-plus spot pairs, and roughly a third of all spot trading volume. When
-              people say &quot;the market,&quot; this is usually the venue they mean.
+              distance: 323 million registered users (Binance&apos;s own figure, July 2026), 507
+              coins across 1,370 spot pairs (CoinGecko), and roughly a third of all spot trading
+              volume. Its all-time cumulative trading volume passed $156 trillion in July 2026.
+              When people say &quot;the market,&quot; this is usually the venue they mean.
             </P>
             <P>
               That scale is the whole pitch. The deepest order books mean the tightest spreads
@@ -316,10 +326,16 @@ export default function BinanceReviewPage() {
               Check this before reading another word, because it decides everything. Binance.com is
               <strong className="text-slate-900"> not available to US residents</strong> (Binance.US is
               a separate, smaller company), <strong className="text-slate-900">paused new UK
-              sign-ups in October 2023</strong>, and <strong className="text-slate-900">has no MiCA
-              license, with new EU sign-ups stopped</strong>. Availability also varies across the
-              Middle East, Asia, and Latin America, where Binance holds licenses in places like
-              Dubai, France, Bahrain, and Australia.
+              sign-ups in October 2023</strong> (its UK entity, Binance Markets Limited, is no longer
+              FCA-authorised), and <strong className="text-slate-900">has no MiCA
+              license</strong>. Binance filed for a MiCA license in Greece in January 2026, then
+              withdrew the application on 24 June 2026. From 1 July 2026 it restricted EEA services
+              in several markets: no new sign-ups, deposits, new spot orders, or Earn products,
+              though withdrawals remain open. Binance says it will reapply in another member state,
+              but as of November 2026 it holds no MiCA authorization. Availability also varies across
+              the Middle East, Asia, and Latin America, where Binance holds licenses in places like
+              Dubai and Bahrain, plus an AUSTRAC registration in Australia, which is a registration,
+              not a license.
             </P>
             <P>
               If your country is on the restricted list, the fee comparison below is irrelevant to
@@ -389,6 +405,15 @@ export default function BinanceReviewPage() {
               promotions on popular pairs. The honest summary: for spot and futures trading itself,
               almost nobody beats Binance on price.
             </P>
+            <P>
+              Two 2026 changes are worth knowing. Binance overhauled its VIP program in March and
+              again in July 2026, cutting entry thresholds sharply: VIP 1 now needs 5 BNB plus $1
+              million of 30-day spot volume or $5 million of futures volume, down from 25 BNB and
+              $15 million of futures volume, though VIP 1 and VIP 2 futures fees rose slightly in
+              the reshuffle. And from 5 November 2026, TradFi perpetuals carry zero maker fees at
+              every tier, with taker discounts of 20% (regular users to VIP 3) and 40% (VIP 4 to
+              VIP 9), under a promotion running until further notice.
+            </P>
             <div className="mt-6">
               <PrimaryAffiliateButton>Visit Binance</PrimaryAffiliateButton>
             </div>
@@ -400,10 +425,62 @@ export default function BinanceReviewPage() {
               Binance publishes <strong className="text-slate-900">monthly proof-of-reserves
               reports</strong> using Merkle-tree and zk-SNARK cryptography, letting users verify
               their balances are backed. It also maintains the SAFU (Secure Asset Fund for Users)
-              emergency insurance fund, currently holding 15,000 BTC. Standard protections include
-              cold storage for most funds, two-factor authentication, withdrawal address
-              whitelisting, and anti-phishing codes.
+              emergency insurance fund, holding about 15,000 BTC, roughly $1 billion. Binance
+              finished converting the whole fund into Bitcoin in February 2026; it is managed by
+              Nest Clearing and Custody, Binance&apos;s ADGM-regulated clearing house, and Binance
+              has committed to topping it back up to $1 billion if its value falls below $800
+              million. Standard protections include cold storage for most funds, two-factor
+              authentication, withdrawal address whitelisting, and anti-phishing codes.
             </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">The October 2026 hack</h3>
+            <P>
+              On 29 October 2026, attackers drained about <strong className="text-slate-900">$6.3
+              billion</strong> from Binance&apos;s hot wallets across ten networks in roughly 20
+              minutes, the largest theft in crypto history. Binance says the attackers got in
+              through a compromised DevOps engineer&apos;s laptop, used to submit unauthorized
+              withdrawal transactions, and investigators later found further points of breach. Most
+              customer assets sit in cold wallets and were not touched. On 31 October, the FBI
+              formally attributed the attack to TraderTraitor, a North Korea-linked group, matching
+              the assessments of TRM Labs and Chainalysis. Deposits stayed open throughout;
+              withdrawals were suspended.
+            </P>
+            <P>
+              We covered the incident and the recovery day by day in a separate report:{" "}
+              <Link href="/exchanges/binance-hack-2026" className="font-bold text-indigo-700 underline hover:text-indigo-900">
+                the Binance hack of October 2026
+              </Link>
+              .
+            </P>
+            <P>
+              The recovery is the part Binance got right, and it deserves to be stated plainly.
+              The company set aside more than $6.34 billion of its own money, drawn from its
+              corporate treasury, a partial deployment of SAFU, and part of its futures insurance
+              fund. By Binance&apos;s own recovery updates, about 80% of the stolen assets were
+              covered by 30 October, 90% by 31 October, 95% by 1 November, and about 98% by 4
+              November. No losses were passed to users. The unreplaced remainder is roughly $127
+              million in less liquid tokens that Binance says it is still sourcing, and part of
+              SAFU was spent in the process, with a commitment to restore the fund to about $1
+              billion afterwards.
+            </P>
+            <P>
+              Withdrawals came back in stages: a first phase on 1 November (15 networks, Bitcoin
+              first), fiat withdrawals on 2 November, a second phase on 3 November covering more
+              than 100 asset and network combinations, and a third batch on 5 November. As of 5
+              November they were still reopening in batches. Binance said on 3 November that
+              withdrawals had normalized, while trade press reported on 4 November that they were
+              not fully reopened. Customers pulled real money out in the meantime: Reuters tallied
+              about $4.72 billion in net customer withdrawals by 3 November, roughly 3% of platform
+              assets.
+            </P>
+            <P>
+              One distinction matters and often gets blurred: about $2.8 billion of the stolen
+              crypto (Chainalysis&apos;s count as of 3 November; Binance puts it near $3 billion)
+              has been frozen on chain with help from Tether, Circle, and other issuers. Frozen is
+              not the same as returned, and no issuer has said when, or whether, those funds come
+              back. TRM Labs estimates the attacker still holds more than 420,000 ETH and 18,270
+              BTC, about $2.4 billion, beyond the reach of any issuer freeze.
+            </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Proof of reserves, before and after</h3>
             <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
               <Image
                 src="/images/binance-proof-of-reserves.png"
@@ -414,11 +491,30 @@ export default function BinanceReviewPage() {
               />
             </div>
             <P>
-              The track record has one major incident: the May 2019 theft of 7,000 BTC, which
-              Binance covered entirely through SAFU with no user losses. Handling a hack that well
-              is a genuine positive. The caveat that applies to every centralized exchange also
-              applies here: your funds are ultimately custodied by the company, and no insurance
-              fund changes that structural fact.
+              The last pre-hack snapshot, dated 1 October 2026 and covering 55 assets, showed BTC
+              at 100.35%, USDT at 103.88%, and USDC at 108.26%, on total reserves of about $165
+              billion. The post-hack snapshot dated 31 October, covering 10 major assets, showed
+              thinner margins: BTC at 100.04%, USDT and ETH at exactly 100%, BNB at 101.30%, and
+              USDC at 106.08%. Its zero-knowledge proof was completed on 2 November, so holders of
+              those 10 tokens can verify their own balances. A further snapshot taken on 4 November
+              covers 44 tokens, but its full proof was still being generated as of 5 November, with
+              the verification fields on Binance&apos;s public reserves page still blank.
+            </P>
+            <P>
+              Two caveats belong with any reserves screenshot, including older ones. In January
+              2026 Binance widened its calculation to include the platform&apos;s own assets in net
+              balances, after acknowledging the old scope had inflated its ratios, which is why
+              current ratios sit closer to 100% than older screenshots suggest. And the reports are
+              self-published: no third-party accounting firm has attested them since Mazars
+              suspended this work in December 2022.
+            </P>
+            <P>
+              Before 2026, the track record had one major incident: the May 2019 theft of 7,000
+              BTC, which Binance covered entirely through SAFU with no user losses. Handling a hack
+              that well is a genuine positive, and the October 2026 response followed the same
+              playbook at a vastly larger scale. The caveat that applies to every centralized
+              exchange also applies here: your funds are ultimately custodied by the company, and
+              no insurance fund changes that structural fact.
             </P>
           </Section>
 
@@ -429,11 +525,49 @@ export default function BinanceReviewPage() {
               Binance settled with the US Department of Justice for <strong className="text-slate-900">$4.3
               billion</strong> over anti-money-laundering and sanctions compliance failures. Founder
               Changpeng "CZ" Zhao stepped down as CEO and later served a prison sentence in 2024.
-              Richard Teng now leads the company.
+              In October 2025, Zhao received a full presidential pardon from Donald Trump. He
+              remains Binance&apos;s majority shareholder. The pardon lifted his personal
+              restrictions; it did not change Binance&apos;s corporate settlement or its compliance
+              monitors.
             </P>
             <P>
-              Since then, Binance has pursued a licensing strategy: full VASP licensing in Dubai,
-              registration in France, Bahrain, Australia, and Abu Dhabi Global Market entities.
+              The company is now led by co-CEOs: Richard Teng, focused on regulation and
+              governance, and co-founder Yi He, appointed on 3 December 2025 and focused on product
+              and users. Its stated global base is Abu Dhabi. Since 5 January 2026, Binance.com has
+              operated under the Abu Dhabi Global Market&apos;s FSRA framework through three
+              regulated entities: Nest Exchange Limited runs the exchange itself, Nest Clearing and
+              Custody Limited handles clearing and holds client assets as trustee (it also manages
+              the SAFU fund), and Nest Trading Limited is the broker-dealer behind OTC, Convert, and
+              the stock products.
+            </P>
+            <P>
+              On licensing, the picture is mixed. Binance holds a full VASP license in Dubai and
+              registrations in places like Bahrain, Japan, Thailand, and Kazakhstan; in Australia
+              it holds an AUSTRAC registration, which is a registration rather than a license. The
+              setback is Europe: Binance filed its MiCA application in Greece in January 2026,
+              withdrew it on 24 June 2026, and restricted EEA services from 1 July 2026. Bloomberg
+              reported in September 2026 that Binance still onboarded some EU customers under the
+              reverse solicitation exemption, and the Financial Times reported in October 2026 that
+              ESMA and French, German, and Greek regulators were examining that practice. Binance
+              says it will reapply in another member state, reportedly France, but held no MiCA
+              authorization as of November 2026.
+            </P>
+            <P>
+              The US legal story also moved in 2026, and it needs careful wording. On 14 September
+              2026, federal prosecutors in New York filed a civil forfeiture complaint seeking
+              about $61 million in crypto tied to Iranian oil sales, alleging that two companies
+              laundered proceeds through Binance accounts. Binance is not charged and is not a
+              defendant in that case, and it says it cooperated fully. Days later, Bloomberg and
+              Reuters reported that federal prosecutors are investigating whether Binance violated
+              US sanctions on Iran, and on 9 October 2026 the head of the DOJ&apos;s Criminal
+              Division confirmed the department is reviewing Binance&apos;s compliance with its
+              2023 settlement. An investigation is not a finding of wrongdoing, and no new charges
+              have been filed. Reporting by the New York Times and the Wall Street Journal in
+              February 2026, alleging that Binance investigators traced more than $1 billion in
+              flows to Iran-linked entities and that staff who flagged them were dismissed, is
+              disputed by Binance, whose CEO called the allegations false.
+            </P>
+            <P>
               Progress is real but uneven, which is exactly why the availability section above
               matters so much. A compliance turnaround in progress is not the same as a clean
               record, and you should weigh that according to your own risk tolerance.
@@ -454,7 +588,7 @@ export default function BinanceReviewPage() {
             <P>
               The product list is the longest in the industry: spot, margin, USDⓈ-M and coin-M
               futures, options, a Lite mode for beginners and a Pro interface for advanced traders,
-              staking and Earn products, P2P trading, an NFT marketplace, Launchpool token launches,
+              staking and Earn products, P2P trading, Launchpool token launches,
               trading bots, and even 7,000+ US stocks and ETFs alongside crypto. Few traders will
               ever touch half of it, but the breadth means most people never need a second exchange.
             </P>
@@ -463,14 +597,28 @@ export default function BinanceReviewPage() {
               and customer support response times stretch during market peaks. Start in Lite mode,
               ignore everything you do not understand, and expand only as needed.
             </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Direct stock trading</h3>
+            <P>
+              Since 1 June 2026, eligible non-US users can buy <strong className="text-slate-900">real
+              US shares</strong> inside Binance: more than 7,000 stocks and ETFs, zero commission at
+              launch, settling in stablecoins or BNB, on a 24/5 schedule. These are actual
+              securities, not tokens. Nest Trading Limited acts as introducing broker, while
+              execution, clearing, settlement, and custody sit with Alpaca Securities in the US;
+              Binance itself does not handle or custody the shares. The product passed $1 billion
+              in assets within its first month, on more than $3 billion of trading volume,
+              according to Binance.
+            </P>
             <h3 className="mt-8 text-xl font-black text-slate-950">Tokenized stocks and TradFi</h3>
             <P>
-              In June 2026 Binance launched <strong className="text-slate-900">bStocks</strong>,
+              On 11 June 2026 Binance launched <strong className="text-slate-900">bStocks</strong>,
               tokenized securities backed 1:1 by real shares held with the issuer. The first five
               listings covered Nvidia, Tesla, Circle, Micron, and Sandisk, trading 24/7 as ordinary
-              USDT spot pairs (NVDAB/USDT, TSLAB/USDT, and so on). By August the list had grown past
-              46 names with over $500 million in assets within seven weeks of launch, according to
-              industry reporting.
+              USDT spot pairs (NVDAB/USDT, TSLAB/USDT, and so on). By 15 October 2026 the list had
+              grown to nearly 100 names, with more than $1 billion in assets, over $40 billion in
+              cumulative trading volume, and more than $6 billion converted 1:1 between bStocks and
+              direct share positions, according to Binance. Since September 2026, bStocks can also
+              be posted as collateral. They are offered under an approved prospectus in Abu Dhabi,
+              trade on the secondary market only, and are not available to US persons.
             </P>
             <P>
               Alongside spot bStocks, Binance lists <strong className="text-slate-900">TradFi
@@ -479,12 +627,39 @@ export default function BinanceReviewPage() {
               equity exposure and hedge it without leaving the exchange. In September 2026, Ethena
               chose Binance as the first venue to extend its USDe basis trade into equities, using
               bStocks as spot collateral against short equity perpetuals, which is a meaningful
-              institutional vote of confidence in the plumbing.
+              institutional vote of confidence in the plumbing. The scale is moving fast: TradFi
+              perpetual volume on Binance reached $433.4 billion in August 2026 alone, about 15
+              times the January figure, with equity contracts at 79% of that volume, and Binance
+              held roughly 60% of the TradFi perps market in the second quarter of 2026, according
+              to TokenInsight data.
             </P>
             <P>
               Know what you are buying: bStocks give economic exposure to the share price but no
               voting rights, and availability is jurisdiction-dependent. Tokenized equities are still
               a young product class, so position sizing and the usual custody discipline apply.
+            </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Stock options and Binance AI</h3>
+            <P>
+              Two smaller 2026 launches round out the TradFi push. <strong className="text-slate-900">Stock
+              Options</strong> arrived on 1 September 2026: calls and puts on more than 1,000 US
+              stocks and ETFs, physically settled in real shares, with covered calls and
+              cash-secured puts added on 27 October 2026. And on 12 October 2026 Binance launched
+              its <strong className="text-slate-900">Binance AI</strong> assistant inside the app,
+              free and rolling out gradually to eligible users.
+            </P>
+            <h3 className="mt-8 text-xl font-black text-slate-950">Binance Card</h3>
+            <P>
+              Binance also has a prepaid Mastercard again, after the old Visa card closed in
+              December 2023. The relaunched card started in Brazil in October 2025, issued by
+              Pomelo, with Argentina running on a second Pomelo entity and other markets served by
+              an Immersve-issued global program that publishes no country list: eligibility only
+              shows in the app. Availability has been reported in Brazil, Australia, New Zealand,
+              and Peru, and Binance said in February 2026 that selected CIS countries, including
+              Armenia, were included. Since 1 June 2026 the cashback grid pays 1.5% under $100 of
+              monthly spend, 2% from $100 to $1,000, and 3% above that, capped at $100 a month,
+              with a 0.9% conversion fee (0.1% for USDC) and a 2% FX fee on non-USD purchases under
+              the global program. The important negative: there is no Binance Card in the US, UK,
+              or EEA.
             </P>
             <h3 className="mt-8 text-xl font-black text-slate-950">Aster DEX inside Binance Wallet</h3>
             <P>
@@ -615,7 +790,7 @@ export default function BinanceReviewPage() {
             <P>
               Our verdict is our own, but it is worth seeing how other users rate
               Binance on public platforms. These are third-party ratings, checked in
-              October 2026, and they move over time.
+              November 2026, and they move over time.
             </P>
             <div className="mt-6 overflow-x-auto">
               <table className="w-full min-w-[480px] border-collapse text-left text-sm">
@@ -628,22 +803,25 @@ export default function BinanceReviewPage() {
                 <tbody className="leading-7 text-slate-800">
                   <tr className="border-b border-slate-100">
                     <td className="py-3 pr-4">Trustpilot</td>
-                    <td className="py-3 pr-4 text-right font-bold">1.4 out of 5 (~5,000+ reviews)</td>
+                    <td className="py-3 pr-4 text-right font-bold">No current score (see below)</td>
                   </tr>
                   <tr className="border-b border-slate-100">
                     <td className="py-3 pr-4">Google Play</td>
-                    <td className="py-3 pr-4 text-right font-bold">4.8 out of 5 (3.85M+ ratings)</td>
+                    <td className="py-3 pr-4 text-right font-bold">4.75 out of 5 (~4.8M ratings, US store)</td>
                   </tr>
                   <tr className="border-b border-slate-100">
                     <td className="py-3 pr-4">Apple App Store</td>
-                    <td className="py-3 pr-4 text-right font-bold">4.6 out of 5</td>
+                    <td className="py-3 pr-4 text-right font-bold">4.68 out of 5</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <P>
-              The Trustpilot score is heavily dispute-driven; the app-store scores
-              from millions of mobile users tell a friendlier story.
+              Trustpilot needs an explanation this time. In late October 2026 the binance.com
+              profile showed 1.3 out of 5 from about 6,200 reviews, but Trustpilot had flagged
+              fabricated reviews on the profile and now withholds the score entirely, so there is
+              no current Trustpilot rating to quote. The profile was always heavily dispute-driven.
+              The app store scores, drawn from millions of mobile users, tell a friendlier story.
             </P>
           </Section>
 
@@ -657,19 +835,20 @@ export default function BinanceReviewPage() {
                   <li>0.10% spot fees, 0.075% with BNB: among the cheapest anywhere</li>
                   <li>500+ coins, 1,300+ spot pairs, plus futures, options, staking, P2P</li>
                   <li>SAFU fund at 15,000 BTC and monthly proof of reserves</li>
-                  <li>2019 hack covered in full, no user losses</li>
+                  <li>Absorbed a $6.3B hack in October 2026 without passing losses to users, about 98% replaced within a week</li>
                   <li>Lite mode keeps it approachable for beginners</li>
                 </ul>
               </div>
               <div className="rounded-[1.5rem] border border-red-200 bg-red-50/60 p-6">
                 <p className="text-xs font-black uppercase tracking-[0.16em] text-red-800">Weaknesses</p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
-                  <li>No US access; UK and EU sign-ups restricted</li>
+                  <li>No US access; EEA services restricted since July 2026 and UK sign-ups still paused</li>
                   <li>$4.3B DOJ settlement and founder conviction in its history</li>
+                  <li>Suffered the largest hack in crypto history in October 2026; recovery still completing</li>
+                  <li>DOJ reviewing compliance with its 2023 settlement (confirmed October 2026)</li>
                   <li>Overwhelming product sprawl for newcomers</li>
                   <li>Support slows badly during market peaks</li>
                   <li>Custodial by design: not your keys, not your coins</li>
-                  <li>Regulatory picture still uneven by jurisdiction</li>
                 </ul>
               </div>
             </div>
@@ -719,7 +898,10 @@ export default function BinanceReviewPage() {
             <P>
               Here is the honest summary. Binance is the cheapest, deepest, most complete
               exchange in crypto, and it is also the one with the most complicated past. Both
-              things are true at the same time. If it is available where you live and you want
+              things are true at the same time. October 2026 tested that harder than anything
+              before it: the largest hack in crypto history, answered with company money rather
+              than user losses, though the recovery was still finishing as this review was
+              updated. If it is available where you live and you want
               low fees with maximum liquidity, it remains the default choice, and for good reason.
             </P>
             <P>

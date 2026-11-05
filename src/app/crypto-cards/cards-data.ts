@@ -406,17 +406,16 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/bitget-wallet-card.png",
     imageAlt: "Bitget Wallet Card in the Bitget Wallet app",
     imageSourceNote: "Official Bitget Wallet-hosted product image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     featureFlags: { applePay: true, googlePay: true },
     caution: "“Up to 3%” is a provider headline, not a guaranteed rate. Confirm eligible purchases, reward assets, regional fees, and settlement timing.",
     referralLabel: "Check Bitget Wallet Card",
     feesUrl: "https://web3.bitget.com/helpCenter/283",
     updateUrl: "https://web3.bitget.com/en/academy/how-to-use-a-crypto-card-a-beginners-guide-to-spending-bitcoin-and-stablecoins",
     updateLabel: "Bitget Card guide",
-    updateNote: "Bitget Wallet maintains a fee center and Academy guides; the exact card flow, region, rewards, and fee schedule can change.",
+    updateNote: "Bitget Wallet maintains a fee center and Academy guides; the exact card flow, region, rewards, and fee schedule can change. On October 29, 2026 Bitget Wallet cut the physical card fee to $25 and added USD and EUR virtual accounts, as reported by @0xVishnya.",
     applicationMethod: "Apply online through Bitget Wallet, complete identity verification, activate the card, and top up before spending.",
     verification: "The official setup flow begins with online application and identity verification.",
-
   },
   {
     slug: "kardpay-card",
@@ -432,20 +431,20 @@ export const cardListings: CardListing[] = [
     pricing: "The official page now shows the Physical Elite metal Mastercard at $299 one-time (early-bird $199 pre-order sold out) with 4% top-up fees, a $150,000/month limit, $1,500/day ATM withdrawal, and 1-year validity; the older Core/Pro tier table is no longer displayed.",
     rewards: "Up to 2% cashback, unlocked by staking KDY: Tier 1 pays 1% ($3,000 KDY stake, $5K/transaction, $50K/month), Tier 2 pays 1.5% ($6,000 KDY, $10K/transaction, $100K/month), Tier 3 pays 2% ($18,000 KDY, $50K/transaction, $1M/month). KDY is locked for 180 days after activation.",
     funding: "The official hero describes spending USDT, USDC, and other crypto anywhere Visa or Mastercard is accepted, with instant top-up messaging.",
-    cardFormats: ["Virtual", "Physical Elite pre-order"],
+    cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://kardpay.app/?lang=en",
     sourceLabel: "KardPay official product page",
     imageUrl: "/images/cards/kardpay-card.svg",
     imageAlt: "KardPay Core green Visa/Mastercard card",
     imageSourceNote: "Official KardPay-hosted card asset",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     caution: "The last 100 physical-card pre-orders are marked SOLD OUT on the official page; cashback now depends on a KDY staking commitment with 180-day lock.",
     referralUrl: "https://go.cryptosbeginner.com/KardPay",
     referralLabel: "Check KardPay tiers",
     feesUrl: "https://kardpay.app/?lang=en#pricing",
     updateUrl: "https://kardpay.app/?lang=en",
     updateLabel: "Latest KardPay pricing",
-    updateNote: "KardPay publishes tier prices, limits, top-up fees, and card availability on its official pricing page; confirm the current table before funding.",
+    updateNote: "KardPay publishes tier prices, limits, top-up fees, and card availability on its official pricing page; confirm the current table before funding. Physical cards opened to all users with worldwide shipping on October 30, 2026, as reported by @0xVishnya; previously physical was an Elite pre-order.",
     applicationMethod: "Open the KardPay application, choose an available tier, complete the provider’s onboarding, and fund the card with supported assets.",
     verification: "Eligibility and any account verification requirements apply through the KardPay application flow.",
     galleryImages: [
@@ -1023,7 +1022,7 @@ export const cardListings: CardListing[] = [
     availability: "The official page visibly lists the Philippines, Taiwan, Thailand, and other country routes; exact product availability depends on the selected region.",
     regions: ["Selected countries including Philippines, Taiwan, and Vietnam; verify route"],
     pricing: "The official page displays a card-issuance figure of 20 USD crossed out to 0 USD and a Service Fee of 0% for the shown route; spending, conversion, FX, and physical-card fees still require regional confirmation.",
-    rewards: "MEXC advertises up to 10% cashback, with tier, spending, cap, and eligible-transaction conditions.",
+    rewards: "MEXC advertises up to 10% cashback, with tier, spending, and eligible-transaction conditions. Per MEXC's cashback FAQ, monthly cashback is capped at $50 on the Standard tier and $150 on Premier.",
     funding: "Apply, complete Advanced KYC, deposit to activate, and add the card to Apple or Google Wallet; supported assets and regional funding routes vary.",
     cardFormats: ["Virtual", "Physical availability varies"],
     sourceUrl: "https://www.mexc.com/buy-crypto/mexc-card",
@@ -1031,7 +1030,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/mexc-card.png",
     imageAlt: "MEXC Visa Card official product banner",
     imageSourceNote: "Official MEXC-hosted card banner",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     featureFlags: { googlePay: true },
     caution: "MEXC presents multiple regional card variants. Do not combine the Taiwan route and other MEXC or Ether.fi routes into one universal fee, reward, or eligibility claim.",
     referralUrl: "https://go.cryptosbeginner.com/MEXC-Bonus",
@@ -1376,7 +1375,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/etherfi-cash-card.webp",
     imageAlt: "Gold ether.fi Cash Visa credit card",
     imageSourceNote: "Official product image not available from issuer",
-    reviewedAt: "2026-10-18",
+    reviewedAt: "2026-11-05",
     caution: "Crypto assets used as backing may lose value, and the issuer has no custody or control over wallet contents. Borrow mode accrues interest from 1.43%; existing debt stays in its original currency.",
     verification: "Identity verification (KYC) required for all cardholders.",
     referralUrl: "https://go.cryptosbeginner.com/etherfi",
@@ -1387,6 +1386,8 @@ export const cardListings: CardListing[] = [
       { tier: "Pinnacle", ratePct: 3, spendBand: "first $50,000/mo", bandCapUsd: 50000, rewardAsset: "USD" },
       { tier: "VIP", ratePct: 4, spendBand: "headline rate", rewardAsset: "USD" },
     ],
+    updateNote:
+      "From October 30, 2026, rent and tax payments earn cashback, and the card fully supports ZCHF (Swiss franc stablecoin) spending, per the ether.fi Help Center.",
   },
   {
     slug: "avici-card",
@@ -1437,13 +1438,15 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/solid-card.png",
     imageAlt: "Solid green Visa card official product image",
     imageSourceNote: "Official Solid product image, cached locally",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     featureFlags: { borrowAgainstCrypto: true, earnYield: true },
     caution: "Cashback caps apply monthly and rewards depend on tier eligibility. Yield rates are variable and depend on DeFi strategy performance; a 10% performance fee applies to yield. Locked FUSE cannot be withdrawn before the unlock date. Availability varies by issuer program and region; verify current status before applying.",
     verification: "Identity verification required for card issuance and for TransFi local deposits (separate verification).",
     referralUrl: "https://www.solid.xyz/refer?ref=4Z0ZE",
     referralLabel: "Get Solid Card",
     fullReviewUrl: "/crypto-cards/solid-review",
+    updateNote:
+      "Solid launched a euro yield account with its own IBAN on October 29, 2026, as reported by @0xVishnya.",
   },
   {
     cashbackBands: [
@@ -2628,12 +2631,13 @@ export const cardListings: CardListing[] = [
     network: "Not published",
     categories: ["prepaid"],
     shortDescription: "EUR-focused money app card with 0% swap fees on EUR to USD and USD to USDT conversions, EUR card spending, and SEPA payouts.",
-    editorialSummary: "Pulsar Money (@PulsarMoneyApp) is a wallet app built around euro and dollar spending. As reported at launch in October 2026, it offers 0% swap fees on EUR to USD and USD to USDT conversions through StableFX, EUR card spending, and SEPA payouts in euros. The card network, issuer, and a full public fee schedule have not been published, so launch terms should be treated as subject to change.",
+    editorialSummary: "Pulsar Money (@PulsarMoneyApp) is a wallet app built around euro and dollar spending. As reported at launch in October 2026, it offers 0% swap fees on EUR to USD and USD to USDT conversions through StableFX, EUR card spending, and SEPA payouts in euros. Cashback arrived after launch: from November 1, 2026 the Free plan pays up to 2% and Pro up to 4%, replacing the October promotion. Pulsar Earn offers yield on balances through Morpho vaults curated by Steakhouse Financial on Arc. The card network, issuer, and a full public fee schedule have not been published, so terms should be treated as subject to change.",
     bestFor: "Euro-area users who move between EUR, USD and USDT and want SEPA payouts in euros.",
     availability: "EUR card spending and SEPA EUR payouts; a full country list is not published.",
     regions: ["Europe"],
     pricing: "0% swap fees on EUR to USD and USD to USDT conversions via StableFX at launch. Card issuance, FX, and other fees are not published.",
-    rewards: "No cashback program published.",
+    rewards:
+      "Up to 2% cashback on the Free plan and up to 4% on Pro, from November 1, 2026. This replaced the October launch promotion of 4% base cashback plus 8% on subscriptions.",
     funding: "EUR and stablecoin balances held in the Pulsar Money app; SEPA payouts in EUR.",
     cardFormats: ["Card formats not published"],
     sourceUrl: "https://x.com/PulsarMoneyApp",
@@ -2641,9 +2645,185 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Pulsar Money Card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-21",
+    reviewedAt: "2026-11-05",
     caution: "Newly launched product. No public fee schedule, card network, or issuer details are published yet; verify terms in the app before depositing significant funds.",
+    updateNote:
+      "Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
     verification: "Provider account and regional eligibility requirements apply.",
+  },
+  {
+    slug: "freedomia-card",
+    name: "Freedomia Card",
+    provider: "Freedomia",
+    network: "Visa",
+    categories: ["prepaid"],
+    shortDescription:
+      "A prepaid virtual Visa card funded with crypto, sold on annual plans from $60 a year with a 1.3% top-up fee.",
+    editorialSummary:
+      "Freedomia sells a prepaid virtual Visa card on annual plans: Founder at $5 a month billed as $60 a year, with HODL ($9.99 a month) and MOON ($17.99 a month) tiers listed as coming soon. Top-ups cost 1.3%, spending in USD is free of FX fees, and non-USD spending carries a 2.5% FX fee. Funding is broad: BTC over Lightning and on-chain, XMR, ETH, LTC, SOL, TRX, BNB, USDT and USDC, converting to USD automatically. The Founder plan caps spending at $5,000 a month and $60,000 a year. Google Wallet is live, Apple Pay is listed as coming soon, and 3D Secure is supported. The operator states that no plan requires KYC; that is the operator's own claim, and no issuer or restricted-country list is published.",
+    bestFor:
+      "People who want a virtual-only card funded with privacy coins like XMR and are comfortable with an annual plan fee.",
+    availability:
+      "Operator claims the virtual card works anywhere Visa is accepted. No country list or restricted-country list is published.",
+    regions: ["North America", "Europe", "Asia"],
+    pricing:
+      "Founder plan $5 per month billed annually ($60 per year); HODL $9.99 and MOON $17.99 per month listed as coming soon. Top-up fee 1.3%. FX 2.5% on non-USD spend, 0% in USD. Virtual card only, so no ATM fees apply.",
+    rewards: "No cashback program published.",
+    funding:
+      "BTC (Lightning and on-chain), XMR, ETH, LTC, SOL, TRX, BNB, USDT and USDC; balances convert to USD automatically.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://www.freedomia.io/home",
+    sourceLabel: "Freedomia official website",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Freedomia Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "The issuer is not named on the official site, and the no-KYC positioning is the operator's own statement, not independently verified. Annual plan fees are charged whether or not the card is used.",
+    verification:
+      "The operator states no KYC is required on any plan; treat this as a provider claim and check the current signup flow.",
+    noKycStatus: "provider-states-no-kyc",
+    feeBreakdown: {
+      annualFeeUsd: 60,
+      fxFeeNote: "2.5% on non-USD spend; USD spend 0%",
+      atmFeeNote: "Virtual card only; no ATM access published",
+    },
+    featureFlags: { googlePay: true, applePay: false },
+  },
+  {
+    slug: "2fiat-card",
+    name: "2Fiat Card",
+    provider: "2Fiat",
+    network: "Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "A virtual prepaid Mastercard with instant crypto top-ups from $10 to $10,000 per load. Fees are not published on the official site.",
+    editorialSummary:
+      "2Fiat offers a virtual prepaid Mastercard funded by instant crypto top-ups: BTC, XMR, USDT, or other crypto, converted to a fiat balance at load time, with loads from $10 to $10,000. The card supports Apple Pay, Google Pay, and 3D Secure, and the operator allows multiple cards per user. The official site publishes no fee schedule at all: no issuance, top-up, FX, or monthly figures. Third-party databases describe materially higher load costs than regulated debit cards, so the real price of this card only becomes visible inside the order flow. The issuer is not disclosed on the official site.",
+    bestFor:
+      "Small, occasional virtual card loads where the user accepts unpublished fees in exchange for a minimal signup process.",
+    availability:
+      "Operator claims use anywhere Mastercard is accepted. No country list is published.",
+    regions: ["North America", "Europe", "Asia"],
+    pricing:
+      "Fees are not published on the official site. Third-party reports describe high top-up costs; check the total cost inside the order flow before loading funds.",
+    rewards: "No cashback program published.",
+    funding:
+      "BTC, XMR, USDT and other crypto, converted to fiat at top-up. Loads from $10 to $10,000.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://2fiat.com",
+    sourceLabel: "2Fiat official website",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "2Fiat Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "Thin public data: no published fees, no named issuer, and no country list. Third-party reports describe high top-up costs. Load small amounts first and confirm the total cost before committing funds.",
+    verification:
+      "The operator markets privacy; secondary sources report issuance without identity checks. This is not verified from an official statement.",
+    noKycStatus: "not-verified",
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "goblin-card",
+    name: "Goblin Card",
+    provider: "Goblin Solutions LLC",
+    network: "Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "A physical plus virtual Mastercard bundle at $350 one time, with a 3.5% deposit fee on the physical card and 0% FX.",
+    editorialSummary:
+      "Goblin Card, from Goblin Solutions LLC, sells a bundle of a physical and a virtual Mastercard for a one-time $350 including tracked international shipping. The physical card charges a 3.5% deposit fee (4% for XMR), a $100 minimum deposit, 0% FX, and no Goblin ATM fee, with limits of $2,500 per transaction, $5,000 per day, and $500 per day at ATMs. The virtual card carries roughly 1.5% FX and a 2% cash withdrawal fee, with much higher daily limits. Cards are valid for 3 years; renewal or replacement costs $100. Funding accepts BTC, ETH, SOL, XMR, and USDT. The operator markets the card as non-KYC, including at shipping; the issuer is not named on the official site.",
+    bestFor:
+      "Users who want a physical card with published fees and 0% FX on the physical card, and who spend enough to justify the $350 bundle price.",
+    availability:
+      "Operator claims worldwide shipping and spending. No official country or restricted-country list is published.",
+    regions: ["North America", "Europe", "Asia", "LATAM"],
+    pricing:
+      "Bundle $350 one time for physical plus virtual, tracked shipping included. Physical: 3.5% deposit fee (4% XMR), $100 minimum deposit, 0% FX, 0% Goblin ATM fee. Virtual: about 1.5% FX, 2% cash withdrawal fee. Renewal or replacement $100. No annual fee published.",
+    rewards: "No cashback program published.",
+    funding: "BTC, ETH, SOL, XMR and USDT; deposits convert to a fiat balance less fees.",
+    cardFormats: ["Physical", "Virtual"],
+    sourceUrl: "https://www.goblincards.com/",
+    sourceLabel: "Goblin Card official website",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Goblin Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "The $350 upfront bundle is expensive relative to the market, the issuer is not disclosed, and the service is young. The non-KYC positioning is the operator's own claim. Verify current terms on the official site and start small.",
+    verification:
+      "The operator markets the card as non-KYC, including at shipping; treat this as a provider claim.",
+    noKycStatus: "provider-states-no-kyc",
+    feeBreakdown: {
+      physicalIssuanceUsd: 350,
+      fxFeeNote: "Physical 0% FX; Virtual approx. 1.5% FX",
+      atmFeeNote:
+        "Physical: 0% Goblin ATM fee, $500/day (ATM operators may charge their own); Virtual: 2% cash withdrawal fee",
+    },
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "xverse-card",
+    name: "Xverse Card",
+    provider: "Xverse",
+    network: "Not published",
+    categories: ["self-custody"],
+    shortDescription:
+      "A planned card for the Xverse Bitcoin wallet, spending stablecoin balances from Xverse Cash. Waitlist only; network, fees, and formats are not published yet.",
+    editorialSummary:
+      "Xverse, the Bitcoin wallet from Secret Key Labs, has announced a card connected to Xverse Cash, its stablecoin balance feature holding USDC on Starknet, USDB on Spark, and USDCx on Stacks. The card is waitlist-only and described as rolling out by region. Xverse's own guide says it will work anywhere Visa or Mastercard is accepted without naming a network, and no issuer, fee schedule, card formats, or country list have been published. One early post mentioned borrowing against BTC at swipe; a later post clarifies the shipped card spends stablecoins, so treat any credit features as unconfirmed until launch terms appear.",
+    bestFor:
+      "Xverse wallet users who want to spend stablecoin balances and are willing to wait for a regional rollout.",
+    availability:
+      "Waitlist only; rolling out by region per Xverse. No country list is published.",
+    regions: ["North America", "Europe", "Asia"],
+    pricing: "Not published; the card has not launched.",
+    rewards: "No card cashback program published.",
+    funding:
+      "Stablecoin balances in Xverse Cash: USDC on Starknet, USDB on Spark, and USDCx on Stacks.",
+    cardFormats: ["Not published"],
+    sourceUrl: "https://www.xverse.app/blog/cash",
+    sourceLabel: "Xverse official blog, Cash announcement, October 5, 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Xverse Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "Pre-launch listing. Only the waitlist, the wallet connection, and the stablecoin funding model are confirmed by the operator. Do not rely on any fee, network, or feature claim until Xverse publishes launch terms.",
+    verification: "Not published; the card has not launched.",
+    updateNote:
+      "Waitlist opened with the Xverse Cash announcement on October 5, 2026. This listing will be updated when Xverse publishes the network, issuer, fees, and country list.",
+  },
+  {
+    slug: "takenos-card",
+    name: "Takenos Card",
+    provider: "Takenos",
+    network: "Visa and Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "Two prepaid cards from Takenos: TakeCard, a US-issued Visa for international purchases at a 1% purchase fee, and SpicyCard, a Mastercard for spending in Argentine pesos.",
+    editorialSummary:
+      "Takenos offers two prepaid cards for different jobs, as profiled by TODEY in October 2026. TakeCard is a US-issued Visa aimed at international purchases, charging a 1% purchase commission with Visa exchange rates; the virtual card costs $5. SpicyCard is a local Mastercard built for spending in Argentine pesos, with no extra purchase commission. There is no fixed cashback rate on either card. Takenos does not publish a full fee schedule, issuer details, or a country list beyond the Argentina focus of SpicyCard, so treat the terms as thin and check the app before loading funds.",
+    bestFor:
+      "Argentina-based spenders who want a local peso card, and users who need a US-issued virtual Visa for international purchases.",
+    availability:
+      "TakeCard is US-issued and aimed at international purchases; SpicyCard is for Argentina. A full country list is not published.",
+    regions: ["LATAM", "North America"],
+    pricing:
+      "Virtual TakeCard $5. TakeCard charges a 1% purchase commission; SpicyCard charges no extra purchase commission. Other fees are not published.",
+    rewards: "No fixed cashback rate on either card.",
+    funding: "Takenos account balance; funding routes are not fully published.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://todey.xyz/card/takenos-card/",
+    sourceLabel: "TODEY card profile, October 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Takenos Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-05",
+    caution:
+      "Thin public data: no published full fee schedule or issuer. Details here come from TODEY's card profile; confirm fees and eligibility in the Takenos app before loading funds.",
+    verification: "Takenos account verification applies; requirements are not fully published.",
   },
   {
     slug: "kontigo-card",
@@ -2824,7 +3004,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
     availability: "Details being verified. Check the official site for current country availability.",
     regions: ["Japan"],
-    pricing: "Details being verified from official sources.",
+    pricing: "Physical card fee cut in half to $35 on October 26, 2026, as reported by @0xVishnya. Other fee details are still being verified from official sources.",
     rewards: "Details being verified from official sources.",
     funding: "Details being verified from official sources.",
     cardFormats: ["Virtual", "Physical"],
@@ -2833,7 +3013,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/slash-card.png",
     imageAlt: "Slash black Visa crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-10-14",
+    reviewedAt: "2026-11-05",
     caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
     verification: "Provider account and regional eligibility requirements apply.",
   },
@@ -3934,10 +4114,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Ethena Pay Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     caution:
       "The card is in beta with limited country coverage, so terms and availability may change.",
     verification: "Verification details not disclosed; beta access is invitation based.",
+    updateNote:
+      "Ethena Pay launched Earn+ on October 28, 2026: up to 12% APY on USD balances held in an external vault, as reported by @0xVishnya. Yield is variable and vault-based, not a bank deposit rate.",
   },
   {
     slug: "minipay-card",
@@ -3988,14 +4170,14 @@ export const cardListings: CardListing[] = [
       "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX markup: 0% Platinum, 0.5% Core, 1% Lite.",
     rewards:
       "XPL cashback: 2% on Lite (first $500/month), 3% on Core (first $1,000/month), 4% on Platinum (first $3,000/month).",
-    funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem.",
+    funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Direct ETH and HYPE deposits and spending were added on October 28, 2026. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.plasma.org/learn/crypto-card-benefits",
     sourceLabel: "Plasma",
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Plasma One Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-19",
+    reviewedAt: "2026-11-05",
     caution:
       "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
     updateUrl: "https://x.com/0xVishnya/status/2111004467449745425",
@@ -4191,10 +4373,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Exa Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     caution:
       "Borrowing against volatile collateral carries liquidation risk if asset prices fall sharply.",
     verification: "KYC required through the Exa app.",
+    updateNote:
+      "Exa launched Exa Blue on October 29, 2026, reported as the first credit card backed by Coinbase tokenized stocks (@0xVishnya). Confirm in the Exa app which card programs are open in your region.",
   },
   {
     slug: "fuse-card",
@@ -4468,14 +4652,15 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A non-custodial crypto credit card on Solana with a Kamino-backed USDC credit line and up to 2% USDC cashback.",
     editorialSummary:
-      "The XPlace Card is a non-custodial credit card on Solana that extends a USDC credit line backed by Kamino lending markets. Cardholders can borrow to spend rather than selling their crypto, and rewards reach up to 2% cashback paid in USDC. Two paid tiers exist: Silver at $99 per year and Platinum at $999 per year, aimed at very different spending levels.",
+      "The XPlace Card is a non-custodial credit card on Solana, issued via Rain, that extends a USDC credit line backed by Kamino lending markets. Cardholders can borrow to spend rather than selling their crypto, and rewards reach up to 2% cashback paid in USDC, with 5% cashback on Uber, Sixt and Wheely spend on the higher paid tiers. Two paid tiers exist: Silver at $99 per year and Platinum at $999 per year, aimed at very different spending levels. Because the credit line depends on Kamino markets, borrowing halts there flow straight through to the card: credit mode paused on October 29 to 30, 2026 after Kamino halted SOL and BTC borrowing.",
     bestFor:
       "Solana holders who want a credit line for spending without selling assets, with USDC cashback.",
     availability:
       "Provider does not publish a specific country list on the reviewed page.",
     regions: ["North America", "Europe", "Asia"],
     pricing: "Silver tier $99 per year; Platinum tier $999 per year.",
-    rewards: "Up to 2% cashback paid in USDC.",
+    rewards:
+      "Up to 2% cashback paid in USDC, plus 5% cashback on Uber, Sixt and Wheely spend on the higher paid tiers (Gold and Platinum).",
     funding:
       "Kamino-backed USDC credit line; borrowing against the user's onchain collateral.",
     cardFormats: ["Virtual", "Physical"],
@@ -4484,9 +4669,11 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "XPlace Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-05",
     caution:
       "Borrowing against volatile collateral carries liquidation risk, and the Platinum tier fee is steep.",
+    updateNote:
+      "Issued via Rain. Credit mode was paused on October 29 to 30, 2026 after Kamino halted SOL and BTC borrowing, as reported at the time; check the XPlace app for current credit availability.",
     verification: "KYC required through the XPlace application.",
   },
 {

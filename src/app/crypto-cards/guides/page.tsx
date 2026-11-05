@@ -71,6 +71,41 @@ const guides = [
       "The biggest crypto card against KAST, ether.fi Cash, and Plasma One: custody, cashback caps, fees, and availability compared side by side.",
     readTime: "8 min read",
   },
+  {
+    slug: "free-crypto-cards-ranked",
+    title: "Free Crypto Cards, Ranked",
+    description:
+      "Cards that cost nothing to get and nothing to hold, ranked from our catalog data, with the spending fees that still apply to each one.",
+    readTime: "8 min read",
+  },
+  {
+    slug: "real-cashback-after-fx",
+    title: "The Cashback That Actually Reaches You",
+    description:
+      "Headline cashback minus FX fees and caps: what $1,000 of foreign spending really earns on Wirex, Tria, ether.fi, Plasma One, RedotPay, and KAST.",
+    readTime: "9 min read",
+  },
+  {
+    slug: "crypto-card-bin-by-bin",
+    title: "Who Issues Your Crypto Card, BIN by BIN",
+    description:
+      "The brand on the card is rarely the company behind it. How card issuing works, what a BIN is, and which issuer sits behind the major programs.",
+    readTime: "9 min read",
+  },
+  {
+    slug: "crypto-card-security-incidents",
+    title: "Crypto Card Security Incidents",
+    description:
+      "The documented breaches and exploits at card programs so far: Infini, Gnosis Pay, Rain, Crypto.com, and Based, and what each one teaches about custody.",
+    readTime: "10 min read",
+  },
+  {
+    slug: "kast-points-pioneer-units",
+    title: "KAST Points Went From $800 to $0",
+    description:
+      "KAST dropped its token plan and swapped Points for Pioneer Units. What happened, what holders actually have now, and the lesson for every points program.",
+    readTime: "7 min read",
+  },
 ];
 
 export default function CryptoCardGuidesPage() {
