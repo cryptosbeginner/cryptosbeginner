@@ -1038,7 +1038,7 @@ export const cardListings: CardListing[] = [
     feesUrl: "https://www.mexc.com/support/fiat/card",
     updateUrl: "https://www.mexc.com/buy-crypto/mexc-card",
     updateLabel: "Latest MEXC Card terms",
-    updateNote: "MEXC publishes country selection, card application, cashback, and support information on its card page; regional terms can change.",
+    updateNote: "MEXC publishes country selection, card application, cashback, and support information on its card page; regional terms can change. On November 6, 2026, FinCEN ordered US financial institutions to cut MEXC off from the US financial system, citing at least $16 billion in alleged illicit transactions. The order takes effect 30 days after Federal Register publication and does not itself freeze customer funds, but anyone considering the MEXC Card should read our news article on the order and weigh the counterparty risk before loading a balance.",
     applicationMethod: "Open the MEXC card flow, select the available country route, complete Advanced KYC, deposit as instructed, and verify the current card terms.",
     verification: "Advanced KYC is required on the official application flow; country and account eligibility apply.",
     featureTags: ["Advanced KYC", "Google Pay", "Up to 10% advertised", "Region-specific"],

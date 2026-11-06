@@ -13,6 +13,16 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-06",
+    type: "catalog-update",
+    cardName: "MEXC Card",
+    cardSlug: "mexc-card",
+    title: "US Treasury cuts MEXC off from the US financial system",
+    details:
+      "On November 6, 2026, FinCEN ordered US financial institutions to stop processing fund transfers to and from MEXC Global, accusing the exchange of facilitating at least $16 billion in illicit transactions tied to Iranian, North Korean, and Russian sanctions evasion between May 2021 and May 2026. The order takes effect 30 days after publication in the Federal Register and does not itself freeze customer deposits, but it changes the risk profile of holding a balance or a loaded MEXC Card. Our news article on the order has the full breakdown and sources.",
+    sourceLabel: "US Treasury press release, November 6, 2026",
+  },
+  {
     date: "2026-11-04",
     type: "market",
     cardName: "Rain-issued cards",

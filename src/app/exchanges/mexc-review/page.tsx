@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/exchanges/mexc-review`;
 
-const UPDATED = "6 October 2026";
-const UPDATED_ISO = "2026-10-06";
+const UPDATED = "7 November 2026";
+const UPDATED_ISO = "2026-11-07";
 const ORIGINALLY_PUBLISHED = "29 April 2024";
 const ORIGINALLY_PUBLISHED_ISO = "2024-04-29";
 
@@ -145,6 +145,7 @@ function Steps({ items }: { items: string[] }) {
 }
 
 const tocItems = [
+  { id: "fincen-order", label: "November 2026: the US Treasury order" },
   { id: "what-is", label: "What MEXC is" },
   { id: "fees", label: "Fees and costs" },
   { id: "safety", label: "Safety, reserves, and the honest risks" },
@@ -264,9 +265,11 @@ export default function MexcReviewPage() {
               notice it. That is the draw: over 2,000 tokens and some of
               the lowest fees in the business. But this is also the exchange
               with regulatory warnings on record, no licences in the US, UK,
-              or EU, and a real pattern of risk-control account freezes. I
-              use MEXC as a satellite, never a home base, and this review
-              explains why.
+              or EU, and a real pattern of risk-control account freezes. In
+              November 2026 the US Treasury went much further, ordering US
+              financial institutions to cut MEXC off entirely. I use MEXC
+              as a satellite, never a home base, and this review explains
+              why.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -318,6 +321,13 @@ export default function MexcReviewPage() {
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-5 leading-7 text-slate-800">
               <li>
+                <strong className="text-slate-950">Cut off by the US Treasury (November 2026).</strong>{" "}
+                FinCEN has ordered US financial institutions to stop all fund
+                transfers to and from MEXC, citing at least $16 billion in
+                alleged illicit transactions. The first section below covers
+                what the order does, and what it does not do.
+              </li>
+              <li>
                 <strong className="text-slate-950">The altcoin supermarket.</strong>{" "}
                 Over 2,000 tokens listed, often days before bigger exchanges
                 touch them. If it is new and tiny, it is probably here first.
@@ -368,6 +378,55 @@ export default function MexcReviewPage() {
             </ul>
           </nav>
         </section>
+
+        <Section id="fincen-order">
+          <div className="rounded-2xl border border-red-200 bg-red-50 p-6 sm:p-7">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-red-700">
+              Breaking, November 2026
+            </p>
+            <H2>The US Treasury has cut MEXC off</H2>
+            <P>
+              On 6 November 2026, the US Treasury's Financial Crimes
+              Enforcement Network (FinCEN) issued a final order prohibiting
+              US financial institutions from processing any fund transfers
+              to or from MEXC Global. The order, part of Treasury's
+              Operation Economic Outcast, finds MEXC a financial
+              institution of primary money laundering concern in
+              connection with Russian illicit finance, and accuses it of
+              facilitating at least $16 billion in transactions tied to
+              Iranian, North Korean, and Russian sanctions evasion and to
+              cybercrime between May 2021 and May 2026. That includes
+              nearly $1.5 billion linked to Russian sanctions evasion,
+              about $1 billion in direct transactions with more than 40
+              Iranian crypto exchanges, and dealings with the sanctioned
+              Russian exchange Garantex as recently as June 2026.
+              Treasury says MEXC's anti-money laundering controls have
+              severe deficiencies, even though MEXC's own rules ban users
+              in Iran and North Korea.
+            </P>
+            <P>
+              What the order does not do matters too. It is not a global
+              shutdown and it does not freeze customer deposits. It takes
+              effect 30 days after publication in the Federal Register,
+              which had not happened yet when the order was announced.
+              MEXC does not onboard US users under its own terms, so the
+              direct bite is on US banking rails, but banking and partner
+              fallout rarely stops at one border, and an exchange cut off
+              from the dollar system carries a different risk profile than
+              it did a week ago. MEXC had not issued a public response in
+              the first reports. Our full breakdown, with sources, is in{" "}
+              <Link
+                href="/exchanges/mexc-fincen-order"
+                className="font-bold text-indigo-700 underline"
+              >
+                our news article on the FinCEN order
+              </Link>
+              . If you hold a balance on MEXC, the satellite rule below
+              now applies twice over: keep it small, and withdraw to your
+              own wallet regularly.
+            </P>
+          </div>
+        </Section>
 
         <Section id="what-is">
           <H2>What MEXC is</H2>
@@ -710,7 +769,9 @@ export default function MexcReviewPage() {
             else. The fee structure is genuinely excellent, the listing
             speed is unmatched, and the reserves reporting is solid.
             Against that: thin regulation, a real pattern of account
-            freezes, and no service in the biggest Western markets.
+            freezes, no service in the biggest Western markets, and, as
+            of November 2026, a US Treasury order cutting the exchange
+            off from the American financial system.
           </P>
           <P>
             I treat it as a satellite exchange for altcoin exposure, never
