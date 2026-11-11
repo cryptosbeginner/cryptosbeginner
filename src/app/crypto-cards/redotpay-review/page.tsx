@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/redotpay-review`;
 
-const UPDATED = "17 October 2026";
-const UPDATED_ISO = "2026-10-17";
+const UPDATED = "12 November 2026";
+const UPDATED_ISO = "2026-11-12";
 const ORIGINALLY_PUBLISHED = "9 April 2025";
 const ORIGINALLY_PUBLISHED_ISO = "2025-04-09";
 
@@ -513,8 +513,28 @@ export default function RedotPayReviewPage() {
             because RedotPay charges nothing here. Sending USDT over TRC20
             costs a fraction of a dollar, while ERC20 can cost several
             dollars in gas. If you prefer funding from a bank card instead,
-            expect a 3% top-up fee, or 1% via Binance Pay.
+            expect a 3% top-up fee, or 1% via Binance Pay. That bank-card
+            route became a named feature in November 2026: tap More, then
+            Buy Crypto, pick USDT or USDC, and pay with a card saved to the
+            app, so repeat purchases take one tap. RedotPay markets the
+            flow as lower fees than before, but the worked example in its
+            own launch video charges $5.64 on $188, the same 3%, so treat
+            the saving as unproven until the in-app quote says otherwise.
           </P>
+          <figure className="mt-8">
+            <video
+              controls
+              preload="none"
+              poster="/images/cards/guides/redotpay-buy-crypto-poster.jpg"
+              className="w-full rounded-2xl border border-slate-200 shadow-sm"
+              playsInline
+            >
+              <source src="/videos/redotpay-buy-crypto.mp4" type="video/mp4" />
+            </video>
+            <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
+              RedotPay's official walkthrough of the Buy Crypto flow (34 seconds): open the app, tap More, choose Buy Crypto, pick USDT or USDC, and pay with a saved card. The exchange rates in the video are RedotPay's fictional demo figures.
+            </figcaption>
+          </figure>
         </Section>
 
         <Section id="virtual-card">

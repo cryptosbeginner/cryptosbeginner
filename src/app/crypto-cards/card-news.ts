@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "launch",
+    cardName: "RedotPay",
+    cardSlug: "redotpay-card",
+    title: "RedotPay adds one-tap card purchases of USDT and USDC in the app",
+    details:
+      "RedotPay has launched Buy Crypto inside its app: open the app, tap More, choose Buy Crypto, pick USDT or USDC, and pay with a credit or debit card, the same way you shop online. Save the card once and later purchases take a single tap. RedotPay markets the flow as lower fees than before, but the worked example in its own launch video charges a $5.64 network and card fee on a $188 purchase, which works out to 3%, the same rate as the published bank-card top-up fee in our listing. On-chain crypto deposits remain free, and Binance Pay top-ups remain 1%. Our RedotPay review now embeds the official walkthrough video in the top-up section.",
+    sourceUrl: "https://x.com/RedotPay/status/2119745857016811846",
+    sourceLabel: "Official @RedotPay announcement and video, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "market",
     cardName: "Crypto card funding costs",
     title: "Top-up costs compared across 8 cards: 5 charge no deposit fee",
