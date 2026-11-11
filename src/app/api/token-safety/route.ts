@@ -494,7 +494,7 @@ function noDataResult(address: string, chain: string, label: string, timestamp: 
 
 async function fetchGoPlusRaw(address: string, chain: string): Promise<Record<string, unknown> | null> {
   const url = `${GOPLUS_BASE}/${chain}?contract_addresses=${encodeURIComponent(address)}`;
-  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" } });
+  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" }, signal: AbortSignal.timeout(8000) });
   if (!res.ok) return null;
   const payload = (await res.json()) as { code?: number; result?: Record<string, Record<string, unknown>> };
   if (payload?.code !== 1) return null;
