@@ -13,6 +13,16 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-12",
+    type: "market",
+    cardName: "Crypto card funding costs",
+    title: "Top-up costs compared across 8 cards: 5 charge no deposit fee",
+    details:
+      "A funding-cost comparison by @xKseilas, checked against our listings, breaks down what it costs to top up eight major crypto cards. Jupiter now tops the value table on its home network: USDC and USDT deposits on Solana are free after this week's fee page update, while other networks pay a bridge charge of at least $0.30 plus gas, with minimums of $3 ($10 on Ethereum). Plasma One is the outlier that charges on the way in, at 0.15% to 0.75% per crypto deposit plus network and bridge fees, with a swap fee on USDC that USDT skips. Tria charges nothing itself but passes on a variable provider fee for swaps and routing. ether.fi, KAST, RedotPay, Bitget Wallet, and Tangem Pay charge no top-up fee on stablecoins. The costs that bite sit elsewhere: Bitget Wallet activation is 0.10 USDC inside a 72-hour post-KYC window and 10 USDC after it, KAST withdrawals cost $1 + 0.1% on Solana and $6 + 0.1% on Ethereum, RedotPay issuance is $10 virtual and $100 physical and cannot be paid from the $5 welcome reward, and Tangem Pay delivery runs $28.82 to $79.94 on the free plan. Network choice dominates small top-ups: a USDT transfer on TRON without staked energy costs about $2, which is roughly 10% of a $20 top-up gone before you spend anything. All eight listings have been updated with the funding detail.",
+    sourceUrl: "https://x.com/xKseilas/status/2119362799159624017",
+    sourceLabel: "Funding-cost comparison by @xKseilas, November 2026",
+  },
+  {
     date: "2026-11-11",
     type: "catalog-update",
     cardName: "Utorg Card",

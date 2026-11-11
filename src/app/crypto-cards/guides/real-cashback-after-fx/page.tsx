@@ -9,8 +9,8 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/real-cashback-after-fx`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "5 November 2026";
-const UPDATED_ISO = "2026-11-05";
+const UPDATED = "12 November 2026";
+const UPDATED_ISO = "2026-11-12";
 
 export const metadata: Metadata = {
   title: "The Cashback That Actually Reaches You: Crypto Card Rewards After FX Fees",
@@ -111,6 +111,21 @@ export default function RealCashbackAfterFxPage() {
           <Callout title="The short version">
             On $1,000 spent abroad on base tiers: ether.fi Core nets about +$25 (3% cashback minus a 0.5% FX markup), Wirex One nets about +$5 on purchases (0.5% cashback, zero advertised purchase FX, with a top-up caveat), KAST Standard nets +$15 inside its 0% FX promotion currencies and an unknown amount outside them, Tria Lite nets +$13.33 before an FX fee our data does not publish, Plasma One Lite nets about +$0.50 in XPL (the 1% FX markup eats the cashback almost exactly), and RedotPay nets negative: $0 cashback on the standard card against 2.2% in conversion charges. The headline rate told you none of that.
           </Callout>
+
+          <figure className="mt-8">
+            <video
+              controls
+              preload="none"
+              poster="/images/cards/guides/funding-costs-poster.jpg"
+              className="w-full rounded-2xl border border-slate-200 shadow-sm"
+              playsInline
+            >
+              <source src="/videos/crypto-card-funding-costs.mp4" type="video/mp4" />
+            </video>
+            <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
+              Watch: the funding side of the same problem. What it costs to top up eight crypto cards (Jupiter, Plasma One, Tria, ether.fi, KAST, RedotPay, Bitget Wallet, and Tangem Pay), and why fixed fees punish small top-ups. A CryptosBeginner review, November 2026.
+            </figcaption>
+          </figure>
 
           <GuideH2>The test, and its rules</GuideH2>
           <GuideP>
