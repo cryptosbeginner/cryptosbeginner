@@ -3346,6 +3346,13 @@ export const cardListings: CardListing[] = [
     caution:
       "The zero-fee pricing is a limited-time promotion, not a permanent tariff: Utorg's own card page flags it with an asterisk, and issuer help notes that Visa or provider fees may apply to non-USD payments. Top-ups also credit slightly under par, at 1 USDC = $0.9995. The card is virtual only and EEA only.",
     verification: "KYC required: identity documents plus a liveness check in the app.",
+    galleryImages: [
+      {
+        url: "/images/cards/utorg/zero-fee-card.png",
+        alt: "Chart of Utorg Card costs showing zero monthly, issuance, and FX fees, USDC top-up networks, and the 30,000 euro monthly limit",
+        source: "Compiled by CryptosBeginner from the Utorg card page and terms, November 2026",
+      },
+    ],
     updateUrl: "https://x.com/Nikitont/status/2119057351013543938",
     updateLabel: "Utorg zero-fee card summary by @Nikitont",
     updateNote:
