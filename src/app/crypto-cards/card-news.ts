@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "market",
+    cardName: "Crypto card cashback payouts",
+    title: "Top single cashback payouts in 72 hours: Plasma One $3,724, EtherFi Cash $2,953, Ethena Pay $1,493",
+    details:
+      "Tracking by @0xDani of the largest single-user cashback payouts across crypto cards over a 72-hour window puts Plasma One on top: one user received $3,724, paid as 70,055 XPL. EtherFi Cash follows with $2,953 paid as 4,952 ETHFI to one user, and Ethena Pay is third with $1,493 paid as 174.33 AVAX, which matches the AVAX cashback in our Ethena Pay listing. Read these as ceiling stories, not expectations: they are the single biggest payouts in the window, earned on spending volumes far beyond a typical month, and the dollar figures move with the XPL, ETHFI, and AVAX prices because the rewards are paid in tokens. The band tables and caps in our listings are the better guide to what a given level of spending actually returns.",
+    sourceUrl: "https://x.com/0xDani/status/2119781988022554893",
+    sourceLabel: "Top payout tracking by @0xDani, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "launch",
     cardName: "RedotPay",
     cardSlug: "redotpay-card",
