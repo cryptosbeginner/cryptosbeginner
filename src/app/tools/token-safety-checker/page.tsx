@@ -173,7 +173,12 @@ export default function TokenSafetyCheckerPage() {
           </div>
 
           <p className="mt-10 text-sm leading-7 text-slate-600">
-            Want to understand the trading side too? Read our{" "}
+            The headline risk verdict above comes from Codex, the data engine behind Defined.fi.
+            Read our{" "}
+            <Link href="/tools/defined-fi-review" className="font-bold text-indigo-700 hover:text-indigo-900">
+              Defined.fi review
+            </Link>{" "}
+            for the full picture, or go deeper on the trading side with our{" "}
             <Link href="/learn/what-is-crypto-arbitrage" className="font-bold text-indigo-700 hover:text-indigo-900">
               crypto arbitrage guide
             </Link>{" "}

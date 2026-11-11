@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Finding = {
   key: string;
@@ -103,6 +103,20 @@ const VERDICT_META: Record<Verdict, { label: string; hero: string; badge: string
   },
 };
 
+const EXAMPLES: { label: string; chain: string; address: string }[] = [
+  { label: "BONK · Solana", chain: "solana", address: "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263" },
+  { label: "PEPE · Ethereum", chain: "1", address: "0x6982508145454ce325ddbe47a25d4ec3d2311933" },
+  { label: "USDC · Ethereum", chain: "1", address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" },
+];
+
+const SCAN_STEPS = [
+  "Contacting Codex risk engine...",
+  "Reading holder distribution...",
+  "Running contract checks on GoPlus...",
+  "Checking taxes, mint and ownership...",
+  "Scoring the results...",
+];
+
 function ShieldIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
@@ -150,6 +164,55 @@ function StatusIcon({ status }: { status: Finding["status"] }) {
   );
 }
 
+function scoreBand(score: number): { label: string; color: string } {
+  if (score <= 0) return { label: "Minimal measured risk", color: "#34d399" };
+  if (score < 40) return { label: "Low measured risk", color: "#a3e635" };
+  if (score < 70) return { label: "Elevated risk", color: "#fbbf24" };
+  return { label: "Severe risk", color: "#f87171" };
+}
+
+function ScoreGauge({ score }: { score: number }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
+  const clamped = Math.max(0, Math.min(100, score));
+  const band = scoreBand(clamped);
+  const R = 52;
+  const C = 2 * Math.PI * R;
+  const offset = mounted ? C - (clamped / 100) * C : C;
+  return (
+    <div className="flex flex-col items-center">
+      <div className="relative h-36 w-36">
+        <svg viewBox="0 0 120 120" className="h-36 w-36 -rotate-90">
+          <circle cx="60" cy="60" r={R} fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="10" />
+          <circle
+            cx="60"
+            cy="60"
+            r={R}
+            fill="none"
+            stroke={band.color}
+            strokeWidth="10"
+            strokeLinecap="round"
+            strokeDasharray={C}
+            strokeDashoffset={offset}
+            style={{ transition: "stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1)" }}
+          />
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-4xl font-black leading-none text-white">{Math.round(clamped)}</span>
+          <span className="mt-1 text-[10px] font-black uppercase tracking-[0.18em] text-white/60">of 100</span>
+        </div>
+      </div>
+      <p className="mt-2 text-center text-xs font-black uppercase tracking-[0.14em]" style={{ color: band.color }}>
+        {band.label}
+      </p>
+      <p className="mt-1 text-center text-[11px] font-bold text-white/60">Codex risk score</p>
+    </div>
+  );
+}
+
 function RiskMeter({ verdict }: { verdict: Verdict }) {
   const meta = VERDICT_META[verdict];
   return (
@@ -167,24 +230,36 @@ function RiskMeter({ verdict }: { verdict: Verdict }) {
   );
 }
 
+const FINDING_GROUPS: { status: Finding["status"]; title: string; blurb: string; headClass: string; cardClass: string }[] = [
+  { status: "fail", title: "Red flags", blurb: "Checks this token failed. Treat these seriously.", headClass: "text-red-800", cardClass: "border-red-200 bg-red-50/60" },
+  { status: "warn", title: "Warnings", blurb: "Not proof of a scam, but each one raises the stakes.", headClass: "text-amber-800", cardClass: "border-amber-200 bg-amber-50/60" },
+  { status: "pass", title: "Passed checks", blurb: "What came back clean.", headClass: "text-emerald-800", cardClass: "border-slate-200 bg-white" },
+  { status: "unknown", title: "Could not check", blurb: "The scanners returned no data for these.", headClass: "text-slate-600", cardClass: "border-slate-200 bg-white" },
+];
+
 export default function TokenSafetyWidget() {
   const [address, setAddress] = useState("");
   const [chain, setChain] = useState("1");
   const [loading, setLoading] = useState(false);
+  const [scanStep, setScanStep] = useState(0);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const selectedChain = CHAINS.find((c) => c.id === chain) ?? CHAINS[0];
 
-  async function runCheck(e: React.FormEvent) {
-    e.preventDefault();
-    const trimmed = address.trim();
-    if (!trimmed) return;
+  useEffect(() => {
+    if (!loading) return;
+    setScanStep(0);
+    const id = setInterval(() => setScanStep((s) => Math.min(s + 1, SCAN_STEPS.length - 1)), 1400);
+    return () => clearInterval(id);
+  }, [loading]);
+
+  async function scan(addr: string, chainId: string) {
     setLoading(true);
     setError(null);
     setResult(null);
     try {
-      const res = await fetch(`/api/token-safety?address=${encodeURIComponent(trimmed)}&chain=${chain}`);
+      const res = await fetch(`/api/token-safety?address=${encodeURIComponent(addr)}&chain=${chainId}`);
       const data = (await res.json()) as CheckResult & { error?: string };
       if (!res.ok) {
         setError(data.error ?? "Something went wrong. Try again.");
@@ -198,10 +273,26 @@ export default function TokenSafetyWidget() {
     }
   }
 
+  async function runCheck(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmed = address.trim();
+    if (!trimmed) return;
+    await scan(trimmed, chain);
+  }
+
+  function runExample(ex: (typeof EXAMPLES)[number]) {
+    setAddress(ex.address);
+    setChain(ex.chain);
+    void scan(ex.address, ex.chain);
+  }
+
   const meta = result ? VERDICT_META[result.verdict] : null;
   const passCount = result?.findings.filter((f) => f.status === "pass").length ?? 0;
   const warnCount = result?.findings.filter((f) => f.status === "warn").length ?? 0;
   const failCount = result?.findings.filter((f) => f.status === "fail").length ?? 0;
+  const totalChecks = result?.findings.length ?? 0;
+  const top10Finding = result?.findings.find((f) => f.key === "codex-top10");
+  const taxFinding = result?.findings.find((f) => f.key === "tax");
 
   return (
     <div>
@@ -279,11 +370,50 @@ export default function TokenSafetyWidget() {
               </>
             )}
           </button>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-bold text-slate-500">Try an example:</span>
+            {EXAMPLES.map((ex) => (
+              <button
+                key={ex.label}
+                type="button"
+                disabled={loading}
+                onClick={() => runExample(ex)}
+                className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1.5 text-xs font-black text-indigo-800 transition hover:bg-indigo-100 disabled:opacity-50"
+              >
+                {ex.label}
+              </button>
+            ))}
+          </div>
           <p className="mt-3 text-xs leading-6 text-slate-500">
             Copy the contract address from a block explorer, not from a social media post. Scammers post fake addresses.
           </p>
         </div>
       </form>
+
+      {loading && (
+        <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 p-6 sm:p-8" aria-live="polite">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
+            </span>
+            <p className="font-black text-white">{SCAN_STEPS[scanStep]}</p>
+          </div>
+          <div className="mt-5 h-2 overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-emerald-400 via-amber-400 to-indigo-400 transition-all duration-700"
+              style={{ width: `${((scanStep + 1) / SCAN_STEPS.length) * 100}%` }}
+            />
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            {["Codex risk engine", "Holder distribution", "GoPlus contract checks"].map((label, i) => (
+              <div key={label} className={`rounded-xl border px-4 py-3 text-xs font-black ${scanStep >= i ? "border-emerald-400/40 bg-emerald-400/10 text-emerald-200" : "border-white/10 bg-white/5 text-slate-400"}`}>
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {error && (
         <div className="mt-6 rounded-[1.5rem] border border-red-200 bg-red-50 p-6">
@@ -294,66 +424,110 @@ export default function TokenSafetyWidget() {
 
       {result && meta && (
         <div className="mt-6 overflow-hidden rounded-[1.5rem] shadow-lg">
-          <div className={`bg-gradient-to-br px-6 py-8 sm:px-10 sm:py-10 ${meta.hero}`}>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-white/70">
-              Scan result · {result.chainLabel}
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-4">
-              <span className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-xl font-black shadow ${meta.badge}`}>
-                <ShieldIcon className="h-6 w-6" />
-                {meta.label}
-              </span>
+          <div className={`relative bg-gradient-to-br px-6 py-8 sm:px-10 sm:py-10 ${meta.hero}`}>
+            <ShieldIcon className="pointer-events-none absolute -right-6 -top-6 h-48 w-48 text-white/10" />
+            <div className="relative flex flex-wrap items-start justify-between gap-6">
+              <div className="min-w-0 max-w-2xl flex-1">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-white/70">
+                  Scan result · {result.chainLabel}
+                  {result.cached ? " · cached scan" : " · live scan"}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <span className={`inline-flex items-center gap-2 rounded-full px-6 py-3 text-xl font-black shadow ${meta.badge}`}>
+                    <ShieldIcon className="h-6 w-6" />
+                    {meta.label}
+                  </span>
+                </div>
+                <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
+                  {result.tokenName ?? "Unknown token"}
+                  {result.tokenSymbol && <span className="text-white/70"> ({result.tokenSymbol})</span>}
+                </h2>
+                <p className="mt-2 break-all font-mono text-xs text-white/60">{result.address}</p>
+                <p className="mt-4 text-base font-bold leading-8 text-white/90">{result.verdictReason}</p>
+
+                {result.codex && (
+                  <div className="mt-5 flex flex-wrap gap-2 text-xs font-black">
+                    <span className="rounded-full bg-black/30 px-3 py-1.5 text-white">
+                      Codex verdict: {CODEX_VERDICT_LABELS[result.codex.verdict] ?? result.codex.verdict}
+                    </span>
+                    {result.codex.coverage && CODEX_COVERAGE_LABELS[result.codex.coverage] && (
+                      <span className="rounded-full bg-black/30 px-3 py-1.5 text-white/80">
+                        {CODEX_COVERAGE_LABELS[result.codex.coverage]}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+              {result.codex && result.codex.score !== null && (
+                <div className="shrink-0 rounded-3xl bg-black/25 px-5 py-4">
+                  <ScoreGauge score={result.codex.score} />
+                </div>
+              )}
             </div>
-            <h2 className="mt-5 text-3xl font-black tracking-tight text-white sm:text-4xl">
-              {result.tokenName ?? "Unknown token"}
-              {result.tokenSymbol && <span className="text-white/70"> ({result.tokenSymbol})</span>}
-            </h2>
-            <p className="mt-2 break-all font-mono text-xs text-white/60">{result.address}</p>
-            <p className="mt-4 max-w-2xl text-base font-bold leading-8 text-white/90">{result.verdictReason}</p>
 
-            {result.codex && (
-              <div className="mt-5 flex flex-wrap gap-2 text-xs font-black">
-                <span className="rounded-full bg-black/30 px-3 py-1.5 text-white">
-                  Codex verdict: {CODEX_VERDICT_LABELS[result.codex.verdict] ?? result.codex.verdict}
-                </span>
-                {result.codex.score !== null && (
-                  <span className="rounded-full bg-black/30 px-3 py-1.5 text-white">
-                    Risk score {Math.round(result.codex.score)}/100
-                  </span>
-                )}
-                {result.codex.coverage && CODEX_COVERAGE_LABELS[result.codex.coverage] && (
-                  <span className="rounded-full bg-black/30 px-3 py-1.5 text-white/80">
-                    {CODEX_COVERAGE_LABELS[result.codex.coverage]}
-                  </span>
-                )}
-              </div>
-            )}
-
-            {(failCount > 0 || warnCount > 0 || passCount > 0) && (
-              <div className="mt-5 flex flex-wrap gap-2 text-xs font-black">
-                {failCount > 0 && <span className="rounded-full bg-black/30 px-3 py-1.5 text-red-200">{failCount} failed</span>}
-                {warnCount > 0 && <span className="rounded-full bg-black/30 px-3 py-1.5 text-amber-200">{warnCount} warnings</span>}
-                {passCount > 0 && <span className="rounded-full bg-black/30 px-3 py-1.5 text-emerald-200">{passCount} passed</span>}
-              </div>
-            )}
-
-            {result.verdict !== "unknown" && <RiskMeter verdict={result.verdict} />}
+            <div className="relative">
+              {result.verdict !== "unknown" && <RiskMeter verdict={result.verdict} />}
+            </div>
           </div>
 
+          {totalChecks > 0 && (
+            <div className="grid grid-cols-2 gap-px bg-slate-200 lg:grid-cols-5">
+              <div className="bg-white px-5 py-4">
+                <p className="text-2xl font-black text-emerald-700">
+                  {passCount}
+                  <span className="text-base text-slate-400">/{totalChecks}</span>
+                </p>
+                <p className="mt-0.5 text-xs font-black uppercase tracking-[0.12em] text-slate-500">Checks passed</p>
+              </div>
+              <div className="bg-white px-5 py-4">
+                <p className="text-2xl font-black text-amber-600">{warnCount}</p>
+                <p className="mt-0.5 text-xs font-black uppercase tracking-[0.12em] text-slate-500">Warnings</p>
+              </div>
+              <div className="bg-white px-5 py-4">
+                <p className="text-2xl font-black text-red-600">{failCount}</p>
+                <p className="mt-0.5 text-xs font-black uppercase tracking-[0.12em] text-slate-500">Red flags</p>
+              </div>
+              <div className="bg-white px-5 py-4">
+                <p className="truncate text-2xl font-black text-slate-900">{top10Finding ? top10Finding.detail.replace("The top 10 wallets hold ", "").replace(" of the supply", "") : "n/a"}</p>
+                <p className="mt-0.5 text-xs font-black uppercase tracking-[0.12em] text-slate-500">Top 10 holders own</p>
+              </div>
+              <div className="bg-white px-5 py-4">
+                <p className="truncate text-2xl font-black text-slate-900">{taxFinding ? taxFinding.detail : "n/a"}</p>
+                <p className="mt-0.5 text-xs font-black uppercase tracking-[0.12em] text-slate-500">Buy / sell tax</p>
+              </div>
+            </div>
+          )}
+
           {result.findings.length > 0 && (
-            <div className="grid gap-4 bg-slate-50 p-6 sm:grid-cols-2 sm:p-8">
-              {result.findings.map((f) => (
-                <article key={f.key} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <div className="flex items-start gap-3">
-                    <StatusIcon status={f.status} />
-                    <div className="min-w-0">
-                      <p className="font-black text-slate-900">{f.label}</p>
-                      <p className="mt-0.5 text-sm font-bold text-slate-700">{f.detail}</p>
+            <div className="space-y-8 bg-slate-50 p-6 sm:p-8">
+              {FINDING_GROUPS.map((group) => {
+                const items = result.findings.filter((f) => f.status === group.status);
+                if (items.length === 0) return null;
+                return (
+                  <section key={group.status}>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <h3 className={`text-lg font-black ${group.headClass}`}>
+                        {group.title} · {items.length}
+                      </h3>
+                      <p className="text-xs font-bold text-slate-500">{group.blurb}</p>
                     </div>
-                  </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{f.explanation}</p>
-                </article>
-              ))}
+                    <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                      {items.map((f) => (
+                        <article key={f.key} className={`rounded-2xl border p-5 shadow-sm ${group.cardClass}`}>
+                          <div className="flex items-start gap-3">
+                            <StatusIcon status={f.status} />
+                            <div className="min-w-0">
+                              <p className="font-black text-slate-900">{f.label}</p>
+                              <p className="mt-0.5 text-sm font-bold text-slate-700">{f.detail}</p>
+                            </div>
+                          </div>
+                          <p className="mt-3 text-sm leading-7 text-slate-600">{f.explanation}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           )}
 
@@ -365,7 +539,11 @@ export default function TokenSafetyWidget() {
             </p>
             {result.codex && (
               <p className="mt-1 text-xs leading-6 text-slate-500">
-                Want the full picture? See live charts, holders and trades for this token on{" "}
+                Want the full picture? Read our{" "}
+                <a href="/tools/defined-fi-review" className="font-bold text-indigo-700">
+                  Defined.fi review
+                </a>{" "}
+                or open this token on{" "}
                 <a
                   href="https://go.cryptosbeginner.com/DefinedFi"
                   target="_blank"
@@ -374,7 +552,7 @@ export default function TokenSafetyWidget() {
                 >
                   Defined.fi
                 </a>{" "}
-                (affiliate link).
+                (affiliate link) for live charts, holders and trades.
               </p>
             )}
           </div>

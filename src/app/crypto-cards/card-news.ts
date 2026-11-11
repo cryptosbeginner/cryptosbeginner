@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "promo",
+    cardName: "Kraken Debit Card (Krak)",
+    cardSlug: "kraken-debit-card",
+    title: "Krak salary rewards launch in the US: up to 1% back on your paycheck",
+    details:
+      "Krak, Kraken's money app, has quietly extended its salary rewards to the US under Krak Paycheck, as spotted by @0xDani in Krak's US support pages. Direct-deposit your paycheck (minimum $2,500 of qualifying payroll a month) and Krak pays up to 1% back, capped at $250 a month, paid monthly in BTC or USD, with no fee for receiving your salary. It is not available in New York, Maine, Indiana or Massachusetts. US paychecks land in virtual accounts provided by Citibank, and the minimum single paycheck is $10. The program has run in the UK and EEA as Salary Match since the card's launch; Krak's official support article confirms the European version pays 0.25% to 1% depending on the 30-day average balance held across Krak, Kraken and Kraken Pro (£/€200 to £/€50,000), on salary of at least £/€2,500 a month, with eligible salary capped at £/€25,000 a month. Our Kraken Debit Card listing now carries both versions in full.",
+    sourceUrl: "https://x.com/0xDani/status/2119825618980196758",
+    sourceLabel: "Krak US support pages via @0xDani, and Krak Salary Match support article, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "market",
     cardName: "Crypto card spending tracker",
     title: "New monthly spend tracker: $1.37B spent on crypto cards in October 2026",
