@@ -156,7 +156,11 @@ export default function CryptoCardSpendingTripledPage() {
             $584.2M spent on Rain-issued cards alone in October, making Rain the
             largest issuer in the market. Counted with top-ups included, October
             volume reached $1.69B, up 7% on September, per @0xVishnya. Sources: paymentscan.xyz and @0xVishnya,
-            November 2026.
+            November 2026. The full breakdown by program, updated monthly, now lives in our{" "}
+            <a href="/crypto-cards/spending" className="font-bold text-emerald-700 hover:text-emerald-900">
+              crypto card spending tracker
+            </a>
+            .
           </Callout>
 
           <Callout title="The short version">

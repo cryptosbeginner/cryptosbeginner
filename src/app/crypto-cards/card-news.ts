@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "market",
+    cardName: "Crypto card spending tracker",
+    title: "New monthly spend tracker: $1.37B spent on crypto cards in October 2026",
+    details:
+      "We have launched a monthly crypto card spending tracker built on PaymentScan data, compiled from the tables republished by Castle Labs. October 2026: $1.37B of settled spend across 30 tracked programs, up 11% on September. RedotPay leads at $423.5M (31% of the total, and issuer-reported, so not onchain-verifiable), followed by ether.fi Cash at $141.9M and KAST at $121.0M; the fastest growers were Solid (+148%), Ethena Pay (+97%) and Gate Card (+40%). About $448.1M (33%) of October spend is not tied to a named card and sits with issuers such as Rain and Wirex. The tracker carries the full October table for all 28 named programs, a November month-to-date column, twelve months of history for the six largest programs, and the full methodology and caveats. It will be updated by hand in the first week of each month.",
+    sourceUrl: "https://paymentscan.xyz",
+    sourceLabel: "PaymentScan data via paymentscan.xyz and Castle Labs research, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "fee-change",
     cardName: "Plasma One Card",
     cardSlug: "plasma-one-card",
