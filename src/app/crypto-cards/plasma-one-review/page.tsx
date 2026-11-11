@@ -7,7 +7,7 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/plasma-one-review`;
-const UPDATED = "11 November 2026";
+const UPDATED = "12 November 2026";
 const UPDATED_ISO = "2026-11-11";
 const AFFILIATE = "https://go.cryptosbeginner.com/Plasma";
 const IMG = "/images/cards/plasma";
@@ -21,12 +21,12 @@ const REVIEWER = {
 export const metadata: Metadata = {
   title: "Plasma One Card Review 2026: Tiers, Cashback and Fees, Tested",
   description:
-    "October 2026 Plasma One Card review: self-custodial Visa for stablecoin spending with Lite, Core, and Platinum tiers, XPL cashback as shown in the app, real fee tables from the help center, country availability, and honest verdict.",
+    "October 2026 Plasma One Card review: self-custodial Visa for stablecoin spending with Lite, Premium, and Platinum tiers, XPL cashback as shown in the app, real fee tables from the help center, country availability, and honest verdict.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Plasma One Card Review 2026: Tiers, Cashback and Fees, Tested",
     description:
-      "Hands-on Plasma One review: self-custodial Visa card, Lite/Core/Platinum tiers, XPL cashback, real fees from the help center, deposit networks, ATM limits, and signup guide.",
+      "Hands-on Plasma One review: self-custodial Visa card, Lite/Premium/Platinum tiers, XPL cashback, real fees from the help center, deposit networks, ATM limits, and signup guide.",
     url: PAGE_URL,
     type: "article",
     images: [
@@ -50,27 +50,27 @@ const faqItems = [
   {
     question: "What is the Plasma One Card?",
     answer:
-      "Plasma One is a self-custodial Visa card for spending stablecoins. Everything you deposit converts to USD on arrival, and the card spends that balance anywhere Visa is accepted. Card issuance runs on Rain infrastructure, the same provider stack behind several other crypto card programs. It comes in three tiers: Lite (free), Core ($199 per year or a 20,000 XPL lock), and Platinum (a 100,000 XPL lock at a promotional rate). Cashback is paid in XPL, Plasma's native digital asset.",
+      "Plasma One is a self-custodial Visa card for spending stablecoins. Everything you deposit converts to USD on arrival, and the card spends that balance anywhere Visa is accepted. Card issuance runs on Rain infrastructure, the same provider stack behind several other crypto card programs. It comes in three tiers: Lite (free), Premium ($600 per year or a 20,000 XPL lock; the tier was called Core until November 2026), and Platinum (a 100,000 XPL lock at a promotional rate). Cashback is paid in XPL, Plasma's native digital asset.",
   },
   {
-    question: "How do the Lite, Core, and Platinum tiers work?",
+    question: "How do the Lite, Premium, and Platinum tiers work?",
     answer:
-      "Lite is free and gives you a virtual card only, with 2% XPL cashback on the first $500 of monthly spend. Core costs $199 per year, paid from your USD cash balance, or a 20,000 XPL lock for 12 months; it adds 3% base cashback on the first $1,000 of monthly spend (stepping down in bands after that), a Visa Signature physical card, 2 free virtual cards, a ChatGPT Go credit, and travel perks. Platinum requires a 100,000 XPL lock for 12 months at a promotional rate, with 4% base cashback, 0% FX on card spend, a Visa Infinite metal card, and the full perks list. Core auto-renews every 12 months unless you opt out; you can downgrade to Lite, renew Core, or upgrade to Platinum from the Tiers tab.",
+      "Lite is free and gives you a virtual card only, with 2% XPL cashback on the first $500 of monthly spend. Premium costs $600 per year, paid from your USD cash balance, or a 20,000 XPL lock for 12 months; it adds 3% base cashback on the first $1,000 of monthly spend (stepping down in bands after that), 0% FX on the first $3,000 of monthly card spend, a Visa Signature physical card, 2 free virtual cards, a $200 per year AI spend credit allocated monthly, local merchant rewards in Dubai, London and New York, and travel perks. Premium replaced Core on 11 November 2026; existing Core members keep their current benefits until their term ends, then renew at $600 with at least 30 days notice. Platinum requires a 100,000 XPL lock for 12 months at a promotional rate, with 4% base cashback, 0% FX on card spend, a Visa Infinite metal card, and the full perks list. Premium auto-renews every 12 months unless you opt out; you can downgrade to Lite, renew Premium, or upgrade to Platinum from the Tiers tab.",
   },
   {
     question: "What cashback does Plasma One pay?",
     answer:
-      "Cashback is paid in XPL and the base rates are shown in the app: Lite pays 2% on the first $500 of monthly spend, then 0.1% on the rest. Core pays 3% base on the first $1,000 of monthly spend, then 2% on the next $1,000, 1% on the next $1,000, and 0.25% after that, with 5% AI cashback on the first $250 of monthly AI spend and 1% friends referral. Platinum pays 4% base with 10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral is 0.25%. Two honesty notes: the only help article on AI cashback documents an expired May 27 to June 3, 2026 promo week, not the standing tier benefit, so we could not verify current AI cashback terms. And the airline cashback article contradicts itself on the cap period, saying both a semi-annual cap and a monthly reset. Confirm both in the app before spending around them.",
+      "Cashback is paid in XPL and the base rates are shown in the app: Lite pays 2% on the first $500 of monthly spend, then 0.1% on the rest. Premium pays 3% base on the first $1,000 of monthly spend, then 2% on the next $1,000, 1% on the next $1,000, and 0.25% after that, plus 1% friends referral. Premium's AI benefit is a $200 per year spend credit allocated monthly, which replaced the old Core AI cashback bands in November 2026. Platinum pays 4% base with 10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral is 0.25%. One honesty note: the only help article on AI cashback documents an expired May 27 to June 3, 2026 promo week, not the standing tier benefit, so we could not verify Platinum's current AI cashback terms. And the airline cashback article contradicts itself on the cap period, saying both a semi-annual cap and a monthly reset. Confirm both in the app before spending around them.",
   },
   {
-    question: "What does the XPL lock mean for Core and Platinum?",
+    question: "What does the XPL lock mean for Premium and Platinum?",
     answer:
-      "If you choose the lock instead of paying Core's $199 annual fee, you lock 20,000 XPL for 12 months and cannot unlock early. Platinum requires locking 100,000 XPL for 12 months at a promotional rate, with no cash option. XPL is a digital asset: it is not legal tender, not FDIC or FSCS insured, and its value can fall to zero. Only lock XPL you can afford to have illiquid for a year, and size the lock against the token's volatility, not just the headline cashback rate.",
+      "If you choose the lock instead of paying Premium's $600 annual fee, you lock 20,000 XPL for 12 months and cannot unlock early. That lock was worth about $1,050 in November 2026, and its value moves with the XPL price. Platinum requires locking 100,000 XPL for 12 months at a promotional rate, with no cash option. XPL is a digital asset: it is not legal tender, not FDIC or FSCS insured, and its value can fall to zero. Only lock XPL you can afford to have illiquid for a year, and size the lock against the token's volatility, not just the headline cashback rate.",
   },
   {
     question: "What are the Plasma One fees?",
     answer:
-      "From the help center fee article (updated October 12, 2026): card FX markup is 1% on Lite, 0.5% on Core, and 0% on Platinum, plus a Visa network FX fee of about 1% on Lite and Core (none on Platinum). Bank deposits are free on all tiers. Bank withdrawals cost 0.75% to 1.00% on Lite, 0.25% to 0.35% on Core, and less than 0.1% on Platinum, plus rail fees. Onramp examples: USD ACH costs $1 on Lite and $0.50 on Core and Platinum; USD Wire costs $15 on Lite and Core and $10 on Platinum. Crypto deposits carry a Plasma fee of 0.15% to 0.75% identical across tiers, plus network, bridge, and swap fees; USDG deposits only carry the bridge fee.",
+      "From the help center fee article (updated October 12, 2026) and the November 2026 member email: card FX markup is 1% on Lite and 0% on Platinum, and Premium charges 0% FX on the first $3,000 of monthly card spend (the old Core markup was 0.5%, plus a Visa network FX fee of about 1%, which also applies on Lite; none on Platinum). Bank deposits are free on all tiers. Bank withdrawals cost 0.75% to 1.00% on Lite, 0.25% to 0.35% on Premium, and less than 0.1% on Platinum, plus rail fees. Onramp examples: USD ACH costs $1 on Lite and $0.50 on Premium and Platinum; USD Wire costs $15 on Lite and Premium and $10 on Platinum. Crypto deposits carry a Plasma fee of 0.15% to 0.75% identical across tiers, plus network, bridge, and swap fees; USDG deposits only carry the bridge fee.",
   },
   {
     question: "How do I fund my Plasma One account?",
@@ -88,9 +88,9 @@ const faqItems = [
       "Yes, with the physical card only. ATM withdrawals go up to $1,000 per transaction with a maximum of 3 withdrawals per rolling 24 hours. ATM withdrawals do not earn cashback, and ATM operator fees may apply on top. Platinum members pay no FX on non-USD ATM withdrawals. The help center's ATM fee table values did not extract cleanly, so confirm the exact ATM fee shown in the app for your tier before relying on cash access.",
   },
   {
-    question: "What perks come with Core and Platinum?",
+    question: "What perks come with Premium and Platinum?",
     answer:
-      "Core is a Visa Signature: price protection $2,000, purchase protection $10,000, extended warranty $10,000, auto rental insurance, a lounge program, 1GB GigSky eSIM, Visa concierge, and a luxury hotel collection. In the app, Core adds a $100 per year ChatGPT Go credit (rebate when you pay with the card), 2 free virtual cards, and priority support. Platinum is a Visa Infinite: price protection $4,000, purchase protection $20,000, extended warranty $25,000, $1.5M travel accident insurance, $600 baggage delay, $3,000 lost luggage, unlimited Priority Pass lounge access at 1,900+ lounges, 3GB GigSky eSIM, concierge, plus $500 per year in ChatGPT Plus and Claude Pro credits, 3 free virtual cards, a 16g metal card, and VIP support. Because cards are issued from Puerto Rico, set the Visa benefits portal location to Puerto Rico to see your benefits.",
+      "Premium is a Visa Signature: price protection $2,000, purchase protection $10,000, extended warranty $10,000, auto rental insurance, a lounge program, 1GB GigSky eSIM, Visa concierge, and a luxury hotel collection. In the app, Premium adds a $200 per year AI spend credit allocated monthly, 2 free virtual cards, and priority support. Platinum is a Visa Infinite: price protection $4,000, purchase protection $20,000, extended warranty $25,000, $1.5M travel accident insurance, $600 baggage delay, $3,000 lost luggage, unlimited Priority Pass lounge access at 1,900+ lounges, 3GB GigSky eSIM, concierge, plus $500 per year in ChatGPT Plus and Claude Pro credits, 3 free virtual cards, a 16g metal card, and VIP support. Because cards are issued from Puerto Rico, set the Visa benefits portal location to Puerto Rico to see your benefits.",
   },
   {
     question: "How do I sign up for the Plasma One Card?",
@@ -177,7 +177,7 @@ export default function PlasmaOneReviewPage() {
     "@type": "Article",
     headline: "Plasma One Card Review 2026: Tiers, Cashback and Fees, Tested",
     description:
-      "Hands-on Plasma One review: self-custodial Visa card for stablecoin spending, Lite/Core/Platinum tiers, XPL cashback as shown in the app, real fees from the help center, deposit networks, ATM limits, and signup guide.",
+      "Hands-on Plasma One review: self-custodial Visa card for stablecoin spending, Lite/Premium/Platinum tiers, XPL cashback as shown in the app, real fees from the help center, deposit networks, ATM limits, and signup guide.",
     datePublished: UPDATED_ISO,
     dateModified: UPDATED_ISO,
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
@@ -248,10 +248,11 @@ export default function PlasmaOneReviewPage() {
               partnership for multi-currency stablecoin cards.
             </P>
             <P>
-              The program is built around three membership tiers, Lite, Core, and Platinum, which
+              The program is built around three membership tiers, Lite, Premium, and Platinum, which
               set your cashback rate, your fees, and your perks. Cashback is paid in XPL, Plasma's
-              native digital asset, which is also the key to the paid tiers: Core can be unlocked
-              with a 20,000 XPL lock instead of the $199 annual fee, and Platinum requires a
+              native digital asset, which is also the key to the paid tiers: Premium (the tier
+              called Core until November 2026) can be unlocked
+              with a 20,000 XPL lock instead of the $600 annual fee, and Platinum requires a
               100,000 XPL lock with no cash option at all.
             </P>
             <Figure
@@ -264,11 +265,14 @@ export default function PlasmaOneReviewPage() {
           </Section>
 
           <Section id="tiers">
-            <H2>Tiers: Lite, Core, and Platinum</H2>
+            <H2>Tiers: Lite, Premium, and Platinum</H2>
             <P>
               Plasma One sells the card through three tiers. The tier sets your cashback rate,
-              your FX and withdrawal fees, your card format, and your perks. Here are the numbers
-              captured in the app in October 2026.
+              your FX and withdrawal fees, your card format, and your perks. The numbers below
+              were captured in the app in October 2026, with one big change since: on 11 November
+              2026 Plasma renamed Core to Premium and raised its price from $199 to $600 a year,
+              adding 0% FX on the first $3,000 of monthly spend and a $200 yearly AI credit.
+              Existing Core members keep their current benefits until their term ends.
             </P>
             <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
               <table className="w-full min-w-[720px] text-left text-sm">
@@ -290,11 +294,11 @@ export default function PlasmaOneReviewPage() {
                     <td className="px-4 py-3">1%</td>
                   </tr>
                   <tr className="border-b border-slate-100">
-                    <td className="px-4 py-3 font-bold text-slate-900">Core</td>
-                    <td className="px-4 py-3">$199/yr or 20,000 XPL lock</td>
-                    <td className="px-4 py-3">3% on first $1,000/mo, then 2% and 1% bands, 0.25% after; 5% AI, 1% friends referral</td>
+                    <td className="px-4 py-3 font-bold text-slate-900">Premium (was Core)</td>
+                    <td className="px-4 py-3">$600/yr or 20,000 XPL lock</td>
+                    <td className="px-4 py-3">3% on first $1,000/mo, then 2% and 1% bands, 0.25% after; $200/yr AI credit, 1% friends referral</td>
                     <td className="px-4 py-3">Visa Signature; 2 free virtual, 1 free physical</td>
-                    <td className="px-4 py-3">0.5%</td>
+                    <td className="px-4 py-3">0% on first $3,000/mo</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-3 font-bold text-slate-900">Platinum</td>
@@ -307,9 +311,9 @@ export default function PlasmaOneReviewPage() {
               </table>
             </div>
             <Figure
-              src="/images/cards/plasma/lite-vs-core.png"
-              alt="Comparison chart of Plasma One Lite and Core tiers showing cashback bands, AI cashback, ChatGPT Go, card formats, FX and Visa fees, bank withdrawal fees, and yearly value at 3,000 dollars of monthly spend"
-              caption="Lite vs Core on the numbers that matter: the stepped cashback bands, the combined FX cost, and the spend level where Core starts paying for itself. Compiled by CryptosBeginner from Plasma app data, November 2026."
+              src="/images/cards/plasma/lite-vs-premium.png"
+              alt="Comparison chart of Plasma One Lite and Premium tiers showing cashback bands, the AI spend credit, card formats, FX and Visa fees, bank withdrawal fees, and yearly value at 3,000 dollars of monthly spend"
+              caption="Lite vs Premium on the numbers that matter: the stepped cashback bands, the combined FX cost, and the spend level where Premium starts paying for itself. Compiled by CryptosBeginner from Plasma app data and the November 2026 member email."
               width={1440}
               height={2000}
               wide
@@ -318,16 +322,16 @@ export default function PlasmaOneReviewPage() {
               A few mechanics worth knowing before you pick. Lite requires a $10 deposit before
               card activation in most regions. That is an activation minimum, not a fee: the money
               stays in your balance and is spendable. Some regions charge a $10 card fee instead,
-              and the app shows which applies to you. Core auto-renews every 12 months unless you
-              opt out, and from the Tiers tab you can downgrade to Lite, renew Core, or upgrade
+              and the app shows which applies to you. Premium auto-renews every 12 months unless you
+              opt out, and from the Tiers tab you can downgrade to Lite, renew Premium, or upgrade
               to Platinum. Cards are issued from Puerto Rico, so set the Visa benefits portal
               location to Puerto Rico to see your card benefits.
             </P>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Figure
                 src={`${IMG}/0042cd0de980093500a46f701323784b552e9cfdd5c299dbe3af8da64112bcc3.jpg`}
-                alt="Plasma One app Core tier screen showing the Visa Signature card, 199 dollars per year or a 20,000 XPL lock, 3 percent cashback, 5 percent AI cashback, and ChatGPT Go included"
-                caption="Core: $199/year or a 20,000 XPL lock, 3% cashback, 5% AI cashback, and ChatGPT Go included."
+                alt="Plasma One app Core tier screen from October 2026 showing the Visa Signature card, 199 dollars per year or a 20,000 XPL lock, 3 percent cashback, 5 percent AI cashback, and ChatGPT Go included"
+                caption="The old Core screen in the app. Core became Premium on 11 November 2026 at $600/year, keeping the same 20,000 XPL lock option."
                 width={540}
                 height={1090}
               />
@@ -341,7 +345,7 @@ export default function PlasmaOneReviewPage() {
             </div>
             <Callout title="The XPL locks are the real decision">
               <p>
-                Core's 20,000 XPL lock and Platinum's 100,000 XPL lock both run 12 months and
+                Core's 20,000 XPL lock (now Premium's) and Platinum's 100,000 XPL lock both run 12 months and
                 cannot be unlocked early. XPL is a digital asset: it is not legal tender, not
                 FDIC or FSCS insured, and its value can fall to zero. The 100,000 XPL Platinum
                 requirement is a promotional rate, so the bar for Platinum can rise. Only lock
@@ -368,20 +372,22 @@ export default function PlasmaOneReviewPage() {
             <P>
               On Lite, the 2% rate covers the first $500 of monthly spend, then drops to 0.1% on
               everything above it. The in-app tracker counts your monthly progress and shows the
-              reset date, so you always know where you stand. Core raises the base to 3% and adds
-              5% AI cashback plus 1% on friends referrals. The Core base rate steps down across
+              reset date, so you always know where you stand. Premium raises the base to 3% and
+              adds 1% on friends referrals. The Premium base rate steps down across
               the month, though: 3% on the first $1,000 of spend, 2% on the next $1,000, 1% on
-              the next $1,000, then 0.25% on the rest. The AI cashback is banded as well, paying
-              5% on the first $250 of monthly AI spend, 4% on the next $250, then 1%. Those bands
-              come from app data compiled by independent analysts in November 2026. Platinum raises the base to 4% with
+              the next $1,000, then 0.25% on the rest. Those bands
+              come from app data compiled by independent analysts in November 2026. Until
+              11 November 2026 the tier (then called Core) also paid banded AI cashback of 5%
+              then 4% on AI spend; that is gone, replaced by a flat $200 per year AI spend
+              credit, allocated monthly, across an expanded list of AI providers. Platinum raises the base to 4% with
               10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral
               cashback is 0.25%.
             </P>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Figure
                 src={`${IMG}/187c6049a89d89eb3c7548345ab5e0c06a6374079aebeec79a075d34723b4f9e.jpg`}
-                alt="Plasma One app Core cashback breakdown showing 5 percent AI cashback, 3 percent base cashback, 1 percent referral, and a 100 dollar annual ChatGPT Go credit"
-                caption="Core cashback detail: 3% base, 5% on AI subscriptions, 1% on referrals, plus the ChatGPT Go credit."
+                alt="Plasma One app Core cashback breakdown from October 2026 showing 5 percent AI cashback, 3 percent base cashback, 1 percent referral, and a 100 dollar annual ChatGPT Go credit"
+                caption="The old Core cashback detail: 3% base, 5% on AI subscriptions, 1% on referrals, plus the ChatGPT Go credit. The AI pieces were replaced by a $200 yearly AI credit when Core became Premium."
                 width={540}
                 height={759}
               />
@@ -395,10 +401,12 @@ export default function PlasmaOneReviewPage() {
             </div>
             <Callout title="Two cashback claims we could not fully verify">
               <p>
-                First, AI cashback: the app presents it as a standing tier benefit, but the only
+                First, AI cashback on Platinum: the app presents the 10% rate as a standing tier benefit, but the only
                 help article on AI cashback documents an expired promotional week from May 27 to
-                June 3, 2026, not the ongoing tier feature. We could not verify current AI
-                cashback terms, so treat the 5% and 10% figures as app-shown, not confirmed.
+                June 3, 2026, not the ongoing tier feature. We could not verify current Platinum AI
+                cashback terms, so treat the 10% figure as app-shown, not confirmed. Premium's AI
+                benefit is documented in Plasma's November 2026 member email: a $200 per year
+                spend credit that replaced Core's AI cashback and ChatGPT Go rebate.
                 Second, airline cashback on Platinum: it applies to direct airline website and app
                 purchases only, no third-party booking sites, and pays in XPL weekly on Thursdays.
                 But the help article contradicts itself on the cap, describing both a semi-annual
@@ -420,7 +428,7 @@ export default function PlasmaOneReviewPage() {
                   <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="px-4 py-3 font-black text-slate-950">Fee</th>
                     <th className="px-4 py-3 font-black text-slate-950">Lite</th>
-                    <th className="px-4 py-3 font-black text-slate-950">Core</th>
+                    <th className="px-4 py-3 font-black text-slate-950">Premium</th>
                     <th className="px-4 py-3 font-black text-slate-950">Platinum</th>
                   </tr>
                 </thead>
@@ -428,13 +436,13 @@ export default function PlasmaOneReviewPage() {
                   <tr className="border-b border-slate-100">
                     <td className="px-4 py-3 font-bold text-slate-900">Card FX markup</td>
                     <td className="px-4 py-3">1% added fees</td>
-                    <td className="px-4 py-3">0.5% added fees</td>
+                    <td className="px-4 py-3">0% on first $3,000/mo of spend</td>
                     <td className="px-4 py-3">0%</td>
                   </tr>
                   <tr className="border-b border-slate-100">
                     <td className="px-4 py-3 font-bold text-slate-900">Visa network FX</td>
                     <td className="px-4 py-3">~1%</td>
-                    <td className="px-4 py-3">~1%</td>
+                    <td className="px-4 py-3">None within the $3,000/mo 0% allowance</td>
                     <td className="px-4 py-3">None</td>
                   </tr>
                   <tr className="border-b border-slate-100">
@@ -479,8 +487,8 @@ export default function PlasmaOneReviewPage() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Figure
                 src={`${IMG}/7263b30f3cb262fe278fc56e3dd7871394f425b4a7ce470789cd0aa18a0e0a10.jpg`}
-                alt="Plasma One app Core fee screen showing card FX at 0.5 percent added fees, free bank deposits, bank withdrawal at 0.25 to 0.35 percent, 2 free virtual cards, and 1 free physical card"
-                caption="Core fees in the app: 0.5% card FX, free bank deposits, 0.25-0.35% bank withdrawals, 2 free virtual cards."
+                alt="Plasma One app Core fee screen from October 2026 showing card FX at 0.5 percent added fees, free bank deposits, bank withdrawal at 0.25 to 0.35 percent, 2 free virtual cards, and 1 free physical card"
+                caption="The old Core fee screen in the app: 0.5% card FX, free bank deposits, 0.25-0.35% bank withdrawals, 2 free virtual cards. Premium now charges 0% FX on the first $3,000 of monthly spend."
                 width={540}
                 height={756}
               />
@@ -606,10 +614,10 @@ export default function PlasmaOneReviewPage() {
               including Cuba, Iran, North Korea, Russia, Syria, Ukraine, Venezuela, Yemen, Libya,
               Somalia, Sudan, Afghanistan, South Sudan, Haiti, Eritrea, Kuwait, Seychelles,
               Mexico, Bangladesh, Belarus, mainland China, India, Iraq, Israel, Myanmar, Nepal,
-              Nicaragua, Turkey, and Vietnam. Lite gets no physical card at all. On Core and
+              Nicaragua, Turkey, and Vietnam. Lite gets no physical card at all. On Premium and
               Platinum the first card is free with shipping extra; a replacement costs $40 on
-              Core and $120 on Platinum; standard delivery is $20 on Core and free on Platinum;
-              express delivery is $50 on Core and $30 on Platinum. You activate the physical card
+              Premium and $120 on Platinum; standard delivery is $20 on Premium and free on Platinum;
+              express delivery is $50 on Premium and $30 on Platinum. You activate the physical card
               in the app with its last 4 digits and set a PIN. No PO boxes.
             </P>
             <P>
@@ -630,13 +638,14 @@ export default function PlasmaOneReviewPage() {
           </Section>
 
           <Section id="perks">
-            <H2>Perks: what Core and Platinum add</H2>
+            <H2>Perks: what Premium and Platinum add</H2>
             <P>
-              Beyond cashback, the paid tiers bundle Visa benefits and app perks. Core is a Visa
+              Beyond cashback, the paid tiers bundle Visa benefits and app perks. Premium is a Visa
               Signature: $2,000 price protection, $10,000 purchase protection, $10,000 extended
               warranty, auto rental insurance, a lounge program, 1GB of GigSky eSIM data, Visa
-              concierge, and a luxury hotel collection. In the app, Core adds a $100 per year
-              ChatGPT Go credit (paid as a rebate when you pay for it with the card), 2 free
+              concierge, and a luxury hotel collection. In the app, Premium adds a $200 per year
+              AI spend credit, allocated monthly across an expanded list of AI providers, local
+              merchant rewards in Dubai, London and New York, 2 free
               virtual cards, and priority support.
             </P>
             <P>
@@ -740,7 +749,7 @@ export default function PlasmaOneReviewPage() {
                 {
                   title: "Pick a tier and activate",
                   detail:
-                    "Start on Lite to test the card, then upgrade to Core or Platinum from the Tiers tab if the math works for your spend.",
+                    "Start on Lite to test the card, then upgrade to Premium or Platinum from the Tiers tab if the math works for your spend.",
                 },
               ]}
             />
@@ -779,11 +788,12 @@ export default function PlasmaOneReviewPage() {
                   <li>XPL locks are 12 months with no early unlock, and XPL can fall to zero</li>
                   <li>100,000 XPL Platinum lock is a promotional rate that can rise</li>
                   <li>Cashback paid in XPL, so rewards fluctuate with the token</li>
-                  <li>AI cashback terms not verifiable in the help center (only an expired promo documented)</li>
+                  <li>Platinum AI cashback terms not verifiable in the help center (only an expired promo documented)</li>
                   <li>Airline cashback cap is internally inconsistent in the official article</li>
                   <li>Cashback caps are tight on Lite: 2% only on the first $500/month</li>
                   <li>Narrow country and US state coverage, with separate lists per feature</li>
-                  <li>Lite gets no physical card; Core physical marked coming soon</li>
+                  <li>Lite gets no physical card at all</li>
+                  <li>Premium tripled to $600/yr in November 2026; break-even needs about $2,000/mo of spend</li>
                   <li>Deposits screened; sanctioned-linked funds can become unrecoverable</li>
                   <li>ATM fee table values could not be extracted; confirm in-app</li>
                 </ul>
@@ -803,10 +813,13 @@ export default function PlasmaOneReviewPage() {
             </P>
             <P>
               The honest concerns are all about the paid tiers. The XPL locks are the price of
-              admission to Core and Platinum, and a 12-month lock with no early exit on a
-              volatile digital asset is a serious commitment. Cashback in XPL means your rewards
-              move with the token, and two of the flashiest perks, AI cashback and airline
-              cashback, rest on shaky documentation: one expired, one self-contradictory.
+              admission to Premium and Platinum, and a 12-month lock with no early exit on a
+              volatile digital asset is a serious commitment. Premium also tripled in price in
+              November 2026, from $199 to $600 a year, which pushes its cashback break-even to
+              roughly $2,000 of monthly spend. Cashback in XPL means your rewards
+              move with the token, and one of the flashiest perks, airline
+              cashback, rests on shaky documentation: its cap contradicts itself in the official
+              article.
               Platinum's 0% FX and Visa Infinite perks are genuinely strong for heavy travelers
               and high spenders who can stomach the lock. Everyone else should start on Lite,
               run a deposit, a purchase, and a withdrawal through it, and only then decide
@@ -846,7 +859,7 @@ export default function PlasmaOneReviewPage() {
                 <tbody className="text-slate-600">
                   <tr className="border-b border-emerald-100 bg-emerald-50/60">
                     <td className="px-4 py-3 font-bold text-slate-900">Plasma One</td>
-                    <td className="px-4 py-3">Free Lite; $199/yr or 20K XPL lock; 100K XPL Platinum lock</td>
+                    <td className="px-4 py-3">Free Lite; $600/yr or 20K XPL lock (Premium); 100K XPL Platinum lock</td>
                     <td className="px-4 py-3">2% to 4% in XPL, caps $500+/mo (app-observed)</td>
                     <td className="px-4 py-3">Self-custodial</td>
                     <td className="px-4 py-3">Free tier with real cashback, 0% FX on Platinum</td>

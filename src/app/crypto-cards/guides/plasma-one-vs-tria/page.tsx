@@ -9,13 +9,13 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/plasma-one-vs-tria`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "18 October 2026";
-const UPDATED_ISO = "2026-10-18";
+const UPDATED = "12 November 2026";
+const UPDATED_ISO = "2026-11-12";
 
 export const metadata: Metadata = {
   title: "Plasma One vs Tria: Two Self-Custodial Crypto Cards Compared",
   description:
-    "Plasma One vs Tria card comparison (October 2026): both are self-custodial Visa cards issued via Rain. Compare cashback tiers, fees, FX rates, and features side by side.",
+    "Plasma One vs Tria card comparison (November 2026): both are self-custodial Visa cards issued via Rain. Compare cashback tiers, fees, FX rates, and features side by side.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Plasma One vs Tria: Crypto Card Comparison | CryptosBeginner",
@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Which has better cashback, Plasma One or Tria?",
     answer:
-      "It depends on your spending level and whether you want to lock tokens. Tria's headline rates are higher: 1.5% on Lite ($20/year), 4.5% on Pro ($109/year), and 6% on Max ($250/year). Plasma One offers 2% on the free Lite tier, 3% on Core ($199/year or 20K XPL lock), and 4% on Platinum (100K XPL lock, promotional rate rising to 150K XPL). But headline rates only apply within monthly caps: Tria caps the top rate at the first $1,000 (Lite/Pro) or $2,000 (Max) of monthly spend, while Plasma One caps at the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum). Always do the math on your actual monthly spend.",
+      "It depends on your spending level and whether you want to lock tokens. Tria's headline rates are higher: 1.5% on Lite ($20/year), 4.5% on Pro ($109/year), and 6% on Max ($250/year). Plasma One offers 2% on the free Lite tier, 3% on Premium ($600/year or 20K XPL lock; the tier was called Core until November 2026), and 4% on Platinum (100K XPL lock, promotional rate rising to 150K XPL). But headline rates only apply within monthly caps: Tria caps the top rate at the first $1,000 (Lite/Pro) or $2,000 (Max) of monthly spend, while Plasma One caps at the first $500 (Lite), $1,000 (Premium), or $3,000 (Platinum). Always do the math on your actual monthly spend.",
   },
   {
     question: "Does Tria really offer 50x leverage on perps?",
@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: "Which card is better for international spending?",
     answer:
-      "Plasma One publishes a clear FX schedule: 0% markup on Platinum, 0.5% on Core, and 1% on Lite. Tria's FX fees vary; check the current fee schedule in the app before traveling. If you spend heavily in foreign currencies, Plasma One's Platinum tier with zero FX markup is the cleaner option on paper.",
+      "Plasma One publishes a clear FX schedule: 0% markup on Platinum, 0% on Premium for the first $3,000 of monthly spend, and 1% on Lite. Tria's FX fees vary; check the current fee schedule in the app before traveling. If you spend heavily in foreign currencies, Plasma One's Platinum tier with zero FX markup is the cleaner option on paper.",
   },
   {
     question: "Are both cards really self-custodial?",
@@ -158,8 +158,8 @@ export default function PlasmaOneVsTriaPage() {
                   <td className="px-5 py-4">$500/mo</td>
                 </tr>
                 <tr className="bg-indigo-50/50">
-                  <td className="px-5 py-4 font-bold">Plasma One Core</td>
-                  <td className="px-5 py-4">$199/year or 20K XPL lock</td>
+                  <td className="px-5 py-4 font-bold">Plasma One Premium</td>
+                  <td className="px-5 py-4">$600/year or 20K XPL lock</td>
                   <td className="px-5 py-4 font-bold text-emerald-700">3%</td>
                   <td className="px-5 py-4">$1,000/mo</td>
                 </tr>
@@ -178,7 +178,7 @@ export default function PlasmaOneVsTriaPage() {
 
           <GuideH2>Foreign exchange fees</GuideH2>
           <GuideP>
-            Plasma One publishes a transparent FX schedule: 1% on Lite, 0.5% on Core, and 0% on Platinum. Tria does not advertise a single FX figure as prominently; check the in-app fee schedule for your region before relying on it for travel spending. For frequent foreign-currency spenders, Plasma One Platinum's zero markup is a concrete advantage.
+            Plasma One publishes a transparent FX schedule: 1% on Lite, 0% on Premium for the first $3,000 of monthly spend, and 0% on Platinum. Tria does not advertise a single FX figure as prominently; check the in-app fee schedule for your region before relying on it for travel spending. For frequent foreign-currency spenders, Plasma One Platinum's zero markup is a concrete advantage.
           </GuideP>
 
           <GuideH2>Beyond the card: app features</GuideH2>

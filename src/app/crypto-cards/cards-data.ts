@@ -4240,16 +4240,16 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A self-custodial Visa stablecoin card with tiered XPL cashback from 2% on the free Lite plan to 4% on Platinum.",
     editorialSummary:
-      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback on the first $1,000 of monthly spend, stepping down in bands after that, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
+      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Lite is free with 2% XPL cashback, Premium (renamed from Core on 11 November 2026) costs $600 per year or requires a 20,000 XPL lock, with 3% cashback on the first $1,000 of monthly spend, stepping down in bands after that, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Premium), or $3,000 (Platinum) of monthly spending. Premium charges 0% FX on the first $3,000 of monthly card spend, Platinum charges 0% FX overall, and Lite carries a 1% FX markup. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
     bestFor:
       "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 4% cashback.",
     availability:
       "Provider does not publish a specific country list on the reviewed page.",
     regions: ["North America", "Europe", "Asia"],
     pricing:
-      "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX markup: 0% Platinum, 0.5% Core, 1% Lite, plus a Visa network FX fee of about 1% on Lite and Core (none on Platinum). Bank withdrawals: 0.75% to 1% on Lite, 0.25% to 0.35% on Core.",
+      "Lite tier free; Premium (formerly Core) $600 per year or 20,000 XPL lock (about $1,050 at November 2026 prices); Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX: 0% on the first $3,000 of monthly card spend on Premium (Core previously charged 0.5% plus about 1% Visa network FX), 0% on Platinum, 1% markup on Lite plus a Visa network FX fee of about 1%. Bank withdrawals: 0.75% to 1% on Lite, 0.25% to 0.35% on Premium. Existing Core members keep their current benefits until their term ends, then renew at the Premium price with at least 30 days notice.",
     rewards:
-      "XPL cashback: 2% on Lite (first $500/month, then 0.1%), 3% on Core (first $1,000/month, then 2% on the next $1,000, 1% on the next $1,000, 0.25% after), 4% on Platinum (first $3,000/month). Core also pays 5% AI cashback on the first $250/month of AI spend (4% on the next $250, 1% after, as shown in the app) and includes a ChatGPT Go credit.",
+      "XPL cashback: 2% on Lite (first $500/month, then 0.1%), 3% on Premium (first $1,000/month, then 2% on the next $1,000, 1% on the next $1,000, 0.25% after), 4% on Platinum (first $3,000/month). Premium's AI benefit is a $200 per year AI spend credit, allocated monthly across an expanded list of AI providers; it replaced the old Core AI cashback bands and ChatGPT Go rebate on 11 November 2026. Premium also adds local merchant rewards in Dubai, London and New York.",
     funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Direct ETH and HYPE deposits and spending were added on October 28, 2026. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem. Crypto deposits carry a Plasma fee of 0.15% to 0.75% on every tier, plus network and bridge fees; a swap fee applies to USDC deposits, while USDT deposits skip the swap fee.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.plasma.org/learn/crypto-card-benefits",
@@ -4259,15 +4259,15 @@ export const cardListings: CardListing[] = [
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-11-12",
     caution:
-      "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
-    updateUrl: "https://x.com/xKseilas/status/2119160658369638778",
-    updateLabel: "Plasma One Lite vs Core breakdown by @xKseilas",
+      "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. Premium tripled the old Core price from $199 to $600 a year in November 2026. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
+    updateUrl: "https://x.com/0xVishnya/status/2119866246933983513",
+    updateLabel: "Plasma One Core becomes Premium, via @0xVishnya",
     updateNote:
-      "November 2026 tier detail, compiled from Plasma app data by @xKseilas and @vuirew_: Core cashback steps down in bands (3% on the first $1,000/mo, then 2%, then 1%, then 0.25%), Core AI cashback pays 5% on the first $250/mo and 4% on the next $250, and Core now includes its physical card. Their break-even math, with XPL value held constant: at $3,000/mo of spend Lite returns about $150/yr against roughly $816/yr on Core including the ChatGPT Go credit, and Core covers its $199 fee from about $900/mo of spend on cashback alone, or about $625/mo if you would pay for ChatGPT Go anyway.",
+      "On 11 November 2026 Plasma emailed Core members that Core becomes Premium. The price rises from $199 to $600 per year when the current term ends (complimentary Core benefits run until the term ends, with at least 30 days notice before the renewal price changes). Premium adds 0% FX on the first $3,000 of monthly card spend (Core charged 0.5% plus about 1% Visa network FX), replaces the AI cashback and ChatGPT Go rebate with one $200 per year AI spend credit allocated monthly across more AI providers, and adds local merchant rewards in Dubai, London and New York. The 20,000 XPL for 12 months lock option is unchanged, worth about $1,050 at November 2026 prices. The cashback bands did not change, so at the new price, with XPL value held constant, cashback alone covers the $600 fee from about $2,000 of monthly spend, or about $1,170 per month if the full AI credit is used.",
     galleryImages: [
       {
-        url: "/images/cards/plasma/lite-vs-core.png",
-        alt: "Comparison chart of Plasma One Lite and Core tiers with cashback bands, fees, and card formats",
+        url: "/images/cards/plasma/lite-vs-premium.png",
+        alt: "Comparison chart of Plasma One Lite and Premium tiers with cashback bands, fees, and card formats",
         source: "Compiled by CryptosBeginner from Plasma app data and analyst reports, November 2026",
       },
       {
@@ -4281,9 +4281,9 @@ export const cardListings: CardListing[] = [
     referralLabel: "Get the Plasma One Card",
     cashbackBands: [
       { tier: "Lite", ratePct: 2, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
-      { tier: "Core", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
-      { tier: "Core", ratePct: 2, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
-      { tier: "Core", ratePct: 1, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Premium", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Premium", ratePct: 2, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Premium", ratePct: 1, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
       { tier: "Platinum", ratePct: 4, spendBand: "first $3,000/mo", bandCapUsd: 3000, rewardAsset: "XPL" },
     ],
   },

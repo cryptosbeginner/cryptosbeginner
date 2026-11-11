@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "fee-change",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One renames Core to Premium and triples the price to $600 a year",
+    details:
+      "Plasma has emailed Core members that their membership became Premium on 11 November 2026. The price rises from $199 to $600 per year when the current term ends; complimentary Core benefits run until the term ends, with at least 30 days notice before the renewal price changes. Premium adds 0% FX on the first $3,000 of monthly card spend (Core charged 0.5% plus about 1% Visa network FX), replaces the AI cashback and ChatGPT Go rebate with one $200 per year AI spend credit allocated monthly across an expanded list of providers, and adds local merchant rewards in Dubai, London and New York. The alternative 20,000 XPL lock for 12 months is unchanged (about $1,050 at November 2026 prices), and the cashback bands did not move, so at the new price cashback alone covers the fee from about $2,000 of monthly spend, or about $1,170 per month if the full AI credit is used. Our listing, review, and Plasma One vs Tria comparison have been updated.",
+    sourceUrl: "https://x.com/0xVishnya/status/2119866246933983513",
+    sourceLabel: "Plasma One member email, reported by @0xVishnya, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "market",
     cardName: "Crypto card cashback payouts",
     title: "Top single cashback payouts in 72 hours: Plasma One $3,724, EtherFi Cash $2,953, Ethena Pay $1,493",
