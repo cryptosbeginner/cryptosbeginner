@@ -3321,24 +3321,35 @@ export const cardListings: CardListing[] = [
     name: "Utorg Card",
     provider: "Utorg",
     network: "Visa",
-    categories: ["prepaid"],
-    shortDescription: "Virtual Visa card from the European on-ramp provider for spending crypto.",
-    editorialSummary: "Virtual Visa card from the European on-ramp provider for spending crypto. Full fee and feature details are being verified from official sources.",
-    bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Details being verified. Check the official site for current country availability.",
+    categories: ["self-custody"],
+    shortDescription:
+      "Non-custodial virtual Visa card for the EEA that spends USDC with zero payment and FX fees during the current promotion.",
+    editorialSummary:
+      "Utorg's card is a virtual Visa for EEA residents (Ukraine also appears on the issuer's country grid) inside its non-custodial wallet app, so you hold your keys and fund the card with USDC. Since the August 2026 card migration, new cards are USD-denominated Visa cards replacing the earlier Mastercard, with the card service provided by Chain Valley Sp. z o.o. together with Wirex Pay and Wirex Limited. Top-ups are USDC only and gasless on Ethereum, Polygon, Arbitrum, and Solana, with BSC also reported, and they credit at 1 USDC = $0.9995. Utorg charges no issuance, monthly, annual, replacement, or inactivity fees, and payments and FX are free for a limited time, although Visa or the provider may apply a fee on non-USD transactions. There is no cashback. Utorg is authorized under MiCA across the EEA, and monthly limits run up to €30,000.",
+    bestFor:
+      "EEA residents who already hold USDC and want the cheapest possible way to spend it, and who are comfortable with a virtual-only, self-custodial setup.",
+    availability:
+      "EEA residents; Ukraine also appears on the issuer's country grid. The card is not offered outside that list.",
     regions: ["Europe"],
-    pricing: "Details being verified from official sources.",
-    rewards: "Details being verified from official sources.",
-    funding: "Details being verified from official sources.",
+    pricing:
+      "No issuance, monthly, annual, replacement, or inactivity fees. Payments and cross-currency conversions carry zero Utorg fees for a limited time; Visa or the provider may still apply a fee on non-USD transactions. Top-ups credit at 1 USDC = $0.9995.",
+    rewards: "No cashback or rewards program.",
+    funding:
+      "USDC top-ups only since the August 2026 migration: gasless on Ethereum, Polygon, Arbitrum, and Solana, with BSC also reported. The wallet itself is non-custodial and multi-chain, but the card balance is funded in USDC.",
     cardFormats: ["Virtual"],
-    sourceUrl: "https://utorg.com",
-    sourceLabel: "Official website",
+    sourceUrl: "https://utorg.com/crypto-card",
+    sourceLabel: "Utorg crypto card page",
     imageUrl: "/images/cards/utorg-card.png",
     imageAlt: "Utorg debit crypto card in hand",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-10-14",
-    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "Provider account and regional eligibility requirements apply.",
+    reviewedAt: "2026-11-11",
+    caution:
+      "The zero-fee pricing is a limited-time promotion, not a permanent tariff: Utorg's own card page flags it with an asterisk, and issuer help notes that Visa or provider fees may apply to non-USD payments. Top-ups also credit slightly under par, at 1 USDC = $0.9995. The card is virtual only and EEA only.",
+    verification: "KYC required: identity documents plus a liveness check in the app.",
+    updateUrl: "https://x.com/Nikitont/status/2119057351013543938",
+    updateLabel: "Utorg zero-fee card summary by @Nikitont",
+    updateNote:
+      "Verified in full in November 2026 against Utorg's card page, its published terms, and issuer help material, following the zero-fee summary by @Nikitont. The listing previously carried placeholder text. Key facts: non-custodial wallet, USDC-only top-ups since the August 2026 migration to USD Visa cards, no cashback, monthly limits up to €30,000, and zero payment and FX fees that are explicitly time-limited.",
   },
   {
     slug: "volet-card",

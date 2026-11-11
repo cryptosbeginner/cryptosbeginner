@@ -9,8 +9,8 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/free-crypto-cards-ranked`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "5 November 2026";
-const UPDATED_ISO = "2026-11-05";
+const UPDATED = "11 November 2026";
+const UPDATED_ISO = "2026-11-11";
 
 export const metadata: Metadata = {
   title: "Free Crypto Cards, Ranked: No Issuance Fee, No Annual Fee (November 2026)",
@@ -117,18 +117,18 @@ const ranked = [
     why: "1% back in mUSD on the Virtual card and self-custody until the moment of payment, inside the wallet many users already have. Availability is country dependent, and the reviewed page noted US and UK signups temporarily closed, so confirm you can actually get it before planning around it.",
   },
   {
-    rank: 9,
+    rank: 10,
     name: "Belo Card",
     href: "/crypto-cards/belo-card",
     facts: "No issuance or maintenance fee per the official help center, per our listing.",
     why: "A clean free offer aimed at Latin American users who want to spend crypto without account fees. Shipping, replacement, withdrawal, and some international transaction fees may still apply, so the free part is the account, not every action you take with it.",
   },
   {
-    rank: 10,
-    name: "CEX.IO Card",
-    href: "/crypto-cards/cex-io-card",
-    facts: "Free issuance with no annual or monthly fees, per our listing.",
-    why: "Straightforward and fee light for euro area spending. A 1% currency conversion fee applies on non-EUR purchases, and the limits are modest: €3,000 a day and €10,000 a month, which suits everyday spending rather than large purchases.",
+    rank: 9,
+    name: "Utorg Card",
+    href: "/crypto-cards/utorg-card",
+    facts: "No issuance, monthly, annual, or replacement fees in the published terms, with zero payment and FX fees flagged as a limited-time promotion on the card page, per our listing.",
+    why: "The cheapest way to spend USDC in the EEA right now: a non-custodial virtual Visa with monthly limits up to €30,000 and no cashback to complicate the math. The trade-offs are real: virtual only, EEA residents only with Ukraine also on the issuer grid, USDC top-ups only, and top-ups credit at 1 USDC = $0.9995, so a small conversion cost hides in the rate.",
   },
 ];
 
@@ -214,6 +214,7 @@ export default function FreeCryptoCardsRankedPage() {
               "MEXC Card: the official page shows the issuance figure crossed out from $20 to $0, with a 0% service fee on the shown route. That is a promotional price display, not a fee schedule, and other fees need regional confirmation.",
               "KuCard: the first virtual card is free and there is no membership, but conversion fees are not itemized on the reviewed page, so the full cost of using it is not published.",
               "RedotPay: no maintenance fee, but $10 to issue a virtual card and $100 for the physical one per its official fee schedule. Free to hold is only half the promise.",
+              "CEX.IO Card: free to issue and free to hold, and it held a top ten place here until November 2026. A 1% conversion fee on non-EUR purchases and a €10,000 monthly limit moved it out as zero-fee EEA rivals arrived.",
             ]}
           />
 

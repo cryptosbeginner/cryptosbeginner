@@ -15,6 +15,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-11",
     type: "catalog-update",
+    cardName: "Utorg Card",
+    cardSlug: "utorg-card",
+    title: "Utorg Card verified in full: zero-fee USDC spending for the EEA",
+    details:
+      "Our Utorg listing previously carried placeholder text. It is now verified against Utorg's card page, its published terms, and issuer help material, following the zero-fee summary by @Nikitont. The card is a non-custodial virtual Visa for EEA residents (Ukraine is also on the issuer grid), funded with USDC top-ups that are gasless on Ethereum, Polygon, Arbitrum, and Solana. Since the August 2026 migration, cards are USD Visa cards provided by Chain Valley with Wirex Pay and Wirex Limited. There are no issuance, monthly, annual, or replacement fees and no cashback, monthly limits run up to €30,000, and the headline zero payment and FX fees are a limited-time promotion: Visa or provider fees may still apply to non-USD payments, and top-ups credit at 1 USDC = $0.9995.",
+    sourceLabel: "@Nikitont summary plus the Utorg card page and terms",
+  },
+  {
+    date: "2026-11-11",
+    type: "catalog-update",
     cardName: "Plasma One Card",
     cardSlug: "plasma-one-card",
     title: "Plasma One Core in full: stepped cashback bands and the $199 break-even",
