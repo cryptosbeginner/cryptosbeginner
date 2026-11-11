@@ -4221,16 +4221,16 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A self-custodial Visa stablecoin card with tiered XPL cashback from 2% on the free Lite plan to 4% on Platinum.",
     editorialSummary:
-      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
+      "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Lite is free with 2% XPL cashback, Core costs $199 per year or requires a 20,000 XPL lock with 3% cashback on the first $1,000 of monthly spend, stepping down in bands after that, and Platinum requires a 100,000 XPL lock (promotional rate, rising to 150,000 XPL after) with 4% cashback. Cashback headline rates apply to the first $500 (Lite), $1,000 (Core), or $3,000 (Platinum) of monthly spending. FX markup is 0% on Platinum, 0.5% on Core, and 1% on Lite. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
     bestFor:
       "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 4% cashback.",
     availability:
       "Provider does not publish a specific country list on the reviewed page.",
     regions: ["North America", "Europe", "Asia"],
     pricing:
-      "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX markup: 0% Platinum, 0.5% Core, 1% Lite.",
+      "Lite tier free; Core $199 per year or 20,000 XPL lock; Platinum requires 100,000 XPL lock (promotional, rising to 150,000 XPL after). FX markup: 0% Platinum, 0.5% Core, 1% Lite, plus a Visa network FX fee of about 1% on Lite and Core (none on Platinum). Bank withdrawals: 0.75% to 1% on Lite, 0.25% to 0.35% on Core.",
     rewards:
-      "XPL cashback: 2% on Lite (first $500/month), 3% on Core (first $1,000/month), 4% on Platinum (first $3,000/month).",
+      "XPL cashback: 2% on Lite (first $500/month, then 0.1%), 3% on Core (first $1,000/month, then 2% on the next $1,000, 1% on the next $1,000, 0.25% after), 4% on Platinum (first $3,000/month). Core also pays 5% AI cashback on the first $250/month of AI spend (4% on the next $250, 1% after, as shown in the app) and includes a ChatGPT Go credit.",
     funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Direct ETH and HYPE deposits and spending were added on October 28, 2026. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.plasma.org/learn/crypto-card-benefits",
@@ -4238,14 +4238,19 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Plasma One Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-05",
+    reviewedAt: "2026-11-11",
     caution:
       "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. The 100,000 XPL Platinum lock is a promotional rate rising to 150,000 XPL after the promotional period.",
-    updateUrl: "https://x.com/0xVishnya/status/2111004467449745425",
-    updateLabel: "App-store popularity ranks (Sensor Tower via @0xVishnya)",
+    updateUrl: "https://x.com/xKseilas/status/2119160658369638778",
+    updateLabel: "Plasma One Lite vs Core breakdown by @xKseilas",
     updateNote:
-      "Sensor Tower data for Sep 16 to Oct 15, 2026 shows the Plasma app ranking highest in MENA: Algeria #48 on Android and #62 on iPhone, Libya #92/#79, Morocco #109/#162, Yemen #136/#92. The US sits at #302 and the UK at #494 on Android. Ranks are median Top Free Finance positions where the app charted at least 15 of 30 days.",
+      "November 2026 tier detail, compiled from Plasma app data by @xKseilas and @vuirew_: Core cashback steps down in bands (3% on the first $1,000/mo, then 2%, then 1%, then 0.25%), Core AI cashback pays 5% on the first $250/mo and 4% on the next $250, and Core now includes its physical card. Their break-even math, with XPL value held constant: at $3,000/mo of spend Lite returns about $150/yr against roughly $816/yr on Core including the ChatGPT Go credit, and Core covers its $199 fee from about $900/mo of spend on cashback alone, or about $625/mo if you would pay for ChatGPT Go anyway.",
     galleryImages: [
+      {
+        url: "/images/cards/plasma/lite-vs-core.png",
+        alt: "Comparison chart of Plasma One Lite and Core tiers with cashback bands, fees, and card formats",
+        source: "Compiled by CryptosBeginner from Plasma app data and analyst reports, November 2026",
+      },
       {
         url: "/images/cards/plasma/popularity-ranks.png",
         alt: "Chart of Plasma One app store rankings by country on iPhone and Android, September to October 2026",
@@ -4258,6 +4263,8 @@ export const cardListings: CardListing[] = [
     cashbackBands: [
       { tier: "Lite", ratePct: 2, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
       { tier: "Core", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Core", ratePct: 2, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Core", ratePct: 1, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
       { tier: "Platinum", ratePct: 4, spendBand: "first $3,000/mo", bandCapUsd: 3000, rewardAsset: "XPL" },
     ],
   },

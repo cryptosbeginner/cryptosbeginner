@@ -13,6 +13,16 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-11",
+    type: "catalog-update",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One Core in full: stepped cashback bands and the $199 break-even",
+    details:
+      "With free Core periods ending, analyst breakdowns of Plasma app data by @xKseilas and @vuirew_ set out the full Core math. Core cashback steps down in bands: 3% on the first $1,000/mo, 2% on the next $1,000, 1% on the next $1,000, then 0.25%. Core AI cashback pays 5% on the first $250/mo of AI spend and 4% on the next $250, and Core now includes its physical card alongside 2 virtual cards and a ChatGPT Go credit. At $3,000/mo of spend, Lite returns about $150/yr against roughly $816/yr on Core including ChatGPT Go, with XPL value held constant. Core covers its $199 fee from about $900/mo of spend on cashback alone, or about $625/mo if you would pay for ChatGPT Go anyway. Our listing and review now carry the full band tables.",
+    sourceLabel: "Analyst breakdowns by @xKseilas and @vuirew_, November 2026",
+  },
+  {
     date: "2026-11-06",
     type: "catalog-update",
     cardName: "MEXC Card",

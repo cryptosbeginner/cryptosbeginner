@@ -7,8 +7,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/plasma-one-review`;
-const UPDATED = "19 October 2026";
-const UPDATED_ISO = "2026-10-19";
+const UPDATED = "11 November 2026";
+const UPDATED_ISO = "2026-11-11";
 const AFFILIATE = "https://go.cryptosbeginner.com/Plasma";
 const IMG = "/images/cards/plasma";
 
@@ -55,12 +55,12 @@ const faqItems = [
   {
     question: "How do the Lite, Core, and Platinum tiers work?",
     answer:
-      "Lite is free and gives you a virtual card only, with 2% XPL cashback on the first $500 of monthly spend. Core costs $199 per year, paid from your USD cash balance, or a 20,000 XPL lock for 12 months; it adds 3% base cashback, a Visa Signature physical card (physical issuance is marked coming soon), and travel perks. Platinum requires a 100,000 XPL lock for 12 months at a promotional rate, with 4% base cashback, 0% FX on card spend, a Visa Infinite metal card, and the full perks list. Core auto-renews every 12 months unless you opt out; you can downgrade to Lite, renew Core, or upgrade to Platinum from the Tiers tab.",
+      "Lite is free and gives you a virtual card only, with 2% XPL cashback on the first $500 of monthly spend. Core costs $199 per year, paid from your USD cash balance, or a 20,000 XPL lock for 12 months; it adds 3% base cashback on the first $1,000 of monthly spend (stepping down in bands after that), a Visa Signature physical card, 2 free virtual cards, a ChatGPT Go credit, and travel perks. Platinum requires a 100,000 XPL lock for 12 months at a promotional rate, with 4% base cashback, 0% FX on card spend, a Visa Infinite metal card, and the full perks list. Core auto-renews every 12 months unless you opt out; you can downgrade to Lite, renew Core, or upgrade to Platinum from the Tiers tab.",
   },
   {
     question: "What cashback does Plasma One pay?",
     answer:
-      "Cashback is paid in XPL and the base rates are shown in the app: Lite pays 2% on the first $500 of monthly spend, then 0.1% on the rest. Core pays 3% base with 5% AI cashback and 1% friends referral. Platinum pays 4% base with 10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral is 0.25%. Two honesty notes: the only help article on AI cashback documents an expired May 27 to June 3, 2026 promo week, not the standing tier benefit, so we could not verify current AI cashback terms. And the airline cashback article contradicts itself on the cap period, saying both a semi-annual cap and a monthly reset. Confirm both in the app before spending around them.",
+      "Cashback is paid in XPL and the base rates are shown in the app: Lite pays 2% on the first $500 of monthly spend, then 0.1% on the rest. Core pays 3% base on the first $1,000 of monthly spend, then 2% on the next $1,000, 1% on the next $1,000, and 0.25% after that, with 5% AI cashback on the first $250 of monthly AI spend and 1% friends referral. Platinum pays 4% base with 10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral is 0.25%. Two honesty notes: the only help article on AI cashback documents an expired May 27 to June 3, 2026 promo week, not the standing tier benefit, so we could not verify current AI cashback terms. And the airline cashback article contradicts itself on the cap period, saying both a semi-annual cap and a monthly reset. Confirm both in the app before spending around them.",
   },
   {
     question: "What does the XPL lock mean for Core and Platinum?",
@@ -292,8 +292,8 @@ export default function PlasmaOneReviewPage() {
                   <tr className="border-b border-slate-100">
                     <td className="px-4 py-3 font-bold text-slate-900">Core</td>
                     <td className="px-4 py-3">$199/yr or 20,000 XPL lock</td>
-                    <td className="px-4 py-3">3% base, 5% AI, 1% friends referral</td>
-                    <td className="px-4 py-3">Visa Signature; 2 free virtual, physical coming soon</td>
+                    <td className="px-4 py-3">3% on first $1,000/mo, then 2% and 1% bands, 0.25% after; 5% AI, 1% friends referral</td>
+                    <td className="px-4 py-3">Visa Signature; 2 free virtual, 1 free physical</td>
                     <td className="px-4 py-3">0.5%</td>
                   </tr>
                   <tr>
@@ -306,6 +306,14 @@ export default function PlasmaOneReviewPage() {
                 </tbody>
               </table>
             </div>
+            <Figure
+              src="/images/cards/plasma/lite-vs-core.png"
+              alt="Comparison chart of Plasma One Lite and Core tiers showing cashback bands, AI cashback, ChatGPT Go, card formats, FX and Visa fees, bank withdrawal fees, and yearly value at 3,000 dollars of monthly spend"
+              caption="Lite vs Core on the numbers that matter: the stepped cashback bands, the combined FX cost, and the spend level where Core starts paying for itself. Compiled by CryptosBeginner from Plasma app data, November 2026."
+              width={1440}
+              height={2000}
+              wide
+            />
             <P>
               A few mechanics worth knowing before you pick. Lite requires a $10 deposit before
               card activation in most regions. That is an activation minimum, not a fee: the money
@@ -361,7 +369,11 @@ export default function PlasmaOneReviewPage() {
               On Lite, the 2% rate covers the first $500 of monthly spend, then drops to 0.1% on
               everything above it. The in-app tracker counts your monthly progress and shows the
               reset date, so you always know where you stand. Core raises the base to 3% and adds
-              5% AI cashback plus 1% on friends referrals. Platinum raises the base to 4% with
+              5% AI cashback plus 1% on friends referrals. The Core base rate steps down across
+              the month, though: 3% on the first $1,000 of spend, 2% on the next $1,000, 1% on
+              the next $1,000, then 0.25% on the rest. The AI cashback is banded as well, paying
+              5% on the first $250 of monthly AI spend, 4% on the next $250, then 1%. Those bands
+              come from app data compiled by independent analysts in November 2026. Platinum raises the base to 4% with
               10% AI cashback, 10% airline cashback up to $600, and 1% referral; Lite referral
               cashback is 0.25%.
             </P>
