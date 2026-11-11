@@ -23,7 +23,26 @@ type CheckResult = {
   findings: Finding[];
   timestamp: string;
   cached: boolean;
+  dataSource?: string;
+  codex?: { verdict: string; score: number | null; coverage: string | null } | null;
   error?: string;
+};
+
+const CODEX_VERDICT_LABELS: Record<string, string> = {
+  SCAM: "Proven scam",
+  HIGH_RISK: "High risk",
+  CAUTION: "Caution",
+  NEUTRAL: "Neutral",
+  VERIFIED: "Verified",
+  VERIFIED_CONTESTED: "Verified, contested",
+  UNASSESSED: "Not yet assessed",
+};
+
+const CODEX_COVERAGE_LABELS: Record<string, string> = {
+  ANALYZED: "Contract analysis complete",
+  NOT_ANALYZED: "Contract analysis pending",
+  INCONCLUSIVE: "Contract analysis inconclusive",
+  STALE: "Contract analysis refreshing",
 };
 
 const CHAINS: { id: string; label: string; color: string }[] = [
@@ -292,6 +311,24 @@ export default function TokenSafetyWidget() {
             <p className="mt-2 break-all font-mono text-xs text-white/60">{result.address}</p>
             <p className="mt-4 max-w-2xl text-base font-bold leading-8 text-white/90">{result.verdictReason}</p>
 
+            {result.codex && (
+              <div className="mt-5 flex flex-wrap gap-2 text-xs font-black">
+                <span className="rounded-full bg-black/30 px-3 py-1.5 text-white">
+                  Codex verdict: {CODEX_VERDICT_LABELS[result.codex.verdict] ?? result.codex.verdict}
+                </span>
+                {result.codex.score !== null && (
+                  <span className="rounded-full bg-black/30 px-3 py-1.5 text-white">
+                    Risk score {Math.round(result.codex.score)}/100
+                  </span>
+                )}
+                {result.codex.coverage && CODEX_COVERAGE_LABELS[result.codex.coverage] && (
+                  <span className="rounded-full bg-black/30 px-3 py-1.5 text-white/80">
+                    {CODEX_COVERAGE_LABELS[result.codex.coverage]}
+                  </span>
+                )}
+              </div>
+            )}
+
             {(failCount > 0 || warnCount > 0 || passCount > 0) && (
               <div className="mt-5 flex flex-wrap gap-2 text-xs font-black">
                 {failCount > 0 && <span className="rounded-full bg-black/30 px-3 py-1.5 text-red-200">{failCount} failed</span>}
@@ -323,11 +360,23 @@ export default function TokenSafetyWidget() {
           <div className="border-t border-slate-200 bg-white px-6 py-4 sm:px-10">
             <p className="text-xs leading-6 text-slate-500">
               Scanned {new Date(result.timestamp).toLocaleString()} on {selectedChain.label} · Data by{" "}
-              <a href="https://gopluslabs.io" target="_blank" rel="noopener noreferrer" className="font-bold text-indigo-700">
-                GoPlus Security
-              </a>
-              . A clean scan means no obvious red flags were found, not that the token is safe. Always do your own research.
+              {result.dataSource ?? "GoPlus Security"}. A clean scan means no obvious red flags were found, not
+              that the token is safe. Always do your own research.
             </p>
+            {result.codex && (
+              <p className="mt-1 text-xs leading-6 text-slate-500">
+                Want the full picture? See live charts, holders and trades for this token on{" "}
+                <a
+                  href="https://go.cryptosbeginner.com/DefinedFi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-indigo-700"
+                >
+                  Defined.fi
+                </a>{" "}
+                (affiliate link).
+              </p>
+            )}
           </div>
         </div>
       )}

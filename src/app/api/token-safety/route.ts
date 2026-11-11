@@ -51,6 +51,261 @@ const EVM_DEAD = new Set([
 type CacheEntry = { expires: number; body: Record<string, unknown> };
 const cache = new Map<string, CacheEntry>();
 
+// Codex (the Defined.fi data API) is the primary risk source when
+// CODEX_API_KEY is set. The free tier is metered in compute units, so scans
+// ride the same 10 minute cache as GoPlus and each fresh scan costs a single
+// GraphQL request. When Codex has no data, the GoPlus result stands alone.
+const CODEX_ENDPOINT = "https://graph.codex.io/graphql";
+
+const CODEX_NETWORK_IDS: Record<string, number> = {
+  solana: 1399811149,
+  tron: 728126428,
+};
+
+function codexNetworkId(chain: string): number | null {
+  if (CODEX_NETWORK_IDS[chain]) return CODEX_NETWORK_IDS[chain];
+  const n = Number(chain);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+type CodexRisk = {
+  verdict: string | null;
+  score: number | null;
+  coverage: string | null;
+  reasons: string[];
+  buyTax: number | null;
+  sellTax: number | null;
+  bundlerServices: string[];
+};
+
+type CodexToken = {
+  name: string | null;
+  symbol: string | null;
+  top10HoldersPercent: number | null;
+  risk: CodexRisk | null;
+};
+
+const CODEX_QUERY = `query TokenSafety($address: String!, $networkId: Int!) {
+  token(input: { address: $address, networkId: $networkId }) {
+    name
+    symbol
+    top10HoldersPercent
+    risk { verdict score coverage reasons buyTax sellTax bundlerServices }
+  }
+}`;
+
+async function fetchCodex(address: string, chain: string): Promise<CodexToken | null> {
+  const apiKey = process.env.CODEX_API_KEY;
+  if (!apiKey) return null;
+  const networkId = codexNetworkId(chain);
+  if (networkId === null) return null;
+  try {
+    const res = await fetch(CODEX_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: apiKey },
+      body: JSON.stringify({ query: CODEX_QUERY, variables: { address, networkId } }),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return null;
+    const payload = (await res.json()) as { data?: { token?: Record<string, unknown> | null } };
+    const t = payload?.data?.token;
+    if (!t) return null;
+    const r = (t.risk ?? null) as Record<string, unknown> | null;
+    return {
+      name: typeof t.name === "string" ? t.name : null,
+      symbol: typeof t.symbol === "string" ? t.symbol : null,
+      top10HoldersPercent: typeof t.top10HoldersPercent === "number" ? t.top10HoldersPercent : null,
+      risk: r
+        ? {
+            verdict: typeof r.verdict === "string" ? r.verdict : null,
+            score: typeof r.score === "number" ? r.score : null,
+            coverage: typeof r.coverage === "string" ? r.coverage : null,
+            reasons: Array.isArray(r.reasons) ? (r.reasons as string[]) : [],
+            buyTax: typeof r.buyTax === "number" ? r.buyTax : null,
+            sellTax: typeof r.sellTax === "number" ? r.sellTax : null,
+            bundlerServices: Array.isArray(r.bundlerServices) ? (r.bundlerServices as string[]) : [],
+          }
+        : null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+const REASON_LABELS: Record<string, string> = {
+  PROOF_HONEYPOT_SIM: "Honeypot proven in a simulated trade",
+  PROOF_NON_TRANSFERABLE: "Token cannot be transferred",
+  PROOF_TRANSFER_FEE_100: "100% transfer fee",
+  PROOF_DEFAULT_FROZEN: "Wallets frozen by default",
+  PROOF_POOL_TRAP_SIM: "Pool trap proven in simulation",
+  AUTH_MINT: "The owner can mint new tokens",
+  AUTH_FREEZE: "The owner can freeze wallets",
+  AUTH_PERMANENT_DELEGATE: "A permanent delegate can move holder funds",
+  AUTH_TRANSFER_HOOK: "Transfers run through a custom hook contract",
+  AUTH_PAUSABLE: "Trading can be paused by the owner",
+  AUTH_OWNER_NOT_RENOUNCED: "Contract ownership has not been renounced",
+  AUTH_CAN_TRANSFER_OWNERSHIP: "Ownership can be handed to another wallet",
+  TAX_BUY_HIGH: "Buy tax of 10% or more",
+  TAX_SELL_HIGH: "Sell tax of 10% or more",
+  TAX_HONEYPOT_UNCONFIRMED: "Possible honeypot, not yet confirmed",
+  TAX_PAUSED: "Trading is currently paused",
+  TAX_POOL_TRAP: "Pool trap pattern in the trading setup",
+  TAX_POOL_TRAP_HOOK_SHARED: "Pool hook shared with known trap tokens",
+  LIQ_MINIMAL: "Liquidity is minimal",
+  LIQ_UNKNOWN: "Liquidity could not be verified",
+  LIQ_RUG_CLIFF: "Liquidity pattern matches tokens that rugged before",
+  LIQ_UNLOCKED: "Liquidity is not locked",
+  LIQ_DRAINING: "Liquidity is draining out of the pool",
+  HOLD_TOP10_CONCENTRATED: "The top 10 holders control a large share",
+  HOLD_DEV_HEAVY: "The developer wallet holds a large share",
+  HOLD_SNIPER_HEAVY: "Sniper wallets hold a large share",
+  HOLD_BUNDLER_HEAVY: "Bundler wallets hold a large share",
+  HOLD_INSIDER_HEAVY: "Insider wallets hold a large share",
+  HOLD_INSIDER_DUMPED: "Insiders have already dumped their tokens",
+  FLOW_ONE_WAY: "Trading flows almost entirely one way",
+  FLOW_WALLET_FARM: "Wallet farm activity detected",
+  FLOW_WASH_DOMINATED: "Wash trading dominates the volume",
+  FLOW_BUNDLED_LAUNCH: "The launch was bought in bundled transactions",
+  FLOW_MECHANICAL_TRADING: "Mechanical bot trading pattern",
+  FLOW_RING_DOMINATED: "A coordinated trading ring dominates",
+  FLOW_BUNDLER_SERVICE: "A known bundler service was used at launch",
+  REP_SERIAL_RUGGER: "The creator has rugged tokens before",
+  REP_RISKY_CREATOR: "The creator has a risky track record",
+  REP_SCAMMER_FUNDED: "The creator was funded by a known scammer wallet",
+  REP_IMITATOR_SYMBOL: "Copycat: uses the symbol of a known token",
+  REP_IMITATOR_NAME: "Copycat: uses the name of a known token",
+  REP_IMITATOR_IMAGE: "Copycat: uses the image of a known token",
+  SOCIAL_COORDINATED_PROMOTION: "Coordinated promotion campaign detected",
+  SOCIAL_SCRIPTED_PROMOTION: "Scripted promotion campaign detected",
+};
+
+function reasonLabels(codes: string[], prefix: string): string[] {
+  return codes.filter((c) => c.startsWith(prefix)).map((c) => REASON_LABELS[c] ?? c);
+}
+
+function codexTaxFinding(risk: CodexRisk): TokenSafetyFinding {
+  const buy = risk.buyTax !== null ? risk.buyTax * 100 : null;
+  const sell = risk.sellTax !== null ? risk.sellTax * 100 : null;
+  const high = (buy !== null && buy > 10) || (sell !== null && sell > 10);
+  return {
+    key: "tax",
+    label: "Buy and sell tax",
+    status: high ? "warn" : "pass",
+    detail: `Buy ${fmtPct(buy)}, sell ${fmtPct(sell)}, measured by simulated trades`,
+    explanation: high
+      ? "A tax above 10% eats a big chunk of every trade. High sell taxes are a classic slow-rug setup."
+      : "Codex measured these taxes with simulated buys and sells, and they look normal. Remember the tax can sometimes be changed by the contract owner.",
+  };
+}
+
+function buildCodexFindings(token: CodexToken): TokenSafetyFinding[] {
+  const findings: TokenSafetyFinding[] = [];
+  const risk = token.risk;
+  const reasons = risk?.reasons ?? [];
+
+  const proof = reasonLabels(reasons, "PROOF_");
+  if (reasons.includes("LABEL_MANUAL_SCAM")) proof.push("Labelled a scam by Codex moderators");
+  if (proof.length > 0) {
+    findings.push({
+      key: "codex-proof",
+      label: "Proven scam mechanics",
+      status: "fail",
+      detail: proof.join(". "),
+      explanation:
+        "Codex proved this in simulated trades or moderator review, not just pattern matching. Treat this token as a scam and do not buy it.",
+    });
+  }
+
+  const liq = reasonLabels(reasons, "LIQ_");
+  if (liq.length > 0) {
+    findings.push({
+      key: "codex-liquidity",
+      label: "Liquidity risk",
+      status: "warn",
+      detail: liq.join(". "),
+      explanation:
+        "Liquidity is what lets you sell. Unlocked, minimal or draining liquidity means the pool can be pulled and late holders left holding unsellable tokens.",
+    });
+  }
+
+  const hold = reasonLabels(reasons, "HOLD_");
+  if (hold.length > 0) {
+    findings.push({
+      key: "codex-concentration",
+      label: "Holder concentration",
+      status: "warn",
+      detail: hold.join(". "),
+      explanation:
+        "Codex tracks sniper, bundler and insider wallets from the launch blocks. When those groups or the developer hold a big share, their sells decide the price.",
+    });
+  }
+
+  const flow = reasonLabels(reasons, "FLOW_");
+  if (flow.length > 0) {
+    const services = risk?.bundlerServices?.length
+      ? ` Bundler service detected: ${risk.bundlerServices.join(", ")}.`
+      : "";
+    findings.push({
+      key: "codex-flow",
+      label: "Suspicious trading patterns",
+      status: "warn",
+      detail: flow.join(". ") + services,
+      explanation:
+        "Wash trading, wallet farms and bundled buys fake demand. The chart can look alive while real buyers are scarce, and the fake volume disappears the moment insiders exit.",
+    });
+  }
+
+  const auth = reasonLabels(reasons, "AUTH_");
+  if (auth.length > 0) {
+    findings.push({
+      key: "codex-authority",
+      label: "Owner powers",
+      status: "warn",
+      detail: auth.join(". "),
+      explanation:
+        "These are live powers over the token and its holders. Each one is a way holders can be hurt if the controlling wallet turns malicious or gets compromised.",
+    });
+  }
+
+  const rep = reasonLabels(reasons, "REP_");
+  if (rep.length > 0) {
+    findings.push({
+      key: "codex-creator",
+      label: "Creator history",
+      status: reasons.includes("REP_SERIAL_RUGGER") ? "fail" : "warn",
+      detail: rep.join(". "),
+      explanation:
+        "Codex links this token to its creator wallet and scores that wallet's track record. A creator who has rugged before is the strongest social red flag there is.",
+    });
+  }
+
+  const social = reasonLabels(reasons, "SOCIAL_");
+  if (social.length > 0) {
+    findings.push({
+      key: "codex-promotion",
+      label: "Promotion red flags",
+      status: "warn",
+      detail: social.join(". "),
+      explanation:
+        "Coordinated promotion is how manufactured tokens find exit liquidity. If the hype is scripted, the audience is what is being sold to insiders.",
+    });
+  }
+
+  if (token.top10HoldersPercent !== null) {
+    const p = token.top10HoldersPercent;
+    findings.push({
+      key: "codex-top10",
+      label: "Top 10 holders",
+      status: p > 50 ? "warn" : "pass",
+      detail: `The top 10 wallets hold ${p.toFixed(1)}% of the supply`,
+      explanation:
+        "If a handful of wallets hold most of the supply, one seller can crash the price. Broad distribution across many holders is healthier.",
+    });
+  }
+
+  return findings;
+}
+
 export type TokenSafetyFinding = {
   key: string;
   label: string;
@@ -71,6 +326,7 @@ export type TokenSafetyResult = {
   timestamp: string;
   cached: boolean;
   dataSource: string;
+  codex: { verdict: string; score: number | null; coverage: string | null } | null;
 };
 
 function bool(v: unknown): boolean {
@@ -231,33 +487,102 @@ function noDataResult(address: string, chain: string, label: string, timestamp: 
     address, chain, chainLabel: label,
     tokenName: null, tokenSymbol: null,
     verdict: "unknown",
-    verdictReason: `GoPlus could not scan this token on ${label} right now. Try again later.`,
-    findings: [], timestamp, dataSource: "GoPlus Security",
+    verdictReason: `Neither scanner could scan this token on ${label} right now. It may be too new to be indexed yet. Try again in a few minutes.`,
+    findings: [], timestamp, dataSource: "Codex and GoPlus Security", codex: null,
+  };
+}
+
+async function fetchGoPlusRaw(address: string, chain: string): Promise<Record<string, unknown> | null> {
+  const url = `${GOPLUS_BASE}/${chain}?contract_addresses=${encodeURIComponent(address)}`;
+  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" } });
+  if (!res.ok) return null;
+  const payload = (await res.json()) as { code?: number; result?: Record<string, Record<string, unknown>> };
+  if (payload?.code !== 1) return null;
+  const raw = payload?.result?.[address] ?? payload?.result?.[address.toLowerCase()];
+  if (!raw || typeof raw !== "object" || Object.keys(raw).length === 0) return null;
+  return raw;
+}
+
+function combinedVerdict(
+  findings: TokenSafetyFinding[],
+  codexRisk: CodexRisk | null
+): { verdict: TokenSafetyResult["verdict"]; reason: string } {
+  if (!codexRisk || !codexRisk.verdict) return verdictFor(findings);
+  const fails = findings.filter((f) => f.status === "fail").length;
+  const warns = findings.filter((f) => f.status === "warn").length;
+  const scoreText = codexRisk.score !== null ? ` (risk score ${Math.round(codexRisk.score)} out of 100)` : "";
+  const cv = codexRisk.verdict;
+
+  if (cv === "SCAM") {
+    return { verdict: "high-risk", reason: `Codex rates this token a proven scam${scoreText}. Do not buy it, and do not send it any funds.` };
+  }
+  if (cv === "HIGH_RISK" || fails > 0) {
+    return {
+      verdict: "high-risk",
+      reason: `Codex rates this token high risk${scoreText}${fails > 0 ? `, and the scan found ${fails} critical red flag${fails > 1 ? "s" : ""}` : ""}. Do not buy it.`,
+    };
+  }
+  if (cv === "CAUTION" || cv === "VERIFIED_CONTESTED" || warns > 0) {
+    return {
+      verdict: "caution",
+      reason: `Codex rates this token ${cv === "VERIFIED_CONTESTED" ? "verified but contested" : "caution"}${scoreText}. ${warns} warning${warns === 1 ? "" : "s"} below. Read each one before putting money in.`,
+    };
+  }
+  if ((codexRisk.coverage === "NOT_ANALYZED" || codexRisk.coverage === "INCONCLUSIVE") && fails === 0 && warns === 0) {
+    return {
+      verdict: "caution",
+      reason:
+        "No risk signals have fired yet, but Codex has not completed its contract analysis on this token, so an all-clear would be premature. Recheck before buying.",
+    };
+  }
+  return {
+    verdict: "safe",
+    reason: `No red flags detected. Codex rates this token ${cv === "VERIFIED" ? "verified" : "neutral"}${scoreText}, and the contract scan is clean.${codexRisk.coverage === "STALE" ? " Its contract analysis is being refreshed, so recheck before a large buy." : ""}`,
   };
 }
 
 async function checkToken(address: string, chain: string): Promise<Omit<TokenSafetyResult, "cached">> {
   const { label, kind } = CHAINS[chain];
-  const url = `${GOPLUS_BASE}/${chain}?contract_addresses=${encodeURIComponent(address)}`;
   const timestamp = new Date().toISOString();
-  const res = await fetch(url, { headers: { "User-Agent": "cryptosbeginner-token-safety/1.0" } });
-  if (!res.ok) return noDataResult(address, chain, label, timestamp);
-  const payload = (await res.json()) as { code?: number; result?: Record<string, Record<string, unknown>> };
-  if (payload?.code !== 1) return noDataResult(address, chain, label, timestamp);
-  const raw = payload?.result?.[address] ?? payload?.result?.[address.toLowerCase()];
+  const [raw, codex] = await Promise.all([
+    fetchGoPlusRaw(address, chain).catch(() => null),
+    fetchCodex(address, chain),
+  ]);
 
-  if (!raw || typeof raw !== "object" || Object.keys(raw).length === 0) {
+  if (!raw && !codex) {
     return noDataResult(address, chain, label, timestamp);
   }
 
-  const findings = buildFindings(raw, kind);
-  const { verdict, reason } = verdictFor(findings);
+  const codexRisk = codex?.risk ?? null;
+  const codexFindings = codex ? buildCodexFindings(codex) : [];
+  const codexHasTax = codexRisk !== null && (codexRisk.buyTax !== null || codexRisk.sellTax !== null);
+
+  const merged: TokenSafetyFinding[] = [...codexFindings];
+  if (codexHasTax && codexRisk) merged.push(codexTaxFinding(codexRisk));
+
+  if (raw) {
+    let gf = buildFindings(raw, kind);
+    if (codexHasTax) gf = gf.filter((f) => f.key !== "tax");
+    if (codex && codex.top10HoldersPercent !== null) gf = gf.filter((f) => f.key !== "holders");
+    if (codexFindings.some((f) => f.key === "codex-proof")) gf = gf.filter((f) => f.key !== "honeypot");
+    if (codexFindings.some((f) => f.key === "codex-authority")) gf = gf.filter((f) => f.key !== "mint");
+    merged.push(...gf);
+  }
+
+  const { verdict, reason } = combinedVerdict(merged, codexRisk);
+  const sources: string[] = [];
+  if (codex) sources.push("Codex (Defined.fi)");
+  if (raw) sources.push("GoPlus Security");
+
   return {
     address, chain, chainLabel: label,
-    tokenName: typeof raw.token_name === "string" ? raw.token_name : null,
-    tokenSymbol: typeof raw.token_symbol === "string" ? raw.token_symbol : null,
-    verdict, verdictReason: reason, findings, timestamp,
-    dataSource: "GoPlus Security",
+    tokenName: (typeof raw?.token_name === "string" ? raw.token_name : null) ?? codex?.name ?? null,
+    tokenSymbol: (typeof raw?.token_symbol === "string" ? raw.token_symbol : null) ?? codex?.symbol ?? null,
+    verdict, verdictReason: reason, findings: merged, timestamp,
+    dataSource: sources.join(" and "),
+    codex: codexRisk
+      ? { verdict: codexRisk.verdict ?? "UNASSESSED", score: codexRisk.score, coverage: codexRisk.coverage }
+      : null,
   };
 }
 

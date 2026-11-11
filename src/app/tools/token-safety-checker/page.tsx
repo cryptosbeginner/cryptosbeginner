@@ -8,12 +8,12 @@ import TokenSafetyWidget from "./TokenSafetyWidget";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/tools/token-safety-checker`;
 
-const UPDATED = "20 October 2026";
+const UPDATED = "12 November 2026";
 
 export const metadata: Metadata = {
   title: "Token Safety Checker: Spot Honeypots and Rug Pulls | CryptosBeginner",
   description:
-    "Paste any token contract address and check it for honeypot logic, sell restrictions, hidden taxes, mint functions, and proxy contracts. Free scanner powered by GoPlus Security.",
+    "Paste any token contract address and check it for honeypot logic, sell restrictions, hidden taxes, mint functions, and proxy contracts. Free scanner powered by Codex and GoPlus Security.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Token Safety Checker: Spot Honeypots and Rug Pulls",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Token Safety Checker",
-    description: "Scan any token contract for honeypots and rug pull red flags. Free, powered by GoPlus Security.",
+    description: "Scan any token contract for honeypots and rug pull red flags. Free, powered by Codex and GoPlus Security.",
   },
 };
 
@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "What does the token safety checker look for?",
     answer:
-      "It scans the token smart contract for the most common scam patterns: honeypot logic that blocks selling, restrictions that stop you selling all your tokens, high buy or sell taxes, mint functions that let the owner print more tokens, upgradeable proxy contracts, unrenounced ownership, and unverified source code.",
+      "It scans the token smart contract for the most common scam patterns: honeypot logic that blocks selling, restrictions that stop you selling all your tokens, high buy or sell taxes, mint functions that let the owner print more tokens, upgradeable proxy contracts, unrenounced ownership, and unverified source code. On top of the contract checks, the Codex risk engine adds holder concentration, sniper and bundler activity, wash trading, and the creator wallet's history of past tokens.",
   },
   {
     question: "Does a clean scan mean the token is safe?",
@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "Where does the scan data come from?",
     answer:
-      "GoPlus Security, whose token security API is embedded in CoinGecko, OKX Wallet, and Trust Wallet. The scan is free and runs against their live database.",
+      "Two sources. Codex, the data API behind Defined.fi, provides the headline risk verdict: a score out of 100 with reason codes covering proven honeypots, holder concentration, sniper and bundler wallets, wash trading, liquidity risk and the creator wallet's track record. GoPlus Security, whose token security API is embedded in CoinGecko, OKX Wallet, and Trust Wallet, adds contract-level checks such as mint functions, proxy contracts and ownership. Both scans are free.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function TokenSafetyCheckerPage() {
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
                 Paste any token contract address and scan it for the classic rug pull patterns:
                 honeypots, sell blocks, hidden taxes, mint functions, and upgradeable contracts.
-                Free, across 24 networks, powered by GoPlus Security.
+                Free, across 24 networks, powered by Codex and GoPlus Security.
               </p>
               <div className="mt-6 flex flex-wrap gap-2 text-xs font-black">
                 <span className="rounded-full bg-white/10 px-3.5 py-2 text-emerald-300">Honeypot scan</span>
@@ -102,7 +102,7 @@ export default function TokenSafetyCheckerPage() {
                 <span className="rounded-full bg-white/10 px-3.5 py-2 text-rose-300">Sell-block detection</span>
               </div>
               <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
-                Updated {UPDATED} · Data by GoPlus Security
+                Updated {UPDATED} · Data by Codex and GoPlus Security
               </p>
             </div>
             <div className="hidden justify-center md:flex" aria-hidden="true">
