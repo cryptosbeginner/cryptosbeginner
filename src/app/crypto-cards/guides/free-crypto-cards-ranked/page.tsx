@@ -117,18 +117,18 @@ const ranked = [
     why: "1% back in mUSD on the Virtual card and self-custody until the moment of payment, inside the wallet many users already have. Availability is country dependent, and the reviewed page noted US and UK signups temporarily closed, so confirm you can actually get it before planning around it.",
   },
   {
-    rank: 10,
-    name: "Belo Card",
-    href: "/crypto-cards/belo-card",
-    facts: "No issuance or maintenance fee per the official help center, per our listing.",
-    why: "A clean free offer aimed at Latin American users who want to spend crypto without account fees. Shipping, replacement, withdrawal, and some international transaction fees may still apply, so the free part is the account, not every action you take with it.",
-  },
-  {
     rank: 9,
     name: "Utorg Card",
     href: "/crypto-cards/utorg-card",
     facts: "No issuance, monthly, annual, or replacement fees in the published terms, with zero payment and FX fees flagged as a limited-time promotion on the card page, per our listing.",
     why: "The cheapest way to spend USDC in the EEA right now: a non-custodial virtual Visa with monthly limits up to €30,000 and no cashback to complicate the math. The trade-offs are real: virtual only, EEA residents only with Ukraine also on the issuer grid, USDC top-ups only, and top-ups credit at 1 USDC = $0.9995, so a small conversion cost hides in the rate.",
+  },
+  {
+    rank: 10,
+    name: "Belo Card",
+    href: "/crypto-cards/belo-card",
+    facts: "No issuance or maintenance fee per the official help center, per our listing.",
+    why: "A clean free offer aimed at Latin American users who want to spend crypto without account fees. Shipping, replacement, withdrawal, and some international transaction fees may still apply, so the free part is the account, not every action you take with it.",
   },
 ];
 
