@@ -292,6 +292,22 @@ export default function SpendingPage() {
             </table>
           </div>
 
+          <h2 className="mt-14 text-2xl font-black tracking-[-0.02em] text-slate-950">Monthly spend reports</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">One report per month: the total, the change on the month before, and the largest tracked programs.</p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[...MONTHLY_SERIES].reverse().map((m, i, arr) => {
+              const total = monthTotal(m);
+              const prev = arr[i + 1] ? monthTotal(arr[i + 1]) : null;
+              const pct = prev ? ((total - prev) / prev) * 100 : null;
+              return (
+                <Link key={m.month} href={`/crypto-cards/spending/${m.month}`} className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+                  <p className="text-sm font-black text-slate-950">{m.label}</p>
+                  <p className="mt-1 text-xs font-semibold text-slate-500">{formatSpend(total)} spent{pct !== null ? ` · ${pct >= 0 ? "+" : ""}${pct.toFixed(1)}% vs previous month` : ""}</p>
+                </Link>
+              );
+            })}
+          </div>
+
           <h2 className="mt-14 text-2xl font-black tracking-[-0.02em] text-slate-950">What the October numbers say</h2>
           <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-600">
             <li>

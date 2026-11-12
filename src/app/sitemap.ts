@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { glossaryTerms } from "./learn/crypto-glossary/glossary-data";
 import { cardListings } from "./crypto-cards/cards-data";
+import { COMPARE_PAIRS } from "./crypto-cards/compare-data";
+import { MONTHLY_SERIES } from "./crypto-cards/spend-data";
 import { editorialPages } from "./crypto-cards/editorial-data";
 import { countries } from "./crypto-cards/countries/countries-data";
 import { dexServices } from "./dexes/dex-data";
@@ -311,6 +313,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...regionRoutes,
     ...localizedRegionRoutes,
     ...cardListings.map((card) => `/crypto-cards/${card.slug}`),
+    "/crypto-cards/compare",
+    ...COMPARE_PAIRS.map((p) => `/crypto-cards/compare/${p.pairSlug}`),
+    ...MONTHLY_SERIES.map((m) => `/crypto-cards/spending/${m.month}`),
     ...editorialPages.map((page) => `/crypto-cards/${page.slug}`),
     ...countries.map((c) => `/crypto-cards/countries/${c.slug}`),
     "/crypto-cards/countries",

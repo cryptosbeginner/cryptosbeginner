@@ -54,12 +54,12 @@ export const OCTOBER_2026_PROGRAMS: ProgramSpend[] = [
   { program: "ether.fi Cash", slug: "etherfi-cash-card", spendUsd: 141_900_000, sharePct: 10, vsPrevPct: 10, basis: "onchain", avgPaymentUsd: 76, payingUsers: 51_839, monthToDateUsd: 26_700_000 },
   { program: "KAST", slug: "kast-card", spendUsd: 121_000_000, sharePct: 8.8, vsPrevPct: 6.3, basis: "daily-batches", monthToDateUsd: 19_500_000 },
   { program: "Wirex One", slug: "wirex-one-card", spendUsd: 54_800_000, sharePct: 4.0, vsPrevPct: 15, basis: "onchain", avgPaymentUsd: 97, payingUsers: 23_608, monthToDateUsd: 11_300_000 },
-  { program: "Karta", spendUsd: 53_600_000, sharePct: 3.9, vsPrevPct: 8.4, basis: "daily-batches", monthToDateUsd: 8_300_000 },
+  { program: "Karta", slug: "karta-card", spendUsd: 53_600_000, sharePct: 3.9, vsPrevPct: 8.4, basis: "daily-batches", monthToDateUsd: 8_300_000 },
   { program: "Plasma One", slug: "plasma-one-card", spendUsd: 30_200_000, sharePct: 2.2, vsPrevPct: 18, basis: "onchain", avgPaymentUsd: 182, payingUsers: 22_636, monthToDateUsd: 4_800_000 },
   { program: "Kolo", slug: "kolo-card", spendUsd: 20_500_000, sharePct: 1.5, vsPrevPct: 4.4, basis: "onchain", avgPaymentUsd: 249, monthToDateUsd: 3_900_000 },
   { program: "Karta.io", spendUsd: 18_000_000, sharePct: 1.3, vsPrevPct: 8.1, basis: "daily-batches", monthToDateUsd: 2_800_000 },
   { program: "Tria", slug: "tria-card", spendUsd: 15_800_000, sharePct: 1.2, vsPrevPct: -5.7, basis: "onchain", avgPaymentUsd: 147, payingUsers: 11_580, monthToDateUsd: 2_500_000 },
-  { program: "Coca", spendUsd: 7_800_000, sharePct: 0.6, vsPrevPct: -16, basis: "onchain", avgPaymentUsd: 57, payingUsers: 12_199, monthToDateUsd: 1_400_000 },
+  { program: "Coca", slug: "coca-card", spendUsd: 7_800_000, sharePct: 0.6, vsPrevPct: -16, basis: "onchain", avgPaymentUsd: 57, payingUsers: 12_199, monthToDateUsd: 1_400_000 },
   { program: "Gnosis Pay", slug: "gnosis-pay-card", spendUsd: 6_100_000, sharePct: 0.4, vsPrevPct: -20, basis: "onchain", avgPaymentUsd: 48, payingUsers: 6_266, monthToDateUsd: 855_000 },
   { program: "Gate Card", slug: "gate-card", spendUsd: 3_800_000, sharePct: 0.3, vsPrevPct: 40, basis: "issuer-reported", monthToDateUsd: 649_500 },
   { program: "Avici", slug: "avici-card", spendUsd: 3_700_000, sharePct: 0.3, vsPrevPct: -3.0, basis: "onchain", avgPaymentUsd: 149, payingUsers: 3_196, monthToDateUsd: 793_500 },
@@ -67,13 +67,13 @@ export const OCTOBER_2026_PROGRAMS: ProgramSpend[] = [
   { program: "MetaMask Card", slug: "metamask-card", spendUsd: 3_400_000, sharePct: 0.2, vsPrevPct: 1.0, basis: "onchain", avgPaymentUsd: 52, payingUsers: 4_076, monthToDateUsd: 546_700 },
   { program: "Ethena Pay", slug: "ethena-pay-card", spendUsd: 3_100_000, sharePct: 0.2, vsPrevPct: 97, basis: "onchain", avgPaymentUsd: 75, payingUsers: 1_255, monthToDateUsd: 703_600 },
   { program: "Avalanche Card", slug: "avalanche-card", spendUsd: 2_800_000, sharePct: 0.2, vsPrevPct: 1.8, basis: "onchain", avgPaymentUsd: 40, payingUsers: 10_465, monthToDateUsd: 414_100 },
-  { program: "Tuyo", spendUsd: 2_100_000, sharePct: 0.2, vsPrevPct: -0.8, basis: "daily-batches", monthToDateUsd: 306_600 },
+  { program: "Tuyo", slug: "tuyo-card", spendUsd: 2_100_000, sharePct: 0.2, vsPrevPct: -0.8, basis: "daily-batches", monthToDateUsd: 306_600 },
   { program: "Bitget Wallet", slug: "bitget-wallet-card", spendUsd: 1_800_000, sharePct: 0.1, vsPrevPct: -2.1, basis: "onchain", avgPaymentUsd: 38, payingUsers: 10_991, monthToDateUsd: 304_300 },
-  { program: "Exa", spendUsd: 1_700_000, sharePct: 0.1, vsPrevPct: 0.0, basis: "onchain", avgPaymentUsd: 80, payingUsers: 1_557, monthToDateUsd: 229_800 },
+  { program: "Exa", slug: "exa-card", spendUsd: 1_700_000, sharePct: 0.1, vsPrevPct: 0.0, basis: "onchain", avgPaymentUsd: 80, payingUsers: 1_557, monthToDateUsd: 229_800 },
   { program: "Solayer Pay", slug: "solayer-card", spendUsd: 1_300_000, sharePct: 0.1, vsPrevPct: -5.0, basis: "daily-batches", monthToDateUsd: 229_000 },
   { program: "BFinance", spendUsd: 1_100_000, sharePct: 0.1, vsPrevPct: 9.1, basis: "issuer-reported", monthToDateUsd: 177_200 },
   { program: "Phantom Cash", slug: "phantom-cash-card", spendUsd: 1_100_000, sharePct: 0.1, vsPrevPct: -2.5, basis: "onchain", avgPaymentUsd: 40, payingUsers: 2_663, monthToDateUsd: 183_900 },
-  { program: "Hyperbeat", spendUsd: 691_200, sharePct: 0.1, vsPrevPct: -4.9, basis: "onchain", avgPaymentUsd: 35, payingUsers: 560, monthToDateUsd: 164_000 },
+  { program: "Hyperbeat", slug: "hyperbeat-card", spendUsd: 691_200, sharePct: 0.1, vsPrevPct: -4.9, basis: "onchain", avgPaymentUsd: 35, payingUsers: 560, monthToDateUsd: 164_000 },
   { program: "Solid", slug: "solid-card", spendUsd: 689_700, sharePct: 0.1, vsPrevPct: 148, basis: "onchain", avgPaymentUsd: 50, payingUsers: 425, monthToDateUsd: 136_100 },
   { program: "SafePal", slug: "safepal-card", spendUsd: 296_600, sharePct: 0.0, vsPrevPct: -29, basis: "onchain", avgPaymentUsd: 14, payingUsers: 6_010, monthToDateUsd: 45_600 },
   { program: "VaultLeap", spendUsd: 34_200, sharePct: 0.0, vsPrevPct: 26, basis: "onchain", avgPaymentUsd: 40, payingUsers: 158, monthToDateUsd: 6_354 },
@@ -126,4 +126,23 @@ export function formatSignedPct(pct: number | null): string {
   if (pct === null) return "n/a";
   const sign = pct > 0 ? "+" : "";
   return `${sign}${pct}%`;
+}
+
+// Per-card lookup for listing pages and the directory. OCTOBER_2026_PROGRAMS is
+// published in descending spend order, so the array index is the rank.
+export interface CardSpend extends ProgramSpend {
+  rank: number;
+  trackedCount: number;
+}
+
+export const SPEND_TRACKED_COUNT = OCTOBER_2026_PROGRAMS.length;
+
+const SPEND_BY_SLUG = new Map<string, CardSpend>(
+  OCTOBER_2026_PROGRAMS.flatMap((p, i) =>
+    p.slug ? [[p.slug, { ...p, rank: i + 1, trackedCount: SPEND_TRACKED_COUNT }] as [string, CardSpend]] : [],
+  ),
+);
+
+export function getCardSpend(slug: string): CardSpend | null {
+  return SPEND_BY_SLUG.get(slug) ?? null;
 }

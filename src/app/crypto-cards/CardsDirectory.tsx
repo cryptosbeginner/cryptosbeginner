@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cardCategories, cardListings, CardCategory, CardListing } from "./cards-data";
 import { getCardRating, RATING_METHODOLOGY } from "./ratings";
+import { formatSpend, getCardSpend } from "./spend-data";
 import RatingBadge from "./RatingBadge";
 import TrustStats from "./TrustStats";
 
@@ -98,7 +99,7 @@ export default function CardsDirectory() {
   const [category, setCategory] = useState<"all" | CardCategory>("all");
   const [region, setRegion] = useState("all");
   const [network, setNetwork] = useState("all");
-  const [sort, setSort] = useState<"name" | "reviewed" | "rating">("name");
+  const [sort, setSort] = useState<"name" | "reviewed" | "rating" | "spend">("name");
   const [view, setView] = useState<"grid" | "table">("grid");
   const [cashback, setCashback] = useState("all");
 
@@ -139,6 +140,12 @@ export default function CardsDirectory() {
       })
       .sort((a, b) => {
         if (sort === "rating") return (ratings.get(b.slug)?.score ?? 0) - (ratings.get(a.slug)?.score ?? 0);
+        if (sort === "spend") {
+          const sa = getCardSpend(a.slug)?.spendUsd ?? -1;
+          const sb = getCardSpend(b.slug)?.spendUsd ?? -1;
+          if (sb !== sa) return sb - sa;
+          return a.name.localeCompare(b.name);
+        }
         return sort === "name" ? a.name.localeCompare(b.name) : b.reviewedAt.localeCompare(a.reviewedAt);
       });
   }, [category, query, region, network, sort, cashback, ratings]);
@@ -213,10 +220,11 @@ export default function CardsDirectory() {
               <option value="yes">Has cashback</option>
               <option value="no">No cashback</option>
             </select>
-            <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "reviewed" | "rating")} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Sort">
+            <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "reviewed" | "rating" | "spend")} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-black" aria-label="Sort">
               <option value="name">Name A-Z</option>
               <option value="reviewed">Recently reviewed</option>
               <option value="rating">Top rated</option>
+              <option value="spend">Most spent (Oct 2026)</option>
             </select>
             <div className="flex overflow-hidden rounded-xl border border-slate-200">
               <button onClick={() => setView("grid")} className={`px-3.5 py-2.5 text-xs font-black ${view === "grid" ? "bg-slate-950 text-white" : "bg-white text-slate-600"}`}>Cards</button>
@@ -322,6 +330,7 @@ export default function CardsDirectory() {
                     <p className="mt-3 line-clamp-2 text-sm leading-6 text-slate-600">{card.shortDescription}</p>
                     <div className="mt-4 space-y-2 border-t border-slate-100 pt-4 text-xs leading-5">
                       <p className="flex gap-2"><Glyph name="money" size={14} className="mt-0.5 shrink-0 text-slate-400" /><span className="text-slate-600 line-clamp-2">{card.pricing}</span></p>
+                      {(() => { const s = getCardSpend(card.slug); return s ? <p className="flex gap-2"><Glyph name="wallet" size={14} className="mt-0.5 shrink-0 text-cyan-600" /><span className="font-bold text-slate-700">{formatSpend(s.spendUsd)} spent in Oct 2026 · #{s.rank} of {s.trackedCount} tracked programs</span></p> : null; })()}
                       <p className="flex gap-2"><Glyph name="globe" size={14} className="mt-0.5 shrink-0 text-slate-400" /><span className="text-slate-600 line-clamp-1">{card.availability}</span></p>
                     </div>
                     <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
