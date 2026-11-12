@@ -13,6 +13,37 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-13",
+    type: "promo",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma ends the free Core year early, on November 16",
+    details:
+      "Members who joined Core free for the first year under Plasma's June 2026 promotion are being emailed that the free period ends on November 16, 2026, roughly five months into the promised year, as reported by @xKseilas. On $1,000 of monthly spend, the cashback math drops from $30 to about $10.50. Subscriptions paid with the card, such as ChatGPT or Claude, keep charging after the 16th, just without the extra cashback the free Core period carried. The news lands days after Core was renamed Premium at $600 a year.",
+    sourceUrl: "https://x.com/xKseilas/status/2118635020587774448",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-13",
+    type: "catalog-update",
+    cardName: "VaultLeap Card",
+    title: "VaultLeap cards close on December 1, points and tiers end with them",
+    details:
+      "VaultLeap has told users its cards close on December 1, 2026, and its points and tiers end the same day. In the company's own words, quoted by @xKseilas in a roundup of perks cut in 2026: \"Points have no cash value.\" Spend or withdraw balances before the closure date. The card joins our graveyard of discontinued crypto cards.",
+    sourceUrl: "https://x.com/xKseilas/status/2118635020587774448",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-13",
+    type: "catalog-update",
+    cardName: "Crypto cards in India",
+    title: "Most crypto cards no longer work for Indian residents; three still do, with caveats",
+    details:
+      "An issuer-page review by @xKseilas (November 2026) found India on RedotPay's card issuance restriction list, with existing Indian users reporting rupee payments and ATM withdrawals declined since late October amid reports that the RBI and FIU are looking into offshore crypto cards. Of the cards checked, Onboard is the only one that says yes to India in writing (online payments only, $0.50 + 2.5% per rupee payment). Kolo does not ban India but publishes no allowed-country list and warns that passing KYC does not guarantee the card. Pionex does not ban India either, but its own blog says KYC alone does not unlock the card, and on September 9, 2026 FIU-IND named Pionex among 15 platforms it called non-compliant. Based's own docs list India as restricted despite threads claiming it works. MEXC, Exa, Solid, Avici, OKX, Nexo, Wirex, Binance, Crypto.com, Gnosis Pay and Bitget Wallet are closed or not listed for India.",
+    sourceUrl: "https://x.com/xKseilas/status/2119012949402517738",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
     date: "2026-11-12",
     type: "launch",
     cardName: "Karta Personal",
@@ -161,6 +192,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     details:
       "BIN research published by @xKseilas on November 3, 2026 found cards sold to individuals running on business ranges: Gate Essential on a Mastercard Purchasing BIN (Sutton Bank, US), GMGN on a Mastercard Corporate BIN (Hong Kong), Infini Lite on a Visa Business BIN (US), and Rain's issuer range on Visa Corporate T&E. The card type matters: EU interchange caps and the EU surcharge ban cover consumer cards only, and some merchants block business or prepaid BINs. Our BIN guide has the full explanation.",
     sourceLabel: "@xKseilas BIN research, November 3, 2026",
+  },
+  {
+    date: "2026-11-03",
+    type: "market",
+    cardName: "Gnosis Pay",
+    cardSlug: "gnosis-pay-card",
+    title: "Gnosis Pay emails cardholders about a data breach: names and shipping addresses taken",
+    details:
+      "On November 3, 2026 Gnosis Pay emailed card users that their names and shipping addresses were taken in a breach of the card system; funds were not affected. Rotki founder Lefteris Karapetsas said his email also listed his card number and every wallet linked to the account, a combination that lets anyone check those wallets onchain. It is the fourth crypto card hack since June 2026 and Gnosis Pay's second incident of the year. The consumer card closes on December 20, 2026, and its help pages say KYC and transaction records are kept for five more years. Our security incidents guide now covers the breach and what each card's terms say about who pays for unauthorized use.",
+    sourceUrl: "https://x.com/xKseilas/status/2118801142830502358",
+    sourceLabel: "@xKseilas, November 2026",
   },
   {
     date: "2026-11-02",

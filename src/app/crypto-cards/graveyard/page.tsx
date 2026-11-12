@@ -21,6 +21,17 @@ interface GraveyardEntry {
 
 const entries: GraveyardEntry[] = [
   {
+    name: "VaultLeap Card",
+    issuer: "VaultLeap",
+    status: "Shutting down",
+    date: "December 1, 2026",
+    whatHappened:
+      "VaultLeap announced its cards close on December 1, 2026, with its points and tiers ending the same day. In the company's own words, quoted in @xKseilas's November 2026 roundup of cut perks: \"Points have no cash value.\"",
+    lesson:
+      "Points that cannot be traded or redeemed for cash are worth exactly what the issuer decides on the day the program ends, which can be zero.",
+    verified: false,
+  },
+  {
     name: "Solflare Card",
     issuer: "Solflare, issued via Kulipa",
     status: "Paused",

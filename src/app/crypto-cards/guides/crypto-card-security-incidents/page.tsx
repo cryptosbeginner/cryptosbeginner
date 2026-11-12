@@ -9,13 +9,13 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/crypto-card-security-incidents`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "5 November 2026";
-const UPDATED_ISO = "2026-11-05";
+const UPDATED = "13 November 2026";
+const UPDATED_ISO = "2026-11-13";
 
 export const metadata: Metadata = {
   title: "Crypto Card Security Incidents: A Sourced History of Hacks, Exploits and Breaches",
   description:
-    "The major security incidents that hit crypto card users, each verified against a reputable source: Crypto.com in 2022, Infini in 2025, Gnosis Pay and the Rain contract exploit in 2026, and the Based card data breach. What happened, who paid, and how to protect yourself.",
+    "The major security incidents that hit crypto card users, each verified against a reputable source: Crypto.com in 2022, Infini in 2025, Gnosis Pay and the Rain contract exploit in 2026, the Based card data breach, and Gnosis Pay's November 2026 data breach. Plus what the cardholder terms actually say about who pays for unauthorized card use. What happened, who paid, and how to protect yourself.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Crypto Card Security Incidents | CryptosBeginner",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Crypto Card Security Incidents",
-    description: "Five verified incidents, one honest non-finding, and the patterns that connect them.",
+    description: "Six verified incidents, one honest non-finding, the liability rules that decide who pays, and the patterns that connect them.",
   },
   robots: { index: true, follow: true },
 };
@@ -152,14 +152,41 @@ export default function CryptoCardSecurityIncidentsPage() {
             This is the incident type card users underestimate. Money can be refunded. A passport number, birth date, and home address, linked to the knowledge that you hold crypto, cannot be un-leaked. Every crypto card requires KYC, so every cardholder has a file like this sitting with a provider or its vendor. Choose programs the way you would choose anyone you hand identity documents to.
           </GuideP>
 
+          <GuideH2>Gnosis Pay, November 2026: the breach that took data</GuideH2>
+          <GuideP>
+            Gnosis Pay appears in this guide twice, and the second incident is the quieter kind. On 3 November 2026 the company emailed cardholders that their names and shipping addresses were taken in a breach of the card system itself. Funds were not affected. Rotki founder Lefteris Karapetsas, a cardholder, said his email also listed his card number and every wallet address linked to the account. That combination is the problem: a name, a home address, and a list of wallet addresses lets anyone look those wallets up onchain and see what they hold.
+          </GuideP>
+          <GuideP>
+            The timing makes it permanent. The consumer card closes on 20 December 2026, and Gnosis Pay's own help pages say KYC and transaction records are kept for five more years after that. Closing the card does not close the file. Expect phishing that uses your real name and address to look legitimate, and remember the company's own warning: Gnosis Pay will never ask for your seed phrase, PIN, or to move funds.
+          </GuideP>
+
           <GuideH2>The one we could not verify: Wirex</GuideH2>
           <GuideP>
             Readers ask about Wirex because it is one of the oldest names in crypto cards, and old names attract rumors. We looked for a platform level Wirex security incident in reputable reporting before writing this guide, and we did not find one. Incident tracking reviews of Wirex likewise report no known platform hack or breach. What does exist is a long tail of individual account compromises, phishing losses, and bitter support and chargeback disputes, which is a service quality story, not a breach story. We are recording the non-finding rather than laundering rumor into fact. No platform incident is not the same as no risk: account level attacks are how most users actually lose money, on Wirex and everywhere else.
           </GuideP>
 
+          <GuideH2>Who pays when it is fraud: the liability rules in the terms</GuideH2>
+          <GuideP>
+            The refunds above were providers choosing to pay. A different question is what you are owed when someone uses your card without permission, and that answer sits in the cardholder agreement, where it varies more than most users expect. The summary below follows the current terms for seven cards, as compiled by @xKseilas from the agreements themselves. It covers card payments only: a wallet drained with a stolen seed phrase is not a card transaction, and none of these agreements applies to it.
+          </GuideP>
+          <BulletList
+            items={[
+              "ether.fi Cash: the US agreement caps your loss for unauthorized use at $50, and at zero once you report, unless there are two or more incidents in 12 months; ATM cash advances are not covered. The international terms have no $50 cap and give no refund if the card was lost or stolen, or if you did not report without undue delay.",
+              "KAST: the US agreement has the same $50 cap and conditions. The non-US terms charge you nothing after you notify them, but you may still owe charges made before notice. The US business card leaves you fully liable until you give notice.",
+              "Gnosis Pay: in the EEA you can lose up to 50 euros if the card was lost or stolen, and the first £35 outside the EEA; nothing after you report the card compromised. Report within 13 months at most. The card stops on 20 December 2026 and disputes are supported until 12 June 2028.",
+              "Crypto.com: the EU prepaid card terms say you accept the risk of unauthorized payments, while a later clause caps your exposure at the equivalent of £35 until you report. No refund if you did not keep your card details safe.",
+              "Wirex: the UK card caps your loss at £35 before you report and nothing after, with 13 months to flag a transaction. The global terms put everything spent before you block the card on you, with two weeks to dispute.",
+              "RedotPay: the Singapore card terms make you liable for all card transactions, authorized or not, with no refund if your card details leaked on your side; disputes run within 60 days. The Apple Pay and Google Pay terms make you liable until you report, with exceptions at RedotPay's sole discretion.",
+              "Tangem Pay: the card freezes instantly in the app and a virtual card reissue costs $5, with the old details stopping at once; a plastic replacement needs a new order. If your recovery phrase leaked, Tangem cannot recover the funds.",
+            ]}
+          />
+          <GuideP>
+            The pattern: on US agreements the $50 cap does real work, reporting fast is worth money everywhere, and on some non-US terms the honest answer is that the loss is yours. If someone skims your US ether.fi card and spends $800, reporting the same day caps your loss at $50. The same $800 taken from a self-custody wallet with a stolen seed phrase has no chargeback at all. Freeze the card in the app first, report it to support the same day, dispute every charge you do not recognize, and if a seed phrase leaked, move the funds to a new wallet instead.
+          </GuideP>
+
           <GuideH2>The patterns, and what actually protects you</GuideH2>
           <GuideP>
-            Five incidents, four different failure modes: an authentication bypass, an insider's leftover access, a smart contract flaw, shared issuer infrastructure, and a vendor dashboard. There is no single product feature that defeats all of them, including self-custody. What helps is boring and cumulative:
+            Six incidents, six different failure modes: an authentication bypass, an insider's leftover access, a smart contract flaw, shared issuer infrastructure, a vendor dashboard, and a card-system breach that took identity data. There is no single product feature that defeats all of them, including self-custody. What helps is boring and cumulative:
           </GuideP>
           <BulletList
             items={[
