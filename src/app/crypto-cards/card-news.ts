@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-12",
+    type: "launch",
+    cardName: "Karta Personal",
+    cardSlug: "karta-card",
+    title: "Karta is building a card that pays straight from your own wallet, on Tempo",
+    details:
+      "Karta, which @xKseilas puts at more than 25,000 monthly cardholders, is building a wallet-direct version of its Visa card on Tempo, the payments chain from Stripe and Paradigm. Instead of sending USDC to the card company first, you approve the card once with a spending limit (Tempo Access Keys) and each payment debits your own wallet at the terminal: nothing to sign, settlement final in about 500 ms, a chain fee of about $0.001 paid in stablecoins, and part of every block reserved for payments so a memecoin rush cannot slow card traffic. Karta's treasury already runs on Tempo and the user app is moving over; the same report says Wirex already lets the card programs it operates for other companies settle on Tempo. Tempo also launched credit this week, with borrowing against card settlements as one use case. Our Karta listing is updated, with the standing catch: the chain costs a tenth of a cent, but Karta's 1.5% fee per card payment is still what you pay.",
+    sourceUrl: "https://x.com/xKseilas/status/2119160658369638778",
+    sourceLabel: "Tempo and Karta wallet-direct card build, via @xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-12",
     type: "promo",
     cardName: "Kraken Debit Card (Krak)",
     cardSlug: "kraken-debit-card",

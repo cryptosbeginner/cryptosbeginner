@@ -4541,7 +4541,7 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A Visa Signature prepaid card with free crypto top-ups and a 1.5% card payment fee, available in 150 plus countries.",
     editorialSummary:
-      "Karta Personal is a Visa Signature prepaid card aimed at global crypto users. Crypto top-ups are free, while card payments carry a 1.5% fee. The virtual card costs 5 USDT and the physical card starts from 100 USDT. Karta advertises availability in more than 150 countries with KYC required at signup.",
+      "Karta Personal is a Visa Signature prepaid card aimed at global crypto users. Crypto top-ups are free, while card payments carry a 1.5% fee. The virtual card costs 5 USDT and the physical card starts from 100 USDT. Karta advertises availability in more than 150 countries with KYC required at signup. Karta reported more than 25,000 monthly cardholders in November 2026, and it is building a wallet-direct version of the card on Tempo (see the update note).",
     bestFor:
       "Frequent travelers who want a high-acceptance Visa Signature card with free crypto top-ups.",
     availability: "150+ countries. Provider does not publish the full list.",
@@ -4549,14 +4549,18 @@ export const cardListings: CardListing[] = [
     pricing:
       "Virtual card 5 USDT; physical card from 100 USDT; free crypto top-ups; 1.5% fee on card payments.",
     rewards: "No cashback advertised.",
-    funding: "Topped up with crypto from the user's wallet; top-ups are free.",
+    funding: "Topped up with crypto from the user's wallet; top-ups are free. A wallet-direct model is in development on Tempo, the payments chain from Stripe and Paradigm: the user approves the card once with a spending limit (Tempo Access Keys), and at the terminal the card debits the user's own wallet with nothing to sign, settlement final in about 500 ms and a chain fee of about $0.001 paid in stablecoins. Karta's treasury already runs on Tempo and the user app is moving over, per @xKseilas (November 2026); the pre-funded top-up model is what is live today.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://karta.io/",
     sourceLabel: "Karta",
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Karta Personal card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-10-15",
+    reviewedAt: "2026-11-12",
+    updateUrl: "https://x.com/xKseilas/status/2119160658369638778",
+    updateLabel: "Karta is building wallet-direct card payments on Tempo, via @xKseilas",
+    updateNote:
+      "Most crypto cards, Karta included today, spend from a balance you send the card company first. Karta is building the opposite on Tempo, the payments chain from Stripe and Paradigm: approve the card once with a spending limit (Tempo calls them Access Keys), and each card payment debits your own wallet directly, final in about 500 ms, with a chain fee of about $0.001 paid in stablecoins and part of every block reserved for payments so congestion cannot crowd card traffic out. Karta's treasury already runs on Tempo and the user app moves over next; @xKseilas puts Karta at more than 25,000 monthly cardholders. The same report notes Wirex already lets the card programs it runs for other companies settle on Tempo. The honest catch is unchanged: the chain part costs a tenth of a cent, but Karta's 1.5% fee on every card payment is still what you actually pay.",
     caution:
       "The 1.5% payment fee applies to every purchase, so compare it against cashback cards for your spending level.",
     verification: "KYC required at signup.",
