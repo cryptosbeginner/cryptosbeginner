@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import TokenSafetyWidget from "./TokenSafetyWidget";
+import TrendingBoard from "./TrendingBoard";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/tools/token-safety-checker`;
@@ -125,6 +126,8 @@ export default function TokenSafetyCheckerPage() {
 
         <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
           <TokenSafetyWidget />
+
+          <TrendingBoard />
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             <div className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm">

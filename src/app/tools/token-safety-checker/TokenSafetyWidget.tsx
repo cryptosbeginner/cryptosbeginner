@@ -254,6 +254,20 @@ export default function TokenSafetyWidget() {
     return () => clearInterval(id);
   }, [loading]);
 
+  // Prefill from the trending board: /tools/token-safety-checker?address=...&chain=...
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const addr = params.get("address");
+    const ch = params.get("chain");
+    if (addr && ch && CHAINS.some((c) => c.id === ch)) {
+      setAddress(addr);
+      setChain(ch);
+      void scan(addr, ch);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function scan(addr: string, chainId: string) {
     setLoading(true);
     setError(null);
