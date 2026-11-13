@@ -13,6 +13,48 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-14",
+    type: "fee-change",
+    cardName: "Declined payment fees",
+    title: "An empty crypto card can still cost you $10 a month in decline fees",
+    details:
+      "Visa lets a merchant retry the same charge up to 20 times in 30 days, and some cards bill you for every failure, as compiled by @xKseilas. KAST charges $0.50 each time a payment is declined for insufficient balance, and its help page says subscriptions count, so 20 retries on an empty card is $10. RedotPay gives 3 free declines per card a month, then $0.50 each (20 declines is $8.50), and a frozen card or a wrong card number counts as a decline. Tria charges up to $2 when an ATM declines you. We now count decline fees as part of a card's price and have added them to the KAST, RedotPay and Tria listings.",
+    sourceUrl: "https://x.com/xKseilas/status/2120958487329198142",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-14",
+    type: "market",
+    cardName: "AI subscription cashback",
+    title: "Ten crypto cards now pay cashback on AI subscriptions, from 5% to 50%",
+    details:
+      "@0xVishnya rounded up the cards that rebate ChatGPT, Claude and other AI subscriptions. Wirex One and COCA pay 50% (Wirex: ChatGPT from the Elite tier, Claude from Private; COCA: from Standard+, one subscription up to $70). Infini pays 30% on its free tier and 50% from Professional, capped at $10 a month. Bleap pays 20% on its free card, on up to EUR 23 per service. ether.fi Cash pays 10% on Luxe, 20% on Pinnacle and 30% on VIP; Solid pays 10% on Prime and 20% on Ultra; Xplace pays 5% on Gold and 10% on Platinum on up to $250 a month; Pulsar Money pays 8% in points on Pro this November; Lava pays 5% in bitcoin on a free card. Plasma One takes the other route: no rate, a fixed AI spend credit of $200 a year on Premium and $500 a year on Platinum. Each rate is now on the card's listing.",
+    sourceUrl: "https://x.com/0xVishnya/status/2121166180627173875",
+    sourceLabel: "@0xVishnya, November 2026",
+  },
+  {
+    date: "2026-11-14",
+    type: "promo",
+    cardName: "Avici Card",
+    cardSlug: "avici-card",
+    title: "Avici pays 5% back in SOL on London spending during Breakpoint, November 14 to 18",
+    details:
+      "For Solana Breakpoint week, Avici is paying 5% back in SOL on in-person spending at merchants recorded in London, Transport for London included, from November 14 to 18, 2026: up to $100 per user while a $10,000 campaign budget lasts, as reported by @SuriyaXBT. Online orders and ATM withdrawals do not count. The same roundup notes ether.fi Travel's standing offer of up to 65% off eligible flights and hotels plus 5% cashback on eligible hotel bookings, which is already on the ether.fi Cash listing.",
+    sourceUrl: "https://x.com/SuriyaXBT/status/2121183037916647850",
+    sourceLabel: "@SuriyaXBT, November 2026",
+  },
+  {
+    date: "2026-11-14",
+    type: "promo",
+    cardName: "Deblock Card",
+    cardSlug: "deblock-card",
+    title: "Deblock will refund GTA 6 for new users who spend 1,000 euros in 90 days",
+    details:
+      "In @xKseilas's price comparison of buying GTA 6 (79.99 euros on the PlayStation Store EU) with a crypto card, Deblock comes out at zero: new accounts using the code PAYDAY that spend 1,000 euros with the card within 90 days get the game refunded up to 79.99 euros, and pre-orders count. The same comparison notes that Nexo pays 10% back in NEXO on a first PlayStation or Microsoft Store purchase (capped at $8, to December 31), COCA's Elite tier pays 8% but needs 30,000 COCA staked, Oobit pays 10% in OOB that cannot be withdrawn, and Tria, Solid and PayitFast exclude games from their 3% cashback entirely. The exclusions are now noted on the Tria and Solid listings.",
+    sourceUrl: "https://x.com/xKseilas/status/2121195736746410124",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
     date: "2026-11-13",
     type: "promo",
     cardName: "Plasma One Card",
