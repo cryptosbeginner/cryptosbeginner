@@ -9,8 +9,8 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/crypto-card-bin-by-bin`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "5 November 2026";
-const UPDATED_ISO = "2026-11-05";
+const UPDATED = "15 November 2026";
+const UPDATED_ISO = "2026-11-15";
 
 export const metadata: Metadata = {
   title: "Who Issues Your Crypto Card? The BIN Guide to Issuers Behind the Brands",
@@ -102,7 +102,7 @@ const issuerRows = [
   },
   {
     issuer: "Issuer partners and BIN sponsors in Asia",
-    brands: "RedotPay (Xfers and Reap named as issuer partners, StraitsX as BIN sponsor for the Singapore launch), Backpack Card (Bano)",
+    brands: "RedotPay (programs split between StraitsX and Reap per PaymentScan, October 2026; Xfers also named as an issuer partner, and StraitsX as BIN sponsor for the Singapore launch), Backpack Card (Bano)",
     note: "In Asia, programs often stack a local licensed partner under the global brand. RedotPay's three named partners show how layered this can get.",
   },
   {
@@ -212,6 +212,9 @@ export default function CryptoCardBinByBinPage() {
           </div>
           <GuideP>
             Read the Rain row twice. One issuer group sits behind a large share of the self-custody card market, including several cards that market themselves against each other. That concentration is not automatically bad: Rain is a Visa and Mastercard principal member with real infrastructure, and scale brings competence. But it does mean an issuer level problem at Rain would not be one card's problem. In August 2026 an outdated Rain card contract was exploited and the losses landed on Avici and Tria users at the same time, which we cover in our guide to crypto card security incidents. Different brands, same plumbing, same bad day.
+          </GuideP>
+          <GuideP>
+            PaymentScan's issuer data puts the concentration in numbers: of the card spend it could attribute to an issuer in the third quarter of 2026, Rain processed 43%, StraitsX 36% and Wirex 17%. Some large programs hedge by splitting their cardholders across two issuers: KAST runs on Rain and Reap, RedotPay on StraitsX and Reap, and Kolo on Rain and Wirex (PaymentScan, October 2026). Geography is the usual reason. No issuer issues locally everywhere, so each user sits with the issuer that has a local BIN or local processing in their country, and a second issuer also leaves a program less exposed if one changes its terms or exits a market.
           </GuideP>
 
           <GuideH2>How to find your own card's issuer</GuideH2>

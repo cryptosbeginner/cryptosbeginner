@@ -7,8 +7,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/kast-review`;
-const UPDATED = "16 October 2026";
-const UPDATED_ISO = "2026-10-16";
+const UPDATED = "15 November 2026";
+const UPDATED_ISO = "2026-11-15";
 const AFFILIATE = "https://go.cryptosbeginner.com/KAST";
 const REF_CODE = "7MPKCWDC";
 
@@ -511,6 +511,16 @@ export default function KastReviewPage() {
               address from memory. A single wrong-network deposit can mean the funds are gone for
               good, and support cannot reverse an onchain transfer.
             </Callout>
+            <P>
+              One custody point most reviews skip: under KAST's terms, a crypto deposit is treated
+              as a sale to KAST in exchange for a USD-denominated claim. The assets are held by
+              BitGo and Fireblocks on KAST's own behalf, not in your name, so if KAST ever became
+              insolvent, cardholders would rank as unsecured creditors rather than owners of
+              their coins. KAST added redemption rights for unspent balances after public
+              criticism of this structure in July 2026 (documented in PaymentScan's stablecoin
+              card launch guide, November 2026). The Earn vaults are different: those stay
+              self-custodial, as the FAQ capture below shows.
+            </P>
           </Section>
 
           <Section id="app">

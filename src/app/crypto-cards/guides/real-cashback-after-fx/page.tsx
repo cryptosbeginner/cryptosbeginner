@@ -9,8 +9,8 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/real-cashback-after-fx`;
 const HUB_URL = `${SITE_URL}/crypto-cards`;
 
-const UPDATED = "12 November 2026";
-const UPDATED_ISO = "2026-11-12";
+const UPDATED = "15 November 2026";
+const UPDATED_ISO = "2026-11-15";
 
 export const metadata: Metadata = {
   title: "The Cashback That Actually Reaches You: Crypto Card Rewards After FX Fees",
@@ -226,6 +226,9 @@ export default function RealCashbackAfterFxPage() {
               "When a fee is not published, treat it as a question to ask in the app before you top up, never as a zero. Two of the six cards here could not be fully priced from public data, and both are popular.",
             ]}
           />
+          <GuideP>
+            There is a second reason to distrust headline rates: the programs themselves cannot afford them from card revenue alone. PaymentScan's October 2026 onchain data puts cashback actually paid out at 1.2% of spend for ether.fi Cash, 1.4% for Wirex One, 2.5% for Plasma One and 2.9% for Ethena Pay. Programs typically keep only about 0.1% of spend from interchange as an early program, and 0.5 to 0.6% at scale. The difference is a customer acquisition cost funded from token treasuries, staking tiers and plan fees, which is why generous rates tend to shrink when those budgets tighten, as several did through 2026.
+          </GuideP>
           <GuideP>
             For the domestic side of the picture, our effective cashback page runs the whole directory through the caps and fees formula at $500, $1,000, and $2,000 a month, and our advertised vs reality guide explains the traps behind the headline rates. Read them together and you have both halves of the deal.
           </GuideP>
