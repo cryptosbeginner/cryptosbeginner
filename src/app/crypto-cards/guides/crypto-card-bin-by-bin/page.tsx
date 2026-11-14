@@ -269,6 +269,12 @@ export default function CryptoCardBinByBinPage() {
               See the card graveyard
             </Link>
             <Link
+              href="/crypto-cards/guides/how-stablecoin-card-programs-work"
+              className="rounded-full border border-slate-300 px-6 py-3 text-sm font-black text-slate-700 hover:bg-slate-100"
+            >
+              How a stablecoin card program works
+            </Link>
+            <Link
               href={HUB_URL}
               className="rounded-full border border-slate-300 px-6 py-3 text-sm font-black text-slate-700 hover:bg-slate-100"
             >

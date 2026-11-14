@@ -86,6 +86,13 @@ const guides = [
     readTime: "9 min read",
   },
   {
+    slug: "how-stablecoin-card-programs-work",
+    title: "How a Stablecoin Card Program Actually Works",
+    description:
+      "The five layers behind every program, what each layer earns from your spending, why cashback pays more than the card makes, and what it costs to launch one. Built on PaymentScan's industry research.",
+    readTime: "12 min read",
+  },
+  {
     slug: "crypto-card-bin-by-bin",
     title: "Who Issues Your Crypto Card, BIN by BIN",
     description:
@@ -172,6 +179,12 @@ export default function CryptoCardGuidesPage() {
                 className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-black text-slate-800 hover:bg-slate-50"
               >
                 Take the card finder quiz
+              </Link>
+              <Link
+                href="/crypto-cards/tutorials"
+                className="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-black text-slate-800 hover:bg-slate-50"
+              >
+                Learn step by step: the tutorials
               </Link>
             </div>
           </div>
