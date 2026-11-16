@@ -19,7 +19,8 @@ const guides: Guide[] = [
   { slug: "what-are-bitcoin-forks", title: "What Are Bitcoin Forks?", description: "A beginner-friendly walkthrough of how and why Bitcoin's chain has split over the years.", category: "Getting Started" },
   { slug: "bitcoin-classic-hard-fork", title: "Bitcoin Classic and Hard Forks", description: "The block size debate, Bitcoin Classic's story, and hard fork safety basics.", category: "Getting Started" },
   // Security & Safety
-  { slug: "germany-crypto-seizure-law", title: "Germany's Crypto Seizure Law Explained", description: "What the €100,000 rule actually allows: a 30 day customs hold, a court extension, and why the law is not in force yet.", category: "Security & Safety", badge: "New" },
+  { slug: "trezor-skladon-data-breach", title: "Trezor Skladon Data Breach: 27,000 Orders Exposed", description: "What leaked from Trezor's delivery partner, what did not, who is affected, and why scam calls are the real risk.", category: "Security & Safety", badge: "New" },
+  { slug: "germany-crypto-seizure-law", title: "Germany's Crypto Seizure Law Explained", description: "What the €100,000 rule actually allows: a 30 day customs hold, a court extension, and why the law is not in force yet.", category: "Security & Safety" },
   { slug: "crypto-exchange-security-checklist", title: "Crypto Exchange Security Checklist", description: "A practical checklist to vet any exchange before you trust it with your money.", category: "Security & Safety" },
   { slug: "seed-phrase-security", title: "Seed Phrase Security", description: "How to store your recovery phrase so nobody can steal your crypto, including you-proofing it.", category: "Security & Safety" },
   { slug: "what-is-proof-of-reserves", title: "What Is Proof of Reserves?", description: "The beginner's guide to how exchanges prove they actually hold your funds.", category: "Security & Safety" },
