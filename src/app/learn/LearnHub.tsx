@@ -34,7 +34,8 @@ const guides: Guide[] = [
   { slug: "what-is-zcash", title: "What Is Zcash (ZEC)?", description: "Shielded vs transparent transactions, zk-SNARKs in plain English, and Zcash's 2026 comeback.", category: "Privacy" },
   { slug: "tornado-cash-explained", title: "Tornado Cash Explained", description: "How the mixer works and the full legal saga, from OFAC sanctions to the court rulings.", category: "Privacy" },
   { slug: "privacy-coins-vs-mixers", title: "Privacy Coins vs Mixers", description: "Private-by-default networks vs transparent chains plus mixers: how they compare across 7 dimensions.", category: "Privacy" },
-  { slug: "what-are-privacy-swaps", title: "What Are Privacy Swaps?", description: "The 3 types explained with infographics: privacy-route aggregators, intent-based swaps, and shielded pools.", category: "Privacy", badge: "New" },
+  { slug: "how-to-anonymize-bitcoin", title: "Can You Anonymize Bitcoin?", description: "CoinJoin, Lightning, Monero and Liquid round trips explained and honestly rated, with the 2026 status of every tool.", category: "Privacy", badge: "New" },
+  { slug: "what-are-privacy-swaps", title: "What Are Privacy Swaps?", description: "The 3 types explained with infographics: privacy-route aggregators, intent-based swaps, and shielded pools.", category: "Privacy" },
   { slug: "no-kyc-exchanges-explained", title: "No-KYC Exchanges Explained", description: "The no-KYC spectrum, the KYC-on-trigger trap, documented risks, and the eXch takedown.", category: "Privacy", badge: "New" },
   // Trading Guides
   { slug: "leverage-trading-guide", title: "Leverage Trading for Beginners", description: "What leverage is, how liquidation works, and the pitfalls that wipe out new traders.", category: "Trading Guides" },
