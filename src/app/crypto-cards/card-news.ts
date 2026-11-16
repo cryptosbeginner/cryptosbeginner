@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-17",
+    type: "market",
+    cardName: "Physical card costs",
+    title: "The price of plastic: a physical crypto card costs from $0 to $100 before you spend a cent",
+    details:
+      "@0xVishnya checked card fees and delivery in the apps and docs (November 16, 2026), and the spread is the story. Avalanche Card and Tria (on Pro and Max) charge nothing for the card or its delivery. Wirex delivery starts at €5 in Europe and Krak at $5 (Krak itself replied that its cards are free, with a $4.99 replacement fee). Plasma One charges $20 delivery, free on Platinum. Jupiter charges $13.13 for the card plus $7.50 to $75 delivery, COCA $1 plus $26 DHL, KAST $40 delivery, ether.fi $50 on Core with free delivery, Avici $50 to $75, Solayer $59.99 all in, and RedotPay $100 for the card. The figures are now on each card's listing. Delivery is the quiet fee most comparisons skip.",
+    sourceUrl: "https://x.com/0xVishnya/status/2122346266172465387",
+    sourceLabel: "@0xVishnya, November 2026",
+  },
+  {
+    date: "2026-11-17",
     type: "promo",
     cardName: "KAST Card",
     cardSlug: "kast-card",
