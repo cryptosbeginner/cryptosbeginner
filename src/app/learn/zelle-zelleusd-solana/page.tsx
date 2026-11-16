@@ -4,7 +4,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
-import { GuideH2, GuideP, Callout } from "../../crypto-cards/guides/GuideStyles";
+import { GuideH2, GuideP, Callout, BulletList } from "../../crypto-cards/guides/GuideStyles";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/learn/zelle-zelleusd-solana`;
@@ -13,23 +13,23 @@ const UPDATED_ISO = "2026-11-17";
 const IMG = "/images/learn/zelle-zlusd/demo-steps.png";
 
 export const metadata: Metadata = {
-  title: "Zelle Picks Solana for ZelleUSD: What the $1.25M Confidential Transfer Demo Actually Proves",
+  title: "Zelle Picks Solana for ZelleUSD, MoneyGram Connects Wallets to Cash: Breakpoint's Payments Announcements Explained",
   description:
-    "At Breakpoint on 16 November 2026, Zelle announced its ZelleUSD stablecoin will run on Solana and demoed a $1.25 million confidential bank to bank transfer with the amount hidden. The demo ran on a test network. What was announced, how confidential transfers work, and what is still missing before anyone can use it.",
+    "Two payments giants chose Solana at Breakpoint on 16 November 2026. Zelle announced its ZelleUSD stablecoin will run on Solana and demoed a $1.25 million confidential transfer on a test network. MoneyGram and Solflare switched on USDC cash-outs at agent locations in over 170 countries, fee free until 31 December 2026. What was actually announced, and what was not.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Zelle Picks Solana for ZelleUSD | CryptosBeginner",
+    title: "Zelle on Solana and MoneyGram's 170 Country Cash-Out | CryptosBeginner",
     description:
-      "The bank owned network behind $1.2 trillion in US payments chose a public blockchain for its stablecoin, and hid the amount in its first demo transfer. The devnet caveat, explained.",
+      "The bank owned network behind $1.2 trillion in US payments chose a public blockchain for its stablecoin, and MoneyGram turned Solana wallets into cash at 480,000 locations. Both Breakpoint announcements, with the caveats included.",
     url: PAGE_URL,
     type: "article",
     images: [{ url: `${SITE_URL}${IMG}`, alt: "Four step diagram of Zelle's confidential ZelleUSD transfer demo at Breakpoint: Anchorage Digital Bank issues 1.25 million dollars in ZLUSD, a bank converts it to confidential form on Solana, sends it to a second bank with the amount hidden, and the receiving bank decrypts it, with a note that the demo ran on a test network" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zelle Picks Solana for ZelleUSD",
+    title: "Zelle Picks Solana, MoneyGram Connects Wallets to Cash",
     description:
-      "A $1.25M transfer with the amount hidden, demoed live at Breakpoint. It ran on devnet. Here is what Zelle actually announced and what it did not.",
+      "A $1.25M transfer with the amount hidden, demoed on a test network, and USDC cash-outs live in 170+ countries. Breakpoint's two payments announcements, explained with the fine print.",
   },
   robots: { index: true, follow: true },
 };
@@ -56,6 +56,16 @@ const faqItems = [
       "Anchorage Digital Bank issues ZLUSD. Zelle unveiled the token in June 2026 alongside its international plans, naming India as the first remittance corridor, with US to India transfers planned by the end of 2026. Whether ZLUSD settles that corridor from day one has not been confirmed, and no production timeline was given at Breakpoint.",
   },
   {
+    question: "Is the MoneyGram cash-out in Solflare live now?",
+    answer:
+      "Yes, according to MoneyGram: the integration is available now to eligible users in supported markets, not a future rollout. It covers participating MoneyGram locations in more than 170 countries and territories. Availability varies by market, and MoneyGram's crypto services are unavailable in Alaska, Hawaii and Louisiana.",
+  },
+  {
+    question: "What does the MoneyGram cash-out cost, and do I need ID?",
+    answer:
+      "Eligible users pay zero cash-out fees until 31 December 2026; after that, standard fees and exchange spreads apply, and the zero fee promotion says nothing about the exchange rate you receive, which is where much of the real cost of cash conversion usually sits. Cash collection is not anonymous: MoneyGram verifies your identity and issues a reference number for pickup once you send the USDC.",
+  },
+  {
     question: "Why would banks want payment amounts hidden on a public blockchain?",
     answer:
       "Because public ledgers are public. A bank moving money for customers cannot broadcast amounts to competitors and observers, and regulators still need visibility. Confidential transfers split the difference: amounts are hidden from the public, the network verifies validity, and the participating institutions can decrypt what they need for compliance checks such as anti-money laundering controls.",
@@ -66,7 +76,7 @@ export default function ZelleZelleusdSolanaPage() {
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Zelle Picks Solana for ZelleUSD: What the $1.25M Confidential Transfer Demo Actually Proves",
+    headline: "Zelle Picks Solana for ZelleUSD, MoneyGram Connects Wallets to Cash: Breakpoint's Payments Announcements Explained",
     description: metadata.description,
     datePublished: UPDATED_ISO,
     dateModified: UPDATED_ISO,
@@ -89,7 +99,7 @@ export default function ZelleZelleusdSolanaPage() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       { "@type": "ListItem", position: 2, name: "Learn", item: `${SITE_URL}/learn` },
-      { "@type": "ListItem", position: 3, name: "Zelle Picks Solana for ZelleUSD", item: PAGE_URL },
+      { "@type": "ListItem", position: 3, name: "Zelle and MoneyGram on Solana", item: PAGE_URL },
     ],
   };
 
@@ -109,17 +119,17 @@ export default function ZelleZelleusdSolanaPage() {
               Stablecoin news
             </p>
             <h1 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-              Zelle picks Solana for ZelleUSD, and hides the amount in its first transfer
+              Breakpoint's payments double: Zelle picks Solana, MoneyGram connects wallets to cash
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-              On 16 November 2026, on stage at Solana's Breakpoint conference in London, Zelle
-              announced that its dollar stablecoin, ZelleUSD (ZLUSD), will run on Solana for
-              international payments, and demonstrated a $1.25 million transfer between banks with
-              the amount encrypted and invisible to observers. Zelle is the network owned by seven
-              of the largest US banks, which moved more than $1.2 trillion between American
-              accounts in 2025. The detail most coverage buries: the demonstration ran on
-              Solana's devnet, a test network where tokens have no value. No customer money moved,
-              and no launch date was announced.
+              Solana's Breakpoint conference in London produced two payments announcements on 16
+              November 2026 that belong in one story. Zelle, the network owned by seven of the
+              largest US banks, announced that its dollar stablecoin ZelleUSD will run on Solana
+              and demonstrated a $1.25 million transfer with the amount hidden, on a test network.
+              The same day, MoneyGram and the Solflare wallet switched on USDC cash-outs at agent
+              locations in more than 170 countries, live now and fee free until the end of 2026.
+              One is a promise about where institutional money is heading. The other is a product
+              you can already use. Both run on the same chain.
             </p>
             <AuthorByline updated={UPDATED} />
           </div>
@@ -127,14 +137,15 @@ export default function ZelleZelleusdSolanaPage() {
 
         <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <Callout title="The short version">
-            Zelle, operated by Early Warning Services for Bank of America, Capital One, JPMorgan
-            Chase, PNC, Truist, US Bank and Wells Fargo, has chosen Solana as the chain for
-            ZelleUSD, the stablecoin behind its international expansion. Anchorage Digital Bank
-            issues the token. The Breakpoint demo showed a bank converting $1.25 million of ZLUSD
-            into confidential form, sending it to a second bank, and the receiver decrypting the
-            amount, with the network verifying the transfer throughout without seeing the figure.
-            It ran on a test network, the token is pre-launch, and consumer access, fees and a
-            production timeline are all still unannounced.
+            Zelle (operated by Early Warning Services for Bank of America, Capital One, JPMorgan
+            Chase, PNC, Truist, US Bank and Wells Fargo) has chosen Solana for ZelleUSD, the
+            stablecoin behind its international expansion, issued by Anchorage Digital Bank. Its
+            Breakpoint demo of a confidential $1.25 million bank to bank transfer ran on devnet,
+            and the token remains pre-launch with no consumer access or date announced.
+            MoneyGram's Solflare integration is the opposite profile: live now, it lets users turn
+            USDC into local cash at participating locations in over 170 countries and territories,
+            with zero cash-out fees for eligible users until 31 December 2026, identity checks
+            included.
           </Callout>
 
           <figure className="mt-8">
@@ -149,17 +160,17 @@ export default function ZelleZelleusdSolanaPage() {
             </div>
           </figure>
 
-          <GuideH2>What was announced at Breakpoint</GuideH2>
+          <GuideH2>Announcement one: Zelle brings its stablecoin to Solana</GuideH2>
           <GuideP>
-            The announcement itself is the news, separate from the demo. Zelle has spent 2026
-            building an international business on top of a network that historically only moved
-            money inside the United States. In June 2026 it named India as its first remittance
-            corridor, with US to India transfers planned before the end of 2026, and unveiled
-            ZelleUSD as the asset intended to underpin international payments in more markets over
-            time. Breakpoint added the missing piece: the chain. Alexandra Lang, Zelle's vice
-            president of digital asset partnerships and strategy, presented Solana as a deliberate
-            choice for payments at scale, and the Solana Foundation used the same stage to
-            announce the network's move out of beta, with finality improving to about 150
+            Zelle has spent 2026 building an international business on top of a network that
+            historically only moved money inside the United States; it moved more than $1.2
+            trillion between American accounts in 2025. In June 2026 it named India as its first
+            remittance corridor, with US to India transfers planned before the end of 2026, and
+            unveiled ZelleUSD as the asset intended to underpin international payments in more
+            markets over time. Breakpoint added the missing piece: the chain. Alexandra Lang,
+            Zelle's vice president of digital asset partnerships and strategy, presented Solana as
+            a deliberate choice for payments at scale, and the Solana Foundation used the same
+            stage to announce the network's move out of beta, with finality improving to about 150
             milliseconds.
           </GuideP>
           <GuideP>
@@ -170,7 +181,7 @@ export default function ZelleZelleusdSolanaPage() {
             and credit unions.
           </GuideP>
 
-          <GuideH2>How the demo worked</GuideH2>
+          <GuideH2>How the Zelle demo worked</GuideH2>
           <GuideP>
             The live demonstration walked through one complete confidential payment. Anchorage
             Digital Bank, the issuer, issued $1.25 million in ZLUSD to a participating bank. That
@@ -212,7 +223,7 @@ export default function ZelleZelleusdSolanaPage() {
             </figcaption>
           </figure>
 
-          <GuideH2>The catch: devnet is not a launch</GuideH2>
+          <GuideH2>The catch on Zelle: devnet is not a launch</GuideH2>
           <GuideP>
             Almost everything exciting about the demo comes with the same footnote. It ran on
             devnet, Solana's development network, where tokens are created freely and carry no
@@ -233,20 +244,82 @@ export default function ZelleZelleusdSolanaPage() {
             and it is worth refusing to skip.
           </GuideP>
 
-          <GuideH2>Why it matters for stablecoins</GuideH2>
+          <GuideH2>Announcement two: MoneyGram turns Solana wallets into cash</GuideH2>
           <GuideP>
-            Stablecoins have spent two years moving from crypto product to payments
-            infrastructure, and this is the pattern repeating at a larger scale: an existing
-            payments giant adopts a public chain for settlement, picks a regulated issuer, and
-            treats amount privacy as a requirement rather than a feature. It is the same
-            architecture, at bank scale, that sits underneath the stablecoin card programs in our{" "}
+            The second announcement needs no test network disclaimer, because it is already
+            switched on. Solflare, one of the largest Solana wallets, has integrated MoneyGram
+            Ramps, the service that connects crypto balances to MoneyGram's physical agent
+            network. Solflare users can now convert USDC into local currency and collect it as
+            cash at participating MoneyGram locations in more than 170 countries and territories.
+            Solflare reports more than 4 million active users holding over $15 billion in
+            self-custodied assets; MoneyGram operates more than 480,000 agent locations worldwide
+            and reports that Ramps volume grew 113% year over year. MoneyGram describes the
+            service as available now to eligible users in supported markets, not as a rollout to
+            come.
+          </GuideP>
+          <GuideP>The cash-out flow, as described by MoneyGram and Solflare:</GuideP>
+          <BulletList
+            items={[
+              <span key="1"><strong>Start in the wallet:</strong> open Withdraw in Solflare, choose MoneyGram, and enter the amount of USDC to redeem. Your funds stay in your own wallet until you send them.</span>,
+              <span key="2"><strong>Verify and get a reference:</strong> MoneyGram checks your identity, quotes the transaction and issues a reference number for the pickup.</span>,
+              <span key="3"><strong>Send the USDC:</strong> the stablecoins move from your wallet to settle the cash-out.</span>,
+              <span key="4"><strong>Collect local currency:</strong> take the reference number to a participating MoneyGram agent and walk out with cash.</span>,
+            ]}
+          />
+          <figure className="mt-4">
+            <div className="mx-auto w-full max-w-[550px]">
+              <iframe
+                src="https://platform.twitter.com/embed/Tweet.html?id=2122281304792125482"
+                title="Solana's announcement that MoneyGram and Solflare connect Solana wallets to cash in 170 eligible countries, posted by Solana on X"
+                loading="lazy"
+                className="h-[620px] w-full rounded-2xl border border-slate-200 bg-white"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-slate-500">
+              Solana's announcement of the MoneyGram and Solflare integration, 16 November 2026
+              (@solana on X).
+            </figcaption>
+          </figure>
+
+          <GuideH2>The fine print on the cash-out</GuideH2>
+          <GuideP>
+            Three qualifications keep this honest. First, the price: eligible users pay zero
+            cash-out fees until 31 December 2026, which is a launch promotion, and after it ends,
+            standard fees and exchange spreads apply. A zero fee is not the same as a free
+            conversion, because the announcement publishes no representative exchange rate, and
+            the spread on cash conversions is usually where the real cost sits. Second, the
+            access: this is a regulated money service, so collection requires identity
+            verification, it works only at participating locations, availability varies by
+            market, and MoneyGram's crypto services are unavailable in Alaska, Hawaii and
+            Louisiana. Third, the direction: cash-in through Ramps covers only about 25
+            countries, against 170 plus for cash-out, so this is mainly an off-ramp for people
+            receiving and spending digital dollars, not a way to fund a wallet with banknotes.
+          </GuideP>
+          <GuideP>
+            Solflare is also not MoneyGram's first crypto integration, which is precisely why it
+            matters. Ramps began in 2022 with the Stellar Development Foundation and Circle,
+            arrived on Solana in August 2026 with the Rift wallet as its first integration, and
+            Kraken agreed a similar crypto to cash arrangement in May 2026 covering more than 100
+            countries. MoneyGram is building Ramps as an embedded service that wallets plug into;
+            adding a wallet with millions of self-custody users is the distribution play working
+            as intended.
+          </GuideP>
+
+          <GuideH2>Why the two announcements belong together</GuideH2>
+          <GuideP>
+            Read side by side, the two announcements are the same thesis from opposite ends.
+            Zelle's problem is institutional: banks will not move serious money on a ledger where
+            every competitor can read the amounts, so the amounts have to become confidential
+            while staying verifiable. MoneyGram's problem is human: a digital dollar is only
+            useful in much of the world if it can become banknotes at a counter, quickly and
+            without a bank account. Privacy for the institutions, physical access for the people,
+            and a public blockchain underneath both. That is the architecture described in our{" "}
             <Link href="/crypto-cards/guides/how-stablecoin-card-programs-work" className="font-bold text-indigo-700 underline">
               guide to how stablecoin card programs work
             </Link>
-            : an issuer mints, institutions settle, and the customer eventually sees an ordinary
-            payment. If Zelle ships the India corridor on this stack, the first mass-market test
-            of confidential transfers will not be a crypto app. It will be the app Americans
-            already use to split rent.
+            , running at national payments scale: an issuer mints, networks settle, and the
+            customer sees an ordinary payment. One half of it is still a test network demo. The
+            other half you can use today.
           </GuideP>
 
           <GuideH2>Frequently asked questions</GuideH2>
@@ -261,8 +334,8 @@ export default function ZelleZelleusdSolanaPage() {
 
           <GuideH2>Sources</GuideH2>
           <GuideP>
-            This article is based on Zelle's Breakpoint announcement of 16 November 2026 as
-            reported by{" "}
+            The Zelle sections are based on Zelle's Breakpoint announcement of 16 November 2026
+            as reported by{" "}
             <a href="https://cointelegraph.com/news/zelle-solana-zelleusd-stablecoin-international-payments" target="_blank" rel="noreferrer" className="font-bold text-indigo-700 underline">
               Cointelegraph
             </a>
@@ -274,9 +347,22 @@ export default function ZelleZelleusdSolanaPage() {
             <a href="https://www.crypto-news-flash.com/zelle-picks-solana-for-its-bank-backed-stablecoin/" target="_blank" rel="noreferrer" className="font-bold text-indigo-700 underline">
               Crypto News Flash
             </a>
-            , including their reporting that the demonstration ran on Solana's devnet. We will
-            update this page when Zelle announces consumer access, fees or a production date.
-            Nothing here is financial advice.
+            , including their reporting that the demonstration ran on Solana's devnet. The
+            MoneyGram sections are based on the Solflare integration announced the same day, as
+            reported by{" "}
+            <a href="https://www.theblock.co/news/defi/2026-11-16-solflare-ceo-ai-security-reviews-bunker-mode-moneygram-441396" target="_blank" rel="noreferrer" className="font-bold text-indigo-700 underline">
+              The Block
+            </a>
+            ,{" "}
+            <a href="https://cryptobriefing.com/solflare-ai-security-moneygram-integration/" target="_blank" rel="noreferrer" className="font-bold text-indigo-700 underline">
+              CryptoBriefing
+            </a>{" "}
+            and{" "}
+            <a href="https://cryptonews.net/news/market/33758304/" target="_blank" rel="noreferrer" className="font-bold text-indigo-700 underline">
+              CryptoNews
+            </a>
+            . We will update this page when Zelle announces consumer access or a production date,
+            and when MoneyGram publishes post-promotion fees. Nothing here is financial advice.
           </GuideP>
         </article>
       </main>

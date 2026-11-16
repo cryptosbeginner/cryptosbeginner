@@ -50,7 +50,7 @@ const guides: Guide[] = [
   { slug: "rwa-crypto-projects", title: "RWA Crypto Explained", description: "Tokenization of real-world assets: the categories, the leading projects, and the risks.", category: "DeFi & Staking" },
   { slug: "best-rpc-providers", title: "Best RPC Node Providers", description: "Alchemy, Infura, QuickNode, Chainstack, Ankr, GetBlock and dRPC compared on published pricing, free tiers and chain coverage.", category: "DeFi & Staking", badge: "New" },
   // Fintech
-  { slug: "zelle-zelleusd-solana", title: "Zelle Picks Solana for ZelleUSD", description: "What the $1.25M confidential transfer demo at Breakpoint actually proves, and the devnet catch behind it.", category: "Fintech", badge: "New" },
+  { slug: "zelle-zelleusd-solana", title: "Zelle, MoneyGram and Solana's Payments Push", description: "ZelleUSD's confidential transfer demo and MoneyGram's live 170 country cash-out, explained with the caveats.", category: "Fintech", badge: "New" },
   { slug: "what-is-a-neobank", title: "What Is a Neobank?", description: "Digital banks explained: the 3-jobs model, banking-as-a-service, crypto neobanks, and how to launch your own.", category: "Fintech", badge: "New" },
 ];
 
