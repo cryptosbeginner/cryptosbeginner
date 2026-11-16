@@ -19,7 +19,7 @@ const guides: Guide[] = [
   { slug: "what-are-bitcoin-forks", title: "What Are Bitcoin Forks?", description: "A beginner-friendly walkthrough of how and why Bitcoin's chain has split over the years.", category: "Getting Started" },
   { slug: "bitcoin-classic-hard-fork", title: "Bitcoin Classic and Hard Forks", description: "The block size debate, Bitcoin Classic's story, and hard fork safety basics.", category: "Getting Started" },
   // Security & Safety
-  { slug: "trezor-skladon-data-breach", title: "Trezor Skladon Data Breach: 27,000 Orders Exposed", description: "What leaked from Trezor's delivery partner, what did not, who is affected, and why scam calls are the real risk.", category: "Security & Safety", badge: "New" },
+  { slug: "trezor-skladon-data-breach", title: "Trezor Skladon Data Breach: 27,000 Orders Exposed", description: "What leaked from Trezor's delivery partner, what did not, who is affected, and why scam calls are the real risk.", category: "Security & Safety" },
   { slug: "germany-crypto-seizure-law", title: "Germany's Crypto Seizure Law Explained", description: "What the €100,000 rule actually allows: a 30 day customs hold, a court extension, and why the law is not in force yet.", category: "Security & Safety" },
   { slug: "crypto-exchange-security-checklist", title: "Crypto Exchange Security Checklist", description: "A practical checklist to vet any exchange before you trust it with your money.", category: "Security & Safety" },
   { slug: "seed-phrase-security", title: "Seed Phrase Security", description: "How to store your recovery phrase so nobody can steal your crypto, including you-proofing it.", category: "Security & Safety" },
@@ -50,6 +50,7 @@ const guides: Guide[] = [
   { slug: "rwa-crypto-projects", title: "RWA Crypto Explained", description: "Tokenization of real-world assets: the categories, the leading projects, and the risks.", category: "DeFi & Staking" },
   { slug: "best-rpc-providers", title: "Best RPC Node Providers", description: "Alchemy, Infura, QuickNode, Chainstack, Ankr, GetBlock and dRPC compared on published pricing, free tiers and chain coverage.", category: "DeFi & Staking", badge: "New" },
   // Fintech
+  { slug: "zelle-zelleusd-solana", title: "Zelle Picks Solana for ZelleUSD", description: "What the $1.25M confidential transfer demo at Breakpoint actually proves, and the devnet catch behind it.", category: "Fintech", badge: "New" },
   { slug: "what-is-a-neobank", title: "What Is a Neobank?", description: "Digital banks explained: the 3-jobs model, banking-as-a-service, crypto neobanks, and how to launch your own.", category: "Fintech", badge: "New" },
 ];
 
