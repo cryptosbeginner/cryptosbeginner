@@ -19,6 +19,7 @@ const guides: Guide[] = [
   { slug: "what-are-bitcoin-forks", title: "What Are Bitcoin Forks?", description: "A beginner-friendly walkthrough of how and why Bitcoin's chain has split over the years.", category: "Getting Started" },
   { slug: "bitcoin-classic-hard-fork", title: "Bitcoin Classic and Hard Forks", description: "The block size debate, Bitcoin Classic's story, and hard fork safety basics.", category: "Getting Started" },
   // Security & Safety
+  { slug: "germany-crypto-seizure-law", title: "Germany's Crypto Seizure Law Explained", description: "What the €100,000 rule actually allows: a 30 day customs hold, a court extension, and why the law is not in force yet.", category: "Security & Safety", badge: "New" },
   { slug: "crypto-exchange-security-checklist", title: "Crypto Exchange Security Checklist", description: "A practical checklist to vet any exchange before you trust it with your money.", category: "Security & Safety" },
   { slug: "seed-phrase-security", title: "Seed Phrase Security", description: "How to store your recovery phrase so nobody can steal your crypto, including you-proofing it.", category: "Security & Safety" },
   { slug: "what-is-proof-of-reserves", title: "What Is Proof of Reserves?", description: "The beginner's guide to how exchanges prove they actually hold your funds.", category: "Security & Safety" },
@@ -34,7 +35,7 @@ const guides: Guide[] = [
   { slug: "what-is-zcash", title: "What Is Zcash (ZEC)?", description: "Shielded vs transparent transactions, zk-SNARKs in plain English, and Zcash's 2026 comeback.", category: "Privacy" },
   { slug: "tornado-cash-explained", title: "Tornado Cash Explained", description: "How the mixer works and the full legal saga, from OFAC sanctions to the court rulings.", category: "Privacy" },
   { slug: "privacy-coins-vs-mixers", title: "Privacy Coins vs Mixers", description: "Private-by-default networks vs transparent chains plus mixers: how they compare across 7 dimensions.", category: "Privacy" },
-  { slug: "how-to-anonymize-bitcoin", title: "Can You Anonymize Bitcoin?", description: "CoinJoin, Lightning, Monero and Liquid round trips explained and honestly rated, with the 2026 status of every tool.", category: "Privacy", badge: "New" },
+  { slug: "how-to-anonymize-bitcoin", title: "Can You Anonymize Bitcoin?", description: "CoinJoin, Lightning, Monero and Liquid round trips explained and honestly rated, with the 2026 status of every tool.", category: "Privacy" },
   { slug: "what-are-privacy-swaps", title: "What Are Privacy Swaps?", description: "The 3 types explained with infographics: privacy-route aggregators, intent-based swaps, and shielded pools.", category: "Privacy" },
   { slug: "no-kyc-exchanges-explained", title: "No-KYC Exchanges Explained", description: "The no-KYC spectrum, the KYC-on-trigger trap, documented risks, and the eXch takedown.", category: "Privacy", badge: "New" },
   // Trading Guides

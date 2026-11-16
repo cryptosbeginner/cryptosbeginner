@@ -508,7 +508,13 @@ export default function HowToAnonymizeBitcoinPage() {
               <Li>
                 <strong className="text-slate-900">The law is moving.</strong> The Samourai
                 sentences tell service operators exactly where US prosecutors stand, and the EU's
-                2027 rule tells platforms where Europe stands. Using privacy tools on your own
+                2027 rule tells platforms where Europe stands. Germany went further in November
+                2026, passing a customs law that lets authorities secure assets over €100,000 of
+                unclear origin for up to 30 days without a criminal case; we explain it in full in{" "}
+                <Link href="/learn/germany-crypto-seizure-law" className="font-bold text-indigo-700 underline">
+                  Germany's crypto seizure law explained
+                </Link>
+                . Using privacy tools on your own
                 coins and running them for others are very different legal positions, and this
                 guide describes the first, as information only.
               </Li>
