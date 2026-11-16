@@ -196,6 +196,21 @@ export default function ZelleZelleusdSolanaPage() {
             </Link>
             , aimed at institutions instead of individuals.
           </GuideP>
+          <GuideP>Watch the demonstration as Solana posted it from the Breakpoint stage:</GuideP>
+          <figure className="mt-4">
+            <div className="mx-auto w-full max-w-[550px]">
+              <iframe
+                src="https://platform.twitter.com/embed/Tweet.html?id=2122284580405236216"
+                title="Video of Zelle's confidential ZelleUSD transfer demonstration at Solana Breakpoint, posted by Solana on X"
+                loading="lazy"
+                className="h-[620px] w-full rounded-2xl border border-slate-200 bg-white"
+              />
+            </div>
+            <figcaption className="mt-3 text-center text-sm text-slate-500">
+              Zelle's first confidential ZLUSD transfer, demonstrated live at Breakpoint on 16
+              November 2026 (video: @solana on X). The interface shown is a test environment.
+            </figcaption>
+          </figure>
 
           <GuideH2>The catch: devnet is not a launch</GuideH2>
           <GuideP>
