@@ -13,6 +13,17 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-17",
+    type: "promo",
+    cardName: "KAST Card",
+    cardSlug: "kast-card",
+    title: "KAST is paying picked users 4% USD cashback, uncapped, until December 31",
+    details:
+      "KAST has quietly switched on a targeted promotion: randomly selected users are being notified that their card purchases earn 4% cashback in USD, with no cap, through December 31, 2026. There is no way to sign up or opt in; if KAST picked you, you will be told. The 4% replaces the normal plan rate (1.5% on Standard, 2% on Premium, 3% on Private) on qualifying settled purchases. Withdrawals and top-ups do not count. As reported by @Cardipays and tracked by cryptocard.guide on November 16; if you hold a KAST card, the app is where you will find out whether you are in.",
+    sourceUrl: "https://x.com/Cardipays/status/2122396987412668746",
+    sourceLabel: "@Cardipays, November 2026",
+  },
+  {
     date: "2026-11-14",
     type: "fee-change",
     cardName: "Declined payment fees",
