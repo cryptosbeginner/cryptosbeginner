@@ -1981,6 +1981,7 @@ export const cardListings: CardListing[] = [
     funding: "Stablecoin top-ups or direct spending from connected self-custody wallets.",
     cardFormats: ["Virtual"],
     sourceUrl: "https://www.oobit.com/crypto-card/croatia",
+    referralUrl: "https://go.cryptosbeginner.com/Oobit",
     sourceLabel: "Oobit (official card page)",
     feesUrl: "https://www.oobit.com/fees",
     imageUrl: "/images/cards/oobit-card.webp",
