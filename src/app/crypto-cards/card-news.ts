@@ -14,6 +14,47 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-18",
+    type: "market",
+    cardName: "MEXC Card",
+    cardSlug: "mexc-card",
+    title: "MEXC suspends Global Card payments and ends its APAC Card",
+    details:
+      "MEXC discontinued its separate APAC Card outright on 11 November 2026, and from 14 November it suspended Global Card payments and deposits in an issuer maintenance window announced to run to 18 November, with balances movable only to a MEXC Fiat Account. MEXC blames service adjustments by its third-party card issuer. The pause lands on top of the US FinCEN order against MEXC, which takes effect on 10 December 2026 and is covered in full on the MEXC Card listing.",
+    sourceLabel: "MEXC notices, as reported November 2026",
+  },
+  {
+    date: "2026-11-18",
+    type: "fee-change",
+    cardName: "Bleap Card",
+    cardSlug: "bleap-card",
+    title: "Bleap adds a \u20ac200 spending goal before cashback can be withdrawn",
+    details:
+      "Under Bleap's updated Cashback Terms (12 November 2026), cashback can only be withdrawn once you have \u20ac200 of everyday card spending in the previous 30 days, and unwithdrawn cashback can expire under a 67-day rule. The rule applies to new members from their first payment and to existing members from 10 December 2026, with a grace period to 16 December. We also confirmed Bleap's rates and caps from its help centre: 1% on everyday purchases, 3% on transport and delivery, and 20% on listed streaming, AI and gaming subscriptions, paid in USDC. The card itself stays free, with no FX markup and free ATM withdrawals up to \u20ac400 a month.",
+    sourceUrl: "https://www.bleap.finance/legal-agreements/cashback-terms-and-conditions",
+    sourceLabel: "Bleap Cashback Terms and help centre, November 2026",
+  },
+  {
+    date: "2026-11-18",
+    type: "fee-change",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One's November reset pays new members less cashback",
+    details:
+      "Plasma's 11 November tier reset (Lite to Standard, Core to Premium at $600 a year, Platinum at $2,500 a year) also set lower cashback bands for anyone joining from that date: Standard pays 1% on the first $500 a month, Premium pays 2% on the first $1,000 then 1% and 0.25%, and Platinum pays 3% on the first $3,000, then 2% and 1%. Members who joined before 11 November keep their previous, higher bands until their current term ends. The Plasma One listing now shows both sets of bands.",
+    sourceUrl: "https://intercom.help/plasma-6c43763cd799/en/articles/18351908-what-changes-for-my-membership-on-11-november",
+    sourceLabel: "Plasma support, November 2026",
+  },
+  {
+    date: "2026-11-18",
+    type: "catalog-update",
+    cardName: "Directory audit",
+    title: "Directory audit: dead and pivoted cards flagged, nine fee schedules added",
+    details:
+      "A full audit of the directory against official provider pages found several cards that no longer exist in their listed form. The BitPay Card program is discontinued and has been added to the card graveyard. Stables and Decaf have both pivoted to business payments and no longer offer consumer cards. The new Cardano Card is waitlist-only with applications not open, and Fiat24 is in maintenance mode and not accepting new applications. On the positive side, nine listings gained published fee schedules that were previously undisclosed: Keytom (full schedule, including a 10 USDC monthly fee), Cryptomus ($4 issuance, 3.2% top-ups), Trustee Plus ($10 virtual card, issuer named as Wirex Limited), Kite (top-ups now 0%), Privacy Gateway (one-time $60 fee replaces the $5 monthly subscription), Avalanche (1% FX fee published), Ripio and ARQ (no maintenance or annual fees), and Grey (zero account and card maintenance fees). The Elios listing was also rebuilt from its full help centre: Rain is named as the card-issuing partner, beta card spending is capped at $20,000 a month, ATM withdrawals are not yet enabled, and deposits are USDC-only across seven networks with bridge fees covered by Elios.",
+    sourceLabel: "Official provider pages checked November 2026",
+  },
+  {
+    date: "2026-11-18",
     type: "fee-change",
     cardName: "Fee schedule checks",
     title: "Fee schedules rechecked against official pages: Infini, Oobit and Tangem Pay",

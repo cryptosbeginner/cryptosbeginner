@@ -21,6 +21,17 @@ interface GraveyardEntry {
 
 const entries: GraveyardEntry[] = [
   {
+    name: "BitPay Card",
+    issuer: "BitPay, issued by Metropolitan Commercial Bank",
+    status: "Discontinued",
+    date: "2023",
+    whatHappened:
+      "BitPay and Metropolitan Commercial Bank discontinued the BitPay Prepaid Mastercard program and stopped accepting new cardholder applications. The card page on bitpay.com now presents only the Bill Pay product (checked November 2026).",
+    lesson:
+      "Even the longest-running crypto cards depend on a bank partner: when the partner exits, the program ends regardless of the brand behind it.",
+    verified: true,
+  },
+  {
     name: "VaultLeap Card",
     issuer: "VaultLeap",
     status: "Shutting down",
