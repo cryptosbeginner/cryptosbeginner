@@ -5694,7 +5694,7 @@ export const cardListings: CardListing[] = [
     featureFlags: { earnYield: true },
     pros: ["3.50% APY on USDC / 2.20% on EURC, paid daily, no lockup stated", "Free transfers across 35+ countries", "Virtual Mastercard with no markups on spending claimed", "Sygnum (regulated Swiss bank) provides custody/infrastructure", "In-app BTC/ETH/SOL trading"],
     cons: ["No published fee schedule beyond marketing claims", "Yield source/backing undisclosed; no insurance stated", "Waitlist/gradual rollout; eligibility unclear", "Core markets (Brazil, Colombia, Mexico, US) not yet integrated", "Virtual card only"],
-  }
+  },
   {
     slug: "elios-card",
     name: "Elios Card",
