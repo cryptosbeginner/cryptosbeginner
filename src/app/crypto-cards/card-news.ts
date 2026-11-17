@@ -15,6 +15,27 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-17",
     type: "market",
+    cardName: "ATM fees",
+    title: "Taking $200 out of an ATM on a crypto card costs $0 to $10 plus interest, depending on the card",
+    details:
+      "A fee-page review by @sweepbaseHQ (terms read October 2026) ranked what issuers charge for one $200 ATM withdrawal on entry tiers. Kraken charges nothing, ether.fi is free up to 10 withdrawals a month on Core, and Revolut, Crypto.com, Nexo and Wise are free up to a monthly cap. KAST charges $3 plus 2% ($7 on $200), and the Gemini and Venmo credit cards treat ATM use as a cash advance at $10 or 5% plus interest. Sweepbase also found that about a third of the cards it tracks cannot take cash out at all. The ATM owner's own fee comes on top of every figure here. We have added the numbers to the ether.fi, KAST, Crypto.com, Nexo, COCA, Gemini and Venmo listings; Kraken and RedotPay (2%) already matched.",
+    sourceUrl: "https://x.com/sweepbaseHQ/status/2120164827704520821",
+    sourceLabel: "@sweepbaseHQ, November 2026",
+  },
+  {
+    date: "2026-11-17",
+    type: "catalog-update",
+    cardName: "Bitstack Card",
+    cardSlug: "bitstack-card",
+    title: "Bitstack Card listing corrected: France-only, full fee schedule, current yellow card artwork",
+    details:
+      "TODEY named the Bitstack Card its crypto card of the day on November 11, 2026, and its profile (updated November 5) gives the full picture our listing was missing. The card is France-only: the app runs in about 20 European countries, the card does not. It costs €9.99 plus delivery and pays Stackback in Bitcoin at 0.1% to 1% on the free Standard plan and 0.15% to 1.5% on Plus (€2.99/month), with the top rates requiring recurring Bitcoin buys or round-ups. We have corrected the availability, added the fees, limits and FX allowances, and replaced the outdated black card artwork with the current yellow design.",
+    sourceUrl: "https://www.todey.xyz/card/bitstack-card/",
+    sourceLabel: "TODEY card profile, November 2026",
+  },
+  {
+    date: "2026-11-17",
+    type: "market",
     cardName: "Physical card costs",
     title: "The price of plastic: a physical crypto card costs from $0 to $100 before you spend a cent",
     details:
