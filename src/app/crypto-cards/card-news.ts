@@ -14,6 +14,13 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-18",
+    type: "catalog-update",
+    title: "Full directory source-check completed: 47 more listings corrected or filled",
+    details:
+      "The remaining 135 listings have now been checked against official provider pages, completing the source audit of all 203 cards. 47 listings were corrected or completed: placeholder fee text was replaced with published schedules on more than 20 cards (including Deblock, Zypto, ZEN, NoOnes, PEXX and SolCard), Nebeus moved to a three-plan structure, Bitunix raised its USD cross-border fee to 0.9%, ether.fi cashback is confirmed as paid in ETHFI, COCA is a Wirex-issued prepaid Mastercard rather than a Visa card, Bitget Card applications moved to Bitget Wallet, Holyheld no longer presents a consumer card, and Fizen paused new card creation. 16 listings could not be verified because their official pages block or fail automated reads; they stay queued for manual recheck.",
+  },
+  {
+    date: "2026-11-18",
     type: "market",
     cardName: "MEXC Card",
     cardSlug: "mexc-card",
