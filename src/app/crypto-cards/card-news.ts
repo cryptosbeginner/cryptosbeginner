@@ -15,6 +15,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-17",
     type: "market",
+    cardName: "FX fees abroad",
+    title: "Your crypto card takes up to 7% abroad: the FX fees on 13 cards, checked",
+    details:
+      "@xKseilas checked what 13 cards add to purchases outside USD (November 2026). The most expensive: Infini Lite at 3%, Oobit at 1% plus up to 1.5% for conversion, Bybit at 2% in most regions and 7% in Argentina, Plasma Lite at 1% plus about 1% Visa network fee, and Jupiter at 1.8% on DCS-issued cards. In the middle: Tangem Pay and Solid at 1.5%, Infini Pro and Jupiter on Rain-issued cards at 1%, Pulsar up to 1%, and Ethena Pay and Elios passing through Visa's roughly 1% with no markup of their own. The cheapest: ether.fi (0.5% Core, 0.25% Luxe, 0% Pinnacle, with USD and EUR purchases free on every tier), Plasma Platinum at 0%, OKX in Europe at 0% on top of the Mastercard rate, and MetaMask Metal with no cross-border fee. On $1,000 spent in Japan that is $30 on Infini Lite against $0 on Plasma Platinum. We have added the missing figures to the Oobit, Bybit, Tangem Pay, Ethena Pay, MetaMask, Pulsar and ether.fi listings; Solid, Plasma and Jupiter already matched.",
+    sourceUrl: "https://x.com/xKseilas/status/2120519064955068541",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-17",
+    type: "market",
     cardName: "ATM fees",
     title: "Taking $200 out of an ATM on a crypto card costs $0 to $10 plus interest, depending on the card",
     details:
