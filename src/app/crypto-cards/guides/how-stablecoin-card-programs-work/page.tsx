@@ -179,7 +179,7 @@ export default function HowStablecoinCardProgramsWorkPage() {
             </figcaption>
           </figure>
           <GuideP>
-            Of the spend PaymentScan could attribute to an issuer in the third quarter of 2026, Rain processed 43%, StraitsX 36% and Wirex 17%. Our own directory tells the same story at brand level: Rain's infrastructure sits behind 12 of the 201 cards we track, including ether.fi Cash, KAST, Plasma One and the Western Union Stablecard, and the legal issuer named on those cards is Third National, a Rain group company. We mapped the whole arrangement in our BIN by BIN issuer guide, and the short video below walks through it.
+            Of the spend PaymentScan could attribute to an issuer in the third quarter of 2026, Rain processed 43%, StraitsX 36% and Wirex 17%. Our own directory tells the same story at brand level: Rain's infrastructure sits behind 12 of the 203 cards we track, including ether.fi Cash, KAST, Plasma One and the Western Union Stablecard, and the legal issuer named on those cards is Third National, a Rain group company. We mapped the whole arrangement in our BIN by BIN issuer guide, and the short video below walks through it.
           </GuideP>
           <figure className="mt-8">
             <video
@@ -192,7 +192,7 @@ export default function HowStablecoinCardProgramsWorkPage() {
               <source src="/videos/issuer-map-video.mp4" type="video/mp4" />
             </video>
             <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">
-              Watch: the brand on your card doesn't run your card. The issuer map behind the 201 cards in our directory, in 32 seconds. A CryptosBeginner video, November 2026.
+              Watch: the brand on your card doesn't run your card. The issuer map behind the 203 cards in our directory, in 32 seconds. A CryptosBeginner video, November 2026.
             </figcaption>
           </figure>
           <GuideP>
@@ -234,11 +234,11 @@ export default function HowStablecoinCardProgramsWorkPage() {
             ]}
           />
           <GuideP>
-            None of this makes stablecoin cards a bad product. Spending a stablecoin balance anywhere Visa or Mastercard is accepted, without an exchange withdrawal in between, is genuinely useful, and the market processed $1.37 billion in October 2026 alone. It just pays to know which of the five layers you are actually trusting with each part of the journey. Our spending tracker follows the monthly totals program by program, and the card directory lists all 201 programs with their issuers, fees and custody models side by side.
+            None of this makes stablecoin cards a bad product. Spending a stablecoin balance anywhere Visa or Mastercard is accepted, without an exchange withdrawal in between, is genuinely useful, and the market processed $1.37 billion in October 2026 alone. It just pays to know which of the five layers you are actually trusting with each part of the journey. Our spending tracker follows the monthly totals program by program, and the card directory lists all 203 programs with their issuers, fees and custody models side by side.
           </GuideP>
 
           <Callout title="Sources and a disclosure" tone="cyan">
-            The industry figures in this guide come from How to Launch a Stablecoin Card Program by PaymentScan (Castle Labs), first edition, November 2026, built from a questionnaire answered by Wirex, Stripe, StraitsX and Interlace, with Rain covered from public documents and operator reporting. PaymentScan is sponsored by Wirex, one of the issuers covered, so treat its issuer comparisons with that in mind. Directory figures (201 listings, issuer mapping, shutdown dates) are our own, checked November 2026. Nothing here is financial advice.
+            The industry figures in this guide come from How to Launch a Stablecoin Card Program by PaymentScan (Castle Labs), first edition, November 2026, built from a questionnaire answered by Wirex, Stripe, StraitsX and Interlace, with Rain covered from public documents and operator reporting. PaymentScan is sponsored by Wirex, one of the issuers covered, so treat its issuer comparisons with that in mind. Directory figures (203 listings, issuer mapping, shutdown dates) are our own, checked November 2026. Nothing here is financial advice.
           </Callout>
 
           <div className="mt-10 flex flex-wrap gap-4">

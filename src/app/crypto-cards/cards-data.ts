@@ -5695,6 +5695,93 @@ export const cardListings: CardListing[] = [
     pros: ["3.50% APY on USDC / 2.20% on EURC, paid daily, no lockup stated", "Free transfers across 35+ countries", "Virtual Mastercard with no markups on spending claimed", "Sygnum (regulated Swiss bank) provides custody/infrastructure", "In-app BTC/ETH/SOL trading"],
     cons: ["No published fee schedule beyond marketing claims", "Yield source/backing undisclosed; no insurance stated", "Waitlist/gradual rollout; eligibility unclear", "Core markets (Brazil, Colombia, Mexico, US) not yet integrated", "Virtual card only"],
   }
+  {
+    slug: "elios-card",
+    name: "Elios Card",
+    provider: "Elios",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A self-custodial stablecoin account and Visa card built on Hyperliquid's HyperEVM, currently in early access, with 3% cashback on the first $1,000 of spend and 1% after.",
+    editorialSummary:
+      "Elios (ELIOS TECH S.A.) is a self-custodial stablecoin account and card built on Hyperliquid: the account, the card and the Earn balance all live on HyperEVM smart contracts audited by Vulsight, users hold their own keys at all times, and regulated partners provide the fiat services and card issuance. Deposits and withdrawals run across Hyperliquid, Ethereum, Base, Arbitrum, Optimism and Polygon, with USDC as the primary asset, and the card spends from the main account balance. On FX, Elios adds no markup of its own: its help centre says non-USD purchases convert at the Visa rate with Visa's international transaction fee of up to 1% passing through, which matches @xKseilas's November 2026 fee check. The international card terms (May 2026) list higher caps, with FX and cross-border fees up to 3% and ATM withdrawals up to $2 plus 3%, so the two documents do not fully agree. The card is in early access with invited beta users; general issuance has not been announced.",
+    bestFor:
+      "Hyperliquid users who want to spend stablecoins from self-custody instead of handing funds to a custodian.",
+    availability:
+      "Early access: onboarding is currently limited to invited beta users, and general card issuance has not been announced. No country list is published.",
+    regions: ["Early access; regions not published"],
+    pricing:
+      "No card issuance or monthly fee is published. Elios charges no FX markup of its own; non-USD spend converts at the Visa rate with a Visa international transaction fee of up to 1% (Elios help centre, November 2026). The international card terms (May 2026) list higher caps: FX and cross-border fees up to 3%, ATM balance inquiry and decline fees up to $2, and ATM withdrawals up to $2 plus 3%.",
+    rewards:
+      "3% cashback on the first $1,000 of card spend, then 1% thereafter (Elios site, November 2026).",
+    funding:
+      "Self-custodial USDC balance on HyperEVM. Deposits from Hyperliquid land instantly with no bridge or slippage; deposits and withdrawals are also supported across Ethereum, Base, Arbitrum, Optimism and Polygon.",
+    cardFormats: ["Card formats not published"],
+    sourceUrl: "https://www.eliospay.com/",
+    sourceLabel: "Elios official site and help centre, November 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Elios Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-17",
+    caution:
+      "Early access product: the card is limited to invited beta users and the terms are still moving. The help centre's FX description (Visa fee of up to 1%, no Elios markup) and the card terms' higher fee caps (up to 3%) do not match, so confirm the live fee screen in the app before spending abroad.",
+    verification:
+      "Identity verification and regional eligibility requirements apply through Elios's regulated partners.",
+    featureTags: ["Self-custody", "Hyperliquid", "Early access", "Apple Pay", "Google Pay"],
+    pros: [
+      "Fully self-custodial: users hold their own keys and funds stay in audited smart contracts",
+      "No FX markup of its own on non-USD spend",
+      "Deposits from Hyperliquid are instant, with no bridge or slippage",
+    ],
+    cons: [
+      "Early access only; general issuance not announced and no country list published",
+      "Fee documents disagree: the help centre cites a Visa fee of up to 1% while the card terms cap FX at up to 3%",
+      "The card issuer is not named on the public pages",
+    ],
+  },
+  {
+    slug: "infini-card",
+    name: "Infini Card",
+    provider: "Infini",
+    network: "Visa/Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "Infini's consumer prepaid cards (Lite, Lite Plus, Pro and Max) spend USDT and USDC from an Infini account, with 1.5% cashback on every card since November 2026 and FX fees from 0% to 3% depending on the card.",
+    editorialSummary:
+      "Infini (Cynosure Technology LLC) is a Hong Kong stablecoin account whose personal card line has four virtual prepaid cards, funded with USDT or USDC. Lite is the mobile wallet card, working with Apple Pay and Google Pay and aimed at AI subscriptions, but it charges 3% FX on non-USD spend. Pro, issued on a Hong Kong card range, charges 1% FX and a 1% refund fee and does not work with mobile wallets. Max charges no FX fee but adds 1% on transactions outside Hong Kong and $0.30 on purchases under $50, and needs the higher Level 2 identity check. Lite Plus is a US-issued card with no FX fee that unlocks at the Professional membership tier. Third-party checks report Lite and Pro on Visa and Max on Mastercard; Infini's own help pages do not state the networks. Since 1 November 2026 all four cards earn 1.5% cashback on eligible purchases, and AI subscriptions earn 30% back, or 50% at the higher membership tiers. Context matters: Infini suspended its earlier Global, Lite and Tech cards in June 2025, and the current Lite is a new card, not the old one. Our separate listing covers Infini's corporate Lite Plus card for businesses.",
+    bestFor:
+      "Stablecoin holders who mainly spend in USD and on AI subscriptions, and can pick the card variant that fits their currency mix.",
+    availability:
+      "Eligibility is confirmed by country of residence during application; Infini does not publish a full country list. Lite, Pro and Lite Plus need KYC Level 1 (Lite Plus also needs Professional or Elite membership); Max needs KYC Level 2.",
+    regions: [],
+    pricing:
+      "First card free (further cards $10 each, up to ten); no monthly or transaction fees; the minimum first top-up is $10 and goes to the card balance. USD spending is free on every card. FX on non-USD spend: Lite 3%, Pro 1%, Lite Plus 0%, Max 0%. Cross-border fees: Lite 3%, Pro 1%, Lite Plus 0%, Max 1% on transactions outside Hong Kong. The refund fee is 1% on all four cards, and Max adds $0.30 per transaction under $50 (Infini help centre, updated November 2026).",
+    rewards:
+      "1.5% cashback on eligible purchases on all cards since 1 November 2026, calculated on settled amounts. Membership tiers raise it: Professional (an average balance of at least $2,000 over 30 days) pays 3% on the first $1,000 a month, and Elite (at least $100,000) pays 5% on the first $10,000. AI subscriptions earn 30% back on the Standard tier and 50% on Professional and Elite, capped at $10 a month ($100 on Elite).",
+    funding: "USDT or USDC held in the Infini account.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://help.infini.money/en/articles/17340045-select-create-and-manage-cards",
+    sourceLabel: "Infini help centre card guide, updated November 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Infini Card placeholder image",
+    imageSourceNote: "Placeholder image",
+    reviewedAt: "2026-11-17",
+    caution:
+      "Infini suspended its previous Global, Lite and Tech cards in June 2025 (issuance fees were refunded), and the platform was exploited for about $49.5M in February 2025; read our security incidents guide and size balances accordingly. The current Lite is a new card, not the suspended one.",
+    verification:
+      "KYC Level 1 for Lite, Pro and Lite Plus; KYC Level 2 for Max. Lite Plus also requires Professional or Elite membership.",
+    featureTags: ["Virtual", "AI subscription cashback", "Apple Pay", "Google Pay"],
+    pros: [
+      "1.5% cashback on every card with no monthly fee, and up to 50% back on AI subscriptions",
+      "Four variants let users trade FX fees against wallet support and issuing region",
+      "First card free, and USD spending carries no fees on any variant",
+    ],
+    cons: [
+      "Lite's 3% FX and 3% cross-border fees make it expensive outside USD",
+      "Pro does not work with Apple Pay or Google Pay",
+      "The previous card line was suspended in June 2025, and the platform suffered a major exploit in February 2025",
+    ],
+  },
 ];
 
 export function getCardBySlug(slug: string) {

@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-17",
+    type: "catalog-update",
+    cardName: "New listings",
+    title: "Two new listings: Elios Card and Infini Card",
+    details:
+      "The directory now lists 203 cards. Elios Card is a self-custodial Visa card built on Hyperliquid's HyperEVM, currently in early access with invited beta users: 3% cashback on the first $1,000 of spend and 1% after, and no FX markup of its own (Visa's fee of up to 1% passes through, though its card terms list higher caps of up to 3%). Infini Card covers Infini's consumer prepaid line (Lite, Lite Plus, Pro and Max), which our directory previously only listed in its corporate form: all four cards earn 1.5% cashback since November 1, 2026, with FX from 0% on Lite Plus and Max to 3% on Lite, and up to 50% back on AI subscriptions at the higher membership tiers. Both listings carry placeholder images until official card art is available.",
+    sourceUrl: "https://www.eliospay.com/",
+    sourceLabel: "Elios and Infini official pages, November 2026",
+  },
+  {
+    date: "2026-11-17",
     type: "market",
     cardName: "FX fees abroad",
     title: "Your crypto card takes up to 7% abroad: the FX fees on 13 cards, checked",
