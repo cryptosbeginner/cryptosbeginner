@@ -13,6 +13,16 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-18",
+    type: "fee-change",
+    cardName: "Fee schedule checks",
+    title: "Fee schedules rechecked against official pages: Infini, Oobit and Tangem Pay",
+    details:
+      "We rechecked three listings against the providers' own fee documents. Infini's pricing page corrects its own help centre: there is no cross-border fee on the Lite, Lite Plus or Pro cards (the help table lists 1% for Pro and 3% for Lite); only Max charges 1%, on transactions outside Hong Kong, and Lite, Lite Plus and Pro carry a $0.10 transaction reversal fee. Oobit's full personal schedule is now on its listing from the official fees page: the card is free with no monthly fee, card payments cost 1%, non-USD payments carry a 1.5% conversion fee, and ATM withdrawals cost 2.5%. Tangem Pay's tariffs (applicable 8 October 2026) add a Plus plan at $29.99 a month, ATM fees of 4% on Basic and 2% on Plus capped at $250 per withdrawal, and a $30 dispute fee. All three listings now carry worked examples showing what the fees do to a real transaction.",
+    sourceUrl: "https://www.infini.money/en/pricing?type=personal#personal-card-fees",
+    sourceLabel: "Infini, Oobit and Tangem Pay official fee documents, November 2026",
+  },
+  {
     date: "2026-11-17",
     type: "catalog-update",
     cardName: "New listings",
