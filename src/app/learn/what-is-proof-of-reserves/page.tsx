@@ -51,7 +51,7 @@ function ProofOfReservesJsonLd() {
     image:
       "https://cryptosbeginner.com/images/what-is-proof-of-reserves-hero.png",
     datePublished: "2026-06-28",
-    dateModified: "2026-08-12",
+    dateModified: "2026-11-19",
     author: [
       {
         "@type": "Person",
@@ -135,7 +135,7 @@ export default function ProofOfReservesPage() {
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
                   <span>Published: 28 June 2026</span>
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
-                  <span>Last updated: 12 August 2026</span>
+                  <span>Last updated: 19 November 2026</span>
                 </div>
               </div>
               <div className="mt-6 w-full max-w-sm rounded-lg border border-slate-200 bg-white p-4 shadow-sm md:mt-0">
@@ -168,7 +168,7 @@ export default function ProofOfReservesPage() {
               <ul className="mt-2 grid gap-2 sm:grid-cols-2">
                 <li>
                   <a href="#definition" className="hover:text-emerald-700">
-                    • Simple definition
+                    • What is proof of reserves, in simple terms?
                   </a>
                 </li>
                 <li>
@@ -183,7 +183,7 @@ export default function ProofOfReservesPage() {
                 </li>
                 <li>
                   <a href="#limitations" className="hover:text-emerald-700">
-                    • Limitations & blind spots
+                    • What are the limitations of proof of reserves?
                   </a>
                 </li>
                 <li>
@@ -215,7 +215,7 @@ export default function ProofOfReservesPage() {
         <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
           <article className="max-w-none text-slate-900 text-sm sm:text-base leading-relaxed">
             <h2 id="definition" className="text-lg font-semibold text-slate-900">
-              Simple definition
+              What is proof of reserves, in simple terms?
             </h2>
             <p className="mt-2">
               In traditional finance, “reserves” are the assets a bank or
@@ -237,7 +237,7 @@ export default function ProofOfReservesPage() {
               id="why-matters"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              Why Proof of Reserves matters
+              Why does proof of reserves matter?
             </h2>
             <p className="mt-2">
               Centralized exchanges and custodians sit between you and the
@@ -270,7 +270,7 @@ export default function ProofOfReservesPage() {
               id="how-works"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              How PoR works technically (plain English)
+              How does proof of reserves work?
             </h2>
             <p className="mt-2">
               Many PoR implementations use a data structure called a Merkle
@@ -299,7 +299,7 @@ export default function ProofOfReservesPage() {
               id="limitations"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              Limitations & blind spots
+              What are the limitations of proof of reserves?
             </h2>
             <p className="mt-2">
               Proof of Reserves is still just a snapshot. It shows that on a
@@ -328,7 +328,7 @@ export default function ProofOfReservesPage() {
               id="how-exchanges-use"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              How exchanges publish Proof of Reserves
+              How do exchanges publish proof of reserves?
             </h2>
             <p className="mt-2">
               Most mainstream exchanges that support PoR publish a
@@ -419,7 +419,7 @@ export default function ProofOfReservesPage() {
               id="how-beginners-use"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              How beginners should use PoR when choosing an exchange
+              How should beginners use proof of reserves when choosing an exchange?
             </h2>
             <p className="mt-2">
               As a beginner, your goal is not to become an auditor, it is to

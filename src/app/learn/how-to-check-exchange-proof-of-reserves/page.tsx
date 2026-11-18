@@ -30,6 +30,16 @@ const faqs = [
       "PoR reduces the room for abuse but cannot eliminate it. Borrowed funds, hidden liabilities, and creative accounting can still distort the picture. That is why PoR should be one of several trust checks.",
   },
   {
+    question: "Does proof of reserves guarantee my funds are safe?",
+    answer:
+      "No. Proof of reserves shows an exchange held enough assets to cover customer balances at the snapshot moment. It does not prove the assets are still there today, that every liability was included, or that the exchange is well run. Treat it as one trust check alongside security practices, incident history and regulatory standing, and keep long-term holdings in your own wallet.",
+  },
+  {
+    question: "Which exchanges publish proof of reserves?",
+    answer:
+      "Most large exchanges now publish proof of reserves pages, including Binance, OKX, Bybit and Kraken, typically updated monthly with Merkle tree verification for users. Coverage and quality vary, so check that a report is recent, covers liabilities as well as assets, and lets you verify your own balance.",
+  },
+  {
     question:
       "Is verifying my own balance in a Merkle tree worth the effort?",
     answer:
@@ -53,7 +63,7 @@ function HowToJsonLd() {
     image:
       "https://cryptosbeginner.com/images/how-to-check-proof-of-reserves-hero.png",
     datePublished: "2026-07-02",
-    dateModified: "2026-08-12",
+    dateModified: "2026-11-19",
     author: [
       {
         "@type": "Person",
@@ -204,7 +214,7 @@ export default function HowToCheckPorPage() {
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
                   <span>Published: 2 July 2026</span>
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
-                  <span>Last updated: 12 August 2026</span>
+                  <span>Last updated: 19 November 2026</span>
                 </div>
               </div>
               <div className="mt-6 w-full max-w-sm rounded-lg border border-slate-200 bg-white p-4 shadow-sm md:mt-0">
@@ -237,7 +247,7 @@ export default function HowToCheckPorPage() {
               <ul className="mt-2 grid gap-2 sm:grid-cols-2">
                 <li>
                   <a href="#why" className="hover:text-emerald-700">
-                    • Why checking PoR matters
+                    • Why you should check PoR yourself
                   </a>
                 </li>
                 <li>
@@ -266,6 +276,11 @@ export default function HowToCheckPorPage() {
                   </a>
                 </li>
                 <li>
+                  <a href="#summary-table" className="hover:text-emerald-700">
+                    • What a complete report shows
+                  </a>
+                </li>
+                <li>
                   <a href="#red-flags" className="hover:text-emerald-700">
                     • Green flags & red flags
                   </a>
@@ -283,7 +298,7 @@ export default function HowToCheckPorPage() {
         <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
           <article className="max-w-none text-slate-900 text-sm sm:text-base leading-relaxed">
             <h2 id="why" className="text-lg font-semibold text-slate-900">
-              Why it is worth checking Proof of Reserves yourself
+              Why should you check an exchange's proof of reserves yourself?
             </h2>
             <p className="mt-2">
               Proof of Reserves pages are designed to build trust, but they are
@@ -421,10 +436,57 @@ export default function HowToCheckPorPage() {
             </p>
 
             <h2
+              id="summary-table"
+              className="mt-6 text-lg font-semibold text-slate-900"
+            >
+              What should a complete proof of reserves report show?
+            </h2>
+            <p className="mt-2">
+              A complete proof of reserves report shows six things. If any of
+              them is missing, the report tells you less than it appears to:
+            </p>
+            <div className="mt-3 overflow-x-auto rounded-lg border border-slate-200">
+              <table className="w-full min-w-[540px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="px-4 py-2 font-semibold text-slate-900">Element</th>
+                    <th className="px-4 py-2 font-semibold text-slate-900">What to look for</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 text-slate-800">
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Reserves vs liabilities</td>
+                    <td className="px-4 py-2">Reserves at or above 100% of customer liabilities, not assets listed on their own</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Snapshot date</td>
+                    <td className="px-4 py-2">A recent date, with monthly or quarterly history rather than a single old snapshot</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Reserve wallets</td>
+                    <td className="px-4 py-2">Published addresses you can inspect yourself on a public block explorer</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Your own balance</td>
+                    <td className="px-4 py-2">A Merkle tree or account-level tool that lets you verify your balance was included</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Independent auditor</td>
+                    <td className="px-4 py-2">A named third-party firm and a clear explanation of its methodology</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Limitations</td>
+                    <td className="px-4 py-2">An honest statement of what the report does not cover, such as off-chain debts</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2
               id="red-flags"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              Green flags and red flags to watch for
+              What are the green flags and red flags in a proof of reserves report?
             </h2>
             <div className="mt-2 grid gap-4 md:grid-cols-2">
               <div className="rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">

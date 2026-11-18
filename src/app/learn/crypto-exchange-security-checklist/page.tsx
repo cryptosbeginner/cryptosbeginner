@@ -223,7 +223,14 @@ export default function CryptoExchangeSecurityChecklistPage() {
                 <ul className="mt-1 list-disc pl-5 text-slate-800">
                   <li>
                     Proof of Reserves or equivalent transparency reports,
-                    clearly explained and refreshed regularly.
+                    clearly explained and refreshed regularly (follow our{" "}
+                    <Link
+                      href="/learn/how-to-check-exchange-proof-of-reserves"
+                      className="text-emerald-700 underline underline-offset-2 hover:text-emerald-800"
+                    >
+                      step-by-step PoR check
+                    </Link>
+                    ).
                   </li>
                   <li>
                     Clear separation of customer assets from company

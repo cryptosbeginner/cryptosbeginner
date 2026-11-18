@@ -8,15 +8,15 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/learn/proof-of-reserves`;
-const UPDATED = "15 October 2026";
-const UPDATED_ISO = "2026-10-15";
+const UPDATED = "19 November 2026";
+const UPDATED_ISO = "2026-11-19";
 const ORIGINALLY_PUBLISHED = "May 2025";
 const HERO_IMAGE = "/images/learn/proof-of-reserves/featured.jpg";
 
 export const metadata: Metadata = {
   title: "Proof of Reserves Explained Simply (2026): What It Proves, What It Does Not",
   description:
-    "October 2026 beginner hub for crypto proof of reserves: the plain-English meaning, what PoR proves and does not prove, self-attested vs auditor-verified reports, red flags, and links to our full how-to-check guide.",
+    "November 2026 beginner hub for crypto proof of reserves: the plain-English meaning, what PoR proves and does not prove, self-attested vs auditor-verified reports, red flags, and links to our full how-to-check guide.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Proof of Reserves Explained Simply (2026)",
@@ -62,6 +62,11 @@ const faqItems = [
       "Start with our what is proof of reserves guide for the conceptual foundation, then follow how to check exchange proof of reserves for the practical walkthrough: finding the transparency page, reading the Merkle tree report, and verifying wallet addresses. For the other half of the safety picture, read exchange insurance funds explained.",
   },
   {
+    question: "Which exchanges publish proof of reserves?",
+    answer:
+      "Most major exchanges now publish proof of reserves reports, including Binance, OKX, Bybit and Kraken, usually monthly and often with a tool that lets you verify your own balance was included in the liabilities snapshot. Quality varies more than availability: a recent, auditor-checked report that covers liabilities is worth far more than a one-off wallet screenshot. Our how-to-check guide walks through reading one step by step.",
+  },
+  {
     question: "Should beginners rely on proof of reserves alone when picking an exchange?",
     answer:
       "No. Treat PoR as one check on a longer list. Combine it with the exchange's security practices and incident history, how long it has operated, regulatory standing, the fee structure, and your own account hygiene (strong passwords, two-factor authentication, withdrawal allowlists). Our exchange security checklist puts the full set of checks in one place.",
@@ -90,7 +95,7 @@ export default function ProofOfReservesHubPage() {
     "@type": "Article",
     headline: "Proof of Reserves Explained Simply (2026): What It Proves, What It Does Not",
     description:
-      "October 2026 beginner hub for crypto proof of reserves: the plain-English meaning, what PoR proves and does not prove, self-attested vs auditor-verified reports, red flags, and links to our full how-to-check guide.",
+      "November 2026 beginner hub for crypto proof of reserves: the plain-English meaning, what PoR proves and does not prove, self-attested vs auditor-verified reports, red flags, and links to our full how-to-check guide.",
     datePublished: "2025-05-05",
     dateModified: UPDATED_ISO,
     image: [`${SITE_URL}${HERO_IMAGE}`],
@@ -209,7 +214,7 @@ export default function ProofOfReservesHubPage() {
           </Section>
 
           <Section id="flavors">
-            <H2>Two flavors: self-attested vs. auditor-verified</H2>
+            <H2>Self-attested vs auditor-verified: what is the difference?</H2>
             <P>
               Not all PoR reports carry the same weight. A{" "}
               <strong className="text-slate-900">self-attested report</strong> is published by the exchange
@@ -242,7 +247,7 @@ export default function ProofOfReservesHubPage() {
           </Section>
 
           <Section id="red-flags">
-            <H2>Red flags in any PoR report</H2>
+            <H2>What are the red flags in a proof of reserves report?</H2>
             <ul className="mt-4 space-y-3 text-base leading-8 text-slate-600">
               <li><strong className="text-slate-900">A report that only appears after bad press.</strong> Transparency published under pressure tends to be minimal.</li>
               <li><strong className="text-slate-900">No auditor name or methodology.</strong> "Trust us, we checked" is not a proof.</li>

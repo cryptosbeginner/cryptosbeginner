@@ -30,6 +30,21 @@ const faqs = [
       "Yes. At least one primary backup and, ideally, a secondary backup in a different secure location protect you against fire, loss, or hardware failure.",
   },
   {
+    question: "Is it safe to store my seed phrase in a password manager?",
+    answer:
+      "It is safer than cloud notes or email, but it is not the recommended default. A password manager puts your seed phrase one master password away from anyone who compromises your account or device. If you use one anyway, choose a reputable manager, protect it with a unique strong master password and two-factor authentication, and keep a physical offline backup as your primary copy.",
+  },
+  {
+    question: "Can I take a photo of my seed phrase?",
+    answer:
+      "No. Photos sync to cloud libraries, get scanned by apps, and sit in galleries that malware targets. A photo quietly turns an offline secret into an online one. Write the phrase down physically instead.",
+  },
+  {
+    question: "What should I do if I think my seed phrase has been exposed?",
+    answer:
+      "Move your funds to a brand new wallet immediately. Create the new wallet, write down its seed phrase offline, transfer everything across, and never use the exposed phrase again. Anyone holding the old phrase can take whatever remains at any time, so speed matters more than investigating how it leaked.",
+  },
+  {
     question: "Should I share my seed phrase with anyone?",
     answer:
       "No. Never share your seed phrase with anyone, including supposed support agents, friends, or family. Legitimate services will never ask for it.",
@@ -50,7 +65,7 @@ function SeedPhraseJsonLd() {
     image:
       "https://cryptosbeginner.com/images/seed-phrase-security-hero.png",
     datePublished: "2026-07-10",
-    dateModified: "2026-08-12",
+    dateModified: "2026-11-19",
     author: [
       {
         "@type": "Person",
@@ -133,7 +148,7 @@ export default function SeedPhraseSecurityPage() {
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
                   <span>Published: 10 July 2026</span>
                   <span className="hidden h-4 w-px bg-slate-300 sm:inline" />
-                  <span>Last updated: 12 August 2026</span>
+                  <span>Last updated: 19 November 2026</span>
                 </div>
               </div>
               <div className="mt-6 w-full max-w-sm rounded-lg border border-slate-200 bg-white p-4 shadow-sm md:mt-0">
@@ -164,7 +179,7 @@ export default function SeedPhraseSecurityPage() {
               <ul className="mt-2 grid gap-2 sm:grid-cols-2">
                 <li>
                   <a href="#what-it-is" className="hover:text-emerald-700">
-                    • What a seed phrase is
+                    • What is a seed phrase?
                   </a>
                 </li>
                 <li>
@@ -174,7 +189,7 @@ export default function SeedPhraseSecurityPage() {
                 </li>
                 <li>
                   <a href="#do" className="hover:text-emerald-700">
-                    • Safe ways to back up your seed
+                    • How to back up your seed safely
                   </a>
                 </li>
                 <li>
@@ -184,7 +199,7 @@ export default function SeedPhraseSecurityPage() {
                 </li>
                 <li>
                   <a href="#multi-backup" className="hover:text-emerald-700">
-                    • Building a simple multi-backup plan
+                    • How many backups to keep
                   </a>
                 </li>
                 <li>
@@ -203,7 +218,7 @@ export default function SeedPhraseSecurityPage() {
               id="what-it-is"
               className="text-lg font-semibold text-slate-900"
             >
-              What a seed phrase really is
+              What is a seed phrase?
             </h2>
             <p className="mt-2">
               A seed phrase (also called a recovery phrase or mnemonic) is
@@ -224,7 +239,7 @@ export default function SeedPhraseSecurityPage() {
               id="why-important"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              Why seed phrase security matters
+              Why does seed phrase security matter?
             </h2>
             <p className="mt-2">
               There is no central “forgot password” for non-custodial
@@ -243,7 +258,7 @@ export default function SeedPhraseSecurityPage() {
             </p>
 
             <h2 id="do" className="mt-6 text-lg font-semibold text-slate-900">
-              Safe ways to back up your seed phrase
+              How should you back up your seed phrase safely?
             </h2>
             <p className="mt-2">
               There are many sophisticated schemes for backing up seeds,
@@ -306,8 +321,50 @@ export default function SeedPhraseSecurityPage() {
               </div>
             </div>
 
+            <p className="mt-4 font-semibold text-slate-900">
+              Comparing the main storage methods
+            </p>
+            <div className="mt-2 overflow-x-auto rounded-lg border border-slate-200">
+              <table className="w-full min-w-[540px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="px-4 py-2 font-semibold text-slate-900">Method</th>
+                    <th className="px-4 py-2 font-semibold text-slate-900">Strengths</th>
+                    <th className="px-4 py-2 font-semibold text-slate-900">Weaknesses</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 text-slate-800">
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Paper in a safe</td>
+                    <td className="px-4 py-2">Fully offline, simple, costs nothing</td>
+                    <td className="px-4 py-2">Burns, fades, and can be found or photographed</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Metal backup plate</td>
+                    <td className="px-4 py-2">Survives fire and water damage</td>
+                    <td className="px-4 py-2">Costs money, and is still a single physical secret</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Bank safety deposit box</td>
+                    <td className="px-4 py-2">Secure location away from your home</td>
+                    <td className="px-4 py-2">Bank hours, ongoing fees, and estate access can be complicated</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Encrypted password manager</td>
+                    <td className="px-4 py-2">Convenient and backed up across devices</td>
+                    <td className="px-4 py-2">Online attack surface; only as strong as your master password</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 font-medium">Split backups (Shamir or multisig)</td>
+                    <td className="px-4 py-2">No single point of failure</td>
+                    <td className="px-4 py-2">Complex; easy to lock yourself out if set up badly</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <h2 id="dont" className="mt-6 text-lg font-semibold text-slate-900">
-              What never to do with your seed phrase
+              What should you never do with your seed phrase?
             </h2>
             <p className="mt-2">
               The easiest way to lose funds is to store or share your seed
@@ -354,7 +411,7 @@ export default function SeedPhraseSecurityPage() {
               id="multi-backup"
               className="mt-6 text-lg font-semibold text-slate-900"
             >
-              Building a simple multi-backup plan
+              How many backups of your seed phrase should you have?
             </h2>
             <p className="mt-2">
               You do not need an overly complex system to be safer than
