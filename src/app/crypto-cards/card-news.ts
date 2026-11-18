@@ -15,6 +15,24 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-18",
     type: "catalog-update",
+    cardName: "Kraken Debit Card",
+    cardSlug: "kraken-debit-card",
+    title: "Krak Card's US Visa programme added to the Kraken Debit Card listing",
+    details:
+      "The Krak Card sold in the UK and EEA is the same Monavate-issued Mastercard programme as this directory's Kraken Debit Card listing, so it does not get a separate listing. What was missing is the separate US programme, now added: a Visa debit card issued by Lead Bank with Stripe running the programme, launched 18 August 2026, free to order with no monthly or annual fees, a 1% foreign currency transaction fee, replacement cards at $4.99 (plastic) and $60 (metal), and no availability in New York, Maine, Massachusetts or Indiana. US cashback pays up to 2% in USD or BTC. Verified against the Kraken blog, the kraken.com card page and the Lead Bank cardholder agreement on stripe.com.",
+  },
+  {
+    date: "2026-11-18",
+    type: "catalog-update",
+    cardName: "KAST Card",
+    cardSlug: "kast-card",
+    title: "KAST listing now shows real card designs",
+    details:
+      "The KAST Card listing previously showed an app home screen capture. It now carries official KAST card art: the black Visa Infinite design as the main image, with the gold Visa Infinite and grey Visa Platinum Business designs in the gallery.",
+  },
+  {
+    date: "2026-11-18",
+    type: "catalog-update",
     cardName: "Directory audit",
     title: "Full directory source-check completed: 47 more listings corrected or filled",
     details:
