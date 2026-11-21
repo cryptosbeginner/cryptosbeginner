@@ -14,6 +14,16 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-22",
+    type: "fee-change",
+    cardName: "Inactivity fees",
+    title: "What an idle crypto card costs: SolCard can take 10% of the balance a month",
+    details:
+      "Leaving money sitting on a crypto card is not free everywhere, and the worst case is SolCard: its terms make an account dormant after 90 days with no login, card transaction or top-up, and let SolCard take 10% of the remaining balance every month, and all of it once less than $1 would remain. At 10% a month, $1,000 becomes about $282 after twelve monthly deductions (the 90 idle days come first, so that point lands roughly 15 months after you stop). SolCard's own fee page says the opposite, that an unused card costs the same as no card at all; both statements are now flagged on the listing. Also verified and added: Crypto.com raised its inactivity fee this autumn to \u20ac6 in the EEA and \u00a36 in the UK from 1 October 2026 and $5.95 in the US from 1 September 2026, charged after 12 months with no cardholder-initiated activity; Bit2Me charges \u20ac10 a month on accounts with no login for 3 months, even though its card fee table lists inactivity at \u20ac0; CoinZoom's terms charge $4.99 a month after 6 idle months, $9.99 after 12, and a $100 closing fee at 36 months; Wallbit charges $2 a month after 3 idle months, only on bank balances under $500. Pionex charges nothing but is harsher in another way: it cancels rarely used cards under criteria it does not publish, and a cancelled account can never get another Pionex Card. Nexo, Ethena Pay and Bybit in Europe publish no inactivity fee at all. Figures verified against each provider's terms and fee schedules, following the roundup by @xKseilas.",
+    sourceUrl: "https://x.com/xKseilas/status/2122670491936661687",
+    sourceLabel: "@xKseilas, November 2026",
+  },
+  {
+    date: "2026-11-22",
     type: "catalog-update",
     cardName: "Card issuance costs",
     title: "Virtual vs physical: what it costs to get 18 popular crypto cards, checked against our listings",
