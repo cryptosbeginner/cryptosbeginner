@@ -1182,10 +1182,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/binance-card.png",
     imageAlt: "Binance Card official product image",
     imageSourceNote: "Official Binance product image, cached locally",
-    reviewedAt: "2026-10-14",
+    reviewedAt: "2026-11-22",
     featureFlags: { applePay: true, googlePay: true },
     caution: "Only available to eligible, identity-verified users residing in launched markets, and the card must be ordered from the Card section of the Binance app.",
     verification: "Identity verification (KYC) is required; eligibility is limited to users residing in a launched market such as Brazil.",
+    updateNote:
+      "November 2026: Binance launched Pay Later, initially for eligible users in Argentina and Mexico. It lets you pay with the Binance Card or QR Pay by borrowing USDC against BTC, ETH or BNB instead of selling them: up to 1,000 USDC and at most 50% of the collateral value, interest-free if repaid by the 1st of the following month. Overdue balances get a one-day grace period, then accrue interest of 0.1% per day, compounding. The pledged crypto is locked when you pay, faces a margin call at 75% loan-to-value and can be liquidated at 90%, so a sharp price fall can force a sale of your collateral.",
     referralUrl: "https://go.cryptosbeginner.com/binance",
     referralLabel: "Get Binance Card",
   },

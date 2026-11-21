@@ -152,6 +152,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "@Cardipays, November 2026",
   },
   {
+    date: "2026-11-16",
+    type: "launch",
+    cardName: "Binance Card",
+    cardSlug: "binance-card",
+    title: "Binance launches Pay Later: borrow USDC against BTC, ETH or BNB at the checkout",
+    details:
+      "Binance launched Pay Later on 16 November 2026, initially for eligible users in Argentina and Mexico, with more markets promised. It lets you pay with the Binance Card or QR Pay by borrowing USDC against BTC, ETH or BNB rather than selling them: up to 1,000 USDC, capped at 50% of the collateral value, and you only borrow what you spend. Repay by the 1st of the following month and interest is 0%. Miss the due date and, after a one-day grace period, overdue balances accrue interest of 0.1% per day, compounding. The catch is liquidation risk: Binance issues a margin call at 75% loan-to-value and can sell the pledged collateral at 90%. The Binance Card listing now carries the full terms.",
+    sourceUrl: "https://www.binance.com/en/square/post/388885759732711",
+    sourceLabel: "Binance announcement, 16 November 2026",
+  },
+  {
     date: "2026-11-14",
     type: "fee-change",
     cardName: "Declined payment fees",
