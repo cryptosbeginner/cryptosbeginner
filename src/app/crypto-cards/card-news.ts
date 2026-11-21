@@ -19,8 +19,8 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "What an idle crypto card costs: SolCard can take 10% of the balance a month",
     details:
       "Leaving money sitting on a crypto card is not free everywhere, and the worst case is SolCard: its terms make an account dormant after 90 days with no login, card transaction or top-up, and let SolCard take 10% of the remaining balance every month, and all of it once less than $1 would remain. At 10% a month, $1,000 becomes about $282 after twelve monthly deductions (the 90 idle days come first, so that point lands roughly 15 months after you stop). SolCard's own fee page says the opposite, that an unused card costs the same as no card at all; both statements are now flagged on the listing. Also verified and added: Crypto.com raised its inactivity fee this autumn to \u20ac6 in the EEA and \u00a36 in the UK from 1 October 2026 and $5.95 in the US from 1 September 2026, charged after 12 months with no cardholder-initiated activity; Bit2Me charges \u20ac10 a month on accounts with no login for 3 months, even though its card fee table lists inactivity at \u20ac0; CoinZoom's terms charge $4.99 a month after 6 idle months, $9.99 after 12, and a $100 closing fee at 36 months; Wallbit charges $2 a month after 3 idle months, only on bank balances under $500. Pionex charges nothing but is harsher in another way: it cancels rarely used cards under criteria it does not publish, and a cancelled account can never get another Pionex Card. Nexo, Ethena Pay and Bybit in Europe publish no inactivity fee at all. Figures verified against each provider's terms and fee schedules, following the roundup by @xKseilas.",
-    sourceUrl: "https://x.com/xKseilas/status/2122670491936661687",
-    sourceLabel: "@xKseilas, November 2026",
+    sourceUrl: "https://www.solcard.cc/terms",
+    sourceLabel: "SolCard Terms of Use and each provider's published fee schedule, following a roundup by @xKseilas, November 2026",
   },
   {
     date: "2026-11-22",
@@ -29,8 +29,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Virtual vs physical: what it costs to get 18 popular crypto cards, checked against our listings",
     details:
       "A widely shared comparison of virtual and physical card issuance costs lines up with this directory's audited figures on almost every row: RedotPay is the most expensive card to get ($10 virtual, $100 physical), KAST's physical card is free but delivery is $40, Bybit's physical card runs from free to $29.99 depending on region, and ether.fi Cash costs $10 virtual and $50 physical on its Core tier. The best deal on pure issuance is Krak: free virtual, free physical, no delivery charge published, and only a \u00a34.99/\u20ac4.99 replacement fee. Oobit also issues both formats free but charges 1% on every payment. Two rows we could not confirm stay as our official-source figures: Avici's first virtual Platinum is $15 in Avici's own docs (two current roundups report it free for new customers), and Trustee's \u20ac25 physical card does not appear on trustee.io, which currently lists the Trustee Plus physical card as unavailable. Structured issuance data has been added to 13 listings so the figures now drive our ratings and filters, not just the listing text.",
-    sourceUrl: "https://x.com/Nikitont/status/2122679701445488644",
-    sourceLabel: "@Nikitont, November 2026",
+    sourceLabel: "Checked against each provider's published fees, following the comparison by @Nikitont, November 2026",
   },
   {
     date: "2026-11-22",
@@ -40,8 +39,8 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Bitrefill Card checked: the 2% cashback is real, and so is the 1.99% deposit fee behind it",
     details:
       "The Bitrefill Card's headline 2% cashback is two separate 1% rewards: 1% when you deposit crypto and 1% when you spend, with no cap, paid in EUR, credited the same day the payment settles and with no expiry. The card itself is free, with no issuing or monthly fee, and the \u20ac10 monthly inactivity fee only starts after 12 months with no spending or cash-out. What the headline leaves out is now on the listing: each crypto deposit costs 1.99% plus a variable exchange spread, so depositing costs more than the deposit cashback returns; the cashback converts to Bitrefill store credit rather than withdrawable cash; ATM withdrawals cost 2.49%; and USDT deposits are no longer supported. Availability is EU/EEA residents only, and the issuer is Wallester AS of Estonia. Figures verified against Bitrefill's card page, pricing page and terms, following the summary posted by @Cardipays.",
-    sourceUrl: "https://x.com/Cardipays/status/2122684963153981946",
-    sourceLabel: "@Cardipays, November 2026",
+    sourceUrl: "https://www.bitrefill.com/card",
+    sourceLabel: "Bitrefill card page, pricing page and terms, following the summary by @Cardipays, November 2026",
   },
   {
     date: "2026-11-18",
@@ -137,8 +136,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Your crypto card takes up to 7% abroad: the FX fees on 13 cards, checked",
     details:
       "@xKseilas checked what 13 cards add to purchases outside USD (November 2026). The most expensive: Infini Lite at 3%, Oobit at 1% plus up to 1.5% for conversion, Bybit at 2% in most regions and 7% in Argentina, Plasma Lite at 1% plus about 1% Visa network fee, and Jupiter at 1.8% on DCS-issued cards. In the middle: Tangem Pay and Solid at 1.5%, Infini Pro and Jupiter on Rain-issued cards at 1%, Pulsar up to 1%, and Ethena Pay and Elios passing through Visa's roughly 1% with no markup of their own. The cheapest: ether.fi (0.5% Core, 0.25% Luxe, 0% Pinnacle, with USD and EUR purchases free on every tier), Plasma Platinum at 0%, OKX in Europe at 0% on top of the Mastercard rate, and MetaMask Metal with no cross-border fee. On $1,000 spent in Japan that is $30 on Infini Lite against $0 on Plasma Platinum. We have added the missing figures to the Oobit, Bybit, Tangem Pay, Ethena Pay, MetaMask, Pulsar and ether.fi listings; Solid, Plasma and Jupiter already matched.",
-    sourceUrl: "https://x.com/xKseilas/status/2120519064955068541",
-    sourceLabel: "@xKseilas, November 2026",
+    sourceLabel: "Provider fee pages, following the comparison by @xKseilas, November 2026",
   },
   {
     date: "2026-11-17",
@@ -147,8 +145,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Taking $200 out of an ATM on a crypto card costs $0 to $10 plus interest, depending on the card",
     details:
       "A fee-page review by @sweepbaseHQ (terms read October 2026) ranked what issuers charge for one $200 ATM withdrawal on entry tiers. Kraken charges nothing, ether.fi is free up to 10 withdrawals a month on Core, and Revolut, Crypto.com, Nexo and Wise are free up to a monthly cap. KAST charges $3 plus 2% ($7 on $200), and the Gemini and Venmo credit cards treat ATM use as a cash advance at $10 or 5% plus interest. Sweepbase also found that about a third of the cards it tracks cannot take cash out at all. The ATM owner's own fee comes on top of every figure here. We have added the numbers to the ether.fi, KAST, Crypto.com, Nexo, COCA, Gemini and Venmo listings; Kraken and RedotPay (2%) already matched.",
-    sourceUrl: "https://x.com/sweepbaseHQ/status/2120164827704520821",
-    sourceLabel: "@sweepbaseHQ, November 2026",
+    sourceLabel: "Issuer fee pages, compiled by @sweepbaseHQ, November 2026",
   },
   {
     date: "2026-11-17",
@@ -168,8 +165,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "The price of plastic: a physical crypto card costs from $0 to $100 before you spend a cent",
     details:
       "@0xVishnya checked card fees and delivery in the apps and docs (November 16, 2026), and the spread is the story. Avalanche Card and Tria (on Pro and Max) charge nothing for the card or its delivery. Wirex delivery starts at €5 in Europe and Krak at $5 (Krak itself replied that its cards are free, with a $4.99 replacement fee). Plasma One charges $20 delivery, free on Platinum. Jupiter charges $13.13 for the card plus $7.50 to $75 delivery, COCA $1 plus $26 DHL, KAST $40 delivery, ether.fi $50 on Core with free delivery, Avici $50 to $75, Solayer $59.99 all in, and RedotPay $100 for the card. The figures are now on each card's listing. Delivery is the quiet fee most comparisons skip.",
-    sourceUrl: "https://x.com/0xVishnya/status/2122346266172465387",
-    sourceLabel: "@0xVishnya, November 2026",
+    sourceLabel: "Provider apps and docs, following the roundup by @0xVishnya, November 2026",
   },
   {
     date: "2026-11-17",
@@ -200,8 +196,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "An empty crypto card can still cost you $10 a month in decline fees",
     details:
       "Visa lets a merchant retry the same charge up to 20 times in 30 days, and some cards bill you for every failure, as compiled by @xKseilas. KAST charges $0.50 each time a payment is declined for insufficient balance, and its help page says subscriptions count, so 20 retries on an empty card is $10. RedotPay gives 3 free declines per card a month, then $0.50 each (20 declines is $8.50), and a frozen card or a wrong card number counts as a decline. Tria charges up to $2 when an ATM declines you. We now count decline fees as part of a card's price and have added them to the KAST, RedotPay and Tria listings.",
-    sourceUrl: "https://x.com/xKseilas/status/2120958487329198142",
-    sourceLabel: "@xKseilas, November 2026",
+    sourceLabel: "KAST, RedotPay and Tria help pages, compiled by @xKseilas, November 2026",
   },
   {
     date: "2026-11-14",
@@ -210,8 +205,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Ten crypto cards now pay cashback on AI subscriptions, from 5% to 50%",
     details:
       "@0xVishnya rounded up the cards that rebate ChatGPT, Claude and other AI subscriptions. Wirex One and COCA pay 50% (Wirex: ChatGPT from the Elite tier, Claude from Private; COCA: from Standard+, one subscription up to $70). Infini pays 30% on its free tier and 50% from Professional, capped at $10 a month. Bleap pays 20% on its free card, on up to EUR 23 per service. ether.fi Cash pays 10% on Luxe, 20% on Pinnacle and 30% on VIP; Solid pays 10% on Prime and 20% on Ultra; Xplace pays 5% on Gold and 10% on Platinum on up to $250 a month; Pulsar Money pays 8% in points on Pro this November; Lava pays 5% in bitcoin on a free card. Plasma One takes the other route: no rate, a fixed AI spend credit of $200 a year on Premium and $500 a year on Platinum. Each rate is now on the card's listing.",
-    sourceUrl: "https://x.com/0xVishnya/status/2121166180627173875",
-    sourceLabel: "@0xVishnya, November 2026",
+    sourceLabel: "Provider pages, following the roundup by @0xVishnya, November 2026",
   },
   {
     date: "2026-11-14",
@@ -232,8 +226,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Deblock will refund GTA 6 for new users who spend 1,000 euros in 90 days",
     details:
       "In @xKseilas's price comparison of buying GTA 6 (79.99 euros on the PlayStation Store EU) with a crypto card, Deblock comes out at zero: new accounts using the code PAYDAY that spend 1,000 euros with the card within 90 days get the game refunded up to 79.99 euros, and pre-orders count. The same comparison notes that Nexo pays 10% back in NEXO on a first PlayStation or Microsoft Store purchase (capped at $8, to December 31), COCA's Elite tier pays 8% but needs 30,000 COCA staked, Oobit pays 10% in OOB that cannot be withdrawn, and Tria, Solid and PayitFast exclude games from their 3% cashback entirely. The exclusions are now noted on the Tria and Solid listings.",
-    sourceUrl: "https://x.com/xKseilas/status/2121195736746410124",
-    sourceLabel: "@xKseilas, November 2026",
+    sourceLabel: "Deblock offer terms, in a price comparison by @xKseilas, November 2026",
   },
   {
     date: "2026-11-13",
@@ -263,8 +256,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Most crypto cards no longer work for Indian residents; three still do, with caveats",
     details:
       "An issuer-page review by @xKseilas (November 2026) found India on RedotPay's card issuance restriction list, with existing Indian users reporting rupee payments and ATM withdrawals declined since late October amid reports that the RBI and FIU are looking into offshore crypto cards. Of the cards checked, Onboard is the only one that says yes to India in writing (online payments only, $0.50 + 2.5% per rupee payment). Kolo does not ban India but publishes no allowed-country list and warns that passing KYC does not guarantee the card. Pionex does not ban India either, but its own blog says KYC alone does not unlock the card, and on September 9, 2026 FIU-IND named Pionex among 15 platforms it called non-compliant. Based's own docs list India as restricted despite threads claiming it works. MEXC, Exa, Solid, Avici, OKX, Nexo, Wirex, Binance, Crypto.com, Gnosis Pay and Bitget Wallet are closed or not listed for India.",
-    sourceUrl: "https://x.com/xKseilas/status/2119012949402517738",
-    sourceLabel: "@xKseilas, November 2026",
+    sourceLabel: "Issuer pages, reviewed by @xKseilas, November 2026",
   },
   {
     date: "2026-11-12",
@@ -285,7 +277,6 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Krak salary rewards launch in the US: up to 1% back on your paycheck",
     details:
       "Krak, Kraken's money app, has quietly extended its salary rewards to the US under Krak Paycheck, as spotted by @0xDani in Krak's US support pages. Direct-deposit your paycheck (minimum $2,500 of qualifying payroll a month) and Krak pays up to 1% back, capped at $250 a month, paid monthly in BTC or USD, with no fee for receiving your salary. It is not available in New York, Maine, Indiana or Massachusetts. US paychecks land in virtual accounts provided by Citibank, and the minimum single paycheck is $10. The program has run in the UK and EEA as Salary Match since the card's launch; Krak's official support article confirms the European version pays 0.25% to 1% depending on the 30-day average balance held across Krak, Kraken and Kraken Pro (£/€200 to £/€50,000), on salary of at least £/€2,500 a month, with eligible salary capped at £/€25,000 a month. Our Kraken Debit Card listing now carries both versions in full.",
-    sourceUrl: "https://x.com/0xDani/status/2119825618980196758",
     sourceLabel: "Krak US support pages via @0xDani, and Krak Salary Match support article, November 2026",
   },
   {
@@ -306,8 +297,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Plasma One renames Core to Premium and triples the price to $600 a year",
     details:
       "Plasma has emailed Core members that their membership became Premium on 11 November 2026. The price rises from $199 to $600 per year when the current term ends; complimentary Core benefits run until the term ends, with at least 30 days notice before the renewal price changes. Premium adds 0% FX on the first $3,000 of monthly card spend (Core charged 0.5% plus about 1% Visa network FX), replaces the AI cashback and ChatGPT Go rebate with one $200 per year AI spend credit allocated monthly across an expanded list of providers, and adds local merchant rewards in Dubai, London and New York. The alternative 20,000 XPL lock for 12 months is unchanged (about $1,050 at November 2026 prices), and the cashback bands did not move, so at the new price cashback alone covers the fee from about $2,000 of monthly spend, or about $1,170 per month if the full AI credit is used. Our listing, review, and Plasma One vs Tria comparison have been updated.",
-    sourceUrl: "https://x.com/0xVishnya/status/2119866246933983513",
-    sourceLabel: "Plasma One member email, reported by @0xVishnya, November 2026",
+    sourceLabel: "Plasma One member email and help centre, reported by @0xVishnya, November 2026",
   },
   {
     date: "2026-11-12",
@@ -337,8 +327,7 @@ export const CARD_NEWS: CardNewsEntry[] = [
     title: "Top-up costs compared across 8 cards: 5 charge no deposit fee",
     details:
       "A funding-cost comparison by @xKseilas, checked against our listings, breaks down what it costs to top up eight major crypto cards. Jupiter now tops the value table on its home network: USDC and USDT deposits on Solana are free after this week's fee page update, while other networks pay a bridge charge of at least $0.30 plus gas, with minimums of $3 ($10 on Ethereum). Plasma One is the outlier that charges on the way in, at 0.15% to 0.75% per crypto deposit plus network and bridge fees, with a swap fee on USDC that USDT skips. Tria charges nothing itself but passes on a variable provider fee for swaps and routing. ether.fi, KAST, RedotPay, Bitget Wallet, and Tangem Pay charge no top-up fee on stablecoins. The costs that bite sit elsewhere: Bitget Wallet activation is 0.10 USDC inside a 72-hour post-KYC window and 10 USDC after it, KAST withdrawals cost $1 + 0.1% on Solana and $6 + 0.1% on Ethereum, RedotPay issuance is $10 virtual and $100 physical and cannot be paid from the $5 welcome reward, and Tangem Pay delivery runs $28.82 to $79.94 on the free plan. Network choice dominates small top-ups: a USDT transfer on TRON without staked energy costs about $2, which is roughly 10% of a $20 top-up gone before you spend anything. All eight listings have been updated with the funding detail.",
-    sourceUrl: "https://x.com/xKseilas/status/2119362799159624017",
-    sourceLabel: "Funding-cost comparison by @xKseilas, November 2026",
+    sourceLabel: "Provider fee pages, in a comparison by @xKseilas checked against our listings, November 2026",
   },
   {
     date: "2026-11-11",
