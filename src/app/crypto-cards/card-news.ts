@@ -13,6 +13,17 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-22",
+    type: "catalog-update",
+    cardName: "Bitrefill Card",
+    cardSlug: "bitrefill-card",
+    title: "Bitrefill Card checked: the 2% cashback is real, and so is the 1.99% deposit fee behind it",
+    details:
+      "The Bitrefill Card's headline 2% cashback is two separate 1% rewards: 1% when you deposit crypto and 1% when you spend, with no cap, paid in EUR, credited the same day the payment settles and with no expiry. The card itself is free, with no issuing or monthly fee, and the \u20ac10 monthly inactivity fee only starts after 12 months with no spending or cash-out. What the headline leaves out is now on the listing: each crypto deposit costs 1.99% plus a variable exchange spread, so depositing costs more than the deposit cashback returns; the cashback converts to Bitrefill store credit rather than withdrawable cash; ATM withdrawals cost 2.49%; and USDT deposits are no longer supported. Availability is EU/EEA residents only, and the issuer is Wallester AS of Estonia. Figures verified against Bitrefill's card page, pricing page and terms, following the summary posted by @Cardipays.",
+    sourceUrl: "https://x.com/Cardipays/status/2122684963153981946",
+    sourceLabel: "@Cardipays, November 2026",
+  },
+  {
     date: "2026-11-18",
     type: "catalog-update",
     cardName: "Kraken Debit Card",
