@@ -15,6 +15,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-22",
     type: "catalog-update",
+    cardName: "Card issuance costs",
+    title: "Virtual vs physical: what it costs to get 18 popular crypto cards, checked against our listings",
+    details:
+      "A widely shared comparison of virtual and physical card issuance costs lines up with this directory's audited figures on almost every row: RedotPay is the most expensive card to get ($10 virtual, $100 physical), KAST's physical card is free but delivery is $40, Bybit's physical card runs from free to $29.99 depending on region, and ether.fi Cash costs $10 virtual and $50 physical on its Core tier. The best deal on pure issuance is Krak: free virtual, free physical, no delivery charge published, and only a \u00a34.99/\u20ac4.99 replacement fee. Oobit also issues both formats free but charges 1% on every payment. Two rows we could not confirm stay as our official-source figures: Avici's first virtual Platinum is $15 in Avici's own docs (two current roundups report it free for new customers), and Trustee's \u20ac25 physical card does not appear on trustee.io, which currently lists the Trustee Plus physical card as unavailable. Structured issuance data has been added to 13 listings so the figures now drive our ratings and filters, not just the listing text.",
+    sourceUrl: "https://x.com/Nikitont/status/2122679701445488644",
+    sourceLabel: "@Nikitont, November 2026",
+  },
+  {
+    date: "2026-11-22",
+    type: "catalog-update",
     cardName: "Bitrefill Card",
     cardSlug: "bitrefill-card",
     title: "Bitrefill Card checked: the 2% cashback is real, and so is the 1.99% deposit fee behind it",

@@ -291,6 +291,10 @@ export const cardListings: CardListing[] = [
     imageAlt: "RedotPay physical stablecoin card",
     imageSourceNote: "Official RedotPay-hosted card image",
     reviewedAt: "2026-11-14",
+    feeBreakdown: {
+      virtualIssuanceUsd: 10,
+      physicalIssuanceUsd: 100,
+    },
     featureFlags: { applePay: true, googlePay: true, earnYield: true },
     caution: "Card availability, supported assets, verification, fees, and unsupported regions can change. ATM fees are tiered on USD cards (3% above $10,000 of monthly withdrawals). RedotPay Pro cashback applies only to Apple Pay and Google Pay purchases and its terms can change. Read the current RedotPay Help Center and terms before funding an account.",
     referralUrl: "https://go.cryptosbeginner.com/RedotPay",
@@ -373,6 +377,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Bybit Card Mastercard product image",
     imageSourceNote: "Official Bybit-hosted Card product image",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+    },
     caution: "The Bybit page explicitly excludes EEA customers. Cashback, fees, merchant categories, and eligibility are not universal and may change.",
     referralUrl: "https://go.cryptosbeginner.com/BybitCardBonus",
     referralLabel: "Check Bybit Card",
@@ -1287,6 +1294,10 @@ export const cardListings: CardListing[] = [
     imageAlt: "Kraken Debit Card official product image",
     imageSourceNote: "Official Kraken product image, cached locally",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+      physicalIssuanceUsd: 0,
+    },
     updateUrl: "https://x.com/0xDani/status/2119825618980196758",
     updateLabel: "Krak salary rewards reach the US, via @0xDani",
     updateNote:
@@ -1393,6 +1404,10 @@ export const cardListings: CardListing[] = [
     imageAlt: "Gold ether.fi Cash Visa credit card",
     imageSourceNote: "Official product image not available from issuer",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 10,
+      physicalIssuanceUsd: 50,
+    },
     caution: "Crypto assets used as backing may lose value, and the issuer has no custody or control over wallet contents. Borrow mode accrues interest from 1.43%; existing debt stays in its original currency.",
     verification: "Identity verification (KYC) required for all cardholders.",
     referralUrl: "https://go.cryptosbeginner.com/etherfi",
@@ -1430,6 +1445,10 @@ export const cardListings: CardListing[] = [
     imageAlt: "Avici Card official product image",
     imageSourceNote: "Official Avici product image, cached locally",
     reviewedAt: "2026-11-14",
+    feeBreakdown: {
+      virtualIssuanceUsd: 15,
+      physicalIssuanceUsd: 50,
+    },
     caution: "Your spending limit tracks your collateral value: if USDC collateral value drops below your outstanding charges and you do not top up, a liquidation event can occur. Spending crypto-backed credit can have tax consequences depending on your jurisdiction.",
     verification: "Identity verification required. Applicants must attest they are not US citizens.",
     referralUrl: "https://invite.avici.money/mppwqz",
@@ -1991,6 +2010,7 @@ export const cardListings: CardListing[] = [
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-11-18",
     feeBreakdown: {
+      physicalIssuanceUsd: 0,
       virtualIssuanceUsd: 0,
       annualFeeUsd: 0,
       fxFeeNote: "1.5% conversion fee on non-USD payments; 1% fee on all card payments",
@@ -2712,6 +2732,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Green Kolo Visa crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-11-13",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+    },
     caution: "Kolo operates under a sandbox licence (AIFC FinTech Lab), not a full banking or e-money licence. The EUR card FX fee can reach 1.35% on non-EUR purchases, and there is no personal IBAN for receiving EUR.",
     verification: "Provider account and regional eligibility requirements apply.",
     cashbackBands: [
@@ -2742,6 +2765,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Pulsar Money Card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+    },
     caution: "Newly launched product. No public fee schedule, card network, or issuer details are published yet; verify terms in the app before depositing significant funds.",
     updateNote:
       "Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
@@ -3193,6 +3219,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "SolCard purple crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 10,
+    },
     caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
     verification: "Provider account and regional eligibility requirements apply.",
   },
@@ -4297,6 +4326,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Ethena Pay Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+    },
     caution:
       "The card is in beta with limited country coverage, so terms and availability may change.",
     verification: "Verification details not disclosed; beta access is invitation based.",
@@ -4362,6 +4394,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Plasma One Card design",
     imageSourceNote: "Official card image supplied November 2026",
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      physicalIssuanceUsd: 0,
+    },
     caution:
       "Higher tiers require large XPL locks or a steep annual fee, so do the math before upgrading. Premium tripled the old Core price from $199 to $600 a year in November 2026. Platinum costs $2,500 a year or a 100,000 XPL lock.",
     updateUrl: "https://x.com/xKseilas/status/2118635020587774448",
@@ -5336,6 +5371,9 @@ export const cardListings: CardListing[] = [
     imageAlt: "Jupiter Card card placeholder image",
     imageSourceNote: "Placeholder image",
     reviewedAt: "2026-11-12",
+    feeBreakdown: {
+      physicalIssuanceUsd: 13.13,
+    },
     featureFlags: { applePay: true, googlePay: true },
     caution: "Fees, limits and Apple Pay or Google Pay support differ by issuer and country, so check the Jupiter docs for current terms.",
     verification: "KYC required; card issuer is assigned by country of residence.",
@@ -5471,6 +5509,10 @@ export const cardListings: CardListing[] = [
       { url: "/images/cards/kast-card-platinum-business.png", alt: "KAST Card in the grey Visa Platinum Business design with an outline K pattern along the right edge", source: "KAST grey Visa Platinum Business card design" }
     ],
     reviewedAt: "2026-11-18",
+    feeBreakdown: {
+      virtualIssuanceUsd: 0,
+      physicalIssuanceUsd: 0,
+    },
     featureFlags: { applePay: true, googlePay: true },
     caution: "Boosted Reserve rates are a KAST-funded promotion ending mid-2027. Yield vaults carry DeFi risk. KAST is not a bank. Deposit rules are strict; wrong-network deposits can be lost.",
     referralUrl: "https://go.cryptosbeginner.com/KAST",
