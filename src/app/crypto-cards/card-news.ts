@@ -265,6 +265,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Tria Help Center, November 2026",
   },
   {
+    date: "2026-11-18",
+    type: "catalog-update",
+    cardName: "Ready Card",
+    cardSlug: "ready-card",
+    title: "Ready launches Community Cards: paiN Gaming and ENVY join Method",
+    details:
+      "Ready (formerly Argent) has rebuilt its card on Base as a virtual Visa Platinum credit card issued by Third National with Rain as issuance partner, replacing its discontinued Lite and Metal Mastercards. Its Community Cards send a share of card programme revenue to the holder chosen community and earn Ready Points for community rewards: Method was first, paiN Gaming followed on 17 November 2026 and ENVY on 18 November 2026. Points have no cash value and cannot be transferred. New listing added to the directory.",
+    sourceLabel: "Ready blog and help centre, November 2026",
+    sourceUrl: "https://www.ready.co",
+  },
+  {
     date: "2026-11-17",
     type: "catalog-update",
     cardName: "New listings",

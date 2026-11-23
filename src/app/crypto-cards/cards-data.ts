@@ -6389,6 +6389,78 @@ export const cardListings: CardListing[] = [
     verification: "Operated by SpotPay, Inc., registered with FinCEN as a money services business.",
     featureFlags: { applePay: true, googlePay: true },
   },
+  {
+    slug: "ready-card",
+    name: "Ready Card",
+    provider: "Ready",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A virtual Visa Platinum credit card from Ready (formerly Argent), spending self-custodial digital dollars on Base at 0% APR, with community cards for esports teams including paiN Gaming and ENVY.",
+    editorialSummary:
+      "Ready, the wallet formerly known as Argent, has relaunched as a community finance app on Base. Its previous Lite and Metal Mastercard programme has been discontinued; the current Ready Card is a virtual Visa Platinum credit card issued by Third National, with Rain as the card issuance partner. Spending is collateralised by the digital dollars in your self-custodial Ready account (USDC on Base), at 0% APR for purchases, and your spending capacity is set against your wallet balance. There is no cashback. Instead, every purchase sends a share of the card programme's revenue to your chosen community at no extra cost, and earns Ready Points for that community's rewards shop. Co-branded Community Cards launched through November 2026 for Method, paiN Gaming and ENVY.",
+    bestFor:
+      "Ready wallet users who want their card spending to fund a community they follow.",
+    availability:
+      "Available in a very limited number of countries, expanding gradually; Ready publishes no country list. Applicants must be 18 or over, complete KYC in the app and be approved by the issuer; completing identity checks does not guarantee approval. Spending limits are set individually and are not published.",
+    regions: ["Very limited countries; list not published"],
+    pricing:
+      "Ready does not publish an issuance or monthly fee for the card. Its card terms set the foreign transaction fee at 0% and the cross-border fee at 0%; the issuer's generic international card terms allow up to 3% for each, so check the terms shown in the app before spending abroad. Late payment costs 2% of the outstanding balance in the US programme and up to $40 in the non-US programme; a returned payment costs up to $29 outside the US.",
+    rewards:
+      "No cashback. Purchases earn Ready Points, redeemed in the in-app Rewards Shop for community items and experiences (match tickets, player sessions, signed jerseys, limited drops, watch parties). Points are tied to the community chosen at signup, cannot be transferred, have no cash value and cannot be redeemed for cash; Ready does not publish the earn rate, which is shown in the app only. Separately, a share of card programme revenue goes to your community on every purchase at no extra cost to you.",
+    funding:
+      "Digital dollars (USDC) held in your self-custodial Ready account on Base. Assets committed to card obligations may not be withdrawable while committed, and the balance shown in the wallet can differ from the amount available for card spending.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://www.ready.co",
+    sourceLabel: "Ready official site, help centre and terms",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Ready Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Community Cards are live: Method was the first community, paiN Gaming followed on 17 November 2026 and ENVY on 18 November 2026, each with its own points rewards shop (Ready blog).",
+    caution:
+      "Ready states that it is not authorised by the FCA or any other regulator, and balances are not FSCS-protected or bank deposits. The card is virtual only, with no ATM access; physical cards are planned with no date. Do not confuse the current Visa programme with the discontinued Lite and Metal Mastercards.",
+    verification: "Operated by Argent Labs Limited, registered in England (5 New Street Square, London EC4A 3TW), doing business as Ready. The issuer does not administer the Ready Points programme.",
+    feeBreakdown: { fxFeeNote: "0% per Ready's card terms; the issuer's generic terms allow up to 3%" },
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "dpt-oxygen-card",
+    name: "DPT Oxygen Card",
+    provider: "DPT",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A Visa Platinum card from Hong Kong's DPT, spending USDC and USDT held by BitGo, with a published fee schedule and a higher invite-only Infinite tier.",
+    editorialSummary:
+      "DPT (dpt.xyz) is a stablecoin payments platform from DPT (HK) Limited, launched in 2025, running a personal card, business payouts and merchant acquiring on one rail. Its Oxygen Card is a Visa Platinum funded directly from your DPT stablecoin balance, with no separate card top-up; deposits are held by BitGo, segregated from DPT's own funds. Above Oxygen sits Obsidian, a Visa Infinite tier that is invite-only or earned by top spenders and carries a $10,000 a year membership. There is no cashback; the published perks are travel insurance, hotel collection access and prize draws, plus yield on balances through DPT Earn.",
+    bestFor:
+      "Users who want a stablecoin card with a fully published fee schedule and custodial simplicity.",
+    availability:
+      "Full KYC is mandatory before applying. DPT pitches card acceptance at 150 plus countries, which is Visa acceptance, not eligibility; DPT's public pages do not publish an eligibility country list. Restrictions reported from DPT's FAQ by card trackers (US and Canadian residents barred, among others) are marked as reported on this listing, not as published by DPT on its site.",
+    regions: ["Eligibility list not published; reported restrictions apply"],
+    pricing:
+      "From DPT's official fee schedule (checked November 2026): virtual card application $10; physical card application $30 plus $60 DHL international mailing. No monthly or annual fee on Oxygen and 0% APR. USD transactions are free; the FX fee is 0% to 2% depending on currency; conversion costs 1% on USDT and USDC; ATM withdrawals cost 2% plus a possible FX surcharge of 0% to 2% (limits of $250 per withdrawal, 3 a day). The first 3 declined transactions a month are free, then $0.50 each; a $0.10 fee on transactions of $25 or less is currently waived. Deposits are free. Note: DPT's learn page still states a $50 physical application fee, which conflicts with the $30 plus mailing in its current fee schedule.",
+    rewards:
+      "No cashback. Perks: travel accident insurance up to $500,000 plus delay, baggage and cancellation cover; Visa Luxury Hotel Collection access; entry to member Lucky Draw prize draws; automatic Obsidian upgrade for top spenders. New accounts get a $5 welcome voucher, usable against card purchases over $5 but not against card fees and not withdrawable as cash. DPT Earn offers yield on USDC and USDT in the app, powered by Gauntlet's USD Alpha strategy; DPT does not publish an APY on its own pages.",
+    funding:
+      "USDC and USDT only for card spending, deposited on Ethereum, Polygon, Tron or Solana per DPT's learn page, or bought in the app (Apple Pay, Google Pay, cards, PayPal and Klarna). Deposits are held by BitGo, segregated from DPT's funds, with insurance coverage stated as up to $250M.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://dpt.xyz",
+    sourceLabel: "DPT official site, learn pages and fee schedule",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the DPT Oxygen Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026. DPT announced eight new stablecoin purchase methods on X on 19 November 2026 (BLIK, Swish, MB WAY, Bancontact, EPS, Multibanco, Belfius and Bancomat Pay), as reported by card trackers; the list does not yet appear on DPT's own site. DPT has also announced a Black Friday offer of 50% off the Oxygen Card; the 27 to 29 November dates in circulation are not stated on DPT's site.",
+    caution:
+      "DPT is not a bank and deposits are not covered by any deposit insurance scheme. The issuer, U.S. Bank, is named on DPT's product and help pages but not in its terms of service, which refer only to unnamed service partners. DPT's own pages conflict on the physical card price ($50 on the learn page against $30 plus $60 mailing in the fee schedule); the fee schedule is the dedicated pricing document.",
+    verification: "Operated by DPT (HK) Limited, Hong Kong, holding a Trust or Company Service Provider licence (no. TC010834) under the Anti-Money Laundering and Counter-Terrorist Financing Ordinance, Cap. 615.",
+    feeBreakdown: { virtualIssuanceUsd: 10, physicalIssuanceUsd: 30, fxFeeNote: "0% to 2% by currency; 1% conversion on USDT and USDC", atmFeeNote: "2% plus a possible FX surcharge of 0% to 2%; $250 per withdrawal, 3 per day" },
+    featureFlags: { applePay: true, googlePay: true },
+  },
 ];
 
 export function getCardBySlug(slug: string) {
