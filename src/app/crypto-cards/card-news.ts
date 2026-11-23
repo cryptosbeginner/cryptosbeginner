@@ -13,6 +13,26 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-23",
+    type: "promo",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "Black Friday Boost: new ether.fi accounts earn 20% back on their first $250",
+    details:
+      "New ether.fi Cash accounts that join through a participating creator's link between 23 and 30 November 2026 earn 20% total cashback on their first $250 of card spending, up to $50 back, under ether.fi's Black Friday Boost terms. The card's standard cashback is up to 3%, paid in ETHFI.",
+    sourceLabel: "ether.fi Black Friday Boost terms, November 2026",
+  },
+  {
+    date: "2026-11-23",
+    type: "promo",
+    cardName: "Ethena Pay Card",
+    cardSlug: "ethena-pay-card",
+    title: "Ethena Pay referrals are live for everyone: 10 referrals unlock Pro, 50 unlock VIP",
+    details:
+      "Ethena Pay's referral programme is now open to all users after a staged rollout. Ten qualified referrals unlock the Pro tier (4.5% cashback on the first spend band) and 50 unlock VIP (5%). A qualified referral pays the new user $30 in AVAX under Ethena's referral terms, and Ethena's launch campaign pays the referrer $20 in AVAX.",
+    sourceLabel: "Ethena Pay referral terms and launch campaign, November 2026",
+  },
+  {
     date: "2026-11-22",
     type: "fee-change",
     cardName: "Inactivity fees",
@@ -41,6 +61,77 @@ export const CARD_NEWS: CardNewsEntry[] = [
       "The Bitrefill Card's headline 2% cashback is two separate 1% rewards: 1% when you deposit crypto and 1% when you spend, with no cap, paid in EUR, credited the same day the payment settles and with no expiry. The card itself is free, with no issuing or monthly fee, and the \u20ac10 monthly inactivity fee only starts after 12 months with no spending or cash-out. What the headline leaves out is now on the listing: each crypto deposit costs 1.99% plus a variable exchange spread, so depositing costs more than the deposit cashback returns; the cashback converts to Bitrefill store credit rather than withdrawable cash; ATM withdrawals cost 2.49%; and USDT deposits are no longer supported. Availability is EU/EEA residents only, and the issuer is Wallester AS of Estonia. Figures verified against Bitrefill's card page, pricing page and terms, following the summary posted by @Cardipays.",
     sourceUrl: "https://www.bitrefill.com/card",
     sourceLabel: "Bitrefill card page, pricing page and terms, following the summary by @Cardipays, November 2026",
+  },
+  {
+    date: "2026-11-22",
+    type: "promo",
+    cardName: "COCA Card",
+    cardSlug: "coca-card",
+    title: "COCA pays 8% back on your first 3 purchases if you joined in November",
+    details:
+      "Accounts opened in November 2026 get 8% cashback on their first 3 card purchases, on up to $300 of spending (up to $24 back), until 30 November 2026. Separately, COCA's AI subscription rebate is now spelled out in its terms: 50% back from the Standard+ tier on the first $70 of one subscription per category each month, counting toward the monthly claim limit.",
+    sourceLabel: "COCA promotion terms, November 2026",
+  },
+  {
+    date: "2026-11-20",
+    type: "market",
+    cardName: "Solid Card",
+    cardSlug: "solid-card",
+    title: "Solid's Rain-issued cards stopped working on 20 November; Wirex is the replacement where offered",
+    details:
+      "Solid cards issued by Rain stopped working on 20 November 2026, and Rain-linked US virtual accounts closed the same day, per Solid's help centre. Wirex-issued cards are unaffected. Where the card is still offered, holders can switch to a Wirex-issued card in the app after a fresh identity check (photo ID, proof of address and a selfie); nothing moves over automatically, so wallet apps and subscriptions need the new card details. Where the new card is not offered, the card closes and the Solid account and wallet keep working.",
+    sourceUrl: "https://support.solid.xyz/articles/rain-cards-closing-20-november",
+    sourceLabel: "Solid help centre, November 2026",
+  },
+  {
+    date: "2026-11-20",
+    type: "catalog-update",
+    cardName: "COCA Card",
+    cardSlug: "coca-card",
+    title: "COCA 3.12.0 adds top-ups from another Visa or Mastercard at a 3% fee",
+    details:
+      "COCA app version 3.12.0 lets users top up in USD or EUR from an external Visa or Mastercard saved in the app, at the 3% fee listed in COCA's fee terms. The update also shows the fee charged on each ATM withdrawal in the transaction details.",
+    sourceLabel: "COCA 3.12.0 release notes and fee terms, November 2026",
+  },
+  {
+    date: "2026-11-20",
+    type: "catalog-update",
+    cardName: "XPlace Card",
+    cardSlug: "xplace-card",
+    title: "XPlace now receives 10+ currencies and sends bank transfers to 150+ countries",
+    details:
+      "XPlace's November update adds incoming payments in more than 10 currencies, combined into a single USD balance, and outgoing bank transfers in 28 currencies to accounts in 150+ countries. USDC and USDT deposits carry no XPlace fee, and every membership, including the free Basic tier, now carries the same card limits.",
+    sourceLabel: "XPlace app update, November 2026",
+  },
+  {
+    date: "2026-11-19",
+    type: "catalog-update",
+    cardName: "Solid Card",
+    cardSlug: "solid-card",
+    title: "Solid adds WBTC Credit mode: spend against Bitcoin at about 4% APR",
+    details:
+      "Solid now lets cardholders deposit WBTC, turn on Credit mode and pay with the card at about 4% APR, borrowing up to 60% of the WBTC's value instead of selling it. If Bitcoin falls far enough, part of the collateral is sold to cover the loan, per Solid's announcement.",
+    sourceLabel: "Solid announcement, November 2026",
+  },
+  {
+    date: "2026-11-19",
+    type: "catalog-update",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma AED accounts are live in the UAE, provided by ruya bank",
+    details:
+      "UAE-based Plasma users can now open an AED account inside the app, provided by ruya bank and opened with UAE Pass sign-up. Plasma is not a bank; AED converts to USD stablecoins in the app through Fuze, and Plasma's UAE terms addendum says cards, rewards and yield are not part of the AED account service. A Plasma Business waitlist (USD accounts in the business name, no US entity required) opened the same week.",
+    sourceLabel: "Plasma announcement and UAE terms addendum, November 2026",
+  },
+  {
+    date: "2026-11-19",
+    type: "catalog-update",
+    cardName: "Pulsar Money Card",
+    cardSlug: "pulsar-money-card",
+    title: "Pulsar Money adds USDT deposits on Tron",
+    details:
+      "Pulsar Money now accepts USDT deposits on the Tron network (TRC-20), so users can fund the balance they spend from with the virtual card. Pulsar charges no fee on supported stablecoin deposits; network and third-party fees can still apply, per its 19 November announcement.",
+    sourceLabel: "Pulsar Money press release, 19 November 2026",
   },
   {
     date: "2026-11-18",
@@ -120,6 +211,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Infini, Oobit and Tangem Pay official fee documents, November 2026",
   },
   {
+    date: "2026-11-18",
+    type: "market",
+    cardName: "MEXC Card",
+    cardSlug: "mexc-card",
+    title: "MEXC Global Card discontinued on 18 November, a week after the APAC Card",
+    details:
+      "MEXC discontinued its Global Card on 18 November 2026 at 15:30 UTC, blaming service adjustments by its third-party card issuer; the card had been suspended for maintenance since 14 November and had launched on 31 August 2026. The APAC Card was discontinued on 11 November. Leftover card balances are credited to Spot accounts within 3 business days of a balance snapshot on 21 November 2026. The MEXC Card has been added to our graveyard of discontinued cards.",
+    sourceUrl: "https://www.mexc.co/announcements/article/mexc-global-card-service-discontinuation-notice-17827791539800",
+    sourceLabel: "MEXC Global Card discontinuation notice, November 2026",
+  },
+  {
     date: "2026-11-17",
     type: "catalog-update",
     cardName: "New listings",
@@ -179,6 +281,26 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "@Cardipays, November 2026",
   },
   {
+    date: "2026-11-17",
+    type: "promo",
+    cardName: "Solid Card",
+    cardSlug: "solid-card",
+    title: "Solid's new referral programme pays 1% of a friend's spend, up to $2,000 per friend",
+    details:
+      "Solid replaced its $25 in FUSE referral bonus on 17 November 2026. The inviter now earns 1% of a referred friend's card spending in soFUSE, paid every Thursday, up to $2,000 per friend. Both sides also get $10 in card credit when the friend spends $150 at 3 or more merchants in the first 30 days, and $50 when the friend spends $5,000 in the first 90 days; friends who joined before 17 November stay on the old rules. Separately, Solid is waiving its fee on the first 3 SEPA deposits until 16 December 2026 (Ultra deposits are always free).",
+    sourceLabel: "Solid referral programme terms, November 2026",
+  },
+  {
+    date: "2026-11-17",
+    type: "catalog-update",
+    cardName: "Wirex One Card",
+    cardSlug: "wirex-one-card",
+    title: "Wirex One adds tokenized US stocks, from $1, tradable 24/7",
+    details:
+      "Wirex launched Tokenized Stocks in the Wirex One app on 17 November 2026: tokens issued by Coinbase on Base that track US shares (Apple, Amazon and Microsoft at launch), buyable from $1 and tradable around the clock, each backed 1:1 by a share held in custody. The tokens give price exposure only: no legal ownership, voting rights or dividends, and Wirex labels them high-risk. They are not available to US users.",
+    sourceLabel: "Wirex announcement via PR Newswire, 17 November 2026",
+  },
+  {
     date: "2026-11-16",
     type: "launch",
     cardName: "Binance Card",
@@ -188,6 +310,28 @@ export const CARD_NEWS: CardNewsEntry[] = [
       "Binance launched Pay Later on 16 November 2026, initially for eligible users in Argentina and Mexico, with more markets promised. It lets you pay with the Binance Card or QR Pay by borrowing USDC against BTC, ETH or BNB rather than selling them: up to 1,000 USDC, capped at 50% of the collateral value, and you only borrow what you spend. Repay by the 1st of the following month and interest is 0%. Miss the due date and, after a one-day grace period, overdue balances accrue interest of 0.1% per day, compounding. The catch is liquidation risk: Binance issues a margin call at 75% loan-to-value and can sell the pledged collateral at 90%. The Binance Card listing now carries the full terms.",
     sourceUrl: "https://www.binance.com/en/square/post/388885759732711",
     sourceLabel: "Binance announcement, 16 November 2026",
+  },
+  {
+    date: "2026-11-16",
+    type: "catalog-update",
+    cardName: "Bybit Card",
+    cardSlug: "bybit-card",
+    title: "Bybit Card holders can now book airport lounges in the app and pay with crypto",
+    details:
+      "Bybit's announcement puts 830+ lounges at 430+ airports inside the Bybit app: cardholders find a lounge, buy a pass and pay with supported crypto from their account balance. A pass costs 44 USDT, covers one person for one visit of up to 2 hours, and unused passes are generally refundable if cancelled at least a day ahead.",
+    sourceUrl: "https://announcements.bybit.com/en/article/airport-lounge-access-is-now-available-with-bybit-card--art7fabd4d6f134/",
+    sourceLabel: "Bybit announcement, November 2026",
+  },
+  {
+    date: "2026-11-16",
+    type: "fee-change",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "ether.fi drops the FX markup on Swiss franc purchases",
+    details:
+      "Since 16 November 2026, ether.fi Cash charges no FX markup when a merchant charges in Swiss francs, for all members, in Direct Pay and Borrow Mode, per the ether.fi Help Center. CHF joins USD and EUR at 0%; other currencies still carry the tier markup (0.5% on Core, 0.25% on Luxe, none on Pinnacle and VIP). If the terminal offers to charge in dollars or euros, choose CHF.",
+    sourceUrl: "https://help.ether.fi/en/articles/895885-chf-purchases-0-fx-rate",
+    sourceLabel: "ether.fi Help Center, November 2026",
   },
   {
     date: "2026-11-14",

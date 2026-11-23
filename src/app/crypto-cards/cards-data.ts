@@ -180,12 +180,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/wirex-one-card.png",
     imageAlt: "Wirex physical crypto card",
     imageSourceNote: "Official Wirex product image, cached locally",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     caution: "Wirex states that availability and features are subject to jurisdictional limitations. Headline cashback is not a guaranteed rate for every user.",
     updateUrl: "https://x.com/0xDani/status/2111769135596060898",
     updateLabel: "Apple Pay top-ups reported (Oct 2026)",
     updateNote:
-      "Apple Pay top-ups were reported for Wirex One in October 2026: no Wirex fee on local card top-ups and instant settlement, but USD top-ups carry a conversion fee since payments process in EUR, the card issuer may charge its own fee, and availability depends on region. Confirm current top-up methods in the Wirex app before relying on them.",
+      "On 17 November 2026 Wirex launched Tokenized Stocks in the Wirex One app: tokens issued by Coinbase on Base that track US shares (Apple, Amazon and Microsoft at launch), buyable from $1 and tradable 24/7, each backed 1:1 by a share held in custody. The tokens give price exposure only, with no legal ownership, voting rights or dividends, and Wirex labels them high-risk products. Not available to US users.",
   },
   {
     slug: "metamask-card",
@@ -376,7 +376,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/bybit-card.png",
     imageAlt: "Bybit Card Mastercard product image",
     imageSourceNote: "Official Bybit-hosted Card product image",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 0,
     },
@@ -386,7 +386,7 @@ export const cardListings: CardListing[] = [
     feesUrl: "https://www.bybit.com/en/cards/",
     updateUrl: "https://www.bybit.com/en/cards/",
     updateLabel: "Latest Bybit Card terms",
-    updateNote: "Bybit publishes current eligibility and fee FAQs within its Card flow; the visible region notice should be checked before sign-up.",
+    updateNote: "From 16 November 2026, cardholders can book airport lounge passes inside the Bybit app and pay with crypto: 830+ lounges at 430+ airports, at 44 USDT per pass (one person, one visit of up to 2 hours), per Bybit's announcement. Unused passes are generally refundable if cancelled at least a day before the booked date.",
     applicationMethod: "Apply through an eligible Bybit account, complete identity verification, and follow the regional virtual or physical card onboarding flow.",
     verification: "Identity verification and country eligibility apply; EEA customers are explicitly excluded on the reviewed page.",
     cashbackBands: [
@@ -1039,7 +1039,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "A region-specific MEXC Visa spending product with Advanced KYC, deposit activation, and tiered cashback marketing.",
     editorialSummary: "MEXC presents several card routes and regional variants rather than one universal product. Its current official page shows an issuance-fee display, Google Pay, Advanced KYC, deposit activation, and cashback marketing of up to 10%, while the country selector and terms control who can actually apply.",
     bestFor: "MEXC users comparing a region-specific crypto spending route with published reward tiers.",
-    availability: "The official page visibly lists the Philippines, Taiwan, Thailand, and other country routes; exact product availability depends on the selected region.",
+    availability: "Discontinued. MEXC discontinued the APAC Card on 11 November 2026 and the Global Card on 18 November 2026, citing service adjustments by its third-party card issuer; new applications are closed and existing cards no longer work.",
     regions: ["Selected countries including Philippines, Taiwan, and Vietnam; verify route"],
     pricing: "The official page displays a card-issuance figure of 20 USD crossed out to 0 USD and a Service Fee of 0% for the shown route; spending, conversion, FX, and physical-card fees still require regional confirmation.",
     rewards: "MEXC advertises up to 10% cashback, with tier, spending, and eligible-transaction conditions. Per MEXC's cashback FAQ, monthly cashback is capped at $50 on the Standard tier and $150 on Premier.",
@@ -1050,7 +1050,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/mexc-card.png",
     imageAlt: "MEXC Visa Card official product banner",
     imageSourceNote: "Official MEXC-hosted card banner",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     featureFlags: { googlePay: true },
     caution: "MEXC presents multiple regional card variants. Do not combine the Taiwan route and other MEXC or Ether.fi routes into one universal fee, reward, or eligibility claim.",
     referralUrl: "https://go.cryptosbeginner.com/MEXC-Bonus",
@@ -1058,7 +1058,7 @@ export const cardListings: CardListing[] = [
     feesUrl: "https://www.mexc.com/support/fiat/card",
     updateUrl: "https://www.mexc.com/buy-crypto/mexc-card",
     updateLabel: "Latest MEXC Card terms",
-    updateNote: "MEXC publishes country selection, card application, cashback, and support information on its card page; regional terms can change. On November 6, 2026, FinCEN ordered US financial institutions to cut MEXC off from the US financial system, citing at least $16 billion in alleged illicit transactions. The order takes effect 30 days after Federal Register publication and does not itself freeze customer funds, but anyone considering the MEXC Card should read our news article on the order and weigh the counterparty risk before loading a balance. On 11 November 2026 MEXC discontinued its separate APAC Card outright, and from 14 November it suspended Global Card payments and deposits in an issuer maintenance window announced to run to 18 November, with balances movable only to a MEXC Fiat Account (MEXC notices, as reported November 2026).",
+    updateNote: "Discontinued in November 2026: the APAC Card was discontinued on 11 November and the Global Card on 18 November, after a maintenance suspension from 14 November. MEXC says leftover Global Card balances are credited to Spot accounts within 3 business days of its 21 November 2026 snapshot. MEXC publishes country selection, card application, cashback, and support information on its card page; regional terms can change. On November 6, 2026, FinCEN ordered US financial institutions to cut MEXC off from the US financial system, citing at least $16 billion in alleged illicit transactions. The order takes effect 30 days after Federal Register publication and does not itself freeze customer funds, but anyone considering the MEXC Card should read our news article on the order and weigh the counterparty risk before loading a balance. On 11 November 2026 MEXC discontinued its separate APAC Card outright, and from 14 November it suspended Global Card payments and deposits in an issuer maintenance window announced to run to 18 November, with balances movable only to a MEXC Fiat Account (MEXC notices, as reported November 2026).",
     applicationMethod: "Open the MEXC card flow, select the available country route, complete Advanced KYC, deposit as instructed, and verify the current card terms.",
     verification: "Advanced KYC is required on the official application flow; country and account eligibility apply.",
     featureTags: ["Advanced KYC", "Google Pay", "Up to 10% advertised", "Region-specific"],
@@ -1396,7 +1396,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Crypto holders who want credit-card spending power without selling their assets or giving up custody, plus travel perks.",
     availability: "Bank transfers available in 162 countries including the US, UK, EU members, UAE, Pakistan, and India; not available in 24 jurisdictions including Russia, China, Belarus, Iran, and North Korea. Physical Cash card available in 31 US states; Belgium and Ireland are Cash-eligible but have no physical card delivery. xStocks trading available in supported EU countries.",
     regions: ["North America", "Europe", "United Kingdom", "Asia", "Middle East", "Africa", "Latin America", "Australia & Oceania"],
-    pricing: "Annual fee $0. Deposit $10 to activate card (not a fee, spendable). Virtual card fee $10 (Core/Luxe/Pinnacle), free on VIP. Physical card: $50 Core, $100 Luxe/Pinnacle, free on VIP; delivery free (via @0xVishnya, November 2026). ATM withdrawals are free up to 10 per month on Core (via @sweepbaseHQ's October 2026 fee-page review). ATM limits: $5,000 per transaction, 5 withdrawals per rolling 24h, $25,000 daily limit (all tiers). FX markup: 0.5% Core, 0.25% Luxe, none on Pinnacle/VIP; USD and EUR purchases carry no FX markup on any tier (via @xKseilas, November 2026).",
+    pricing: "Annual fee $0. Deposit $10 to activate card (not a fee, spendable). Virtual card fee $10 (Core/Luxe/Pinnacle), free on VIP. Physical card: $50 Core, $100 Luxe/Pinnacle, free on VIP; delivery free (via @0xVishnya, November 2026). ATM withdrawals are free up to 10 per month on Core (via @sweepbaseHQ's October 2026 fee-page review). ATM limits: $5,000 per transaction, 5 withdrawals per rolling 24h, $25,000 daily limit (all tiers). FX markup: 0.5% Core, 0.25% Luxe, none on Pinnacle/VIP; USD and EUR purchases carry no FX markup on any tier, and CHF purchases have carried none since 16 November 2026 (ether.fi Help Center).",
     rewards: "3% cashback on card spend (4% on VIP), paid in ETHFI per ether.fi's help centre, plus 5% cashback on ether.fi Travel bookings plus up to 65% off hotels and flights. Monthly caps: Core up to $2,000, Luxe up to $10,000, Pinnacle up to $50,000. AI subscriptions earn separate cashback by tier: 10% on Luxe, 20% on Pinnacle, 30% on VIP (via @0xVishnya).",
     funding: "Crypto deposits carry no ether.fi deposit fee; you pay network gas only. Deposit supported crypto into a non-custodial ether.fi Vault; funds become available for spending in Direct Pay mode or serve as collateral in Borrow mode. Bank transfer funding: USD ACH ($0.50 + 0.10%), USD wire/SWIFT ($20 + 0.10%), EUR SEPA, GBP Faster Payments, AUD, MXN, COP, AED local transfers.",
     cardFormats: ["Virtual", "Physical"],
@@ -1405,7 +1405,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/etherfi-cash-card.webp",
     imageAlt: "Gold ether.fi Cash Visa credit card",
     imageSourceNote: "Official product image not available from issuer",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 10,
       physicalIssuanceUsd: 50,
@@ -1421,7 +1421,7 @@ export const cardListings: CardListing[] = [
       { tier: "VIP", ratePct: 4, spendBand: "headline rate", rewardAsset: "USD" },
     ],
     updateNote:
-      "From October 30, 2026, rent and tax payments earn cashback, and the card fully supports ZCHF (Swiss franc stablecoin) spending, per the ether.fi Help Center. Until December 31, 2026, Luxe, Pinnacle, and VIP members get bank deposit fees refunded after each month ends (monthly covered caps: Luxe $3,000, Pinnacle $15,000, VIP $150,000); upgrading by December 31 backdates refunds to November 1 deposits. The FX spread is not refunded.",
+      "Since 16 November 2026, purchases charged in Swiss francs carry no FX markup on any tier, in Direct Pay and Borrow Mode (ether.fi Help Center); if the terminal offers dollars or euros, choose CHF. Black Friday Boost, 23 to 30 November 2026: new accounts that join through a participating creator's link earn 20% total cashback on their first $250 of card spending, up to $50 back (ether.fi promotion terms).",
   },
   {
     slug: "avici-card",
@@ -1466,7 +1466,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "A self-custodial stablecoin money app with a Visa Platinum card, tiered USDC cashback, and yield on dollar balances.",
     editorialSummary: "Solid is a self-custodial stablecoin money app built around SoUSD, a yield-bearing non-custodial stablecoin. The Visa Platinum card is issued by Rain or Wirex depending on your country, costs nothing to get, and pays cashback in USDC: 3% at Core (cap $50/month), 4% at Prime (cap $100/month), 5% at Ultra (cap $200/month), credited 14 days after settlement. Two card modes exist: Savings Mode spends from your balance, Borrow Mode borrows against your savings so funds keep earning yield. Savings earn up to 6% APY on dollars, 15% on FUSE, and 3% on ETH, with a 10% performance fee on yield. Spending in USD is free; non-USD spend costs 1% provider FX plus 0.5% Solid FX (1.5% total at every tier), which cashback exceeds at every tier. Wirex cardholders pay no FX on euro purchases from a EUR balance. Self-custody is secured by passkeys; audits by Check Point.",
     bestFor: "DeFi users who want self-custody, yield on idle dollars, and cashback that beats the card's own FX fees.",
-    availability: "Card issued by Rain or Wirex depending on country of residence. Provider does not publish one global country list; EU payments still launching per the official page. Local currency deposits live in 16 currencies via TransFi; Thailand supports cash-out only.",
+    availability: "Cards were issued by Rain or Wirex depending on country of residence. Rain-issued cards stopped working on 20 November 2026; where the card is still offered, the replacement card is issued by Wirex after a fresh identity check, and where it is not offered the card has closed while the Solid account and wallet keep working. Provider does not publish one global country list; EU payments still launching per the official page. Local currency deposits live in 16 currencies via TransFi; Thailand supports cash-out only.",
     regions: ["Varies by issuer program; check eligibility in app"],
     pricing: "Card issuance free, no monthly or annual fee, top-up free at all tiers. USD spending free. Non-USD spending: 1% provider FX + 0.5% Solid FX = 1.5% total at every tier; EUR spending from EUR balance (Wirex cards) free. Cross-border fees covered by Solid. Prime unlock: $199/year or lock 50,000 FUSE for 12 months. Ultra: lock 400,000 FUSE for 12 months. Bank deposits: 0.5% Core, 0.25% Prime, free Ultra. Crypto deposits: free on Fuse, 0.1% Ethereum, 0.03% other networks. Swaps: 0.5% Core, 0.25% Prime, free Ultra. Virtual Account (US bank details): $10 one-time. Savings: 10% performance fee on yield, 0.01% solver fee on withdrawals. Figures verified October 2026 from official Solid support docs.",
     rewards: "Cashback in USDC on eligible purchases: Core 3% (cap $50/month), Prime 4% (cap $100/month), Ultra 5% (cap $200/month). Credited 14 days after the transaction settles. Savings yield: up to 6% APY on dollars, 15% on FUSE, 3% on ETH. AI subscriptions earn 10% cashback on Prime and 20% on Ultra (via @0xVishnya). Game purchases are excluded from cashback under Solid's terms (via @xKseilas).",
@@ -1478,7 +1478,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/solid-card.png",
     imageAlt: "Solid green Visa card official product image",
     imageSourceNote: "Official Solid product image, cached locally",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     featureFlags: { borrowAgainstCrypto: true, earnYield: true },
     caution: "Cashback caps apply monthly and rewards depend on tier eligibility. Yield rates are variable and depend on DeFi strategy performance; a 10% performance fee applies to yield. Locked FUSE cannot be withdrawn before the unlock date. Availability varies by issuer program and region; verify current status before applying.",
     verification: "Identity verification required for card issuance and for TransFi local deposits (separate verification).",
@@ -1486,7 +1486,7 @@ export const cardListings: CardListing[] = [
     referralLabel: "Get Solid Card",
     fullReviewUrl: "/crypto-cards/solid-review",
     updateNote:
-      "Solid launched a euro yield account with its own IBAN on October 29, 2026, as reported by @0xVishnya.",
+      "Rain-issued Solid cards stopped working on 20 November 2026, and Rain-linked US virtual accounts closed the same day; Wirex-issued cards are unaffected. Where the new card is offered, switching means a fresh identity check in the app. Also new in November 2026: WBTC Credit mode lets cardholders deposit WBTC and spend against it at about 4% APR, borrowing up to 60% of its value, with part of the collateral sold if Bitcoin falls far enough; a new referral programme (from 17 November) pays 1% of a friend's card spend in soFUSE, up to $2,000 per friend; and the first 3 SEPA deposits are free until 16 December 2026.",
   },
   {
     cashbackBands: [
@@ -2437,15 +2437,17 @@ export const cardListings: CardListing[] = [
     availability: "Details being verified. Check the official site for current country availability.",
     regions: ["Global"],
     pricing: "Per COCA's official docs: the virtual card is free on all tiers; the plastic card costs $5 on Starter, Standard and Standard+ and is free on Premium, Premium+ and Elite. COCA's card page advertises up to $200 in fee-free ATM withdrawals globally. The card is a prepaid Mastercard issued by Wirex Limited (UK) and UAB Wirex (EEA).",
-    rewards: "1% cashback on the free tier and 8% on Elite, which requires 30,000 COCA staked (about $26,000) (via @xKseilas). AI subscriptions earn 50% cashback from the Standard+ tier, on one subscription up to $70 (via @0xVishnya).",
-    funding: "Details being verified from official sources.",
+    rewards: "1% cashback on the free tier and 8% on Elite, which requires 30,000 COCA staked (about $26,000) (via @xKseilas). AI subscriptions earn 50% cashback from the Standard+ tier, on the first $70 of one subscription per category each month, and the rebate counts toward the monthly claim limit (via @0xVishnya).",
+    funding: "Fund the wallet with USDT, USDC or EURC on supported networks, by SEPA transfer to a personal IBAN, or from another bank card. From app version 3.12.0 (November 2026), you can also top up from a Visa or Mastercard saved in the app, at a 3% fee; the card is then saved for future top-ups.",
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://www.coca.xyz",
     sourceLabel: "Official website",
     imageUrl: "/images/cards/coca-card.png",
     imageAlt: "COCA blue Visa crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "November 2026: accounts opened in November get 8% back on their first 3 card purchases, on up to $300 of spending (up to $24 back), until 30 November 2026. App version 3.12.0 added top-ups from a saved Visa or Mastercard at a 3% fee and now shows the fee on each ATM withdrawal in the transaction details.",
     caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
     verification: "Provider account and regional eligibility requirements apply.",
   },
@@ -2759,20 +2761,20 @@ export const cardListings: CardListing[] = [
     pricing: "Pulsar's official site states there is no card issuance or monthly fee. Same-currency card spending is free of Pulsar FX fees; cross-currency card spending costs 1%, and third-party fees may still apply. Funding is 1:1 (USDT/USDC into USD, EURC into EUR) with no Pulsar funding fees. 0% swap fees on EUR to USD and USD to USDT conversions via StableFX at launch.",
     rewards:
       "Up to 2% cashback on the Free plan and up to 4% on Pro, from November 1, 2026. This replaced the October launch promotion of 4% base cashback plus 8% on subscriptions. AI subscriptions earn 8% back in points on the Pro plan during November 2026 (via @0xVishnya).",
-    funding: "EUR and stablecoin balances held in the Pulsar Money app; SEPA payouts in EUR.",
+    funding: "EUR and stablecoin balances held in the Pulsar Money app; SEPA payouts in EUR. USD balances can be funded with USDT or USDC and EUR balances with EURC at 1:1 with no Pulsar funding fee; USDT deposits on the Tron network (TRC-20) were added on 19 November 2026, and network or third-party fees can still apply.",
     cardFormats: ["Card formats not published"],
     sourceUrl: "https://x.com/PulsarMoneyApp",
     sourceLabel: "Pulsar Money on X (@PulsarMoneyApp)",
     imageUrl: "/images/cards/pulsar-money-card.png",
     imageAlt: "Pulsar Money Card in black with a white star graphic, Visa Platinum Debit branding and a card number ending 4759",
     imageSourceNote: "Official card image supplied November 2026",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 0,
     },
     caution: "Newly launched product. No public fee schedule, card network, or issuer details are published yet; verify terms in the app before depositing significant funds.",
     updateNote:
-      "Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
+      "USDT deposits on the Tron network were added on 19 November 2026 (Pulsar Money announcement). Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
     verification: "Provider account and regional eligibility requirements apply.",
   },
   {
@@ -4330,7 +4332,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/ethena-pay-card.png",
     imageAlt: "Ethena Pay Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 0,
     },
@@ -4338,7 +4340,7 @@ export const cardListings: CardListing[] = [
       "The card is in beta with limited country coverage, so terms and availability may change.",
     verification: "Verification details not disclosed; beta access is invitation based.",
     updateNote:
-      "Ethena Pay launched Earn+ on October 28, 2026: up to 12% APY on USD balances held in an external vault, as reported by @0xVishnya. Yield is variable and vault-based, not a bank deposit rate.",
+      "Referrals went live for all users in November 2026 after a staged rollout: 10 qualified referrals unlock the Pro tier (4.5% cashback) and 50 unlock VIP (5%). A qualified referral pays the new user $30 in AVAX under Ethena's referral terms; Ethena's launch campaign pays the referrer $20 in AVAX. Earn+ (up to 12% APY in an external vault, variable and not a deposit rate) launched on 28 October 2026.",
   },
   {
     slug: "minipay-card",
@@ -4398,7 +4400,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/plasma-one-card.png",
     imageAlt: "Plasma One Card design",
     imageSourceNote: "Official card image supplied November 2026",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       physicalIssuanceUsd: 0,
     },
@@ -4407,7 +4409,7 @@ export const cardListings: CardListing[] = [
     updateUrl: "https://x.com/xKseilas/status/2118635020587774448",
     updateLabel: "Free Core year ends early, via @xKseilas",
     updateNote:
-      "Members who joined Core free for the first year under Plasma's June 2026 promotion are being emailed that the free period ends on 16 November 2026, roughly five months into the promised year (reported by @xKseilas). Subscriptions paid with the card, such as ChatGPT or Claude, keep charging after that date, without the extra cashback the free Core period carried. Separately, on 11 November 2026 Plasma emailed Core members that Core becomes Premium. The price rises from $199 to $600 per year when the current term ends (complimentary Core benefits run until the term ends, with at least 30 days notice before the renewal price changes). Premium adds 0% FX on the first $3,000 of monthly card spend (Core charged 0.5% plus about 1% Visa network FX), replaces the AI cashback and ChatGPT Go rebate with one $200 per year AI spend credit allocated monthly across more AI providers, and adds local merchant rewards in Dubai, London and New York. The 20,000 XPL for 12 months lock option is unchanged, worth about $1,050 at November 2026 prices. The cashback bands did not change, so at the new price, with XPL value held constant, cashback alone covers the $600 fee from about $2,000 of monthly spend, or about $1,170 per month if the full AI credit is used. For new members joining from 11 November 2026, Plasma set lower cashback bands: Standard 1% on the first $500 a month, Premium 2% on the first $1,000 then 1% and 0.25%, and Platinum 3% on the first $3,000, then 2% and 1%. Existing members keep their previous bands until their current term ends (Plasma support, November 2026).",
+      "AED accounts went live for UAE-based users on 19 November 2026, provided by ruya bank with sign-up through UAE Pass; Plasma itself is not a bank, and its UAE terms addendum says cards, rewards and yield are not part of the AED account service. AED converts to USD stablecoins inside the app through Fuze. A Plasma Business waitlist (a USD account in the business name, no US entity required) opened the same week.",
     galleryImages: [
       {
         url: "/images/cards/plasma/lite-vs-premium.png",
@@ -4906,11 +4908,11 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "XPlace Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     caution:
       "Borrowing against volatile collateral carries liquidation risk, and the Platinum tier fee is steep.",
     updateNote:
-      "Issued via Rain. Credit mode was paused on October 29 to 30, 2026 after Kamino halted SOL and BTC borrowing, as reported at the time; check the XPlace app for current credit availability.",
+      "November 2026 app update: XPlace now receives payments in 10+ currencies into a single USD balance and sends bank transfers in 28 currencies to accounts in 150+ countries. USDC and USDT deposits carry no XPlace fee, and every membership, including the free Basic tier, now has the same card limits.",
     verification: "KYC required through the XPlace application.",
   },
 {

@@ -21,6 +21,17 @@ interface GraveyardEntry {
 
 const entries: GraveyardEntry[] = [
   {
+    name: "MEXC Card",
+    issuer: "MEXC, third-party issuer not named",
+    status: "Discontinued",
+    date: "November 18, 2026",
+    whatHappened:
+      "MEXC discontinued its APAC Card on 11 November 2026 and its Global Card on 18 November 2026, blaming service adjustments by its third-party card issuer. The Global Card had launched on 31 August 2026 and spent its final four days suspended for maintenance. Leftover balances were credited to Spot accounts within 3 business days of a 21 November 2026 snapshot.",
+    lesson:
+      "A card can vanish less than three months after launch when the issuer pulls the programme: the brand behind it had no fallback card to move users to.",
+    verified: true,
+  },
+  {
     name: "BitPay Card",
     issuer: "BitPay, issued by Metropolitan Commercial Bank",
     status: "Discontinued",
