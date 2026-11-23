@@ -279,7 +279,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "A stablecoin-based spending card with virtual and physical formats.",
     editorialSummary: "RedotPay combines a stablecoin spending card with a broader payments app. The official fee schedule (effective December 1, 2025) publishes the full economics: $10 virtual and $100 physical issuance, no account maintenance fee, 1% crypto conversion on spending, 1.2% non-default currency markup, and tiered ATM fees. RedotPay Pro, launched June 2026, adds 3% Apple Pay and Google Pay cashback for $12.90/month or $129/year. That makes the card easier to compare when the one-time issuance cost is not confused with ongoing fees.",
     bestFor: "Stablecoin users who want a card plus app-based payment rails, subject to local availability.",
-    availability: "RedotPay's Help Center (August 2026) lists around 40 unsupported countries and regions where registration and KYC are unavailable, including the United States, Mainland China, Russia, Iran, North Korea, Cuba, Syria, Myanmar, Venezuela, Ukraine, and Belarus. If you are physically located in a restricted area you cannot access the app at all. RedotPay P2P is available in 100+ countries and regions; the app shows the current list for your location.",
+    availability: "RedotPay runs two different restriction lists (Help Center, November 2026). Its unsupported-countries list blocks registration and KYC by citizenship for around 40 countries and regions, including the United States, Mainland China, Russia, Iran, North Korea, Cuba, Syria, Myanmar, Venezuela and Belarus; for Ukraine only the Crimea region is listed there. A separate card issuance list bars residents of Croatia, Slovenia, Serbia and the whole of Ukraine, among others, from holding virtual or physical cards, and those places cannot be used as billing addresses. If you are physically located in a restricted area you cannot access the app at all. RedotPay P2P is available in 100+ countries and regions; the app shows the current list for your location.",
     regions: ["100+ countries; around 40 unsupported countries and regions per the Help Center"],
     pricing: "The official fee schedule (effective December 1, 2025) lists a $10 virtual-card issuance fee and $100 physical-card issuance fee, with account maintenance waived. Virtual card replacement costs $5 for the first update and $10 for each subsequent update; standard-mail delivery of the physical card is waived. Spending: 1% crypto conversion fee on default-currency purchases, plus 1.2% on non-default currency purchases. ATM withdrawals: 2% on HKD cards, and 2% on USD cards up to $10,000 of monthly withdrawals, then 3%. Small purchases of $1 or less are free for the first 5 per card each month, then $0.20 each; declined transactions are free for the first 3 per card each month, then $0.50 each. Card limits: $100,000 per transaction, $1,000,000 daily; ATM withdrawals 3 per day and 30 per month, $3,750 daily and $50,000 monthly on USD cards (in some countries $3,000 daily and $10,000 monthly). The $5 welcome reward cannot be used to pay the card issuance fee. Declined payments: the first 3 declines per card each month are free, then $0.50 per decline, and a frozen card or a wrong card number counts as a decline (via @xKseilas).",
     rewards: "Standard cards have no cashback. RedotPay Pro (launched June 2026) costs $12.90/month or $129/year and pays 3% cashback on Apple Pay and Google Pay purchases, credited in USDs for future card spending. The monthly plan waives the $10 virtual card fee; the annual plan waives the $100 physical card fee, adds up to $1,000/month of ATM withdrawals without RedotPay's withdrawal fee, and adds 1% APY on RedotPay Earn balances where available. Membership fees are non-refundable and auto-renew.",
@@ -290,7 +290,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/redotpay-card.png",
     imageAlt: "RedotPay physical stablecoin card",
     imageSourceNote: "Official RedotPay-hosted card image",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 10,
       physicalIssuanceUsd: 100,
@@ -367,7 +367,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Eligible non-EEA users who want a Bybit-linked payment card and are comfortable checking current reward terms.",
     availability: "Certain countries only; the reviewed official notice explicitly excludes European Economic Area customers.",
     regions: ["Selected countries outside the EEA"],
-    pricing: "Virtual card issuance is free; physical issuance is charged in several regions (Australia 29.99 USD, Argentina 5 USD, Asia Pacific 5 USDT, Georgia 29.99 USDT) and is free in Brazil and Mexico, per Bybit's official fees and limits schedule. No inactivity fee: Bybit EU's official fee schedule lists inactivity, annual and cancellation fees as none. No annual fees. 100 USD (or equivalent) in free ATM withdrawals each month, then 2%. FX on non-USD spend runs 2% in most regions and 7% in Argentina (via @xKseilas, November 2026); crypto conversion is 0.9% (0.5% in Argentina).",
+    pricing: "Virtual card issuance is free; physical issuance is charged in several regions (Australia 29.99 USD, Argentina 5 USD, Asia Pacific 5 USDT, Georgia 29.99 USDT) and is free in Brazil and Mexico, per Bybit's official fees and limits schedule. No inactivity fee: Bybit EU's official fee schedule lists inactivity, annual and cancellation fees as none. No annual fees. 100 USD (or equivalent) in free ATM withdrawals each month, then 2%. FX fees depend on the regional programme (Bybit's official fees and limits schedule, checked November 2026): 0.5% on non-EUR spend in the EEA, which is served separately by Bybit EU on a EUR-denominated Mastercard; 1.5% on non-BRL spend in Brazil; 2% on non-USD spend in Georgia and Asia Pacific; 2% in Australia and Mexico; 1% in Peru. Kazakhstan (AIFC) instead charges a 2% international fee on cross-border purchases, even when the purchase is charged in USD, and Argentina charges 7% on non-ARS spend. Crypto conversion is 0.9% (0.5% in Argentina). Local taxes sit on top in some regions: Brazil applies a 4.3% IOF tax to foreign transactions, and Argentina applies a 30% advance income tax, 21% VAT on listed foreign digital services and provincial taxes of 1% to 13.2%. Brazil holds 1% and Argentina 5% as FX padding at authorisation, refunded at settlement; the other regions hold 0%.",
     rewards: "Bybit advertises up to 10% cashback: 2% to 10% on everyday spending, plus a selected-users offer of 10% cashback up to 300 USD. A 100% cashback perk on Netflix, Spotify, ChatGPT Plus and Claude Pro subscriptions has been restricted to VIP 2 members since 5 October 2026 (via @xKseilas). The earlier 110 USDT welcome-package wording could not be confirmed on the current page; check terms before applying.",
     funding: "Spend from crypto or fiat balances through Bybit; published supported assets include BTC, ETH, XRP, TON, USDT, USDC, MNT and BNB, with USD as supported fiat. Regional product and terms vary.",
     cardFormats: ["Virtual", "Physical"],
@@ -445,7 +445,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/kardpay-card.svg",
     imageAlt: "KardPay Core green Visa/Mastercard card",
     imageSourceNote: "Official KardPay-hosted card asset",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     caution: "The last 100 physical-card pre-orders are marked SOLD OUT on the official page; cashback now depends on a KDY staking commitment with 180-day lock.",
     referralUrl: "https://go.cryptosbeginner.com/KardPay",
     referralLabel: "Check KardPay tiers",
@@ -454,7 +454,7 @@ export const cardListings: CardListing[] = [
     updateLabel: "Latest KardPay pricing",
     updateNote: "KardPay publishes tier prices, limits, top-up fees, and card availability on its official pricing page; confirm the current table before funding. Physical cards opened to all users with worldwide shipping on October 30, 2026, as reported by @0xVishnya; previously physical was an Elite pre-order.",
     applicationMethod: "Open the KardPay application, choose an available tier, complete the provider’s onboarding, and fund the card with supported assets.",
-    verification: "Eligibility and any account verification requirements apply through the KardPay application flow.",
+    verification: "KardPay's terms name the operator as KRDPAY FZE LLC, established in the UAE (Amber Gem Tower, Ajman), with the contract governed exclusively by DIFC law. The terms state that the services run through a network-licensed issuer whose identity is not disclosed. Top-ups are limited to USDT and USDC, on the networks shown at the time of deposit.",
     galleryImages: [
       { url: "/images/cards/gallery/kardpay-card-gallery-1.svg", alt: "KardPay Pro white Visa card design", source: "KardPay Pro card in white showing the Visa design" },
       { url: "/images/cards/gallery/kardpay-card-gallery-2.svg", alt: "KardPay Elite black Visa card design", source: "KardPay Elite card in black showing the premium Visa design" }
@@ -483,7 +483,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/tria-card.png",
     imageAlt: "Tria Virtual Card official product visual",
     imageSourceNote: "Official Tria product image, cached locally",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     cashbackBands: [
       { tier: "Lite", ratePct: 1.5, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "USD" },
       { tier: "Lite", ratePct: 0.5, spendBand: "above $1,000/mo", rewardAsset: "USD" },
@@ -496,7 +496,7 @@ export const cardListings: CardListing[] = [
     feesUrl: "https://www.tria.so/",
     updateUrl: "https://www.tria.so/en/blogs",
     updateLabel: "Tria product updates",
-    updateNote: "Tria publishes product and legal information across its card page, app flow, blog, privacy policy, and legal pages; tier benefits and regional access can change.",
+    updateNote: "Currency Accounts launched on 18 November 2026 (Tria Help Center): eligible users get personal EUR account details in the app, and euros sent by SEPA or SWIFT are converted to USDC and delivered to the self-custodial Tria Wallet, usually within minutes by SEPA. The infrastructure is provided by Noah; Tria charges no fee until 31 December 2026, and the Noah partner fee is 1.00 EUR plus 0.25% per SEPA deposit. Incoming transfers only; there are no EUR withdrawals. The rollout is gradual, reaching eligible users over about four weeks. Buy/Sell is also live and rolling out gradually, covering crypto, tokenized stocks through xStocks and pre-IPO exposure through PreStocks tokens, which give price exposure only, with no shares, dividends or voting rights.",
     applicationMethod: "Open our link, download the Tria app for iPhone or Android, create your self-custodial account, pick a membership tier (Lite, Pro, or Max), complete verification, then fund your card from the Cards section.",
     verification: "Provider onboarding and country eligibility apply; check the current application flow for the exact verification requirements.",
     fullReviewUrl: "/crypto-cards/tria-review",
@@ -2756,7 +2756,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "EUR-focused money app card with 0% swap fees on EUR to USD and USD to USDT conversions, EUR card spending, and SEPA payouts.",
     editorialSummary: "Pulsar Money (@PulsarMoneyApp) is a wallet app built around euro and dollar spending. As reported at launch in October 2026, it offers 0% swap fees on EUR to USD and USD to USDT conversions through StableFX, EUR card spending, and SEPA payouts in euros. Cashback arrived after launch: from November 1, 2026 the Free plan pays up to 2% and Pro up to 4%, replacing the October promotion. Pulsar Earn offers yield on balances through Morpho vaults curated by Steakhouse Financial on Arc. The card network, issuer, and a full public fee schedule have not been published, so terms should be treated as subject to change.",
     bestFor: "Euro-area users who move between EUR, USD and USDT and want SEPA payouts in euros.",
-    availability: "EUR card spending and SEPA EUR payouts; a full country list is not published.",
+    availability: "Pulsar publishes a card eligibility list (checked November 2026): 73 countries in total, 43 of them in Europe, with EUR card spending and SEPA EUR payouts. The list is sourced from Wirex's supported countries.",
     regions: ["Europe"],
     pricing: "Pulsar's official site states there is no card issuance or monthly fee. Same-currency card spending is free of Pulsar FX fees; cross-currency card spending costs 1%, and third-party fees may still apply. Funding is 1:1 (USDT/USDC into USD, EURC into EUR) with no Pulsar funding fees. 0% swap fees on EUR to USD and USD to USDT conversions via StableFX at launch.",
     rewards:
@@ -2772,9 +2772,9 @@ export const cardListings: CardListing[] = [
     feeBreakdown: {
       virtualIssuanceUsd: 0,
     },
-    caution: "Newly launched product. No public fee schedule, card network, or issuer details are published yet; verify terms in the app before depositing significant funds.",
+    caution: "Pulsar Money SRL (Romania) states in its own disclaimers that it is not a bank, payment institution, electronic money institution, card issuer, crypto-asset service provider or custodian; regulated features in the app are provided by third-party providers under their own terms, and the card runs on Wirex's programme. Pulsar does not publish a full fee schedule of its own.",
     updateNote:
-      "USDT deposits on the Tron network were added on 19 November 2026 (Pulsar Money announcement). Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
+      "Perpetual futures went live in the Pulsar app on 17 November 2026, provided by Extended (operated by X10 Ltd): positions are funded from the Pulsar card balance, collateral is USDC, trades execute as market orders at Extended's taker fees, and Pulsar currently adds no fee of its own. Perps are not available in the EEA. USDT deposits on the Tron network were added on 19 November 2026 (Pulsar Money announcement). Cashback structure changed on November 1, 2026: up to 2% on Free and up to 4% on Pro. Pulsar Earn (Morpho vaults curated by Steakhouse, on Arc) added after launch. Card infrastructure is reported to run on Wirex (@lechriss17 issuer mapping, October 2026); Pulsar itself has not published its issuer.",
     verification: "Provider account and regional eligibility requirements apply.",
   },
   {
@@ -3212,7 +3212,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "Solana-based virtual card funded with SOL, USDC and USDT across multiple chains.",
     editorialSummary: "Solana-based virtual card funded with SOL, USDC and USDT across multiple chains. Full fee and feature details are being verified from official sources.",
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Details being verified. Check the official site for current country availability.",
+    availability: "Operated by SC Payments Limited, Hong Kong. SolCard's help centre lists 13 countries where the card is not offered: the United States, Cuba, North Korea, Egypt, Iran, Myanmar, Nigeria, Russia, South Africa, Syria, Ukraine, Venezuela and Belarus. Its terms of use also bar residents of Hong Kong itself.",
     regions: ["Global"],
     pricing: "Per SolCard's official site: the virtual card carries a 5% top-up fee plus a one-time $10 issuance fee per new card, with a $10,000 monthly limit. The Platinum tier charges 0% top-up fees with no monthly limit. FX rates are listed at 1% to 2%. Dormancy: SolCard's terms say an account with no login, card transaction or top-up for 90 consecutive days is dormant, and SolCard may then charge 10% of the remaining balance per month, taking the full balance once less than $1 would remain; any login, transaction or top-up ends dormancy. SolCard's own fee page contradicts this, saying an unused card costs the same as no card at all, so the terms are the safer document to trust.",
     updateNote:
@@ -3225,12 +3225,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/solcard.webp",
     imageAlt: "SolCard purple crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 10,
     },
     caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "Provider account and regional eligibility requirements apply.",
+    verification: "SolCard operates as a programme manager and technology platform: its terms state that it does not issue payment cards, hold client funds in its own accounts, or act as a bank or electronic money institution. The card is issued by a third-party licensed institution that SolCard does not name.",
   },
   {
     slug: "solflare-card",
@@ -3800,12 +3800,12 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/pionex-card-app.png",
     imageAlt: "Pionex Mastercard crypto card in orange with the Pionex logo and a lined pattern",
     imageSourceNote: "Card design from the Pionex app, captured November 2026",
-    reviewedAt: "2026-11-14",
+    reviewedAt: "2026-11-24",
     caution: "Transaction fees differ by card network and region, and the physical card is still in phased rollout.",
     updateUrl: "https://x.com/xKseilas/status/2119012949402517738",
     updateLabel: "India access notes, via @xKseilas",
     updateNote:
-      "India, compiled by @xKseilas from issuer pages (November 2026): Pionex's own blog says KYC approval alone does not unlock the card, and UPI Scan to Pay in India is capped at $20 per payment. On 9 September 2026, India's FIU-IND named Pionex among 15 platforms it called non-compliant and sent a takedown notice.",
+      "Pionex VIP users have had Priority Pass airport lounge access since August 2026 (Pionex's own guide): the membership is redeemed with points on the benefits page, entry is by swiping the physical VIP card or the Priority Pass app, guests draw on the same free-visit allowance, and visits beyond the free allowance cost USD 35 per person. India, compiled by @xKseilas from issuer pages (November 2026): Pionex's own blog says KYC approval alone does not unlock the card, and UPI Scan to Pay in India is capped at $20 per payment. On 9 September 2026, India's FIU-IND named Pionex among 15 platforms it called non-compliant and sent a takedown notice.",
     verification: "Level 2 KYC required; regional availability varies. Applying requires total Pionex assets of at least 100 USDT, checked in a deposit-to-apply step in the app (app-observed, November 2026).",
     referralUrl: "https://www.pionex.com/en/signUp?r=0hYGG7KsV92",
     referralLabel: "Get the Pionex Card",
@@ -4296,7 +4296,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/tangem-pay-card.png",
     imageAlt: "Tangem Pay Visa card design",
     imageSourceNote: "Card image supplied November 2026",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     caution:
       "Physical card delivery is priced by destination, and gas or network costs can apply on the deposit network.",
     verification: "Identity verification required via Sumsub.",
@@ -4306,7 +4306,7 @@ export const cardListings: CardListing[] = [
       atmFeeNote: "4% on Basic, 2% on Plus; max $250 per withdrawal, 3 per 24 hours",
     },
     updateNote:
-      "Fees checked against Tangem Pay's official tariffs document (applicable as of 8 October 2026): Plus plan $29.99 a month, ATM fees 4% on Basic and 2% on Plus, dispute fee $30. The program is operated by Paera LLC, which also handles KYC.",
+      "Black Friday Cashback Boost (Tangem promo terms): accounts opened between 20 and 29 November 2026 on the Basic or Plus plan earn an extra 25% back on card purchases of $30 or more, on top of the standard 1% or 2%, capped at $15 in total per person, until 29 November 2026. Standard cashback category exclusions and country restrictions apply. Fees checked against Tangem Pay's official tariffs document (applicable as of 8 October 2026): Plus plan $29.99 a month, ATM fees 4% on Basic and 2% on Plus, dispute fee $30. The program is operated by Paera LLC, which also handles KYC.",
   },
   {
     slug: "ethena-pay-card",
@@ -4338,7 +4338,7 @@ export const cardListings: CardListing[] = [
     },
     caution:
       "The card is in beta with limited country coverage, so terms and availability may change.",
-    verification: "Verification details not disclosed; beta access is invitation based.",
+    verification: "Ethena Pay Ltd is a Maltese company (number C 114576, Ta' Xbiex) that provides software and technology services only; its terms state it is not licensed, registered or authorised by any financial regulator and does not itself perform regulated banking, payment, digital asset or custodial activity. Per Ethena's Spend Card Terms, the card is issued by Third National (a Puerto Rico chartered bank) under licence from Visa, with programme management by Signify Holdings, Inc. (Rain). The terms list 48 available jurisdictions, none of them in Europe, and name the European Union as coming soon.",
     updateNote:
       "Referrals went live for all users in November 2026 after a staged rollout: 10 qualified referrals unlock the Pro tier (4.5% cashback) and 50 unlock VIP (5%). A qualified referral pays the new user $30 in AVAX under Ethena's referral terms; Ethena's launch campaign pays the referrer $20 in AVAX. Earn+ (up to 12% APY in an external vault, variable and not a deposit rate) launched on 28 October 2026.",
   },
@@ -4367,9 +4367,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "MiniPay Card card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-05",
+    reviewedAt: "2026-11-24",
     updateNote:
-      "TODEY profiled MiniPay as its card of the day on November 2, 2026: a self-custodial Celo wallet spending stablecoins through a virtual Visa, with up to 5% cashback on eligible purchases.",
+      "On 19 November 2026 Opera announced that MiniPay is moving its more than 20 million stablecoin wallets on Celo to Privy wallet infrastructure (Privy is owned by Stripe), with the rollout beginning in 2026 across MiniPay's markets: one sign-in and one wallet across Android and iOS, with self-custody retained (Opera Newsroom). MiniPay has also added travel booking inside the app through Cryptorefills, so flights, stays and eSIMs can be paid from the wallet balance.",
     caution:
       "Cashback is limited to selected markets; check eligibility in the MiniPay app.",
     verification: "KYC required through the Gnosis Pay issuance flow.",
@@ -4891,7 +4891,7 @@ export const cardListings: CardListing[] = [
     shortDescription:
       "A non-custodial crypto credit card on Solana with a Kamino-backed USDC credit line and up to 2% USDC cashback.",
     editorialSummary:
-      "The XPlace Card is a non-custodial credit card on Solana, issued via Rain, that extends a USDC credit line backed by Kamino lending markets. Cardholders can borrow to spend rather than selling their crypto, and rewards reach up to 2% cashback paid in USDC, with 5% cashback on Uber, Sixt and Wheely spend on the higher paid tiers. Two paid tiers exist: Silver at $99 per year and Platinum at $999 per year, aimed at very different spending levels. Because the credit line depends on Kamino markets, borrowing halts there flow straight through to the card: credit mode paused on October 29 to 30, 2026 after Kamino halted SOL and BTC borrowing.",
+      "The XPlace Card is a non-custodial credit card on Solana, issued by Third National under a programme managed by Signify Holdings (Rain), that extends a USDC credit line backed by Kamino lending markets. Cardholders can borrow to spend rather than selling their crypto, and rewards reach up to 2% cashback paid in USDC, with 5% cashback on Uber, Sixt and Wheely spend on the higher paid tiers. Two paid tiers exist: Silver at $99 per year and Platinum at $999 per year, aimed at very different spending levels. Because the credit line depends on Kamino markets, borrowing halts there flow straight through to the card: credit mode paused on October 29 to 30, 2026 after Kamino halted SOL and BTC borrowing.",
     bestFor:
       "Solana holders who want a credit line for spending without selling assets, with USDC cashback.",
     availability:
@@ -4913,7 +4913,7 @@ export const cardListings: CardListing[] = [
       "Borrowing against volatile collateral carries liquidation risk, and the Platinum tier fee is steep.",
     updateNote:
       "November 2026 app update: XPlace now receives payments in 10+ currencies into a single USD balance and sends bank transfers in 28 currencies to accounts in 150+ countries. USDC and USDT deposits carry no XPlace fee, and every membership, including the free Basic tier, now has the same card limits.",
-    verification: "KYC required through the XPlace application.",
+    verification: "Operated by Pontech Group L.L.C-FZ (Meydan Free Zone, Dubai, UAE), per XPlace's card terms, which also state that the card is issued by Third National under a programme managed by Signify Holdings, Inc. (Rain). XPlace states that it does not hold user funds and cannot freeze, seize or move them.",
   },
 {
     slug: "nebeus-card",
@@ -5917,7 +5917,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/infini-card.png",
     imageAlt: "Infini Card green Visa card design with the Infini logo",
     imageSourceNote: "Official card image supplied November 2026",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     caution:
       "Infini suspended its previous Global, Lite and Tech cards in June 2025 (issuance fees were refunded), and the platform was exploited for about $49.5M in February 2025; read our security incidents guide and size balances accordingly. The current Lite is a new card, not the suspended one.",
     verification:
@@ -5930,7 +5930,7 @@ export const cardListings: CardListing[] = [
       atmFeeNote: "Virtual cards only; no ATM access",
     },
     updateNote:
-      "Fee check against Infini's official pricing page (November 2026) corrected the cross-border fees: the help centre table lists 1% for Pro and 3% for Lite, but the pricing page shows no cross-border fee on Lite, Lite Plus or Pro; only Max charges 1%, on transactions outside Hong Kong. The pricing page also lists a $0.10 transaction reversal fee on Lite, Lite Plus and Pro.",
+      "On 16 November 2026 Infini published strengthened controls on transfers linked to MEXC Global Limited and its affiliated entities, ahead of the FinCEN order's 10 December 2026 effective date: funds associated with the listed platforms may be frozen and related accounts may face further investigation, and users are told not to transact with those entities directly or indirectly (Infini Help Center). A published deposit return fee schedule also took effect on 15 November 2026: mistaken deposits cost USD 10 plus the network fee; compliance-related returns cost USD 10 plus the network fee up to USD 10,000, plus 1% of any amount above USD 10,000, with the compliance processing fee capped at USD 200; returns caused by Infini's own error are free. No return fee schedule was published before this one.",
     pros: [
       "1.5% cashback on every card with no monthly fee, and up to 50% back on AI subscriptions",
       "Four variants let users trade FX fees against wallet support and issuing region",
@@ -5941,6 +5941,453 @@ export const cardListings: CardListing[] = [
       "Pro does not work with Apple Pay or Google Pay",
       "The previous card line was suspended in June 2025, and the platform suffered a major exploit in February 2025",
     ],
+  },
+  {
+    slug: "startale-card",
+    name: "Startale Card",
+    provider: "Startale",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A virtual Visa card in the Startale App that spends USDSC on Soneium, live since 2 November 2026 as a secured credit card backed by your own stablecoin collateral.",
+    editorialSummary:
+      "Startale, the Sony-backed group behind the Soneium Ethereum Layer 2, began issuing its virtual Visa card on 2 November 2026, starting with eligible early contributors and expanding through its 300,000 plus waitlist in priority order. The card spends USDSC, Startale's Treasury-backed USD stablecoin, from a self-custodial Smart Account in the Startale App, and pays 1% cashback in USDSC. The published US cardholder agreement names Third National as the issuing bank, with Rain as programme infrastructure. Legally the card is a 0% APR secured credit card, not a prepaid debit card: spending draws on a balance of USDSC held as collateral, and the credit limit equals the collateral value.",
+    bestFor:
+      "Users on Soneium who want to spend USDSC at Visa merchants without leaving the Startale App.",
+    availability:
+      "Live since 2 November 2026 with staged access: early contributors first, then the waitlist in priority order. No country list is published; eligibility is shown per account in the app, and the waitlist remains open.",
+    regions: ["Staged rollout; country list not published"],
+    pricing:
+      "No issuance or annual fee is listed in Startale's card terms. The International Card Terms (effective 1 October 2026) allow an FX fee of up to 1.5% on non-USD purchases and a cross-border fee of up to 1.5%, which can stack on spending abroad.",
+    rewards:
+      "1% cashback in USDSC on settled purchases, with no published cap. Startale reserves the right to change or discontinue the rate.",
+    funding:
+      "USDSC held in the Startale App on Soneium. Spending draws against a Default Card Balance of USDSC held as collateral; your limit equals the collateral value.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://startale.com/",
+    sourceLabel: "Startale official site and launch release, November 2026",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Startale Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Launched 2 November 2026. A Card Chase referral programme moves users up the waitlist queue.",
+    caution:
+      "The card's terms describe collateralised credit, not simple prepaid spending: if obligations stay unpaid, the terms allow liquidation of your USDSC collateral (the US terms cite 21 days after the statement due date). Read the cardholder agreement for the credit mechanics before treating this as a debit card.",
+    verification: "KYC is required at activation, run by Sumsub for the card provider. Card terms sit with Third National under Puerto Rico law; the app is operated by Startale Labs (BVI) Ltd.",
+    feeBreakdown: { virtualIssuanceUsd: 0, fxFeeNote: "Up to 1.5% FX plus up to 1.5% cross-border per the card terms" },
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "juicyway-card",
+    name: "Juicyway Spend Card",
+    provider: "Juicyway",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A live Visa card from the African cross-border payments company Juicyway, spending account balances under a collateral-secured model, with 0.1% cashback.",
+    editorialSummary:
+      "Juicyway is a cross-border payments company offering multi-currency accounts, FX and stablecoin transfers, authorised or registered in the UK, the US, Canada and Nigeria. Its Spend Card is live, not a waitlist product: the official cards page walks users through creating a card in the app, and full Card Terms took effect on 27 October 2026. The terms name Third National as issuer and Juice Global Inc. as the programme provider. Marketing describes spending from your Juicyway account balances; the Card Terms describe the secured mechanics behind it, under which charges are funded by the issuer and spending is secured by digital assets in your own linked wallet, which Juicyway and the issuer state they never take custody of.",
+    bestFor:
+      "Non-US users, especially in Juicyway's African markets, who already hold balances with Juicyway.",
+    availability:
+      "Live. The Card Terms require cardholders to reside outside the United States and not be OFAC-sanctioned; identity verification is required at onboarding.",
+    regions: ["Non-US residents; Africa-focused"],
+    pricing:
+      "No card creation or maintenance fee. The physical card costs $10 to issue (Juicyway Card Terms). 0% APR currently.",
+    rewards:
+      "0.1% cashback on eligible payments, with the eligible categories defined in the Card Terms.",
+    funding:
+      "Juicyway account balances (USD by default, with balances auto-combined). Under the Card Terms, spending is secured by digital assets in your own linked wallet on Ethereum, Polygon, Optimism or Arbitrum.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://juicyway.com",
+    sourceLabel: "Juicyway official site and Card Terms",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Juicyway Spend Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026: the card is live, so the waitlist description in recent roundups is out of date.",
+    caution:
+      "Read the repayment terms before spending: under the Card Terms, collateral in your linked wallet can be liquidated if a charge is unpaid after one calendar day, or if the collateral value falls below unpaid charges. The free card headline covers the virtual card; the physical card costs $10.",
+    verification: "Issued by Third National under a programme provided by Juice Global Inc., per the Card Terms effective 27 October 2026.",
+    feeBreakdown: { virtualIssuanceUsd: 0, physicalIssuanceUsd: 10 },
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "invity-card",
+    name: "Invity Card",
+    provider: "Invity",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A Bitcoin-only Visa debit card from Invity, the Trezor sister company: spend BTC or EUR and earn Bitcoin cashback, with physical cards shipping from early December 2026.",
+    editorialSummary:
+      "Invity is the SatoshiLabs group's consumer Bitcoin app, and its card is a physical Visa debit card that draws on Bitcoin or euro balances in the Invity app, chosen per card, with Bitcoin converted at the point of sale. Cashback is paid in Bitcoin and is tied to how much you invest automatically each month through the app, which makes the full mechanics unusually transparent for a pre-launch card: tiers, spend caps and the free tier's monthly fee are all published on the official card page. Physical distribution starts in early December 2026; virtual cards, including Apple Pay and Google Pay support, are planned for Q1 2027.",
+    bestFor:
+      "Euro users who already buy Bitcoin monthly and want cashback paid in BTC.",
+    availability:
+      "Applications are open in the Invity app; physical card distribution starts in early December 2026. Euro-focused (EUR accounts and SEPA); no explicit country list is published on the card page.",
+    regions: ["Europe (EUR accounts)"],
+    pricing:
+      "Monthly fee of 4 EUR on the Basic tier; no monthly fee on the investing tiers. Free card payments per month vary by tier (unlimited with round-ups switched on) and free SEPA transfers run 2, 5 or 10 per month by tier. No FX or issuance fee is published on the card page.",
+    rewards:
+      "Bitcoin cashback tied to monthly automated Bitcoin investment in the app: Regular (from 240 EUR invested a month) earns on up to 500 EUR of monthly spend, Frequent (480 EUR) up to 1,000 EUR, Busy (960 EUR) up to 2,000 EUR. The rate is 1.5% for users who qualify by 30 November 2026, locked in for life if conditions are met, and 1% for qualifiers from 1 December 2026. The Basic tier earns 0%. Optional round-ups to the nearest 5 or 10 EUR sweep the difference into your Bitcoin account, with no cashback on round-ups.",
+    funding:
+      "Bitcoin and EUR balances in the Invity app. Earned Bitcoin can be withdrawn to a self-custody wallet, with an Auto Send feature.",
+    cardFormats: ["Physical"],
+    sourceUrl: "https://invity.io/invity-card",
+    sourceLabel: "Invity official card page",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Invity Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 ahead of the early December 2026 physical distribution. The 1.5% lifetime cashback rate requires qualifying by 30 November 2026.",
+    caution:
+      "Invity Finance s.r.o. states that it does not itself provide payment services; the card runs in cooperation with a third-party provider under that provider's terms (Invity describes itself as a client of Lightspark, the card provider). Balances sit in the Invity app, and the headline cashback requires ongoing monthly Bitcoin investment.",
+    verification: "Invity Finance s.r.o. (Czechia) is MiCA-licensed.",
+  },
+  {
+    slug: "nbx-card",
+    name: "NBX Visa Flex Card",
+    provider: "Norwegian Block Exchange",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A waitlist multicurrency Visa Flex Card from Norway's NBX exchange, spending NOK and stablecoin balances and paying cashback in Bitcoin, tokenised gold or tokenised silver, now launching in 2027.",
+    editorialSummary:
+      "Norwegian Block Exchange is a regulated Norwegian crypto exchange listed on Euronext Growth Oslo. Its Visa Flex Card is built on Visa's Flexible Credential: one card spends from linked NBX balances (NOK, USDM, EURN, PLT) and pays cashback in the holder's choice of Bitcoin, tokenised gold (fGLD) or tokenised silver (fSLVR), with published tier rates and monthly caps. The card launches as prepaid/debit, with a credit capability promised later in 2027 on the same credential. NBX previously targeted a 2026 launch; its own card page now says 2027.",
+    bestFor:
+      "Nordic and German users who hold balances on NBX and want rewards in BTC, gold or silver.",
+    availability:
+      "Waitlist; a verified NBX account is required to join, and tier qualification through trading, referrals, stablecoin holdings or shareholdings is live now. Markets: Norway, Germany, Sweden, Denmark and Finland, with Poland listed as coming soon.",
+    regions: ["Norway", "Germany", "Sweden", "Denmark", "Finland"],
+    pricing:
+      "No card fee schedule is published. The Pro rewards tier can alternatively be bought for 7.99 EUR a month at launch.",
+    rewards:
+      "Standard 0.25% (cap 15 EUR a month), Active 0.5% (cap 22 EUR), Plus 1.0% (cap 30 EUR), Pro 1.5% (cap 50 EUR), paid in BTC, tokenised gold or tokenised silver at a fixed euro rate by tier.",
+    funding:
+      "NBX account balances: NOK fiat and the stablecoins USDM, EURN and PLT, converted at the point of sale. Balances are held custodially on the NBX platform.",
+    cardFormats: ["Physical", "Virtual"],
+    sourceUrl: "https://nbx.com/en/nbxvisa",
+    sourceLabel: "NBX official card page",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the NBX Visa Flex Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026: NBX's card page now gives a 2027 launch, later than the 2026 target in its earlier materials.",
+    caution:
+      "The issuer is not named on the card page and no card fee schedule is published. An older NBX Visa credit card, issued by Enfuce, was discontinued in 2023; this Flex Card is a separate, unlaunched product.",
+    verification: "Norwegian Block Exchange AS (org. no. 920 245 676) holds EMI and CASP licences under Finanstilsynet (Norway).",
+  },
+  {
+    slug: "brave-card",
+    name: "Brave Rewards Card",
+    provider: "Brave",
+    network: "Not published",
+    categories: ["self-custody"],
+    shortDescription:
+      "A planned stablecoin payment card from Brave that earns BAT rewards, with a waitlist open and no launch date.",
+    editorialSummary:
+      "The Brave Rewards Card is part of Brave's BAT Roadmap 4.0: a stablecoin-powered payment card, built on the planned BravePay protocol, that earns BAT rewards on purchases alongside Brave Rewards offers. An official waitlist is open; Brave reports more than 271,000 signups from over 200 countries as of November 2026, which are signups, not availability. Brave says it will partner with a compliant card issuer, but the partner, the network, the geographic availability and the reward rates are all promised in a future announcement.",
+    bestFor:
+      "Brave and BAT users tracking the planned card rather than applying for a live product.",
+    availability:
+      "Waitlist open on Brave's site (email, country and format preference). No launch date and no availability list is published.",
+    regions: ["Waitlist only; regions not published"],
+    pricing:
+      "Not published. The waitlist page claims no hidden fees, but no fee schedule exists.",
+    rewards:
+      "BAT rewards on purchases, plus Brave Rewards offers. No rates, caps or tiers are published.",
+    funding:
+      "Designed around the planned BravePay protocol, with self-custody by default; the card's own settlement mechanics are not published.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://brave.com/card-waitlist",
+    sourceLabel: "Brave official card waitlist",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Brave Rewards Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry.",
+    caution:
+      "Pre-launch listing: the issuer, network, fees, reward rates and launch countries are all unpublished, so none of the card's terms should be treated as settled.",
+    verification: "Announced in Brave's BAT Roadmap 4.0 on the official Brave blog, using GENIUS-compliant stablecoins.",
+  },
+  {
+    slug: "coindepo-card",
+    name: "CoinDepo Card",
+    provider: "CoinDepo",
+    network: "Not published",
+    categories: ["debit"],
+    shortDescription:
+      "A planned crypto credit card from the CoinDepo yield platform, spending from its Instant Credit Line, with a waitlist open and a 2026 release scheduled in CoinDepo's FAQ.",
+    editorialSummary:
+      "CoinDepo is a custodial yield and lending platform. Its planned card spends from the platform's Instant Credit Line, under which users borrow up to 50% LTV against deposits in CoinDepo Compound Interest Accounts while those deposits keep earning. CoinDepo's official FAQ schedules the card's release for 2026, with a waitlist open to account holders, and publishes one concrete offer: a 500 USDC bonus for pre-registered users who spend $3,000 in their first 3 months. The FAQ also says the supported countries, fees, spending limits, ATM access, formats and wallet support will be announced closer to launch.",
+    bestFor:
+      "CoinDepo account holders who want to spend against their deposits without selling.",
+    availability:
+      "Waitlist open to CoinDepo account holders from the dashboard. Release scheduled for 2026 with no date; supported countries are not published.",
+    regions: ["Waitlist only; regions not published"],
+    pricing:
+      "Not published. CoinDepo's FAQ says card fees will be announced closer to launch.",
+    rewards:
+      "CoinDepo advertises unlimited cashback of up to 8% on every purchase, paid instantly in a chosen crypto into the interest account. No tier, rate table, category or condition that determines the rate is published anywhere official, so 8% is an undefined ceiling, not a rate any reader can rely on.",
+    funding:
+      "The card spends from CoinDepo's Instant Credit Line: borrow up to 50% LTV against Compound Interest Account deposits, with interest on the drawn balance payable monthly.",
+    cardFormats: ["Formats not published"],
+    sourceUrl: "https://coindepo.com",
+    sourceLabel: "CoinDepo official site and FAQ",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the CoinDepo Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry.",
+    caution:
+      "Pre-launch listing on a custodial platform. The headline 8% cashback has no published conditions, and CoinDepo's own FAQ warns users not to rely on third-party claims about the card's formats or reach.",
+    verification: "KYC/AML applies to borrowing under the platform terms. The card's network and issuer are not published.",
+  },
+  {
+    slug: "cero-card",
+    name: "Cero Card",
+    provider: "Cero",
+    network: "Not published",
+    categories: ["self-custody"],
+    shortDescription:
+      "A non-custodial virtual spending card on Base in early access, with prize-style rewards instead of a cashback rate.",
+    editorialSummary:
+      "Cero is a non-custodial spending app on Base: it states plainly that it never takes custody of your funds. Its card is in early access (a closed beta entered through a claim-your-handle signup), with company statements putting the first market as Mexico. Rewards are gamified rather than a rate: some purchases are randomly refunded in full through Cero Cashback reveals, every payment earns entries into a weekly draw, and weekly Reward Packs are planned. A Cero Score (0 to 1000), built from spending, balances and on-chain activity, is meant to unlock uncollateralised on-chain credit over time; Cero's terms describe the beta scores and credit limits as illustrative, and the beta as not yet issuing formal consumer credit cards.",
+    bestFor:
+      "Early adopters comfortable with a beta product and prize-based rewards.",
+    availability:
+      "Early access through Cero's site; all three reward features are labelled coming soon on the official site itself. No country list is published.",
+    regions: ["Early access; Mexico first per company statements"],
+    pricing:
+      "Not published.",
+    rewards:
+      "Not a cashback rate. Some purchases are randomly refunded in full, every payment earns entries into a weekly draw (the homepage cites prizes up to $100,000), and reward packs are opened weekly. The homepage headline of up to 99% cashback describes a chance-based reveal mechanic, not a rate earned on spending.",
+    funding:
+      "Top up in the app; the card is built on Base. Cero states it never takes custody of your funds.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://cero.finance",
+    sourceLabel: "Cero official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Cero Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as an early-access entry.",
+    caution:
+      "Early-access product: network, issuer, fees and country list are not published, and the credit feature is a beta described as illustrative in the terms.",
+    verification: "The weekly draw runs on Base via Megapot (a licensed lottery partner) with Pyth randomness.",
+  },
+  {
+    slug: "onyx-card",
+    name: "Onyx Card",
+    provider: "Onyx",
+    network: "Not published",
+    categories: ["debit"],
+    shortDescription:
+      "A waitlist debit card from the Onyx blockchain project (XCN), spending XCN, USDC and ETH from the Onyx Wallet. Not affiliated with JPMorgan.",
+    editorialSummary:
+      "This Onyx is the Layer 1 blockchain project behind the XCN token (Onyxcoin); it is not JPMorgan's former Onyx unit, which was renamed Kinexys in November 2024 and never sold a consumer card. The Onyx Card is planned as the first product of Onyx Neo, the project's neobank: a debit card built into the Onyx Wallet, spending XCN, USDC and ETH held on the Onyx Layer 1, with fiat in and out via SEPA and Faster Payments. A waitlist opened in September 2026, but Onyx's November 2026 roadmap still lists the card as in development, and the official card page never names a card network or an issuer.",
+    bestFor:
+      "XCN holders following the Onyx Neo neobank launch.",
+    availability:
+      "Waitlist open since September 2026; no launch date. The 180 plus countries figure on the card page is an acceptance claim, not an eligibility list, and no KYC or eligibility terms are published.",
+    regions: ["Waitlist only; regions not published"],
+    pricing:
+      "Not published, beyond a claim of zero delivery fees.",
+    rewards:
+      "Cashback on qualified spend, paid in XCN, plus referral bonuses in XCN and tiered rates. No rate is published anywhere official.",
+    funding:
+      "XCN, USDC and ETH held in the Onyx Wallet on the Onyx Layer 1; fiat in and out via SEPA and Faster Payments.",
+    cardFormats: ["Physical", "Virtual"],
+    sourceUrl: "https://onyx.org/onyx-card",
+    sourceLabel: "Onyx official card page",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Onyx Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry.",
+    caution:
+      "The card page is written in the present tense as if the card exists, while the project's own roadmap says it is still being built. Network, issuer, fees and cashback rate are all unpublished.",
+    verification: "No card-issuing entity is named. First product of Onyx Neo, the project's planned neobank.",
+  },
+  {
+    slug: "quppy-card",
+    name: "Quppy Card",
+    provider: "Quppy",
+    network: "Not published",
+    categories: ["prepaid"],
+    shortDescription:
+      "A planned virtual prepaid card from the Quppy multi-currency wallet, on a waitlist for selected markets.",
+    editorialSummary:
+      "Quppy is a long-running multi-currency wallet and neobank app (IBAN accounts, a non-custodial crypto wallet and an exchange) operated by QUPPY EUROPE OÜ of Estonia, acting as a software layer over licensed partners. Its virtual card is presented on Quppy's own card and help pages as coming soon, planned for selected markets, in EUR with GBP also referenced, and with Apple Pay and Google Pay support described. The network, the issuer, the fees and any rewards are not published on Quppy's official pages.",
+    bestFor:
+      "Existing Quppy wallet users waiting for its card to launch.",
+    availability:
+      "Waitlist; the card is described as coming soon for selected markets, which are not enumerated. Account verification uses a government ID plus a selfie.",
+    regions: ["Waitlist only; selected markets not published"],
+    pricing:
+      "Not published.",
+    rewards:
+      "None published.",
+    funding:
+      "The Quppy wallet is non-custodial for crypto and supports BTC, ETH, LTC, BCH, USDT, USDC and TRX, alongside IBAN accounts.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://quppy.com",
+    sourceLabel: "Quppy official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Quppy Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry.",
+    caution:
+      "Pre-launch listing: network, issuer, fees and rewards are all unpublished.",
+    verification: "Operated by QUPPY EUROPE OÜ (Estonia).",
+  },
+  {
+    slug: "sakubit-card",
+    name: "SAKUBIT Card",
+    provider: "SAKUBIT",
+    network: "Visa (planned; partnership not confirmed)",
+    categories: ["self-custody"],
+    shortDescription:
+      "A planned stablecoin card from Indonesia's SAKUBIT, targeting a Q1 2027 launch across 15 markets, spending USDC and USDT held in your own wallet.",
+    editorialSummary:
+      "SAKUBIT, built by PT Digivana Solusi Digital of Indonesia, makes a self-custodial USDC or USDT balance spendable as local money: national QR payments in 15 markets, bank-rail transfers, and a card, all targeting Q1 2027. There is no SAKUBIT balance to top up: funds stay at your own address, SAKUBIT accepts no deposits, and a Bank Indonesia-licensed payment provider pays the merchant in local currency. Unusually for a pre-launch project, SAKUBIT publishes a detailed regulatory-position page and states its open licensing questions plainly.",
+    bestFor:
+      "Self-custody users in its 15 target markets across Asia, Latin America and Africa.",
+    availability:
+      "Waitlist; the app, QR payments and the card all target Q1 2027, launching across 15 markets at once (7 in Asia, 5 in Latin America, 3 in Africa). Identity verification is required for every user before the first payment.",
+    regions: ["Waitlist; 15 markets planned across Asia, Latin America and Africa"],
+    pricing:
+      "Card pricing is explicitly unpublished and promised before launch. For QR payments the FX margin is published: market rate less 1.90% on small payments (under roughly Rp100,000 equivalent) and 1.20% above that level.",
+    rewards:
+      "None published.",
+    funding:
+      "USDC and USDT held at your own address on seven planned networks: Ethereum, Arbitrum, Polygon PoS (primary at launch), Base, BNB Smart Chain, Solana and TRON (USDT only).",
+    cardFormats: ["Contactless card; virtual and physical split not published"],
+    sourceUrl: "https://sakubit.com",
+    sourceLabel: "SAKUBIT official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the SAKUBIT Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a pre-launch entry targeting Q1 2027.",
+    caution:
+      "SAKUBIT's own legal page states that network names are used descriptively and do not imply affiliation, endorsement or partnership, so the Visa branding is a plan rather than a confirmed partnership, and no issuer is named. Its legal page also notes the launch depends on open licensing questions.",
+    verification: "Operated by PT Digivana Solusi Digital (Indonesia), which publishes its regulatory position under OJK and Bank Indonesia rules.",
+  },
+  {
+    slug: "spend-card",
+    name: "Spend Card",
+    provider: "Spend",
+    network: "Not published",
+    categories: ["self-custody"],
+    shortDescription:
+      "A waitlist card from spend.com that aggregates stablecoin balances across your self-custody wallets into one spendable balance.",
+    editorialSummary:
+      "Spend (spend.com) is building a card behind a single Universal Balance: its dApp aggregates stablecoin balances held across multiple self-custody wallets and chains into one balance for a single point-of-sale transaction, so funds stay in your own wallets until you spend. The official site is a waitlist page with no launch date. The card is described as a physical premium metal card with tap-to-pay; no virtual card is mentioned, and the site does not enumerate the supported assets or chains.",
+    bestFor:
+      "Self-custody users who hold stablecoins spread across several wallets and chains.",
+    availability:
+      "Waitlist open on the official site; no launch date and no eligibility list is published.",
+    regions: ["Waitlist only; regions not published"],
+    pricing:
+      "Not published.",
+    rewards:
+      "Every purchase earns up to 4% in USDC rewards, automatically deposited to your wallet, per the homepage. No tiers, rates or conditions are published, and waitlist members are promised higher reward rates, also unquantified, so treat 4% as an unpublished ceiling.",
+    funding:
+      "Stablecoins held in your connected self-custody wallets across multiple chains, aggregated at the point of sale.",
+    cardFormats: ["Physical"],
+    sourceUrl: "https://spend.com",
+    sourceLabel: "Spend official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Spend Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry.",
+    caution:
+      "Pre-launch listing. Not to be confused with Mercuryo's Spend card (a live EEA Mastercard) or the legacy Spend.com Visa card discontinued after the Swipe acquisition in 2021. Network, issuer, fees and chains are unpublished.",
+    verification: "Non-custodial by design: funds stay in the user's connected wallets. No operating or issuing entity is named on the official site.",
+  },
+  {
+    slug: "world-card",
+    name: "World Card",
+    provider: "World",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A planned Visa debit card from World (formerly Worldcoin), spending from the self-custody World Wallet and gated on World ID proof of personhood; announced in April 2025 and still on a waitlist.",
+    editorialSummary:
+      "The World Card was announced on World's official blog on 30 April 2025: a Visa debit card connected directly to the self-custody World Wallet, for verified humans, spending digital assets anywhere Visa is accepted, with rewards on AI subscriptions and services paid in WLD. US availability was promised for later in 2025; that target slipped. World reported more than 140,000 people on the waitlist in January 2026 with the rollout still to start, and no official public launch has been announced since. Eligibility is gated on World ID, the project's Orb-based proof of personhood.",
+    bestFor:
+      "World ID holders who want to spend from their World Wallet.",
+    availability:
+      "Waitlist. Announced for the US first; no launch date is currently published, and other countries were described only as to be explored.",
+    regions: ["Waitlist; US first per the announcement"],
+    pricing:
+      "Not published.",
+    rewards:
+      "Rewards on AI subscriptions and services, paid in WLD to the connected wallet. No rate is published in official sources.",
+    funding:
+      "Digital assets in the World Wallet, with WLD positioned as the spendable asset and native USDC on World Chain.",
+    cardFormats: ["Formats not published"],
+    sourceUrl: "https://world.org",
+    sourceLabel: "World official site and blog",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the World Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 as a waitlist-only pre-launch entry; the original 2025 launch target has slipped.",
+    caution:
+      "Announced in April 2025 and still not publicly launched as of November 2026, so treat any claim that the World Card is live as unverified. The issuer, fees, formats and reward rates are unpublished.",
+    verification: "Built by Tools for Humanity, the main contributor to World. Eligibility is gated on World ID verification.",
+  },
+  {
+    slug: "spotpay-card",
+    name: "SpotPay Card (Calypso)",
+    provider: "SpotPay",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A live Visa card, branded Calypso in the app, from SpotPay, a US-registered cross-border wallet offering a US account and card spending aimed at non-US users.",
+    editorialSummary:
+      "SpotPay is a cross-border money app from SpotPay, Inc., a US company and Y Combinator W26 startup: users hold, send and receive money internationally, get a US account with routing and account numbers for receiving USD by ACH or wire, and spend with the Calypso Card, a Visa available virtually and physically and addable to Apple Pay and Google Wallet. The app is live on iOS and Android and card applications are processed in-app; its marketing targets non-US users, especially Caribbean and Latin American freelancers and entrepreneurs. SpotPay's own footer states it is a financial services platform, not a bank.",
+    bestFor:
+      "Non-US freelancers and entrepreneurs who need a US account and a Visa card in one app.",
+    availability:
+      "Live: the app is published on iOS and Android and card applications are processed in-app. Marketed worldwide with no published country list; onboarding requires a passport or government ID.",
+    regions: ["Non-US users; Caribbean and Latin America focus"],
+    pricing:
+      "Not published on SpotPay's official site or its app store listing, which promise only clear fees on transfers. No fee schedule is published, so do not rely on fee figures in secondary coverage.",
+    rewards:
+      "Referral and invite rewards are mentioned in the app store listing; no cashback rate is published. The app advertises earnings on a Boost Balance, but no interest rate is published anywhere official.",
+    funding:
+      "SpotPay wallet balances, plus a US account with routing and account numbers for receiving USD by ACH or wire.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://spotpay.ai",
+    sourceLabel: "SpotPay official site",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the SpotPay Card (Calypso) listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026 following a reader's successful in-app signup and card application; most commercial terms remain unpublished on SpotPay's public pages.",
+    caution:
+      "SpotPay publishes no fee schedule, no interest rate and no card issuer on its public pages, which is an unusual amount of opacity for a live card. Balances are not bank deposits.",
+    verification: "Operated by SpotPay, Inc., registered with FinCEN as a money services business.",
+    featureFlags: { applePay: true, googlePay: true },
   },
 ];
 

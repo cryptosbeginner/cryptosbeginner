@@ -13,6 +13,17 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-24",
+    type: "catalog-update",
+    cardName: "Bybit Card",
+    cardSlug: "bybit-card",
+    title: "Bybit Card FX fees run from 0.5% to 7% depending on your region",
+    details:
+      "Bybit does not run one global fee schedule for its card: each regional programme has its own FX fee, per Bybit's official fees and limits schedule. The EEA pays 0.5% on non-EUR spend (served separately by Bybit EU), Brazil 1.5%, Georgia, Asia Pacific, Australia and Mexico 2%, Peru 1%, and Argentina 7% on non-ARS spend. Kazakhstan (AIFC) instead charges a 2% international fee on cross-border purchases, even in USD. Local taxes sit on top: Brazil adds a 4.3% IOF tax on foreign transactions, and Argentina adds a 30% advance income tax, 21% VAT on listed foreign digital services and provincial taxes. Our Bybit Card listing now carries the full regional breakdown.",
+    sourceUrl: "https://www.bybit.com/en/help-center/article/Fees-and-Spending-Limits-Bybit-Card",
+    sourceLabel: "Bybit fees and limits schedule, November 2026",
+  },
+  {
     date: "2026-11-23",
     type: "promo",
     cardName: "ether.fi Cash",
@@ -104,6 +115,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "XPlace app update, November 2026",
   },
   {
+    date: "2026-11-20",
+    type: "promo",
+    cardName: "Tangem Pay",
+    cardSlug: "tangem-pay-card",
+    title: "Tangem Pay Black Friday boost: new accounts earn an extra 25% back, capped at $15",
+    details:
+      "Tangem's Black Friday Cashback Boost gives new Tangem Pay customers an extra 25% of card spend back, on top of the standard 1% (Basic) or 2% (Plus), on purchases of $30 or more, capped at $15 in total per person. Accounts must be opened between 20 and 29 November 2026, and the offer ends on 29 November 2026; standard cashback category exclusions and country restrictions apply, per Tangem's promo terms.",
+    sourceLabel: "Tangem Black Friday promo terms, November 2026",
+  },
+  {
     date: "2026-11-19",
     type: "catalog-update",
     cardName: "Solid Card",
@@ -132,6 +153,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     details:
       "Pulsar Money now accepts USDT deposits on the Tron network (TRC-20), so users can fund the balance they spend from with the virtual card. Pulsar charges no fee on supported stablecoin deposits; network and third-party fees can still apply, per its 19 November announcement.",
     sourceLabel: "Pulsar Money press release, 19 November 2026",
+  },
+  {
+    date: "2026-11-19",
+    type: "catalog-update",
+    cardName: "MiniPay Card",
+    cardSlug: "minipay-card",
+    title: "MiniPay is moving its 20 million plus wallets to Stripe-owned Privy, and adds travel booking",
+    details:
+      "Opera announced on 19 November 2026 that MiniPay is upgrading its more than 20 million self-custodial stablecoin wallets on Celo to Privy wallet infrastructure (Privy is owned by Stripe), with the rollout beginning in 2026: one sign-in and one wallet across Android and iOS, with balances and history carried over and self-custody retained. MiniPay has also added travel booking inside the app through Cryptorefills, so flights, stays and eSIMs can be paid from the wallet balance.",
+    sourceUrl: "https://press.opera.com/category/crypto/minipay/",
+    sourceLabel: "Opera Newsroom, 19 November 2026",
   },
   {
     date: "2026-11-18",
@@ -222,6 +254,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "MEXC Global Card discontinuation notice, November 2026",
   },
   {
+    date: "2026-11-18",
+    type: "catalog-update",
+    cardName: "Tria Card",
+    cardSlug: "tria-card",
+    title: "Tria Currency Accounts: a personal EUR IBAN that lands in your wallet as USDC",
+    details:
+      "Tria launched Currency Accounts on 18 November 2026: eligible users get personal EUR account details in the app, and euros sent by SEPA or SWIFT are converted to USDC and delivered to the self-custodial Tria Wallet, usually within minutes by SEPA. The infrastructure is provided by Noah; Tria charges no fee until 31 December 2026 and the Noah partner fee is 1.00 EUR plus 0.25% per SEPA deposit. Incoming transfers only, and the rollout reaches eligible users over about four weeks. Tria's Buy/Sell is also live, covering crypto, tokenized stocks and pre-IPO exposure tokens.",
+    sourceUrl: "https://help.tria.so/en/articles/18488126-eur-currency-accounts",
+    sourceLabel: "Tria Help Center, November 2026",
+  },
+  {
     date: "2026-11-17",
     type: "catalog-update",
     cardName: "New listings",
@@ -301,6 +344,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Wirex announcement via PR Newswire, 17 November 2026",
   },
   {
+    date: "2026-11-17",
+    type: "catalog-update",
+    cardName: "Pulsar Money Card",
+    cardSlug: "pulsar-money-card",
+    title: "Pulsar adds perpetual futures, powered by Extended and funded from the card balance",
+    details:
+      "Perpetual futures went live in the Pulsar Money app on 17 November 2026, provided by Extended (operated by X10 Ltd). Positions are funded from the Pulsar card balance, collateral is USDC, trades execute as market orders at Extended's taker fees, and Pulsar currently adds no fee of its own. Perps are not available in the EEA.",
+    sourceUrl: "https://pulsar.money/en/blog/perp-trading-is-live",
+    sourceLabel: "Pulsar Money blog, 17 November 2026",
+  },
+  {
     date: "2026-11-16",
     type: "launch",
     cardName: "Binance Card",
@@ -332,6 +386,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
       "Since 16 November 2026, ether.fi Cash charges no FX markup when a merchant charges in Swiss francs, for all members, in Direct Pay and Borrow Mode, per the ether.fi Help Center. CHF joins USD and EUR at 0%; other currencies still carry the tier markup (0.5% on Core, 0.25% on Luxe, none on Pinnacle and VIP). If the terminal offers to charge in dollars or euros, choose CHF.",
     sourceUrl: "https://help.ether.fi/en/articles/895885-chf-purchases-0-fx-rate",
     sourceLabel: "ether.fi Help Center, November 2026",
+  },
+  {
+    date: "2026-11-16",
+    type: "market",
+    cardName: "Infini Card",
+    cardSlug: "infini-card",
+    title: "Infini tightens controls on MEXC-linked funds ahead of the FinCEN deadline",
+    details:
+      "Infini published a notice on 16 November 2026 strengthening controls on transfers linked to MEXC Global Limited and its affiliated entities, ahead of the FinCEN order's 10 December 2026 effective date: funds associated with the listed platforms may be frozen, related accounts may face further investigation, and users are told not to transact with those entities directly or indirectly. A published deposit return fee schedule also took effect on 15 November 2026 (USD 10 plus network fee for mistaken deposits; compliance returns capped at a USD 200 processing fee).",
+    sourceUrl: "https://help.infini.money/en/articles/18469702",
+    sourceLabel: "Infini Help Center, November 2026",
   },
   {
     date: "2026-11-14",
@@ -589,6 +654,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     details:
       "ether.fi is refunding fees on ACH, wire, SEPA, PIX, and Faster Payments deposits until December 31, 2026, paid back after each month ends. Monthly covered deposit caps: Luxe $3,000, Pinnacle $15,000, VIP $150,000. Core members get nothing unless they upgrade to Luxe or Pinnacle by December 31, which backdates refunds to deposits made from November 1. The FX spread on deposits is not refunded.",
     sourceLabel: "ether.fi announcement and promotion terms, November 2, 2026",
+  },
+  {
+    date: "2026-11-02",
+    type: "launch",
+    cardName: "Startale Card",
+    cardSlug: "startale-card",
+    title: "Startale Card launches on Soneium: a virtual Visa spending USDSC, issued by Third National",
+    details:
+      "Startale began issuing its virtual Visa card on 2 November 2026, starting with eligible early contributors and expanding through its 300,000 plus waitlist in priority order. The card spends USDSC from the Startale App on Soneium and pays 1% cashback in USDSC. The published cardholder agreement names Third National as the issuing bank with Rain as programme infrastructure, and the card is legally a 0% APR secured credit card: spending draws on USDSC held as collateral, and the limit equals the collateral value. New listing added to the directory.",
+    sourceUrl: "https://startale.com/",
+    sourceLabel: "Startale official launch release, 2 November 2026",
   },
   {
     date: "2026-11-01",
