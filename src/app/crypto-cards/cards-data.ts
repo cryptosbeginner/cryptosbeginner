@@ -753,12 +753,12 @@ export const cardListings: CardListing[] = [
     slug: "anomapay-card",
     name: "AnomaPay Card",
     provider: "AnomaPay",
-    network: "Not published",
+    network: "Mastercard (shown on card art; not confirmed in AnomaPay's published terms)",
     categories: ["self-custody"],
     shortDescription:
       "A planned crypto card from the privacy-preserving AnomaPay payments app, currently on a waitlist with no published launch date.",
     editorialSummary:
-      "AnomaPay is a live non-custodial payments app built on Anoma's intent-based architecture, offering shielded ERC20 transfers and confidential same-chain swaps on EVM chains and Solana. Its crypto card is announced as coming soon with a waitlist signup, listing planned referral bonuses and reward earning as future features. No card network, issuer, fee schedule, cashback rates, or country list are published, so none of the card's final terms should be treated as settled.",
+      "AnomaPay is a live non-custodial payments app built on Anoma's intent-based architecture, offering shielded ERC20 transfers and confidential same-chain swaps on EVM chains and Solana. Its crypto card is announced as coming soon with a waitlist signup, listing planned referral bonuses and reward earning as future features. The official card art shows a Mastercard mark, but AnomaPay has not confirmed the network in its published terms, and no issuer, fee schedule, cashback rates, or country list are published, so none of the card's final terms should be treated as settled.",
     bestFor:
       "Readers tracking an upcoming privacy-focused card rather than applying to a fully documented live product.",
     availability:
@@ -776,7 +776,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/anomapay-card.png",
     imageAlt: "AnomaPay Card in white and soft pink with the red AnomaPay logo, chip and Mastercard mark",
     imageSourceNote: "Official card image supplied November 2026",
-    reviewedAt: "2026-10-19",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "November 2026: the network field now reflects the Mastercard mark shown on the official card art supplied this month. AnomaPay has not confirmed the network in its published terms, and the card remains waitlist only with no launch date.",
     caution:
       "This is a pre-launch listing. The card page is a waitlist with no launch date; do not assume that advertised rewards, fees, issuer arrangements, availability, or card benefits are final. AnomaPay's own terms describe the software as experimental and state that usage does not entitle users to any compensation or incentive.",
     verification:
@@ -788,7 +790,7 @@ export const cardListings: CardListing[] = [
       "No protocol fees on the app itself; gas abstraction lets users pay fees in any token",
     ],
     cons: [
-      "Card is not launched; no network, issuer, fees, or country list published",
+      "Card is not launched; network not confirmed in published terms, and no issuer, fees, or country list published",
       "No live referral or rewards program despite planned features",
       "The app is geoblocked in some regions, including the reviewer's region at check time",
     ],
