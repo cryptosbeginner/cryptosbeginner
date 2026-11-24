@@ -57,6 +57,27 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Laso Finance help centre, November 2026"
   },
   {
+    date: "2026-11-24",
+    type: "launch",
+    cardName: "Ruvo Card",
+    cardSlug: "ruvo-card",
+    title: "Ruvo Card added: a self-custodial secured credit card issued by Third National",
+    details:
+      "A six-card roundup prompted a check of Ruvo, and it earns its place on unusual mechanics: the wallet is self-custodial (Ruvo states it never holds users' private keys or their collateral), yet the card is a Visa Platinum secured credit card issued by Third National, where your spending limit equals the market value of the crypto collateral pledged from your wallet, at 0% APR. USD spending is fee-free; non-USD spending costs up to 1%. The sharp edge is liquidation: balances not settled within a day, or collateral falling below your charges, can be liquidated to repay. One roundup claim needed correcting: the published card terms require cardholders to attest they are not US citizens, so US availability applies to the account, not clearly to the card. New listing added.",
+    sourceUrl: "https://ruvo.com",
+    sourceLabel: "Ruvo official site and Spend Card Terms, November 2026",
+  },
+  {
+    date: "2026-11-24",
+    type: "catalog-update",
+    cardName: "Ledger Spend Card",
+    cardSlug: "ledger-spend-card",
+    title: "Ledger Spend Card (Mercuryo) added, with a status warning",
+    details:
+      "The Ledger Spend Card is the second, simpler Ledger card: a free virtual Mastercard by Mercuryo inside Ledger Live, EEA only, topped up with BTC or ETH (converted at top-up), with limits of 5,000 EUR per transaction, 10,000 EUR a day and 40,000 EUR a month, and a 1 EUR monthly fee after three inactive months. It has been added with a prominent status caution: the original issuer Quicko lost its Polish licence in January 2026, a Paynetics-issued successor followed, and trackers disagree on whether the programme is currently open, while Ledger's page still presents it as available. The same check firmed up our CL Card listing with the verified Cryptodraft and Stableloan credit terms.",
+    sourceLabel: "Ledger and Mercuryo official pages, November 2026",
+  },
+  {
     date: "2026-11-23",
     type: "promo",
     cardName: "ether.fi Cash",
