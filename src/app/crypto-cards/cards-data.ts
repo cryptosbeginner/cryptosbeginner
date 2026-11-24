@@ -6461,6 +6461,41 @@ export const cardListings: CardListing[] = [
     feeBreakdown: { virtualIssuanceUsd: 10, physicalIssuanceUsd: 30, fxFeeNote: "0% to 2% by currency; 1% conversion on USDT and USDC", atmFeeNote: "2% plus a possible FX surcharge of 0% to 2%; $250 per withdrawal, 3 per day" },
     featureFlags: { applePay: true, googlePay: true },
   },
+  {
+    slug: "kem-card",
+    name: "KEM Card",
+    provider: "KEM",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A live Visa debit card from Kuwait's KEM money app, spending a USDT balance with 2% cashback paid in Tether Gold and no issuance or monthly fee.",
+    editorialSummary:
+      "KEM is a Kuwait-headquartered money app that began with instant QR payments in Kuwait and now covers remittances, gold investing, crypto and this card, called the Kem Infinity Card in the app. Tether made a $3M strategic investment in KEM in August 2024, and KEM markets the card as the first card backed by Tether. The card is a Visa debit that draws directly from the USDT balance in the KEM app wallet: gold, USD balances and other crypto can be swapped to USDT in the app before spending, and no bank account is needed. Cashback is paid in Tether Gold (XAUT), which fits the app's gold-investing side; KEM also states the card is Sharia-compliant, certified under AAOIFI Standard 57.",
+    bestFor:
+      "GCC users who hold USDT and want their cashback paid in gold rather than cash or points.",
+    availability:
+      "Live. KEM states the app is available in the six GCC countries: Kuwait, Bahrain, the UAE, Saudi Arabia, Qatar and Oman. KEM markets the card for use at Visa merchants in 150 plus countries, which is merchant acceptance, not issuance eligibility; a full eligibility list is not published on KEM's readable pages.",
+    regions: ["Kuwait", "Bahrain", "UAE", "Saudi Arabia", "Qatar", "Oman"],
+    pricing:
+      "No issuance, monthly or annual fee (KEM card page). A 1.00% USDT to USD fee applies, per KEM's homepage. FX and cross-border fees are not published on KEM's readable pages, and ATM fees are shown in the app only.",
+    rewards:
+      "2% cashback on card spending paid in Tether Gold (XAUT), announced in September 2026; no cap, minimum spend or other conditions are published on KEM's official pages. Partner rates on the KEM homepage: 5% back on food delivery with Talabat, Keeta and Noon; 3% on rides with Careem and Uber; 3% on flights with Qatar Airways, Emirates and Etihad Airways. Whether partner rates replace or stack on the 2% base is not stated. Referral rewards of up to $500 are claimed on the card page, with detailed terms not published.",
+    funding:
+      "USDT held in the KEM app wallet (a custodial account balance; KEM publishes proof-of-reserves attestations). Deposit USDT from an external wallet or exchange, or buy it in the app. Deposit networks are not named on KEM's official pages.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://kemapp.io",
+    sourceLabel: "KEM official site and card page",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the KEM Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    updateNote:
+      "Listed November 2026. KEM is a Kuwait-headquartered money app founded in 2022; Tether made a $3M strategic investment in August 2024. The Tether Gold cashback card was announced on KEM's official channels by 19 September 2026.",
+    caution:
+      "Several material terms could not be verified from KEM's own site: its card terms and prohibitions pages did not render readable text, so the issuer name, FX and cross-border fee caps and the restricted-country list are not confirmed here (third parties reading those terms name Third National as issuer and list FX and cross-border fees of up to 3% each; treat those figures as reported, not verified). Apple Pay and Google Pay support is not stated on any official KEM page, despite claims in third-party profiles. Cashback caps and conditions are unpublished.",
+    verification: "KYC is mandatory before issuance: the application requires uploading a government-issued ID. The Google Play developer record names Kemfinity s.r.o. (Czechia); KEM describes itself as a crypto financial platform, not a bank, with banking services provided by licensed partners.",
+    feeBreakdown: { virtualIssuanceUsd: 0, fxFeeNote: "1% USDT to USD conversion fee per KEM's homepage; FX and cross-border fees not published on KEM's readable pages" },
+  },
 ];
 
 export function getCardBySlug(slug: string) {

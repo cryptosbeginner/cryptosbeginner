@@ -35,6 +35,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Solid Help Center, November 2026",
   },
   {
+    date: "2026-11-24",
+    type: "launch",
+    cardName: "KEM Card",
+    cardSlug: "kem-card",
+    title: "KEM Card added to the directory: USDT-funded Visa with 2% cashback in Tether Gold",
+    details:
+      "KEM is a Kuwait-headquartered money app (Tether made a $3M strategic investment in August 2024). Its Visa debit card spends the USDT balance in the KEM app wallet, with gold, USD and other crypto swappable to USDT in the app and no bank account needed. Issuance is free with no monthly or annual fee; a 1% USDT to USD fee applies. Cashback is 2% paid in Tether Gold, with partner rates of 5% at Talabat, Keeta and Noon and 3% at Careem, Uber, Qatar Airways, Emirates and Etihad. Availability is the six GCC countries. New listing added; the issuer name, FX caps and wallet-pay support are not published on KEM readable pages and are flagged on the listing.",
+    sourceUrl: "https://kemapp.io",
+    sourceLabel: "KEM official site, November 2026",
+  },
+  {
     date: "2026-11-23",
     type: "promo",
     cardName: "ether.fi Cash",
