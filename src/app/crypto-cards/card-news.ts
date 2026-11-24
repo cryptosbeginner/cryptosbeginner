@@ -24,6 +24,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Bybit fees and limits schedule, November 2026",
   },
   {
+    date: "2026-11-24",
+    type: "catalog-update",
+    cardName: "Solid Card",
+    cardSlug: "solid-card",
+    title: "Solid referral milestones confirmed in the official terms, and card FX is now tiered by membership",
+    details:
+      "Solid help centre confirms the referral milestones launched with the 17 November 2026 programme: a new user signing up through a referral link earns $10 in card credit (the referrer gets $10 too) after spending $150 within 30 days at 3 or more merchants, at least $10 at each, and a further $50 each after $5,000 of eligible spend within 90 days. Bonuses are credited at the milestone subject to a review of up to 14 days, and card credit cannot be withdrawn. Solid fees pages also show the card FX fee is now tiered on Wirex-issued cards: 1.5% at Core, 0.75% at Prime and free at Ultra on purchases converted from the dollar balance, replacing the flat 1.5% at every tier recorded in October 2026. Our Solid Card listing has been updated for both.",
+    sourceUrl: "https://support.solid.xyz/articles/card-fees-limits",
+    sourceLabel: "Solid Help Center, November 2026",
+  },
+  {
     date: "2026-11-23",
     type: "promo",
     cardName: "ether.fi Cash",
