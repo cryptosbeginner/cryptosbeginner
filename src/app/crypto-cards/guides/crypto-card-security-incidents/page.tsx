@@ -15,7 +15,7 @@ const UPDATED_ISO = "2026-11-13";
 export const metadata: Metadata = {
   title: "Crypto Card Security Incidents: A Sourced History of Hacks, Exploits and Breaches",
   description:
-    "The major security incidents that hit crypto card users, each verified against a reputable source: Crypto.com in 2022, Infini in 2025, Gnosis Pay and the Rain contract exploit in 2026, the Based card data breach, and Gnosis Pay's November 2026 data breach. Plus what the cardholder terms actually say about who pays for unauthorized card use. What happened, who paid, and how to protect yourself.",
+    "The major security incidents that hit crypto card users, each verified against a reputable source: Crypto.com in 2022, Infini in 2025, Gnosis Pay and the Rain contract exploit in 2026, the Based card data breach, Gnosis Pay's November 2026 data breach, and Revolut's September 2026 data disclosure, where ID documents and selfies on about 680 customers were handed to fraudsters. Plus what the cardholder terms actually say about who pays for unauthorized card use. What happened, who paid, and how to protect yourself.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Crypto Card Security Incidents | CryptosBeginner",
@@ -158,6 +158,14 @@ export default function CryptoCardSecurityIncidentsPage() {
           </GuideP>
           <GuideP>
             The timing makes it permanent. The consumer card closes on 20 December 2026, and Gnosis Pay's own help pages say KYC and transaction records are kept for five more years after that. Closing the card does not close the file. Expect phishing that uses your real name and address to look legitimate, and remember the company's own warning: Gnosis Pay will never ask for your seed phrase, PIN, or to move funds.
+          </GuideP>
+
+          <GuideH2>Revolut, September 2026: the breach that was not a hack</GuideH2>
+          <GuideP>
+            Revolut's September 2026 incident involved no break-in at all. Revolut confirmed on 12 September 2026 that an unauthorised party had obtained customer data by submitting fraudulent information requests from a genuine but compromised Italian government certified email account, traced to the Reggio Calabria prefecture, over several months. The requests carried the legal weight of a European Investigation Order and passed the standard email authentication checks, and Revolut's staff answered them. About 680 customers were affected. What was handed over was the full identity file: names, dates of birth, home and email addresses, phone numbers, copies of passports and driving licences, verification selfies, bank statements and full transaction histories, including Bitcoin transactions. Revolut said its systems and customer funds were not compromised, and that it blocked the address once the fraud was discovered. Italian prosecutors opened an inquiry.
+          </GuideP>
+          <GuideP>
+            The aftermath is why this incident belongs in this guide. A group calling itself "iamnotavillain" publicly demanded 6,000 Monero, about $3 million, for the data; Revolut told Reuters it had received no direct ransom demand. On 19 November 2026, Dutch police announced they had foiled several attempted acts of violence in The Hague and Amsterdam linked to the theft, arresting ten suspects; 36 of the victims are Dutch, and Revolut has said it will cover the cost of replacing victims' identity documents. A second September incident compounded the exposure: DriveWealth, the US broker that formerly ran share trading for Revolut customers, was breached on 4 to 5 September 2026, and historic Revolut customer records were among the data taken, though no passwords, payment details or identity documents were involved there. The lesson is the uncomfortable one: the weakest point in a KYC file is not always the database. It can be a convincing official-looking request, answered in good faith, one customer at a time.
           </GuideP>
 
           <GuideH2>The one we could not verify: Wirex</GuideH2>

@@ -446,7 +446,7 @@ export const cardListings: CardListing[] = [
     imageAlt: "KardPay Core green Visa/Mastercard card",
     imageSourceNote: "Official KardPay-hosted card asset",
     reviewedAt: "2026-11-24",
-    caution: "The last 100 physical-card pre-orders are marked SOLD OUT on the official page; cashback now depends on a KDY staking commitment with 180-day lock.",
+    caution: "The last 100 physical-card pre-orders are marked SOLD OUT on the official page; cashback now depends on a KDY staking commitment with 180-day lock. KardPay's own documents conflict on fees: the terms set the per-attempt authorization fee at $0.50 in one article and $0.25 in the appendix, and the top-up fee as tiered 3 to 5% in one place and a flat 4% in another, so confirm live figures in the app. The terms also allow KardPay to suspend access, freeze funds or close an account with or without notice, and a decline rate above 25% can trigger lower limits or card deletion. A $30 chargeback fee applies per case.",
     referralUrl: "https://go.cryptosbeginner.com/KardPay",
     referralLabel: "Check KardPay tiers",
     feesUrl: "https://kardpay.app/?lang=en#pricing",
@@ -454,7 +454,7 @@ export const cardListings: CardListing[] = [
     updateLabel: "Latest KardPay pricing",
     updateNote: "KardPay publishes tier prices, limits, top-up fees, and card availability on its official pricing page; confirm the current table before funding. Physical cards opened to all users with worldwide shipping on October 30, 2026, as reported by @0xVishnya; previously physical was an Elite pre-order.",
     applicationMethod: "Open the KardPay application, choose an available tier, complete the provider’s onboarding, and fund the card with supported assets.",
-    verification: "KardPay's terms name the operator as KRDPAY FZE LLC, established in the UAE (Amber Gem Tower, Ajman), with the contract governed exclusively by DIFC law. The terms state that the services run through a network-licensed issuer whose identity is not disclosed. Top-ups are limited to USDT and USDC, on the networks shown at the time of deposit.",
+    verification: "KardPay's terms name the operator as KRDPAY FZE LLC, established in the UAE (Amber Gem Tower, Ajman), with the contract governed exclusively by DIFC law. The terms state that the services run through a network-licensed issuer whose identity is not disclosed. Top-ups are limited to USDT and USDC, on the networks shown at the time of deposit. The terms themselves set no KYC requirement for opening an account or receiving a card, and they contemplate unverified users: for Apple Pay and Google Pay, a user who does not meet the standard verification process can be approved manually with just a login email, with activation possible within 24 business hours. What the standard verification process involves is not published.",
     galleryImages: [
       { url: "/images/cards/gallery/kardpay-card-gallery-1.svg", alt: "KardPay Pro white Visa card design", source: "KardPay Pro card in white showing the Visa design" },
       { url: "/images/cards/gallery/kardpay-card-gallery-2.svg", alt: "KardPay Elite black Visa card design", source: "KardPay Elite card in black showing the premium Visa design" }
@@ -656,7 +656,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Users comparing virtual crypto cards who need to distinguish no-credit-check marketing from identity and AML compliance.",
     availability: "The official site advertises 190+ countries, but country-specific eligibility and card BIN availability should be checked in the current onboarding flow.",
     regions: ["190+ countries advertised; verify current eligibility"],
-    pricing: "Kripicard links a published fee schedule and fee calculator; the reviewed homepage emphasizes transparent fees but does not establish one universal price for every BIN or card route.",
+    pricing: "From Kripicard's official fee schedule: card issuance $5 per card, a $1 processing fee, and a minimum of $10 to create a card (loaded as the starting balance). Funding fee 4% of the amount loaded; minimum top-up $1. Monthly fee $0, authorization fee 0%, FX fee 0%. Card validity 5 years. Limits: $25,000 per authorization per day and $150,000 per month, with unlimited cards per account.",
     rewards: "No universal rewards rate is stated on the reviewed homepage.",
     funding: "USDT, USDC, BTC, ETH, and other supported assets are described as deposit options that convert into a spendable virtual-card balance.",
     cardFormats: ["Virtual Visa", "Virtual Mastercard"],
@@ -665,14 +665,14 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/kripicard.png",
     imageAlt: "Kripicard black virtual card",
     imageSourceNote: "Official Kripicard product image, cached locally",
-    reviewedAt: "2026-08-27",
-    caution: "No credit check is not the same as no KYC. The provider describes identity verification, sanctions screening, and AML/CFT monitoring with regulated partners.",
+    reviewedAt: "2026-11-24",
+    caution: "Kripicard's official pages contradict each other on KYC: its product pages sell a basic tier opened with just an email, while its funds and security pages state every account is KYC-verified because banking partners require it. The binding terms impose no signup KYC, but a banking partner may demand KYC or source-of-funds documents before releasing balances, and may freeze, restrict or close cards and confiscate funds at its sole discretion without notice. The terms also disclose that in February 2026 a banking partner temporarily locked part of customer balances (most cases were later refunded). Keep balances small.",
     feesUrl: "https://home.kripicard.com/fees",
     updateUrl: "https://home.kripicard.com/news",
     updateLabel: "Kripicard updates",
     updateNote: "Kripicard maintains fee, supported-country, security, and resource pages; card BINs and regional access can change.",
     applicationMethod: "Create an account, review the provider’s fee and supported-country pages, complete the applicable onboarding, and issue a virtual card through the provider flow.",
-    verification: "The site states no credit check but separately lists KYC/KYB, AML/CFT monitoring, and sanctions screening with regulated partners.",
+    verification: "Operated by Uweb3 Management BR under Brazilian law (terms effective 13 June 2026). No issuing bank is named; issuance, processing and custody of fiat balances sit with unnamed regulated banking partners. Transaction monitoring (KYT) applies to all accounts.",
     featureTags: ["Virtual", "USDT-funded", "No credit check", "Visa/Mastercard"],
     pros: ["Virtual card issuance is positioned as fast", "The site publishes a fee center and supported-country resource", "Multiple crypto deposit assets are described"],
     cons: ["The no-credit-check claim must not be confused with no KYC", "BIN, merchant, and regional eligibility can vary", "Virtual-only use cases may not suit in-person spending"],
@@ -870,7 +870,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Readers researching a virtual card with provider-stated minimal onboarding and explicit reload-cost trade-offs.",
     availability: "The provider markets worldwide Visa use but states that individual merchants and country rules can still decline transactions.",
     regions: ["Global marketing; merchant and country restrictions apply"],
-    pricing: "The card costs a one-time $60 issuance fee during 2026 (50% off the standard $120; the price rises to $120 on 1 January 2027), with no monthly subscription. Reloads cost 3.5%, USD purchases carry a 0% fee, and the monthly limit is $10,000 (raisable to $50,000 for an extra $15 per month). Google Pay is supported; Apple Pay is not (official site, November 2026).",
+    pricing: "Issuance is a one-time $60 during 2026 (the standard price is $120 and applies from 1 January 2027). Every top-up costs 3.5%; minimum top-up $20. No monthly fee for the base card; the standard monthly limit is $10,000, and raising it to $50,000 costs $15 a month. USD purchases carry 0%; an FX rate for non-USD spending is not published. Loaded funds cannot be withdrawn back to crypto or refunded, and neither can the issuance fee.",
     rewards: "No cashback, yield, or rewards programme is stated on the reviewed official page.",
     funding: "The provider lists BTC, LTC, SOL, ZANO, USDT, USDC, and other crypto reload routes; conversion into the card balance is described as one-way.",
     cardFormats: ["Virtual"],
@@ -879,19 +879,19 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/privacy-gateway-card.jpg",
     imageAlt: "Privacy Gateway brand logo artwork",
     imageSourceNote: "Official product image not available from issuer",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     feeBreakdown: {
       virtualIssuanceUsd: 60,
     },
     updateNote:
       "Pricing changed from a $5 monthly subscription to a one-time issuance fee: $60 during 2026, rising to $120 on 1 January 2027, with no monthly subscription. The 3.5% loading fee is unchanged.",
     featureFlags: { googlePay: true },
-    caution: "The provider’s no-ID claim is not a promise of anonymity or permanent exemption from AML, sanctions, regulatory, merchant, or transaction controls. The access hash may be unrecoverable if lost.",
+    caution: "The provider’s no-ID claim is not a promise of anonymity or permanent exemption from AML, sanctions, regulatory, merchant, or transaction controls. The access hash may be unrecoverable if lost. Privacy Gateway publishes no terms of service at all: the no-ID position (name and email only, per its FAQ) is marketing copy, not a contract, and no operating company, jurisdiction or issuer is named anywhere on its site. Its published country list covers where merchant payments are declined, not who may hold the card.",
     feesUrl: "https://privacygateway.io/",
     updateUrl: "https://privacygateway.io/",
     updateLabel: "Privacy Gateway card terms",
     applicationMethod: "Review the provider’s terms and onboarding disclosure, create the required account identifier, and fund only after understanding the one-way conversion and recovery model.",
-    verification: "The provider states that name and email are the minimum for its advertised route; AML and regulatory requirements can still apply.",
+    verification: "The provider states that name and email are the minimum for its advertised route; AML and regulatory requirements can still apply. No terms of service, issuer or operating entity is published on the official site.",
     featureTags: ["Provider states no ID", "Google Pay", "3.5% reload fee", "Virtual Visa"],
     pros: ["The provider publishes specific reload and subscription figures", "Google Pay and 3DS flows are described", "Multiple crypto funding options are listed"],
     cons: ["Reload fees can materially increase total spending cost", "Conversion into the card balance is described as one-way", "Access-hash loss may mean permanent loss of account access"],
@@ -3044,9 +3044,9 @@ export const cardListings: CardListing[] = [
     shortDescription: "Global virtual Visa card from the Laso finance app for crypto spending.",
     editorialSummary: "Global virtual Visa card from the Laso finance app for crypto spending. Full fee and feature details are being verified from official sources.",
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Details being verified. Check the official site for current country availability.",
+    availability: "Single-load cards are sold to users in most countries; the User Agreement lists 26 prohibited regions (including Iran, Russia, Cuba, North Korea, Syria, Turkey, Ukraine and Venezuela). US cards are for US merchants and US shipping addresses; international cards are marketed for use in 100 plus countries.",
     regions: ["Global"],
-    pricing: "Laso's official fee schedule states there are no monthly, transaction or maintenance fees; in most cases you only pay a one-time deposit fee when loading the card. US and CAD card deposit fees are 0%, reloadable card top-ups are 0%, and purchases outside the US carry up to a 3% foreign exchange or cross-border fee (the two do not stack). Refunds carry a 14% fee with a $10 minimum, where a refund is possible.",
+    pricing: "No monthly, transaction or maintenance fees, and card issuance is free (Laso fee schedule). Load fees: 0% on US and CAD non-reloadable cards, 3.8% on international non-reloadable cards, and a 0% top-up fee on the Reloadable card. FX runs about 2% on non-USD spending on international cards and up to 3% on the Reloadable card. Refunding an unspent balance costs 14% (minimum $10) where possible. Loads are capped at $1,000 per card.",
     rewards: "Details being verified from official sources.",
     funding: "Details being verified from official sources.",
     cardFormats: ["Virtual"],
@@ -3055,9 +3055,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/laso-card.png",
     imageAlt: "Black Laso virtual crypto prepaid card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-11-18",
-    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "Provider account and regional eligibility requirements apply.",
+    reviewedAt: "2026-11-24",
+    caution: "Two clauses deserve attention: the card may be cancelled or revoked at any time without prior notice, and any funds left on a card when it expires are forfeited to the issuer and cannot be recovered. Treat a single-load card as money to spend before its expiry date, not a place to store a balance.",
+    verification: "Single-load cards need no identity verification: Laso's own documentation states the card order path has no verification step, and signup is by connected wallet or email. Identity checks apply to other products: a one-time check before a first PayPal or Venmo payout, and verification for the Reloadable card. Screening is by wallet, IP and device monitoring (Chainalysis). Operated by Laso Finance LLC (Austin, Texas), a FinCEN-registered money services business (registration 31000328975254). The issuing bank is not named in the consumer documents.",
   },
   {
     slug: "noones-card",
@@ -3116,9 +3116,9 @@ export const cardListings: CardListing[] = [
     shortDescription: "Global virtual Visa prepaid card marketed to privacy-minded crypto spenders.",
     editorialSummary: "Global virtual Visa prepaid card marketed to privacy-minded crypto spenders. Full fee and feature details are being verified from official sources.",
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Details being verified. Check the official site for current country availability.",
+    availability: "Live but invite-only: an invite code is required to claim a card. No country list is published; the terms bar residents of jurisdictions where such cards are prohibited and persons on OFAC, EU or UN sanctions lists.",
     regions: ["Global"],
-    pricing: "Details being verified from official sources.",
+    pricing: "The entry cost is an annual subscription deducted from the first deposit: Lite $49 a year, Edge $97, Prime $197 (a Black tier is unpriced and locked). Top-up (wallet to card) fees: 2.5% on Lite, 2% on Edge and Prime, 1% on Black. No monthly fee on top of the subscription, 0% per purchase in USD and no FX markup. Monthly spend limits run $2,000 (Lite), $5,000 (Edge), $10,000 (Prime) and $25,000 (Black).",
     rewards: "Details being verified from official sources.",
     funding: "Details being verified from official sources.",
     cardFormats: ["Virtual"],
@@ -3127,9 +3127,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "OffGrid Card card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-10-14",
-    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "Provider account and regional eligibility requirements apply.",
+    reviewedAt: "2026-11-24",
+    caution: "The termination terms are harsh: on termination the card is deactivated and any remaining card balance is forfeited, wallet funds are returned only at OffGrid's discretion, and card-loaded funds can only be spent, never withdrawn. Combined with an unnamed issuer and an unnamed operating entity, keep only small, short-lived balances on this card. Google Pay is supported; Apple Pay is not.",
+    verification: "OffGrid's privacy policy states it does not require identity documents and does not perform KYC; signup is a passkey or email and password, with a self-chosen cardholder name collected at activation. No clause reserving a later ID demand was found in the terms. The card is a virtual prepaid Visa issued by an unnamed licensed issuing partner; no operating company or jurisdiction is named anywhere in OffGrid's terms.",
   },
   {
     slug: "pexx-card",
@@ -3230,7 +3230,7 @@ export const cardListings: CardListing[] = [
       virtualIssuanceUsd: 10,
     },
     caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "SolCard operates as a programme manager and technology platform: its terms state that it does not issue payment cards, hold client funds in its own accounts, or act as a bank or electronic money institution. The card is issued by a third-party licensed institution that SolCard does not name.",
+    verification: "SolCard operates as a programme manager and technology platform: its terms state that it does not issue payment cards, hold client funds in its own accounts, or act as a bank or electronic money institution. The card is issued by a third-party licensed institution that SolCard does not name. Signup for the Virtual card is email-only with a one-time code; SolCard labels it No verification, with a $10,000 monthly limit. Identity verification is required only for the Platinum card, which is also what drops the top-up fee from 5% to 0%. The terms reserve verification for certain card types or features, state that the Issuer or SolCard may cancel, revoke or restrict the card at any time, and never name the issuing institution.",
   },
   {
     slug: "solflare-card",
@@ -3313,7 +3313,7 @@ export const cardListings: CardListing[] = [
     shortDescription: "No-account prepaid Mastercard from the privacy-focused swap aggregator, purchasable with crypto in 160+ countries.",
     editorialSummary: "No-account prepaid Mastercard from the privacy-focused swap aggregator, purchasable with crypto in 160+ countries. Full fee and feature details are being verified from official sources.",
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Details being verified. Check the official site for current country availability.",
+    availability: "Buying a card needs only an email, but activation requires your name, email, phone number and address. The terms bar US and EEA residents; the current international card (provider branded Obsidian) cannot be spent in Afghanistan, Belarus, China, Cuba, Iran, North Korea, Russia, South Sudan, Sudan, Syria or Venezuela.",
     regions: ["Global"],
     pricing: "Trocador's official prepaid cards page states the services it uses charge a convenience fee of 3% of the card amount plus 2 USD, charged once at issuance, and currency conversion is usually 2% or $0.75. The current USD provider shown is Obsidian.",
     rewards: "Details being verified from official sources.",
@@ -3324,9 +3324,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Trocador Card card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-11-18",
-    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
-    verification: "Provider account and regional eligibility requirements apply.",
+    reviewedAt: "2026-11-24",
+    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying. Trocador warns that untruthful activation details can get the card blocked, and the provider may cancel an order without a refund if a card is redeemed from a restricted country; redeem codes can also be blocked for VPN or proxy use. Cards are non-refundable.",
+    verification: "No ID document requirement is stated in the card FAQ or terms; Trocador's general terms allow partners to require a KYC check where funds are suspected to come from illegal activity. Operated by Reta Development Assets LLC. No issuing bank is named; the card provider is referred to only generically.",
   },
   {
     slug: "trustee-card",
@@ -3680,8 +3680,10 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/revolut-crypto-card.png",
     imageAlt: "Revolut virtual crypto card designs",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-10-14",
-    caution: "Revolut warns that spending crypto may count as a taxable disposal in the user's jurisdiction.",
+    updateNote:
+      "2026 has been a difficult year for Revolut, and none of it is visible from the product pages. In April 2026 Italy's competition authority fined Revolut entities a combined 11.5 million EUR for unfair commercial practices, including unclear commission-free investing information and suspending or blocking accounts without clear notice; Revolut said it strongly disagrees and would appeal. In September 2026 Revolut confirmed an unauthorised party obtained data on about 680 customers by sending fraudulent information requests from a compromised Italian government email account over several months: names, ID document copies, verification selfies and transaction histories were handed over, though its systems and customer funds were not compromised; a hacker group then publicly demanded about $3M in Monero, which Revolut says was never demanded of it directly. The same month, its former US broker DriveWealth was breached, exposing historic Revolut customer records. In October 2026 a Google Cloud power failure took card payments and the app down for about 11 hours, and the FT reported a Bank of England section 166 review of Revolut's product approvals. On 16 November 2026 a Milan court placed Revolut Bank UAB's Italian operations under judicial administration for a year, after finding 24 suspects moved 41.9 million EUR through Revolut while other banks filed 265 suspicious transaction reports on them and Revolut filed none; it is a preventive measure, Revolut is not under criminal investigation, and Italian services continue. Dutch police arrested ten suspects on 19 November 2026 over planned violence linked to the September data theft. Sources: AGCM, Reuters, the Financial Times and Dutch police statements.",
+    reviewedAt: "2026-11-24",
+    caution: "Revolut warns that spending crypto may count as a taxable disposal in the user's jurisdiction. In September 2026 Revolut handed data on about 680 customers, including ID documents and verification selfies, to fraudsters using a compromised Italian government email account; weigh that record when deciding how much identity data and money to keep with any single platform.",
     verification: "Requires a verified Revolut account; crypto availability depends on the user's country.",
   },
   {
@@ -6485,9 +6487,9 @@ export const cardListings: CardListing[] = [
     cardFormats: ["Virtual", "Physical"],
     sourceUrl: "https://kemapp.io",
     sourceLabel: "KEM official site and card page",
-    imageUrl: "/images/cards/placeholder-card.png",
-    imageAlt: "Placeholder image for the KEM Card listing; official card art not yet supplied",
-    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    imageUrl: "/images/cards/kem-card.png",
+    imageAlt: "KEM Card: a black Visa Signature card with a geometric pattern and the KEM logo in the corner",
+    imageSourceNote: "Official card image supplied November 2026",
     reviewedAt: "2026-11-24",
     updateNote:
       "Listed November 2026. KEM is a Kuwait-headquartered money app founded in 2022; Tether made a $3M strategic investment in August 2024. The Tether Gold cashback card was announced on KEM's official channels by 19 September 2026.",
@@ -6495,6 +6497,136 @@ export const cardListings: CardListing[] = [
       "Several material terms could not be verified from KEM's own site: its card terms and prohibitions pages did not render readable text, so the issuer name, FX and cross-border fee caps and the restricted-country list are not confirmed here (third parties reading those terms name Third National as issuer and list FX and cross-border fees of up to 3% each; treat those figures as reported, not verified). Apple Pay and Google Pay support is not stated on any official KEM page, despite claims in third-party profiles. Cashback caps and conditions are unpublished.",
     verification: "KYC is mandatory before issuance: the application requires uploading a government-issued ID. The Google Play developer record names Kemfinity s.r.o. (Czechia); KEM describes itself as a crypto financial platform, not a bank, with banking services provided by licensed partners.",
     feeBreakdown: { virtualIssuanceUsd: 0, fxFeeNote: "1% USDT to USD conversion fee per KEM's homepage; FX and cross-border fees not published on KEM's readable pages" },
+  },
+  {
+    slug: "maxswap-card",
+    name: "MaxSwap Card",
+    provider: "MaxSwap",
+    network: "Visa and Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "Virtual prepaid cards sold through a Telegram bot wallet, issued with no ID documents, with a 4.5% top-up fee and KYC expressly reserved in the terms.",
+    editorialSummary:
+      "MaxSwap is a custodial wallet run through a Telegram bot, operated by MW Profit Ltd of London under Seychelles governing law. It sells three virtual prepaid cards: a US Visa, a European AI Card and a Premium card with ATM access, all loaded from the wallet balance at 1 USDT to 1 USD. Cards are issued in under a minute with no paperwork, and MaxSwap's own card policy calls the card anonymous; its general terms, however, reserve the right to require KYC where a user's operations violate the service's rules.",
+    bestFor:
+      "Users who want a disposable virtual card from a chat app and accept the custodial and fee trade-offs.",
+    availability:
+      "Live via the Telegram bot; no waitlist. MaxSwap markets no geographical restrictions on signup, with local-law compliance left to the user. Payments in the currencies of Afghanistan, Belarus, Cuba, Iran, North Korea, Syria, Venezuela, Russia, Myanmar, Somalia, parts of Ukraine and Yemen are prohibited and can get the card and its funds blocked by the issuing bank.",
+    regions: ["No signup country list published"],
+    pricing:
+      "Top-up fee 4.5% (the FAQ adds $1 per top-up; the card policy states 4.5% only). Minimum top-up $10, maximum $5,000 per top-up and $200,000 a month. Issuance: $50 for the Visa and Mastercard cards, $45 for the AI Card, 85 USDT for Premium. The first-deposit requirement is stated as $25 plus commission in the card policy and $50 in the FAQ, which also gives a total issuance cost of $77.125. Per-payment fees of $0.25 plus 0.4% per the FAQ (Premium $0.30 flat). No monthly fee is published.",
+    rewards:
+      "None published.",
+    funding:
+      "The custodial MaxSwap wallet (USDT on ERC-20 or TRC-20; the wallet supports 25 plus coins). Card balances cannot be withdrawn, only spent, or returned to the spot USDT account if the card is closed or blocked.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://maxswap.cc",
+    sourceLabel: "MaxSwap official site, FAQ and card policy",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the MaxSwap Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    caution:
+      "The issuing bank is never named, and MaxSwap's own pages conflict on the first-deposit requirement and on whether the $1 top-up element applies, so confirm the live figures in the bot before loading. KYC is expressly reserved in the terms, and card balances are spend-only.",
+    verification: "Operated by MW Profit Ltd (71-75 Shelton Street, London, company no. 15541776); the terms are governed by Seychelles law. No ID is required at issuance per the card policy.",
+  },
+  {
+    slug: "jam-card",
+    name: "Jam Card",
+    provider: "Jam",
+    network: "Not published",
+    categories: ["prepaid"],
+    shortDescription:
+      "A virtual card inside the non-custodial Jam wallet, loaded in USDT only, with signup by email and phone and KYC run by licensed partners.",
+    editorialSummary:
+      "Jam is a non-custodial multi-chain wallet app from JAM Platform LLC of Dover, Delaware, with a payment card for spending crypto worldwide. Jam itself never takes custody of wallet assets and does not issue the card: identity verification, AML checks and sanctions screening are run by licensed third parties (its privacy policy names SumSub and CipherBC as processors), and Jam receives only anonymised verification statuses. Two cards are offered, a Premium Card in USD and a Global Card in EUR. Despite being grouped with no-KYC cards in roundups, Jam's own signup is email plus phone, and its legal pages describe partner-run KYC, so it should not be treated as an anonymous card.",
+    bestFor:
+      "Jam wallet users who want a virtual spending card and are comfortable with partner-run verification.",
+    availability:
+      "Live, virtual only; a physical card was scheduled for the third quarter of 2026 with no official confirmation that it launched. Services are strictly not intended for US persons. Card services are forbidden in Russia, Belarus, Iran, North Korea, Syria, Cuba and Ukraine, and each card carries its own longer list of countries where spending is barred (24 for Premium, 32 for Global, and the two lists differ).",
+    regions: ["Not available to US persons; per-card country restrictions apply"],
+    pricing:
+      "From Jam's help centre (October 2026): top-up fee 3% plus a 0.5% processing fee; minimum top-up $15 or 15 EUR. Minimum deposits are $44 for the Premium Card and 15 EUR for the Global Card; a separate issuance price is not published. Monthly fee: Premium $0, Global 3 EUR. FX 1.5% to 2.5%. Authorization and failed-transaction fees of $0.50 apply on Premium (0 EUR and 0.20 EUR on Global); refund and chargeback handling is $1 on Premium and free on Global.",
+    rewards:
+      "None published.",
+    funding:
+      "USDT only, on TRC20, ERC20, BEP20, Polygon PoS or Arbitrum, loaded from the non-custodial Jam wallet. Loads are effectively one-way: card-to-card transfers and converting a card balance back to crypto are not supported, per the partner bank's policy.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://jamcard.io",
+    sourceLabel: "Jam official site and help centre",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Jam Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    caution:
+      "The card network is not named on any official Jam page, and neither is the issuing partner, which is identified only in-app at transaction time. Using the card in a prohibited country can mean immediate blocking or permanent cancellation with the balance not refundable.",
+    verification: "Operated by JAM Platform LLC (8 The Green, Suite A, Dover, DE 19901, USA) under Delaware law. KYC and AML are executed by licensed partners; Jam states it does not itself conduct compliance screening.",
+    featureFlags: { applePay: true, googlePay: true },
+  },
+  {
+    slug: "xkard-card",
+    name: "XHYPE Card (XKard)",
+    provider: "XHYPE",
+    network: "Not published",
+    categories: ["prepaid"],
+    shortDescription:
+      "The prepaid card of the XHYPE Superwallet (formerly sold as XKard), sold on annual plans with top-up fees of 1.2% to 2.1%; KYC is required before issuance.",
+    editorialSummary:
+      "XKard is now sold as the XHYPE prepaid card inside the XHYPE Superwallet, operated by XHYPE FZCO of Dubai. The wallet is self-custodial, but card balances are held by the independent card issuer. Cards are prepaid and topped up with USDT, USDC or native coins on BNB Smart Chain, Ethereum, Base, Polygon or Arbitrum. Roundups group XKard with no-KYC cards, but that is outdated on XHYPE's own pages: both virtual and physical cards require KYC through Verinex before issuance, with XHYPE receiving only the verification result.",
+    bestFor:
+      "XHYPE wallet users who want a prepaid card on an annual plan and are fine completing KYC.",
+    availability:
+      "Live: Essential virtual cards are delivered instantly; Premium and Whale physical cards arrive in about 15 days. XHYPE says cards can be ordered from 203 countries and territories, with availability depending on residence and nationality at application; no restricted list is published.",
+    regions: ["203 countries claimed; list not published"],
+    pricing:
+      "Annual plans with no separate issuance fee published: Essential $10 a year (one virtual card, $50,000 annual limit), Premium $58 a year or $118 for three years (one virtual plus one physical, $250,000 a year), Whale $70 a year or $148 for three years (two virtual plus one physical, $1,000,000 a year). Top-up fees: 2.1% Essential, 1.8% Premium, 1.2% Whale. No separate monthly fee is published. FX and ATM fees are not published; ATM limits on physical Premium and Whale cards are $1,500 per transaction and per day and $15,000 a month.",
+    rewards:
+      "None published.",
+    funding:
+      "Prepaid top-ups in USDT, USDC or native coins on BNB Smart Chain, Ethereum, Base, Polygon or Arbitrum. Card balances are held by the card issuer, not in the self-custodial wallet.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://xkard.io",
+    sourceLabel: "XKard and XHYPE official sites",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the XHYPE Card (XKard) listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    caution:
+      "Neither the card network nor the issuer is named on XHYPE's official pages, and dormancy, FX and ATM fees are unpublished. Transactions linked to mixers or tumblers may be rejected.",
+    verification: "Operated by XHYPE FZCO, Dubai Silicon Oasis, UAE (registration DSO-FZCO-30371), under UAE law. KYC through Verinex is required before any card is issued.",
+  },
+  {
+    slug: "haven-card",
+    name: "Haven Card",
+    provider: "Haven",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A Visa debit card attached to the Haven privacy neobank on Starknet; the app signup is email-only, but the card itself requires full KYC through Zypto.",
+    editorialSummary:
+      "Haven is a privacy-first, non-custodial neobank built on Starknet, from Haven Finance LLC of Boca Raton, Florida. Haven itself is software: a self-custodial wallet with privacy pools and fiat ramps via Meld, and it states it is not a bank, money transmitter or custodian. Spending runs through a third-party card programme provided by Zypto. Roundups group Haven with no-KYC cards because the app account opens with an email code, but Haven's own privacy policy is explicit that before a card is issued, Zypto verifies identity, including legal name, date of birth, address, government ID images and a selfie or liveness check.",
+    bestFor:
+      "Haven wallet users who want its privacy tooling for wallet activity and accept standard card KYC.",
+    availability:
+      "The app is live; whether card issuance is openly available or waitlisted is not stated on Haven's official pages. Only a general sanctions bar is published; no country list.",
+    regions: ["Country list not published"],
+    pricing:
+      "Not published. Haven's terms say it earns commission on on-ramp and card usage, the privacy step carries no Haven fee, and third-party and network fees are shown before confirmation. No top-up, issuance, monthly or dormancy fee is published.",
+    rewards:
+      "None published.",
+    funding:
+      "The self-custodial Haven wallet (Starknet), with fiat on and off-ramps via Meld partners; deposits are screened by Elliptic.",
+    cardFormats: ["Formats not published"],
+    sourceUrl: "https://haven.hn",
+    sourceLabel: "Haven official site, terms and privacy policy",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Haven Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-24",
+    caution:
+      "Do not treat this as a no-KYC card: full identity verification through Zypto is required before issuance, whatever the app signup suggests. Fees and the issuing bank are not published; Zypto is named as the card programme provider, not the issuer.",
+    verification: "Operated by Haven Finance LLC (Boca Raton, FL, USA) under Delaware governing law. Haven states it is not a bank, money transmitter, custodian, exchange, broker or virtual-asset service provider.",
+    featureFlags: { applePay: true, googlePay: true },
   },
 ];
 

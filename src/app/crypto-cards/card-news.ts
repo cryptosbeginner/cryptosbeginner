@@ -443,6 +443,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Infini Help Center, November 2026",
   },
   {
+    date: "2026-11-16",
+    type: "market",
+    cardName: "Revolut Crypto Card",
+    cardSlug: "revolut-crypto-card",
+    title: "Milan court puts Revolut's Italian bank under judicial administration for a year",
+    details:
+      "A Milan court placed Revolut Bank UAB's Italian operations under judicial administration for one year on 16 November 2026, appointing two administrators with a remediation plan. The ruling found that 24 people under investigation or already convicted moved or concealed 41.9 million EUR through Revolut accounts between 2021 and 2026; other banks filed 265 suspicious transaction reports on the same people while Revolut filed none, and judges found serious and persistent deficiencies in customer identification, monitoring and reporting. It is a preventive measure, not a criminal penalty: Revolut is not under criminal investigation and its Italian services (about 5 million customers) continue. Revolut said it acknowledges the decision, will cooperate fully and maintains zero tolerance for financial crime. Our Revolut listing carries the wider 2026 record.",
+    sourceLabel: "Reuters, 16 November 2026",
+  },
+  {
     date: "2026-11-14",
     type: "fee-change",
     cardName: "Declined payment fees",
@@ -1091,6 +1101,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
     details:
       "The directory was overhauled to 183 cards with official issuer artwork, verified fees and limits, and duplicate listings merged. Each listing carries a 'facts checked' date and a source link.",
     sourceLabel: "CryptosBeginner catalog",
+  },
+  {
+    date: "2026-09-12",
+    type: "market",
+    cardName: "Revolut Crypto Card",
+    cardSlug: "revolut-crypto-card",
+    title: "Revolut confirms data on about 680 customers was handed to fraudsters posing as officials",
+    details:
+      "Revolut confirmed on 12 September 2026 that an unauthorised party obtained customer data by submitting fraudulent information requests from a compromised Italian government certified email account over several months. About 680 customers were affected; the data handed over included names, dates of birth, addresses, phone numbers, copies of passports and driving licences, verification selfies, bank statements and full transaction histories including Bitcoin transactions. Revolut said its systems and customer funds were not compromised. A hacker group later publicly demanded about $3M in Monero; Revolut says no ransom demand was made to it directly. Dutch police arrested ten suspects on 19 November 2026 over planned violence linked to the theft. The incident is covered in our crypto card security incidents guide.",
+    sourceLabel: "Reuters and The Guardian, September 2026",
   },
 ];
 
