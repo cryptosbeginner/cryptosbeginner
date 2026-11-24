@@ -46,6 +46,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "KEM official site, November 2026",
   },
   {
+    date: "2026-11-24",
+    type: "market",
+    cardName: "Laso Card",
+    cardSlug: "laso-card",
+    title: "Laso 6-month expiry: leftover card balances are forfeited to the issuer",
+    details:
+      "An @xKseilas post warned that Laso no-KYC prepaid cards burn leftover balances in 6 months. Every checkable claim holds up in Laso own documentation: its US card guide states the cards expire 6 months after issuance with the remaining balance forfeited, its help centre calls the leftover breakage, gives the example of $4 left on a $100 card going entirely to the issuer, and states there are no refunds on US or Canadian non-reloadable cards under any circumstances (an unused international card can be refunded at 14%). The cards also have no 3D Secure, and Laso notes OpenAI, Anthropic and Google generally refuse prepaid cards. Load $100 and you do get $100 on a US card, but order for the exact purchase amount. Our Laso listing has been updated with the full picture; the separate Reloadable card balance never expires.",
+    sourceUrl: "https://help.laso.finance/en/articles/12886721-what-happens-when-my-card-expires",
+    sourceLabel: "Laso Finance help centre, November 2026"
+  },
+  {
     date: "2026-11-23",
     type: "promo",
     cardName: "ether.fi Cash",

@@ -3044,9 +3044,9 @@ export const cardListings: CardListing[] = [
     shortDescription: "Global virtual Visa card from the Laso finance app for crypto spending.",
     editorialSummary: "Global virtual Visa card from the Laso finance app for crypto spending. Full fee and feature details are being verified from official sources.",
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
-    availability: "Single-load cards are sold to users in most countries; the User Agreement lists 26 prohibited regions (including Iran, Russia, Cuba, North Korea, Syria, Turkey, Ukraine and Venezuela). US cards are for US merchants and US shipping addresses; international cards are marketed for use in 100 plus countries.",
+    availability: "Single-load cards are sold to users in most countries; the User Agreement lists 26 prohibited regions (including Iran, Russia, Cuba, North Korea, Syria, Turkey, Ukraine and Venezuela). US cards are for US merchants and US shipping addresses; international cards are marketed for use in 100 plus countries. US and Canadian non-reloadable cards are only spendable while the holder is physically located in the respective country.",
     regions: ["Global"],
-    pricing: "No monthly, transaction or maintenance fees, and card issuance is free (Laso fee schedule). Load fees: 0% on US and CAD non-reloadable cards, 3.8% on international non-reloadable cards, and a 0% top-up fee on the Reloadable card. FX runs about 2% on non-USD spending on international cards and up to 3% on the Reloadable card. Refunding an unspent balance costs 14% (minimum $10) where possible. Loads are capped at $1,000 per card.",
+    pricing: "No monthly, transaction or maintenance fees, and card issuance is free (Laso fee schedule). Load fees: 0% on US and CAD non-reloadable cards, 3.8% on international non-reloadable cards, and a 0% top-up fee on the Reloadable card. FX runs about 2% on non-USD spending on international cards and up to 3% on the Reloadable card. US non-reloadable cards run from $5 to $1,000 per card. There are no refunds on US or Canadian non-reloadable cards under any circumstances (Laso help centre); an unused international non-reloadable card can be refunded at a 14% fee (minimum $10).",
     rewards: "Details being verified from official sources.",
     funding: "Details being verified from official sources.",
     cardFormats: ["Virtual"],
@@ -3055,8 +3055,10 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/laso-card.png",
     imageAlt: "Black Laso virtual crypto prepaid card",
     imageSourceNote: "Official product page linked; artwork being sourced",
+    updateNote:
+      "November 2026: the 6-month expiry and balance forfeiture on non-reloadable cards was confirmed from Laso's own card guide and help centre (the leftover is called breakage and goes to the issuer; no refunds on US or Canadian non-reloadable cards), following an @xKseilas post. The Reloadable card's balance never expires.",
     reviewedAt: "2026-11-24",
-    caution: "Two clauses deserve attention: the card may be cancelled or revoked at any time without prior notice, and any funds left on a card when it expires are forfeited to the issuer and cannot be recovered. Treat a single-load card as money to spend before its expiry date, not a place to store a balance.",
+    caution: "The expiry terms are the real price of the free card. Non-reloadable cards expire 6 months after issuance and any remaining balance is forfeited to the issuer: Laso's own help centre calls the leftover breakage, gives the example of $4 left on a $100 card going entirely to the issuer (Laso itself receives none of it), and states there are no refunds on US or Canadian non-reloadable cards under any circumstances. The cards have no 3D Secure, so checkouts that require it will decline, and Laso's help centre notes that OpenAI, Anthropic, Google and other API providers generally do not accept prepaid cards. The card may also be cancelled or revoked at any time without prior notice. Load a non-reloadable card for one purchase, for the exact amount, and spend it well inside the 6 months.",
     verification: "Single-load cards need no identity verification: Laso's own documentation states the card order path has no verification step, and signup is by connected wallet or email. Identity checks apply to other products: a one-time check before a first PayPal or Venmo payout, and verification for the Reloadable card. Screening is by wallet, IP and device monitoring (Chainalysis). Operated by Laso Finance LLC (Austin, Texas), a FinCEN-registered money services business (registration 31000328975254). The issuing bank is not named in the consumer documents.",
   },
   {
