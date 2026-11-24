@@ -84,6 +84,17 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "COCA promotion terms, November 2026",
   },
   {
+    date: "2026-11-22",
+    type: "catalog-update",
+    cardName: "Elios Card",
+    cardSlug: "elios-card",
+    title: "Elios hands-on test: free, instant USDC deposits and withdrawals, and the wallet works before KYC",
+    details:
+      "A hands-on test with real funds, published by @vuirew_ on 22 November 2026, ran the full Elios path: signup in about 30 seconds, KYC in about five minutes, a USDC deposit from Rabby on HyperEVM that arrived instantly with no fee, and a withdrawal back to Rabby that also arrived instantly with no fee. Deposits, withdrawals and the Earn vaults all worked before verification; KYC was needed only for card issuance, and the seed phrase can be exported from settings. That matches what the Elios help centre already told us: no Elios deposit or withdrawal fees, and no KYC until card activation. Not tested in the report: card FX, other networks, larger amounts or USDT deposits.",
+    sourceUrl: "https://x.com/vuirew_/status/2124592136654135747",
+    sourceLabel: "Hands-on test by @vuirew_ on X, 22 November 2026",
+  },
+  {
     date: "2026-11-20",
     type: "market",
     cardName: "Solid Card",

@@ -5871,9 +5871,9 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/elios-card.png",
     imageAlt: "Elios Card bronze metal card design with the Elios logo",
     imageSourceNote: "Official card image supplied November 2026",
-    reviewedAt: "2026-11-18",
+    reviewedAt: "2026-11-24",
     updateNote:
-      "The Elios help centre was read in full in November 2026: Rain is named as the licensed card-issuing partner, the card is a Visa Platinum debit, card spending is capped at $20,000 per month during the beta, ATM withdrawals are not enabled yet, the physical card is listed as coming soon, deposits are USDC-only across seven networks with bridge fees covered by Elios, and the USD virtual account (banking services by SSB) takes up to $10,000 per day. The help centre does not confirm the advertised 3% and 1% cashback structure; it describes cashback as promotion-set and not guaranteed.",
+      "Hands-on check, 22 November 2026: an independent test with real funds by @vuirew_ found signup took about 30 seconds and KYC about five minutes; USDC deposits and withdrawals on HyperEVM arrived instantly with no Elios fee, and deposits, withdrawals and vaults all worked before KYC, with verification needed only for card issuance. That matches the help centre position recorded below. The Elios help centre was read in full in November 2026: Rain is named as the licensed card-issuing partner, the card is a Visa Platinum debit, card spending is capped at $20,000 per month during the beta, ATM withdrawals are not enabled yet, the physical card is listed as coming soon, deposits are USDC-only across seven networks with bridge fees covered by Elios, and the USD virtual account (banking services by SSB) takes up to $10,000 per day. The help centre does not confirm the advertised 3% and 1% cashback structure; it describes cashback as promotion-set and not guaranteed.",
     caution:
       "Early access product: the card is limited to invited beta users and the terms are still moving. The help centre's FX description (Visa fee of up to 1%, no Elios markup) and the card terms' higher fee caps (up to 3%) do not match, so confirm the live fee screen in the app before spending abroad.",
     verification:
