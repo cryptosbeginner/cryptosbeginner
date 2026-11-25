@@ -13,6 +13,26 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "Ezzocard",
+    cardSlug: "ezzocard",
+    title: "Ezzocard added: one-off prepaid cards to $10,000 with no KYC, at a markup and with no refunds",
+    details:
+      "A limits roundup prompted a full check of Ezzocard, a storefront selling one-off virtual prepaid cards for crypto only. Denominations run $10 to $10,000 with no documents required at any amount, but the price is a markup over face value (a $25 card costs about $50 to $57; a $10,000 card about $10,020), the terms refuse refunds under any circumstances, spending on USD cards requires a US IP address or the issuer may block the card without recovery, and no operating company or issuing bank is named anywhere. Note the original ezzocard.com is now a parked page; the live store is ezzocard.finance. New listing added with the full picture.",
+    sourceLabel: "Ezzocard official storefront and terms, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "Pintopay Card",
+    cardSlug: "pintopay-card",
+    title: "Pintopay Card added (thin): Telegram-issued card whose limits exist only inside its app",
+    details:
+      "Pintopay issues virtual and physical cards through a Telegram bot for a $35 card price with top-ups advertised at 2.5%. The limits roundup's one claim about it verifies exactly: its terms state that all fees and limits are published only through the app interfaces, and none appear on its website. The listing is deliberately thin and flagged: no issuer, network or operating company is named, funds sit with an unnamed custodian, and despite the no-KYC framing its terms require onboarding and verification before a card is issued in your name. New listing added.",
+    sourceLabel: "Pintopay official site and terms, November 2026",
+  },
+  {
     date: "2026-11-24",
     type: "catalog-update",
     cardName: "Bybit Card",

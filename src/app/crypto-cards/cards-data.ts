@@ -657,7 +657,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Users comparing virtual crypto cards who need to distinguish no-credit-check marketing from identity and AML compliance.",
     availability: "The official site advertises 190+ countries, but country-specific eligibility and card BIN availability should be checked in the current onboarding flow.",
     regions: ["190+ countries advertised; verify current eligibility"],
-    pricing: "From Kripicard's official fee schedule: card issuance $5 per card, a $1 processing fee, and a minimum of $10 to create a card (loaded as the starting balance). Funding fee 4% of the amount loaded; minimum top-up $1. Monthly fee $0, authorization fee 0%, FX fee 0%. Card validity 5 years. Limits: $25,000 per authorization per day and $150,000 per month, with unlimited cards per account.",
+    pricing: "From Kripicard's official fee schedule: card issuance $5 per card, a $1 processing fee, and a minimum of $10 to create a card (loaded as the starting balance). Funding fee 4% of the amount loaded; minimum top-up $1. Monthly fee $0, authorization fee 0%, FX fee 0%. Card validity 5 years. Limits (the published tariff is named Kripicard Premium in the FAQ): $25,000 per authorization, $25,000 per day and $150,000 per month, with unlimited cards per account; exact limits can vary by the BIN assigned at issuance. Limits for the email-only basic tier are not published anywhere on Kripicard's official pages, and no annual limit is published (a $1M a year figure circulates in roundups but appears on no current official page).",
     rewards: "No universal rewards rate is stated on the reviewed homepage.",
     funding: "USDT, USDC, BTC, ETH, and other supported assets are described as deposit options that convert into a spendable virtual-card balance.",
     cardFormats: ["Virtual Visa", "Virtual Mastercard"],
@@ -666,7 +666,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/kripicard.png",
     imageAlt: "Kripicard black virtual card",
     imageSourceNote: "Official Kripicard product image, cached locally",
-    reviewedAt: "2026-11-24",
+    reviewedAt: "2026-11-26",
     caution: "Kripicard's official pages contradict each other on KYC: its product pages sell a basic tier opened with just an email, while its funds and security pages state every account is KYC-verified because banking partners require it. The binding terms impose no signup KYC, but a banking partner may demand KYC or source-of-funds documents before releasing balances, and may freeze, restrict or close cards and confiscate funds at its sole discretion without notice. The terms also disclose that in February 2026 a banking partner temporarily locked part of customer balances (most cases were later refunded). Keep balances small.",
     feesUrl: "https://home.kripicard.com/fees",
     updateUrl: "https://home.kripicard.com/news",
@@ -2856,19 +2856,19 @@ export const cardListings: CardListing[] = [
     slug: "goblin-card",
     name: "Goblin Card",
     provider: "Goblin Solutions LLC",
-    network: "Mastercard",
+    network: "Mastercard (physical) and Visa (virtual)",
     categories: ["prepaid"],
     shortDescription:
-      "A physical plus virtual Mastercard bundle at $350 one time, with a 3.5% deposit fee on the physical card and 0% FX.",
+      "A physical Mastercard (MXN balance) plus virtual Visa (USD balance) bundle at $350 one time, sold as non-KYC, with published limits of $5,000 a day on the physical card and $200,000 a day online on the virtual.",
     editorialSummary:
-      "Goblin Card, from Goblin Solutions LLC, sells a bundle of a physical and a virtual Mastercard for a one-time $350 including tracked international shipping. The physical card charges a 3.5% deposit fee (4% for XMR), a $100 minimum deposit, 0% FX, and no Goblin ATM fee, with limits of $2,500 per transaction, $5,000 per day, and $500 per day at ATMs. The virtual card carries roughly 1.5% FX and a 2% cash withdrawal fee, with much higher daily limits. Cards are valid for 3 years; renewal or replacement costs $100. Funding accepts BTC, ETH, SOL, XMR, and USDT. The operator markets the card as non-KYC, including at shipping; the issuer is not named on the official site.",
+      "Goblin Card, from Goblin Solutions LLC, sells a bundle of a physical Mastercard (which carries an MXN balance) and a virtual Visa (USD balance) for a one-time $350 including tracked international shipping. The two cards have separate limits that do not reduce each other, and the virtual card is otherwise issued only to existing, trusted Goblin users; it cannot be bought on its own. The physical card charges a 3.5% deposit fee (4% for XMR), a $100 minimum deposit, 0% FX, and no Goblin ATM fee, with limits of $2,500 per transaction, $5,000 per day, and $500 per day at ATMs. The virtual card carries roughly 1.5% FX and a 2% cash withdrawal fee, with much higher daily limits. Cards are valid for 3 years; renewal or replacement costs $100. Funding accepts BTC, ETH, SOL, XMR, and USDT. The operator markets the card as non-KYC, including at shipping; the issuer is not named on the official site.",
     bestFor:
       "Users who want a physical card with published fees and 0% FX on the physical card, and who spend enough to justify the $350 bundle price.",
     availability:
       "Operator claims worldwide shipping and spending. No official country or restricted-country list is published.",
     regions: ["North America", "Europe", "Asia", "LATAM"],
     pricing:
-      "Bundle $350 one time for physical plus virtual, tracked shipping included. Physical: 3.5% deposit fee (4% XMR), $100 minimum deposit, 0% FX, 0% Goblin ATM fee. Virtual: about 1.5% FX, 2% cash withdrawal fee. Renewal or replacement $100. No annual fee published.",
+      "Bundle $350 one time for physical plus virtual, tracked shipping included. Physical: 3.5% deposit fee (4% XMR), $100 minimum deposit, 0% FX, 0% Goblin ATM fee. Virtual: 1.5% FX fee; ATM withdrawals are not currently available on the virtual card per Goblin's FAQ. Published limits: physical $2,500 per transaction, $5,000 per day, $500 per day at ATMs, and no monthly spending limit; virtual $200,000 per transaction and per day online, $20,000 per transaction and per day for tap-to-pay. Card validity is 3 years. Renewal or replacement $100. No annual fee published.",
     rewards: "No cashback program published.",
     funding: "BTC, ETH, SOL, XMR and USDT; deposits convert to a fiat balance less fees.",
     cardFormats: ["Physical", "Virtual"],
@@ -2877,7 +2877,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Goblin Card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-05",
+    reviewedAt: "2026-11-26",
     caution:
       "The $350 upfront bundle is expensive relative to the market, the issuer is not disclosed, and the service is young. The non-KYC positioning is the operator's own claim. Verify current terms on the official site and start small.",
     verification:
@@ -3047,7 +3047,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
     availability: "Single-load cards are sold to users in most countries; the User Agreement lists 26 prohibited regions (including Iran, Russia, Cuba, North Korea, Syria, Turkey, Ukraine and Venezuela). US cards are for US merchants and US shipping addresses; international cards are marketed for use in 100 plus countries. US and Canadian non-reloadable cards are only spendable while the holder is physically located in the respective country.",
     regions: ["Global"],
-    pricing: "No monthly, transaction or maintenance fees, and card issuance is free (Laso fee schedule). Load fees: 0% on US and CAD non-reloadable cards, 3.8% on international non-reloadable cards, and a 0% top-up fee on the Reloadable card. FX runs about 2% on non-USD spending on international cards and up to 3% on the Reloadable card. US non-reloadable cards run from $5 to $1,000 per card. There are no refunds on US or Canadian non-reloadable cards under any circumstances (Laso help centre); an unused international non-reloadable card can be refunded at a 14% fee (minimum $10).",
+    pricing: "No monthly, transaction or maintenance fees, and card issuance is free (Laso fee schedule). Load fees: 0% on US and CAD non-reloadable cards, 3.8% on international non-reloadable cards, and a 0% top-up fee on the Reloadable card. FX runs about 2% on non-USD spending on international cards and up to 3% on the Reloadable card. US non-reloadable cards run from $5 to $1,000 per card. There are no refunds on US or Canadian non-reloadable cards under any circumstances (Laso help centre); an unused international non-reloadable card can be refunded at a 14% fee (minimum $10). Laso's compliance page ties the caps to FinCEN prepaid-access rules (31 CFR 1010.100): a $1,000 maximum load per card, $1,000 of spending per card per day, and a maximum of 6 card purchases in a single day (up to $6,000 a day in total), designed to prevent one person buying $10,000 of prepaid access in a day. The Reloadable card, which requires verification, tops up $5 to $10,000 at a time instead.",
     rewards: "Details being verified from official sources.",
     funding: "Details being verified from official sources.",
     cardFormats: ["Virtual"],
@@ -3058,7 +3058,7 @@ export const cardListings: CardListing[] = [
     imageSourceNote: "Official product page linked; artwork being sourced",
     updateNote:
       "November 2026: the 6-month expiry and balance forfeiture on non-reloadable cards was confirmed from Laso's own card guide and help centre (the leftover is called breakage and goes to the issuer; no refunds on US or Canadian non-reloadable cards), following an @xKseilas post. The Reloadable card's balance never expires.",
-    reviewedAt: "2026-11-24",
+    reviewedAt: "2026-11-26",
     caution: "The expiry terms are the real price of the free card. Non-reloadable cards expire 6 months after issuance and any remaining balance is forfeited to the issuer: Laso's own help centre calls the leftover breakage, gives the example of $4 left on a $100 card going entirely to the issuer (Laso itself receives none of it), and states there are no refunds on US or Canadian non-reloadable cards under any circumstances. The cards have no 3D Secure, so checkouts that require it will decline, and Laso's help centre notes that OpenAI, Anthropic, Google and other API providers generally do not accept prepaid cards. The card may also be cancelled or revoked at any time without prior notice. Load a non-reloadable card for one purchase, for the exact amount, and spend it well inside the 6 months.",
     verification: "Single-load cards need no identity verification: Laso's own documentation states the card order path has no verification step, and signup is by connected wallet or email. Identity checks apply to other products: a one-time check before a first PayPal or Venmo payout, and verification for the Reloadable card. Screening is by wallet, IP and device monitoring (Chainalysis). Operated by Laso Finance LLC (Austin, Texas), a FinCEN-registered money services business (registration 31000328975254). The issuing bank is not named in the consumer documents.",
   },
@@ -3217,7 +3217,7 @@ export const cardListings: CardListing[] = [
     bestFor: "Details being verified. Check the official site for the latest product positioning.",
     availability: "Operated by SC Payments Limited, Hong Kong. SolCard's help centre lists 13 countries where the card is not offered: the United States, Cuba, North Korea, Egypt, Iran, Myanmar, Nigeria, Russia, South Africa, Syria, Ukraine, Venezuela and Belarus. Its terms of use also bar residents of Hong Kong itself.",
     regions: ["Global"],
-    pricing: "Per SolCard's official site: the virtual card carries a 5% top-up fee plus a one-time $10 issuance fee per new card, with a $10,000 monthly limit. The Platinum tier charges 0% top-up fees with no monthly limit. FX rates are listed at 1% to 2%. Dormancy: SolCard's terms say an account with no login, card transaction or top-up for 90 consecutive days is dormant, and SolCard may then charge 10% of the remaining balance per month, taking the full balance once less than $1 would remain; any login, transaction or top-up ends dormancy. SolCard's own fee page contradicts this, saying an unused card costs the same as no card at all, so the terms are the safer document to trust.",
+    pricing: "Per SolCard's official site: the virtual card carries a 5% top-up fee plus a one-time $10 issuance fee per new card, with a monthly spending limit SolCard publishes inconsistently: $10,000 on its fees page and homepage, $5,000 in its help centre. The Platinum tier charges 0% top-up fees; its limit is likewise stated two ways, no monthly limit on the fees page and $100,000 a month in the help centre. FX rates are listed at 1% to 2%. Dormancy: SolCard's terms say an account with no login, card transaction or top-up for 90 consecutive days is dormant, and SolCard may then charge 10% of the remaining balance per month, taking the full balance once less than $1 would remain; any login, transaction or top-up ends dormancy. SolCard's own fee page contradicts this, saying an unused card costs the same as no card at all, so the terms are the safer document to trust.",
     updateNote:
       "November 2026: dormancy terms added from SolCard's Terms of Use: 10% of the balance per month after 90 days with no login, transaction or top-up, at SolCard's discretion. SolCard's fee page says the opposite (an unused card costs nothing), and the conflict is flagged on the listing.",
     rewards: "Details being verified from official sources.",
@@ -3228,11 +3228,11 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/solcard.webp",
     imageAlt: "SolCard purple crypto card",
     imageSourceNote: "Official product page linked; artwork being sourced",
-    reviewedAt: "2026-11-24",
+    reviewedAt: "2026-11-26",
     feeBreakdown: {
       virtualIssuanceUsd: 10,
     },
-    caution: "This is a newer or less-documented listing. Verify all terms on the official site before applying.",
+    caution: "SolCard's own pages conflict on the numbers that matter most to unverified users: the Virtual card's monthly limit is $10,000 on the fees page and $5,000 in the help centre, and the Platinum limit is no limit in one place and $100,000 a month in the other, so treat the figure shown in the app as the real one. The dormancy clause in the terms (10% of the remaining balance per month after 90 idle days, the whole balance once it falls under $1) does not appear on the fees page, which contradicts it.",
     verification: "SolCard operates as a programme manager and technology platform: its terms state that it does not issue payment cards, hold client funds in its own accounts, or act as a bank or electronic money institution. The card is issued by a third-party licensed institution that SolCard does not name. Signup for the Virtual card is email-only with a one-time code; SolCard labels it No verification, with a $10,000 monthly limit. Identity verification is required only for the Platinum card, which is also what drops the top-up fee from 5% to 0%. The terms reserve verification for certain card types or features, state that the Issuer or SolCard may cancel, revoke or restrict the card at any time, and never name the issuing institution.",
   },
   {
@@ -6695,6 +6695,70 @@ export const cardListings: CardListing[] = [
     caution:
       "Check the live status before topping up: the issuer history (Quicko's licence was revoked in Poland in January 2026) and conflicting tracker reports on a July 2026 closure mean the programme's current state is not fully settled on public sources. Keep only what you plan to spend on the card.",
     verification: "Provided by Mercuryo; the card was issued by Quicko Sp. z o.o. at launch. KYC is performed by Mercuryo with an ID document and a selfie; an EEA address is required and proof of address may be requested.",
+  },
+  {
+    slug: "ezzocard",
+    name: "Ezzocard",
+    provider: "Ezzocard",
+    network: "Visa and Mastercard",
+    categories: ["prepaid"],
+    shortDescription:
+      "An online shop selling one-off prepaid virtual cards for crypto, from $10 to $10,000, with no KYC at any amount, priced at a markup over face value and with no refunds under any circumstances.",
+    editorialSummary:
+      "Ezzocard is not an account or a wallet: it is a storefront that sells single-use, non-reloadable virtual prepaid cards, paid for only in cryptocurrency and delivered digitally (number, expiry, CVV) on the site or by email. It sells eight card lines (Gold, Violet, Lime-7, Lime-30, Brown, Orange, Yellow, Maroon and Teal) in USD and CAD, which its terms say are issued by banks in the US and Canada; no issuing bank is named. Cards are for online use only and cannot withdraw cash. One wrinkle: the original ezzocard.com domain is now a parked page, and the live store operates at ezzocard.finance, which calls itself the official website and claims the service has operated since 2017; no continuity statement links the two.",
+    bestFor:
+      "Someone who needs a single online payment card without opening an account, and who has priced the markup and read the refund terms first.",
+    availability:
+      "The store sells worldwide per its terms, but spending is IP-gated: all transactions on USD cards must be made from a US IP address (CAD cards: a US or Canadian IP), or the issuer may block the card with no recovery or refund. Orange and Yellow cards work only at US merchants. Buyers must be 18 or over.",
+    regions: ["Sold worldwide; spending IP-restricted (US IP for USD cards)"],
+    pricing:
+      "The listed price is the cost: there is no separate issuance fee, you pay a markup over the card's face value, and the markup is steep at small sizes and thin at large ones. Storefront prices checked November 2026: a $25 card costs $49.99 to $56.99 depending on the line; a $100 card runs from $109.99 (Lime-7) to $125.00 (Gold); a $500 card is within about 1 to 2% on the Lime lines; a $10,000 Lime-30 costs $10,019.99. The crypto network fee is charged on top of the card price. Monthly fee is $0 except the Brown CAD line ($3 a month starting 12 months after issue); Brown and Teal charge 2.5% on non-CAD transactions. Denominations run $10 to $10,000 USD (four lines reach $10,000) and 5 to 10,000 CAD.",
+    rewards:
+      "None.",
+    funding:
+      "Cryptocurrency only: BTC, ETH, USDT (ERC-20, TRC-20, BEP-20 and Solana), DOGE, LTC, TRX, SOL and BNB. No account is required; an email address is needed only for manual-payment delivery or recovering an undelivered order.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://ezzocard.finance",
+    sourceLabel: "Ezzocard official storefront and terms",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Ezzocard listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "The terms state Ezzocard does not offer refunds, returns or exchanges under any circumstances, including for cards blocked through the customer's fault, and balances on blocked cards are not recoverable. No operating company, jurisdiction or governing law is named anywhere on the site. Repeated declined or suspicious transactions can get a card blocked, and a declined card cannot be reused at that merchant for 24 hours. Price a card here against simply opening an account-based card: at $25 denominations the markup can exceed the card's face value.",
+    verification: "Ezzocard states that no KYC or personal documents are required at any amount, that cards can be registered with any name or address, and that its terms allow registration in assumed names. No company, licence or regulator is named on the official site.",
+  },
+  {
+    slug: "pintopay-card",
+    name: "Pintopay Card",
+    provider: "Pintopay",
+    network: "Not published",
+    categories: ["prepaid"],
+    shortDescription:
+      "A Telegram-bot card programme (the PTP Card) with a $35 card and advertised 2.5% top-ups; every limit is shown only inside the app, and its own terms require verification despite the no-KYC framing.",
+    editorialSummary:
+      "Pintopay is a crypto payment programme run through a Telegram bot and mini-app: onboarding and card issuance happen inside Telegram, with virtual and physical cards marketed as issued in about 2 minutes. Balances sit in a custodial wallet held by an unnamed third-party custodian, and the cards are issued by unnamed third-party licensed institutions; Pintopay states it is not a bank and not a card issuer. The homepage markets spending in 180 plus countries, Apple Pay and ATM use, and claims 100,000 plus users and 35,000 plus cards sold (self-reported figures).",
+    bestFor:
+      "Users already inside Telegram who want a card issued in chat and accept that pricing and limits are only visible in the app.",
+    availability:
+      "Marketed for 180 plus countries. The terms bar anyone located in, resident in, a citizen of, or a tax resident of Hong Kong, which is also, oddly, the programme's governing-law jurisdiction. Service can be refused in connection with sanctioned jurisdictions; no full restricted list is published.",
+    regions: ["180+ countries marketed; Hong Kong barred by the terms"],
+    pricing:
+      "The card costs $35, with $10 cashback on the first purchase advertised, and top-ups are advertised at 2.5%. Nothing else is published: the terms state that fees for issuance, maintenance and use, and all applicable limits, are published only through the app interfaces. No per-transaction, daily, monthly, top-up or ATM limit appears on the website or in the terms.",
+    rewards:
+      "A $10 cashback on the first purchase is advertised on the homepage; no ongoing rewards programme is published.",
+    funding:
+      "A custodial wallet (the terms call it a Custodian Wallet, held and serviced by an unnamed custodian) topped up with USDT and other crypto, converted to fiat for spending. The supported coin and network list is not published on the official site.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://pintopay.me",
+    sourceLabel: "Pintopay official site and terms",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Pintopay Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "Almost everything material is unpublished: no issuer, no network, no operating company (the terms name only 'the PTP group'), no fee schedule and no limits outside the app. The terms also allow the issuer to block a card that makes no successful payment for more than 45 continuous days, possibly irreversibly. Roundups file Pintopay under no-KYC cards, but its terms require onboarding and verification before issuance and cooperation with KYC and AML requests, and the card is issued in your name.",
+    verification: "The provider in the terms is defined only as the PTP group including affiliated entities; governing law is Hong Kong law with HKIAC arbitration. Card issuance is subject to successful onboarding and verification procedures (terms B.3.1).",
   },
 ];
 
