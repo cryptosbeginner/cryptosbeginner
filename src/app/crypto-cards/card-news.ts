@@ -33,6 +33,36 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "Pintopay official site and terms, November 2026",
   },
   {
+    date: "2026-11-26",
+    type: "market",
+    cardName: "WhiteBIT Nova Card",
+    cardSlug: "whitebit-nova-card",
+    title: "WhiteBIT Nova (EUR) has been suspended since 30 June 2026",
+    details:
+      "A 12-card exchange roundup prompted a full recheck, and WhiteBIT's own help centre states the EUR Nova card was suspended on whitebit.com on 30 June 2026, with no transactions possible, pending migration to the not yet launched WhiteBIT Europe. The listing now leads with the suspension instead of presenting the card as orderable. Delivery pricing was also corrected to from EUR 12 (EUR 12 untracked, EUR 20 standard, EUR 40 express), and the availability line fixed: the 31 countries are the total including Ukraine, not 31 plus four more.",
+    sourceLabel: "WhiteBIT help centre, Nova migration article, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "WhiteBIT Nova USD Card",
+    cardSlug: "whitebit-nova-usd-card",
+    title: "WhiteBIT Nova USD added: a separate virtual card, not a migration of the EUR card",
+    details:
+      "The card in the roundup's artwork is Nova USD, a different product from the suspended EUR card: virtual only, issued in partnership with JSC Hash Bank (Georgia), spending directly from the exchange balance. Opening, monthly and top-up fees are $0, but spending costs a 1.5% plus $0.20 transaction fee plus a 1.5% conversion fee; limits are $40,000 a day and $200,000 a month, cashback is capped at $25 a month, and ATM withdrawals are unavailable. New listing added; the two Nova cards now sit side by side with their different issuers and fees kept separate.",
+    sourceLabel: "WhiteBIT help centre and Nova USD pages, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "fee-change",
+    cardName: "CoinW Card",
+    cardSlug: "coinw-card",
+    title: "CoinW repriced under a policy that expires 31 December 2026",
+    details:
+      "CoinW's Master/Visa Card Policy (23 October 2026, valid 22 October to 31 December 2026 only) changes almost every headline figure for the virtual cards: a Mastercard option now exists alongside Visa, virtual issuance is free, the top-up fee is 1.5% (not 2%), the spending fee is 0% with FX at 2% to 3%, and tiered cashback now exists, set by the prior month's top-ups (2% capped at 5 USDT, rising to 10% capped at 500 USDT above 50,000 USDT of monthly top-ups). The listing was rebuilt on the policy, with the expiry flagged, and an earlier Singapore-bank issuer claim was removed because no official CoinW page names an issuer.",
+    sourceLabel: "CoinW Master/Visa Card Policy and FAQ, November 2026",
+  },
+  {
     date: "2026-11-24",
     type: "catalog-update",
     cardName: "Bybit Card",
