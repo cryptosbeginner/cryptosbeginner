@@ -4694,7 +4694,7 @@ export const cardListings: CardListing[] = [
     availability: "150+ countries. Provider does not publish the full list.",
     regions: ["Europe", "Asia", "Latin America", "Africa", "Middle East"],
     pricing:
-      "Virtual card 5 USDT; physical card from 100 USDT; free crypto top-ups; 1.5% fee on card payments.",
+      "Virtual card 5 USDT; physical card from 100 USDT; free crypto top-ups; 1.5% fee on card payments. ATM withdrawals cost 1.5% plus 1 USDT; SEPA transfers out cost 1.5% plus EUR 2 and SWIFT out 1.4% plus $2.",
     rewards: "No cashback advertised.",
     funding: "Topped up with crypto from the user's wallet; top-ups are free. A wallet-direct model is in development on Tempo, the payments chain from Stripe and Paradigm: the user approves the card once with a spending limit (Tempo Access Keys), and at the terminal the card debits the user's own wallet with nothing to sign, settlement final in about 500 ms and a chain fee of about $0.001 paid in stablecoins. Karta's treasury already runs on Tempo and the user app is moving over, per @xKseilas (November 2026); the pre-funded top-up model is what is live today.",
     cardFormats: ["Virtual", "Physical"],
@@ -4703,7 +4703,7 @@ export const cardListings: CardListing[] = [
     imageUrl: "/images/cards/placeholder-card.png",
     imageAlt: "Karta Personal card placeholder image",
     imageSourceNote: "Placeholder image",
-    reviewedAt: "2026-11-12",
+    reviewedAt: "2026-11-26",
     updateUrl: "https://x.com/xKseilas/status/2119160658369638778",
     updateLabel: "Karta is building wallet-direct card payments on Tempo, via @xKseilas",
     updateNote:
@@ -6791,6 +6791,135 @@ export const cardListings: CardListing[] = [
     caution:
       "Do not confuse this card with the EUR Nova card, which is suspended and runs on a different issuer (Wallester) and fee model. The 1.5% plus $0.20 transaction fee makes small purchases expensive in percentage terms.",
     verification: "KYC required on the WhiteBIT account.",
+  },
+  {
+    slug: "lava-card",
+    name: "Lava Card",
+    provider: "Lava",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A secured Visa credit card from Bitcoin finance company Lava, spending a dollar balance (funded by bank transfer, stablecoins, or borrowing against BTC) and paying rewards in bitcoin: 5% at partners, 3% for US users, 1% elsewhere.",
+    editorialSummary:
+      "Lava is a US Bitcoin finance company known for lending against BTC (its BLOC line of credit). The Lava Card, launched in June 2026, is a secured Visa credit card: you spend from your available Lava dollar balance, and no unsecured credit is extended. Rewards are paid in bitcoin on settlement. The issuer is not named on Lava's public pages, which say only that the card is provided by a separate issuer under its own terms.",
+    bestFor:
+      "Bitcoin holders who want card rewards paid in BTC and already use, or would use, a BTC-backed credit line.",
+    availability:
+      "Marketed as usable at 150M plus merchants in 150 plus countries, with separate US and international reward and eligibility treatment; no country-by-country list is published. Not available for business accounts yet.",
+    regions: ["150+ countries marketed; no published country list"],
+    pricing:
+      "No annual fee, no minimum spend, and no FX fee or spread on foreign-currency transactions (Visa's official rate is passed through). An issuance fee and a full fee schedule are not published on Lava's public pages.",
+    rewards:
+      "Paid in bitcoin, credited on settlement: 5% back at Lava merchant partners globally, 3% back for US-based users on other eligible purchases, and 1% back for non-US users. Six merchant categories are excluded, including fines, tax payments, insurance, real-estate rentals via agents and schools and education.",
+    funding:
+      "Bank transfer, direct deposit, stablecoin deposits (USDC, USDT, PYUSD) into the dollar balance, or dollars borrowed against BTC through Lava's BLOC line of credit.",
+    cardFormats: ["Virtual", "Physical"],
+    sourceUrl: "https://lava.xyz/card",
+    sourceLabel: "Lava official card page and learn guides",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Lava Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "The issuer is not named on Lava's public pages, and no issuance fee or spending limits are published there, so the cardholder agreement holds the real terms. Rewards differ sharply by user location (3% for US users against 1% for everyone else on ordinary spending).",
+    verification: "Identity verification and approval are required before issuance.",
+  },
+  {
+    slug: "cashi-card",
+    name: "Cashi Card",
+    provider: "Cashi",
+    network: "Visa",
+    categories: ["debit"],
+    shortDescription:
+      "A custodial stablecoin Visa card from Hong Kong's Cashi Ltd, in public beta since August 2026, with category cashback (3% subscriptions, 2% online shopping, 1% travel) and a 1% conversion fee on non-USD spending.",
+    editorialSummary:
+      "Cashi is a stablecoin spending app run by Cashi Ltd, incorporated in Hong Kong, launched in public beta on 11 August 2026. Assets sit in a custodial wallet Cashi maintains on the user's behalf, and card spends deduct and convert from it in a spending order the user sets. The Hong Kong programme issues virtual Visa cards with Google Pay (Apple Pay is on the roadmap, not live). Cashi also offers a personal USD account with its own ACH, Fedwire and SWIFT details, converting to USDT or USDC at 1 to 1. GBP Payments Corp., a FINTRAC-registered money services business in Canada, performs certain regulated components.",
+    bestFor:
+      "Stablecoin users who want a USD account and a spending card in one app, and who accept custodial funding and a beta product.",
+    availability:
+      "The app is offered in 100 plus countries with availability varying by jurisdiction; the live card programme is the Hong Kong one. A Mexico expansion adding physical cards was planned for late 2026.",
+    regions: ["100+ countries for the app; card programme live in Hong Kong"],
+    pricing:
+      "Paying in USD carries no Cashi fee; paying in another currency adds a 1% conversion fee. Cashi-to-Cashi transfers are free; external sends pay the network fee only. Category cashback caps are published in Cashi's help centre.",
+    rewards:
+      "Automatic category cashback with monthly caps: 3% on eligible subscriptions, 2% on eligible online shopping and 1% on eligible travel. Separately, balances earn 2% per year in Asset Rewards, paid weekly as spending credit with no lockup.",
+    funding:
+      "USDT and USDC deposits, plus BTC, ETH, SOL and XRP spendable from the custodial wallet; a personal USD account (ACH, Fedwire, SWIFT) converts to stablecoins at 1 to 1.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://cashi.com",
+    sourceLabel: "Cashi official site and terms",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the Cashi Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "Cashi is in public beta, the issuing bank is not named in its terms (Thredd is named as the issuer-processing platform), and the card is virtual only for now. Custodial funding means Cashi holds the assets your card spends.",
+    verification: "Identity verification through a third-party provider is required before access to certain features; users must be 18 or over.",
+  },
+  {
+    slug: "keyone-card",
+    name: "KeyOne Card",
+    provider: "KeyOne",
+    network: "Visa",
+    categories: ["self-custody"],
+    shortDescription:
+      "A self-custody wallet with a virtual Visa card issued by Wirex, run by Nevis-based KeyOne Solution Ltd (no relation to the OneKey hardware wallet), with a fully published fee schedule: crypto top-ups at 0.8% on the free plan and 0.33% on Premium.",
+    editorialSummary:
+      "KeyOne pairs a self-custody wallet (the private key is created and stored on the user's device, and KeyOne states it never holds keys) with a virtual Visa card issued by Wirex under Wirex's own licences; KeyOne itself is the technology interface. The operator is KeyOne Solution Ltd, an international business corporation incorporated in the Federation of Saint Christopher and Nevis. Despite the similar name, nothing on KeyOne's official site or terms connects it to the OneKey hardware wallet company.",
+    bestFor:
+      "Self-custody users who want a card with every fee and limit published up front, and who are comfortable with a small Nevis-based operator riding on Wirex's licences.",
+    availability:
+      "Users must reside in a supported country; KeyOne publishes the supported-countries list on its site. Virtual only; no physical card is offered. Apple Pay is supported.",
+    regions: ["Supported countries list published on KeyOne's site"],
+    pricing:
+      "Free plan EUR 0 (1 virtual card); Premium EUR 149 a year (3 virtual cards, extra cards EUR 10 each). Card issuance and monthly service are free; card payments in the balance currency cost 0%; currency conversion up to 1%. Crypto top-ups (USDC, USDT) cost 0.8% plus network fee on Free and 0.33% on Premium; SEPA and ACH top-ups 0.8% and 0.3%; topping up from another Visa or Mastercard costs about 4.5% (provider fee). In-app exchange is 0.3% on the first EUR 1,000 a month (Free) or EUR 2,000 (Premium), then 1.25%. Spending limits: EUR 20,000 per card per month and per transaction on Free, EUR 30,000 on Premium.",
+    rewards:
+      "No cashback is published anywhere on KeyOne's official site.",
+    funding:
+      "Stablecoin top-ups on Base, Ethereum, Tron, Solana and Arbitrum; SEPA and ACH bank top-ups; crypto withdrawals settle on Base with no KeyOne fee.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://keyonepay.com",
+    sourceLabel: "KeyOne official site, terms and fee schedule",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the KeyOne Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "The operator is a Nevis international business corporation and the card runs entirely under Wirex's licences and cardholder agreement, so Wirex's terms govern the card itself even though KeyOne publishes its own fee schedule.",
+    verification: "KYC is mandatory before card issuance: an ID document and a selfie, performed by the partner, with possible proof of address.",
+  },
+  {
+    slug: "gmgn-card",
+    name: "GMGN Card",
+    provider: "GMGN",
+    network: "Visa and Mastercard (assigned by region)",
+    categories: ["debit"],
+    shortDescription:
+      "The trading terminal's own card: a virtual Visa or Mastercard (assigned by region) spending a USDT balance, with a 1% transaction fee, 1% uncapped cashback and published limits. Not available in the US or mainland China.",
+    editorialSummary:
+      "GMGN, the memecoin trading terminal, now issues its own card from its official card site. You top up USDT to your GMGN wallet account first, then spend from the card balance; there is no overdraft. The network (Visa or Mastercard) is assigned automatically based on your verified region. GMGN does not name the card issuer anywhere on the card page.",
+    bestFor:
+      "GMGN traders who want to spend trading balances without leaving the platform, and who accept a 1% transaction fee as the price of that convenience.",
+    availability:
+      "Marketed at 180 plus countries and regions, but not available to users in mainland China or the US (the FAQ says mainland China, US, etc., with the full restrictions list shown in the application flow).",
+    regions: ["180+ countries marketed; US and mainland China excluded"],
+    pricing:
+      "No issuance fee and no annual fee. The transaction fee is 1%; a micro-transaction fee of 0.2 USDT applies to orders of 1 USDT or less (first 5 per month free), and a failed-payment fee of 0.5 USDT applies (first 5 per month free for most causes, and free outright for unsupported merchants, authorization timeouts or system maintenance). Limits: by default 5,000 USDT per transaction, 5,000 USDT a day and 50,000 USDT a month; the per-transaction and daily limits can be raised to 10,000 USDT in settings and higher via support review (the Mastercard variant does not support custom limits).",
+    rewards:
+      "1% cashback on spending with no upper limit, described by GMGN as a promotional subsidy that is valid long-term but can be adjusted with notice. Balances also advertise a 5% Flexible Earn.",
+    funding:
+      "USDT by on-chain transfer on major blockchains to the GMGN wallet account; multiple fiat deposit routes are also advertised.",
+    cardFormats: ["Virtual"],
+    sourceUrl: "https://card.gmgn.ai/en",
+    sourceLabel: "GMGN official card page and FAQ",
+    referralUrl: "https://card.gmgn.ai/?ref=XPS1eXg4",
+    imageUrl: "/images/cards/placeholder-card.png",
+    imageAlt: "Placeholder image for the GMGN Card listing; official card art not yet supplied",
+    imageSourceNote: "Official card image not yet supplied; placeholder shown",
+    reviewedAt: "2026-11-26",
+    caution:
+      "GMGN's own page contradicts itself on format: a marketing section advertises a physical card while its FAQ states plainly that physical cards are not supported yet, so treat the card as virtual only, with no ATM support. The issuer is unnamed, and the 1% cashback is framed by GMGN itself as a promotional subsidy that can change.",
+    verification: "KYC is mandatory: creating a GMGN account and completing identity verification is step 1 of GMGN's own how-it-works, and accounts using false information may be frozen.",
   },
 ];
 

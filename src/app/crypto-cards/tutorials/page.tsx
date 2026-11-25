@@ -182,7 +182,7 @@ export default function CryptoCardTutorialsPage() {
           <div className="mt-12 rounded-3xl border border-slate-200 bg-white p-8 text-center">
             <h2 className="text-2xl font-black">Finished the lessons? Put them to work.</h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-600">
-              Browse the directory of 228 cards with issuers, fees and custody models side by side, follow the monthly spending tracker, or read the individual guides and comparisons.
+              Browse the directory of 232 cards with issuers, fees and custody models side by side, follow the monthly spending tracker, or read the individual guides and comparisons.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link

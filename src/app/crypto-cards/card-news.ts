@@ -63,6 +63,46 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "CoinW Master/Visa Card Policy and FAQ, November 2026",
   },
   {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "GMGN Card",
+    cardSlug: "gmgn-card",
+    title: "GMGN Card added: the November hold is lifted now that GMGN publishes full card terms",
+    details:
+      "This directory held the GMGN Card in early November because no official source confirmed its terms. That has changed: GMGN's official card site now publishes the full picture. A virtual Visa or Mastercard assigned by region, a 1% transaction fee, 1% uncapped cashback (which GMGN itself calls a promotional subsidy), limits of 5,000 USDT per transaction and per day and 50,000 a month, mandatory KYC, and no availability in the US or mainland China. Two flags stay on the listing: the issuer is unnamed, and the page advertises a physical card in one section while its FAQ says physical cards are not supported yet. New listing added.",
+    sourceLabel: "GMGN official card page and FAQ, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "Lava Card",
+    cardSlug: "lava-card",
+    title: "Lava Card added: a secured Visa credit card paying rewards in bitcoin",
+    details:
+      "From the 2023 vs 2026 logo graphic: Lava, the Bitcoin lending company, launched a secured Visa credit card in June 2026 that spends a dollar balance funded by bank transfer, stablecoins, or borrowing against BTC. Rewards are paid in bitcoin: 5% at merchant partners, 3% for US users on other spending and 1% for non-US users. No annual fee and no FX fee or spread are published; the issuer is not named on Lava's public pages. New listing added.",
+    sourceLabel: "Lava official card page and learn guides, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "Cashi Card",
+    cardSlug: "cashi-card",
+    title: "Cashi Card added: a Hong Kong stablecoin card in public beta",
+    details:
+      "From the 2023 vs 2026 logo graphic: Cashi Ltd (Hong Kong) launched its custodial stablecoin app and virtual Visa card in public beta on 11 August 2026. Category cashback pays 3% on subscriptions, 2% on online shopping and 1% on travel, USD spending carries no Cashi fee, and other currencies add a 1% conversion fee. The issuing bank is not named in Cashi's terms. New listing added.",
+    sourceLabel: "Cashi official site and terms, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "launch",
+    cardName: "KeyOne Card",
+    cardSlug: "keyone-card",
+    title: "KeyOne Card added: a self-custody wallet card issued by Wirex, not a OneKey product",
+    details:
+      "From the 2023 vs 2026 logo graphic: KeyOne (KeyOne Solution Ltd, Nevis) pairs a self-custody wallet with a virtual Visa card issued by Wirex, and publishes one of the most complete fee schedules in this directory: free plan with 0.8% crypto top-ups, Premium at EUR 149 a year with 0.33% top-ups, and spending limits of EUR 20,000 to 30,000 per card per month. Despite the name, official pages show no connection to the OneKey hardware wallet. New listing added.",
+    sourceLabel: "KeyOne official site, terms and fee schedule, November 2026",
+  },
+  {
     date: "2026-11-24",
     type: "catalog-update",
     cardName: "Bybit Card",
