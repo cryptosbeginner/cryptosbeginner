@@ -2874,9 +2874,9 @@ export const cardListings: CardListing[] = [
     cardFormats: ["Physical", "Virtual"],
     sourceUrl: "https://www.goblincards.com/",
     sourceLabel: "Goblin Card official website",
-    imageUrl: "/images/cards/placeholder-card.png",
-    imageAlt: "Goblin Card placeholder image",
-    imageSourceNote: "Placeholder image",
+    imageUrl: "/images/cards/goblin-card.png",
+    imageAlt: "Goblin Card physical Mastercard in black with a green G logo, gold contact chip and card number ending 2430",
+    imageSourceNote: "Official Goblin card art supplied November 2026",
     reviewedAt: "2026-11-26",
     caution:
       "The $350 upfront bundle is expensive relative to the market, the issuer is not disclosed, and the service is young. The non-KYC positioning is the operator's own claim. Verify current terms on the official site and start small.",
