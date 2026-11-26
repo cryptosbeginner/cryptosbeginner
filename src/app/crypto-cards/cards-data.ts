@@ -4034,9 +4034,9 @@ export const cardListings: CardListing[] = [
     cardFormats: ["Virtual"],
     sourceUrl: "https://morsemoney.com/product/morse-card",
     sourceLabel: "Morse Money",
-    imageUrl: "/images/cards/placeholder-card.png",
-    imageAlt: "Morse Card card placeholder image",
-    imageSourceNote: "Placeholder image",
+    imageUrl: "/images/cards/morse-card.png",
+    imageAlt: "Morse Card Visa debit in bright orange with a white Morse wordmark and card number ending 9643",
+    imageSourceNote: "Official card art supplied November 2026",
     reviewedAt: "2026-10-15",
     caution:
       "Virtual-only format and no ATM access limit its use to online and wallet-based payments.",
@@ -4064,9 +4064,9 @@ export const cardListings: CardListing[] = [
     sourceUrl:
       "https://help.shakepay.com/en/articles/5274309-cashback-rewards-with-the-shakepay-prepaid-visa-card",
     sourceLabel: "Shakepay Help Center",
-    imageUrl: "/images/cards/placeholder-card.png",
-    imageAlt: "Shakepay Card card placeholder image",
-    imageSourceNote: "Placeholder image",
+    imageUrl: "/images/cards/shakepay-card.png",
+    imageAlt: "Shakepay Card Visa in light blue with a white raccoon logo, Shakepay wordmark and card number ending 5891",
+    imageSourceNote: "Official card art supplied November 2026",
     reviewedAt: "2026-10-15",
     caution:
       "Cashback rates are tiered and can change; check the current tier requirements in the app.",
