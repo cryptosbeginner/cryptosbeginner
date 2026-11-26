@@ -334,6 +334,7 @@ export default function SpendingPage() {
             <a href="/api/spending/monthly.csv" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Download the monthly series (CSV)</a>
             <a href="/api/spending/monthly" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Get it as JSON</a>
             <Link href="/crypto-cards/spending/methodology" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">How this is measured →</Link>
+            <Link href="/crypto-cards/collections/most-used-crypto-cards" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Most used cards →</Link>
             <Link href="/crypto-cards/effective-cashback" className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700">Rewards calculator →</Link>
           </div>
 

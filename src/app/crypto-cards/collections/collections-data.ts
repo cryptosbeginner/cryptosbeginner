@@ -30,7 +30,7 @@ export const collections: CollectionPage[] = [
     description:
       "The best metal crypto cards in 2026, ranked from our card data: metal tiers from Xapo, Uphold, MetaMask, BingX, BitMart, Tria, Wirex One, and Winity compared by rewards and real cost.",
     intro:
-      "Metal crypto cards are almost always the top tier of a tiered product, not a separate product. The card feels premium, but what you are really buying is a higher reward rate, higher limits, or a membership bundle. We ranked the eight metal formats in our 132-card database by what the provider data actually promises: reward rates, published fees, and availability.",
+      "Metal crypto cards are almost always the top tier of a tiered product, not a separate product. The card feels premium, but what you are really buying is a higher reward rate, higher limits, or a membership bundle. We ranked the eight metal formats in our 232-card database by what the provider data actually promises: reward rates, published fees, and availability.",
     methodology: [
       "The card's formats field must include a metal variant, such as Metal, Premium metal, Executive metal, or Visa Signature Metal.",
       "Cards are ranked by provider-stated rewards and the clarity of the published fee and tier terms.",
@@ -101,7 +101,7 @@ export const collections: CollectionPage[] = [
     title: "High Limit Crypto Cards for Larger Spenders",
     eyebrow: "Spending power · ranked",
     description:
-      "Crypto cards for larger spenders, curated from our 132-card database: published monthly ceilings, premium membership tiers, and business options from ether.fi, Coinbase One, Xapo, Whop, Uphold, and Crypto.com.",
+      "Crypto cards for larger spenders, curated from our 232-card database: published monthly ceilings, premium membership tiers, and business options from ether.fi, Coinbase One, Xapo, Whop, Uphold, and Crypto.com.",
     intro:
       "Most crypto card providers do not publish simple spending-limit tables, so this collection ranks cards where larger spending is a visible part of the product design: published monthly ceilings, premium membership tiers, and business products. We would rather show you six honest options than ten padded ones.",
     methodology: [
@@ -166,9 +166,9 @@ export const collections: CollectionPage[] = [
     title: "Self-Custodial Debit Cards: Spend Without the Middleman",
     eyebrow: "Self custody · ranked",
     description:
-      "Self-custodial crypto debit cards ranked from our 132-card database: spend from wallets you control with Gnosis Pay, MetaMask, ether.fi, 1inch, Holyheld, Bleap, wavecard, and BloFin.",
+      "Self-custodial crypto debit cards ranked from our 232-card database: spend from wallets you control with Gnosis Pay, MetaMask, ether.fi, 1inch, Holyheld, Bleap, wavecard, and BloFin.",
     intro:
-      "Most crypto cards sit on top of an exchange or fintech account. Self-custodial cards spend directly from a wallet you control, no exchange balance in the middle. Nineteen of the 132 cards in our database carry the self-custody category; these eight are the strongest combinations of custody model, verifiable detail, and usability.",
+      "Most crypto cards sit on top of an exchange or fintech account. Self-custodial cards spend directly from a wallet you control, no exchange balance in the middle. The self-custody category is one of the smaller groups in our 232-card database; these eight are the strongest combinations of custody model, verifiable detail, and usability.",
     methodology: [
       "Cards must carry the self-custody category in our data, meaning the provider describes spending from a user-controlled wallet or smart account.",
       "We ranked by the clarity of the custody model, the completeness of the published fee and reward terms, and regional usability.",
@@ -239,7 +239,7 @@ export const collections: CollectionPage[] = [
     title: "Best Rebates & Perks: Crypto Cards That Pay You Back",
     eyebrow: "Rebates & perks · ranked",
     description:
-      "Crypto cards with the best rebates and perks from our 132-card database: subscription rebates, category cashback, lounge access, and activation rebates from Plutus, WhiteBIT Nova, BingX, Spritz, and more.",
+      "Crypto cards with the best rebates and perks from our 232-card database: subscription rebates, category cashback, lounge access, and activation rebates from Plutus, WhiteBIT Nova, BingX, Spritz, and more.",
     intro:
       "Beyond flat cashback, the most interesting cards rebate specific spending: subscriptions, categories, travel perks, and even activation fees. We ranked seven cards where the provider data shows a real rebate or perk mechanic, not just a higher headline rate.",
     methodology: [
@@ -307,9 +307,9 @@ export const collections: CollectionPage[] = [
     title: "Best Cashback Crypto Cards: Top Reward Rates Compared",
     eyebrow: "Cashback rates · ranked",
     description:
-      "The best cashback crypto cards from our 132-card database: reward rates compared with caps and conditions kept visible, featuring MEXC, Oobit, WhiteBIT Nova, Bybit, Tria, BingX, Gemini, and more.",
+      "The best cashback crypto cards from our 232-card database: reward rates compared with caps and conditions kept visible, featuring MEXC, Oobit, WhiteBIT Nova, Bybit, Tria, BingX, Gemini, and more.",
     intro:
-      "Fifty-six of the 132 cards in our database advertise some form of cashback, but headline rates are almost never the whole story. Every card below is shown with its caps, tiers, and conditions from the provider's reviewed page, ranked by the best realistic earning potential rather than the biggest number.",
+      "Dozens of the 232 cards in our database advertise some form of cashback, but headline rates are almost never the whole story. Every card below is shown with its caps, tiers, and conditions from the provider's reviewed page, ranked by the best realistic earning potential rather than the biggest number.",
     methodology: [
       "Cards are included when our data shows a provider-stated cashback or crypto-back rate on purchases.",
       "We parsed the rewards text for the advertised rate and kept the provider's caps, eligible categories, tier requirements, and time limits visible.",
@@ -390,7 +390,7 @@ export const collections: CollectionPage[] = [
     title: "Crypto Cards Available in Europe: EEA & UK Shortlist",
     eyebrow: "Regional guide · Europe / EEA / UK",
     description:
-      "Crypto cards available in Europe, curated from our 132-card database: eligibility-first picks from WhiteBIT Nova, Nexo, Kraken, Gnosis Pay, SwissBorg, Bitpanda, wavecard, and Bit2Me.",
+      "Crypto cards available in Europe, curated from our 232-card database: eligibility-first picks from WhiteBIT Nova, Nexo, Kraken, Gnosis Pay, SwissBorg, Bitpanda, wavecard, and Bit2Me.",
     intro:
       "Europe is not one market for crypto cards. Issuers, country lists, and fee tables vary by country, and a card available in France may not onboard in Germany. Forty-one cards in our database carry European availability signals; these nine combine the clearest eligibility wording with usable fee and reward detail.",
     methodology: [
@@ -468,7 +468,7 @@ export const collections: CollectionPage[] = [
     title: "Crypto Cards Available in the US",
     eyebrow: "Regional guide · United States",
     description:
-      "Crypto cards available in the US, curated from our 132-card database: eligibility-first picks from Gemini, Coinbase One, Coinbase, Fold, Uphold, Venmo, Blockchain.com, BitPay, and Rizon.",
+      "Crypto cards available in the US, curated from our 232-card database: eligibility-first picks from Gemini, Coinbase One, Coinbase, Fold, Uphold, Venmo, Blockchain.com, BitPay, and Rizon.",
     intro:
       "US availability is product-specific: state exclusions, credit approval, and membership requirements all sit between you and the card. Eighteen cards in our database carry US availability signals; these nine combine the clearest eligibility wording with usable fee and reward detail.",
     methodology: [
@@ -546,7 +546,7 @@ export const collections: CollectionPage[] = [
     title: "Crypto Cards with Apple Pay & Google Pay",
     eyebrow: "Phone wallets · ranked",
     description:
-      "Crypto cards with Apple Pay and Google Pay support from our 132-card database: phone-wallet picks from Ledger, BloFin, MEXC, Phantom, OppiWallet, Wallbit, and Privacy Gateway.",
+      "Crypto cards with Apple Pay and Google Pay support from our 232-card database: phone-wallet picks from Ledger, BloFin, MEXC, Phantom, OppiWallet, Wallbit, and Privacy Gateway.",
     intro:
       "A crypto card you cannot add to your phone is half a product in 2026. Only seven cards in our database explicitly mention Apple Pay or Google Pay support in their reviewed fields, so this is a short, honest shortlist: every card below states wallet support in provider data, not in our assumptions.",
     methodology: [
@@ -616,7 +616,7 @@ export const collections: CollectionPage[] = [
     title: "Best Crypto Cards for Travelers",
     eyebrow: "Travel spending · ranked",
     description:
-      "The best crypto cards for travelers from our 132-card database: zero FX fees, lounge perks, and travel rewards from Gemini, OKX, ether.fi, Xapo, eToro Money, Uphold, Spritz, and Coinbase One.",
+      "The best crypto cards for travelers from our 232-card database: zero FX fees, lounge perks, and travel rewards from Gemini, OKX, ether.fi, Xapo, eToro Money, Uphold, Spritz, and Coinbase One.",
     intro:
       "Travelers care about two things: what it costs to spend abroad, and what the card gives back. We ranked eight cards where our data shows zero or no FX fees, travel perks like lounge access, or travel-specific rewards, with the usual warning that a 0% FX claim is not the same as 0 cost.",
     methodology: [
@@ -689,7 +689,7 @@ export const collections: CollectionPage[] = [
     title: "Crypto Cards with Staking Rewards",
     eyebrow: "Hold-to-earn mechanics · ranked",
     description:
-      "Crypto cards with staking-style rewards from our 132-card database: token lockups, holding tiers, and balance yield from Crypto.com, Gnosis Pay, OKX, Brighty, and Solid.",
+      "Crypto cards with staking-style rewards from our 232-card database: token lockups, holding tiers, and balance yield from Crypto.com, Gnosis Pay, OKX, Brighty, and Solid.",
     intro:
       "Some cards pay you for holding or locking tokens, not just for spending. To be honest, our data contains almost no verified on-chain staking programs tied to cards. This collection covers the closest real mechanics we found: token lockup tiers, holding-based cashback, and yield on card balances, each labeled for what it actually is.",
     methodology: [
@@ -810,7 +810,106 @@ export const collections: CollectionPage[] = [
       {
         question: "Why is Goblin not on this list?",
         answer:
-          "Goblin appears on some researchers' minimal-KYC lists, but it is not in our card database, and independent coverage flags it as an unregulated operator with higher counterparty risk. We only rank cards we have reviewed data for.",
+          "Goblin appears on some researchers' minimal-KYC lists, and it is in our directory with its published limits, but we left it out of this shortlist: independent coverage flags it as an unregulated operator with higher counterparty risk, and privacy claims from an operator like that deserve extra caution.",
+      },
+    ],
+  },
+  {
+    slug: "most-used-crypto-cards",
+    title: "Most Used Crypto Cards: Ranked by Real Spending",
+    eyebrow: "Tracked spend · ranked",
+    description:
+      "The most used crypto cards, ranked by settled spending in October 2026 from PaymentScan data: RedotPay, ether.fi Cash, KAST, Wirex One, Karta, and Plasma One lead $1.37B of tracked card spend.",
+    intro:
+      "Most card rankings rank marketing. This one ranks usage: how much money actually moved through each program in October 2026, from PaymentScan settlement data compiled in our spend tracker. The order below is the spending order, with each card's measurement basis kept visible, because two of the twelve figures rest on issuer reporting rather than on-chain settlement.",
+    methodology: [
+      "Ranked by settled card spend for October 2026, the latest complete month in our spend tracker, using PaymentScan data as republished by Castle Labs.",
+      "Programs whose figures are issuer-reported (RedotPay and Gate Card in this list) are included and labeled. Some rival trackers exclude them and rank verified on-chain spend only; we show both facts and let the label do the work.",
+      "Programs that settle off-chain, which includes most large exchange cards, cannot be measured this way and do not appear. Absence means unmeasured, not unused.",
+      "This list is rebuilt monthly alongside the spend tracker. Spend shows a card is used; it does not show it is cheap, safe, or right for you.",
+    ],
+    cards: [
+      {
+        slug: "redotpay-card",
+        reasoning:
+          "$423.5M settled in October 2026, 31% of all tracked spend and the largest program by a wide margin. The caveat travels with the number: the figure is issuer-reported rather than read from on-chain settlement, so it cannot be independently verified.",
+      },
+      {
+        slug: "etherfi-cash-card",
+        reasoning:
+          "$141.9M in October 2026, the largest fully on-chain measured program, with 51,839 paying users and a $76 average payment. Spend grew 10% on September.",
+      },
+      {
+        slug: "kast-card",
+        reasoning:
+          "$121.0M in October 2026, settled on-chain in daily batches, 8.8% of tracked spend, up 6.3% on September.",
+      },
+      {
+        slug: "wirex-one-card",
+        reasoning:
+          "$54.8M in October 2026, fully on-chain, with 23,608 paying users at a $97 average payment, up 15% on September.",
+      },
+      {
+        slug: "karta-card",
+        reasoning:
+          "$53.6M in October 2026, settled on-chain in daily batches, up 8.4% on September.",
+      },
+      {
+        slug: "plasma-one-card",
+        reasoning:
+          "$30.2M in October 2026, fully on-chain and the fastest grower in the top tier at 18% on September, with 22,636 paying users and the joint-highest average payment in this list at $182.",
+      },
+      {
+        slug: "kolo-card",
+        reasoning:
+          "$20.5M in October 2026, fully on-chain, with a $249 average payment, the largest ticket size in the top ten.",
+      },
+      {
+        slug: "tria-card",
+        reasoning:
+          "$15.8M in October 2026, fully on-chain, with 11,580 paying users. Down 5.7% on September, one of the few fallers near the top.",
+      },
+      {
+        slug: "coca-card",
+        reasoning:
+          "$7.8M in October 2026, fully on-chain, with 12,199 paying users at a small $57 average payment: breadth of users rather than big tickets. Down 16% on September.",
+      },
+      {
+        slug: "gnosis-pay-card",
+        reasoning:
+          "$6.1M in October 2026, fully on-chain, with 6,266 paying users. Down 20% on September, the steepest fall in this list.",
+      },
+      {
+        slug: "gate-card",
+        reasoning:
+          "$3.8M in October 2026, the fastest riser here at 40% on September. Like RedotPay, its figure is issuer-reported rather than on-chain verified.",
+      },
+      {
+        slug: "avici-card",
+        reasoning:
+          "$3.7M in October 2026, fully on-chain, with 3,196 paying users at a $149 average payment.",
+      },
+    ],
+    faq: [
+      {
+        question: "How is this list ranked?",
+        answer:
+          "By settled spending in October 2026, the latest complete month tracked by PaymentScan and compiled in our spend tracker. It is a usage ranking, not a quality ranking: fees, custody, and risk are covered on each card's listing and in our reviews.",
+      },
+      {
+        question: "Why is RedotPay first if its figure is issuer-reported?",
+        answer:
+          "Because excluding the largest program would distort the picture more than including it with a clear label. Its $423.5M is reported by the issuer to PaymentScan, not read from on-chain settlement, and we say so wherever the figure appears. The largest fully on-chain measured program is ether.fi Cash at $141.9M.",
+      },
+      {
+        question: "Where are the big exchange cards, like Binance and Bybit?",
+        answer:
+          "They settle through internal systems rather than public blockchains, so no independent spend figure exists for them. They are unmeasured by this method, which is not the same as unused.",
+      },
+      {
+        question: "Does most used mean best?",
+        answer:
+          "No. Volume can reflect one large market, a business-card niche, or a few heavy spenders. Use this list to see what people actually use, then compare fees and terms before choosing.",
       },
     ],
   },
