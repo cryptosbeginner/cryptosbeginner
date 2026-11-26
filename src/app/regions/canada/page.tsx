@@ -734,6 +734,13 @@ export default function CanadaPage() {
               </a>
 
               <Link
+                href="/regions/canada/crypto-license"
+                className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
+              >
+                Canada crypto licensing guide
+              </Link>
+
+              <Link
                 href="/methodology"
                 className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
               >

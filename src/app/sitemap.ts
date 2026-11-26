@@ -16,6 +16,8 @@ const RECENT_MODIFIED = new Date("2026-10-09");
 // Routes refreshed or published in October 2026.
 const recentRoutes = new Set([
   "/",
+  "/regions/canada/crypto-license",
+  "/regions/norway/crypto-license",
   "/exchanges/primexbt-review",
   "/exchanges/primexbt/fees",
   "/exchanges/primexbt/deposit-guide",
@@ -131,6 +133,7 @@ const regionRoutes = [
   "/regions/canada/british-columbia",
   "/regions/canada/ontario",
   "/regions/canada/quebec",
+  "/regions/canada/crypto-license",
   "/regions/denmark",
   "/regions/egypt",
   "/regions/ethiopia",
@@ -149,6 +152,7 @@ const regionRoutes = [
   "/regions/netherlands",
   "/regions/nigeria",
   "/regions/norway",
+  "/regions/norway/crypto-license",
   "/regions/oman",
   "/regions/pakistan",
   "/regions/pakistan/how-to-buy-bitcoin",

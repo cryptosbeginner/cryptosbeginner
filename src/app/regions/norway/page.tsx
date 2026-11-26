@@ -651,6 +651,30 @@ export default function NorwayPage() {
           </div>
         </section>
 
+        {/* Licensing guide callout */}
+        <section className="max-w-4xl mx-auto px-4 pb-12">
+          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
+            <h2 className="text-xl font-bold text-indigo-950 mb-3">
+              Running a crypto business in Norway?
+            </h2>
+
+            <p className="text-sm leading-7 text-indigo-950">
+              The old Finanstilsynet VASP registration stopped granting
+              market access on 30 June 2026. Our licensing guide explains
+              the CASP authorisation that replaced it, the published
+              processing timelines and the first firms authorised under
+              MiCA.
+            </p>
+
+            <Link
+              href="/regions/norway/crypto-license"
+              className="mt-4 inline-flex rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-slate-800"
+            >
+              Norway crypto licensing guide
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section id="faq" className="max-w-4xl mx-auto px-4 pb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
