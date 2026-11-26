@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-26",
+    type: "fee-change",
+    cardName: "Bybit Card",
+    cardSlug: "bybit-card",
+    title: "Bybit's fee table no longer displays an FX rate for Georgia and Asia Pacific",
+    details:
+      "A regional FX comparison prompted a recheck of Bybit's official fees and limits page on 26 November 2026. Every other figure in the comparison matches the table and our listing: 0.5% in the EEA, 1% in Peru, 1.5% in Brazil, 2% in Australia and Mexico, a 2% international fee in Kazakhstan (AIFC) that applies even to USD purchases, 7% in Argentina, 0.9% crypto conversion (0.5% in Argentina) and Argentina's refundable 5% authorisation hold. But where Bybit's published schedule showed Georgia and Asia Pacific at 2% in October 2026, the current table displays no FX rate for either region. Our listing now says so and advises checking the fee screen in the app. The recheck also confirmed Peru is virtual-card only, with no physical card supported yet.",
+    sourceLabel: "Bybit help center, Fees and Limits (Bybit Card), November 2026",
+    sourceUrl: "https://www.bybit.com/en/help-center/article/Fees-and-Spending-Limits-Bybit-Card",
+  },
+  {
+    date: "2026-11-26",
     type: "catalog-update",
     cardName: "Pionex Card",
     cardSlug: "pionex-card",
