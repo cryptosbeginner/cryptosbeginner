@@ -387,6 +387,13 @@ export default function NorwayCryptoLicensePage() {
             >
               Canada licensing guide
             </Link>
+
+            <Link
+              href="/regions/spain/crypto-license"
+              className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50"
+            >
+              Spain licensing guide
+            </Link>
           </div>
         </section>
 

@@ -670,6 +670,13 @@ export default function CanadaCryptoLicensePage() {
               </Link>
 
               <Link
+                href="/regions/spain/crypto-license"
+                className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
+              >
+                Spain licensing guide
+              </Link>
+
+              <Link
                 href="/methodology"
                 className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 hover:bg-white"
               >

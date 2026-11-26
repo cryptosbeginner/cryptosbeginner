@@ -17,7 +17,7 @@ export const metadata = {
   },
 };
 
-const UPDATED = "2026-08-07";
+const UPDATED = "2026-11-26";
 
 const platforms = [
   {
@@ -91,7 +91,7 @@ export default function SpainPage() {
             </div>
 
             <p className="text-sm font-medium text-indigo-600 mb-2">
-              Updated <time dateTime={UPDATED}>August 21, 2026</time> · By
+              Updated <time dateTime={UPDATED}>November 26, 2026</time> · By
               Sofia Bennett
             </p>
 
@@ -666,6 +666,30 @@ export default function SpainPage() {
                 </tr>
               </tbody>
             </table>
+          </div>
+        </section>
+
+        {/* Licensing guide */}
+        <section className="max-w-4xl mx-auto px-4 pb-12">
+          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-6">
+            <h2 className="text-xl font-bold text-indigo-950 mb-3">
+              Running a crypto business in Spain?
+            </h2>
+
+            <p className="text-sm leading-7 text-indigo-950">
+              The Banco de España VASP register closed on 1 July 2026 when
+              Spain&apos;s MiCA transition ended. Our licensing guide
+              explains the CNMV authorisation that replaced it, the
+              Article 60 route for banks, the capital tiers and the firms
+              on the register.
+            </p>
+
+            <Link
+              href="/regions/spain/crypto-license"
+              className="mt-4 inline-flex rounded-lg bg-slate-900 px-5 py-3 text-sm font-bold text-white hover:bg-slate-800"
+            >
+              Spain crypto licensing guide
+            </Link>
           </div>
         </section>
 
