@@ -103,6 +103,16 @@ export const CARD_NEWS: CardNewsEntry[] = [
     sourceLabel: "KeyOne official site, terms and fee schedule, November 2026",
   },
   {
+    date: "2026-11-25",
+    type: "catalog-update",
+    cardName: "MetaMask Card",
+    cardSlug: "metamask-card",
+    title: "MetaMask Card launches in Japan, Thailand and Vietnam",
+    details:
+      "MetaMask announced on 25 November 2026 that MetaMask Card is now available in Japan, Thailand and Vietnam, so users in the three countries can spend from their self-custodial MetaMask wallet anywhere Mastercard is accepted. The virtual card is free and issued instantly; the Metal tier is priced at $199 a year in the launch materials for the new markets. Supported assets, limits and fees vary by country. The listing's availability and regions are updated.",
+    sourceLabel: "MetaMask announcement, 25 November 2026",
+  },
+  {
     date: "2026-11-24",
     type: "catalog-update",
     cardName: "Bybit Card",
