@@ -7,14 +7,14 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/learn`;
 
 export const metadata: Metadata = {
-  title: "Learn Crypto: 30 Beginner Guides on Safety, Wallets, Privacy and Trading",
+  title: "Learn Crypto: 31 Beginner Guides on Safety, Wallets, Privacy and Trading",
   description:
-    "Browse all 30 CryptosBeginner guides: crypto basics, exchange safety, wallets, privacy coins, trading, DeFi staking, and neobanks. Updated November 2026.",
+    "Browse all 31 CryptosBeginner guides: crypto basics, exchange safety, wallets, privacy coins, trading, DeFi staking, and neobanks. Updated November 2026.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Learn Crypto: Beginner Guides on Safety, Wallets, Privacy and Trading",
     description:
-      "30 plain-English crypto guides covering security, self-custody, privacy coins, trading, staking, and digital banking.",
+      "31 plain-English crypto guides covering security, self-custody, privacy coins, trading, staking, and digital banking.",
     url: PAGE_URL,
     type: "website",
   },
@@ -37,7 +37,7 @@ const faqSchema = {
       name: "How many guides are in the CryptosBeginner learn section?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The learn section has 30 guides across 7 categories: Getting Started, Security and Safety, Wallets, Privacy, Trading Guides, DeFi and Staking, and Fintech. All guides are reviewed and updated, most recently in November 2026.",
+        text: "The learn section has 31 guides across 7 categories: Getting Started, Security and Safety, Wallets, Privacy, Trading Guides, DeFi and Staking, and Fintech. All guides are reviewed and updated, most recently in November 2026.",
       },
     },
   ],
