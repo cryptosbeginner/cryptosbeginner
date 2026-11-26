@@ -141,6 +141,7 @@ export default function CardDetail({ card }: { card: CardListing }) {
   const featureTags = card.featureTags ?? [card.network, ...card.cardFormats.slice(0, 2), card.categories[0]];
   const faqs = getCardFaqs(card);
   const rating = getCardRating(card);
+  const barColor = (s: number) => (s >= 8 ? "bg-emerald-500" : s >= 6 ? "bg-lime-500" : s >= 4 ? "bg-amber-500" : "bg-rose-500");
   const recentNews = CARD_NEWS.filter((entry) => entry.cardSlug === card.slug).slice(0, 3);
   const newsDate = (iso: string) => {
     const [y, m, d] = iso.split("-").map(Number);
@@ -160,6 +161,35 @@ export default function CardDetail({ card }: { card: CardListing }) {
         {card.cashbackBands && card.cashbackBands.length > 0 && <CashbackBandsTable bands={card.cashbackBands} />}
         <WorkedExamples slug={card.slug} />
         {card.featureFlags && <FeatureFlagsRow flags={card.featureFlags} />}
+        <section className="mt-5 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-200/20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-700">CryptosBeginner rating</p>
+              <h2 className="mt-3 text-2xl font-black">How this card scores</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-500">
+                Five weighted categories, scored from the structured data on this listing.
+                {rating.status === "provisional"
+                  ? " This rating is provisional: the provider has not published full structured fee and cashback terms, so some categories are scored from limited data and will update when they do."
+                  : " The score is calculated from published fee, cashback, custody and availability data, not from reader reviews."}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-5xl font-black tracking-[-0.04em]">{rating.score.toFixed(1)}<span className="text-xl text-slate-400">/10</span></p>
+              <Link href="/crypto-cards#how-we-rate" className="text-xs font-black text-fuchsia-700 hover:text-fuchsia-900">How we rate →</Link>
+            </div>
+          </div>
+          <div className="mt-6 space-y-4">
+            {rating.breakdown.map((b) => (
+              <div key={b.category} className="grid items-center gap-2 sm:grid-cols-[190px_1fr_70px]">
+                <p className="text-sm font-bold text-slate-700">{b.category} <span className="font-semibold text-slate-400">({b.weight}%)</span></p>
+                <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
+                  <div className={`h-full rounded-full ${barColor(b.score)}`} style={{ width: `${Math.max(4, b.score * 10)}%` }} />
+                </div>
+                <p className="text-sm font-black text-slate-950 sm:text-right">{b.score.toFixed(1)} / 10</p>
+              </div>
+            ))}
+          </div>
+        </section>
         <section className="mt-5 grid gap-5 lg:grid-cols-[1.1fr_.9fr]"><div className="rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-200/20"><p className="text-xs font-black uppercase tracking-[0.17em] text-cyan-700">Getting started</p><h2 className="mt-3 text-2xl font-black">How people apply</h2><p className="mt-4 text-sm leading-7 text-slate-600">{card.applicationMethod ?? "Start with the provider’s official onboarding flow, then confirm the card, issuer, and funding terms for your region."}</p><div className="mt-5 flex flex-wrap gap-3">{card.feesUrl && <a href={card.feesUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs font-black text-slate-800 hover:bg-slate-100">Open fee details ↗</a>}{card.updateUrl && <a href={card.updateUrl} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs font-black text-slate-800 hover:bg-slate-100">{card.updateLabel ?? "Open provider updates"} ↗</a>}</div></div><div className="rounded-[1.75rem] border border-fuchsia-100 bg-fuchsia-50 p-7"><p className="text-xs font-black uppercase tracking-[0.17em] text-fuchsia-800">What changed recently</p><h2 className="mt-3 text-2xl font-black text-slate-950">Update trail</h2><p className="mt-4 text-sm leading-7 text-slate-700">{card.updateNote ?? "The provider’s current product page is the update source. Fees, eligibility, rewards, and availability should be rechecked before applying."}</p><p className="mt-5 text-xs font-semibold leading-5 text-slate-500">Last editorial check: {card.reviewedAt}. CryptosBeginner does not automatically guarantee that provider pages remain unchanged after this date.</p></div></section>
         {recentNews.length > 0 && (
           <section className="mt-5 rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-lg shadow-slate-200/20">

@@ -94,6 +94,15 @@ export default function SpendingPage() {
   const lflKeys = PROGRAM_KEYS.filter((k) => firstMonth[k] > 0);
   const lflFirst = lflKeys.reduce((s, k) => s + firstMonth[k], 0);
   const lflLatest = lflKeys.reduce((s, k) => s + latestSeriesMonth[k], 0);
+  const maxSharePct = Math.max(...OCTOBER_2026_PROGRAMS.map((p) => p.sharePct));
+  const TREND_SLUGS: Record<string, string> = {
+    redotpay: "redotpay-card",
+    etherfi: "etherfi-cash-card",
+    kast: "kast-card",
+    wirexOne: "wirex-one-card",
+    karta: "karta-card",
+    plasmaOne: "plasma-one-card",
+  };
   const octoberNamed = OCTOBER_2026_PROGRAMS.reduce((sum, p) => sum + p.spendUsd, 0);
 
   return (
@@ -205,7 +214,12 @@ export default function SpendingPage() {
                       )}
                     </td>
                     <td className="px-4 py-3 font-bold text-slate-900">{formatSpend(p.spendUsd)}</td>
-                    <td className="px-4 py-3">{p.sharePct}%</td>
+                    <td className="px-4 py-3">
+                      <span className="font-bold text-slate-900">{p.sharePct}%</span>
+                      <span className="mt-1 block h-1.5 w-24 overflow-hidden rounded-full bg-slate-100">
+                        <span className="block h-full rounded-full bg-emerald-500" style={{ width: `${(p.sharePct / maxSharePct) * 100}%` }} />
+                      </span>
+                    </td>
                     <td className={`px-4 py-3 ${pctClass(p.vsPrevPct)}`}>{formatSignedPct(p.vsPrevPct)}</td>
                     <td className="px-4 py-3">{p.avgPaymentUsd ? `$${p.avgPaymentUsd}` : "n/a"}</td>
                     <td className="px-4 py-3">{p.monthToDateUsd ? formatSpend(p.monthToDateUsd) : "n/a"}</td>
@@ -274,6 +288,58 @@ export default function SpendingPage() {
               ))}
             </div>
           </div>
+          <h2 className="mt-14 text-2xl font-black tracking-[-0.02em] text-slate-950">Each big program&apos;s year</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
+            The stacked chart shows the market; these show the shape of each program on its
+            own. Bars are scaled per program, so compare the shape and the direction, not
+            the heights across cards. The pale bars are earlier months; the solid bar is
+            October 2026.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SERIES_KEYS.filter(({ key }) => key !== "allOther").map(({ key, label, color }) => {
+              const values = MONTHLY_SERIES.map((m) => m[key]);
+              const max = Math.max(...values);
+              const firstIdx = values.findIndex((v) => v > 0);
+              const firstVal = values[firstIdx];
+              const lastVal = values[values.length - 1];
+              const changeText =
+                firstIdx === 0
+                  ? `${formatSignedPct(Math.round(((lastVal - firstVal) / firstVal) * 1000) / 10)} since Nov 2025`
+                  : `First tracked ${MONTHLY_SERIES[firstIdx].label} at ${formatSpend(firstVal)}`;
+              return (
+                <div key={key} className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <p className="font-black text-slate-950">
+                      <Link href={`/crypto-cards/${TREND_SLUGS[key]}`} className="hover:text-emerald-700">
+                        {label}
+                      </Link>
+                    </p>
+                    <p className="text-lg font-black text-slate-950">{formatSpend(lastVal)}</p>
+                  </div>
+                  <p className="mt-0.5 text-xs font-semibold text-slate-500">{changeText}</p>
+                  <div className="mt-3 flex h-16 items-end gap-[3px]">
+                    {values.map((v, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-t-sm"
+                        style={{
+                          height: `${v === 0 ? 2 : Math.max(4, (v / max) * 100)}%`,
+                          backgroundColor: color,
+                          opacity: i === values.length - 1 ? 1 : 0.5,
+                        }}
+                        title={`${MONTHLY_SERIES[i].label}: ${formatSpend(v)}`}
+                      />
+                    ))}
+                  </div>
+                  <div className="mt-1.5 flex justify-between text-[10px] font-bold text-slate-400">
+                    <span>Nov 2025</span>
+                    <span>Oct 2026</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>

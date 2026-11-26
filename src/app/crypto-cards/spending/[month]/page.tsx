@@ -122,7 +122,14 @@ export default async function MonthlySpendReportPage({ params }: Props) {
                     <tr key={row.key} className="border-b border-slate-100 last:border-0">
                       <td className="px-4 py-3 font-black"><Link href={`/crypto-cards/${row.slug}`} className="hover:text-fuchsia-700">{row.name}</Link></td>
                       <td className="px-4 py-3">{value > 0 ? formatSpend(value) : "Not tracked"}</td>
-                      <td className="px-4 py-3">{value > 0 ? `${((value / total) * 100).toFixed(1)}%` : "n/a"}</td>
+                      <td className="px-4 py-3">{value > 0 ? (
+                        <>
+                          <span className="font-bold">{((value / total) * 100).toFixed(1)}%</span>
+                          <span className="mt-1 block h-1.5 w-20 overflow-hidden rounded-full bg-slate-100">
+                            <span className="block h-full rounded-full bg-fuchsia-500" style={{ width: `${Math.min(100, (value / Math.max(entry.redotpay, entry.allOther)) * 100)}%` }} />
+                          </span>
+                        </>
+                      ) : "n/a"}</td>
                       <td className="px-4 py-3 text-slate-500">{row.basis}</td>
                     </tr>
                   );
@@ -130,7 +137,12 @@ export default async function MonthlySpendReportPage({ params }: Props) {
                 <tr>
                   <td className="px-4 py-3 font-black">All other programs and unattributed issuer flows</td>
                   <td className="px-4 py-3">{formatSpend(entry.allOther)}</td>
-                  <td className="px-4 py-3">{((entry.allOther / total) * 100).toFixed(1)}%</td>
+                  <td className="px-4 py-3">
+                    <span className="font-bold">{((entry.allOther / total) * 100).toFixed(1)}%</span>
+                    <span className="mt-1 block h-1.5 w-20 overflow-hidden rounded-full bg-slate-100">
+                      <span className="block h-full rounded-full bg-slate-400" style={{ width: `${Math.min(100, (entry.allOther / Math.max(entry.redotpay, entry.allOther)) * 100)}%` }} />
+                    </span>
+                  </td>
                   <td className="px-4 py-3 text-slate-500">Mixed</td>
                 </tr>
               </tbody>
