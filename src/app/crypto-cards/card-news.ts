@@ -14,6 +14,27 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-26",
+    type: "catalog-update",
+    cardName: "Goblin Card",
+    cardSlug: "goblin-card",
+    title: "Goblin Card does publish a restricted-country list: 47 countries, and our listing is corrected",
+    details:
+      "A country-list roundup prompted a recheck of Goblin's site. Our listing said no official restricted-country list is published; that is wrong. Goblin's features page lists 47 restricted countries, including Nigeria, Vietnam, the Philippines, Russia and the EU members Bulgaria, Croatia and Slovenia, with Ukraine restricted only in the Donetsk and Luhansk regions. The listing's availability text is corrected. The same recheck verified SolCard's 13-country list and Trocador's 11-country Obsidian spend list exactly as our listings already state them.",
+    sourceLabel: "Goblin Card official features page, November 2026",
+    sourceUrl: "https://www.goblincards.com/features",
+  },
+  {
+    date: "2026-11-26",
+    type: "catalog-update",
+    cardName: "Laso Card",
+    cardSlug: "laso-card",
+    title: "Laso's prohibited list counts 91 countries in the User Agreement, not 26",
+    details:
+      "The same country-list recheck corrected our Laso listing, which said the User Agreement lists 26 prohibited regions. The agreement's list as currently published counts 91 countries, and it includes India, Nigeria and Latvia, none of which our listing named. A separate, shorter list of 27 countries applies to Laso's newer reloadable card and does not include India, Turkey, Nigeria or Latvia. The listing now sets out both lists and which card type each governs. A widely shared post put the Laso list at 100 countries; the count from the terms is 91.",
+    sourceLabel: "Laso User Agreement and API documentation, November 2026",
+  },
+  {
+    date: "2026-11-26",
     type: "fee-change",
     cardName: "Plasma One Card",
     cardSlug: "plasma-one-card",
