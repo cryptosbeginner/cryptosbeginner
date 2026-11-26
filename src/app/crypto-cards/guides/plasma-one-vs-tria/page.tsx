@@ -40,7 +40,7 @@ const faqItems = [
   {
     question: "Which has better cashback, Plasma One or Tria?",
     answer:
-      "It depends on your spending level and whether you want to lock tokens. Tria's headline rates are higher: 1.5% on Lite ($20/year), 4.5% on Pro ($109/year), and 6% on Max ($250/year). Plasma One offers 2% on the free Lite tier, 3% on Premium ($600/year or 20K XPL lock; the tier was called Core until November 2026), and 4% on Platinum (100K XPL lock, promotional rate rising to 150K XPL). But headline rates only apply within monthly caps: Tria caps the top rate at the first $1,000 (Lite/Pro) or $2,000 (Max) of monthly spend, while Plasma One caps at the first $500 (Lite), $1,000 (Premium), or $3,000 (Platinum). Always do the math on your actual monthly spend.",
+      "It depends on your spending level and whether you want to lock tokens. Tria's headline rates are higher: 1.5% on Lite ($20/year), 4.5% on Pro ($109/year), and 6% on Max ($250/year). Plasma One offers 1% on the free Standard tier for new members, 2% on Premium ($600/year or 20K XPL lock; the tiers were called Lite and Core until November 2026), and 3% on Platinum ($2,500/year or 100K XPL lock). Members who joined before 11 November 2026 keep higher grandfathered bands until their term ends. Headline rates only apply within monthly caps: Tria caps the top rate at the first $1,000 (Lite/Pro) or $2,000 (Max) of monthly spend, while Plasma One caps the top band at the first $500 (Standard), $1,000 (Premium), or $3,000 (Platinum). Always do the math on your actual monthly spend.",
   },
   {
     question: "Does Tria really offer 50x leverage on perps?",
@@ -152,28 +152,28 @@ export default function PlasmaOneVsTriaPage() {
                   <td className="px-5 py-4">$2,000/mo</td>
                 </tr>
                 <tr className="bg-indigo-50/50">
-                  <td className="px-5 py-4 font-bold">Plasma One Lite</td>
+                  <td className="px-5 py-4 font-bold">Plasma One Standard</td>
                   <td className="px-5 py-4">Free</td>
-                  <td className="px-5 py-4 font-bold text-emerald-700">2%</td>
+                  <td className="px-5 py-4 font-bold text-emerald-700">1%*</td>
                   <td className="px-5 py-4">$500/mo</td>
                 </tr>
                 <tr className="bg-indigo-50/50">
                   <td className="px-5 py-4 font-bold">Plasma One Premium</td>
                   <td className="px-5 py-4">$600/year or 20K XPL lock</td>
-                  <td className="px-5 py-4 font-bold text-emerald-700">3%</td>
+                  <td className="px-5 py-4 font-bold text-emerald-700">2%*</td>
                   <td className="px-5 py-4">$1,000/mo</td>
                 </tr>
                 <tr className="bg-indigo-50/50">
                   <td className="px-5 py-4 font-bold">Plasma One Platinum</td>
-                  <td className="px-5 py-4">100K XPL lock*</td>
-                  <td className="px-5 py-4 font-bold text-emerald-700">4%</td>
+                  <td className="px-5 py-4">$2,500/year or 100K XPL lock</td>
+                  <td className="px-5 py-4 font-bold text-emerald-700">3%*</td>
                   <td className="px-5 py-4">$3,000/mo</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <GuideP>
-            * The 100,000 XPL Platinum lock is a promotional rate. Plasma's help center states it rises to 150,000 XPL after the promotional period. Factor that into any long-term calculation.
+            * Plasma One rates are the new-member top bands from 11 November 2026; members who joined earlier keep their previous, higher bands until their term ends. The 100,000 XPL Platinum lock is a promotional rate: Plasma's help center states it rises to 150,000 XPL after the promotional period. Factor that into any long-term calculation.
           </GuideP>
 
           <GuideH2>Foreign exchange fees</GuideH2>

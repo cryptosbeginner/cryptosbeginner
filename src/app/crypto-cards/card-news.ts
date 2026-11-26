@@ -14,6 +14,28 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-26",
+    type: "fee-change",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One tier table corrected to the new-member cashback bands",
+    details:
+      "A reader graphic comparing Plasma One in June and now prompted a full recheck against the Plasma help center. Our listing's prose had the new tiers right, but its structured tier table was still showing the pre-11 November schedule as if current: Premium at 3%, 2% and 1% bands and Platinum at 4%. Those are the grandfathered rates for members who joined before 11 November 2026. The bands for new members are Standard 1% on the first $500 a month, Premium 2% on the first $1,000 then 1% and 0.25%, and Platinum 3% on the first $3,000, 2% through $10,000 and 1% above. The listing table, the review and the Plasma One vs Tria guide are corrected; the grandfathered bands remain set out in the listing text. The same check caught the graphic's own error: June's Core price was $199 a year, not the $120 it shows.",
+    sourceLabel: "Plasma help center, cashback rates and spend bands by tier (updated 25 November 2026)",
+    sourceUrl: "https://intercom.help/plasma-6c43763cd799/en/articles/15506768-cashback-rates-and-spend-bands-by-tier",
+  },
+  {
+    date: "2026-11-25",
+    type: "catalog-update",
+    cardName: "Plasma One Card",
+    cardSlug: "plasma-one-card",
+    title: "Plasma One Membership Terms replace the Rewards Addendum",
+    details:
+      "Plasma emailed members that new Plasma One Membership Terms took effect on 25 November 2026, replacing the Rewards Addendum. Plasma states that membership, rates, limits and eligibility are unchanged; the terms add sections on how Spending Credit refunds work, how membership renewal works, and how gifting a membership will work once available. One wording difference worth knowing: the terms describe renewal as opt-in only, while the help center describes paid memberships as renewing automatically with an opt-out. The review flags the discrepancy; check the renewal setting in the app before your term ends.",
+    sourceLabel: "Plasma One Membership Terms (25 November 2026) and member email",
+    sourceUrl: "https://www.plasma.org/plasma-one-rewards",
+  },
+  {
+    date: "2026-11-26",
     type: "launch",
     cardName: "Ezzocard",
     cardSlug: "ezzocard",

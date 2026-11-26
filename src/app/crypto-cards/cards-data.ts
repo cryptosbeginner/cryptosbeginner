@@ -4390,12 +4390,12 @@ export const cardListings: CardListing[] = [
     editorialSummary:
       "Plasma One is a self-custodial Visa card for stablecoin spending, issued through Rain's card infrastructure. Global account services are powered by Bridge. It uses three tiers: Standard (formerly Lite) is free, Premium (renamed from Core on 11 November 2026) costs $600 per year or requires a 20,000 XPL lock, and Platinum costs $2,500 per year or a 100,000 XPL lock. For members joining from 11 November 2026, cashback pays 1% on Standard (on the first $500 of monthly spend), 2% stepping down in bands on Premium, and 3% stepping down in bands on Platinum; members who joined earlier keep their previous, higher bands until their current term ends. Premium charges 0% FX on the first $3,000 of monthly card spend, Platinum charges 0% FX overall, and Standard carries a 1% FX markup. In October 2026 Plasma announced a Stripe partnership for multi-currency stablecoin cards.",
     bestFor:
-      "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 4% cashback.",
+      "High-spending stablecoin users who can justify a paid tier or XPL lock for up to 3% cashback.",
     availability:
       "Provider does not publish a specific country list on the reviewed page.",
     regions: ["North America", "Europe", "Asia"],
     pricing:
-      "Physical card free; delivery $20, free on Platinum (via @0xVishnya, November 2026). Standard tier (formerly Lite) free; Premium (formerly Core) $600 per year or 20,000 XPL lock (about $1,050 at November 2026 prices); Platinum costs $2,500 per year or a 100,000 XPL lock. FX: 0% on the first $3,000 of monthly card spend on Premium (Core previously charged 0.5% plus about 1% Visa network FX), 0% on Platinum, 1% markup on Standard plus a Visa network FX fee of about 1%. Bank withdrawals: 0.75% to 1% on Standard, 0.25% to 0.35% on Premium. Existing Core members keep their current benefits until their term ends, then renew at the Premium price with at least 30 days notice.",
+      "Physical card free; delivery $20, free on Platinum (via @0xVishnya, November 2026). Standard tier (formerly Lite) free; Premium (formerly Core) $600 per year or 20,000 XPL lock (about $1,050 at November 2026 prices); Platinum costs $2,500 per year or a 100,000 XPL lock. FX: 0% on the first $3,000 of monthly card spend on Premium (after the $3,000 allowance, 0.5% plus about 1% Visa network FX applies; Core previously charged that on every purchase), 0% on Platinum, 1% markup on Standard plus a Visa network FX fee of about 1%. Bank withdrawals: 0.75% to 1% on Standard, 0.25% to 0.35% on Premium. Existing Core members keep their current benefits until their term ends, then renew at the Premium price with at least 30 days notice.",
     rewards:
       "XPL cashback for members joining from 11 November 2026: Standard pays 1% on the first $500 a month, then 0.1%; Premium pays 2% on the first $1,000, 1% on the next $1,000, then 0.25%; Platinum pays 3% on the first $3,000, 2% on the next $7,000, then 1%. Members who joined before 11 November keep their previous bands until their current term ends (Standard members keep 2% on the first $500; Premium members keep 3% on the first $1,000, then 2%, 1% and 0.25%). Premium's AI benefit is a $200 per year AI spend credit, allocated monthly across an expanded list of AI providers; it replaced the old Core AI cashback bands and ChatGPT Go rebate on 11 November 2026. Premium also adds local merchant rewards in Dubai, London and New York. Platinum carries a $500 per year AI spend credit (via @0xVishnya).",
     funding: "Spends self-custodied stablecoins through the Plasma card program, issued via Rain infrastructure. Direct ETH and HYPE deposits and spending were added on October 28, 2026. Stablecoin balances can earn yield through DeFi protocols within the Plasma ecosystem. Crypto deposits carry a Plasma fee of 0.15% to 0.75% on every tier, plus network and bridge fees; a swap fee applies to USDC deposits, while USDT deposits skip the swap fee.",
@@ -4431,11 +4431,14 @@ export const cardListings: CardListing[] = [
     referralUrl: "https://go.cryptosbeginner.com/Plasma",
     referralLabel: "Get the Plasma One Card",
     cashbackBands: [
-      { tier: "Lite", ratePct: 2, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
-      { tier: "Premium", ratePct: 3, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
-      { tier: "Premium", ratePct: 2, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
+      { tier: "Standard", ratePct: 1, spendBand: "first $500/mo", bandCapUsd: 500, rewardAsset: "XPL" },
+      { tier: "Standard", ratePct: 0.1, spendBand: "above $500/mo", rewardAsset: "XPL" },
+      { tier: "Premium", ratePct: 2, spendBand: "first $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
       { tier: "Premium", ratePct: 1, spendBand: "next $1,000/mo", bandCapUsd: 1000, rewardAsset: "XPL" },
-      { tier: "Platinum", ratePct: 4, spendBand: "first $3,000/mo", bandCapUsd: 3000, rewardAsset: "XPL" },
+      { tier: "Premium", ratePct: 0.25, spendBand: "above $2,000/mo", rewardAsset: "XPL" },
+      { tier: "Platinum", ratePct: 3, spendBand: "first $3,000/mo", bandCapUsd: 3000, rewardAsset: "XPL" },
+      { tier: "Platinum", ratePct: 2, spendBand: "next $7,000/mo", bandCapUsd: 7000, rewardAsset: "XPL" },
+      { tier: "Platinum", ratePct: 1, spendBand: "above $10,000/mo", rewardAsset: "XPL" },
     ],
   },
   {
