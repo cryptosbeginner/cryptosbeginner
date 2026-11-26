@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import { GuideH2, GuideP, Callout, StepList, BulletList } from "../GuideStyles";
+import CatalogStats from "../../CatalogStats";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/how-crypto-cards-work`;
@@ -219,6 +220,13 @@ export default function HowCryptoCardsWorkGuide() {
               </table>
             </div>
 
+            <GuideH2>The market in numbers, from our directory</GuideH2>
+            <GuideP>
+              Guides describe how these cards work in general. The directory shows what the
+              market actually looks like right now: how many cards publish a cashback rate,
+              how many charge no annual fee, and how the networks and custody models split.
+            </GuideP>
+            <CatalogStats />
             <GuideH2>What to check before getting one</GuideH2>
             <BulletList items={[
               <span key="1">Which <strong className="text-slate-950">funding model</strong> it uses: top-up or direct spend.</span>,

@@ -370,6 +370,7 @@ export default function CardsDirectory() {
             ))}
           </div>
           <p className="mt-5 text-xs leading-6 text-slate-500">A rating is a comparison shortcut, not a recommendation. Provider terms change; the linked official source on each profile is the final word.</p>
+          <Link href="/crypto-cards/how-we-rate" className="mt-4 inline-block text-sm font-black text-fuchsia-700 hover:text-fuchsia-900">Read the full ratings guide, with a worked example →</Link>
         </div>
       </section>
 

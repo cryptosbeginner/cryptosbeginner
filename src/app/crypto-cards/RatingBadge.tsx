@@ -41,7 +41,7 @@ export default function RatingBadge({ rating, compact = false }: { rating: CardR
           {provisional && (
             <span className="mt-2 block text-[11px] leading-5 text-slate-500">Provisional: limited fee and rewards data. The score updates automatically when the provider publishes structured fee and cashback terms.</span>
           )}
-          <a href="/crypto-cards#how-we-rate" className="mt-2 inline-block text-xs font-black text-fuchsia-700 hover:text-fuchsia-900">How we rate →</a>
+          <a href="/crypto-cards/how-we-rate" className="mt-2 inline-block text-xs font-black text-fuchsia-700 hover:text-fuchsia-900">How we rate →</a>
         </span>
       )}
     </span>

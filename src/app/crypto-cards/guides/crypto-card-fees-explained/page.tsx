@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthorByline from "@/components/AuthorByline";
 import { GuideH2, GuideH3, GuideP, Callout, StepList, BulletList, WarningList } from "../GuideStyles";
+import CatalogStats from "../../CatalogStats";
 
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/guides/crypto-card-fees-explained`;
@@ -167,6 +168,13 @@ export default function CryptoCardFeesGuide() {
               Less common but worth checking: monthly inactivity fees on dormant accounts, card replacement fees, chargeback fees, and fees for paper statements or premium support. Read the full schedule, not just the summary.
             </Callout>
 
+            <GuideH2>The fee picture across our directory</GuideH2>
+            <GuideP>
+              Before the comparison method, the landscape: how the cards in our directory
+              actually split on the things this guide covers, including how many state no
+              annual fee at all.
+            </GuideP>
+            <CatalogStats />
             <GuideH2>How to compare the true cost</GuideH2>
             <GuideP>Ignore the marketing and build your own comparison for your usage:</GuideP>
             <StepList steps={[
