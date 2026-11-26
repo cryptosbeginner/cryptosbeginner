@@ -15,6 +15,48 @@ export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-26",
     type: "catalog-update",
+    cardName: "Pionex Card",
+    cardSlug: "pionex-card",
+    title: "Pionex physical card applications are closed",
+    details:
+      "A physical-card cost roundup prompted a check of Pionex's help center, which states plainly: physical card applications are not currently open, and the physical card was offered only as a limited-time promotion that has now closed. Our listing previously discussed the physical Visa's ATM fee without saying a physical card cannot currently be applied for; the pricing text now leads with the closure.",
+    sourceLabel: "Pionex help center, November 2026",
+    sourceUrl: "https://help.pionex.com/en/articles/14616377",
+  },
+  {
+    date: "2026-11-26",
+    type: "catalog-update",
+    cardName: "MetaMask Card",
+    cardSlug: "metamask-card",
+    title: "MetaMask Metal orders have been paused since 2 June 2026",
+    details:
+      "MetaMask's help center states that orders for the MetaMask Metal card are temporarily paused as of 2 June 2026, and that users in eligible regions can sign up for a Virtual card today. Our listing's wording, that MetaMask has at times closed Metal to new applicants, understated a dated, standing pause; it now states the pause and its date. The $199 a year Metal price from the November 2026 launch materials for Japan, Thailand and Vietnam stands, but the card cannot be ordered while the pause lasts.",
+    sourceLabel: "MetaMask help center, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "fee-change",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "ether.fi Core physical card: shipping is charged separately, and Luxe and Pinnacle include free cards",
+    details:
+      "The same physical-card recheck corrected our ether.fi listing, which said delivery was free on the strength of a third-party post. Per ether.fi's help center, the $50 Core physical card carries shipping charged separately. The listing also omitted the free physical allowances: Luxe includes one free physical card (then $100), Pinnacle includes two (then $100), and VIP is free. A widely shared post describes the Core card as $50 including shipping; that is not the official position.",
+    sourceLabel: "ether.fi help center, November 2026",
+  },
+  {
+    date: "2026-11-26",
+    type: "promo",
+    cardName: "Bitget Wallet Card",
+    cardSlug: "bitget-wallet-card",
+    title: "Bitget Wallet physical card at $25 including shipping for APAC, until 31 December 2026",
+    details:
+      "Our Bitget Wallet listing covered only the virtual card's activation fees and omitted the physical card entirely. Per Bitget's official campaign page, the physical card costs $25 including international shipping (reduced from $49) in APAC markets including South Korea, Japan, Vietnam, Malaysia, Taiwan, Australia, Thailand and the Philippines, in a campaign running from 29 October to 31 December 2026. The listing is updated.",
+    sourceLabel: "Bitget Wallet official campaign page, November 2026",
+    sourceUrl: "https://web3.bitget.com/hot-trend-news/1452",
+  },
+  {
+    date: "2026-11-26",
+    type: "catalog-update",
     cardName: "Goblin Card",
     cardSlug: "goblin-card",
     title: "Goblin Card does publish a restricted-country list: 47 countries, and our listing is corrected",
