@@ -13,6 +13,7 @@ import {
   OCTOBER_2026_VS_SEP_PCT,
   MONTHLY_SERIES,
   SPEND_BASIS_LABELS,
+  SPEND_TRACKED_COUNT,
   formatSignedPct,
   formatSpend,
   monthTotal,
@@ -84,6 +85,15 @@ function pctClass(pct: number | null): string {
 
 export default function SpendingPage() {
   const maxTotal = Math.max(...MONTHLY_SERIES.map(monthTotal));
+  const firstMonth = MONTHLY_SERIES[0];
+  const latestSeriesMonth = MONTHLY_SERIES[MONTHLY_SERIES.length - 1];
+  const trailingTotal = MONTHLY_SERIES.reduce((s, m) => s + monthTotal(m), 0);
+  const firstTotal = monthTotal(firstMonth);
+  const latestTotal = monthTotal(latestSeriesMonth);
+  const PROGRAM_KEYS = ["redotpay", "etherfi", "kast", "wirexOne", "karta", "plasmaOne"] as const;
+  const lflKeys = PROGRAM_KEYS.filter((k) => firstMonth[k] > 0);
+  const lflFirst = lflKeys.reduce((s, k) => s + firstMonth[k], 0);
+  const lflLatest = lflKeys.reduce((s, k) => s + latestSeriesMonth[k], 0);
   const octoberNamed = OCTOBER_2026_PROGRAMS.reduce((sum, p) => sum + p.spendUsd, 0);
 
   return (
@@ -292,6 +302,41 @@ export default function SpendingPage() {
             </table>
           </div>
 
+          <h2 className="mt-14 text-2xl font-black tracking-[-0.02em] text-slate-950">The year in numbers</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">
+            Twelve complete months of tracked spend, November 2025 to October 2026. The
+            like-for-like figure counts only the programs tracked in both the first and the
+            latest month, so it strips out growth that is really just wider coverage.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Spent in 12 months</p>
+              <p className="mt-2 text-3xl font-black text-slate-950">{formatSpend(trailingTotal)}</p>
+              <p className="mt-1 text-xs font-semibold text-slate-500">Nov 2025 to Oct 2026, all tracked programs</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Monthly total, then and now</p>
+              <p className="mt-2 text-3xl font-black text-slate-950">{formatSpend(firstTotal)} → {formatSpend(latestTotal)}</p>
+              <p className="mt-1 text-xs font-semibold text-slate-500">{(latestTotal / firstTotal).toFixed(1)}x the November 2025 month</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Like-for-like growth</p>
+              <p className="mt-2 text-3xl font-black text-slate-950">{(lflLatest / lflFirst).toFixed(1)}x</p>
+              <p className="mt-1 text-xs font-semibold text-slate-500">Same {lflKeys.length} programs in both months: {formatSpend(lflFirst)} → {formatSpend(lflLatest)}</p>
+            </div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">Programs in the latest table</p>
+              <p className="mt-2 text-3xl font-black text-slate-950">{SPEND_TRACKED_COUNT}</p>
+              <p className="mt-1 text-xs font-semibold text-slate-500">With per-program figures for {LATEST_SPEND_MONTH}</p>
+            </div>
+          </div>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a href="/api/spending/monthly.csv" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Download the monthly series (CSV)</a>
+            <a href="/api/spending/monthly" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Get it as JSON</a>
+            <Link href="/crypto-cards/spending/methodology" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">How this is measured →</Link>
+            <Link href="/crypto-cards/effective-cashback" className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700">Rewards calculator →</Link>
+          </div>
+
           <h2 className="mt-14 text-2xl font-black tracking-[-0.02em] text-slate-950">Monthly spend reports</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">One report per month: the total, the change on the month before, and the largest tracked programs.</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -389,7 +434,13 @@ export default function SpendingPage() {
               <Link href="/crypto-cards" className="font-bold text-emerald-700 hover:text-emerald-900">
                 card directory and reviews
               </Link>{" "}
-              for fees, custody and risk detail before choosing a card.
+              for fees, custody and risk detail before choosing a card. The full
+              methodology, including why other publishers show different totals for the
+              same month, is on the{" "}
+              <Link href="/crypto-cards/spending/methodology" className="font-bold text-emerald-700 hover:text-emerald-900">
+                methodology page
+              </Link>
+              .
             </p>
           </div>
 

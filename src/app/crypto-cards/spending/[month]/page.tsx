@@ -143,6 +143,7 @@ export default async function MonthlySpendReportPage({ params }: Props) {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Link href="/crypto-cards/spending" className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white hover:bg-fuchsia-700">Open the spend tracker →</Link>
+            <Link href="/crypto-cards/spending/methodology" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">How this is measured →</Link>
             {isLatest && <Link href="/crypto-cards" className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-slate-800 hover:bg-slate-50">Browse the card directory →</Link>}
           </div>
 
