@@ -9,8 +9,8 @@ import PreferredSourceBadge from "@/components/PreferredSourceBadge";
 const SITE_URL = "https://www.cryptosbeginner.com";
 const PAGE_URL = `${SITE_URL}/crypto-cards/solid-review`;
 
-const UPDATED = "21 October 2026";
-const UPDATED_ISO = "2026-10-21";
+const UPDATED = "November 27, 2026";
+const UPDATED_ISO = "2026-11-27";
 
 const SOLID = "https://www.solid.xyz/refer?ref=4Z0ZE";
 
@@ -64,7 +64,7 @@ const faqItems = [
   {
     question: "What are the Solid Rewards tiers and how do I unlock them?",
     answer:
-      "Everyone starts at Core. Prime unlocks with a $199 per year subscription or by locking 50,000 FUSE for 12 months. Ultra requires locking 400,000 FUSE for 12 months. Higher tiers raise your cashback rate and cap, and cut or remove fees on bank deposits and swaps. Locked FUSE cannot be withdrawn before the unlock date.",
+      "Everyone starts at Core. Prime unlocks with a $199 per year subscription or by locking 70,000 FUSE for 12 months. Ultra requires locking 600,000 FUSE for 12 months. The lock amounts rose on 12 October 2026; locks opened before that date keep the earlier amounts, 50,000 FUSE for Prime and 400,000 for Ultra, for their full term. Higher tiers raise your cashback rate and cap, and cut or remove fees on bank deposits and swaps. Locked FUSE cannot be withdrawn before the unlock date.",
   },
   {
     question: "What is the difference between Savings Mode and Borrow Mode?",
@@ -364,8 +364,9 @@ export default function SolidReviewPage() {
               </li>
               <li>
                 <strong className="text-slate-950">Tiers cost money or lockup.</strong>{" "}
-                Prime is $199/year or 50,000 FUSE locked 12 months; Ultra
-                needs 400,000 FUSE locked 12 months.
+                Prime is $199/year or 70,000 FUSE locked 12 months; Ultra
+                needs 600,000 FUSE locked 12 months. Locks opened before
+                12 October 2026 keep the earlier 50,000 and 400,000 amounts.
               </li>
             </ul>
           </div>
@@ -593,8 +594,8 @@ export default function SolidReviewPage() {
                 <tr className="border-b border-slate-100">
                   <td className="py-3 pr-4">How to unlock</td>
                   <td className="py-3 pr-4 text-right font-bold">Everyone</td>
-                  <td className="py-3 pr-4 text-right font-bold">$199/year or lock 50,000 FUSE 12 mo</td>
-                  <td className="py-3 text-right font-bold">Lock 400,000 FUSE 12 mo</td>
+                  <td className="py-3 pr-4 text-right font-bold">$199/year or lock 70,000 FUSE 12 mo</td>
+                  <td className="py-3 text-right font-bold">Lock 600,000 FUSE 12 mo</td>
                 </tr>
               </tbody>
             </table>
@@ -774,7 +775,7 @@ export default function SolidReviewPage() {
             <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
               <p className="font-black text-rose-900">Cons</p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-800">
-                <li>Prime costs $199/year or a 50,000 FUSE 12-month lock; Ultra needs 400,000 FUSE locked</li>
+                <li>Prime costs $199/year or a 70,000 FUSE 12-month lock; Ultra needs 600,000 FUSE locked</li>
                 <li>Monthly cashback caps ($50/$100/$200) limit heavy spenders</li>
                 <li>Cashback paid 14 days after settlement, not instantly</li>
                 <li>No published global country list; EU payments still launching</li>
@@ -798,7 +799,7 @@ export default function SolidReviewPage() {
             <strong className="text-slate-950">FUSE lockup risk.</strong>{" "}
             Prime and Ultra require locking FUSE for 12 months, during
             which you cannot withdraw it no matter what the token price
-            does. 400,000 FUSE for Ultra is a serious commitment. Do the
+            does. 600,000 FUSE for Ultra is a serious commitment. Do the
             math on the token's volatility before you lock.
           </P>
           <P>

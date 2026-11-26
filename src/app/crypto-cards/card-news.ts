@@ -13,6 +13,36 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-27",
+    type: "fee-change",
+    cardName: "Solid Card",
+    cardSlug: "solid-card",
+    title: "Solid raised its FUSE locks on 12 October 2026: Prime 70,000, Ultra 600,000",
+    details:
+      "Solid's Rewards terms set the current lock amounts for new locks at 70,000 FUSE for Prime and 600,000 FUSE for Ultra, up from 50,000 and 400,000. Locks opened before 12 October 2026 keep the earlier amounts for their full term, which is why both figure pairs circulate. Our listing and review published the old amounts as current; both are corrected, with the grandfathering stated. A widely shared roundup's figure of 420,000 FUSE for Ultra appears in no terms-based source. At current prices the 600,000 FUSE Ultra lock is worth roughly $3,600.",
+    sourceLabel: "Solid Rewards terms, revised October 2026",
+  },
+  {
+    date: "2026-11-27",
+    type: "catalog-update",
+    cardName: "ether.fi Cash",
+    cardSlug: "etherfi-cash-card",
+    title: "ether.fi Cash listing corrected: the tier figures are spend bands, not caps",
+    details:
+      "Our listing described Core up to $2,000, Luxe up to $10,000 and Pinnacle up to $50,000 as monthly caps. They are the top-rate spend bands of a progressive schedule: Core pays 3% on the first $2,000, then 1% to $3,000, then 0.5%; VIP pays 4% on the first $50,000. The listing now carries the full band schedule for all four tiers, the tier qualification routes (Liquid balances, ETHFI staking, points, or the $199 and $999 annual fees; VIP needs $500,000 in Liquid or 500,000 ETHFI staked), and the structured tier table now correctly shows rewards paid in ETHFI, not USD.",
+    sourceLabel: "ether.fi help centre, November 2026",
+  },
+  {
+    date: "2026-11-27",
+    type: "catalog-update",
+    cardName: "Nexo Card",
+    cardSlug: "nexo-card",
+    title: "Tier terms completed on the Nexo, COCA, Ethena Pay and Wirex One listings",
+    details:
+      "A top-tier value comparison exposed how thin four of our listings were on tier mechanics. They now carry the verified terms. Nexo: the full loyalty rate table (Base 0.5% to Platinum 2% in NEXO, monthly caps $50 to $200), the $5,000 portfolio minimum for any cashback, and the NEXO share thresholds of 1%, 5% and 10%. COCA: the Monthly Claim Capacity system, $15 a month on Starter and $350 on Elite, which caps claiming even though earning is unlimited. Ethena Pay: the full band schedule, including the free tier paying 0% above $4,000 a month, and the ENA lock routes ($2,000 Pro, $10,000 VIP). Wirex One: the five-tier structure and the Monthly Redemption Power limit, 7% of WPAY held, that caps how much cashback can be redeemed each month.",
+    sourceLabel: "Provider help centres, terms and litepaper, November 2026",
+  },
+  {
     date: "2026-11-26",
     type: "fee-change",
     cardName: "Bybit Card",
