@@ -8,12 +8,12 @@ const SITE_URL = "https://www.cryptosbeginner.com";
 export const metadata = {
   title: "Cryptos Beginner: Exchange, Safety & Region Guides 2026",
   description:
-    "Independent crypto guides for beginners: 17 exchange reviews, 183 crypto cards compared, 7 hands-on card reviews tested on the real apps, region playbooks, wallet basics, and fee tools.",
+    "Independent crypto guides for beginners: 17 exchange reviews, 232 crypto cards compared, 7 hands-on card reviews tested on the real apps, region playbooks, wallet basics, and fee tools.",
   alternates: { canonical: SITE_URL },
   openGraph: {
     title: "Cryptos Beginner: Crypto Guides Tested on the Real Apps",
     description:
-      "17 exchange reviews, 183 crypto cards compared, hands-on card reviews, region playbooks, and tools. Independent, updated, beginner-first.",
+      "17 exchange reviews, 232 crypto cards compared, hands-on card reviews, region playbooks, and tools. Independent, updated, beginner-first.",
     url: SITE_URL,
     type: "website",
   },
@@ -21,13 +21,13 @@ export const metadata = {
     card: "summary_large_image",
     title: "Cryptos Beginner",
     description:
-      "Independent crypto guides for beginners: exchange reviews, 183 crypto cards compared, hands-on testing, region playbooks.",
+      "Independent crypto guides for beginners: exchange reviews, 232 crypto cards compared, hands-on testing, region playbooks.",
   },
 };
 
 const STATS = [
   { value: "17", label: "Exchange reviews" },
-  { value: "183", label: "Crypto cards compared" },
+  { value: "232", label: "Crypto cards compared" },
   { value: "7", label: "Hands-on card reviews" },
   { value: "5", label: "Region playbooks" },
 ];
@@ -77,8 +77,8 @@ const PILLARS = [
   {
     title: "Crypto Cards",
     href: "/crypto-cards",
-    desc: "183 cards compared by fees, rewards, regions, and custody, plus 7 full reviews tested on the real apps.",
-    link: "Browse 183 cards",
+    desc: "232 cards compared by fees, rewards, regions, and custody, plus 7 full reviews tested on the real apps.",
+    link: "Browse 232 cards",
   },
   {
     title: "Regions",
@@ -188,7 +188,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Cryptos Beginner is a trust-first hub for crypto newcomers. We install the apps, capture
-            the real fee tables, compare 183 crypto cards and 17 exchanges, and document regional
+            the real fee tables, compare 232 crypto cards and 17 exchanges, and document regional
             realities, so you can choose with evidence instead of hype.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">

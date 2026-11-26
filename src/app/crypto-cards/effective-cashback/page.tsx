@@ -133,7 +133,7 @@ export default function EffectiveCashbackPage() {
             </p>
             <p className="mt-4 text-sm text-slate-400">
               <Link href="/crypto-cards" className="underline hover:text-white">
-                Browse all 183 cards
+                Browse all 232 cards
               </Link>
               {" · "}
               <Link href="/crypto-cards/reviews" className="underline hover:text-white">
