@@ -14,6 +14,37 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-27",
+    type: "market",
+    cardName: "Gnosis Pay",
+    cardSlug: "gnosis-pay-card",
+    title: "Gnosis Pay cards stop on 20 December 2026, and our listing now says so",
+    details:
+      "Gnosis Pay's formal notice of 21 September 2026 closes the card and web app at 23:59 UTC on 20 December 2026, a full 90 days of warning, even though Gnosis Pay's own Terms of Service only promise 30 days for termination. Our listing still described the programme as live; it now leads with the closure. The Safe is self-custodial and withdrawals stay open after closure with no deadline. General support runs to 18 June 2027 and refund and dispute support to 12 June 2028.",
+    sourceLabel: "Gnosis Pay formal closure notice, September 2026",
+    sourceUrl: "https://help.gnosispay.com/articles/1452055581-formal-notice-closure-of-the-gnosis-pay-web-app-and-card-21-september-2026",
+  },
+  {
+    date: "2026-11-27",
+    type: "market",
+    cardName: "1inch Card",
+    cardSlug: "1inch-card",
+    title: "1inch Card is winding down: withdraw or spend by 18 December 2026",
+    details:
+      "1inch's help centre confirms the card programme is discontinued: new sign-ups are closed and users should withdraw or spend balances by 18 December 2026 at the latest. 1inch warns that date is only as far ahead as it can currently foresee, because the issuer (Monavate) and provider (Crypto Life / Baanx) control the timeline. Leftover e-wallet funds remain redeemable for up to six years after account closure under the issuer's terms. Our listing, which still described the card as available in the UK and EEA, is corrected.",
+    sourceLabel: "1inch help centre, card wind-down FAQ",
+  },
+  {
+    date: "2026-11-27",
+    type: "catalog-update",
+    cardName: "Solflare Card",
+    cardSlug: "solflare-card",
+    title: "Solflare Card listing updated: cards stopped on 28 July 2026",
+    details:
+      "Our Solflare listing still said its details were being verified. Per Solflare's help centre, virtual and physical cards stopped working on 28 July 2026, announced the same day, after issuing partner Kulipa wound down. Solflare frames the stop as a temporary pause and promised a relaunch with a new provider and Apple Pay; no relaunch had been confirmed by late 2026. Funds are self-custodial and were unaffected. The listing now records the stop and the pause framing.",
+    sourceLabel: "Solflare help centre, 2026",
+  },
+  {
+    date: "2026-11-27",
     type: "fee-change",
     cardName: "Solid Card",
     cardSlug: "solid-card",

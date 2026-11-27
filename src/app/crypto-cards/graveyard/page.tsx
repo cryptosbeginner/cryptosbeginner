@@ -48,10 +48,21 @@ const entries: GraveyardEntry[] = [
     status: "Shutting down",
     date: "December 1, 2026",
     whatHappened:
-      "VaultLeap announced its cards close on December 1, 2026, with its points and tiers ending the same day. In the company's own words, quoted in @xKseilas's November 2026 roundup of cut perks: \"Points have no cash value.\"",
+      "VaultLeap's closing page (updated 1 November 2026) sets the timetable: no new accounts or card applications from 1 November 2026, deposits stop at the end of 30 November, and cards, bank payouts and the app close on 1 December 2026, with final cashback credited that day and no closure fees. The wallet is self-custodial, so unmoved funds remain accessible via the user's private key. In the company's own words on its points: \"Points have no cash value.\"",
     lesson:
       "Points that cannot be traded or redeemed for cash are worth exactly what the issuer decides on the day the program ends, which can be zero.",
-    verified: false,
+    verified: true,
+  },
+  {
+    name: "SecondFi Card",
+    issuer: "SecondFi, issued by Wirex",
+    status: "Shutting down",
+    date: "November 30, 2026",
+    whatHappened:
+      "SecondFi's knowledge base confirms the card programme closes on 30 November 2026 and all cards are cancelled after that date, in agreement with Wirex, which issues the card under its Visa licence. Cardholders are told to spend remaining balances before 30 November. The closure follows SecondFi's broader wind-down after a June 2026 security incident in which about 16.1M ADA was taken from 374 wallets.",
+    lesson:
+      "A card issued on a partner's licence ends when the partnership or the partner's risk appetite ends, and the shutdown timetable is set by the issuer, not the brand.",
+    verified: true,
   },
   {
     name: "Solflare Card",
