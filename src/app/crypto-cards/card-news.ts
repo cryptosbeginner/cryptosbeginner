@@ -13,6 +13,60 @@ export interface CardNewsEntry {
 // published catalog changes are listed here. Third-party claims are attributed.
 export const CARD_NEWS: CardNewsEntry[] = [
   {
+    date: "2026-11-28",
+    type: "fee-change",
+    cardName: "Binance Card",
+    cardSlug: "binance-card",
+    title: "Binance Card Brazil fees published: 0.9% conversion, FX rising to 3% to 4% on 18 December",
+    details:
+      "Our Binance Card listing said FX fees were not disclosed. Binance's official Brazil Card FAQ publishes a 0.9% crypto conversion fee, and a later fee schedule effective 18 December 2026 raises the FX fee to 3% to 4% while the conversion fee stays 0.9%. The listing now carries both figures with the December change flagged.",
+    sourceLabel: "Binance Brazil Card FAQ",
+    sourceUrl: "https://www.binance.com/en/support/faq/detail/fcf23d4a605e48f69c069e12746e3808",
+  },
+  {
+    date: "2026-11-28",
+    type: "fee-change",
+    cardName: "Grey Card",
+    cardSlug: "grey-card",
+    title: "Grey does publish a card fee schedule: cross-border is 2% + $0.50",
+    details:
+      "Our Grey listing said no card-specific fee schedule was published. Grey's official fees page does publish virtual card charges: creation $5, funding $1, maintenance $0, and a cross-border transaction charge of 2% + $0.50 when a USD card is used on a non-USD website, with a separate 0% to 1% conversion fee possible when spending from a non-USD balance. The listing is corrected.",
+    sourceLabel: "Grey official fees page",
+    sourceUrl: "https://grey.co/blog/fees-and-charges-on-grey",
+  },
+  {
+    date: "2026-11-28",
+    type: "catalog-update",
+    cardName: "BingX Card",
+    cardSlug: "bingx-card",
+    title: "BingX listing corrected: a 1.5% per-transaction trading fee is published",
+    details:
+      "Our BingX listing said no separate transaction fee was published. BingX's official fees article publishes a 1.5% trading fee per card transaction. What is genuinely unpublished is a distinct FX percentage for non-USD spend; the official guide says additional FX costs may apply without giving a figure. The listing now separates the two.",
+    sourceLabel: "BingX official fees article and card guide",
+  },
+  {
+    date: "2026-11-28",
+    type: "catalog-update",
+    cardName: "El Dorado Card",
+    cardSlug: "el-dorado-card",
+    title: "El Dorado listing filled in from its card terms",
+    details:
+      "The El Dorado listing carried placeholder text. Its card terms publish a one-time issuance fee of 3.99 USDT and a USD 2,000 daily limit, and no conversion, FX or non-USD payment rate anywhere. Eligibility covers 11 countries including Brazil, Argentina and Colombia (Mexico is not on the list), US residents are excluded, and the issuer is Lead Bank. The listing now records all of it.",
+    sourceLabel: "El Dorado card terms",
+    sourceUrl: "https://eldorado.io/en/legal/tarjeta",
+  },
+  {
+    date: "2026-11-28",
+    type: "catalog-update",
+    cardName: "MetaMask Card",
+    cardSlug: "metamask-card",
+    title: "MetaMask Card conversion fee added: 0.5%, with an Argentina exception",
+    details:
+      "Our MetaMask listing had no conversion fee. The official limits and fees page charges 0.5% where the stablecoin denomination matches neither the cardholder's nor the merchant's country, no fee where the stablecoin matches the local currency, and no fee in Argentina where the card denomination is USD. The listing now carries the rule.",
+    sourceLabel: "MetaMask Card limits and fees",
+    sourceUrl: "https://support.metamask.io/trade/metamask-card/limits-and-fees/",
+  },
+  {
     date: "2026-11-27",
     type: "market",
     cardName: "Gnosis Pay",
