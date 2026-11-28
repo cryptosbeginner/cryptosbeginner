@@ -65,6 +65,17 @@ const entries: GraveyardEntry[] = [
     verified: true,
   },
   {
+    name: "DeCard Mastercard programme",
+    issuer: "DeCard (DCS Card Centre)",
+    status: "Shutting down",
+    date: "December 31, 2026",
+    whatHappened:
+      "A banner on DeCard's own site states that with effect from 31 December 2026 the DeCard Mastercard programme will be discontinued, and asks cardholders to review their balance status and required action. The notice covers the Mastercard scheme only: DeCard applicants choose between Visa and Mastercard, and its current marketing leads with Visa.",
+    lesson:
+      "A brand can survive while one of its card schemes is switched off: the network on your card is a programme with its own lifespan.",
+    verified: true,
+  },
+  {
     name: "Solflare Card",
     issuer: "Solflare, issued via Kulipa",
     status: "Paused",

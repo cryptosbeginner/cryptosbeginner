@@ -14,6 +14,17 @@ export interface CardNewsEntry {
 export const CARD_NEWS: CardNewsEntry[] = [
   {
     date: "2026-11-28",
+    type: "market",
+    cardName: "DeCard",
+    cardSlug: "decard-card",
+    title: "DeCard Mastercard programme discontinued from 31 December 2026",
+    details:
+      "A banner on DeCard's own site states: with effect from 31 December 2026, the DeCard Mastercard programme will be discontinued, and cardholders should review their balance status and required action. The notice covers the Mastercard scheme only; DeCard applicants choose between Visa and Mastercard, and the Visa programme is not covered. Our listing also now records the full eligibility list from DeCard's FAQ (Singapore, Australia, Japan, South Korea, Malaysia, the Philippines, Taiwan, Thailand and Vietnam), where it previously said Singapore only.",
+    sourceLabel: "DeCard official site, November 2026",
+    sourceUrl: "https://www.thedecard.com/en/personal/decard",
+  },
+  {
+    date: "2026-11-28",
     type: "fee-change",
     cardName: "Binance Card",
     cardSlug: "binance-card",
